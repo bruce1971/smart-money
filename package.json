@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "abi-decoder": "^2.4.0",
     "axios": "^1.4.0",
+    "ethers": "^6.6.3",
     "node-telegram-bot-api": "^0.61.0"
   }
 }
