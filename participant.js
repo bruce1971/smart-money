@@ -21,29 +21,53 @@ function accountUrl(type) {
   `.replace(/\s/g, '')
 }
 
+function formatValue(value) {
+  return Number(value)/10**18;
+}
 
-function parseTx(tx) {
-  value = Number(tx.value)/10**18;
-  if (tx.from.toLowerCase() === PARTICIPANT_ADDRESS && tx.functionName === '' && tx.input === '0x') {
-    console.log(`Send ${value}eth to ${tx.to}`);
-  } else if (tx.to.toLowerCase() === PARTICIPANT_ADDRESS && tx.functionName === '') {
-    console.log(`Receive ${value}eth from ${tx.from}`);
-  } else if (tx.to.toLowerCase() === '0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5'.toLowerCase() && tx.functionName.includes('commit')) {
-    console.log(`Request to Register ENS Domain`);
-  } else if (tx.to.toLowerCase() === '0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5'.toLowerCase() && tx.functionName.includes('registerWithConfig')) {
-    console.log(`Register ENS Domain`);
-  } else if (tx.from.toLowerCase() === PARTICIPANT_ADDRESS && tx.functionName === '') {
-    console.log(`NFT buy! Bought ${tx.tokenName} ${tx.tokenID} for ${value}eth`);
-  } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
-    console.log(`withdraw(uint256 amount)`);
-    console.log(tx);
-    console.log(`Unwrap WETH to ETH`); //amount in decoded tx.input
-  } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0x0000000000a39bb272e79075ade125fd351887ac'.toLowerCase()) {
-    console.log(`withdraw(uint256 amount)`);
-    console.log(tx);
-    console.log(`Withdraw from Blur`);
+
+function parseTx(fullTx) {
+  const txs = fullTx.txs;
+  const txsKeys = Object.keys(txs);
+  if (txsKeys.includes('normal')) {
+    const tx = txs.normal;
+    value = formatValue(tx.value);
+    if (tx.from.toLowerCase() === PARTICIPANT_ADDRESS && tx.functionName === '' && tx.input === '0x') {
+      console.log(`Send ${value}eth to ${tx.to}`);
+    } else if (tx.to.toLowerCase() === PARTICIPANT_ADDRESS && tx.functionName === '') {
+      console.log(`Receive ${value}eth from ${tx.from}`);
+    } else if (tx.to.toLowerCase() === '0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5'.toLowerCase() && tx.functionName.includes('commit')) {
+      console.log(`Request to Register ENS Domain`);
+    } else if (tx.to.toLowerCase() === '0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5'.toLowerCase() && tx.functionName.includes('registerWithConfig')) {
+      console.log(`Register ENS Domain`);
+    } else if (txsKeys.includes('erc721')) {
+      const erc721tx = txs.erc721;
+      if (tx.functionName === '') {
+        console.log(`NFT buy! Bought ${erc721tx.tokenName} ${erc721tx.tokenID} for ${value}eth`);
+      } else {
+        console.log('OTHER ERC721...');
+        console.log(txs);
+      }
+    } else if (txsKeys.includes('erc20')) {
+      const erc20 = txs.erc20;
+      if (tx.functionName.includes('swap')) {
+        console.log(`Token buy! Bought ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth`);
+      } else if (tx.functionName.includes('transfer')) {
+        console.log(`Token transfer. Transferred ${formatValue(erc20.value)} ${erc20.tokenName} to ${erc20.to}`);
+      }
+    } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
+      console.log(`withdraw(uint256 amount)`);
+      console.log(`Unwrap WETH to ETH`); //amount in decoded tx.input
+    } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0x0000000000a39bb272e79075ade125fd351887ac'.toLowerCase()) {
+      console.log(`withdraw(uint256 amount)`);
+      console.log(`Withdraw from Blur`);
+    } else {
+      console.log('OTHER NORMAL..');
+      console.log(txs);
+    }
+    console.log(`https://etherscan.io/tx/${tx.hash}`);
   } else {
-    // console.log(tx);
+    console.log('NO NORMAL TXS...');
   }
 }
 
@@ -88,20 +112,21 @@ async function getEtherscanData() {
   let txArray = [];
   txHashes.forEach(hash => {
     const txs = transactions.filter(tx => tx.hash === hash);
+    const txsObject = {};
+    txs.forEach(tx => txsObject[tx.type] = tx);
     const timeStamp = Number(txs[0].timeStamp);
     txArray.push({
       hash: hash,
       timeStamp: timeStamp,
-      txs: txs
+      txs: txsObject
     })
   });
   txArray = txArray.sort((a, b) => Number(b.timeStamp) - Number(a.timeStamp))
 
   txArray.forEach(tx => {
     console.log('-----------------');
-    console.log(`https://etherscan.io/tx/${tx.hash}`);
-    console.log(tx);
-    // parseTx(tx)
+    // console.log(`https://etherscan.io/tx/${tx.hash}`);
+    parseTx(tx)
   });
 
 }
