@@ -30,6 +30,7 @@ function formatValue(value) {
 function parseTx(fullTx) {
   const txs = fullTx.txs;
   const txsKeys = Object.keys(txs);
+  const txsValues = Object.values(txs);
   if (txsKeys.includes('normal')) {
     const tx = txs.normal;
     value = formatValue(tx.value);
@@ -51,6 +52,8 @@ function parseTx(fullTx) {
         console.log(`💎🛒 NFT buy! Bought ${erc721tx.tokenName} ${erc721tx.tokenID} for ${value} eth`);
       } else if (tx.functionName.includes('matchBidWithTakerAsk')) {
         console.log(`💎💸 NFT sale! Sold ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(txs.erc20.value)} weth on LooksRare`);
+      } else if (tx.functionName === 'fulfillAvailableAdvancedOrders(tuple[] advancedOrders, tuple[] criteriaResolvers, tuple[][] offerFulfillments, tuple[][] considerationFulfillments, bytes32 fulfillerConduitKey, address recipient, uint256 maximumFulfilled)') {
+        console.log(`💎💸 NFT sale! Sold ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(tx.value)} eth on Opensea`);
       } else if (tx.functionName.includes('safeTransferFrom')) {
         console.log(`💎➡️  NFT transfer. Transferred ${erc721tx.tokenName} ${erc721tx.tokenID} to ${erc721tx.to}`);
       } else {
@@ -67,8 +70,10 @@ function parseTx(fullTx) {
         console.log('⭕️🪙 OTHER ERC20...');
         console.log(txs);
       }
+    } else if (tx.functionName === 'deposit()' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
+      console.log(`↪️  Wrap ${value} ETH to WETH`); //amount in decoded tx.input
     } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
-      console.log(`Unwrap WETH to ETH`); //amount in decoded tx.input
+      console.log(`↩️  Unwrap WETH to ETH`); //amount in decoded tx.input
     } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0x0000000000a39bb272e79075ade125fd351887ac'.toLowerCase()) {
       console.log(`Withdraw from Blur`);
     } else {
@@ -78,9 +83,15 @@ function parseTx(fullTx) {
     console.log(`https://etherscan.io/tx/${tx.hash}`);
   } else {
     console.log('❌ NO NORMAL TXS...');
-    console.log(txs);
-    const txsValues = Object.values(txs);
     const hash = txsValues[0].hash;
+    if (txsKeys.includes('erc20')) {
+      console.log('🪙');
+    } else if (txsKeys.includes('erc721')) {
+      console.log('💎');
+    } else if (txsKeys.includes('erc1155')) {
+      console.log('💎💎');
+    }
+    console.log(txs);
     console.log(`https://etherscan.io/tx/${hash}`);
   }
 }
