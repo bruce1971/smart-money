@@ -7,7 +7,8 @@ let PARTICIPANT_ADDRESSES = [
   '0x5654967dc2c3f207b68bbd8003bc27a0a4106b56'
 ]
 PARTICIPANT_ADDRESSES = PARTICIPANT_ADDRESSES.map(x => x.toLowerCase());
-const CONTRACT_ADDRESS =  '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9'; //bitcoin
+// const CONTRACT_ADDRESS =  '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9'; //bitcoin
+const CONTRACT_ADDRESS =  '0x6982508145454ce325ddbe47a25d4ec3d2311933'; //pepe
 
 
 function accountUrl(type, address) {
@@ -25,8 +26,9 @@ function accountUrl(type, address) {
 }
 
 
-function formatValue(value) {
-  return Number(value)/10**18;
+function formatValue(value, decimals=18) {
+  decimals = Number(decimals);
+  return Number(value)/10**decimals;
 }
 
 
@@ -41,9 +43,14 @@ function filterContractAddress(array) {
 
 
 function parseTx(fullTx) {
+  console.log('-----------------');
+  console.log(`${moment(fullTx.timeStamp * 1000).fromNow()}...`);
   const txs = fullTx.txs;
   const txsKeys = Object.keys(txs);
   const txsValues = Object.values(txs);
+  const hash = txsValues[0].hash;
+  console.log(`https://etherscan.io/tx/${hash}`);
+
   if (txsKeys.includes('normal')) {
     const tx = txs.normal;
     value = formatValue(tx.value);
@@ -75,16 +82,21 @@ function parseTx(fullTx) {
       }
     } else if (txsKeys.includes('erc20')) {
       const erc20 = txs.erc20;
+      const internal = txs.internal;
       if (tx.functionName.includes('swap')) {
         console.log(`🪙🛒 Token buy! Bought ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth`);
       } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
-        console.log(`🪙🛒 Token buy! Bought ${erc20.value} ${erc20.tokenName} for ${value}eth`);
+        if (internal) {
+          console.log(`🪙💸 Token sale! Sold ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatValue(internal.value)}eth`);
+        } else {
+          console.log(`🪙🔄 Token swap...`);
+        }
       } else if (tx.functionName.includes('transfer')) {
-        console.log(`🪙➡️  Token transfer. Transferred ${erc20.value} ${erc20.tokenName} to ${erc20.to}`);
+        console.log(`🪙➡️  Token transfer. Transferred ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${erc20.to}`);
       } else {
         console.log('⭕️🪙 OTHER ERC20...');
       }
-      console.log(txs);
+      // console.log(txs);
     } else if (tx.functionName === 'deposit()' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
       console.log(`↪️  Wrap ${value} ETH to WETH`); //amount in decoded tx.input
     } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
@@ -95,19 +107,18 @@ function parseTx(fullTx) {
       console.log('⭕️ OTHER NORMAL..');
       console.log(txs);
     }
-    console.log(`https://etherscan.io/tx/${tx.hash}`);
   } else {
     console.log('❌ NO NORMAL TXS...');
-    const hash = txsValues[0].hash;
     if (txsKeys.includes('erc20')) {
-      console.log('🪙');
+      const erc20 = txs.erc20;
+      console.log(`🪙➡️  Token receival. Received ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} from ${erc20.from}`);
     } else if (txsKeys.includes('erc721')) {
       console.log('💎');
+      console.log(txs);
     } else if (txsKeys.includes('erc1155')) {
       console.log('💎💎');
+      console.log(txs);
     }
-    console.log(txs);
-    console.log(`https://etherscan.io/tx/${hash}`);
   }
 }
 
@@ -173,17 +184,10 @@ async function getEtherscanData() {
     txArray = txArray.concat(txArray1);
   };
 
-  console.log(txArray.length);
-
   txArray = filterContractAddress(txArray);
   txArray = txArray.sort((a, b) => Number(b.timeStamp) - Number(a.timeStamp));
 
-  // txArray.forEach(tx => {
-  //   console.log('-----------------');
-  //   console.log(`${moment(tx.timeStamp * 1000).fromNow()}...`);
-  //   parseTx(tx)
-  // });
-  console.log(txArray.length);
+  txArray.forEach(tx => parseTx(tx));
 }
 
 
