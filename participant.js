@@ -1,14 +1,11 @@
 const axios = require('axios');
 const moment = require('moment');
-const ETHERSCAN_API_KEY="I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG";
-const NEXT_PUBLIC_ETHERSCAN_API="https://api.etherscan.io/api";
-let PARTICIPANT_ADDRESSES = [
-  '0x70399b85054dd1d94f2264afc8704a3ee308abaf',
-  '0x5654967dc2c3f207b68bbd8003bc27a0a4106b56'
-]
-PARTICIPANT_ADDRESSES = PARTICIPANT_ADDRESSES.map(x => x.toLowerCase());
-// const CONTRACT_ADDRESS =  '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9'; //bitcoin
-const CONTRACT_ADDRESS =  '0x6982508145454ce325ddbe47a25d4ec3d2311933'; //pepe
+const basePath = process.cwd();
+const {
+  etherscanApiKey,
+  participantAddresses,
+  contractAddress
+} = require(`${basePath}/config.js`);
 
 
 function accountUrl(type, address) {
@@ -21,7 +18,7 @@ function accountUrl(type, address) {
      &endblock=99999999
      &page=1
      &sort=desc
-     &apikey=${ETHERSCAN_API_KEY}
+     &apikey=${etherscanApiKey}
   `.replace(/\s/g, '')
 }
 
@@ -36,7 +33,7 @@ function filterContractAddress(array) {
   const finalArray = [];
   array.forEach(el => {
     const contractAddresses = Object.values(el.txs).map(x => x.contractAddress);
-    if (contractAddresses.includes(CONTRACT_ADDRESS)) finalArray.push(el);
+    if (contractAddresses.includes(contractAddress)) finalArray.push(el);
   });
   return finalArray;
 }
@@ -54,9 +51,9 @@ function parseTx(fullTx) {
   if (txsKeys.includes('normal')) {
     const tx = txs.normal;
     value = formatValue(tx.value);
-    if (tx.from.toLowerCase() === PARTICIPANT_ADDRESSES[0] && tx.functionName === '' && tx.input === '0x') {
+    if (tx.from.toLowerCase() === participantAddresses[0] && tx.functionName === '' && tx.input === '0x') {
       console.log(`💸➡️  Send ${value}eth to ${tx.to}`);
-    } else if (tx.to.toLowerCase() === PARTICIPANT_ADDRESSES[0] && tx.functionName === '') {
+    } else if (tx.to.toLowerCase() === participantAddresses[0] && tx.functionName === '') {
       console.log(`⬅️ 💸 Receive ${value}eth from ${tx.from}`);
     } else if (tx.functionName.includes('setApprovalForAll')) {
       console.log(`👍👍 Set Approval for All...`);
@@ -177,15 +174,14 @@ async function txsForSingleAddress(address) {
 
 
 async function getEtherscanData() {
-
   let txArray = [];
-  for (const participantAddress of PARTICIPANT_ADDRESSES) {
+  for (const participantAddress of participantAddresses) {
     const txArray1 = await txsForSingleAddress(participantAddress);
     txArray = txArray.concat(txArray1);
   };
 
   txArray = filterContractAddress(txArray);
-  txArray = txArray.sort((a, b) => Number(b.timeStamp) - Number(a.timeStamp));
+  txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   txArray.forEach(tx => parseTx(tx));
 }
