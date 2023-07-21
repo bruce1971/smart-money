@@ -7,6 +7,12 @@ const {
   participantAddresses,
   contractAddress
 } = require(`${basePath}/config.js`);
+const {
+  abi
+} = require(`${basePath}/abis.js`);
+const {
+  decodeExecute,
+} = require(`${basePath}/universalDecoder.js`);
 
 
 function accountUrl(type, address) {
@@ -49,6 +55,17 @@ function filterContractAddress(array, address) {
     if (contractAddresses.includes(contractAddress)) finalArray.push(el);
   });
   return finalArray;
+}
+
+
+function parseDecodedArray(array, erc20) {
+  let buyAmount = 0;
+  let sellAmount = 0;
+  array.forEach(el => {
+    buyAmount += Number(el.amountOut);
+    sellAmount += Number(el.amountIn);
+  });
+  console.log(`Buy ${formatValue(buyAmount, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatValue(sellAmount)} eth`);
 }
 
 
@@ -100,13 +117,8 @@ async function parseTx(fullTx) {
           console.log(`🪙💸 Token sale! Sold ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatValue(internal.value)}eth`);
         } else {
           console.log(`🪙🔄 Token swap...`);
-          // console.log(txs);
-          // const abi = await axios.get(abiUrl('0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad')).then(res => res.data.result);
-          // console.log(abi);
-          // abiDecoder.addABI(JSON.parse(abi));
-          // console.log(tx.input);
-          // const decoded = abiDecoder.decodeMethod(tx.input);
-          // console.log(decoded);
+          const decodedArray = decodeExecute(tx.input);
+          parseDecodedArray(decodedArray, erc20);
         }
       } else if (tx.functionName.includes('transfer')) {
         console.log(`🪙➡️  Token transfer. Transferred ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${erc20.to}`);
