@@ -1,5 +1,6 @@
 const axios = require('axios');
 const moment = require('moment');
+const abiDecoder = require('abi-decoder');
 const basePath = process.cwd();
 const {
   etherscanApiKey,
@@ -23,13 +24,25 @@ function accountUrl(type, address) {
 }
 
 
+function abiUrl(address) {
+  return `
+  https://api.etherscan.io/api
+    ?module=contract
+    &action=getabi
+    &address=${'0x2cc846fff0b08fb3bffad71f53a60b4b6e6d6482'}
+    &apikey=${etherscanApiKey}
+  `.replace(/\s/g, '')
+}
+
+
 function formatValue(value, decimals=18) {
   decimals = Number(decimals);
   return Number(value)/10**decimals;
 }
 
 
-function filterContractAddress(array) {
+function filterContractAddress(array, address) {
+  if (!address) return array;
   const finalArray = [];
   array.forEach(el => {
     const contractAddresses = Object.values(el.txs).map(x => x.contractAddress);
@@ -39,7 +52,7 @@ function filterContractAddress(array) {
 }
 
 
-function parseTx(fullTx) {
+async function parseTx(fullTx) {
   console.log('-----------------');
   console.log(`${moment(fullTx.timeStamp * 1000).fromNow()}...`);
   const txs = fullTx.txs;
@@ -87,6 +100,13 @@ function parseTx(fullTx) {
           console.log(`🪙💸 Token sale! Sold ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatValue(internal.value)}eth`);
         } else {
           console.log(`🪙🔄 Token swap...`);
+          // console.log(txs);
+          // const abi = await axios.get(abiUrl('0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad')).then(res => res.data.result);
+          // console.log(abi);
+          // abiDecoder.addABI(JSON.parse(abi));
+          // console.log(tx.input);
+          // const decoded = abiDecoder.decodeMethod(tx.input);
+          // console.log(decoded);
         }
       } else if (tx.functionName.includes('transfer')) {
         console.log(`🪙➡️  Token transfer. Transferred ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${erc20.to}`);
@@ -180,7 +200,9 @@ async function getEtherscanData() {
     txArray = txArray.concat(txArray1);
   };
 
-  txArray = filterContractAddress(txArray);
+  // txArray = txArray.filter(tx => tx.hash === '0x9f3953cb2b307e0a2dcd2b22ff3cb157808f8fa1f54e4574e989d83ce0139a9e')
+
+  txArray = filterContractAddress(txArray, contractAddress);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   txArray.forEach(tx => parseTx(tx));
