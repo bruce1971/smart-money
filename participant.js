@@ -13,6 +13,9 @@ const {
 const {
   decodeExecute,
 } = require(`${basePath}/universalDecoder.js`);
+const {
+  addresses,
+} = require(`${basePath}/addresses.js`);
 
 
 function accountUrl(type, address) {
@@ -41,9 +44,19 @@ function abiUrl(address) {
 }
 
 
+function round(value, decimals) {
+  return Math.round(value * 10**decimals) / 10**decimals;
+}
+
+
 function formatValue(value, decimals=18) {
   decimals = Number(decimals);
-  return Number(value)/10**decimals;
+  value = Number(value)/10**decimals;
+  if (value > 999) value = round(value, 0);
+  else if (value > 99) value = round(value, 1);
+  else value = round(value, 2);
+  value = value.toLocaleString();
+  return value;
 }
 
 
@@ -65,7 +78,17 @@ function parseDecodedArray(array, erc20) {
     buyAmount += Number(el.amountOut);
     sellAmount += Number(el.amountIn);
   });
-  console.log(`Buy ${formatValue(buyAmount, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatValue(sellAmount)} eth`);
+  let swapPath = array[0].path;
+  let swapFrom = addresses[swapPath[0].toLowerCase()] || swapPath[0];
+  let swapTo = addresses[swapPath.at(-1).toLowerCase()] || swapPath.at(-1);
+
+  if (swapFrom === 'WETH') {
+    console.log(`🪙🛒 Token buy! Bought ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo} for ${formatValue(sellAmount)} ${swapFrom}`);
+  } else if (swapTo === 'WETH') {
+    console.log(`🪙💸 Token sale! Sold ${formatValue(sellAmount)} ${swapFrom} for ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo}`);
+  } else {
+    console.log(`Swap ${formatValue(sellAmount)} ${swapFrom} to ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo}`);
+  }
 }
 
 
@@ -119,13 +142,14 @@ async function parseTx(fullTx) {
           console.log(`🪙🔄 Token swap...`);
           const decodedArray = decodeExecute(tx.input);
           parseDecodedArray(decodedArray, erc20);
+          // console.log(decodedArray);
+          // console.log(txs);
         }
       } else if (tx.functionName.includes('transfer')) {
         console.log(`🪙➡️  Token transfer. Transferred ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${erc20.to}`);
       } else {
         console.log('⭕️🪙 OTHER ERC20...');
       }
-      // console.log(txs);
     } else if (tx.functionName === 'deposit()' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
       console.log(`↪️  Wrap ${value} ETH to WETH`); //amount in decoded tx.input
     } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
@@ -211,8 +235,6 @@ async function getEtherscanData() {
     const txArray1 = await txsForSingleAddress(participantAddress);
     txArray = txArray.concat(txArray1);
   };
-
-  // txArray = txArray.filter(tx => tx.hash === '0x9f3953cb2b307e0a2dcd2b22ff3cb157808f8fa1f54e4574e989d83ce0139a9e')
 
   txArray = filterContractAddress(txArray, contractAddress);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
