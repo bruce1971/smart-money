@@ -88,6 +88,7 @@ function parseDecodedArray(array, erc20) {
     console.log(`🪙💸 Token sale! Sold ${formatValue(sellAmount)} ${swapFrom} for ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo}`);
   } else {
     console.log(`Swap ${formatValue(sellAmount)} ${swapFrom} to ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo}`);
+    // FIXME: erc20.tokendecimal not always good
   }
 }
 
@@ -136,15 +137,8 @@ async function parseTx(fullTx) {
       if (tx.functionName.includes('swap')) {
         console.log(`🪙🛒 Token buy! Bought ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth`);
       } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
-        if (internal) {
-          console.log(`🪙💸 Token sale! Sold ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatValue(internal.value)}eth`);
-        } else {
-          console.log(`🪙🔄 Token swap...`);
-          const decodedArray = decodeExecute(tx.input);
-          parseDecodedArray(decodedArray, erc20);
-          // console.log(decodedArray);
-          // console.log(txs);
-        }
+        const decodedArray = decodeExecute(tx.input);
+        parseDecodedArray(decodedArray, erc20);
       } else if (tx.functionName.includes('transfer')) {
         console.log(`🪙➡️  Token transfer. Transferred ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${erc20.to}`);
       } else {
@@ -239,7 +233,8 @@ async function getEtherscanData() {
   txArray = filterContractAddress(txArray, contractAddress);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
-  txArray.forEach(tx => parseTx(tx));
+  if (txArray.length > 0) txArray.forEach(tx => parseTx(tx));
+  else console.log('NO TRANSACTIONS FOUND...!');
 }
 
 
