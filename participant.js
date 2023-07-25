@@ -85,7 +85,7 @@ function parseDecodedArray(array, erc20) {
   if (swapFrom === 'WETH') {
     console.log(`🪙🛒 Token buy! Bought ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo} for ${formatValue(sellAmount)} ${swapFrom}`);
   } else if (swapTo === 'WETH') {
-    console.log(`🪙💸 Token sale! Sold ${formatValue(sellAmount)} ${swapFrom} for ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo}`);
+    console.log(`🪙💸 Token sale! Sold ${formatValue(sellAmount, erc20.tokenDecimal)} ${swapFrom} for ${formatValue(buyAmount)} ${swapTo}`);
   } else {
     console.log(`Swap ${formatValue(sellAmount)} ${swapFrom} to ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo}`);
     // FIXME: erc20.tokendecimal not always good
@@ -100,7 +100,7 @@ async function parseTx(fullTx) {
   const txsKeys = Object.keys(txs);
   const txsValues = Object.values(txs);
   const hash = txsValues[0].hash;
-  console.log(`https://etherscan.io/tx/${hash}`);
+  // console.log(`https://etherscan.io/tx/${hash}`);
 
   if (txsKeys.includes('normal')) {
     const tx = txs.normal;
@@ -230,6 +230,7 @@ async function getEtherscanData() {
     txArray = txArray.concat(txArray1);
   };
 
+  // txArray = txArray.filter(el => el.hash === '0xe1befebe3c5deddcb8555138fae630191f9735287d80e1a36bb2ee9650b2b11b')
   txArray = filterContractAddress(txArray, contractAddress);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
