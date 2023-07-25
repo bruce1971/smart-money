@@ -1,72 +1,16 @@
 const axios = require('axios');
 const moment = require('moment');
-const abiDecoder = require('abi-decoder');
 const basePath = process.cwd();
+const { participantAddresses, contractAddress } = require(`${basePath}/config.js`);
+const { decodeExecute } = require(`${basePath}/universalDecoder.js`);
+const { addresses } = require(`${basePath}/addresses.js`);
 const {
-  etherscanApiKey,
-  participantAddresses,
-  contractAddress
-} = require(`${basePath}/config.js`);
-const {
-  abi
-} = require(`${basePath}/abis.js`);
-const {
-  decodeExecute,
-} = require(`${basePath}/universalDecoder.js`);
-const {
-  addresses,
-} = require(`${basePath}/addresses.js`);
-
-
-function accountUrl(type, address) {
-  return `
-    https://api.etherscan.io/api
-     ?module=account
-     &action=${type}
-     &address=${address}
-     &startblock=0
-     &endblock=99999999
-     &page=1
-     &sort=desc
-     &apikey=${etherscanApiKey}
-  `.replace(/\s/g, '')
-}
-
-
-function abiUrl(address) {
-  return `
-  https://api.etherscan.io/api
-    ?module=contract
-    &action=getabi
-    &address=${'0x2cc846fff0b08fb3bffad71f53a60b4b6e6d6482'}
-    &apikey=${etherscanApiKey}
-  `.replace(/\s/g, '')
-}
-
-
-function round(value, decimals) {
-  return Math.round(value * 10**decimals) / 10**decimals;
-}
-
-
-function formatValue(value, decimals=18) {
-  decimals = Number(decimals);
-  value = Number(value)/10**decimals;
-  if (value > 999) value = round(value, 0);
-  else if (value > 99) value = round(value, 1);
-  else value = round(value, 2);
-  value = value.toLocaleString();
-  return value;
-}
-
-function formatValueRaw(value, decimals=18) {
-  decimals = Number(decimals);
-  value = Number(value)/10**decimals;
-  if (value > 999) value = round(value, 0);
-  else if (value > 99) value = round(value, 1);
-  else value = round(value, 2);
-  return value;
-}
+  accountUrl,
+  abiUrl,
+  round,
+  formatValue,
+  formatValueRaw,
+} = require(`${basePath}/helper.js`);
 
 
 function filterContractAddress(array, address) {
@@ -105,9 +49,10 @@ function parseDecodedArray(array, erc20, pnl) {
   }
 }
 
+
 function formatPnl(pnl) {
-  const shitInEth = 0.00002254; //bitcoin
-  // const shitInEth = 0.00000000097097; //pepe
+  // const shitInEth = 0.00002254; //bitcoin
+  const shitInEth = 0.00000000097097; //pepe
   const ethInUsd = 1850;
 
   const wethFinal = pnl.wethIn - pnl.wethOut;
@@ -128,18 +73,16 @@ function formatPnl(pnl) {
   pnl.wethIn = formatValue(pnl.wethIn, 0);
   pnl.shitOut = formatValue(pnl.shitOut, 0);
   pnl.shitIn = formatValue(pnl.shitIn, 0);
-  console.log(pnl);
 
   console.log('--------');
   console.log(`ETH invested --> ${pnl.wethOut} eth`);
-  console.log(`Shitcoins bought --> ${pnl.shitIn}`);
   console.log(`ETH taken out --> ${pnl.wethIn} eth`);
-
-  console.log(`ETH bag current --> ${pnl.wethFinal} eth`);
-  console.log(`Shitcoin bag current --> ${pnl.shitFinal}`);
-
-  console.log(`ETH bag current (usd) --> $${pnl.pnlInUsd}`);
-  console.log(`Shitcoin bag current (usd) --> $${pnl.shitFinalInUsd}`);
+  console.log(`Shitcoins bought --> ${pnl.shitIn}`);
+  console.log(`Shitcoins sold --> ${pnl.shitOut}`);
+  console.log('---');
+  console.log(`ETH PnL --> ${pnl.wethFinal > 0 ? '+' : ''}${pnl.wethFinal} eth ($${pnl.wethFinalInUsd})`);
+  console.log(`Shitcoin PnL --> ${pnl.shitFinal > 0 ? '+' : ''}${pnl.shitFinal} ($${pnl.shitFinalInUsd})`);
+  console.log('--------');
 }
 
 
