@@ -45,6 +45,7 @@ function parseDecodedArray(array, erc20, pnl) {
     console.log(`🪙💸 Token sale! Sold ${formatValue(sellAmount, erc20.tokenDecimal)} ${swapFrom} for ${formatValue(buyAmount)} ${swapTo}`);
   } else {
     console.log(`Swap ${formatValue(sellAmount)} ${swapFrom} to ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo}`);
+    console.log(array);
     // FIXME: erc20.tokendecimal not always good
   }
 }
@@ -74,7 +75,7 @@ function formatPnl(pnl) {
   pnl.shitOut = formatValue(pnl.shitOut, 0);
   pnl.shitIn = formatValue(pnl.shitIn, 0);
 
-  console.log('--------');
+  console.log('=================================')
   console.log(`ETH invested --> ${pnl.wethOut} eth`);
   console.log(`ETH taken out --> ${pnl.wethIn} eth`);
   console.log(`Shitcoins bought --> ${pnl.shitIn}`);
@@ -82,7 +83,7 @@ function formatPnl(pnl) {
   console.log('---');
   console.log(`ETH PnL --> ${pnl.wethFinal > 0 ? '+' : ''}${pnl.wethFinal} eth ($${pnl.wethFinalInUsd})`);
   console.log(`Shitcoin PnL --> ${pnl.shitFinal > 0 ? '+' : ''}${pnl.shitFinal} ($${pnl.shitFinalInUsd})`);
-  console.log('--------');
+  console.log('=================================')
 }
 
 
