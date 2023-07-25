@@ -59,6 +59,15 @@ function formatValue(value, decimals=18) {
   return value;
 }
 
+function formatValueRaw(value, decimals=18) {
+  decimals = Number(decimals);
+  value = Number(value)/10**decimals;
+  if (value > 999) value = round(value, 0);
+  else if (value > 99) value = round(value, 1);
+  else value = round(value, 2);
+  return value;
+}
+
 
 function filterContractAddress(array, address) {
   if (!address) return array;
@@ -71,7 +80,7 @@ function filterContractAddress(array, address) {
 }
 
 
-function parseDecodedArray(array, erc20) {
+function parseDecodedArray(array, erc20, pnl) {
   let buyAmount = 0;
   let sellAmount = 0;
   array.forEach(el => {
@@ -83,8 +92,18 @@ function parseDecodedArray(array, erc20) {
   let swapTo = addresses[swapPath.at(-1).toLowerCase()] || swapPath.at(-1);
 
   if (swapFrom === 'WETH') {
+    console.log('buy..');
+    console.log(pnl);
+    pnl.wethOut += formatValueRaw(sellAmount)
+    pnl.shitIn += formatValueRaw(buyAmount, erc20.tokenDecimal)
+    console.log(pnl);
     console.log(`🪙🛒 Token buy! Bought ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo} for ${formatValue(sellAmount)} ${swapFrom}`);
   } else if (swapTo === 'WETH') {
+    console.log('sale..');
+    console.log(pnl);
+    pnl.wethIn += formatValueRaw(buyAmount)
+    pnl.shitOut += formatValueRaw(sellAmount, erc20.tokenDecimal)
+    console.log(pnl);
     console.log(`🪙💸 Token sale! Sold ${formatValue(sellAmount, erc20.tokenDecimal)} ${swapFrom} for ${formatValue(buyAmount)} ${swapTo}`);
   } else {
     console.log(`Swap ${formatValue(sellAmount)} ${swapFrom} to ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo}`);
@@ -93,7 +112,7 @@ function parseDecodedArray(array, erc20) {
 }
 
 
-async function parseTx(fullTx) {
+async function parseTx(fullTx, pnl) {
   console.log('-----------------');
   console.log(`${moment(fullTx.timeStamp * 1000).fromNow()}...`);
   const txs = fullTx.txs;
@@ -135,10 +154,14 @@ async function parseTx(fullTx) {
       const erc20 = txs.erc20;
       const internal = txs.internal;
       if (tx.functionName.includes('swap')) {
+        console.log(formatValueRaw(tx.value));
+        console.log(pnl);
+        pnl.wethOut += formatValueRaw(tx.value)
+        console.log(pnl);
         console.log(`🪙🛒 Token buy! Bought ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth`);
       } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
         const decodedArray = decodeExecute(tx.input);
-        parseDecodedArray(decodedArray, erc20);
+        parseDecodedArray(decodedArray, erc20, pnl);
       } else if (tx.functionName.includes('transfer')) {
         console.log(`🪙➡️  Token transfer. Transferred ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${erc20.to}`);
       } else {
@@ -234,8 +257,21 @@ async function getEtherscanData() {
   txArray = filterContractAddress(txArray, contractAddress);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
-  if (txArray.length > 0) txArray.forEach(tx => parseTx(tx));
+  const pnl = {
+    wethOut: 0,
+    wethIn: 0,
+    shitOut: 0,
+    shitIn: 0,
+  }
+  if (txArray.length > 0) txArray.forEach(tx => parseTx(tx, pnl));
   else console.log('NO TRANSACTIONS FOUND...!');
+  pnl.wethFinal = formatValue(pnl.wethIn - pnl.wethOut, 0);
+  pnl.shitFinal = formatValue(pnl.shitIn - pnl.shitOut, 0);
+  pnl.wethOut = formatValue(pnl.wethOut, 0);
+  pnl.wethIn = formatValue(pnl.wethIn, 0);
+  pnl.shitOut = formatValue(pnl.shitOut, 0);
+  pnl.shitIn = formatValue(pnl.shitIn, 0);
+  console.log(pnl);
 }
 
 

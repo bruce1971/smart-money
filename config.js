@@ -6,8 +6,8 @@ let participantAddresses = ['0x70399b85054dd1d94f2264afc8704a3ee308abaf', '0x565
 participantAddresses = participantAddresses.map(x => x.toLowerCase());
 
 // const contractAddress =  null;
-// const contractAddress =  '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9'; //bitcoin
-const contractAddress =  '0x6982508145454ce325ddbe47a25d4ec3d2311933'; //pepe
+const contractAddress =  '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9'; //bitcoin
+// const contractAddress =  '0x6982508145454ce325ddbe47a25d4ec3d2311933'; //pepe
 // const contractAddress =  '0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410'; //hams
 
 module.exports = {
