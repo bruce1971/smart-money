@@ -92,23 +92,54 @@ function parseDecodedArray(array, erc20, pnl) {
   let swapTo = addresses[swapPath.at(-1).toLowerCase()] || swapPath.at(-1);
 
   if (swapFrom === 'WETH') {
-    console.log('buy..');
-    console.log(pnl);
     pnl.wethOut += formatValueRaw(sellAmount)
     pnl.shitIn += formatValueRaw(buyAmount, erc20.tokenDecimal)
-    console.log(pnl);
     console.log(`🪙🛒 Token buy! Bought ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo} for ${formatValue(sellAmount)} ${swapFrom}`);
   } else if (swapTo === 'WETH') {
-    console.log('sale..');
-    console.log(pnl);
     pnl.wethIn += formatValueRaw(buyAmount)
     pnl.shitOut += formatValueRaw(sellAmount, erc20.tokenDecimal)
-    console.log(pnl);
     console.log(`🪙💸 Token sale! Sold ${formatValue(sellAmount, erc20.tokenDecimal)} ${swapFrom} for ${formatValue(buyAmount)} ${swapTo}`);
   } else {
     console.log(`Swap ${formatValue(sellAmount)} ${swapFrom} to ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo}`);
     // FIXME: erc20.tokendecimal not always good
   }
+}
+
+function formatPnl(pnl) {
+  const shitInEth = 0.00002254; //bitcoin
+  // const shitInEth = 0.00000000097097; //pepe
+  const ethInUsd = 1850;
+
+  const wethFinal = pnl.wethIn - pnl.wethOut;
+  pnl.wethFinal = formatValue(wethFinal, 0);
+  pnl.wethFinalInUsd = formatValue(wethFinal * ethInUsd, 0);
+
+  const shitFinal = pnl.shitIn - pnl.shitOut;
+  pnl.shitFinal = formatValue(shitFinal, 0);
+  const shitFinalInEth = shitFinal * shitInEth;
+  pnl.shitFinalInUsd = formatValue(shitFinalInEth * ethInUsd, 0);
+
+  const pnlInEth = shitFinalInEth + wethFinal;
+  const pnlInUsd = pnlInEth * ethInUsd;
+  pnl.pnlInEth = formatValue(pnlInEth, 0);
+  pnl.pnlInUsd = formatValue(pnlInUsd, 0);
+
+  pnl.wethOut = formatValue(pnl.wethOut, 0);
+  pnl.wethIn = formatValue(pnl.wethIn, 0);
+  pnl.shitOut = formatValue(pnl.shitOut, 0);
+  pnl.shitIn = formatValue(pnl.shitIn, 0);
+  console.log(pnl);
+
+  console.log('--------');
+  console.log(`ETH invested --> ${pnl.wethOut} eth`);
+  console.log(`Shitcoins bought --> ${pnl.shitIn}`);
+  console.log(`ETH taken out --> ${pnl.wethIn} eth`);
+
+  console.log(`ETH bag current --> ${pnl.wethFinal} eth`);
+  console.log(`Shitcoin bag current --> ${pnl.shitFinal}`);
+
+  console.log(`ETH bag current (usd) --> $${pnl.pnlInUsd}`);
+  console.log(`Shitcoin bag current (usd) --> $${pnl.shitFinalInUsd}`);
 }
 
 
@@ -257,21 +288,10 @@ async function getEtherscanData() {
   txArray = filterContractAddress(txArray, contractAddress);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
-  const pnl = {
-    wethOut: 0,
-    wethIn: 0,
-    shitOut: 0,
-    shitIn: 0,
-  }
+  const pnl = { wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 }
   if (txArray.length > 0) txArray.forEach(tx => parseTx(tx, pnl));
   else console.log('NO TRANSACTIONS FOUND...!');
-  pnl.wethFinal = formatValue(pnl.wethIn - pnl.wethOut, 0);
-  pnl.shitFinal = formatValue(pnl.shitIn - pnl.shitOut, 0);
-  pnl.wethOut = formatValue(pnl.wethOut, 0);
-  pnl.wethIn = formatValue(pnl.wethIn, 0);
-  pnl.shitOut = formatValue(pnl.shitOut, 0);
-  pnl.shitIn = formatValue(pnl.shitIn, 0);
-  console.log(pnl);
+  formatPnl(pnl)
 }
 
 
