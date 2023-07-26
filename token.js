@@ -8,8 +8,8 @@ async function getEtherscanData() {
   let txLength = 1;
   let startblock = 0;
   const allTransactions = [];
-  // while(i < 3) {
-  while(txLength > 0) {
+  while(i < 1) {
+  // while(txLength > 0) {
     console.log(i);
     let transactions = await axios.get(contractUrl(startblock)).then(res => res.data.result);
     txLength = transactions.length;
@@ -23,7 +23,18 @@ async function getEtherscanData() {
     allTransactions.push(...transactions)
     console.log('---------------------------');
   }
-  console.log(allTransactions.length);
+
+  for (var j = 0; j < 15; j++) {
+    console.log(j);
+    console.log(`https://etherscan.io/tx/${allTransactions[j].hash}`);
+    console.log(allTransactions[j]);
+  }
+
+  // TODO:
+  // 1. collect all wallets in a unique array
+  // 2. get pnl of all wallets
+  // 3. rank them
+
 }
 
 
