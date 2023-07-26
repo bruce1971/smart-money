@@ -1,12 +1,15 @@
 const basePath = process.cwd();
+const moment = require('moment');
 const {etherscanApiKey} = require(`${basePath}/config.js`);
 
 module.exports = {
     accountUrl: accountUrl,
+    contractUrl: contractUrl,
     abiUrl: abiUrl,
     round: round,
     formatValue: formatValue,
     formatValueRaw: formatValueRaw,
+    formatTimestamp: formatTimestamp
 }
 
 function accountUrl(type, address) {
@@ -20,6 +23,19 @@ function accountUrl(type, address) {
      &page=1
      &sort=desc
      &apikey=${etherscanApiKey}
+  `.replace(/\s/g, '')
+}
+
+function contractUrl(startblock, endblock) {
+  return `
+    https://api.etherscan.io/api
+     ?module=account
+     &action=tokentx
+     &contractaddress=0x6982508145454ce325ddbe47a25d4ec3d2311933
+     &startblock=${startblock}
+     &endblock=${endblock}
+     &sort=desc
+     &apikey=I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG
   `.replace(/\s/g, '')
 }
 
@@ -54,4 +70,8 @@ function formatValueRaw(value, decimals=18) {
   else if (value > 99) value = round(value, 1);
   else value = round(value, 2);
   return value;
+}
+
+function formatTimestamp(timeStamp) {
+  console.log(`${moment(timeStamp * 1000).fromNow()}...`);
 }

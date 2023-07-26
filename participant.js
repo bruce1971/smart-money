@@ -1,5 +1,4 @@
 const axios = require('axios');
-const moment = require('moment');
 const basePath = process.cwd();
 const { participantAddresses, contractAddress } = require(`${basePath}/config.js`);
 const { decodeExecute } = require(`${basePath}/universalDecoder.js`);
@@ -89,12 +88,12 @@ function formatPnl(pnl) {
 
 async function parseTx(fullTx, pnl) {
   console.log('-----------------');
-  console.log(`${moment(fullTx.timeStamp * 1000).fromNow()}...`);
+  formatTimestamp(fullTx.timeStamp);
   const txs = fullTx.txs;
   const txsKeys = Object.keys(txs);
   const txsValues = Object.values(txs);
   const hash = txsValues[0].hash;
-  // console.log(`https://etherscan.io/tx/${hash}`);
+  console.log(`https://etherscan.io/tx/${hash}`);
 
   if (txsKeys.includes('normal')) {
     const tx = txs.normal;
