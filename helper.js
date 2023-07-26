@@ -26,15 +26,15 @@ function accountUrl(type, address) {
   `.replace(/\s/g, '')
 }
 
-function contractUrl(startblock, endblock) {
+function contractUrl(startblock) {
   return `
     https://api.etherscan.io/api
      ?module=account
      &action=tokentx
      &contractaddress=0x6982508145454ce325ddbe47a25d4ec3d2311933
      &startblock=${startblock}
-     &endblock=${endblock}
-     &sort=desc
+     &endblock=99999999
+     &sort=asc
      &apikey=I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG
   `.replace(/\s/g, '')
 }

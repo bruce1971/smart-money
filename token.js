@@ -1,47 +1,62 @@
 const axios = require('axios');
-const moment = require('moment');
 const basePath = process.cwd();
-const { participantAddresses, contractAddress } = require(`${basePath}/config.js`);
-const { decodeExecute } = require(`${basePath}/universalDecoder.js`);
-const { addresses } = require(`${basePath}/addresses.js`);
 const { contractUrl, formatTimestamp } = require(`${basePath}/helper.js`);
 
 
 async function getEtherscanData() {
-  // 17757598
+  let i = 0;
+  let txLength = 1;
   let startblock = 0;
-  let endblock = 99999999;
-  for (var i = 0; i < [1,2,3,4,5].length; i++) {
-    const transactions = await axios.get(contractUrl(startblock, endblock)).then(res => {
-      const txs = res.data.result;
-      txs.forEach(tx => tx.type = 'normal');
-      return txs;
-    });
+  const allTransactions = [];
+  // while(i < 3) {
+  while(txLength > 0) {
+    console.log(i);
+    let transactions = await axios.get(contractUrl(startblock)).then(res => res.data.result);
+    txLength = transactions.length;
+    const firstTx = transactions[0];
+    console.log('first',firstTx.blockNumber);
+    const lastTx = transactions[transactions.length - 1];
+    console.log('last',lastTx.blockNumber);
+    startblock = lastTx.blockNumber;
+    i += 1;
+    transactions = transactions.filter(tx => tx.hash !== lastTx.hash);
+    allTransactions.push(...transactions)
+    console.log('---------------------------');
   }
-
-  let stopped = false
-  let startblock = 0;
-  let endblock = 99999999;
-  // infinite loop
-  while(!stopped) {
-      const transactions = await axios.get(contractUrl(startblock, endblock)).then(res => res.data.result);
-      if (res.something) stopped = true // stop when you want
-  }
-
-  if (transactions.length > 0) {
-    const first = transactions[0];
-    formatTimestamp(first.timeStamp);
-    console.log(`https://etherscan.io/tx/${first.hash}`);
-    console.log('first',first);
-
-    const last = transactions[transactions.length - 1];
-    formatTimestamp(last.timeStamp);
-    console.log(`https://etherscan.io/tx/${last.hash}`);
-    console.log('last',last);
-
-    console.log(transactions.length);
-  } else { console.log('NO TRANSACTIONS') }
+  console.log(allTransactions.length);
 }
 
 
 getEtherscanData()
+
+
+
+
+// function mode(arr){
+//     return arr.sort((a,b) =>
+//           arr.filter(v => v===a).length
+//         - arr.filter(v => v===b).length
+//     ).pop();
+// }
+
+// const txHashes = allTransactions.map(tx => tx.hash);
+// const modeHash = mode(txHashes);
+// console.log(modeHash);
+// console.log(allTransactions.filter(tx => tx.hash === modeHash));
+// const txHashes2 = [...new Set(txHashes)];
+// console.log(txHashes.length);
+// console.log(txHashes2.length);
+
+// if (transactions.length > 0) {
+//   const first = transactions[0];
+//   formatTimestamp(first.timeStamp);
+//   console.log(`https://etherscan.io/tx/${first.hash}`);
+//   console.log('first',first);
+//
+//   const last = transactions[transactions.length - 1];
+//   formatTimestamp(last.timeStamp);
+//   console.log(`https://etherscan.io/tx/${last.hash}`);
+//   console.log('last',last);
+//
+//   console.log(transactions.length);
+// } else { console.log('NO TRANSACTIONS') }
