@@ -24,11 +24,22 @@ async function getEtherscanData() {
     console.log('---------------------------');
   }
 
-  for (var j = 0; j < 15; j++) {
-    console.log(j);
-    console.log(`https://etherscan.io/tx/${allTransactions[j].hash}`);
-    console.log(allTransactions[j]);
-  }
+  // for (var j = 300; j < 315; j++) {
+  //   console.log(j);
+  //   console.log(`https://etherscan.io/tx/${allTransactions[j].hash}`);
+  //   console.log(allTransactions[j]);
+  // }
+
+  let allWallets = [];
+  allTransactions.forEach(tx => {
+    allWallets.push(tx.from);
+    allWallets.push(tx.to);
+  });
+  allWallets = [...new Set(allWallets)];
+
+  console.log(allWallets);
+  console.log(allWallets.length);
+
 
   // TODO:
   // 1. collect all wallets in a unique array

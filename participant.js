@@ -9,6 +9,7 @@ const {
   round,
   formatValue,
   formatValueRaw,
+  formatTimestamp,
 } = require(`${basePath}/helper.js`);
 
 
@@ -44,7 +45,6 @@ function parseDecodedArray(array, erc20, pnl) {
     console.log(`🪙💸 Token sale! Sold ${formatValue(sellAmount, erc20.tokenDecimal)} ${swapFrom} for ${formatValue(buyAmount)} ${swapTo}`);
   } else {
     console.log(`Swap ${formatValue(sellAmount)} ${swapFrom} to ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo}`);
-    console.log(array);
     // FIXME: erc20.tokendecimal not always good
   }
 }
@@ -127,10 +127,10 @@ async function parseTx(fullTx, pnl) {
     } else if (txsKeys.includes('erc20')) {
       const erc20 = txs.erc20;
       const internal = txs.internal;
-      if (tx.functionName.includes('swap')) {
-        console.log(formatValueRaw(tx.value));
+      if (tx.functionName.includes('swap(')) {
         console.log(pnl);
-        pnl.wethOut += formatValueRaw(tx.value)
+        pnl.wethOut += formatValueRaw(tx.value);
+        pnl.shitIn += formatValueRaw(erc20.value);
         console.log(pnl);
         console.log(`🪙🛒 Token buy! Bought ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth`);
       } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
