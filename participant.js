@@ -1,8 +1,9 @@
 const axios = require('axios');
+const argv = require('minimist')(process.argv.slice(2));
 const basePath = process.cwd();
-const { participantAddresses, contractAddress } = require(`${basePath}/config.js`);
+// const { participantAddresses, contractAddress } = require(`${basePath}/config.js`);
 const { decodeExecute } = require(`${basePath}/universalDecoder.js`);
-const { addresses } = require(`${basePath}/addresses.js`);
+const addresses = require(`${basePath}/addresses.js`);
 const {
   accountUrl,
   abiUrl,
@@ -12,6 +13,9 @@ const {
   formatTimestamp,
 } = require(`${basePath}/helper.js`);
 
+const participantAddresses = addresses.inputP[argv.p];
+const contractAddress = addresses.inputA[argv.a];
+const transactionHash = addresses.inputH[argv.h];
 
 function filterContractAddress(array, address) {
   if (!address) return array;
@@ -25,6 +29,7 @@ function filterContractAddress(array, address) {
 
 
 function parseDecodedArray(array, erc20, pnl) {
+  // console.log(array);
   let buyAmount = 0;
   let sellAmount = 0;
   array.forEach(el => {
@@ -32,8 +37,8 @@ function parseDecodedArray(array, erc20, pnl) {
     sellAmount += Number(el.amountIn);
   });
   let swapPath = array[0].path;
-  let swapFrom = addresses[swapPath[0].toLowerCase()] || swapPath[0];
-  let swapTo = addresses[swapPath.at(-1).toLowerCase()] || swapPath.at(-1);
+  let swapFrom = addresses.addressLib[swapPath[0].toLowerCase()] || swapPath[0];
+  let swapTo = addresses.addressLib[swapPath.at(-1).toLowerCase()] || swapPath.at(-1);
 
   if (swapFrom === 'WETH') {
     pnl.wethOut += formatValueRaw(sellAmount)
@@ -128,13 +133,12 @@ async function parseTx(fullTx, pnl) {
       const erc20 = txs.erc20;
       const internal = txs.internal;
       if (tx.functionName.includes('swap(')) {
-        console.log(pnl);
         pnl.wethOut += formatValueRaw(tx.value);
         pnl.shitIn += formatValueRaw(erc20.value);
-        console.log(pnl);
         console.log(`🪙🛒 Token buy! Bought ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth`);
       } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
         const decodedArray = decodeExecute(tx.input);
+        // console.log(txs);
         parseDecodedArray(decodedArray, erc20, pnl);
       } else if (tx.functionName.includes('transfer')) {
         console.log(`🪙➡️  Token transfer. Transferred ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${erc20.to}`);
@@ -227,14 +231,14 @@ async function getEtherscanData() {
     txArray = txArray.concat(txArray1);
   };
 
-  // txArray = txArray.filter(el => el.hash === '0xe1befebe3c5deddcb8555138fae630191f9735287d80e1a36bb2ee9650b2b11b')
+  if (transactionHash) txArray = txArray.filter(el => el.hash === transactionHash)
   txArray = filterContractAddress(txArray, contractAddress);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   const pnl = { wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 }
   if (txArray.length > 0) txArray.forEach(tx => parseTx(tx, pnl));
   else console.log('NO TRANSACTIONS FOUND...!');
-  formatPnl(pnl)
+  // formatPnl(pnl)
 }
 
 

@@ -3,6 +3,7 @@
     "abi-decoder": "^2.4.0",
     "axios": "^1.4.0",
     "ethers": "^6.6.4",
+    "minimist": "^1.2.8",
     "moment": "^2.29.4",
     "node-telegram-bot-api": "^0.61.0"
   }
