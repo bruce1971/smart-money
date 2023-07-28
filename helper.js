@@ -73,5 +73,19 @@ function formatValueRaw(value, decimals=18) {
 }
 
 function formatTimestamp(timeStamp) {
-  console.log(`${moment(timeStamp * 1000).fromNow()}...`);
+  var now = moment(new Date());
+  var end = moment(timeStamp * 1000);
+  var duration = moment.duration(now.diff(end));
+  var years = duration.years(),
+      months = duration.months(),
+      days = duration.days(),
+      hours = duration.hours(),
+      minutes = duration.minutes(),
+      seconds = duration.seconds();
+  if (years > 0) console.log(`${years} years ${months} months ${days} days ago...`);
+  else if (months > 0) console.log(`${months} months ${days} days ago...`);
+  else if (days > 0) console.log(`${days} days ${hours} hours ago...`);
+  else if (hours > 0) console.log(`${hours} hours ${minutes} minutes...`);
+  else if (minutes > 0) console.log(`${minutes} minutes ${seconds} seconds ago...`);
+  else console.log(`${seconds} seconds ago...`);
 }

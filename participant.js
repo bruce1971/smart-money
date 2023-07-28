@@ -17,6 +17,7 @@ const participantAddresses = addresses.inputP[argv.p];
 const contractAddress = addresses.inputA[argv.a];
 const transactionHash = addresses.inputH[argv.h];
 
+
 function filterContractAddress(array, address) {
   if (!address) return array;
   const finalArray = [];
@@ -97,6 +98,8 @@ function formatPnl(pnl) {
   console.log('---');
   console.log(`ETH PnL --> ${pnl.wethFinal > 0 ? '+' : ''}${pnl.wethFinal} eth ($${pnl.wethFinalInUsd})`);
   console.log(`Shitcoin PnL --> ${pnl.shitFinal > 0 ? '+' : ''}${pnl.shitFinal} ($${pnl.shitFinalInUsd})`);
+  console.log('---');
+  console.log(`PnL --> ${pnlInUsd > 0 ? '+' : ''}$${pnl.pnlInUsd}`);
   console.log('=================================')
 }
 
