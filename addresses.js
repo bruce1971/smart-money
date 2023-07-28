@@ -1,8 +1,9 @@
 const addressLib = {
-  '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2': 'WETH',
-  '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9': 'HarryPotterObamaSonic10Inu',
-  '0x6982508145454ce325ddbe47a25d4ec3d2311933': 'Pepe',
-  '0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410': 'Hamsters'
+  '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2': { name: 'WETH', decimals: 18 },
+  '0xdac17f958d2ee523a2206206994597c13d831ec7': { name: 'USDT', decimals: 6 },
+  '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9': { name: 'HarryPotterObamaSonic10Inu', decimals: 5 },
+  '0x6982508145454ce325ddbe47a25d4ec3d2311933': { name: 'Pepe', decimals: 8 },
+  '0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410': { name: 'Hamsters' }
 }
 
 const inputP = {
@@ -19,7 +20,9 @@ const inputA = {
 }
 
 const inputH = {
-  'pepeToUsd': '0x88fc1135ea7d6e5e0ae338f6b6d87288f84750df9e2afea96f6be8466f1dd077'
+  'pepeToUsd': '0x88fc1135ea7d6e5e0ae338f6b6d87288f84750df9e2afea96f6be8466f1dd077',
+  'shitToShit': '0x205ada937ab463360674b69d197cb3032c3826c29536b138669035fc8297d66e',
+  'pepeToEth': '0xa548298d7108da04fb67071c8b328f3fd83a14733393643e55ebd31ad9bc6ef5'
 }
 
 

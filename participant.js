@@ -29,28 +29,38 @@ function filterContractAddress(array, address) {
 
 
 function parseDecodedArray(array, erc20, pnl) {
+  const { addressLib } = addresses;
   // console.log(array);
   let buyAmount = 0;
   let sellAmount = 0;
-  array.forEach(el => {
-    buyAmount += Number(el.amountOut);
-    sellAmount += Number(el.amountIn);
-  });
-  let swapPath = array[0].path;
-  let swapFrom = addresses.addressLib[swapPath[0].toLowerCase()] || swapPath[0];
-  let swapTo = addresses.addressLib[swapPath.at(-1).toLowerCase()] || swapPath.at(-1);
+  let swapFrom, swapTo;
 
-  if (swapFrom === 'WETH') {
+  if (array.length === 2 && addressLib[array[0].path[1].toLowerCase()].name === 'WETH' && addressLib[array[1].path[0].toLowerCase()].name === 'WETH') {
+    sellAmount += Number(array[0].amountIn);
+    buyAmount += Number(array[1].amountOut);
+    swapFrom = addressLib[array[0].path[0].toLowerCase()] || { name: array[0].path[0] };
+    swapTo = addressLib[array[1].path.at(-1).toLowerCase()] || { name: array[1].path.at(-1) };
+  }
+  else {
+    array.forEach(el => {
+      buyAmount += Number(el.amountOut);
+      sellAmount += Number(el.amountIn);
+    });
+    let swapPath = array[0].path;
+    swapFrom = addressLib[swapPath[0].toLowerCase()] || { name: swapPath[0] };
+    swapTo = addressLib[swapPath.at(-1).toLowerCase()] || { name: swapPath.at(-1) };
+  }
+
+  if (swapFrom.name === 'WETH') {
     pnl.wethOut += formatValueRaw(sellAmount)
     pnl.shitIn += formatValueRaw(buyAmount, erc20.tokenDecimal)
-    console.log(`🪙🛒 Token buy! Bought ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo} for ${formatValue(sellAmount)} ${swapFrom}`);
-  } else if (swapTo === 'WETH') {
+    console.log(`🪙🛒 Token buy! Bought ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name}`);
+  } else if (swapTo.name === 'WETH') {
     pnl.wethIn += formatValueRaw(buyAmount)
     pnl.shitOut += formatValueRaw(sellAmount, erc20.tokenDecimal)
-    console.log(`🪙💸 Token sale! Sold ${formatValue(sellAmount, erc20.tokenDecimal)} ${swapFrom} for ${formatValue(buyAmount)} ${swapTo}`);
+    console.log(`🪙💸 Token sale! Sold ${formatValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(buyAmount)} ${swapTo.name}`);
   } else {
-    console.log(`Swap ${formatValue(sellAmount)} ${swapFrom} to ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo}`);
-    // FIXME: erc20.tokendecimal not always good
+    console.log(`🪙💸 Swap ${formatValue(sellAmount)} ${swapFrom.name} to ${formatValue(buyAmount, swapTo.decimals)} ${swapTo.name}`);
   }
 }
 
@@ -238,7 +248,7 @@ async function getEtherscanData() {
   const pnl = { wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 }
   if (txArray.length > 0) txArray.forEach(tx => parseTx(tx, pnl));
   else console.log('NO TRANSACTIONS FOUND...!');
-  // formatPnl(pnl)
+  formatPnl(pnl)
 }
 
 
