@@ -69,7 +69,6 @@ function decodeExecute(transactionInput) {
               })
       }
     });
-
     return finalArray;
 }
 
@@ -85,8 +84,6 @@ function extractPathFromV3(fullPath, reverse = false) {
             currentAddress = "";
         }
     }
-    if (reverse) {
-        return path.reverse();
-    }
+    if (reverse) return path.reverse();
     return path;
 }

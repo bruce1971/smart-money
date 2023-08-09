@@ -1,6 +1,8 @@
 const basePath = process.cwd();
 const moment = require('moment');
-const {etherscanApiKey} = require(`${basePath}/config.js`);
+const etherscanApiKey = "I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG";
+
+// const {etherscanApiKey} = require(`${basePath}/config.js`);
 
 module.exports = {
     accountUrl: accountUrl,

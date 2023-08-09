@@ -1,7 +1,6 @@
 const axios = require('axios');
 const argv = require('minimist')(process.argv.slice(2));
 const basePath = process.cwd();
-// const { participantAddresses, contractAddress } = require(`${basePath}/config.js`);
 const { decodeExecute } = require(`${basePath}/universalDecoder.js`);
 const addresses = require(`${basePath}/addresses.js`);
 const {
@@ -31,12 +30,11 @@ function filterContractAddress(array, address) {
 
 function parseDecodedArray(array, erc20, pnl) {
   const { addressLib } = addresses;
-  // console.log(array);
   let buyAmount = 0;
   let sellAmount = 0;
   let swapFrom, swapTo;
 
-  if (array.length === 2 && addressLib[array[0].path[1].toLowerCase()].name === 'WETH' && addressLib[array[1].path[0].toLowerCase()].name === 'WETH') {
+  if (array.length === 2 && addressLib[array[0].path[1].toLowerCase()]?.name === 'WETH' && addressLib[array[1].path[0].toLowerCase()]?.name === 'WETH') {
     sellAmount += Number(array[0].amountIn);
     buyAmount += Number(array[1].amountOut);
     swapFrom = addressLib[array[0].path[0].toLowerCase()] || { name: array[0].path[0] };
@@ -140,7 +138,7 @@ async function parseTx(fullTx, pnl) {
         console.log(`💎➡️  NFT transfer. Transferred ${erc721tx.tokenName} ${erc721tx.tokenID} to ${erc721tx.to}`);
       } else {
         console.log('⭕️💎 OTHER ERC721...');
-        console.log(txs);
+        // console.log(txs);
       }
     } else if (txsKeys.includes('erc20')) {
       const erc20 = txs.erc20;
@@ -151,7 +149,6 @@ async function parseTx(fullTx, pnl) {
         console.log(`🪙🛒 Token buy! Bought ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth`);
       } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
         const decodedArray = decodeExecute(tx.input);
-        // console.log(txs);
         parseDecodedArray(decodedArray, erc20, pnl);
       } else if (tx.functionName.includes('transfer')) {
         console.log(`🪙➡️  Token transfer. Transferred ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${erc20.to}`);
@@ -166,7 +163,7 @@ async function parseTx(fullTx, pnl) {
       console.log(`Withdraw from Blur`);
     } else {
       console.log('⭕️ OTHER NORMAL..');
-      console.log(txs);
+      // console.log(txs);
     }
   } else {
     console.log('❌ NO NORMAL TXS...');
@@ -175,10 +172,10 @@ async function parseTx(fullTx, pnl) {
       console.log(`🪙➡️  Token receival. Received ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} from ${erc20.from}`);
     } else if (txsKeys.includes('erc721')) {
       console.log('💎');
-      console.log(txs);
+      // console.log(txs);
     } else if (txsKeys.includes('erc1155')) {
       console.log('💎💎');
-      console.log(txs);
+      // console.log(txs);
     }
   }
 }
@@ -251,7 +248,7 @@ async function getEtherscanData() {
   const pnl = { wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 }
   if (txArray.length > 0) txArray.forEach(tx => parseTx(tx, pnl));
   else console.log('NO TRANSACTIONS FOUND...!');
-  formatPnl(pnl)
+  formatPnl(pnl);
 }
 
 
