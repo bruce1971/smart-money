@@ -1,6 +1,9 @@
 const axios = require('axios');
 const basePath = process.cwd();
 const { contractUrl, formatTimestamp } = require(`${basePath}/helper.js`);
+const argv = require('minimist')(process.argv.slice(2));
+const addresses = require(`${basePath}/addresses.js`);
+const tokenAddress = addresses.inputA[argv.a];
 
 
 async function getEtherscanData() {
@@ -11,7 +14,7 @@ async function getEtherscanData() {
   while(i < 1) {
   // while(txLength > 0) {
     console.log(i);
-    let transactions = await axios.get(contractUrl(startblock)).then(res => res.data.result);
+    let transactions = await axios.get(contractUrl(startblock, tokenAddress)).then(res => res.data.result);
     txLength = transactions.length;
     const firstTx = transactions[0];
     console.log('first',firstTx.blockNumber);

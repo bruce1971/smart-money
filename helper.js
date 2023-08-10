@@ -2,8 +2,6 @@ const basePath = process.cwd();
 const moment = require('moment');
 const etherscanApiKey = "I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG";
 
-// const {etherscanApiKey} = require(`${basePath}/config.js`);
-
 module.exports = {
     accountUrl: accountUrl,
     contractUrl: contractUrl,
@@ -28,12 +26,12 @@ function accountUrl(type, address) {
   `.replace(/\s/g, '')
 }
 
-function contractUrl(startblock) {
+function contractUrl(startblock, tokenAddress) {
   return `
     https://api.etherscan.io/api
      ?module=account
      &action=tokentx
-     &contractaddress=0x6982508145454ce325ddbe47a25d4ec3d2311933
+     &contractaddress=${tokenAddress}
      &startblock=${startblock}
      &endblock=99999999
      &sort=asc
