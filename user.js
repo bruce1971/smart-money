@@ -12,13 +12,13 @@ const {
   formatTimestamp,
 } = require(`${basePath}/helper.js`);
 
-const userAddresses = addresses.inputP[argv.u];
-const contractAddress = addresses.inputA[argv.a];
-const transactionHash = addresses.inputH[argv.h];
+const inputUserAddresses = addresses.inputU[argv.u];
+const inputContractAddress = addresses.inputA[argv.a];
+const inputTransactionHash = addresses.inputH[argv.h];
 
 
-function filterContractAddress(array, address) {
-  if (!address) return array;
+function filterContractAddress(array, contractAddress) {
+  if (!contractAddress) return array;
   const finalArray = [];
   array.forEach(el => {
     const contractAddresses = Object.values(el.txs).map(x => x.contractAddress);
@@ -102,7 +102,7 @@ function formatPnl(pnl) {
 }
 
 
-async function parseTx(fullTx, pnl) {
+async function parseTx(fullTx, userAddresses, pnl) {
   console.log('-----------------');
   formatTimestamp(fullTx.timeStamp);
   const txs = fullTx.txs;
@@ -246,15 +246,17 @@ async function getUserData(userAddresses, contractAddress, transactionHash=null)
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   const pnl = { wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 }
-  if (txArray.length > 0) txArray.forEach(tx => parseTx(tx, pnl));
+  if (txArray.length > 0) txArray.forEach(tx => parseTx(tx, userAddresses, pnl));
   else console.log('NO TRANSACTIONS FOUND...!');
   formatPnl(pnl);
 }
 
 
-getUserData(userAddresses, contractAddress, transactionHash)
+if (inputUserAddresses) {
+  getUserData(inputUserAddresses, inputContractAddress, inputTransactionHash);
+}
 
 
 module.exports = {
-    getUserData
+    getUserData: getUserData
 }

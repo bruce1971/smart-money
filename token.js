@@ -4,6 +4,7 @@ const { contractUrl, formatTimestamp } = require(`${basePath}/helper.js`);
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`${basePath}/addresses.js`);
 const tokenAddress = addresses.inputA[argv.a];
+const {getUserData} = require(`${basePath}/user.js`);
 
 
 async function getWallets () {
@@ -27,12 +28,6 @@ async function getWallets () {
     console.log('---------------------------');
   }
 
-  // for (var j = 300; j < 315; j++) {
-  //   console.log(j);
-  //   console.log(`https://etherscan.io/tx/${allTransactions[j].hash}`);
-  //   console.log(allTransactions[j]);
-  // }
-
   let allWallets = [];
   allTransactions.forEach(tx => {
     allWallets.push(tx.from);
@@ -52,13 +47,11 @@ async function getEtherscanData(tokenAddress) {
 
   const allWallets = await getWallets(tokenAddress);
 
-  console.log(allWallets[0]);
-
-  // allWallets.forEach(wallet => {
-  //   console.log(wallet);
-  // });
-
-
+  for (var i = 5; i < 10; i++) {
+    const userAddresses = [allWallets[i]];
+    console.log(userAddresses);
+    await getUserData(userAddresses, tokenAddress)
+  }
 }
 
 
