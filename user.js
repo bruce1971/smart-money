@@ -12,7 +12,7 @@ const {
   formatTimestamp,
 } = require(`${basePath}/helper.js`);
 
-const participantAddresses = addresses.inputP[argv.p];
+const userAddresses = addresses.inputP[argv.u];
 const contractAddress = addresses.inputA[argv.a];
 const transactionHash = addresses.inputH[argv.h];
 
@@ -114,9 +114,9 @@ async function parseTx(fullTx, pnl) {
   if (txsKeys.includes('normal')) {
     const tx = txs.normal;
     value = formatValue(tx.value);
-    if (tx.from.toLowerCase() === participantAddresses[0] && tx.functionName === '' && tx.input === '0x') {
+    if (tx.from.toLowerCase() === userAddresses[0] && tx.functionName === '' && tx.input === '0x') {
       console.log(`💸➡️  Send ${value}eth to ${tx.to}`);
-    } else if (tx.to.toLowerCase() === participantAddresses[0] && tx.functionName === '') {
+    } else if (tx.to.toLowerCase() === userAddresses[0] && tx.functionName === '') {
       console.log(`⬅️ 💸 Receive ${value}eth from ${tx.from}`);
     } else if (tx.functionName.includes('setApprovalForAll')) {
       console.log(`👍👍 Set Approval for All...`);
@@ -234,10 +234,10 @@ async function txsForSingleAddress(address) {
 }
 
 
-async function getEtherscanData() {
+async function getUserData(userAddresses, contractAddress, transactionHash=null) {
   let txArray = [];
-  for (const participantAddress of participantAddresses) {
-    const txArray1 = await txsForSingleAddress(participantAddress);
+  for (const userAddress of userAddresses) {
+    const txArray1 = await txsForSingleAddress(userAddress);
     txArray = txArray.concat(txArray1);
   };
 
@@ -252,4 +252,9 @@ async function getEtherscanData() {
 }
 
 
-getEtherscanData()
+getUserData(userAddresses, contractAddress, transactionHash)
+
+
+module.exports = {
+    getUserData
+}

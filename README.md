@@ -1,15 +1,20 @@
 # smart-money
 
-## tests
+## USERS
 
 ### all txs of a user
-node participant.js -p=scribbs
-node participant.js -p=gr0wcrypt0
-node participant.js -p=artchick
+node user.js -u=scribbs
+node user.js -u=gr0wcrypt0
+node user.js -u=artchick
 
 ### all txs of a user for a given token
-node participant.js -p=scribbs -a=pepe
+node user.js -u=scribbs -a=pepe
 
 ### a given transaction
-node participant.js -p=other -a=pepe -h=pepeToUsd
-node participant.js -p=scribbs -a=pepe -h=shitToShit
+node user.js -u=other -a=pepe -h=pepeToUsd
+node user.js -u=scribbs -a=pepe -h=shitToShit
+
+
+## TOKENS
+
+node token.js -a=pepe  

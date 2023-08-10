@@ -6,7 +6,7 @@ const addresses = require(`${basePath}/addresses.js`);
 const tokenAddress = addresses.inputA[argv.a];
 
 
-async function getEtherscanData() {
+async function getWallets () {
   let i = 0;
   let txLength = 1;
   let startblock = 0;
@@ -39,49 +39,27 @@ async function getEtherscanData() {
     allWallets.push(tx.to);
   });
   allWallets = [...new Set(allWallets)];
+  return allWallets;
+}
 
-  console.log(allWallets);
-  console.log(allWallets.length);
 
+async function getEtherscanData(tokenAddress) {
 
   // TODO:
   // 1. collect all wallets in a unique array
   // 2. get pnl of all wallets
   // 3. rank them
 
+  const allWallets = await getWallets(tokenAddress);
+
+  console.log(allWallets[0]);
+
+  // allWallets.forEach(wallet => {
+  //   console.log(wallet);
+  // });
+
+
 }
 
 
-getEtherscanData()
-
-
-
-
-// function mode(arr){
-//     return arr.sort((a,b) =>
-//           arr.filter(v => v===a).length
-//         - arr.filter(v => v===b).length
-//     ).pop();
-// }
-
-// const txHashes = allTransactions.map(tx => tx.hash);
-// const modeHash = mode(txHashes);
-// console.log(modeHash);
-// console.log(allTransactions.filter(tx => tx.hash === modeHash));
-// const txHashes2 = [...new Set(txHashes)];
-// console.log(txHashes.length);
-// console.log(txHashes2.length);
-
-// if (transactions.length > 0) {
-//   const first = transactions[0];
-//   formatTimestamp(first.timeStamp);
-//   console.log(`https://etherscan.io/tx/${first.hash}`);
-//   console.log('first',first);
-//
-//   const last = transactions[transactions.length - 1];
-//   formatTimestamp(last.timeStamp);
-//   console.log(`https://etherscan.io/tx/${last.hash}`);
-//   console.log('last',last);
-//
-//   console.log(transactions.length);
-// } else { console.log('NO TRANSACTIONS') }
+getEtherscanData(tokenAddress);
