@@ -87,6 +87,11 @@ async function txsForSingleAddress(address) {
     return txs;
   });
 
+  // const erc20Transactions = [];
+  // const internalTransactions = [];
+  // const erc721Transactions = [];
+  // const erc1155Transactions = [];
+
   let transactions = [
     ...normalTransactions,
     ...internalTransactions,
@@ -94,6 +99,7 @@ async function txsForSingleAddress(address) {
     ...erc721Transactions,
     ...erc1155Transactions
   ];
+  console.log('transactions.length', transactions.length);
 
   const txHashes = [...new Set(transactions.map(tx => tx.hash))];
   const txArray = [];
@@ -128,7 +134,7 @@ async function getUserData(userAddresses, contractAddress, transactionHash=null)
   if (txArray.length > 0) {
     txArray.forEach(async tx => {
       const activityLog = await parseTx(tx, userAddresses, pnl);
-      console.log(activityLog);
+      // console.log(activityLog);
     })
   }
   else console.log('NO TRANSACTIONS FOUND...!');

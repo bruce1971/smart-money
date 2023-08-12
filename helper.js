@@ -12,12 +12,13 @@ module.exports = {
     formatTimestamp: formatTimestamp
 }
 
-function accountUrl(type, address) {
+function accountUrl(type, address, contractAddress) {
   return `
     https://api.etherscan.io/api
      ?module=account
      &action=${type}
      &address=${address}
+     ${contractAddress ? `&contractaddress=${contractAddress}` : ''}
      &startblock=0
      &endblock=99999999
      &page=1

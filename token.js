@@ -45,14 +45,26 @@ async function getEtherscanData(tokenAddress) {
   // 2. get pnl of all wallets
   // 3. rank them
 
-  const allWallets = await getWallets(tokenAddress);
-
-  for (var i = 5; i < 10; i++) {
-    const userAddresses = [allWallets[i]];
-    console.log(userAddresses);
-    await getUserData(userAddresses, tokenAddress)
-  }
+  // const allWallets = await getWallets(tokenAddress);
+  //
+  // for (var i = 5; i < 10; i++) {
+  //   const userAddresses = [allWallets[i]];
+  //   console.log(userAddresses);
+  //   await getUserData(userAddresses, tokenAddress)
+  // }
+  console.log('START');
+  console.time('TIME');
+  await getUserData([ '0xf5c0cdb9e18a4af157fdd369540ec9f4912b5edf' ], tokenAddress)
+  await getUserData([ '0x1298652974068e0d3a7bcdd6e29d6409101833ac' ], tokenAddress)
+  await getUserData(['0x8e5ca1872062bee63b8a46493f6de36d4870ff88'], tokenAddress)
+  console.timeEnd('TIME');
 }
 
 
 getEtherscanData(tokenAddress);
+
+
+// WHAT CAN BE OPTIMIZED?
+// 1. NUMBER OF WALLETS PNL CHECKED?
+// 2. NUMBER OF REQUESTS PER WALLET
+// 3. FILTER PARAMS ON EACH REQUEST
