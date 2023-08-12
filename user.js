@@ -60,28 +60,28 @@ function formatPnl(pnl) {
 }
 
 
-async function txsForSingleAddress(address) {
-  const normalTransactions = await axios.get(accountUrl('txlist', address)).then(res => {
+async function txsForSingleAddress(address, contractAddress) {
+  const normalTransactions = await axios.get(accountUrl('txlist', address, contractAddress)).then(res => {
     const txs = res.data.result;
     txs.forEach(tx => tx.type = 'normal');
     return txs;
   });
-  const internalTransactions = await axios.get(accountUrl('txlistinternal', address)).then(res => {
+  const internalTransactions = await axios.get(accountUrl('txlistinternal', address, contractAddress)).then(res => {
     const txs = res.data.result;
     txs.forEach(tx => tx.type = 'internal')
     return txs;
   });
-  const erc20Transactions = await axios.get(accountUrl('tokentx', address)).then(res => {
+  const erc20Transactions = await axios.get(accountUrl('tokentx', address, contractAddress)).then(res => {
     const txs = res.data.result;
     txs.forEach(tx => tx.type = 'erc20')
     return txs;
   });
-  const erc721Transactions = await axios.get(accountUrl('tokennfttx', address)).then(res => {
+  const erc721Transactions = await axios.get(accountUrl('tokennfttx', address, contractAddress)).then(res => {
     const txs = res.data.result;
     txs.forEach(tx => tx.type = 'erc721')
     return txs;
   });
-  const erc1155Transactions = await axios.get(accountUrl('token1155tx', address)).then(res => {
+  const erc1155Transactions = await axios.get(accountUrl('token1155tx', address, contractAddress)).then(res => {
     const txs = res.data.result;
     txs.forEach(tx => tx.type = 'erc1155')
     return txs;
@@ -122,7 +122,7 @@ async function txsForSingleAddress(address) {
 async function getUserData(userAddresses, contractAddress, transactionHash=null) {
   let txArray = [];
   for (const userAddress of userAddresses) {
-    const txArray1 = await txsForSingleAddress(userAddress);
+    const txArray1 = await txsForSingleAddress(userAddress, contractAddress);
     txArray = txArray.concat(txArray1);
   };
 
