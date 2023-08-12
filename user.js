@@ -125,7 +125,12 @@ async function getUserData(userAddresses, contractAddress, transactionHash=null)
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   const pnl = { wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 }
-  if (txArray.length > 0) txArray.forEach(tx => parseTx(tx, userAddresses, pnl));
+  if (txArray.length > 0) {
+    txArray.forEach(async tx => {
+      const activityLog = await parseTx(tx, userAddresses, pnl);
+      console.log(activityLog);
+    })
+  }
   else console.log('NO TRANSACTIONS FOUND...!');
   formatPnl(pnl);
 }
