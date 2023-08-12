@@ -1,10 +1,10 @@
 const axios = require('axios');
 const basePath = process.cwd();
-const { contractUrl, formatTimestamp } = require(`${basePath}/helper.js`);
+const { contractUrl } = require(`${basePath}/helper.js`);
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`${basePath}/addresses.js`);
 const tokenAddress = addresses.inputA[argv.a];
-const {getUserData} = require(`${basePath}/user.js`);
+const { getUserData } = require(`${basePath}/user.js`);
 
 
 async function getWallets () {
