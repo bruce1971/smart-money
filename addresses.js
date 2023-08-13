@@ -14,9 +14,9 @@ const inputU = {
 }
 
 const inputA = {
-  'bitcoin': '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9',
-  'pepe': '0x6982508145454ce325ddbe47a25d4ec3d2311933',
-  'hams': '0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410',
+  'bitcoin': { address: '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9', type: 'erc20' },
+  'pepe': { address: '0x6982508145454ce325ddbe47a25d4ec3d2311933', type: 'erc20' },
+  'hams': { address: '0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410', type: 'erc20' },
 }
 
 const inputH = {

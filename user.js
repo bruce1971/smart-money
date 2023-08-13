@@ -61,36 +61,35 @@ function formatPnl(pnl) {
 
 
 async function txsForSingleAddress(address, contractAddress) {
-  const normalTransactions = await axios.get(accountUrl('txlist', address, contractAddress)).then(res => {
+
+  const normalTransactions = await axios.get(accountUrl('txlist', address, contractAddress?.address)).then(res => {
     const txs = res.data.result;
     txs.forEach(tx => tx.type = 'normal');
     return txs;
   });
-  const internalTransactions = await axios.get(accountUrl('txlistinternal', address, contractAddress)).then(res => {
+  const internalTransactions = await axios.get(accountUrl('txlistinternal', address, contractAddress?.address)).then(res => {
     const txs = res.data.result;
     txs.forEach(tx => tx.type = 'internal')
     return txs;
   });
-  const erc20Transactions = await axios.get(accountUrl('tokentx', address, contractAddress)).then(res => {
-    const txs = res.data.result;
-    txs.forEach(tx => tx.type = 'erc20')
-    return txs;
-  });
-  const erc721Transactions = await axios.get(accountUrl('tokennfttx', address, contractAddress)).then(res => {
-    const txs = res.data.result;
-    txs.forEach(tx => tx.type = 'erc721')
-    return txs;
-  });
-  const erc1155Transactions = await axios.get(accountUrl('token1155tx', address, contractAddress)).then(res => {
-    const txs = res.data.result;
-    txs.forEach(tx => tx.type = 'erc1155')
-    return txs;
-  });
-
-  // const erc20Transactions = [];
-  // const internalTransactions = [];
-  // const erc721Transactions = [];
-  // const erc1155Transactions = [];
+  const erc20Transactions = ['erc20', undefined].includes(contractAddress?.type) ?
+    await axios.get(accountUrl('tokentx', address, contractAddress?.address)).then(res => {
+      const txs = res.data.result;
+      txs.forEach(tx => tx.type = 'erc20')
+      return txs;
+    }) : [];
+  const erc721Transactions = ['erc721', undefined].includes(contractAddress?.type)
+    ? await axios.get(accountUrl('tokennfttx', address, contractAddress?.address)).then(res => {
+      const txs = res.data.result;
+      txs.forEach(tx => tx.type = 'erc721')
+      return txs;
+    }) : [];
+  const erc1155Transactions = ['erc1155', undefined].includes(contractAddress?.type)
+    ? await axios.get(accountUrl('token1155tx', address, contractAddress?.address)).then(res => {
+      const txs = res.data.result;
+      txs.forEach(tx => tx.type = 'erc1155')
+      return txs;
+    }) : [];
 
   let transactions = [
     ...normalTransactions,
@@ -99,8 +98,8 @@ async function txsForSingleAddress(address, contractAddress) {
     ...erc721Transactions,
     ...erc1155Transactions
   ];
-  console.log('transactions.length', transactions.length);
 
+  // group txs together via hash
   const txHashes = [...new Set(transactions.map(tx => tx.hash))];
   const txArray = [];
   txHashes.forEach(hash => {
@@ -127,7 +126,7 @@ async function getUserData(userAddresses, contractAddress, transactionHash=null)
   };
 
   if (transactionHash) txArray = txArray.filter(el => el.hash === transactionHash)
-  txArray = filterContractAddress(txArray, contractAddress);
+  txArray = filterContractAddress(txArray, contractAddress?.address);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   const pnl = { wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 }
