@@ -80,7 +80,6 @@ async function parseTx(fullTx, userAddresses, pnl) {
       }
     } else if (txsKeys.includes('erc20')) {
       const erc20 = txs.erc20;
-      const internal = txs.internal;
       if (tx.functionName.includes('swap(')) {
         pnl.wethOut += formatValueRaw(tx.value);
         pnl.shitIn += formatValueRaw(erc20.value);

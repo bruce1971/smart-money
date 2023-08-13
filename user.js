@@ -53,9 +53,9 @@ function formatPnl(pnl) {
   console.log(`Shitcoins sold --> ${pnl.shitOut}`);
   console.log('---');
   console.log(`ETH PnL --> ${pnl.wethFinal > 0 ? '+' : ''}${pnl.wethFinal} eth ($${pnl.wethFinalInUsd})`);
-  console.log(`Shitcoin PnL --> ${pnl.shitFinal > 0 ? '+' : ''}${pnl.shitFinal} ($${pnl.shitFinalInUsd})`);
-  console.log('---');
-  console.log(`PnL --> ${pnlInUsd > 0 ? '+' : ''}$${pnl.pnlInUsd}`);
+  // console.log(`Shitcoin PnL --> ${pnl.shitFinal > 0 ? '+' : ''}${pnl.shitFinal} ($${pnl.shitFinalInUsd})`);
+  // console.log('---');
+  // console.log(`PnL --> ${pnlInUsd > 0 ? '+' : ''}$${pnl.pnlInUsd}`);
   console.log('=================================')
 }
 
@@ -75,6 +75,7 @@ async function txsForSingleAddress(address, contractAddress) {
     startblock = Math.min(...blockNumbers);
     endblock = Math.max(...blockNumbers);
   }
+  console.log('erc20', erc20Transactions.length);
   // nft
   const erc721Transactions = ['erc721', undefined].includes(contractAddress?.type)
     ? await axios.get(accountUrl('tokennfttx', address, contractAddress?.address)).then(res => {
@@ -95,12 +96,14 @@ async function txsForSingleAddress(address, contractAddress) {
     txs.forEach(tx => tx.type = 'normal');
     return txs;
   });
+  console.log('normal', normalTransactions.length);
   // smart contract interaction
-  const internalTransactions = await axios.get(accountUrl('txlistinternal', address, contractAddress?.address, startblock, endblock)).then(res => {
-    const txs = res.data.result;
-    txs.forEach(tx => tx.type = 'internal')
-    return txs;
-  });
+  const internalTransactions = false
+    ? await axios.get(accountUrl('txlistinternal', address, contractAddress?.address, startblock, endblock)).then(res => {
+      const txs = res.data.result;
+      txs.forEach(tx => tx.type = 'internal')
+      return txs;
+    }) : [];
 
   let transactions = [
     ...normalTransactions,
@@ -130,15 +133,18 @@ async function txsForSingleAddress(address, contractAddress) {
 
 
 async function getUserData(userAddresses, contractAddress, transactionHash=null) {
+  console.time('USER');
   let txArray = [];
   for (const userAddress of userAddresses) {
     const txArray1 = await txsForSingleAddress(userAddress, contractAddress);
     txArray = txArray.concat(txArray1);
   };
+  console.log('tx count1', txArray.length);
 
   if (transactionHash) txArray = txArray.filter(el => el.hash === transactionHash)
   txArray = filterContractAddress(txArray, contractAddress?.address);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
+  console.log('tx count2', txArray.length);
 
   const pnl = { wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 }
   if (txArray.length > 0) {
@@ -149,6 +155,8 @@ async function getUserData(userAddresses, contractAddress, transactionHash=null)
   }
   else console.log('NO TRANSACTIONS FOUND...!');
   formatPnl(pnl);
+
+  console.timeEnd('USER');
 }
 
 
