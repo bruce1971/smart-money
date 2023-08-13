@@ -37,28 +37,32 @@ async function getTokenWallets(tokenAddress) {
 }
 
 
+function formatPnlRanking(allPnl) {
+  allPnl.forEach((pnl, i) => {
+    console.log('--------------------------------------------------------');
+    console.log(`${i+1}. +${pnl.wethFinal} eth ${pnl.address}`);
+  });
+}
+
+
 async function getEtherscanData(tokenAddress) {
   console.time('TIME');
 
   const allWallets = await getTokenWallets(tokenAddress.address);
 
-  for (var i = 100; i < 110; i++) {
+  let allPnl = [];
+  for (var i = 100; i < 200; i++) {
+    console.log(i);
     const userAddresses = [allWallets[i]];
-    console.log(userAddresses);
-    await getUserData(userAddresses, tokenAddress)
+    const pnl = await getUserData(userAddresses, tokenAddress);
+    allPnl.push(pnl);
   }
 
-  // await getUserData([ '0xf5c0cdb9e18a4af157fdd369540ec9f4912b5edf' ], tokenAddress)
-  // await getUserData([ '0x1298652974068e0d3a7bcdd6e29d6409101833ac' ], tokenAddress)
-  // await getUserData(['0x8e5ca1872062bee63b8a46493f6de36d4870ff88'], tokenAddress)
+  allPnl = allPnl.sort((a, b) => b.wethFinal - a.wethFinal);
+  formatPnlRanking(allPnl);
+
   console.timeEnd('TIME');
 }
 
 
 getEtherscanData(inputTokenAddress);
-
-
-// WHAT CAN BE OPTIMIZED?
-// 1. NUMBER OF WALLETS PNL CHECKED?
-// 2. NUMBER OF REQUESTS PER WALLET
-// 3. FILTER PARAMS ON EACH REQUEST

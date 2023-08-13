@@ -11,7 +11,7 @@ const inputU = {
   'gr0wcrypt0': ['0x1CE2304369d957fc1F0Dd32C983F445E449F4C7A'],
   'artchick': ['0x0b8F4C4E7626A91460dac057eB43e0de59d5b44F'],
   'other': ['0x025be7c6a5ea75c5f4a1ad4cad087063ea108619'],
-  'ex': ['0xef28207a0bccf35a0ff5ae185e07048c71725866'],
+  'ex': ['0xb5e8add227067bf3db9989686285919fb669b580'],
 }
 
 const inputA = {

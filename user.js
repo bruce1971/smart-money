@@ -23,39 +23,38 @@ function filterContractAddress(array, contractAddress) {
 
 
 function formatPnl(pnl) {
-  // const shitInEth = 0.00002254; //bitcoin
   const shitInEth = 0.00000000097097; //pepe
   const ethInUsd = 1850;
 
-  const wethFinal = pnl.wethIn - pnl.wethOut;
-  pnl.wethFinal = formatValue(wethFinal, 0);
-  pnl.wethFinalInUsd = formatValue(wethFinal * ethInUsd, 0);
+  const pnlFormat = {... pnl};
 
-  const shitFinal = pnl.shitIn - pnl.shitOut;
-  pnl.shitFinal = formatValue(shitFinal, 0);
-  const shitFinalInEth = shitFinal * shitInEth;
-  pnl.shitFinalInUsd = formatValue(shitFinalInEth * ethInUsd, 0);
-
-  const pnlInEth = shitFinalInEth + wethFinal;
+  const shitFinalInEth = pnl.shitFinal * shitInEth;
+  const pnlInEth = shitFinalInEth + pnl.wethFinal;
   const pnlInUsd = pnlInEth * ethInUsd;
-  pnl.pnlInEth = formatValue(pnlInEth, 0);
-  pnl.pnlInUsd = formatValue(pnlInUsd, 0);
 
-  pnl.wethOut = formatValue(pnl.wethOut, 0);
-  pnl.wethIn = formatValue(pnl.wethIn, 0);
-  pnl.shitOut = formatValue(pnl.shitOut, 0);
-  pnl.shitIn = formatValue(pnl.shitIn, 0);
+  pnlFormat.wethFinal = formatValue(pnlFormat.wethFinal, 0);
+  pnlFormat.wethFinalInUsd = formatValue(pnlFormat.wethFinal * ethInUsd, 0);
+  pnlFormat.shitFinal = formatValue(pnlFormat.shitFinal, 0);
+  pnlFormat.shitFinalInUsd = formatValue(shitFinalInEth * ethInUsd, 0);
+
+  pnlFormat.pnlInEth = formatValue(pnlInEth, 0);
+  pnlFormat.pnlInUsd = formatValue(pnlInUsd, 0);
+
+  pnlFormat.wethOut = formatValue(pnlFormat.wethOut, 0);
+  pnlFormat.wethIn = formatValue(pnlFormat.wethIn, 0);
+  pnlFormat.shitOut = formatValue(pnlFormat.shitOut, 0);
+  pnlFormat.shitIn = formatValue(pnlFormat.shitIn, 0);
 
   console.log('=================================')
-  console.log(`ETH invested --> ${pnl.wethOut} eth`);
-  console.log(`ETH taken out --> ${pnl.wethIn} eth`);
-  console.log(`Shitcoins bought --> ${pnl.shitIn}`);
-  console.log(`Shitcoins sold --> ${pnl.shitOut}`);
+  console.log(`ETH invested --> ${pnlFormat.wethOut} eth`);
+  console.log(`ETH taken out --> ${pnlFormat.wethIn} eth`);
+  console.log(`Shitcoins bought --> ${pnlFormat.shitIn}`);
+  console.log(`Shitcoins sold --> ${pnlFormat.shitOut}`);
   console.log('---');
-  console.log(`ETH PnL --> ${pnl.wethFinal > 0 ? '+' : ''}${pnl.wethFinal} eth ($${pnl.wethFinalInUsd})`);
-  // console.log(`Shitcoin PnL --> ${pnl.shitFinal > 0 ? '+' : ''}${pnl.shitFinal} ($${pnl.shitFinalInUsd})`);
-  // console.log('---');
-  // console.log(`PnL --> ${pnlInUsd > 0 ? '+' : ''}$${pnl.pnlInUsd}`);
+  console.log(`ETH PnL --> ${pnlFormat.wethFinal > 0 ? '+' : ''}${pnlFormat.wethFinal} eth ($${pnlFormat.wethFinalInUsd})`);
+  console.log(`Shitcoin PnL --> ${pnlFormat.shitFinal > 0 ? '+' : ''}${pnlFormat.shitFinal} ($${pnlFormat.shitFinalInUsd})`);
+  console.log('---');
+  console.log(`PnL --> ${pnlInUsd > 0 ? '+' : ''}$${pnlFormat.pnlInUsd}`);
   console.log('=================================')
 }
 
@@ -75,7 +74,7 @@ async function txsForSingleAddress(address, contractAddress) {
     startblock = Math.min(...blockNumbers);
     endblock = Math.max(...blockNumbers);
   }
-  console.log('erc20', erc20Transactions.length);
+  // console.log('erc20', erc20Transactions.length);
   // nft
   const erc721Transactions = ['erc721', undefined].includes(contractAddress?.type)
     ? await axios.get(accountUrl('tokennfttx', address, contractAddress?.address)).then(res => {
@@ -96,7 +95,7 @@ async function txsForSingleAddress(address, contractAddress) {
     txs.forEach(tx => tx.type = 'normal');
     return txs;
   });
-  console.log('normal', normalTransactions.length);
+  // console.log('normal', normalTransactions.length);
   // smart contract interaction
   const internalTransactions = false
     ? await axios.get(accountUrl('txlistinternal', address, contractAddress?.address, startblock, endblock)).then(res => {
@@ -139,14 +138,14 @@ async function getUserData(userAddresses, contractAddress, transactionHash=null)
     const txArray1 = await txsForSingleAddress(userAddress, contractAddress);
     txArray = txArray.concat(txArray1);
   };
-  console.log('tx count1', txArray.length);
+  // console.log('tx count1', txArray.length);
 
   if (transactionHash) txArray = txArray.filter(el => el.hash === transactionHash)
   txArray = filterContractAddress(txArray, contractAddress?.address);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
-  console.log('tx count2', txArray.length);
+  // console.log('tx count2', txArray.length);
 
-  const pnl = { wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 }
+  const pnl = { address: userAddresses, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
   if (txArray.length > 0) {
     txArray.forEach(async tx => {
       const activityLog = await parseTx(tx, userAddresses, pnl);
@@ -154,9 +153,12 @@ async function getUserData(userAddresses, contractAddress, transactionHash=null)
     })
   }
   else console.log('NO TRANSACTIONS FOUND...!');
-  formatPnl(pnl);
 
+  pnl.wethFinal = pnl.wethIn - pnl.wethOut;
+  pnl.shitFinal = pnl.shitIn - pnl.shitOut;
+  // formatPnl(pnl);
   console.timeEnd('USER');
+  return pnl;
 }
 
 

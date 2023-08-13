@@ -1,5 +1,5 @@
 const basePath = process.cwd();
-const { decoder1, decoder2 } = require(`${basePath}/universalDecoder.js`);
+const { decoder1, decoder2 } = require(`${basePath}/decoder.js`);
 const addresses = require(`${basePath}/addresses.js`);
 const { formatValue, formatValueRaw, formatTimestamp } = require(`${basePath}/helper.js`);
 
@@ -104,6 +104,8 @@ async function parseTx(fullTx, userAddresses, pnl) {
     } else {
       finalObject.activity = '⭕️ OTHER NORMAL..';
     }
+    // console.log(finalObject.activity);
+    // console.log(tx);
   } else {
     finalObject.activity = '❌ NO NORMAL TXS...';
     if (txsKeys.includes('erc20')) {
