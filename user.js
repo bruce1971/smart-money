@@ -150,7 +150,7 @@ async function getUserData(userAddresses, contractAddress, transactionHash=null)
   if (txArray.length > 0) {
     txArray.forEach(async tx => {
       const activityLog = await parseTx(tx, userAddresses, pnl);
-      // console.log(activityLog);
+      if (inputUserAddresses) console.log(activityLog);
     })
   }
   else console.log('NO TRANSACTIONS FOUND...!');

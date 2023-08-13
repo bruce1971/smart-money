@@ -1,5 +1,5 @@
 const basePath = process.cwd();
-const { decodeExecute } = require(`${basePath}/universalDecoder.js`);
+const { decoder1, decoder2 } = require(`${basePath}/universalDecoder.js`);
 const addresses = require(`${basePath}/addresses.js`);
 const { formatValue, formatValueRaw, formatTimestamp } = require(`${basePath}/helper.js`);
 
@@ -85,7 +85,10 @@ async function parseTx(fullTx, userAddresses, pnl) {
         pnl.shitIn += formatValueRaw(erc20.value);
         finalObject.activity = `🪙🛒 Token buy! Bought ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth`;
       } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
-        const decodedArray = decodeExecute(tx.input);
+        const decodedArray = decoder1(tx.input);
+        finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl);
+      } else if (tx.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
+        const decodedArray = decoder2(tx.input);
         finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl);
       } else if (tx.functionName.includes('transfer')) {
         finalObject.activity = `🪙➡️  Token transfer. Transferred ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${erc20.to}`;

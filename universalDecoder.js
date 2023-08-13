@@ -9,15 +9,16 @@ const swapCodes = {
 };
 
 const basePath = process.cwd();
-let { abi } = require(`${basePath}/abis.js`);
-let universalInteface = new Interface(abi);
+let { abi1, abi2 } = require(`${basePath}/abis.js`);
+let universalInteface = new Interface(abi1);
+let universalInteface2 = new Interface(abi2);
 
 module.exports = {
-    decodeExecute: decodeExecute,
-    extractPathFromV3: extractPathFromV3,
+    decoder1,
+    decoder2
 }
 
-function decodeExecute(transactionInput) {
+function decoder1(transactionInput) {
     const parsedTx = universalInteface.parseTransaction({data: transactionInput});
     let commandsSplit = parsedTx.args[0].substring(2).match(/.{1,2}/g);
     const abiCoder = new AbiCoder();
@@ -86,4 +87,16 @@ function extractPathFromV3(fullPath, reverse = false) {
     }
     if (reverse) return path.reverse();
     return path;
+}
+
+function decoder2(transactionInput) {
+  const parsedTx = universalInteface2.parseTransaction({data: transactionInput});
+  const decoded = parsedTx.args;
+  let finalArray = [];
+  finalArray.push({
+      amountIn: decoded[0].toString(),
+      amountOut: decoded[1].toString(),
+      path: decoded[2]
+  })
+  return finalArray;
 }
