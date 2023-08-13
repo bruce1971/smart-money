@@ -62,34 +62,45 @@ function formatPnl(pnl) {
 
 async function txsForSingleAddress(address, contractAddress) {
 
-  const normalTransactions = await axios.get(accountUrl('txlist', address, contractAddress?.address)).then(res => {
-    const txs = res.data.result;
-    txs.forEach(tx => tx.type = 'normal');
-    return txs;
-  });
-  const internalTransactions = await axios.get(accountUrl('txlistinternal', address, contractAddress?.address)).then(res => {
-    const txs = res.data.result;
-    txs.forEach(tx => tx.type = 'internal')
-    return txs;
-  });
+  let startblock = 0, endblock = 99999999;
+  // shitcoin
   const erc20Transactions = ['erc20', undefined].includes(contractAddress?.type) ?
     await axios.get(accountUrl('tokentx', address, contractAddress?.address)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc20')
       return txs;
     }) : [];
+  if (contractAddress?.type === 'erc20') {
+    const blockNumbers = erc20Transactions.map(o => Number(o.blockNumber));
+    startblock = Math.min(...blockNumbers);
+    endblock = Math.max(...blockNumbers);
+  }
+  // nft
   const erc721Transactions = ['erc721', undefined].includes(contractAddress?.type)
     ? await axios.get(accountUrl('tokennfttx', address, contractAddress?.address)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc721')
       return txs;
     }) : [];
+  // nft2
   const erc1155Transactions = ['erc1155', undefined].includes(contractAddress?.type)
     ? await axios.get(accountUrl('token1155tx', address, contractAddress?.address)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc1155')
       return txs;
     }) : [];
+  // nomral
+  const normalTransactions = await axios.get(accountUrl('txlist', address, contractAddress?.address, startblock, endblock)).then(res => {
+    const txs = res.data.result;
+    txs.forEach(tx => tx.type = 'normal');
+    return txs;
+  });
+  // smart contract interaction
+  const internalTransactions = await axios.get(accountUrl('txlistinternal', address, contractAddress?.address, startblock, endblock)).then(res => {
+    const txs = res.data.result;
+    txs.forEach(tx => tx.type = 'internal')
+    return txs;
+  });
 
   let transactions = [
     ...normalTransactions,
