@@ -3,7 +3,8 @@ const { decoder1, decoder2 } = require(`${basePath}/decoder.js`);
 const addresses = require(`${basePath}/addresses.js`);
 const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue } = require(`${basePath}/helper.js`);
 const ethInUsd = 1850;
-const totalSupply = 420000000000000;
+// const totalSupply = 420000000000000;
+const totalSupply = 69000000000;
 
 
 function parseDecodedArray(array, erc20, pnl) {

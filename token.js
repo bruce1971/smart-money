@@ -41,8 +41,9 @@ function formatPnlRanking(allPnl) {
   const formattedPnl = allPnl.map(o => ({
     address: o.address[0],
     profit: round(o.wethFinal, 2)
-  }))
+  }));
   console.table(formattedPnl);
+  console.log(JSON.stringify(formattedPnl));
 }
 
 

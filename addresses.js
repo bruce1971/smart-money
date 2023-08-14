@@ -3,7 +3,15 @@ const addressLib = {
   '0xdac17f958d2ee523a2206206994597c13d831ec7': { name: 'USDT', decimals: 6 },
   '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9': { name: 'HarryPotterObamaSonic10Inu', decimals: 5 },
   '0x6982508145454ce325ddbe47a25d4ec3d2311933': { name: 'Pepe', decimals: 8 },
-  '0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410': { name: 'Hamsters' }
+  '0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410': { name: 'Hamsters' },
+  '0xa35923162c49cf95e6bf26623385eb431ad920d3': { name: 'Turbo' },
+}
+
+const inputA = {
+  'bitcoin': { address: '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9', type: 'erc20' },
+  'pepe': { address: '0x6982508145454ce325ddbe47a25d4ec3d2311933', type: 'erc20' },
+  'hams': { address: '0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410', type: 'erc20' },
+  'turbo': { address: '0xa35923162c49cf95e6bf26623385eb431ad920d3', type: 'erc20' },
 }
 
 const inputU = {
@@ -11,13 +19,7 @@ const inputU = {
   'gr0wcrypt0': ['0x1CE2304369d957fc1F0Dd32C983F445E449F4C7A'],
   'artchick': ['0x0b8F4C4E7626A91460dac057eB43e0de59d5b44F'],
   'other': ['0x025be7c6a5ea75c5f4a1ad4cad087063ea108619'],
-  'ex': ['0x24e86fb79428ee7b2797544332014d7fc25af13c'],
-}
-
-const inputA = {
-  'bitcoin': { address: '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9', type: 'erc20' },
-  'pepe': { address: '0x6982508145454ce325ddbe47a25d4ec3d2311933', type: 'erc20' },
-  'hams': { address: '0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410', type: 'erc20' },
+  'ex': ['0x490afd96f33ef169814e2a5ffc55dae99b6be963'],
 }
 
 const inputH = {
