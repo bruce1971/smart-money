@@ -156,7 +156,7 @@ async function getUserData(userAddresses, contractAddress, transactionHash=null)
 
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;
-  // formatPnl(pnl);
+  if (inputUserAddresses) formatPnl(pnl);
   console.timeEnd('USER');
   return pnl;
 }

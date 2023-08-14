@@ -9,6 +9,7 @@ node user.js -u=artchick
 
 ### all txs of a user for a given token
 node user.js -u=scribbs -a=pepe
+node user.js -u=ex -a=pepe
 
 ### a given transaction
 node user.js -u=other -a=pepe -h=pepeToUsd

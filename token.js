@@ -1,6 +1,6 @@
 const axios = require('axios');
 const basePath = process.cwd();
-const { contractUrl } = require(`${basePath}/helper.js`);
+const { contractUrl, round } = require(`${basePath}/helper.js`);
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`${basePath}/addresses.js`);
 const inputTokenAddress = addresses.inputA[argv.a];
@@ -38,7 +38,11 @@ async function getTokenWallets(tokenAddress) {
 
 
 function formatPnlRanking(allPnl) {
-  console.table(allPnl);
+  const formattedPnl = allPnl.map(o => ({
+    address: o.address[0],
+    profit: round(o.wethFinal, 2)
+  }))
+  console.table(formattedPnl);
 }
 
 
@@ -54,7 +58,7 @@ async function getEtherscanData(tokenAddress) {
   allWallets = filterOutWallets(allWallets);
 
   let allPnl = [];
-  for (var i = 200; i < 300; i++) {
+  for (var i = 0; i < 500; i++) {
     console.log('----------');
     console.log(i);
     const userAddresses = [allWallets[i]];

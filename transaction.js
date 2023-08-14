@@ -1,7 +1,9 @@
 const basePath = process.cwd();
 const { decoder1, decoder2 } = require(`${basePath}/decoder.js`);
 const addresses = require(`${basePath}/addresses.js`);
-const { formatValue, formatValueRaw, formatTimestamp } = require(`${basePath}/helper.js`);
+const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue } = require(`${basePath}/helper.js`);
+const ethInUsd = 1850;
+const totalSupply = 420000000000000;
 
 
 function parseDecodedArray(array, erc20, pnl) {
@@ -27,28 +29,51 @@ function parseDecodedArray(array, erc20, pnl) {
   }
 
   if (swapFrom.name === 'WETH') {
-    pnl.wethOut += formatValueRaw(sellAmount)
-    pnl.shitIn += formatValueRaw(buyAmount, erc20.tokenDecimal)
-    return `🪙🛒 Token buy! Bought ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name}`;
+    pnl.wethOut += formatValueRaw(sellAmount);
+    pnl.shitIn += formatValueRaw(buyAmount, erc20.tokenDecimal);
+    const unitPriceEth = formatValueRaw(sellAmount)/formatValueRaw(buyAmount, erc20.tokenDecimal);
+    const mcap = unitPriceEth * ethInUsd * totalSupply;
+    return `🪙🛒 Token buy! Bought ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name} ($${formatLargeValue(mcap)} Mcap)`;
   } else if (swapTo.name === 'WETH') {
+    const unitPriceEth = formatValueRaw(buyAmount)/formatValueRaw(sellAmount, erc20.tokenDecimal);
+    const mcap = unitPriceEth * ethInUsd * totalSupply;
     pnl.wethIn += formatValueRaw(buyAmount)
     pnl.shitOut += formatValueRaw(sellAmount, erc20.tokenDecimal)
-    return `🪙💸 Token sale! Sold ${formatValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(buyAmount)} ${swapTo.name}`;
+    return `🪙💸 Token sale! Sold ${formatValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(buyAmount)} ${swapTo.name} ($${formatLargeValue(mcap)} Mcap)`;
   } else {
     return `🪙💸 Swap ${formatValue(sellAmount)} ${swapFrom.name} to ${formatValue(buyAmount, swapTo.decimals)} ${swapTo.name}`;
   }
 }
 
 
+function parseErc20(txs, tx, finalObject, pnl) {
+  const erc20 = txs.erc20;
+  if (tx.functionName.includes('swap(')) {
+    // const unitPriceEth = formatValueRaw(buyAmount)/formatValueRaw(sellAmount, erc20.tokenDecimal);
+    // const mcap = unitPriceEth * ethInUsd * totalSupply;
+    pnl.wethOut += formatValueRaw(tx.value);
+    pnl.shitIn += formatValueRaw(erc20.value);
+    finalObject.activity = `🪙🛒 Token buy! Bought ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth (XXX Mcap)`;
+  } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
+    const decodedArray = decoder1(tx.input);
+    finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl);
+  } else if (tx.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
+    const decodedArray = decoder2(tx.input);
+    finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl);
+  } else if (tx.functionName.includes('transfer')) {
+    finalObject.activity = `🪙➡️  Token transfer. Transferred ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${erc20.to}`;
+  } else {
+    finalObject.activity = '⭕️🪙 OTHER ERC20...';
+  }
+}
+
+
 async function parseTx(fullTx, userAddresses, pnl) {
-  const finalObject = {
-    ago: formatTimestamp(fullTx.timeStamp)
-  };
+  const finalObject = { ago: formatTimestamp(fullTx.timeStamp) };
   const txs = fullTx.txs;
   const txsKeys = Object.keys(txs);
   const txsValues = Object.values(txs);
-  const hash = txsValues[0].hash;
-  // return `https://etherscan.io/tx/${hash}`);
+  finalObject.tx = `https://etherscan.io/tx/${txsValues[0].hash}`;
 
   if (txsKeys.includes('normal')) {
     const tx = txs.normal;
@@ -79,22 +104,7 @@ async function parseTx(fullTx, userAddresses, pnl) {
         finalObject.activity = '⭕️💎 OTHER ERC721...';
       }
     } else if (txsKeys.includes('erc20')) {
-      const erc20 = txs.erc20;
-      if (tx.functionName.includes('swap(')) {
-        pnl.wethOut += formatValueRaw(tx.value);
-        pnl.shitIn += formatValueRaw(erc20.value);
-        finalObject.activity = `🪙🛒 Token buy! Bought ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth`;
-      } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
-        const decodedArray = decoder1(tx.input);
-        finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl);
-      } else if (tx.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
-        const decodedArray = decoder2(tx.input);
-        finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl);
-      } else if (tx.functionName.includes('transfer')) {
-        finalObject.activity = `🪙➡️  Token transfer. Transferred ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${erc20.to}`;
-      } else {
-        finalObject.activity = '⭕️🪙 OTHER ERC20...';
-      }
+      parseErc20(txs, txs.normal, finalObject, pnl);
     } else if (tx.functionName === 'deposit()' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
       finalObject.activity = `↪️  Wrap ${value} ETH to WETH`; //amount in decoded tx.input
     } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
@@ -104,8 +114,6 @@ async function parseTx(fullTx, userAddresses, pnl) {
     } else {
       finalObject.activity = '⭕️ OTHER NORMAL..';
     }
-    // console.log(finalObject.activity);
-    // console.log(tx);
   } else {
     finalObject.activity = '❌ NO NORMAL TXS...';
     if (txsKeys.includes('erc20')) {
