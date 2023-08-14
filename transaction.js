@@ -49,11 +49,11 @@ function parseDecodedArray(array, erc20, pnl) {
 function parseErc20(txs, tx, finalObject, pnl) {
   const erc20 = txs.erc20;
   if (tx.functionName.includes('swap(')) {
-    // const unitPriceEth = formatValueRaw(buyAmount)/formatValueRaw(sellAmount, erc20.tokenDecimal);
-    // const mcap = unitPriceEth * ethInUsd * totalSupply;
+    const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value);
+    const mcap = unitPriceEth * ethInUsd * totalSupply;
     pnl.wethOut += formatValueRaw(tx.value);
     pnl.shitIn += formatValueRaw(erc20.value);
-    finalObject.activity = `🪙🛒 Token buy! Bought ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth (XXX Mcap)`;
+    finalObject.activity = `🪙🛒 Token buy! Bought ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth ($${formatLargeValue(mcap)} Mcap)`;
   } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
     const decodedArray = decoder1(tx.input);
     finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl);
