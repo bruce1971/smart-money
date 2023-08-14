@@ -74,7 +74,7 @@ async function txsForSingleAddress(address, contractAddress) {
     startblock = Math.min(...blockNumbers);
     endblock = Math.max(...blockNumbers);
   }
-  // console.log('erc20', erc20Transactions.length);
+  console.log('erc20', erc20Transactions.length);
   // nft
   const erc721Transactions = ['erc721', undefined].includes(contractAddress?.type)
     ? await axios.get(accountUrl('tokennfttx', address, contractAddress?.address)).then(res => {
@@ -95,7 +95,7 @@ async function txsForSingleAddress(address, contractAddress) {
     txs.forEach(tx => tx.type = 'normal');
     return txs;
   });
-  // console.log('normal', normalTransactions.length);
+  console.log('normal', normalTransactions.length);
   // smart contract interaction
   const internalTransactions = false
     ? await axios.get(accountUrl('txlistinternal', address, contractAddress?.address, startblock, endblock)).then(res => {

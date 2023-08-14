@@ -38,22 +38,27 @@ async function getTokenWallets(tokenAddress) {
 
 
 function formatPnlRanking(allPnl) {
-  allPnl.forEach((pnl, i) => {
-    console.log('--------------------------------------------------------');
-    console.log(`${i+1}. +${pnl.wethFinal} eth ${pnl.address}`);
-  });
+  console.table(allPnl);
+}
+
+
+function filterOutWallets(allWallets) {
+  return allWallets.filter(w => !['0x000000', '0x111111'].some(substring => w.includes(substring)));
 }
 
 
 async function getEtherscanData(tokenAddress) {
   console.time('TIME');
 
-  const allWallets = await getTokenWallets(tokenAddress.address);
+  let allWallets = await getTokenWallets(tokenAddress.address);
+  allWallets = filterOutWallets(allWallets);
 
   let allPnl = [];
-  for (var i = 100; i < 200; i++) {
+  for (var i = 200; i < 300; i++) {
+    console.log('----------');
     console.log(i);
     const userAddresses = [allWallets[i]];
+    console.log(allWallets[i]);
     const pnl = await getUserData(userAddresses, tokenAddress);
     allPnl.push(pnl);
   }
