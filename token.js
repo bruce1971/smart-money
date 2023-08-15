@@ -59,13 +59,13 @@ async function getEtherscanData(tokenAddress) {
   allWallets = filterOutWallets(allWallets);
 
   let allPnl = [];
-  for (var i = 0; i < 500; i++) {
+  for (var i = 0; i < 20; i++) {
     console.log('----------');
     console.log(i);
     const userAddresses = [allWallets[i]];
     console.log(allWallets[i]);
-    const pnl = await getUserData(userAddresses, tokenAddress);
-    allPnl.push(pnl);
+    const userData = await getUserData(userAddresses, tokenAddress);
+    allPnl.push(userData.pnl);
   }
 
   allPnl = allPnl.sort((a, b) => b.wethFinal - a.wethFinal);

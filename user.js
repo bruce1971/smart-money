@@ -59,17 +59,10 @@ function formatPnl(pnl) {
 }
 
 
-async function txsForSingleAddress(address, contractAddress) {
+async function txsForSingleAddress(address, contractAddress, currentBlock) {
 
-  // let startblock = 0, endblock = 99999999;
-  const currentTimestamp = Math.floor(Date.now() / 1000);
-  console.log('currentTimestamp', currentTimestamp);
-  const currentBlock = await axios.get(blockUrl(currentTimestamp)).then(res => res.data.result);
-  console.log('currentBlock', currentBlock);
-
-
-  let endblock = 17921235;
-  let startblock = endblock - 1000;
+  let endblock = currentBlock ? currentBlock : 99999999;
+  let startblock = currentBlock ? endblock - 2000 : 0;
 
   // shitcoin
   const erc20Transactions = ['erc20', undefined].includes(contractAddress?.type) ?
@@ -83,7 +76,6 @@ async function txsForSingleAddress(address, contractAddress) {
     startblock = Math.min(...blockNumbers);
     endblock = Math.max(...blockNumbers);
   }
-  console.log('erc20', erc20Transactions.length);
   // nft
   const erc721Transactions = ['erc721', undefined].includes(contractAddress?.type)
     ? await axios.get(accountUrl('tokennfttx', address, contractAddress?.address, startblock, endblock)).then(res => {
@@ -104,7 +96,6 @@ async function txsForSingleAddress(address, contractAddress) {
     txs.forEach(tx => tx.type = 'normal');
     return txs;
   });
-  console.log('normal', normalTransactions.length);
   // smart contract interaction
   const internalTransactions = false
     ? await axios.get(accountUrl('txlistinternal', address, contractAddress?.address, startblock, endblock)).then(res => {
@@ -140,11 +131,26 @@ async function txsForSingleAddress(address, contractAddress) {
 }
 
 
+async function getActivityLog(txArray, userAddresses, pnl) {
+  let activityLogArray = [];
+  if (txArray.length > 0) {
+    txArray.forEach(async tx => {
+      const activityLog = await parseTx(tx, userAddresses, pnl);
+      activityLogArray.push(activityLog);
+      // if (inputUserAddresses) console.log(activityLog);
+    })
+  } else console.log('No txs found...');
+  return activityLogArray;
+}
+
+
 async function getUserData(userAddresses, contractAddress, transactionHash=null) {
   console.time('USER');
+  let currentBlock = true ? await axios.get(blockUrl(Math.floor(Date.now() / 1000))).then(res => res.data.result) : null;
+
   let txArray = [];
   for (const userAddress of userAddresses) {
-    const txArray1 = await txsForSingleAddress(userAddress, contractAddress);
+    const txArray1 = await txsForSingleAddress(userAddress, contractAddress, currentBlock);
     txArray = txArray.concat(txArray1);
   };
 
@@ -153,25 +159,18 @@ async function getUserData(userAddresses, contractAddress, transactionHash=null)
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   const pnl = { address: userAddresses, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
-  if (txArray.length > 0) {
-    txArray.forEach(async tx => {
-      const activityLog = await parseTx(tx, userAddresses, pnl);
-      if (inputUserAddresses) console.log(activityLog);
-    })
-  }
-  else console.log('NO TRANSACTIONS FOUND...!');
+  const activityLog = await getActivityLog(txArray, userAddresses, pnl);
 
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;
-  if (inputUserAddresses) formatPnl(pnl);
+  const output = { pnl, activityLog };
+  if (inputUserAddresses) console.log(output);
   console.timeEnd('USER');
-  return pnl;
+  return output;
 }
 
 
-if (inputUserAddresses) {
-  getUserData(inputUserAddresses, inputContractAddress, inputTransactionHash);
-}
+if (inputUserAddresses) getUserData(inputUserAddresses, inputContractAddress, inputTransactionHash);
 
 
 module.exports = {
