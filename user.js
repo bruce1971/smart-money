@@ -3,7 +3,7 @@ const argv = require('minimist')(process.argv.slice(2));
 const basePath = process.cwd();
 const addresses = require(`${basePath}/addresses.js`);
 const { parseDecodedArray, parseTx } = require(`${basePath}/transaction.js`);
-const { accountUrl, formatValue } = require(`${basePath}/helper.js`);
+const { accountUrl, blockUrl, formatValue } = require(`${basePath}/helper.js`);
 
 
 const inputUserAddresses = addresses.inputU[argv.u];
@@ -61,10 +61,19 @@ function formatPnl(pnl) {
 
 async function txsForSingleAddress(address, contractAddress) {
 
-  let startblock = 0, endblock = 99999999;
+  // let startblock = 0, endblock = 99999999;
+  const currentTimestamp = Math.floor(Date.now() / 1000);
+  console.log('currentTimestamp', currentTimestamp);
+  const currentBlock = await axios.get(blockUrl(currentTimestamp)).then(res => res.data.result);
+  console.log('currentBlock', currentBlock);
+
+
+  let endblock = 17921235;
+  let startblock = endblock - 1000;
+
   // shitcoin
   const erc20Transactions = ['erc20', undefined].includes(contractAddress?.type) ?
-    await axios.get(accountUrl('tokentx', address, contractAddress?.address)).then(res => {
+    await axios.get(accountUrl('tokentx', address, contractAddress?.address, startblock, endblock)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc20')
       return txs;
@@ -77,14 +86,14 @@ async function txsForSingleAddress(address, contractAddress) {
   console.log('erc20', erc20Transactions.length);
   // nft
   const erc721Transactions = ['erc721', undefined].includes(contractAddress?.type)
-    ? await axios.get(accountUrl('tokennfttx', address, contractAddress?.address)).then(res => {
+    ? await axios.get(accountUrl('tokennfttx', address, contractAddress?.address, startblock, endblock)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc721')
       return txs;
     }) : [];
   // nft2
   const erc1155Transactions = ['erc1155', undefined].includes(contractAddress?.type)
-    ? await axios.get(accountUrl('token1155tx', address, contractAddress?.address)).then(res => {
+    ? await axios.get(accountUrl('token1155tx', address, contractAddress?.address, startblock, endblock)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc1155')
       return txs;
@@ -138,12 +147,10 @@ async function getUserData(userAddresses, contractAddress, transactionHash=null)
     const txArray1 = await txsForSingleAddress(userAddress, contractAddress);
     txArray = txArray.concat(txArray1);
   };
-  // console.log('tx count1', txArray.length);
 
   if (transactionHash) txArray = txArray.filter(el => el.hash === transactionHash)
   txArray = filterContractAddress(txArray, contractAddress?.address);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
-  // console.log('tx count2', txArray.length);
 
   const pnl = { address: userAddresses, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
   if (txArray.length > 0) {

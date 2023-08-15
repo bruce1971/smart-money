@@ -6,6 +6,7 @@ module.exports = {
     accountUrl: accountUrl,
     contractUrl: contractUrl,
     abiUrl: abiUrl,
+    blockUrl: blockUrl,
     round: round,
     formatValue: formatValue,
     formatValueRaw: formatValueRaw,
@@ -47,6 +48,17 @@ function abiUrl(address) {
     ?module=contract
     &action=getabi
     &address=${'0x2cc846fff0b08fb3bffad71f53a60b4b6e6d6482'}
+    &apikey=${etherscanApiKey}
+  `.replace(/\s/g, '')
+}
+
+function blockUrl(timestamp) {
+  return `
+  https://api.etherscan.io/api
+    ?module=block
+    &action=getblocknobytime
+    &timestamp=${timestamp}
+    &closest=before
     &apikey=${etherscanApiKey}
   `.replace(/\s/g, '')
 }
