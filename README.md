@@ -20,5 +20,8 @@ node token.js -a=bitcoin
 
 
 ## TG
-
 node telegram.js
+
+
+## S3 Deploy
+zip -r deployment_package.zip . 

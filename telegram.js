@@ -28,4 +28,6 @@ async function main() {
   sendTelegram(messages);
 }
 
+module.exports = { main }
+
 main();
