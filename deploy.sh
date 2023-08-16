@@ -1,3 +1,4 @@
 # DEPLOY
 
-zip -r deployment_packagegs.zip . 
+rm ./deployment_package.zip
+zip -r deployment_package.zip .

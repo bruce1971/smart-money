@@ -1,12 +1,13 @@
 import { main } from './telegram.js';
 
 export const handler = async (event) => {
-  main();
+  console.log('INIT LAMBDA...');
+  const sentMessages = await main();
   const response = {
     statusCode: 200,
-    body: JSON.stringify('Hello from Lambda 4!'),
+    body: JSON.stringify(sentMessages.map(m => m.text)),
   };
   return response;
 };
 
-console.log('yaaa');
+handler();
