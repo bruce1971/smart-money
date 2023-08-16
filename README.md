@@ -12,12 +12,13 @@ node user.js -u=scribbs -a=pepe
 node user.js -u=ex -a=pepe
 node user.js -u=ex -a=turbo
 
-### a given transaction
-node user.js -u=other -a=pepe -h=pepeToUsd
-node user.js -u=scribbs -a=pepe -h=shitToShit
-
 
 ## TOKENS
 node token.js -a=pepe  
 node token.js -a=turbo  
 node token.js -a=bitcoin  
+
+
+## TG
+
+node telegram.js

@@ -22,16 +22,9 @@ const inputU = {
   'ex': ['0x490afd96f33ef169814e2a5ffc55dae99b6be963'],
 }
 
-const inputH = {
-  'pepeToUsd': '0x88fc1135ea7d6e5e0ae338f6b6d87288f84750df9e2afea96f6be8466f1dd077',
-  'shitToShit': '0x205ada937ab463360674b69d197cb3032c3826c29536b138669035fc8297d66e',
-  'pepeToEth': '0xa548298d7108da04fb67071c8b328f3fd83a14733393643e55ebd31ad9bc6ef5'
-}
-
 
 module.exports = {
   addressLib,
   inputU,
-  inputA,
-  inputH
+  inputA
 };

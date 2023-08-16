@@ -8,7 +8,6 @@ const { accountUrl, blockUrl, formatValue } = require(`${basePath}/helper.js`);
 
 const inputUserAddresses = addresses.inputU[argv.u];
 const inputContractAddress = addresses.inputA[argv.a];
-const inputTransactionHash = addresses.inputH[argv.h];
 
 
 function filterContractAddress(array, contractAddress) {
@@ -59,10 +58,7 @@ function formatPnl(pnl) {
 }
 
 
-async function txsForSingleAddress(address, contractAddress, currentBlock) {
-
-  let endblock = currentBlock ? currentBlock : 99999999;
-  let startblock = currentBlock ? endblock - 2000 : 0;
+async function txsForSingleAddress(address, contractAddress, startblock, endblock) {
 
   // shitcoin
   const erc20Transactions = ['erc20', undefined].includes(contractAddress?.type) ?
@@ -144,17 +140,21 @@ async function getActivityLog(txArray, userAddresses, pnl) {
 }
 
 
-async function getUserData(userAddresses, contractAddress, transactionHash=null) {
+async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   console.time('USER');
-  let currentBlock = true ? await axios.get(blockUrl(Math.floor(Date.now() / 1000))).then(res => res.data.result) : null;
+
+  let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
+  const blocksAgo = secondsAgo ? secondsAgo/12.08 : null;
+
+  let endblock = currentBlock ? currentBlock : 99999999;
+  let startblock = currentBlock ? endblock - blocksAgo : 0;
 
   let txArray = [];
   for (const userAddress of userAddresses) {
-    const txArray1 = await txsForSingleAddress(userAddress, contractAddress, currentBlock);
+    const txArray1 = await txsForSingleAddress(userAddress, contractAddress, startblock, endblock);
     txArray = txArray.concat(txArray1);
   };
 
-  if (transactionHash) txArray = txArray.filter(el => el.hash === transactionHash)
   txArray = filterContractAddress(txArray, contractAddress?.address);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
@@ -170,7 +170,7 @@ async function getUserData(userAddresses, contractAddress, transactionHash=null)
 }
 
 
-if (inputUserAddresses) getUserData(inputUserAddresses, inputContractAddress, inputTransactionHash);
+if (inputUserAddresses) getUserData(inputUserAddresses, inputContractAddress);
 
 
 module.exports = {

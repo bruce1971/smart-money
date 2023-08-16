@@ -7,7 +7,8 @@ const addresses = require(`${basePath}/addresses.js`);
 
 
 async function getMessages() {
-  const userData = await getUserData(addresses.inputU['scribbs']);
+  const secondsAgo = 3600 * 24 * 3;
+  const userData = await getUserData(addresses.inputU['scribbs'], null, secondsAgo);
   return userData.activityLog;
 }
 
@@ -15,7 +16,6 @@ async function sendTelegram(messages) {
   const bot = new TelegramBot(YOUR_API_TOKEN, { polling: true });
   bot.stopPolling();
   const targetUserId = TARGET_USER_ID;
-  messages = messages.reverse();
   for (let i = 0; i < messages.length; i++) {
     const message = `${messages[i].activity} \n ${messages[i].tx}`;
     console.log(message);
