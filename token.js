@@ -75,4 +75,4 @@ async function getEtherscanData(tokenAddress) {
 }
 
 
-getEtherscanData(inputTokenAddress);
+if (require.main === module) getEtherscanData(inputTokenAddress);

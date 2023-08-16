@@ -144,7 +144,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   console.time('USER');
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
-  const blocksAgo = secondsAgo ? secondsAgo/12.08 : null;
+  const blocksAgo = secondsAgo ? Math.ceil(secondsAgo/12.08)+1 : null;
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
@@ -170,7 +170,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 }
 
 
-if (inputUserAddresses) getUserData(inputUserAddresses, inputContractAddress);
+if (require.main === module) getUserData(inputUserAddresses, inputContractAddress);
 
 
 module.exports = {

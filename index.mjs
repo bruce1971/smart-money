@@ -10,4 +10,4 @@ export const handler = async (event) => {
   return response;
 };
 
-handler();
+// handler();

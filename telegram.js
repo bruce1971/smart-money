@@ -32,6 +32,8 @@ async function main() {
   return sentMessages;
 }
 
+
 module.exports = { main };
 
-// main();
+
+if (require.main === module) main();
