@@ -160,6 +160,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 
   const pnl = { address: userAddresses, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
   const activityLog = await getActivityLog(txArray, userAddresses, pnl);
+  activityLog.forEach(o => o.user = 'scribbs'); // TODO: make dynamic
 
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;

@@ -1,5 +1,6 @@
 import { main } from './telegram.js';
 
+
 export const handler = async (event) => {
   console.log('INIT LAMBDA...');
   const sentMessages = await main();
@@ -9,5 +10,6 @@ export const handler = async (event) => {
   };
   return response;
 };
+
 
 // handler();

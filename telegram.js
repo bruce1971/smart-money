@@ -12,19 +12,21 @@ async function getMessages() {
   return userData.activityLog;
 }
 
+
 async function sendTelegram(messages) {
   const bot = new TelegramBot(YOUR_API_TOKEN, { polling: true });
   bot.stopPolling();
   const targetUserId = TARGET_USER_ID;
   const sentMessages = [];
   for (let i = 0; i < messages.length; i++) {
-    const message = `${messages[i].activity} \n${messages[i].tx}`;
+    const message = `${messages[i].user} \n${messages[i].activity} \n${messages[i].tx}`;
     console.log(message);
     const sentMessage = await bot.sendMessage(targetUserId, message);
     sentMessages.push(sentMessage);
   }
   return sentMessages;
 }
+
 
 async function main() {
   const messages = await getMessages();
