@@ -164,7 +164,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;
   const output = { pnl, activityLog };
-  if (inputUserAddresses) console.log(output);
+  // if (inputUserAddresses) console.log(output);
   console.timeEnd('USER');
   return output;
 }

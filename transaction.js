@@ -3,9 +3,11 @@ const { decoder1, decoder2 } = require(`${basePath}/decoder.js`);
 const addresses = require(`${basePath}/addresses.js`);
 const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue, shortAddr } = require(`${basePath}/helper.js`);
 const ethInUsd = 1850;
-// const totalSupply = 420000000000000; //pepe
-// const totalSupply = 69000000000; //turbo
-const totalSupply = 1000000000; //bitcoin
+
+
+function getTotalSupply(address){
+  return addresses.addressLib[address]?.totalSupply;
+}
 
 
 function parseDecodedArray(array, erc20, pnl) {
@@ -34,10 +36,12 @@ function parseDecodedArray(array, erc20, pnl) {
     pnl.wethOut += formatValueRaw(sellAmount);
     pnl.shitIn += formatValueRaw(buyAmount, erc20.tokenDecimal);
     const unitPriceEth = formatValueRaw(sellAmount)/formatValueRaw(buyAmount, erc20.tokenDecimal);
+    const totalSupply = getTotalSupply(erc20.contractAddress);
     const mcap = unitPriceEth * ethInUsd * totalSupply;
     return `🪙🛒 Token buy! Bought ${formatValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name} ($${formatLargeValue(mcap)} Mcap)`;
   } else if (swapTo.name === 'WETH') {
     const unitPriceEth = formatValueRaw(buyAmount)/formatValueRaw(sellAmount, erc20.tokenDecimal);
+    const totalSupply = getTotalSupply(erc20.contractAddress);
     const mcap = unitPriceEth * ethInUsd * totalSupply;
     pnl.wethIn += formatValueRaw(buyAmount)
     pnl.shitOut += formatValueRaw(sellAmount, erc20.tokenDecimal)
@@ -52,6 +56,7 @@ function parseErc20(txs, tx, finalObject, pnl) {
   const erc20 = txs.erc20;
   if (tx.functionName.includes('swap(')) {
     const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value);
+    const totalSupply = getTotalSupply(erc20.contractAddress);
     const mcap = unitPriceEth * ethInUsd * totalSupply;
     pnl.wethOut += formatValueRaw(tx.value);
     pnl.shitIn += formatValueRaw(erc20.value);

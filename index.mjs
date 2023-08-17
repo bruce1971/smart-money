@@ -7,7 +7,7 @@ import { getUserData } from './user.js';
 import addresses from './addresses.js';
 
 
-async function getMessages(userAddresses, secondsAgo=13600) {
+async function getMessages(userAddresses, secondsAgo=3600) {
   const userData = await getUserData(userAddresses, null, secondsAgo);
   return userData.activityLog;
 }
@@ -50,4 +50,4 @@ export const handler = async (event) => {
 };
 
 
-handler();
+// handler();
