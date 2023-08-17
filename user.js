@@ -61,8 +61,8 @@ function formatPnl(pnl) {
 async function txsForSingleAddress(address, contractAddress, startblock, endblock) {
 
   // shitcoin
-  const erc20Transactions = ['erc20', undefined].includes(contractAddress?.type) ?
-    await axios.get(accountUrl('tokentx', address, contractAddress?.address, startblock, endblock)).then(res => {
+  const erc20Transactions = ['erc20', undefined].includes(contractAddress?.type)
+    ? await axios.get(accountUrl('tokentx', address, contractAddress?.address, startblock, endblock)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc20')
       return txs;

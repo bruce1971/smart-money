@@ -1,7 +1,7 @@
 const basePath = process.cwd();
 const { decoder1, decoder2 } = require(`${basePath}/decoder.js`);
 const addresses = require(`${basePath}/addresses.js`);
-const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue } = require(`${basePath}/helper.js`);
+const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue, shortAddr } = require(`${basePath}/helper.js`);
 const ethInUsd = 1850;
 // const totalSupply = 420000000000000; //pepe
 // const totalSupply = 69000000000; //turbo
@@ -63,7 +63,7 @@ function parseErc20(txs, tx, finalObject, pnl) {
     const decodedArray = decoder2(tx.input);
     finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl);
   } else if (tx.functionName.includes('transfer')) {
-    finalObject.activity = `🪙➡️  Token transfer. Transferred ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${erc20.to}`;
+    finalObject.activity = `🪙➡️  Token transfer. Transferred ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${shortAddr(erc20.to)}`;
   } else {
     finalObject.activity = '⭕️🪙 OTHER ERC20...';
   }
@@ -81,9 +81,9 @@ async function parseTx(fullTx, userAddresses, pnl) {
     const tx = txs.normal;
     value = formatValue(tx.value);
     if (tx.from.toLowerCase() === userAddresses[0] && tx.functionName === '' && tx.input === '0x') {
-      finalObject.activity = `💸➡️  Send ${value}eth to ${tx.to}`;
+      finalObject.activity = `💸➡️  Send ${value}eth to ${shortAddr(tx.to)}`;
     } else if (tx.to.toLowerCase() === userAddresses[0] && tx.functionName === '') {
-      finalObject.activity = `⬅️ 💸 Receive ${value}eth from ${tx.from}`;
+      finalObject.activity = `⬅️ 💸 Receive ${value}eth from ${shortAddr(tx.from)}`;
     } else if (tx.functionName.includes('setApprovalForAll')) {
       finalObject.activity = `👍👍 Set Approval for All...`;
     } else if (tx.functionName.includes('approve')) {
@@ -101,7 +101,7 @@ async function parseTx(fullTx, userAddresses, pnl) {
       } else if (tx.functionName === 'fulfillAvailableAdvancedOrders(tuple[] advancedOrders, tuple[] criteriaResolvers, tuple[][] offerFulfillments, tuple[][] considerationFulfillments, bytes32 fulfillerConduitKey, address recipient, uint256 maximumFulfilled)') {
         finalObject.activity = `💎💸 NFT sale! Sold ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(tx.value)} eth on Opensea`;
       } else if (tx.functionName.includes('safeTransferFrom')) {
-        finalObject.activity = `💎➡️  NFT transfer. Transferred ${erc721tx.tokenName} ${erc721tx.tokenID} to ${erc721tx.to}`;
+        finalObject.activity = `💎➡️  NFT transfer. Transferred ${erc721tx.tokenName} ${erc721tx.tokenID} to ${shortAddr(erc721tx.to)}`;
       } else {
         finalObject.activity = '⭕️💎 OTHER ERC721...';
       }
@@ -120,7 +120,7 @@ async function parseTx(fullTx, userAddresses, pnl) {
     finalObject.activity = '❌ NO NORMAL TXS...';
     if (txsKeys.includes('erc20')) {
       const erc20 = txs.erc20;
-      finalObject.activity = `🪙➡️  Token receival. Received ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} from ${erc20.from}`;
+      finalObject.activity = `🪙➡️  Token receival. Received ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} from ${shortAddr(erc20.from)}`;
     } else if (txsKeys.includes('erc721')) {
       finalObject.activity = '💎';
     } else if (txsKeys.includes('erc1155')) {

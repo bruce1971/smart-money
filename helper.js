@@ -3,15 +3,16 @@ const moment = require('moment');
 const etherscanApiKey = "I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG";
 
 module.exports = {
-    accountUrl: accountUrl,
-    contractUrl: contractUrl,
-    abiUrl: abiUrl,
-    blockUrl: blockUrl,
-    round: round,
-    formatValue: formatValue,
-    formatValueRaw: formatValueRaw,
-    formatTimestamp: formatTimestamp,
-    formatLargeValue: formatLargeValue
+    accountUrl,
+    contractUrl,
+    abiUrl,
+    blockUrl,
+    round,
+    formatValue,
+    formatValueRaw,
+    formatTimestamp,
+    formatLargeValue,
+    shortAddr,
 }
 
 function accountUrl(type, address, contractAddress, startblock=0, endblock=99999999) {
@@ -112,4 +113,8 @@ function formatTimestamp(timeStamp) {
   else if (hours > 0) return `${hours} hours ${minutes} minutes...`;
   else if (minutes > 0) return `${minutes} minutes ${seconds} seconds ago...`;
   else return `${seconds} seconds ago...`;
+}
+
+function shortAddr(address) {
+  return address.substring(0,8);
 }
