@@ -18,10 +18,15 @@ async function sendTelegram(messages) {
   bot.stopPolling();
   const targetUserId = TARGET_USER_ID;
   const sentMessages = [];
-  for (let i = 0; i < messages.length; i++) {
-    const message = `${messages[i].user} \n\n${messages[i].activity} \n\n${messages[i].tx}`;
-    const sentMessage = await bot.sendMessage(targetUserId, message);
+  if (messages.length === 0) {
+    const sentMessage = await bot.sendMessage(targetUserId, 'No new txs...');
     sentMessages.push(sentMessage);
+  } else {
+    for (let i = 0; i < messages.length; i++) {
+      const message = `${messages[i].user} \n\n${messages[i].activity} \n\n${messages[i].tx}`;
+      const sentMessage = await bot.sendMessage(targetUserId, message);
+      sentMessages.push(sentMessage);
+    }
   }
   return sentMessages;
 }
