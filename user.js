@@ -26,6 +26,7 @@ function formatActivityLog(activityLog) {
     console.log('---------');
     console.log(a.ago);
     console.log(a.activity);
+    console.log(a.tx);
   });
 }
 

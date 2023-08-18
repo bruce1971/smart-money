@@ -19,8 +19,8 @@ function parseDecodedArray(array, erc20, pnl) {
   if (array.length === 2 && addressLib[array[0].path[1].toLowerCase()]?.name === 'WETH' && addressLib[array[1].path[0].toLowerCase()]?.name === 'WETH') {
     sellAmount += Number(array[0].amountIn);
     buyAmount += Number(array[1].amountOut);
-    swapFrom = addressLib[array[0].path[0].toLowerCase()] || { name: array[0].path[0] };
-    swapTo = addressLib[array[1].path.at(-1).toLowerCase()] || { name: array[1].path.at(-1) };
+    swapFrom = addressLib[array[0].path[0].toLowerCase()] || { name: shortAddr(array[0].path[0]) };
+    swapTo = addressLib[array[1].path.at(-1).toLowerCase()] || { name: shortAddr(array[1].path.at(-1)) };
   }
   else {
     array.forEach(el => {
@@ -28,8 +28,8 @@ function parseDecodedArray(array, erc20, pnl) {
       sellAmount += Number(el.amountIn);
     });
     let swapPath = array[0].path;
-    swapFrom = addressLib[swapPath[0].toLowerCase()] || { name: swapPath[0] };
-    swapTo = addressLib[swapPath.at(-1).toLowerCase()] || { name: swapPath.at(-1) };
+    swapFrom = addressLib[swapPath[0].toLowerCase()] || { name: shortAddr(swapPath[0]) };
+    swapTo = addressLib[swapPath.at(-1).toLowerCase()] || { name: shortAddr(swapPath.at(-1)) };
   }
 
   if (swapFrom.name === 'WETH') {
@@ -47,7 +47,7 @@ function parseDecodedArray(array, erc20, pnl) {
     pnl.shitOut += formatValueRaw(sellAmount, erc20.tokenDecimal)
     return `🪙🔴 Token SALE. ${formatLargeValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(buyAmount)} ${swapTo.name} ($${formatLargeValue(mcap)} Mcap)`;
   } else {
-    return `🪙💸 Swap ${formatLargeValue(sellAmount, 18)} ${swapFrom.name} to ${formatValue(buyAmount, swapTo.decimals)} ${swapTo.name}`;
+    return `🪙🟠 Swap ${formatLargeValue(sellAmount, 18)} ${swapFrom.name} to ${formatValue(buyAmount, swapTo.decimals)} ${swapTo.name}`;
   }
 }
 
@@ -91,7 +91,7 @@ async function parseTx(fullTx, userAddresses, pnl) {
     } else if (tx.to.toLowerCase() === userAddresses[0] && tx.functionName === '') {
       finalObject.activity = `⬅️ 💸 RECEIVE ${value}eth from ${shortAddr(tx.from)}`;
     } else if (tx.functionName.includes('setApprovalForAll')) {
-      if (extended) finalObject.activity = `👍👍 Set Approval for All...`;
+      if (extended) finalObject.activity = `👍👍 Set Approval for All...`
       else return;
     } else if (tx.functionName.includes('approve')) {
       if (extended) finalObject.activity = `👍 Approve spend...`;
@@ -116,9 +116,11 @@ async function parseTx(fullTx, userAddresses, pnl) {
     } else if (txsKeys.includes('erc20')) {
       parseErc20(txs, txs.normal, finalObject, pnl);
     } else if (tx.functionName === 'deposit()' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
-      finalObject.activity = `↪️  Wrap ${value} ETH to WETH`; //amount in decoded tx.input
+      if (extended) finalObject.activity = `↪️  Wrap ${value} ETH to WETH`; //amount in decoded tx.input
+      else return;
     } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
-      finalObject.activity = `↩️  Unwrap WETH to ETH`; //amount in decoded tx.input
+      if (extended) finalObject.activity = `↩️  Unwrap WETH to ETH`; //amount in decoded tx.input
+      else return;
     } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0x0000000000a39bb272e79075ade125fd351887ac'.toLowerCase()) {
       finalObject.activity = `Withdraw from Blur`;
     } else {
