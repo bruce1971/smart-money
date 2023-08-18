@@ -76,7 +76,8 @@ function parseErc20(txs, tx, finalObject, pnl) {
 
 
 async function parseTx(fullTx, userAddresses, pnl) {
-  const extended = false;
+  console.log(fullTx);
+  const extended = true;
   const finalObject = { ago: formatTimestamp(fullTx.timeStamp) };
   const txs = fullTx.txs;
   const txsKeys = Object.keys(txs);
@@ -137,7 +138,7 @@ async function parseTx(fullTx, userAddresses, pnl) {
       finalObject.activity = '💎💎';
     }
   }
-
+  console.log(finalObject);
   return finalObject;
 }
 

@@ -15,17 +15,17 @@ module.exports = {
     shortAddr,
 }
 
-function accountUrl(type, address, contractAddress, startblock=0, endblock=99999999) {
+function accountUrl(type, address, contractAddress, startblock=0, endblock=99999999, sort='desc') {
   return `
     https://api.etherscan.io/api
      ?module=account
      &action=${type}
-     &address=${address}
+     ${address ? `&address=${address}` : ''}
      ${contractAddress ? `&contractaddress=${contractAddress}` : ''}
      &startblock=${startblock}
      &endblock=${endblock}
      &page=1
-     &sort=desc
+     &sort=${sort}
      &apikey=${etherscanApiKey}
   `.replace(/\s/g, '')
 }

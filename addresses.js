@@ -26,8 +26,8 @@ const inputU = {
   'artchick': ['0x0b8F4C4E7626A91460dac057eB43e0de59d5b44F'],
   'osf': ['0x3cb8482495c9188d1e36373134c059f98d7be4ed', '0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1'],
   'xman': ['0xc1244286edacb4097715386992aed36752483dcb'],
-  'other': ['0x025be7c6a5ea75c5f4a1ad4cad087063ea108619'],
-  'ex': ['0xcefd289a028d1b0a2e3cd618edf5a5256a6328ce'],
+  'pepe': ['0x6982508145454ce325ddbe47a25d4ec3d2311933'],
+  'ex': ['0x6982508145454ce325ddbe47a25d4ec3d2311933'],
 }
 
 

@@ -68,11 +68,13 @@ function formatPnl(pnl) {
 }
 
 
-async function txsForSingleAddress(address, contractAddress, startblock, endblock) {
+async function txsForSingleAddress(address, contractAddress, startblock, endblock, sort='desc') {
+  startblock = 17054610
+  endblock = 17054610
 
   // shitcoin
   const erc20Transactions = ['erc20', undefined].includes(contractAddress?.type)
-    ? await axios.get(accountUrl('tokentx', address, contractAddress?.address, startblock, endblock)).then(res => {
+    ? await axios.get(accountUrl('tokentx', address, contractAddress?.address, startblock, endblock, sort)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc20')
       return txs;
@@ -82,22 +84,29 @@ async function txsForSingleAddress(address, contractAddress, startblock, endbloc
     startblock = Math.min(...blockNumbers);
     endblock = Math.max(...blockNumbers);
   }
+  // shitcoin2
+  const erc20ContractTransactions = true
+    ? await axios.get(accountUrl('tokentx', null, address, startblock, startblock, sort)).then(res => {
+      const txs = res.data.result;
+      txs.forEach(tx => tx.type = 'erc20c')
+      return txs;
+    }) : [];
   // nft
   const erc721Transactions = ['erc721', undefined].includes(contractAddress?.type)
-    ? await axios.get(accountUrl('tokennfttx', address, contractAddress?.address, startblock, endblock)).then(res => {
+    ? await axios.get(accountUrl('tokennfttx', address, contractAddress?.address, startblock, endblock, sort)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc721')
       return txs;
     }) : [];
   // nft2
   const erc1155Transactions = ['erc1155', undefined].includes(contractAddress?.type)
-    ? await axios.get(accountUrl('token1155tx', address, contractAddress?.address, startblock, endblock)).then(res => {
+    ? await axios.get(accountUrl('token1155tx', address, contractAddress?.address, startblock, endblock, sort)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc1155')
       return txs;
     }) : [];
   // nomral
-  const normalTransactions = await axios.get(accountUrl('txlist', address, contractAddress?.address, startblock, endblock)).then(res => {
+  const normalTransactions = await axios.get(accountUrl('txlist', address, contractAddress?.address, startblock, endblock, sort)).then(res => {
     const txs = res.data.result;
     txs.forEach(tx => tx.type = 'normal');
     return txs;
@@ -114,6 +123,7 @@ async function txsForSingleAddress(address, contractAddress, startblock, endbloc
     ...normalTransactions,
     ...internalTransactions,
     ...erc20Transactions,
+    ...erc20ContractTransactions,
     ...erc721Transactions,
     ...erc1155Transactions
   ];
@@ -188,5 +198,6 @@ if (require.main === module) {
 
 
 module.exports = {
-    getUserData: getUserData
+    getUserData: getUserData,
+    txsForSingleAddress: txsForSingleAddress
 }
