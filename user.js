@@ -21,6 +21,15 @@ function filterContractAddress(array, contractAddress) {
 }
 
 
+function formatActivityLog(activityLog) {
+  activityLog.forEach(a => {
+    console.log('---------');
+    console.log(a.ago);
+    console.log(a.activity);
+  });
+}
+
+
 function formatPnl(pnl) {
   const shitInEth = 0.00000000097097; //pepe
   const ethInUsd = 1850;
@@ -132,8 +141,7 @@ async function getActivityLog(txArray, userAddresses, pnl) {
   if (txArray.length > 0) {
     txArray.forEach(async tx => {
       const activityLog = await parseTx(tx, userAddresses, pnl);
-      console.log(activityLog);
-      activityLogArray.push(activityLog);
+      if (activityLog) activityLogArray.push(activityLog);
     })
   } else console.log('No txs..');
   return activityLogArray;
@@ -164,13 +172,18 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;
   const output = { pnl, activityLog };
-  // if (inputUserAddresses) console.log(output);
   console.timeEnd('USER');
   return output;
 }
 
 
-if (require.main === module) getUserData(inputUserAddresses, inputContractAddress);
+if (require.main === module) {
+  (async () => {
+    const user = await getUserData(inputUserAddresses, inputContractAddress);
+    formatActivityLog(user.activityLog);
+    formatPnl(user.pnl);
+  })();
+}
 
 
 module.exports = {

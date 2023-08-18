@@ -59,7 +59,7 @@ async function getEtherscanData(tokenAddress) {
   allWallets = filterOutWallets(allWallets);
 
   let allPnl = [];
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < 100; i++) {
     console.log('----------');
     console.log(i);
     const userAddresses = [allWallets[i]];

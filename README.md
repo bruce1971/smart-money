@@ -9,6 +9,7 @@ node user.js -u=artchick
 
 ### all txs of a user for a given token
 node user.js -u=scribbs -a=pepe
+node user.js -u=xman -a=x
 node user.js -u=ex -a=pepe
 node user.js -u=ex -a=turbo
 
@@ -24,4 +25,4 @@ node telegram.js
 
 
 ## S3 Deploy
-zip -r deployment_package.zip . 
+zip -r deployment_package.zip .

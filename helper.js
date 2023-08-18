@@ -78,8 +78,8 @@ function formatValue(value, decimals=18) {
   return value;
 }
 
-function formatLargeValue(value) {
-  const formattedValue = formatValue(value, 0);
+function formatLargeValue(value, decimals=0) {
+  const formattedValue = formatValue(value, decimals);
   const splitValue = formattedValue.split(',')
   if (splitValue.length === 1) return splitValue[0];
   if (splitValue.length === 2) return splitValue[0].length > 1 ? `${splitValue[0]}k` : `${splitValue[0]}.${splitValue[1].substring(0, 1)}k`;
