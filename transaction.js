@@ -80,7 +80,7 @@ async function parseTx(fullTx, userAddresses, pnl) {
   const finalObject = {
     ago: formatTimestamp(fullTx.timeStamp),
     block: fullTx.block,
-    userWallet: '0x999'
+    userWallet: fullTx.userWallet
   };
   const txs = fullTx.txs;
   const txsKeys = Object.keys(txs);

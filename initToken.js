@@ -19,7 +19,7 @@ async function main(tokenAddress) {
 
   const firstTx = erc20ContractTransactions[0];
   startblock = Number(firstTx.blockNumber);
-  endblock = startblock + secondsToBlocks(3600 * 2);
+  endblock = startblock + secondsToBlocks(3600 * 5);
 
   erc20ContractTransactions = erc20ContractTransactions.filter(o => Number(o.blockNumber) < endblock);
 
@@ -43,7 +43,6 @@ async function main(tokenAddress) {
   const txArray = groupTransactions(transactions, erc20ContractTransactions);
 
   const pnl = { address: tokenAddress, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
-  console.log(txArray);
   const activityLog = await getActivityLog(txArray, tokenAddress, pnl);
   formatActivityLog(activityLog, true, true);
 }
