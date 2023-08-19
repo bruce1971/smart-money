@@ -126,8 +126,8 @@ function shortAddr(address) {
 function formatActivityLog(activityLog, showUser=false, showBlock=false) {
   activityLog.forEach(a => {
     console.log('---------');
-    console.log(`${a.ago} ${showBlock && activityLog.block ? activityLog.block : ''}`);
-    if (showUser && activityLog.user) console.log(activityLog.user);
+    console.log(`${a.ago} block:${showBlock && a.block ? a.block : ''}`);
+    if (showUser && a.user) console.log(a.user);
     console.log(a.activity);
     console.log(a.tx);
   });

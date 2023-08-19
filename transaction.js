@@ -77,7 +77,6 @@ function parseErc20(txs, tx, finalObject, pnl) {
 
 async function parseTx(fullTx, userAddresses, pnl) {
   const extended = true;
-  console.log(fullTx);
   const finalObject = {
     ago: formatTimestamp(fullTx.timeStamp),
     block: fullTx.block,

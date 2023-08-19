@@ -90,7 +90,6 @@ async function getActivityLog(txArray, userAddresses, pnl) {
   if (txArray.length > 0) {
     txArray.forEach(async tx => {
       const activityLog = await parseTx(tx, userAddresses, pnl);
-      console.log(activityLog);
       if (activityLog) activityLogArray.push(activityLog);
     })
   } else console.log('No txs..');
