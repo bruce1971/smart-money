@@ -3,8 +3,7 @@ const argv = require('minimist')(process.argv.slice(2));
 const basePath = process.cwd();
 const addresses = require(`${basePath}/addresses.js`);
 const { parseDecodedArray, parseTx } = require(`${basePath}/transaction.js`);
-const { accountUrl, blockUrl, formatValue } = require(`${basePath}/helper.js`);
-
+const { accountUrl, blockUrl, formatValue, formatActivityLog, formatPnl } = require(`${basePath}/helper.js`);
 
 const inputUserAddresses = addresses.inputU[argv.u];
 const inputContractAddress = addresses.inputA[argv.a];
@@ -18,53 +17,6 @@ function filterContractAddress(array, contractAddress) {
     if (contractAddresses.includes(contractAddress)) finalArray.push(el);
   });
   return finalArray;
-}
-
-
-function formatActivityLog(activityLog) {
-  activityLog.forEach(a => {
-    console.log('---------');
-    console.log(a.ago);
-    console.log(a.activity);
-    console.log(a.tx);
-  });
-}
-
-
-function formatPnl(pnl) {
-  const shitInEth = 0.00000000097097; //pepe
-  const ethInUsd = 1850;
-
-  const pnlFormat = {... pnl};
-
-  const shitFinalInEth = pnl.shitFinal * shitInEth;
-  const pnlInEth = shitFinalInEth + pnl.wethFinal;
-  const pnlInUsd = pnlInEth * ethInUsd;
-
-  pnlFormat.wethFinal = formatValue(pnlFormat.wethFinal, 0);
-  pnlFormat.wethFinalInUsd = formatValue(pnlFormat.wethFinal * ethInUsd, 0);
-  pnlFormat.shitFinal = formatValue(pnlFormat.shitFinal, 0);
-  pnlFormat.shitFinalInUsd = formatValue(shitFinalInEth * ethInUsd, 0);
-
-  pnlFormat.pnlInEth = formatValue(pnlInEth, 0);
-  pnlFormat.pnlInUsd = formatValue(pnlInUsd, 0);
-
-  pnlFormat.wethOut = formatValue(pnlFormat.wethOut, 0);
-  pnlFormat.wethIn = formatValue(pnlFormat.wethIn, 0);
-  pnlFormat.shitOut = formatValue(pnlFormat.shitOut, 0);
-  pnlFormat.shitIn = formatValue(pnlFormat.shitIn, 0);
-
-  console.log('=================================')
-  console.log(`ETH invested --> ${pnlFormat.wethOut} eth`);
-  console.log(`ETH taken out --> ${pnlFormat.wethIn} eth`);
-  console.log(`Shitcoins bought --> ${pnlFormat.shitIn}`);
-  console.log(`Shitcoins sold --> ${pnlFormat.shitOut}`);
-  console.log('---');
-  console.log(`ETH PnL --> ${pnlFormat.wethFinal > 0 ? '+' : ''}${pnlFormat.wethFinal} eth ($${pnlFormat.wethFinalInUsd})`);
-  console.log(`Shitcoin PnL --> ${pnlFormat.shitFinal > 0 ? '+' : ''}${pnlFormat.shitFinal} ($${pnlFormat.shitFinalInUsd})`);
-  console.log('---');
-  console.log(`PnL --> ${pnlInUsd > 0 ? '+' : ''}$${pnlFormat.pnlInUsd}`);
-  console.log('=================================')
 }
 
 
@@ -198,6 +150,7 @@ if (require.main === module) {
 
 
 module.exports = {
-    getUserData: getUserData,
-    txsForSingleAddress: txsForSingleAddress
+    getUserData,
+    txsForSingleAddress,
+    getActivityLog
 }

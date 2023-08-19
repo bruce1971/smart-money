@@ -13,6 +13,8 @@ module.exports = {
     formatTimestamp,
     formatLargeValue,
     shortAddr,
+    formatActivityLog,
+    formatPnl
 }
 
 function accountUrl(type, address, contractAddress, startblock=0, endblock=99999999, sort='desc') {
@@ -117,4 +119,49 @@ function formatTimestamp(timeStamp) {
 
 function shortAddr(address) {
   return address.substring(0,8);
+}
+
+function formatActivityLog(activityLog) {
+  activityLog.forEach(a => {
+    console.log('---------');
+    console.log(a.ago);
+    console.log(a.activity);
+    console.log(a.tx);
+  });
+}
+
+function formatPnl(pnl) {
+  const shitInEth = 0.00000000097097; //pepe
+  const ethInUsd = 1850;
+
+  const pnlFormat = {... pnl};
+
+  const shitFinalInEth = pnl.shitFinal * shitInEth;
+  const pnlInEth = shitFinalInEth + pnl.wethFinal;
+  const pnlInUsd = pnlInEth * ethInUsd;
+
+  pnlFormat.wethFinal = formatValue(pnlFormat.wethFinal, 0);
+  pnlFormat.wethFinalInUsd = formatValue(pnlFormat.wethFinal * ethInUsd, 0);
+  pnlFormat.shitFinal = formatValue(pnlFormat.shitFinal, 0);
+  pnlFormat.shitFinalInUsd = formatValue(shitFinalInEth * ethInUsd, 0);
+
+  pnlFormat.pnlInEth = formatValue(pnlInEth, 0);
+  pnlFormat.pnlInUsd = formatValue(pnlInUsd, 0);
+
+  pnlFormat.wethOut = formatValue(pnlFormat.wethOut, 0);
+  pnlFormat.wethIn = formatValue(pnlFormat.wethIn, 0);
+  pnlFormat.shitOut = formatValue(pnlFormat.shitOut, 0);
+  pnlFormat.shitIn = formatValue(pnlFormat.shitIn, 0);
+
+  console.log('=================================')
+  console.log(`ETH invested --> ${pnlFormat.wethOut} eth`);
+  console.log(`ETH taken out --> ${pnlFormat.wethIn} eth`);
+  console.log(`Shitcoins bought --> ${pnlFormat.shitIn}`);
+  console.log(`Shitcoins sold --> ${pnlFormat.shitOut}`);
+  console.log('---');
+  console.log(`ETH PnL --> ${pnlFormat.wethFinal > 0 ? '+' : ''}${pnlFormat.wethFinal} eth ($${pnlFormat.wethFinalInUsd})`);
+  console.log(`Shitcoin PnL --> ${pnlFormat.shitFinal > 0 ? '+' : ''}${pnlFormat.shitFinal} ($${pnlFormat.shitFinalInUsd})`);
+  console.log('---');
+  console.log(`PnL --> ${pnlInUsd > 0 ? '+' : ''}$${pnlFormat.pnlInUsd}`);
+  console.log('=================================')
 }
