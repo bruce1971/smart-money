@@ -9,19 +9,30 @@ const { parseDecodedArray, parseTx } = require(`${basePath}/transaction.js`);
 
 
 async function main(tokenAddress) {
-  startblock = 17054600
-  endblock = 17054610
-  sort = 'desc'
+  // startblock = 17054500
+  // endblock = 17054610
+  let startblock, endblock;
+  const sort = 'asc';
 
-  const erc20ContractTransactions = await axios.get(accountUrl('tokentx', null, tokenAddress, startblock, endblock, sort)).then(res => {
+  let erc20ContractTransactions = await axios.get(accountUrl('tokentx', null, tokenAddress, startblock, endblock, sort)).then(res => {
     const txs = res.data.result;
     txs.forEach(tx => tx.type = 'erc20')
     return txs;
   });
 
+  const firstTx = erc20ContractTransactions[0];
+  startblock = Number(firstTx.blockNumber);
+  endblock = startblock + 1700;
+
+  erc20ContractTransactions = erc20ContractTransactions.filter(o => Number(o.blockNumber) < endblock);
+
+  console.log(startblock, endblock);
+
   const userTransactions = {};
   for (var i = 0; i < erc20ContractTransactions.length; i++) {
     const userAddress = erc20ContractTransactions[i].to;
+    console.log('Block diff: ', Number(erc20ContractTransactions[i].blockNumber) - startblock);
+    console.log(userAddress);
     if (!userTransactions[userAddress]) {
       userTransactions[userAddress] = await axios.get(accountUrl('txlist', userAddress, tokenAddress, startblock, endblock, sort)).then(res => {
         const txs = res.data.result;
