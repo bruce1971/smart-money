@@ -38,7 +38,7 @@ function parseDecodedArray(array, erc20, pnl) {
     const unitPriceEth = formatValueRaw(sellAmount)/formatValueRaw(buyAmount, erc20.tokenDecimal);
     const totalSupply = getTotalSupply(erc20.contractAddress);
     const mcap = unitPriceEth * ethInUsd * totalSupply;
-    return `🪙🟢 Token BUY. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name} ($${formatLargeValue(mcap)} Mcap)`;
+    return `🪙🟢 Token BUY1. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name} ($${formatLargeValue(mcap)} Mcap)`;
   } else if (swapTo.name === 'WETH') {
     const unitPriceEth = formatValueRaw(buyAmount)/formatValueRaw(sellAmount, erc20.tokenDecimal);
     const totalSupply = getTotalSupply(erc20.contractAddress);
@@ -60,7 +60,7 @@ function parseErc20(txs, tx, finalObject, pnl) {
     const mcap = unitPriceEth * ethInUsd * totalSupply;
     pnl.wethOut += formatValueRaw(tx.value);
     pnl.shitIn += formatValueRaw(erc20.value);
-    finalObject.activity = `🪙🟢 Token BUY. ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth ($${formatLargeValue(mcap)} Mcap)`;
+    finalObject.activity = `🪙🟢 Token BUY2. ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth ($${formatLargeValue(mcap)} Mcap)`;
   } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
     const decodedArray = decoder1(tx.input);
     finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl);
@@ -76,7 +76,7 @@ function parseErc20(txs, tx, finalObject, pnl) {
 
 
 async function parseTx(fullTx, userAddresses, pnl) {
-  const extended = true;
+  const extended = false;
   const finalObject = {
     ago: formatTimestamp(fullTx.timeStamp),
     block: fullTx.block,

@@ -126,7 +126,7 @@ function shortAddr(address) {
 function formatActivityLog(activityLog, showUser=false, showBlock=false) {
   activityLog.forEach(a => {
     console.log('---------');
-    console.log(`${a.ago} ${showBlock && a.block ? `block:${a.block}` : ''}`);
+    console.log(`${a.ago} ${showBlock && a.block ? `block:${a.block}` : ''}`); // TODO: add exact date
     if (showUser && a.userWallet) console.log(`user:${a.userWallet}`);
     console.log(a.activity);
     console.log(a.tx);
@@ -182,8 +182,7 @@ function groupTransactions(txPool, hashTxPool) {
     txs.forEach(tx => txsObject[tx.type] = tx);
     const timeStamp = Number(txs[0].timeStamp);
     const block = Number(txs[0].blockNumber);
-    console.log(txs.find(o => o.type === 'normal').from);
-    const userWallet = txs.find(o => o.type === 'normal').from;
+    const userWallet = txs.find(o => o.type === 'normal')?.from;
     txArray.push({
       hash: hash,
       timeStamp: timeStamp,
