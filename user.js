@@ -2,8 +2,8 @@ const axios = require('axios');
 const argv = require('minimist')(process.argv.slice(2));
 const basePath = process.cwd();
 const addresses = require(`${basePath}/addresses.js`);
-const { parseDecodedArray, parseTx } = require(`${basePath}/transaction.js`);
-const { accountUrl, blockUrl, formatValue, formatActivityLog, formatPnl } = require(`${basePath}/helper.js`);
+const { parseTx } = require(`${basePath}/transaction.js`);
+const { accountUrl, blockUrl, formatActivityLog, formatPnl, secondsToBlocks, groupTransactions } = require(`${basePath}/helper.js`);
 
 const inputUserAddresses = addresses.inputU[argv.u];
 const inputContractAddress = addresses.inputA[argv.a];
@@ -80,21 +80,7 @@ async function txsForSingleAddress(address, contractAddress, startblock, endbloc
     ...erc1155Transactions
   ];
 
-  // group txs together via hash
-  const txHashes = [...new Set(transactions.map(tx => tx.hash))];
-  const txArray = [];
-  txHashes.forEach(hash => {
-    const txs = transactions.filter(tx => tx.hash === hash);
-    const txsObject = {};
-    txs.forEach(tx => txsObject[tx.type] = tx);
-    const timeStamp = Number(txs[0].timeStamp);
-    txArray.push({
-      hash: hash,
-      timeStamp: timeStamp,
-      txs: txsObject
-    })
-  });
-
+  const txArray = groupTransactions(transactions, transactions);
   return txArray;
 }
 
@@ -104,6 +90,7 @@ async function getActivityLog(txArray, userAddresses, pnl) {
   if (txArray.length > 0) {
     txArray.forEach(async tx => {
       const activityLog = await parseTx(tx, userAddresses, pnl);
+      console.log(activityLog);
       if (activityLog) activityLogArray.push(activityLog);
     })
   } else console.log('No txs..');
@@ -115,7 +102,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   console.time('USER');
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
-  const blocksAgo = secondsAgo ? Math.ceil(secondsAgo/12.08)+1 : null;
+  const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;

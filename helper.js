@@ -14,7 +14,9 @@ module.exports = {
     formatLargeValue,
     shortAddr,
     formatActivityLog,
-    formatPnl
+    formatPnl,
+    secondsToBlocks,
+    groupTransactions
 }
 
 function accountUrl(type, address, contractAddress, startblock=0, endblock=99999999, sort='desc') {
@@ -121,10 +123,11 @@ function shortAddr(address) {
   return address.substring(0,8);
 }
 
-function formatActivityLog(activityLog) {
+function formatActivityLog(activityLog, showUser=false, showBlock=false) {
   activityLog.forEach(a => {
     console.log('---------');
-    console.log(a.ago);
+    console.log(`${a.ago} ${showBlock && activityLog.block ? activityLog.block : ''}`);
+    if (showUser && activityLog.user) console.log(activityLog.user);
     console.log(a.activity);
     console.log(a.tx);
   });
@@ -164,4 +167,27 @@ function formatPnl(pnl) {
   console.log('---');
   console.log(`PnL --> ${pnlInUsd > 0 ? '+' : ''}$${pnlFormat.pnlInUsd}`);
   console.log('=================================')
+}
+
+function secondsToBlocks(seconds) {
+  return Math.ceil(seconds/12.08);
+}
+
+function groupTransactions(txPool, hashTxPool) {
+  const txHashes = [...new Set(hashTxPool.map(tx => tx.hash))];
+  const txArray = [];
+  txHashes.forEach(hash => {
+    const txs = txPool.filter(tx => tx.hash === hash);
+    const txsObject = {};
+    txs.forEach(tx => txsObject[tx.type] = tx);
+    const timeStamp = Number(txs[0].timeStamp);
+    const block = Number(txs[0].blockNumber);
+    txArray.push({
+      hash: hash,
+      timeStamp: timeStamp,
+      block: block,
+      txs: txsObject
+    })
+  });
+  return txArray
 }

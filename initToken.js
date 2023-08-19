@@ -1,11 +1,8 @@
 const axios = require('axios');
 const basePath = process.cwd();
-const { accountUrl, contractUrl, formatActivityLog } = require(`${basePath}/helper.js`);
+const { accountUrl, formatActivityLog, secondsToBlocks, groupTransactions } = require(`${basePath}/helper.js`);
 const argv = require('minimist')(process.argv.slice(2));
-const addresses = require(`${basePath}/addresses.js`);
-const inputTokenAddress = addresses.inputA[argv.a];
-const { getUserData, txsForSingleAddress, getActivityLog } = require(`${basePath}/user.js`);
-const { parseDecodedArray, parseTx } = require(`${basePath}/transaction.js`);
+const { getActivityLog } = require(`${basePath}/user.js`);
 
 
 async function main(tokenAddress) {
@@ -22,11 +19,9 @@ async function main(tokenAddress) {
 
   const firstTx = erc20ContractTransactions[0];
   startblock = Number(firstTx.blockNumber);
-  endblock = startblock + 1700;
+  endblock = startblock + secondsToBlocks(3600 * 2);
 
   erc20ContractTransactions = erc20ContractTransactions.filter(o => Number(o.blockNumber) < endblock);
-
-  console.log(startblock, endblock);
 
   const userTransactions = {};
   for (var i = 0; i < erc20ContractTransactions.length; i++) {
@@ -43,33 +38,14 @@ async function main(tokenAddress) {
   }
 
   let normalTransactions = [];
-  Object.values(userTransactions).forEach(txArr => {
-    normalTransactions = [...normalTransactions, ...txArr];
-  });
-
-  let transactions = [
-    ...erc20ContractTransactions,
-    ...normalTransactions
-  ];
-
-  // group txs together via hash
-  const txHashes = [...new Set(transactions.map(tx => tx.hash))];
-  const txArray = [];
-  txHashes.forEach(hash => {
-    const txs = transactions.filter(tx => tx.hash === hash);
-    const txsObject = {};
-    txs.forEach(tx => txsObject[tx.type] = tx);
-    const timeStamp = Number(txs[0].timeStamp);
-    txArray.push({
-      hash: hash,
-      timeStamp: timeStamp,
-      txs: txsObject
-    })
-  });
+  Object.values(userTransactions).forEach(txArr => { normalTransactions = [...normalTransactions, ...txArr]});
+  let transactions = [...erc20ContractTransactions, ...normalTransactions];
+  const txArray = groupTransactions(transactions, erc20ContractTransactions);
 
   const pnl = { address: tokenAddress, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
+  console.log(txArray);
   const activityLog = await getActivityLog(txArray, tokenAddress, pnl);
-  formatActivityLog(activityLog);
+  formatActivityLog(activityLog, true, true);
 }
 
 
