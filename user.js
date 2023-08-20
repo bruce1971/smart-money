@@ -85,10 +85,28 @@ async function txsForSingleAddress(address, contractAddress, startblock, endbloc
 }
 
 
+async function getTotalSupply(address){
+  if (!address) return;
+  //https://www.dextools.io/app/en/ether/pair-explorer/0x8e83de18b38ddc22166fb5454003a573a53be4ae
+  // const url = `
+  //     https://api.etherscan.io/api
+  //       ?module=stats
+  //       &action=tokensupply
+  //       &contractaddress=${address}
+  //       &apikey=I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG
+  //   `.replace(/\s/g, '');
+  // const responseSupply = await axios.get(url).then(res => res.data.result);
+  // console.log('responseSupply', responseSupply);
+  return 10000000;
+}
+
+
 async function getActivityLog(txArray, userAddresses, pnl) {
   let activityLogArray = [];
   if (txArray.length > 0) {
     txArray.forEach(async tx => {
+      const totalSupply = await getTotalSupply(tx.txs.erc20?.contractAddress);
+      console.log('totalSupply', totalSupply);
       const activityLog = await parseTx(tx, userAddresses, pnl);
       if (activityLog) activityLogArray.push(activityLog);
     })

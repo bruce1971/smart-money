@@ -1,28 +1,9 @@
 const basePath = process.cwd();
-const axios = require('axios');
 const { decoder1, decoder2 } = require(`${basePath}/decoder.js`);
 const addresses = require(`${basePath}/addresses.js`);
-const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue, shortAddr } = require(`${basePath}/helper.js`);
+const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue, shortAddr, parseErc721 } = require(`${basePath}/helper.js`);
 const ethInUsd = 1850;
-
-
-function getTotalSupply(address){
-  //https://www.dextools.io/app/en/ether/pair-explorer/0x8e83de18b38ddc22166fb5454003a573a53be4ae
-  // const url = `
-  //     https://api.etherscan.io/api
-  //       ?module=stats
-  //       &action=tokensupply
-  //       &contractaddress=${address}
-  //       &apikey=I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG
-  //   `.replace(/\s/g, '');
-  // const responseSupply = await axios.get(url).then(res => {
-  //   const txs = res.data.result;
-  //   txs.forEach(tx => tx.type = 'erc20')
-  //   return res.data.result;;
-  // });
-  // console.log('responseSupply', responseSupply);
-  return addresses.addressLib[address]?.totalSupply;
-}
+const TOTAL_SUPPLY = 10000000;
 
 
 function parseDecodedArray(array, erc20, pnl) {
@@ -51,12 +32,12 @@ function parseDecodedArray(array, erc20, pnl) {
     pnl.wethOut += formatValueRaw(sellAmount);
     pnl.shitIn += formatValueRaw(buyAmount, erc20.tokenDecimal);
     const unitPriceEth = formatValueRaw(sellAmount)/formatValueRaw(buyAmount, erc20.tokenDecimal);
-    const totalSupply = getTotalSupply(erc20.contractAddress);
+    const totalSupply = TOTAL_SUPPLY;
     const mcap = unitPriceEth * ethInUsd * totalSupply;
     return `🪙🟢 Token BUY1. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name} ($${formatLargeValue(mcap)} Mcap)`;
   } else if (swapTo.name === 'WETH') {
     const unitPriceEth = formatValueRaw(buyAmount)/formatValueRaw(sellAmount, erc20.tokenDecimal);
-    const totalSupply = getTotalSupply(erc20.contractAddress);
+    const totalSupply = TOTAL_SUPPLY;
     const mcap = unitPriceEth * ethInUsd * totalSupply;
     pnl.wethIn += formatValueRaw(buyAmount)
     pnl.shitOut += formatValueRaw(sellAmount, erc20.tokenDecimal)
@@ -71,7 +52,7 @@ function parseErc20(txs, tx, finalObject, pnl) {
   const erc20 = txs.erc20;
   if (tx.functionName.includes('swap(')) {
     const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value);
-    const totalSupply = getTotalSupply(erc20.contractAddress);
+    const totalSupply = TOTAL_SUPPLY;
     const mcap = unitPriceEth * ethInUsd * totalSupply;
     pnl.wethOut += formatValueRaw(tx.value);
     pnl.shitIn += formatValueRaw(erc20.value);
@@ -90,7 +71,7 @@ function parseErc20(txs, tx, finalObject, pnl) {
 }
 
 
-async function parseTx(fullTx, userAddresses, pnl) {
+function parseTx(fullTx, userAddresses, pnl) {
   const extended = false;
   const finalObject = {
     ago: formatTimestamp(fullTx.timeStamp),
@@ -105,7 +86,11 @@ async function parseTx(fullTx, userAddresses, pnl) {
   if (txsKeys.includes('normal')) {
     const tx = txs.normal;
     value = formatValue(tx.value);
-    if (tx.from.toLowerCase() === userAddresses[0] && tx.functionName === '' && tx.input === '0x') {
+    if (txsKeys.includes('erc721')) {
+      parseErc721(txs, txs.normal, finalObject);
+    } else if (txsKeys.includes('erc20')) {
+      parseErc20(txs, txs.normal, finalObject, pnl);
+    } else if (tx.from.toLowerCase() === userAddresses[0] && tx.functionName === '' && tx.input === '0x') {
       finalObject.activity = `💸➡️  SEND ${value}eth to ${shortAddr(tx.to)}`;
     } else if (tx.to.toLowerCase() === userAddresses[0] && tx.functionName === '') {
       finalObject.activity = `⬅️ 💸 RECEIVE ${value}eth from ${shortAddr(tx.from)}`;
@@ -119,21 +104,6 @@ async function parseTx(fullTx, userAddresses, pnl) {
       finalObject.activity = `💦 Request to Register ENS Domain`;
     } else if (tx.to.toLowerCase() === '0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5'.toLowerCase() && tx.functionName.includes('registerWithConfig')) {
       finalObject.activity = `💦 Register ENS Domain`;
-    } else if (txsKeys.includes('erc721')) {
-      const erc721tx = txs.erc721;
-      if (tx.functionName === '') {
-        finalObject.activity = `💎🟢 NFT buy! Bought ${erc721tx.tokenName} ${erc721tx.tokenID} for ${value} eth`;
-      } else if (tx.functionName.includes('matchBidWithTakerAsk')) {
-        finalObject.activity = `💎🔴 NFT sale! Sold ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(txs.erc20.value)} weth on LooksRare`;
-      } else if (tx.functionName === 'fulfillAvailableAdvancedOrders(tuple[] advancedOrders, tuple[] criteriaResolvers, tuple[][] offerFulfillments, tuple[][] considerationFulfillments, bytes32 fulfillerConduitKey, address recipient, uint256 maximumFulfilled)') {
-        finalObject.activity = `💎🔴 NFT sale! Sold ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(tx.value)} eth on Opensea`;
-      } else if (tx.functionName.includes('safeTransferFrom')) {
-        finalObject.activity = `💎➡️  NFT transfer. Transferred ${erc721tx.tokenName} ${erc721tx.tokenID} to ${shortAddr(erc721tx.to)}`;
-      } else {
-        finalObject.activity = '💎 OTHER ERC721...';
-      }
-    } else if (txsKeys.includes('erc20')) {
-      parseErc20(txs, txs.normal, finalObject, pnl);
     } else if (tx.functionName === 'deposit()' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
       if (extended) finalObject.activity = `↪️  Wrap ${value} ETH to WETH`; //amount in decoded tx.input
       else return;
