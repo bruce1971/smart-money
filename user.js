@@ -21,8 +21,8 @@ function filterContractAddress(array, contractAddress) {
 
 
 async function txsForSingleAddress(address, contractAddress, startblock, endblock, sort='desc') {
-  // startblock = 17048075
-  // endblock = 17051143
+  startblock = 17915951
+  endblock = 17915951
 
   // shitcoin
   const erc20Transactions = ['erc20', undefined].includes(contractAddress?.type)
@@ -129,7 +129,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
-    formatActivityLog(user.activityLog, false, false);
+    formatActivityLog(user.activityLog, false, true);
     formatPnl(user.pnl);
   })();
 }

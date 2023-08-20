@@ -1,4 +1,5 @@
 const basePath = process.cwd();
+const axios = require('axios');
 const { decoder1, decoder2 } = require(`${basePath}/decoder.js`);
 const addresses = require(`${basePath}/addresses.js`);
 const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue, shortAddr } = require(`${basePath}/helper.js`);
@@ -6,6 +7,20 @@ const ethInUsd = 1850;
 
 
 function getTotalSupply(address){
+  //https://www.dextools.io/app/en/ether/pair-explorer/0x8e83de18b38ddc22166fb5454003a573a53be4ae
+  // const url = `
+  //     https://api.etherscan.io/api
+  //       ?module=stats
+  //       &action=tokensupply
+  //       &contractaddress=${address}
+  //       &apikey=I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG
+  //   `.replace(/\s/g, '');
+  // const responseSupply = await axios.get(url).then(res => {
+  //   const txs = res.data.result;
+  //   txs.forEach(tx => tx.type = 'erc20')
+  //   return res.data.result;;
+  // });
+  // console.log('responseSupply', responseSupply);
   return addresses.addressLib[address]?.totalSupply;
 }
 
@@ -133,8 +148,8 @@ async function parseTx(fullTx, userAddresses, pnl) {
   } else {
     finalObject.activity = '❌ NO NORMAL TXS...';
     if (txsKeys.includes('erc20')) {
-      const erc20 = txs.erc20;
-      finalObject.activity = `⬅️ 🪙 RECEIVE ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} from ${shortAddr(erc20.from)}`;
+      if (extended) finalObject.activity = `⬅️ 🪙 RECEIVE ${formatValue(txs.erc20.value, txs.erc20.tokenDecimal)} ${txs.erc20.tokenName} from ${shortAddr(txs.erc20.from)}`;
+      else return;
     } else if (txsKeys.includes('erc721')) {
       finalObject.activity = '💎';
     } else if (txsKeys.includes('erc1155')) {
