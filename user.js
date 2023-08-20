@@ -21,8 +21,6 @@ function filterContractAddress(array, contractAddress) {
 
 
 async function txsForSingleAddress(address, contractAddress, startblock, endblock, sort='desc') {
-  startblock = 17915951
-  endblock = 17915951
 
   // shitcoin
   const erc20Transactions = ['erc20', undefined].includes(contractAddress?.type)
@@ -37,21 +35,21 @@ async function txsForSingleAddress(address, contractAddress, startblock, endbloc
     endblock = Math.max(...blockNumbers);
   }
   // shitcoin2
-  const erc20ContractTransactions = true
+  const erc20ContractTransactions = false
     ? await axios.get(accountUrl('tokentx', null, address, startblock, startblock, sort)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc20c')
       return txs;
     }) : [];
   // nft
-  const erc721Transactions = ['erc721', undefined].includes(contractAddress?.type)
+  const erc721Transactions = false //['erc721', undefined].includes(contractAddress?.type)
     ? await axios.get(accountUrl('tokennfttx', address, contractAddress?.address, startblock, endblock, sort)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc721')
       return txs;
     }) : [];
   // nft2
-  const erc1155Transactions = ['erc1155', undefined].includes(contractAddress?.type)
+  const erc1155Transactions = false //['erc1155', undefined].includes(contractAddress?.type)
     ? await axios.get(accountUrl('token1155tx', address, contractAddress?.address, startblock, endblock, sort)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc1155')
@@ -84,30 +82,51 @@ async function txsForSingleAddress(address, contractAddress, startblock, endbloc
   return txArray;
 }
 
-
-async function getTotalSupply(address){
-  if (!address) return;
-  //https://www.dextools.io/app/en/ether/pair-explorer/0x8e83de18b38ddc22166fb5454003a573a53be4ae
-  // const url = `
-  //     https://api.etherscan.io/api
-  //       ?module=stats
-  //       &action=tokensupply
-  //       &contractaddress=${address}
-  //       &apikey=I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG
-  //   `.replace(/\s/g, '');
-  // const responseSupply = await axios.get(url).then(res => res.data.result);
-  // console.log('responseSupply', responseSupply);
-  return 10000000;
+async function getTotalSupplyObj(txArray){
+  const totalSupplyObj = {};
+  let addressArray = [];
+  txArray.forEach(tx => {
+    if (tx.txs.erc20) addressArray.push(tx.txs.erc20.contractAddress);
+  });
+  addressArray = [...new Set(addressArray)];
+  
+  for (var i = 0; i < addressArray.length; i++) {
+    // https://www.dextools.io/app/en/ether/pair-explorer/0x72e4f9f808c49a2a61de9c5896298920dc4eeea9
+    const url = `
+        https://api.etherscan.io/api
+          ?module=stats
+          &action=tokensupply
+          &contractaddress=${addressArray[i]}
+          &apikey=I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG
+      `.replace(/\s/g, '');
+    const responseSupply = await axios.get(url).then(res => res.data.result);
+    console.log('responseSupply',responseSupply);
+    totalSupplyObj[addressArray[i]] = Number(responseSupply)/10**18;
+  }
+  return totalSupplyObj;
 }
 
 
-async function getActivityLog(txArray, userAddresses, pnl) {
+async function getTotalSupply(address){
+  if (!address) return;
+  // https://www.dextools.io/app/en/ether/pair-explorer/0x72e4f9f808c49a2a61de9c5896298920dc4eeea9
+  const url = `
+      https://api.etherscan.io/api
+        ?module=stats
+        &action=tokensupply
+        &contractaddress=${address}
+        &apikey=I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG
+    `.replace(/\s/g, '');
+  const responseSupply = await axios.get(url).then(res => res.data.result);
+  return Number(responseSupply)/10**18;
+}
+
+
+function getActivityLog(txArray, userAddresses, pnl) {
   let activityLogArray = [];
   if (txArray.length > 0) {
-    txArray.forEach(async tx => {
-      const totalSupply = await getTotalSupply(tx.txs.erc20?.contractAddress);
-      console.log('totalSupply', totalSupply);
-      const activityLog = await parseTx(tx, userAddresses, pnl);
+    txArray.forEach(tx => {
+      const activityLog = parseTx(tx, userAddresses, pnl);
       if (activityLog) activityLogArray.push(activityLog);
     })
   } else console.log('No txs..');
@@ -118,23 +137,33 @@ async function getActivityLog(txArray, userAddresses, pnl) {
 async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   console.time('USER');
 
+  console.log('start');
+
+  secondsAgo = 3600 * 24 * 10;
+
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
+  // startblock = 17915951
+  // endblock = 17915951
 
   let txArray = [];
   for (const userAddress of userAddresses) {
     const txArray1 = await txsForSingleAddress(userAddress, contractAddress, startblock, endblock);
     txArray = txArray.concat(txArray1);
   };
+  console.log('done with getting data..');
+
+  const totalSupplyObj = await getTotalSupplyObj(txArray);
+  console.log(totalSupplyObj);
 
   txArray = filterContractAddress(txArray, contractAddress?.address);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   const pnl = { address: userAddresses, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
-  const activityLog = await getActivityLog(txArray, userAddresses, pnl);
+  const activityLog = getActivityLog(txArray, userAddresses, pnl);
 
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;
@@ -147,8 +176,8 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
-    formatActivityLog(user.activityLog, false, true);
-    formatPnl(user.pnl);
+    // formatActivityLog(user.activityLog, false, true);
+    // formatPnl(user.pnl);
   })();
 }
 
