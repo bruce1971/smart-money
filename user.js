@@ -89,44 +89,24 @@ async function getTotalSupplyObj(txArray){
     if (tx.txs.erc20) addressArray.push(tx.txs.erc20.contractAddress);
   });
   addressArray = [...new Set(addressArray)];
-  
+  console.log(`Getting ${addressArray.length} tokenInfos..`);
   for (var i = 0; i < addressArray.length; i++) {
+    console.log(i);
     // https://www.dextools.io/app/en/ether/pair-explorer/0x72e4f9f808c49a2a61de9c5896298920dc4eeea9
-    const url = `
-        https://api.etherscan.io/api
-          ?module=stats
-          &action=tokensupply
-          &contractaddress=${addressArray[i]}
-          &apikey=I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG
-      `.replace(/\s/g, '');
-    const responseSupply = await axios.get(url).then(res => res.data.result);
-    console.log('responseSupply',responseSupply);
-    totalSupplyObj[addressArray[i]] = Number(responseSupply)/10**18;
+    const url = `https://api.ethplorer.io/getTokenInfo/${addressArray[i]}?apiKey=freekey`;
+    const tokenInfo = await axios.get(url).then(res => res.data);
+    await(new Promise((resolve) => {setTimeout(resolve, 600)})); // 0.6 sec timeout
+    totalSupplyObj[addressArray[i]] = Math.ceil(Number(tokenInfo.totalSupply)/10**Number(tokenInfo.decimals));
   }
   return totalSupplyObj;
 }
 
 
-async function getTotalSupply(address){
-  if (!address) return;
-  // https://www.dextools.io/app/en/ether/pair-explorer/0x72e4f9f808c49a2a61de9c5896298920dc4eeea9
-  const url = `
-      https://api.etherscan.io/api
-        ?module=stats
-        &action=tokensupply
-        &contractaddress=${address}
-        &apikey=I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG
-    `.replace(/\s/g, '');
-  const responseSupply = await axios.get(url).then(res => res.data.result);
-  return Number(responseSupply)/10**18;
-}
-
-
-function getActivityLog(txArray, userAddresses, pnl) {
+function getActivityLog(txArray, userAddresses, pnl, totalSupplyObj) {
   let activityLogArray = [];
   if (txArray.length > 0) {
     txArray.forEach(tx => {
-      const activityLog = parseTx(tx, userAddresses, pnl);
+      const activityLog = parseTx(tx, userAddresses, pnl, totalSupplyObj);
       if (activityLog) activityLogArray.push(activityLog);
     })
   } else console.log('No txs..');
@@ -136,10 +116,9 @@ function getActivityLog(txArray, userAddresses, pnl) {
 
 async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   console.time('USER');
-
   console.log('start');
 
-  secondsAgo = 3600 * 24 * 10;
+  secondsAgo = 3600 * 24 * 30;
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
@@ -157,13 +136,12 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   console.log('done with getting data..');
 
   const totalSupplyObj = await getTotalSupplyObj(txArray);
-  console.log(totalSupplyObj);
 
   txArray = filterContractAddress(txArray, contractAddress?.address);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   const pnl = { address: userAddresses, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
-  const activityLog = getActivityLog(txArray, userAddresses, pnl);
+  const activityLog = getActivityLog(txArray, userAddresses, pnl, totalSupplyObj);
 
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;
@@ -176,8 +154,8 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
-    // formatActivityLog(user.activityLog, false, true);
-    // formatPnl(user.pnl);
+    formatActivityLog(user.activityLog, false, true);
+    formatPnl(user.pnl);
   })();
 }
 

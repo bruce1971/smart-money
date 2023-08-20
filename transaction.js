@@ -3,10 +3,9 @@ const { decoder1, decoder2 } = require(`${basePath}/decoder.js`);
 const addresses = require(`${basePath}/addresses.js`);
 const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue, shortAddr, parseErc721 } = require(`${basePath}/helper.js`);
 const ethInUsd = 1850;
-const TOTAL_SUPPLY = 10000000;
 
 
-function parseDecodedArray(array, erc20, pnl) {
+function parseDecodedArray(array, erc20, pnl, totalSupplyObj) {
   const { addressLib } = addresses;
   let buyAmount = 0;
   let sellAmount = 0;
@@ -32,12 +31,12 @@ function parseDecodedArray(array, erc20, pnl) {
     pnl.wethOut += formatValueRaw(sellAmount);
     pnl.shitIn += formatValueRaw(buyAmount, erc20.tokenDecimal);
     const unitPriceEth = formatValueRaw(sellAmount)/formatValueRaw(buyAmount, erc20.tokenDecimal);
-    const totalSupply = TOTAL_SUPPLY;
+    const totalSupply = totalSupplyObj[erc20.contractAddress];
     const mcap = unitPriceEth * ethInUsd * totalSupply;
     return `🪙🟢 Token BUY1. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name} ($${formatLargeValue(mcap)} Mcap)`;
   } else if (swapTo.name === 'WETH') {
     const unitPriceEth = formatValueRaw(buyAmount)/formatValueRaw(sellAmount, erc20.tokenDecimal);
-    const totalSupply = TOTAL_SUPPLY;
+    const totalSupply = totalSupplyObj[erc20.contractAddress];
     const mcap = unitPriceEth * ethInUsd * totalSupply;
     pnl.wethIn += formatValueRaw(buyAmount)
     pnl.shitOut += formatValueRaw(sellAmount, erc20.tokenDecimal)
@@ -48,21 +47,21 @@ function parseDecodedArray(array, erc20, pnl) {
 }
 
 
-function parseErc20(txs, tx, finalObject, pnl) {
+function parseErc20(txs, tx, finalObject, pnl, totalSupplyObj) {
   const erc20 = txs.erc20;
   if (tx.functionName.includes('swap(')) {
     const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value);
-    const totalSupply = TOTAL_SUPPLY;
+    const totalSupply = totalSupplyObj[erc20.contractAddress];
     const mcap = unitPriceEth * ethInUsd * totalSupply;
     pnl.wethOut += formatValueRaw(tx.value);
     pnl.shitIn += formatValueRaw(erc20.value);
     finalObject.activity = `🪙🟢 Token BUY2. ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth ($${formatLargeValue(mcap)} Mcap)`;
   } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
     const decodedArray = decoder1(tx.input);
-    finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl);
+    finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl, totalSupplyObj);
   } else if (tx.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
     const decodedArray = decoder2(tx.input);
-    finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl);
+    finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl, totalSupplyObj);
   } else if (tx.functionName.includes('transfer')) {
     finalObject.activity = `🪙➡️  Token TRANSFER. ${formatLargeValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${shortAddr(erc20.to)}`;
   } else {
@@ -71,7 +70,7 @@ function parseErc20(txs, tx, finalObject, pnl) {
 }
 
 
-function parseTx(fullTx, userAddresses, pnl) {
+function parseTx(fullTx, userAddresses, pnl, totalSupplyObj) {
   const extended = false;
   const finalObject = {
     ago: formatTimestamp(fullTx.timeStamp),
@@ -89,7 +88,7 @@ function parseTx(fullTx, userAddresses, pnl) {
     if (txsKeys.includes('erc721')) {
       parseErc721(txs, txs.normal, finalObject);
     } else if (txsKeys.includes('erc20')) {
-      parseErc20(txs, txs.normal, finalObject, pnl);
+      parseErc20(txs, txs.normal, finalObject, pnl, totalSupplyObj);
     } else if (tx.from.toLowerCase() === userAddresses[0] && tx.functionName === '' && tx.input === '0x') {
       finalObject.activity = `💸➡️  SEND ${value}eth to ${shortAddr(tx.to)}`;
     } else if (tx.to.toLowerCase() === userAddresses[0] && tx.functionName === '') {
