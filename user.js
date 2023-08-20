@@ -82,8 +82,8 @@ async function txsForSingleAddress(address, contractAddress, startblock, endbloc
   return txArray;
 }
 
-async function getTotalSupplyObj(txArray){
-  const totalSupplyObj = {};
+async function getTokenInfoObj(txArray){
+  const tokenInfoObj = {};
   let addressArray = [];
   txArray.forEach(tx => {
     if (tx.txs.erc20) addressArray.push(tx.txs.erc20.contractAddress);
@@ -93,20 +93,22 @@ async function getTotalSupplyObj(txArray){
   for (var i = 0; i < addressArray.length; i++) {
     console.log(i);
     // https://www.dextools.io/app/en/ether/pair-explorer/0x72e4f9f808c49a2a61de9c5896298920dc4eeea9
-    const url = `https://api.ethplorer.io/getTokenInfo/${addressArray[i]}?apiKey=freekey`;
+    const url = `https://api.ethplorer.io/getTokenInfo/${addressArray[i]}?apiKey=EK-4ryVp-8miebE7-m1Wmm`;
     const tokenInfo = await axios.get(url).then(res => res.data);
-    await(new Promise((resolve) => {setTimeout(resolve, 600)})); // 0.6 sec timeout
-    totalSupplyObj[addressArray[i]] = Math.ceil(Number(tokenInfo.totalSupply)/10**Number(tokenInfo.decimals));
+    tokenInfoObj[addressArray[i]] = {
+      name: tokenInfo.name,
+      totalSupply: Math.ceil(Number(tokenInfo.totalSupply)/10**Number(tokenInfo.decimals))
+    }
   }
-  return totalSupplyObj;
+  return tokenInfoObj;
 }
 
 
-function getActivityLog(txArray, userAddresses, pnl, totalSupplyObj) {
+function getActivityLog(txArray, userAddresses, pnl, tokenInfoObj) {
   let activityLogArray = [];
   if (txArray.length > 0) {
     txArray.forEach(tx => {
-      const activityLog = parseTx(tx, userAddresses, pnl, totalSupplyObj);
+      const activityLog = parseTx(tx, userAddresses, pnl, tokenInfoObj);
       if (activityLog) activityLogArray.push(activityLog);
     })
   } else console.log('No txs..');
@@ -125,8 +127,8 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  // startblock = 17915951
-  // endblock = 17915951
+  // startblock = 17879637
+  // endblock = 17879646
 
   let txArray = [];
   for (const userAddress of userAddresses) {
@@ -135,13 +137,13 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   };
   console.log('done with getting data..');
 
-  const totalSupplyObj = await getTotalSupplyObj(txArray);
+  const tokenInfoObj = await getTokenInfoObj(txArray);
 
   txArray = filterContractAddress(txArray, contractAddress?.address);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   const pnl = { address: userAddresses, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
-  const activityLog = getActivityLog(txArray, userAddresses, pnl, totalSupplyObj);
+  const activityLog = getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
 
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;
@@ -155,7 +157,7 @@ if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
     formatActivityLog(user.activityLog, false, true);
-    formatPnl(user.pnl);
+    // formatPnl(user.pnl);
   })();
 }
 

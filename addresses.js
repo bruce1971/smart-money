@@ -1,11 +1,11 @@
 const addressLib = {
   '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2': { name: 'WETH', decimals: 18 },
   '0xdac17f958d2ee523a2206206994597c13d831ec7': { name: 'USDT', decimals: 6 },
-  '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9': { name: 'HarryPotterObamaSonic10Inu', decimals: 5, totalSupply: 1000000000 },
-  '0x6982508145454ce325ddbe47a25d4ec3d2311933': { name: 'Pepe', decimals: 8, totalSupply: 420689899999994 },
-  '0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410': { name: 'Hamsters', totalSupply: 10000000 },
-  '0xa35923162c49cf95e6bf26623385eb431ad920d3': { name: 'Turbo', totalSupply: 69000000000 },
-  '0xa62894d5196bc44e4c3978400ad07e7b30352372': { name: 'X', totalSupply: 980310162060 },
+  '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9': { name: 'HarryPotterObamaSonic10Inu', decimals: 5 },
+  '0x6982508145454ce325ddbe47a25d4ec3d2311933': { name: 'Pepe', decimals: 8 },
+  '0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410': { name: 'Hamsters' },
+  '0xa35923162c49cf95e6bf26623385eb431ad920d3': { name: 'Turbo' },
+  '0xa62894d5196bc44e4c3978400ad07e7b30352372': { name: 'X' },
 }
 //https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=0xa62894d5196bc44e4c3978400ad07e7b30352372
 //https://www.dextools.io/app/en/ether/pair-explorer/0x8e83de18b38ddc22166fb5454003a573a53be4ae
