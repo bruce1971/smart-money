@@ -15,7 +15,7 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
   if (array.length === 2 && addressLib[array[0].path[1].toLowerCase()]?.name === 'WETH' && addressLib[array[1].path[0].toLowerCase()]?.name === 'WETH') {
     sellAmount += Number(array[0].amountIn);
     buyAmount += Number(array[1].amountOut);
-    swapFrom = addressLib[array[0].path[0].toLowerCase()] || { name: shortAddr(array[0].path[0]) };
+    swapFrom = addressLib[array[0].path[0].toLowerCase()] || tokenInfo || { name: shortAddr(array[0].path[0]) };
     swapTo = addressLib[array[1].path.at(-1).toLowerCase()] || tokenInfo || { name: shortAddr(array[1].path.at(-1)) };
   }
   else {
@@ -24,7 +24,7 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
       sellAmount += Number(el.amountIn);
     });
     let swapPath = array[0].path;
-    swapFrom = addressLib[swapPath[0].toLowerCase()] || { name: shortAddr(swapPath[0]) };
+    swapFrom = addressLib[swapPath[0].toLowerCase()] || tokenInfo || { name: shortAddr(swapPath[0]) };
     swapTo = addressLib[swapPath.at(-1).toLowerCase()] || tokenInfo || { name: shortAddr(swapPath.at(-1)) };
   }
 
