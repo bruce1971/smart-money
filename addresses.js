@@ -28,7 +28,7 @@ const inputU = {
   'osf': ['0x3cb8482495c9188d1e36373134c059f98d7be4ed', '0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1'],
   'xman': ['0xc1244286edacb4097715386992aed36752483dcb'],
   'earlypepe': ['0x08c1ac67211b68b0e8d1ddc44771a3ac5d34cbf4'],
-  'ex': ['0x08c1ac67211b68b0e8d1ddc44771a3ac5d34cbf4'],
+  'ex': ['0x4504dfa3861ec902226278c9cb7a777a01118574'],
 }
 
 

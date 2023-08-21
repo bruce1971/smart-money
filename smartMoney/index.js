@@ -1,5 +1,5 @@
 const basePath = process.cwd();
-const tokens = require(`${basePath}/tokenRanks.js`);
+const tokens = require(`${basePath}/data.js`);
 
 const pepeWallets = tokens.pepe.map(o => o.address);
 const turboWallets = tokens.turbo.map(o => o.address);

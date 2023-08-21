@@ -21,7 +21,7 @@ async function main(tokenAddress) {
 
   const firstTx = erc20ContractTransactions[0];
   startblock = Number(firstTx.blockNumber);
-  endblock = startblock + 100//secondsToBlocks(3600 * 5);
+  endblock = startblock + secondsToBlocks(3600 * 5);
 
   erc20ContractTransactions = erc20ContractTransactions.filter(o => Number(o.blockNumber) < endblock);
 

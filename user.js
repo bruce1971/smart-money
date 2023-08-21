@@ -120,7 +120,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   console.time('USER');
   console.log('start');
 
-  // secondsAgo = 3600 * 24 * 1;
+  secondsAgo = 3600 * 24 * 10;
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
@@ -143,7 +143,8 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   const pnl = { address: userAddresses, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
-  const activityLog = getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
+  let activityLog = getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
+  // activityLog = activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
 
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;
