@@ -1,9 +1,11 @@
 const axios = require('axios');
 const basePath = process.cwd();
 const { accountUrl, formatActivityLog, secondsToBlocks, groupTransactions } = require(`${basePath}/helper.js`);
+const { getActivityLog, getTokenInfoObj } = require(`${basePath}/user.js`);
 const argv = require('minimist')(process.argv.slice(2));
-const { getActivityLog } = require(`${basePath}/user.js`);
+const addresses = require(`${basePath}/addresses.js`);
 
+const inputTokenAddress = addresses.inputA[argv.a].address;
 
 async function main(tokenAddress) {
   // startblock = 17054500
@@ -19,7 +21,7 @@ async function main(tokenAddress) {
 
   const firstTx = erc20ContractTransactions[0];
   startblock = Number(firstTx.blockNumber);
-  endblock = startblock + secondsToBlocks(3600 * 7);
+  endblock = startblock + 100//secondsToBlocks(3600 * 5);
 
   erc20ContractTransactions = erc20ContractTransactions.filter(o => Number(o.blockNumber) < endblock);
 
@@ -43,9 +45,12 @@ async function main(tokenAddress) {
   const txArray = groupTransactions(transactions, erc20ContractTransactions);
 
   const pnl = { address: tokenAddress, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
-  const activityLog = await getActivityLog(txArray, tokenAddress, pnl);
+  const tokenInfoObj = await getTokenInfoObj(txArray);
+  let activityLog = await getActivityLog(txArray, tokenAddress, pnl, tokenInfoObj);
+  // activityLog = activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
   formatActivityLog(activityLog, true, true);
+  const userArray = [... new Set(activityLog.map(a => a.userWallet))];
+  console.log(userArray);
 }
 
-
-if (require.main === module) main('0x6982508145454ce325ddbe47a25d4ec3d2311933');
+if (require.main === module) main(inputTokenAddress);

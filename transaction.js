@@ -33,15 +33,24 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
     pnl.shitIn += formatValueRaw(buyAmount, erc20.tokenDecimal);
     const unitPriceEth = formatValueRaw(sellAmount)/formatValueRaw(buyAmount, erc20.tokenDecimal);
     const mcap = unitPriceEth * ethInUsd * tokenInfo.totalSupply;
-    return `🪙🟢 Token BUY1. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name} ($${formatLargeValue(mcap)} Mcap)`;
+    return {
+      type: 'buy',
+      activity: `🪙🟢 Token BUY1. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name} ($${formatLargeValue(mcap)} Mcap)`
+    }
   } else if (swapTo.name === 'WETH') {
     const unitPriceEth = formatValueRaw(buyAmount)/formatValueRaw(sellAmount, erc20.tokenDecimal);
     const mcap = unitPriceEth * ethInUsd * tokenInfo.totalSupply;
     pnl.wethIn += formatValueRaw(buyAmount)
     pnl.shitOut += formatValueRaw(sellAmount, erc20.tokenDecimal)
-    return `🪙🔴 Token SALE. ${formatLargeValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(buyAmount)} ${swapTo.name} ($${formatLargeValue(mcap)} Mcap)`;
+    return {
+      type: 'sale',
+      activity: `🪙🔴 Token SALE. ${formatLargeValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(buyAmount)} ${swapTo.name} ($${formatLargeValue(mcap)} Mcap)`
+    }
   } else {
-    return `🪙🟠 Swap ${formatLargeValue(sellAmount, 18)} ${swapFrom.name} to ${formatValue(buyAmount, swapTo.decimals)} ${swapTo.name}`;
+    return {
+      type: 'swap',
+      activity: `🪙🟠 Swap ${formatLargeValue(sellAmount, 18)} ${swapFrom.name} to ${formatValue(buyAmount, swapTo.decimals)} ${swapTo.name}`
+    }
   }
 }
 
@@ -55,12 +64,17 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     pnl.wethOut += formatValueRaw(tx.value);
     pnl.shitIn += formatValueRaw(erc20.value);
     finalObject.activity = `🪙🟢 Token BUY2. ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth ($${formatLargeValue(mcap)} Mcap)`;
+    finalObject.type = 'buy';
   } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
     const decodedArray = decoder1(tx.input);
-    finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
+    const parsed = parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
+    finalObject.type = parsed.type;
+    finalObject.activity = parsed.activity;
   } else if (tx.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
     const decodedArray = decoder2(tx.input);
-    finalObject.activity = parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
+    const parsed = parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj)
+    finalObject.type = parsed.type;
+    finalObject.activity = parsed.activity;
   } else if (tx.functionName.includes('transfer')) {
     finalObject.activity = `🪙➡️  Token TRANSFER. ${formatLargeValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${shortAddr(erc20.to)}`;
   } else {
@@ -70,7 +84,6 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
 
 
 function parseTx(fullTx, userAddresses, pnl, tokenInfoObj) {
-  const extended = false;
   const finalObject = {
     ago: formatTimestamp(fullTx.timeStamp),
     block: fullTx.block,
@@ -93,21 +106,17 @@ function parseTx(fullTx, userAddresses, pnl, tokenInfoObj) {
     } else if (tx.to.toLowerCase() === userAddresses[0] && tx.functionName === '') {
       finalObject.activity = `⬅️ 💸 RECEIVE ${value}eth from ${shortAddr(tx.from)}`;
     } else if (tx.functionName.includes('setApprovalForAll')) {
-      if (extended) finalObject.activity = `👍👍 Set Approval for All...`
-      else return;
+      finalObject.activity = `👍👍 Set Approval for All...`
     } else if (tx.functionName.includes('approve')) {
-      if (extended) finalObject.activity = `👍 Approve spend...`;
-      else return;
+      finalObject.activity = `👍 Approve spend...`;
     } else if (tx.to.toLowerCase() === '0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5'.toLowerCase() && tx.functionName.includes('commit')) {
       finalObject.activity = `💦 Request to Register ENS Domain`;
     } else if (tx.to.toLowerCase() === '0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5'.toLowerCase() && tx.functionName.includes('registerWithConfig')) {
       finalObject.activity = `💦 Register ENS Domain`;
     } else if (tx.functionName === 'deposit()' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
-      if (extended) finalObject.activity = `↪️  Wrap ${value} ETH to WETH`; //amount in decoded tx.input
-      else return;
+      finalObject.activity = `↪️  Wrap ${value} ETH to WETH`; //amount in decoded tx.input
     } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
-      if (extended) finalObject.activity = `↩️  Unwrap WETH to ETH`; //amount in decoded tx.input
-      else return;
+      finalObject.activity = `↩️  Unwrap WETH to ETH`; //amount in decoded tx.input
     } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0x0000000000a39bb272e79075ade125fd351887ac'.toLowerCase()) {
       finalObject.activity = `Withdraw from Blur`;
     } else {
@@ -116,8 +125,7 @@ function parseTx(fullTx, userAddresses, pnl, tokenInfoObj) {
   } else {
     finalObject.activity = '❌ NO NORMAL TXS...';
     if (txsKeys.includes('erc20')) {
-      if (extended) finalObject.activity = `⬅️ 🪙 RECEIVE ${formatValue(txs.erc20.value, txs.erc20.tokenDecimal)} ${txs.erc20.tokenName} from ${shortAddr(txs.erc20.from)}`;
-      else return;
+      finalObject.activity = `⬅️ 🪙 RECEIVE ${formatValue(txs.erc20.value, txs.erc20.tokenDecimal)} ${txs.erc20.tokenName} from ${shortAddr(txs.erc20.from)}`;
     } else if (txsKeys.includes('erc721')) {
       finalObject.activity = '💎';
     } else if (txsKeys.includes('erc1155')) {
