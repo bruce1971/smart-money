@@ -1,15 +1,3 @@
-const addressLib = {
-  '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2': { name: 'WETH' },
-  '0xdac17f958d2ee523a2206206994597c13d831ec7': { name: 'USDT' },
-  '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9': { name: 'HarryPotterObamaSonic10Inu' },
-  '0x6982508145454ce325ddbe47a25d4ec3d2311933': { name: 'Pepe' },
-  '0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410': { name: 'Hamsters' },
-  '0xa35923162c49cf95e6bf26623385eb431ad920d3': { name: 'Turbo' },
-  '0xa62894d5196bc44e4c3978400ad07e7b30352372': { name: 'X' },
-}
-//https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=0xa62894d5196bc44e4c3978400ad07e7b30352372
-//https://www.dextools.io/app/en/ether/pair-explorer/0x8e83de18b38ddc22166fb5454003a573a53be4ae
-
 const inputA = {
   'bitcoin': { address: '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9', type: 'erc20' },
   'pepe': { address: '0x6982508145454ce325ddbe47a25d4ec3d2311933', type: 'erc20' },
@@ -19,7 +7,9 @@ const inputA = {
   'unibot': { address: '0xf819d9Cb1c2A819Fd991781A822dE3ca8607c3C9', type: 'erc20' },
   'cage': { address: '0xfcaF0e4498E78d65526a507360F755178b804Ba8', type: 'erc20' },
   'none': { address: '0x903ff0ba636E32De1767A4B5eEb55c155763D8B7', type: 'erc20' },
-  'prime': { address: '0x903ff0ba636E32De1767A4B5eEb55c155763D8B7', type: 'erc20' },
+  'prime': { address: '0xb23d80f5FefcDDaa212212F028021B41DEd428CF', type: 'erc20' },
+  'nihao': { address: '0xC3681A720605bD6F8fe9A2FaBff6A7CDEcDc605D', type: 'erc20' },
+  'mog': { address: '0xaaeE1A9723aaDB7afA2810263653A34bA2C21C7a', type: 'erc20' },
 }
 
 const inputU = {
@@ -35,9 +25,7 @@ const inputU = {
   'ex': ['0x4504dfa3861ec902226278c9cb7a777a01118574'],
 }
 
-
 module.exports = {
-  addressLib,
   inputU,
   inputA
 };

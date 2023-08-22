@@ -11,7 +11,6 @@ const swapCodes = {
     "09": "V2_SWAP_EXACT_OUT"
 };
 
-
 module.exports = {
     decoder1,
     decoder2

@@ -1,22 +1,21 @@
 const basePath = process.cwd();
 const { decoder1, decoder2 } = require(`./decoder.js`);
-const addresses = require(`${basePath}/addresses.js`);
 const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue, shortAddr, parseErc721 } = require(`${basePath}/helper.js`);
 const ethInUsd = 1850;
 
 
 function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
-  const { addressLib } = addresses;
   let buyAmount = 0;
   let sellAmount = 0;
   let swapFrom, swapTo;
   const tokenInfo = tokenInfoObj[erc20.contractAddress];
 
-  if (array.length === 2 && addressLib[array[0].path[1].toLowerCase()]?.name === 'WETH' && addressLib[array[1].path[0].toLowerCase()]?.name === 'WETH') {
+  // if (array.length === 2 && addressLib[array[0].path[1].toLowerCase()]?.name === 'WETH' && addressLib[array[1].path[0].toLowerCase()]?.name === 'WETH') {
+  if (false) { // TODO: fix
     sellAmount += Number(array[0].amountIn);
     buyAmount += Number(array[1].amountOut);
-    swapFrom = addressLib[array[0].path[0].toLowerCase()] || tokenInfo || { name: shortAddr(array[0].path[0]) };
-    swapTo = addressLib[array[1].path.at(-1).toLowerCase()] || tokenInfo || { name: shortAddr(array[1].path.at(-1)) };
+    swapFrom = tokenInfo || { name: shortAddr(array[0].path[0]) };
+    swapTo = tokenInfo || { name: shortAddr(array[1].path.at(-1)) };
   }
   else {
     array.forEach(el => {
@@ -24,8 +23,8 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
       sellAmount += Number(el.amountIn);
     });
     let swapPath = array[0].path;
-    swapFrom = addressLib[swapPath[0].toLowerCase()] || tokenInfo || { name: shortAddr(swapPath[0]) };
-    swapTo = addressLib[swapPath.at(-1).toLowerCase()] || tokenInfo || { name: shortAddr(swapPath.at(-1)) };
+    swapFrom = tokenInfo || { name: shortAddr(swapPath[0]) };
+    swapTo = tokenInfo || { name: shortAddr(swapPath.at(-1)) };
   }
 
   if (swapFrom.name === 'WETH') {

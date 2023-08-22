@@ -120,7 +120,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   console.time('USER');
   console.log('start');
 
-  secondsAgo = 3600 * 24 * 1;
+  secondsAgo = 3600 * 24 * 20;
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
