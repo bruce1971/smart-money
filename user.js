@@ -2,7 +2,7 @@ const axios = require('axios');
 const argv = require('minimist')(process.argv.slice(2));
 const basePath = process.cwd();
 const addresses = require(`${basePath}/addresses.js`);
-const { parseTx } = require(`${basePath}/transaction.js`);
+const { parseTx } = require(`${basePath}/transaction`);
 const { accountUrl, blockUrl, formatActivityLog, formatPnl, secondsToBlocks, groupTransactions } = require(`${basePath}/helper.js`);
 
 const inputUserAddresses = addresses.inputU[argv.u];
@@ -120,7 +120,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   console.time('USER');
   console.log('start');
 
-  secondsAgo = 3600 * 24 * 10;
+  secondsAgo = 3600 * 24 * 1;
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;

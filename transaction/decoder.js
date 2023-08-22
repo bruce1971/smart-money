@@ -1,5 +1,8 @@
 const fs = require("fs");
 const {Interface, AbiCoder} = require("ethers");
+let { abi1, abi2 } = require(`./abis.js`);
+let universalInteface = new Interface(abi1);
+let universalInteface2 = new Interface(abi2);
 
 const swapCodes = {
     "00": "V3_SWAP_EXACT_IN",
@@ -8,10 +11,6 @@ const swapCodes = {
     "09": "V2_SWAP_EXACT_OUT"
 };
 
-const basePath = process.cwd();
-let { abi1, abi2 } = require(`${basePath}/abis.js`);
-let universalInteface = new Interface(abi1);
-let universalInteface2 = new Interface(abi2);
 
 module.exports = {
     decoder1,

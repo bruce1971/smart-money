@@ -1,5 +1,5 @@
 const basePath = process.cwd();
-const { decoder1, decoder2 } = require(`${basePath}/decoder.js`);
+const { decoder1, decoder2 } = require(`./decoder.js`);
 const addresses = require(`${basePath}/addresses.js`);
 const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue, shortAddr, parseErc721 } = require(`${basePath}/helper.js`);
 const ethInUsd = 1850;
