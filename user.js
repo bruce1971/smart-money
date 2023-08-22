@@ -88,6 +88,7 @@ async function getTokenInfoObj(txArray){
   txArray.forEach(tx => {
     if (tx.txs.erc20) addressArray.push(tx.txs.erc20.contractAddress);
   });
+  addressArray.push('0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'); // always get WETH
   addressArray = [...new Set(addressArray)];
   console.log(`Getting ${addressArray.length} tokenInfos..`);
   for (var i = 0; i < addressArray.length; i++) {
@@ -127,8 +128,8 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  // startblock = 17879637
-  // endblock = 17879646
+  // startblock = 17879584
+  // endblock = 17879584
 
   let txArray = [];
   for (const userAddress of userAddresses) {
