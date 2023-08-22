@@ -1,5 +1,5 @@
 const basePath = process.cwd();
-const { decoder1, decoder2 } = require(`./decoder.js`);
+const decoder = require(`./decoder.js`);
 const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue, shortAddr, parseErc721 } = require(`${basePath}/helper.js`);
 const ethInUsd = 1850;
 
@@ -56,21 +56,24 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
 
 function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
   const erc20 = txs.erc20;
-  if (tx.functionName.includes('swap(')) {
-    const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value);
-    const totalSupply = tokenInfoObj[erc20.contractAddress].totalSupply;
-    const mcap = unitPriceEth * ethInUsd * totalSupply;
-    pnl.wethOut += formatValueRaw(tx.value);
-    pnl.shitIn += formatValueRaw(erc20.value);
-    finalObject.activity = `🪙🟢 Token BUY2. ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth ($${formatLargeValue(mcap)} Mcap)`;
-    finalObject.type = 'buy';
-  } else if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
-    const decodedArray = decoder1(tx.input);
+  if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
+    const decodedArray = decoder.decoder1(tx.input);
     const parsed = parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
     finalObject.type = parsed.type;
     finalObject.activity = parsed.activity;
+  // } else if (tx.functionName === 'swap(address executor,tuple desc,bytes permit,bytes data)') {
+  //   console.log(txs);
+  //   // const decodedArray = decoder.decoder3(tx.input);
+  //   // console.log('decodedArray', decodedArray);
+  //   const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value);
+  //   const totalSupply = tokenInfoObj[erc20.contractAddress].totalSupply;
+  //   const mcap = unitPriceEth * ethInUsd * totalSupply;
+  //   pnl.wethOut += formatValueRaw(tx.value);
+  //   pnl.shitIn += formatValueRaw(erc20.value);
+  //   finalObject.activity = `🪙🟢 Token BUY2. ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth ($${formatLargeValue(mcap)} Mcap)`;
+  //   finalObject.type = 'buy';
   } else if (tx.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
-    const decodedArray = decoder2(tx.input);
+    const decodedArray = decoder.decoder2(tx.input);
     const parsed = parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj)
     finalObject.type = parsed.type;
     finalObject.activity = parsed.activity;

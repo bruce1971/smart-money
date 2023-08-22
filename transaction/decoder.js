@@ -4,19 +4,38 @@ let { abi1, abi2 } = require(`./abis.js`);
 let universalInteface = new Interface(abi1);
 let universalInteface2 = new Interface(abi2);
 
-const swapCodes = {
-    "00": "V3_SWAP_EXACT_IN",
-    "01": "V3_SWAP_EXACT_OUT",
-    "08": "V2_SWAP_EXACT_IN",
-    "09": "V2_SWAP_EXACT_OUT"
-};
+//https://api.etherscan.io/api?module=contract&action=getabi&address=0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413
 
 module.exports = {
     decoder1,
-    decoder2
+    decoder2,
+    decoder3
 }
 
 function decoder1(transactionInput) {
+    const swapCodes = {
+        "00": "V3_SWAP_EXACT_IN",
+        "01": "V3_SWAP_EXACT_OUT",
+        "08": "V2_SWAP_EXACT_IN",
+        "09": "V2_SWAP_EXACT_OUT"
+    };
+
+    function extractPathFromV3(fullPath, reverse = false) {
+        const fullPathWithoutHexSymbol = fullPath.substring(2);
+        let path = [];
+        let currentAddress = "";
+        for (let i = 0; i < fullPathWithoutHexSymbol.length; i++) {
+            currentAddress += fullPathWithoutHexSymbol[i];
+            if (currentAddress.length === 40) {
+                path.push('0x' + currentAddress);
+                i = i + 6;
+                currentAddress = "";
+            }
+        }
+        if (reverse) return path.reverse();
+        return path;
+    }
+
     const parsedTx = universalInteface.parseTransaction({data: transactionInput});
     let commandsSplit = parsedTx.args[0].substring(2).match(/.{1,2}/g);
     const abiCoder = new AbiCoder();
@@ -71,24 +90,21 @@ function decoder1(transactionInput) {
     return finalArray;
 }
 
-function extractPathFromV3(fullPath, reverse = false) {
-    const fullPathWithoutHexSymbol = fullPath.substring(2);
-    let path = [];
-    let currentAddress = "";
-    for (let i = 0; i < fullPathWithoutHexSymbol.length; i++) {
-        currentAddress += fullPathWithoutHexSymbol[i];
-        if (currentAddress.length === 40) {
-            path.push('0x' + currentAddress);
-            i = i + 6;
-            currentAddress = "";
-        }
-    }
-    if (reverse) return path.reverse();
-    return path;
-}
-
 function decoder2(transactionInput) {
   const parsedTx = universalInteface2.parseTransaction({data: transactionInput});
+  const decoded = parsedTx.args;
+  let finalArray = [];
+  finalArray.push({
+      amountIn: decoded[0].toString(),
+      amountOut: decoded[1].toString(),
+      path: decoded[2]
+  })
+  return finalArray;
+}
+
+function decoder3(transactionInput) {
+  const parsedTx = universalInteface2.parseTransaction({data: transactionInput});
+  console.log(parsedTx);
   const decoded = parsedTx.args;
   let finalArray = [];
   finalArray.push({
