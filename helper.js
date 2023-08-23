@@ -29,7 +29,6 @@ function accountUrl(type, address, contractAddress, startblock=0, endblock=99999
      ${contractAddress ? `&contractaddress=${contractAddress}` : ''}
      &startblock=${startblock}
      &endblock=${endblock}
-     &page=1
      &sort=${sort}
      &apikey=${etherscanApiKey}
   `.replace(/\s/g, '')
