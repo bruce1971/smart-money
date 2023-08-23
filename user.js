@@ -159,7 +159,7 @@ if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
     formatActivityLog(user.activityLog, false, true);
-    // formatPnl(user.pnl);
+    formatPnl(user.pnl);
   })();
 }
 

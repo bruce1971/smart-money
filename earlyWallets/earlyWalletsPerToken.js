@@ -34,7 +34,7 @@ async function main(tokenAddress) {
 
   let userAddresses = [];
   console.log('erc20ContractTransactions.length',erc20ContractTransactions.length);
-  erc20ContractTransactions.forEach(tx => userAddresses.push(tx.to));
+  erc20ContractTransactions.forEach(tx => userAddresses.push(tx.to)); // FIXME: and from?
   userAddresses = [... new Set(userAddresses)];
   console.log(JSON.stringify(userAddresses));
   console.log(userAddresses.length);

@@ -1,5 +1,5 @@
 const inputA = {
-  'pepe': { address: '0x6982508145454ce325ddbe47a25d4ec3d2311933', type: 'erc20', startblock: 17088740, endblock: 17145674  },
+  'pepe': { address: '0x6982508145454ce325ddbe47a25d4ec3d2311933', type: 'erc20', startblock: 17046105, endblock: 17145674  },
   'bitcoin': { address: '0x72e4f9f808c49a2a61de9c5896298920dc4eeea9', type: 'erc20', startblock: 17663408, endblock: 17684668 },
   'hams': { address: '0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410', type: 'erc20', startblock: 17663883, endblock: 17735001 },
   'turbo': { address: '0xa35923162c49cf95e6bf26623385eb431ad920d3', type: 'erc20', startblock: 17167024, endblock: 17173727 },
@@ -22,7 +22,12 @@ const inputU = {
   'osf': ['0x3cb8482495c9188d1e36373134c059f98d7be4ed', '0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1'],
   'xman': ['0xc1244286edacb4097715386992aed36752483dcb'],
   'earlypepe': ['0x08c1ac67211b68b0e8d1ddc44771a3ac5d34cbf4'],
-  'ex': ['0x4504dfa3861ec902226278c9cb7a777a01118574'],
+  'left': [
+    '0x9224cf7956b8787f1e015349ba2937cef29215d8'
+    ,'0x5f45c7ea2e094fea813a8a8813620ffcc4a19d0f'
+  ],
+  'dimi': ['0x4a2c786651229175407d3a2d405d1998bcf40614'],
+  'ex': ['0xCc65d148ac68Fda14C29bCC5aE7622D8BcD622e3'],
 }
 
 module.exports = {

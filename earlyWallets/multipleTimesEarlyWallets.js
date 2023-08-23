@@ -1,5 +1,7 @@
+const axios = require('axios');
 const wallets = require(`./data.js`);
-const EARLY_FREQUENCY = 2;
+const { accountUrl } = require(`../helper.js`);
+const EARLY_FREQUENCY = 4;
 
 const allKeys = Object.keys(wallets);
 let allWallets = [];
@@ -17,7 +19,8 @@ const blacklist = [
   '0x22f9dcf4647084d6c31b2765f6910cd85c178c18',
   '0xa910f92acdaf488fa6ef02174fb86208ad7722ba',
   '0x74de5d4fcbf63e00296fd95d33236b9794016631',
-  '0x00004ec2008200e43b243a000590d4cd46360000'
+  '0x00004ec2008200e43b243a000590d4cd46360000',
+  '0xe8c060f8052e07423f71d445277c61ac5138a2e5'
 ]
 
 allWallets = allWallets.filter(w => !['0x000000', '0x111111'].some(substring => w.includes(substring)))
@@ -31,9 +34,21 @@ allWallets.forEach(wallet => {
   });
 });
 
-filteredWalletsObj = {};
+let filteredWallets = [];
 Object.keys(allWalletsObj).forEach(wallet => {
-  if (allWalletsObj[wallet].length >= EARLY_FREQUENCY) filteredWalletsObj[wallet] = allWalletsObj[wallet];
+  if (allWalletsObj[wallet].length >= EARLY_FREQUENCY) {
+    filteredWallets.push({ 'address': wallet, 'tokens': allWalletsObj[wallet] });
+  }
 });
 
-console.log(filteredWalletsObj);
+filteredWallets = filteredWallets.sort((a,b) => b.tokens.length - a.tokens.length);
+(async () => {
+  const finalWallets = [];
+  console.log(`scanning ${filteredWallets.length} wallets...`);
+  for (var i = 0; i < filteredWallets.length; i++) {
+    console.log(i);
+    const normalTransactions = await axios.get(accountUrl('txlist', filteredWallets[i].address)).then(res => res.data.result);
+    if (50 < normalTransactions.length && normalTransactions.length < 10000) finalWallets.push(filteredWallets[i]);
+  }
+  finalWallets.forEach(wallet => console.log(`${wallet.address} -> ${wallet.tokens}`));
+})();
