@@ -1,8 +1,8 @@
 const axios = require('axios');
 const basePath = process.cwd();
-const { accountUrl, formatActivityLog, secondsToBlocks, groupTransactions } = require(`${basePath}/helper.js`);
+const { accountUrl } = require(`../helper.js`);
 const argv = require('minimist')(process.argv.slice(2));
-const addresses = require(`${basePath}/addresses.js`);
+const addresses = require(`../addresses.js`);
 
 const inputTokenAddress = addresses.inputA[argv.a].address;
 const inputTokenStartblock = addresses.inputA[argv.a].startblock;

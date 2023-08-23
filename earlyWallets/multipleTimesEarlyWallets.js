@@ -1,4 +1,5 @@
 const wallets = require(`./data.js`);
+const EARLY_FREQUENCY = 2;
 
 const allKeys = Object.keys(wallets);
 let allWallets = [];
@@ -32,8 +33,7 @@ allWallets.forEach(wallet => {
 
 filteredWalletsObj = {};
 Object.keys(allWalletsObj).forEach(wallet => {
-  if (allWalletsObj[wallet].length >= 2) filteredWalletsObj[wallet] = allWalletsObj[wallet];
+  if (allWalletsObj[wallet].length >= EARLY_FREQUENCY) filteredWalletsObj[wallet] = allWalletsObj[wallet];
 });
-
 
 console.log(filteredWalletsObj);
