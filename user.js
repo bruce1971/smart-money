@@ -86,7 +86,6 @@ function getParticipation(txArray) {
 
 
 async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
-  console.time('USER');
   console.log('start');
 
   // secondsAgo = 3600 * 24 * 70;
@@ -96,8 +95,8 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  // startblock = 17894626
-  // endblock = 17894626
+  // startblock = 11902909
+  // endblock = 11902909
 
   let txArray = [];
   for (const userAddress of userAddresses) {
@@ -120,7 +119,6 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;
   const output = { pnl, activityLog };
-  console.timeEnd('USER');
   return output;
 }
 
@@ -128,7 +126,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
-    formatActivityLog(user.activityLog, false, false);
+    formatActivityLog(user.activityLog, false, true);
     formatPnl(user.pnl);
   })();
 }
