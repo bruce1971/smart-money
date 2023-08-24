@@ -1,7 +1,7 @@
 const axios = require('axios');
 const basePath = process.cwd();
 const { accountUrl, formatActivityLog, secondsToBlocks, groupTransactions } = require(`${basePath}/helper.js`);
-const { getActivityLog, getTokenInfoObj } = require(`${basePath}/user.js`);
+const { getActivityLog, getErc20InfoObj } = require(`${basePath}/user.js`);
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`${basePath}/addresses.js`);
 
@@ -50,7 +50,7 @@ async function main(tokenAddress) {
   const txArray = groupTransactions(transactions, erc20ContractTransactions);
 
   const pnl = { address: tokenAddress, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
-  const tokenInfoObj = await getTokenInfoObj(txArray);
+  const tokenInfoObj = await getErc20InfoObj(txArray);
   let activityLog = await getActivityLog(txArray, tokenAddress, pnl, tokenInfoObj);
   // activityLog = activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
   formatActivityLog(activityLog, true, true);

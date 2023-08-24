@@ -34,22 +34,15 @@ async function txsForSingleAddress(address, contractAddress, startblock, endbloc
     startblock = Math.min(...blockNumbers);
     endblock = Math.max(...blockNumbers);
   }
-  // shitcoin2
-  const erc20ContractTransactions = false
-    ? await axios.get(accountUrl('tokentx', null, address, startblock, startblock, sort)).then(res => {
-      const txs = res.data.result;
-      txs.forEach(tx => tx.type = 'erc20c')
-      return txs;
-    }) : [];
   // nft
-  const erc721Transactions = false //['erc721', undefined].includes(contractAddress?.type)
+  const erc721Transactions = ['erc721', undefined].includes(contractAddress?.type)
     ? await axios.get(accountUrl('tokennfttx', address, contractAddress?.address, startblock, endblock, sort)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc721')
       return txs;
     }) : [];
   // nft2
-  const erc1155Transactions = false //['erc1155', undefined].includes(contractAddress?.type)
+  const erc1155Transactions = ['erc1155', undefined].includes(contractAddress?.type)
     ? await axios.get(accountUrl('token1155tx', address, contractAddress?.address, startblock, endblock, sort)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'erc1155')
@@ -73,7 +66,6 @@ async function txsForSingleAddress(address, contractAddress, startblock, endbloc
     ...normalTransactions,
     ...internalTransactions,
     ...erc20Transactions,
-    ...erc20ContractTransactions,
     ...erc721Transactions,
     ...erc1155Transactions
   ];
@@ -82,18 +74,17 @@ async function txsForSingleAddress(address, contractAddress, startblock, endbloc
   return txArray;
 }
 
-async function getTokenInfoObj(txArray){
+async function getErc20InfoObj(txArray){
   const tokenInfoObj = {};
   let addressArray = [];
   txArray.forEach(tx => {
-    if (tx.txs.erc20) addressArray.push(tx.txs.erc20.contractAddress);
-    // TODO: filter out scam received
+    if (tx.txs.normal && tx.txs.erc20) addressArray.push(tx.txs.erc20.contractAddress);
   });
   addressArray.push('0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'); // always get WETH
   addressArray = [...new Set(addressArray)];
   console.log(`Getting ${addressArray.length} tokenInfos..`);
   for (var i = 0; i < addressArray.length; i++) {
-    console.log(i);
+    console.log(i+1);
     // https://www.dextools.io/app/en/ether/pair-explorer/0x72e4f9f808c49a2a61de9c5896298920dc4eeea9
     const url = `https://api.ethplorer.io/getTokenInfo/${addressArray[i]}?apiKey=EK-4ryVp-8miebE7-m1Wmm`;
     const tokenInfo = await axios.get(url).then(res => res.data);
@@ -122,7 +113,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   console.time('USER');
   console.log('start');
 
-  // secondsAgo = 3600 * 24 * 20;
+  // secondsAgo = 3600 * 24 * 70;
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
@@ -137,16 +128,23 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
     const txArray1 = await txsForSingleAddress(userAddress, contractAddress, startblock, endblock);
     txArray = txArray.concat(txArray1);
   };
-  console.log('done with getting data..');
+  console.log('done with getting tx data..');
 
-  const tokenInfoObj = await getTokenInfoObj(txArray);
+  const tokenNames = []
+  txArray.forEach(tx => {
+    if (tx.txs.normal && tx.txs.erc20) tokenNames.push(tx.txs.erc20.tokenName);
+    else if (tx.txs.normal && tx.txs.erc721) tokenNames.push(tx.txs.erc721.tokenName);
+  });
+  console.log('NAMES',[... new Set(tokenNames)]);
+
+  const tokenInfoObj = await getErc20InfoObj(txArray);
 
   txArray = filterContractAddress(txArray, contractAddress?.address);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   const pnl = { address: userAddresses, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
   let activityLog = getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
-  // activityLog = activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
+  activityLog = activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
 
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;
@@ -169,5 +167,5 @@ module.exports = {
     getUserData,
     txsForSingleAddress,
     getActivityLog,
-    getTokenInfoObj
+    getErc20InfoObj
 }
