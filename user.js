@@ -87,6 +87,7 @@ async function getTokenInfoObj(txArray){
   let addressArray = [];
   txArray.forEach(tx => {
     if (tx.txs.erc20) addressArray.push(tx.txs.erc20.contractAddress);
+    // TODO: filter out scam received
   });
   addressArray.push('0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'); // always get WETH
   addressArray = [...new Set(addressArray)];

@@ -13,8 +13,7 @@ const inputA = {
 }
 
 const inputU = {
-  'scribbs':  ['0x70399b85054dd1d94f2264afc8704a3ee308abaf',
-     // '0x5654967dc2c3f207b68bbd8003bc27a0a4106b56',
+  'scribbs':  ['0x70399b85054dd1d94f2264afc8704a3ee308abaf', '0x5654967dc2c3f207b68bbd8003bc27a0a4106b56',
      // '0xa1e2fbd0f94465cc253792aa4b19629438d70836', '0x59d4fd60a25054bbd6cca11cf43946a3e033194b'
   ],
   'gr0wcrypt0': ['0x1CE2304369d957fc1F0Dd32C983F445E449F4C7A'],
@@ -22,9 +21,8 @@ const inputU = {
   'osf': ['0x3cb8482495c9188d1e36373134c059f98d7be4ed', '0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1'],
   'xman': ['0xc1244286edacb4097715386992aed36752483dcb'],
   'earlypepe': ['0x08c1ac67211b68b0e8d1ddc44771a3ac5d34cbf4'],
-  'left': [
-    '0x9224cf7956b8787f1e015349ba2937cef29215d8'
-    ,'0x5f45c7ea2e094fea813a8a8813620ffcc4a19d0f'
+  'left': [ '0x9224cf7956b8787f1e015349ba2937cef29215d8'
+    // ,'0x5f45c7ea2e094fea813a8a8813620ffcc4a19d0f'
   ],
   'dimi': ['0x4a2c786651229175407d3a2d405d1998bcf40614'],
   'ex': ['0xCc65d148ac68Fda14C29bCC5aE7622D8BcD622e3'],

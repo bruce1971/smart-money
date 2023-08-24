@@ -34,7 +34,7 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
     const mcap = unitPriceEth * ethInUsd * tokenInfo.totalSupply;
     return {
       type: 'buy',
-      activity: `🪙🟢 Token BUY1. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name} ($${formatLargeValue(mcap)} Mcap)`
+      activity: `🪙🟢 Token BUY. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name} ($${formatLargeValue(mcap)} Mcap)`
     }
   } else if (swapTo.name === 'WETH') {
     const unitPriceEth = formatValueRaw(buyAmount)/formatValueRaw(sellAmount, erc20.tokenDecimal);
@@ -70,7 +70,7 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
   //   const mcap = unitPriceEth * ethInUsd * totalSupply;
   //   pnl.wethOut += formatValueRaw(tx.value);
   //   pnl.shitIn += formatValueRaw(erc20.value);
-  //   finalObject.activity = `🪙🟢 Token BUY2. ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth ($${formatLargeValue(mcap)} Mcap)`;
+  //   finalObject.activity = `🪙🟢 Token BUY. ${formatValue(erc20.value)} ${erc20.tokenName} for ${value}eth ($${formatLargeValue(mcap)} Mcap)`;
   //   finalObject.type = 'buy';
   } else if (tx.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
     const decodedArray = decoder.decoder2(tx.input);

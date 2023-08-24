@@ -9,7 +9,8 @@ import addresses from './addresses.js';
 
 async function getMessages(userAddresses, secondsAgo=3600) {
   const userData = await getUserData(userAddresses, null, secondsAgo);
-  return userData.activityLog;
+  const activityLog = userData.activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
+  return activityLog;
 }
 
 
@@ -46,7 +47,7 @@ async function sendAll(userArray) {
 
 export const handler = async (event) => {
   console.log('INIT LAMBDA...');
-  const sentMessages = await sendAll(['scribbs', 'osf', 'artchick', 'gr0wcrypt0']);
+  const sentMessages = await sendAll(['scribbs', 'osf', 'artchick', 'gr0wcrypt0', 'left']);
   const response = {
     statusCode: 200,
     body: JSON.stringify(sentMessages.map(m => m.text)),
@@ -55,4 +56,4 @@ export const handler = async (event) => {
 };
 
 
-// handler();
+handler();
