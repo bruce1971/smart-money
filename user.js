@@ -3,11 +3,11 @@ const argv = require('minimist')(process.argv.slice(2));
 const basePath = process.cwd();
 const addresses = require(`${basePath}/addresses.js`);
 const { parseTx } = require(`${basePath}/transaction`);
-const { accountUrl, blockUrl, formatActivityLog, formatPnl, secondsToBlocks } = require(`${basePath}/helper.js`);
+const { accountUrl, blockUrl, formatActivityLog, formatPnl, secondsToBlocks, formatTimestamp } = require(`${basePath}/helper.js`);
 const { txsForSingleAddress } = require(`./transaction/getTransactions.js`);
 
 const inputUserAddresses = addresses.inputU[argv.u];
-const inputContractAddress = addresses.inputA[argv.a];
+const inputContractAddress = argv.a ? addresses.inputA[argv.a] || { address: '0' + argv.a } : undefined;
 
 
 function filterContractAddress(array, contractAddress) {
@@ -56,6 +56,35 @@ function getActivityLog(txArray, userAddresses, pnl, tokenInfoObj) {
 }
 
 
+function getParticipation(txArray) {
+  txArray = txArray.sort((a,b) => Number(b.timeStamp) - Number(a.timeStamp));
+  let participation = {};
+  txArray.forEach(tx => {
+    if (tx.txs.normal && tx.txs.erc20) participation[tx.txs.erc20.contractAddress] = tx.txs.erc20;
+    else if (tx.txs.normal && tx.txs.erc721) participation[tx.txs.erc721.contractAddress] = tx.txs.erc721;
+    else if (tx.txs.normal && tx.txs.erc1155) participation[tx.txs.erc1155.contractAddress] = tx.txs.erc1155;
+  });
+  participation = Object.values(participation);
+  participation = participation.sort((a,b) => Number(b.timeStamp) - Number(a.timeStamp));
+  participation = participation.map(o => ({
+    tokenName: o.tokenName,
+    type: o.type,
+    ago: formatTimestamp(o.timeStamp),
+    contractAddress: o.contractAddress,
+    aTxHash: `https://etherscan.io/tx/${o.hash}`
+  }))
+  const participationErc20 = participation.filter(o => o.type === 'erc20')
+  console.log('========================================= SHITCOIN ============================================');
+  participationErc20.forEach(o => console.log(o));
+  const participationErc721 = participation.filter(o => o.type === 'erc721')
+  console.log('============================================ NFT ==============================================');
+  participationErc721.forEach(o => console.log(o));
+  const participationErc1155 = participation.filter(o => o.type === 'erc1155')
+  console.log('========================================== NIFTY ==============================================');
+  participationErc1155.forEach(o => console.log(o));
+}
+
+
 async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   console.time('USER');
   console.log('start');
@@ -77,12 +106,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   };
   console.log('done with getting tx data..');
 
-  const tokenNames = []
-  txArray.forEach(tx => {
-    if (tx.txs.normal && tx.txs.erc20) tokenNames.push(tx.txs.erc20.tokenName);
-    else if (tx.txs.normal && tx.txs.erc721) tokenNames.push(tx.txs.erc721.tokenName);
-  });
-  console.log('NAMES',[... new Set(tokenNames)]);
+  getParticipation(txArray);
 
   const tokenInfoObj = await getErc20InfoObj(txArray);
 
@@ -91,7 +115,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 
   const pnl = { address: userAddresses, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
   let activityLog = getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
-  activityLog = activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
+  // activityLog = activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
 
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;
@@ -104,7 +128,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
-    formatActivityLog(user.activityLog, false, true);
+    formatActivityLog(user.activityLog, false, false);
     formatPnl(user.pnl);
   })();
 }
