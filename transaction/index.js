@@ -71,6 +71,20 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value, erc20.tokenDecimal);
     const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress].totalSupply;
     finalObject.activity = `🪙🟢 Token BUY. ${formatLargeValue(tx.value, 18)} ETH for ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} ($${formatLargeValue(mcap)} Mcap)`;
+  } else if (tx.functionName === 'swapTokensForExactETH(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline)') {
+    finalObject.type = 'sale';
+    const decodedArray = decoder.decoder3(tx.input);
+    const ethReceived = decodedArray[0].amountIn;
+    const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
+    const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress].totalSupply;
+    finalObject.activity = `🪙🔴 Token SALE2. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
+  } else if (tx.functionName === 'swapExactTokensForETH(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
+    finalObject.type = 'sale';
+    const decodedArray = decoder.decoder3(tx.input);
+    const ethReceived = decodedArray[0].amountOut;
+    const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
+    const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress].totalSupply;
+    finalObject.activity = `🪙🔴 Token SALE3. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
   } else if (tx.functionName.includes('transfer')) {
     finalObject.activity = `🪙➡️  Token TRANSFER. ${formatLargeValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${shortAddr(erc20.to)}`;
   } else {
@@ -80,6 +94,7 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
 
 
 function parseTx(fullTx, userAddresses, pnl, tokenInfoObj) {
+  console.log(fullTx);
   const finalObject = {
     ago: formatTimestamp(fullTx.timeStamp),
     block: fullTx.block,

@@ -1,8 +1,9 @@
 const fs = require("fs");
 const {Interface, AbiCoder} = require("ethers");
-let { abi1, abi2 } = require(`./abis.js`);
-let universalInteface = new Interface(abi1);
-let universalInteface2 = new Interface(abi2);
+let abi = require(`./abis.js`);
+let universalInteface = new Interface(abi.abi1);
+let universalInteface2 = new Interface(abi.abi2);
+let universalInteface3 = new Interface(abi.abi3);
 
 //https://api.etherscan.io/api?module=contract&action=getabi&address=0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413
 
@@ -103,8 +104,7 @@ function decoder2(transactionInput) {
 }
 
 function decoder3(transactionInput) {
-  const parsedTx = universalInteface2.parseTransaction({data: transactionInput});
-  console.log(parsedTx);
+  const parsedTx = universalInteface3.parseTransaction({data: transactionInput});
   const decoded = parsedTx.args;
   let finalArray = [];
   finalArray.push({
