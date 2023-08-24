@@ -66,7 +66,7 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     const parsed = parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj)
     finalObject.type = parsed.type;
     finalObject.activity = parsed.activity;
-  } else if (tx.functionName === 'swapExactETHForTokens(uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
+  } else if (tx.functionName === 'swapExactETHForTokens(uint256 amountOutMin, address[] path, address to, uint256 deadline)' || tx.functionName === 'swapETHForExactTokens(uint256 amountOut, address[] path, address to, uint256 deadline)') {
     finalObject.type = 'buy';
     const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value, erc20.tokenDecimal);
     const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress].totalSupply;
@@ -77,14 +77,14 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     const ethReceived = decodedArray[0].amountIn;
     const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
     const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress].totalSupply;
-    finalObject.activity = `🪙🔴 Token SALE2. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
+    finalObject.activity = `🪙🔴 Token SALE. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
   } else if (tx.functionName === 'swapExactTokensForETH(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
     finalObject.type = 'sale';
     const decodedArray = decoder.decoder3(tx.input);
     const ethReceived = decodedArray[0].amountOut;
     const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
     const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress].totalSupply;
-    finalObject.activity = `🪙🔴 Token SALE3. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
+    finalObject.activity = `🪙🔴 Token SALE. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
   } else if (tx.functionName.includes('transfer')) {
     finalObject.activity = `🪙➡️  Token TRANSFER. ${formatLargeValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${shortAddr(erc20.to)}`;
   } else {

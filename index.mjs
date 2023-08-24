@@ -47,7 +47,7 @@ async function sendAll(userArray) {
 
 export const handler = async (event) => {
   console.log('INIT LAMBDA...');
-  const sentMessages = await sendAll(['scribbs', 'osf', 'artchick', 'gr0wcrypt0', 'left']);
+  const sentMessages = await sendAll(['scribbs', 'osf', 'artchick', 'grow', 'left']);
   const response = {
     statusCode: 200,
     body: JSON.stringify(sentMessages.map(m => m.text)),
