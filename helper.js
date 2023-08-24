@@ -16,7 +16,6 @@ module.exports = {
     formatActivityLog,
     formatPnl,
     secondsToBlocks,
-    groupTransactions,
     parseErc721
 }
 
@@ -171,27 +170,6 @@ function formatPnl(pnl) {
 
 function secondsToBlocks(seconds) {
   return Math.ceil(seconds/12.08);
-}
-
-function groupTransactions(txPool, hashTxPool) {
-  const txHashes = [...new Set(hashTxPool.map(tx => tx.hash))];
-  const txArray = [];
-  txHashes.forEach(hash => {
-    const txs = txPool.filter(tx => tx.hash === hash);
-    const txsObject = {};
-    txs.forEach(tx => txsObject[tx.type] = tx);
-    const timeStamp = Number(txs[0].timeStamp);
-    const block = Number(txs[0].blockNumber);
-    const userWallet = txs.find(o => o.type === 'normal')?.from;
-    txArray.push({
-      hash: hash,
-      timeStamp: timeStamp,
-      block: block,
-      userWallet: userWallet,
-      txs: txsObject
-    })
-  });
-  return txArray
 }
 
 function parseErc721(txs, tx, finalObject) { // TODO: move to more appropriate file

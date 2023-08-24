@@ -1,6 +1,7 @@
 const axios = require('axios');
 const basePath = process.cwd();
-const { accountUrl, formatActivityLog, secondsToBlocks, groupTransactions } = require(`${basePath}/helper.js`);
+const { accountUrl, formatActivityLog, secondsToBlocks } = require(`${basePath}/helper.js`);
+const { groupTransactions } = require(`./transaction/getTransactions.js`);
 const { getActivityLog, getErc20InfoObj } = require(`${basePath}/user.js`);
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`${basePath}/addresses.js`);
