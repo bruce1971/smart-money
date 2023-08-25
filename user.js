@@ -37,7 +37,8 @@ async function getErc20InfoObj(txArray){
     const tokenInfo = await axios.get(url).then(res => res.data);
     tokenInfoObj[addressArray[i]] = {
       name: tokenInfo.name,
-      totalSupply: Math.ceil(Number(tokenInfo.totalSupply)/10**Number(tokenInfo.decimals))
+      totalSupply: Math.ceil(Number(tokenInfo.totalSupply)/10**Number(tokenInfo.decimals)),
+      decimals: Number(tokenInfo.decimals)
     }
   }
   return tokenInfoObj;
@@ -88,7 +89,7 @@ function getParticipation(txArray) {
 async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   console.log('start');
 
-  secondsAgo = 3600 * 24 * 20;
+  // secondsAgo = 3600 * 24 * 20;
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
@@ -105,7 +106,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   };
   console.log('done with getting tx data..');
 
-  // getParticipation(txArray);
+  getParticipation(txArray);
 
   const tokenInfoObj = await getErc20InfoObj(txArray);
 
@@ -129,7 +130,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
-    // formatActivityLog(user.activityLog, false, true);
+    formatActivityLog(user.activityLog, false, true);
     // formatPnl(user.pnl);
   })();
 }
