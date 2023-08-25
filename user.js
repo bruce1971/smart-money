@@ -3,7 +3,7 @@ const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`./addresses.js`);
 const { parseTx } = require(`./transaction`);
 const { accountUrl, blockUrl, formatActivityLog, formatPnl, secondsToBlocks, formatTimestamp } = require(`./helper.js`);
-const { getCurrent } = require(`./getCurrent.js`);
+const { getUserPortfolio } = require(`./getUserPortfolio.js`);
 const { txsForSingleAddress } = require(`./transaction/getTransactions.js`);
 
 const inputUserAddresses = addresses.inputU[argv.u];
@@ -87,9 +87,8 @@ function getParticipation(txArray) {
 
 
 async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
-  console.log('start');
 
-  // secondsAgo = 3600 * 24 * 20;
+  // secondsAgo = 3600 * 24 * 50;
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
@@ -104,9 +103,8 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
     const txArray1 = await txsForSingleAddress(userAddress, contractAddress, startblock, endblock);
     txArray = txArray.concat(txArray1);
   };
-  console.log('done with getting tx data..');
 
-  getParticipation(txArray);
+  // getParticipation(txArray);
 
   const tokenInfoObj = await getErc20InfoObj(txArray);
 
@@ -117,7 +115,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   let activityLog = getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
   // activityLog = activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
 
-  const current = await getCurrent(userAddresses, pnl, tokenInfoObj, activityLog);
+  const current = await getUserPortfolio(userAddresses, tokenInfoObj);
   console.log(current);
 
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
