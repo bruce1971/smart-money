@@ -94,7 +94,6 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
 
 
 function parseTx(fullTx, userAddresses, pnl, tokenInfoObj) {
-  console.log(fullTx);
   const finalObject = {
     ago: formatTimestamp(fullTx.timeStamp),
     block: fullTx.block,

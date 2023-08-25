@@ -1,9 +1,9 @@
 const axios = require('axios');
 const argv = require('minimist')(process.argv.slice(2));
-const basePath = process.cwd();
-const addresses = require(`${basePath}/addresses.js`);
-const { parseTx } = require(`${basePath}/transaction`);
-const { accountUrl, blockUrl, formatActivityLog, formatPnl, secondsToBlocks, formatTimestamp } = require(`${basePath}/helper.js`);
+const addresses = require(`./addresses.js`);
+const { parseTx } = require(`./transaction`);
+const { accountUrl, blockUrl, formatActivityLog, formatPnl, secondsToBlocks, formatTimestamp } = require(`./helper.js`);
+const { getCurrent } = require(`./getCurrent.js`);
 const { txsForSingleAddress } = require(`./transaction/getTransactions.js`);
 
 const inputUserAddresses = addresses.inputU[argv.u];
@@ -88,7 +88,7 @@ function getParticipation(txArray) {
 async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   console.log('start');
 
-  // secondsAgo = 3600 * 24 * 70;
+  secondsAgo = 3600 * 24 * 20;
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
@@ -105,7 +105,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   };
   console.log('done with getting tx data..');
 
-  getParticipation(txArray);
+  // getParticipation(txArray);
 
   const tokenInfoObj = await getErc20InfoObj(txArray);
 
@@ -115,6 +115,9 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   const pnl = { address: userAddresses, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
   let activityLog = getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
   // activityLog = activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
+
+  const current = await getCurrent(userAddresses, pnl, tokenInfoObj, activityLog);
+  console.log(current);
 
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;
@@ -126,8 +129,8 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
-    formatActivityLog(user.activityLog, false, true);
-    formatPnl(user.pnl);
+    // formatActivityLog(user.activityLog, false, true);
+    // formatPnl(user.pnl);
   })();
 }
 

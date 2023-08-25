@@ -1,4 +1,3 @@
-const basePath = process.cwd();
 const moment = require('moment');
 const etherscanApiKey = "I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG";
 
