@@ -88,7 +88,7 @@ function getParticipation(txArray) {
 
 async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 
-  // secondsAgo = 3600 * 24 * 50;
+  secondsAgo = 3600 * 24 * 20;
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
@@ -128,7 +128,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
-    formatActivityLog(user.activityLog, false, true);
+    // formatActivityLog(user.activityLog, false, true);
     // formatPnl(user.pnl);
   })();
 }

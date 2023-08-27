@@ -6,15 +6,33 @@ const argv = require('minimist')(process.argv.slice(2));
 
 async function getUserPortfolio(userAddresses, tokenInfoObj) {
   const contractAddresses = Object.keys(tokenInfoObj);
+
+  const tokenPriceInfos = [];
+  const contractAddressesReduceable = Object.keys(tokenInfoObj);
+  while (contractAddressesReduceable.length > 0) {
+    const contractAddresses10 = contractAddressesReduceable.splice(0, 10);
+    const jointContractAddresses = contractAddresses10.join(",");
+    console.log(`Getting price info for ${jointContractAddresses} tokens...`);
+    const url2 = `https://api.dexscreener.com/latest/dex/tokens/${jointContractAddresses}`;
+    const tokenPriceInfo = await axios.get(url2).then(res => res.data.pairs);
+
+    if (tokenPriceInfo.length < 30) { // go all of them!
+      tokenPriceInfos.push(...tokenPriceInfo)
+    } else { // surely cut off some.. iterate over all
+      console.log('Too muuuuch...!');
+      for (let i = 0; i < contractAddresses10.length; i++) {
+        console.log(`Getting price info for ${contractAddresses10[i]} tokens...`);
+        const url3 = `https://api.dexscreener.com/latest/dex/tokens/${contractAddresses10[i]}`;
+        const tokenPriceInfo1 = await axios.get(url3).then(res => res.data.pairs);
+        if (tokenPriceInfo1) tokenPriceInfos.push(...tokenPriceInfo1)
+      }
+    }
+  }
+
   const tokenPriceInfoObj = {}
-  console.log(`Getting price info for ${contractAddresses.length} tokens...`);
-  for (var i = 0; i < contractAddresses.length; i++) {
-    console.log(i+1);
-    const url2 = `https://api.dexscreener.com/latest/dex/tokens/${contractAddresses[i]}`;
-    const tokenPriceInfo = await axios.get(url2).then(res => {
-      return res.data.pairs ? res.data.pairs[0] : null;
-    });
-    tokenPriceInfoObj[contractAddresses[i]] = tokenPriceInfo;
+  for (let i = 0; i < contractAddresses.length; i++) {
+    const info = tokenPriceInfos.filter(o => o.baseToken.address.toLowerCase() === contractAddresses[i].toLowerCase());
+    tokenPriceInfoObj[contractAddresses[i]] = info[0] ? info[0] : null;
   }
 
   let current = {};
