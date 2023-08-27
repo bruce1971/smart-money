@@ -10,20 +10,21 @@ async function getUserPortfolio(userAddresses, tokenInfoObj) {
   const tokenPriceInfos = [];
   const contractAddressesReduceable = Object.keys(tokenInfoObj);
   while (contractAddressesReduceable.length > 0) {
-    const contractAddresses10 = contractAddressesReduceable.splice(0, 10);
+    const contractAddresses10 = contractAddressesReduceable.splice(0, 8);
     const jointContractAddresses = contractAddresses10.join(",");
-    console.log(`Getting price info for ${jointContractAddresses} tokens...`);
-    const url2 = `https://api.dexscreener.com/latest/dex/tokens/${jointContractAddresses}`;
-    const tokenPriceInfo = await axios.get(url2).then(res => res.data.pairs);
-
-    if (tokenPriceInfo.length < 30) { // go all of them!
+    console.log(`Getting price info for ${contractAddresses10.length} tokens...`);
+    const dexUrl = `https://api.dexscreener.com/latest/dex/tokens/${jointContractAddresses}`;
+    const tokenPriceInfo = await axios.get(dexUrl).then(res => res.data.pairs);
+    console.log(tokenPriceInfo?.length);
+    if (!tokenPriceInfo) continue;
+    if (tokenPriceInfo?.length < 30) { // go all of them!
       tokenPriceInfos.push(...tokenPriceInfo)
     } else { // surely cut off some.. iterate over all
-      console.log('Too muuuuch...!');
+      await new Promise(resolve => setTimeout(resolve, 5000));
       for (let i = 0; i < contractAddresses10.length; i++) {
-        console.log(`Getting price info for ${contractAddresses10[i]} tokens...`);
-        const url3 = `https://api.dexscreener.com/latest/dex/tokens/${contractAddresses10[i]}`;
-        const tokenPriceInfo1 = await axios.get(url3).then(res => res.data.pairs);
+        const dexUrl2 = `https://api.dexscreener.com/latest/dex/tokens/${contractAddresses10[i]}`;
+        console.log(i);
+        const tokenPriceInfo1 = await axios.get(dexUrl2).then(res => res.data.pairs);
         if (tokenPriceInfo1) tokenPriceInfos.push(...tokenPriceInfo1)
       }
     }
