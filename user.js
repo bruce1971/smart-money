@@ -2,7 +2,7 @@ const axios = require('axios');
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`./addresses.js`);
 const { parseTx } = require(`./transaction`);
-const { accountUrl, blockUrl, formatActivityLog, formatPnl, secondsToBlocks, formatTimestamp, formatValue } = require(`./helper.js`);
+const { accountUrl, blockUrl, formatActivityLog, secondsToBlocks, formatTimestamp, formatValue } = require(`./helper.js`);
 const { getUserPortfolio } = require(`./getUserPortfolio.js`);
 const { txsForSingleAddress } = require(`./transaction/getTransactions.js`);
 
@@ -115,14 +115,11 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   txArray = filterContractAddress(txArray, contractAddress?.address);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
-  const pnl = { address: userAddresses, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
+  const pnl = [];
   let activityLog = getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
   // activityLog = activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
 
   const currentPortfolio = await getUserPortfolio(userAddresses, tokenInfoObj);
-
-  pnl.wethFinal = pnl.wethIn - pnl.wethOut;
-  pnl.shitFinal = pnl.shitIn - pnl.shitOut;
 
   return {
     pnl,
@@ -132,15 +129,34 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   }
 }
 
-function finalPnl(participation, currentPortfolio, pastTxs) {
+function finalPnl(participation, currentPortfolio, pnl) {
+  let pnlObj = [];
   participation.forEach(el => {
+    const name = el.tokenName;
+    const contractAddressPnl = pnl.filter(o => o.contractAddress.toLowerCase() === el.contractAddress.toLowerCase());
+    const buy = -contractAddressPnl.filter(o => o.type === 'buy').reduce((acc, o) => (acc + o.amount), 0);
+    const sell = -contractAddressPnl.filter(o => o.type === 'sell').reduce((acc, o) => (acc + o.amount), 0);
+    const current = currentPortfolio.find(o => o.address.toLowerCase() === el.contractAddress.toLowerCase()).totalEth;
+    const total = buy + sell + current;
+    pnlObj.push({ name, buy, sell, current, total })
+  });
+  pnlObj = pnlObj.sort((a, b) => b.total - a.total);
+  console.log('======================================');
+  console.log('O-V-E-R-A-L-L');
+  console.log('----');
+  console.log(`Invested --> ${formatValue(pnlObj.map(o => o.buy).reduce((acc, o) => (acc + o), 0), 0)} eth`);
+  console.log(`Taken out --> ${formatValue(pnlObj.map(o => o.sell).reduce((acc, o) => (acc + o), 0), 0)} eth`);
+  console.log(`Current holding --> ${formatValue(pnlObj.map(o => o.current).reduce((acc, o) => (acc + o), 0), 0)} eth`);
+  console.log(`TOTAL --> ${formatValue(pnlObj.map(o => o.total).reduce((acc, o) => (acc + o), 0), 0)} eth`);
+
+  pnlObj.forEach(el => {
     console.log('======================================');
-    console.log(el.tokenName);
+    console.log(el.name);
     console.log('----');
-    console.log(`Invested --> 0.23 eth`);
-    console.log(`Taken out --> 0.23 eth`);
-    const currentToken = currentPortfolio.find(o => o.address.toLowerCase() === el.contractAddress)
-    console.log(`Current holding --> ${formatValue(currentToken.totalEth, 0)} eth`);
+    console.log(`Invested --> ${el.buy} eth`);
+    console.log(`Taken out --> ${el.sell} eth`);
+    console.log(`Current holding --> ${formatValue(el.current, 0)} eth`);
+    console.log(`TOTAL --> ${formatValue(el.total, 0)} eth`);
   });
 }
 
@@ -149,11 +165,10 @@ function finalPnl(participation, currentPortfolio, pastTxs) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
-    formatActivityLog(user.activityLog, false, true);
-    formatPnl(user.pnl);
-    console.log(user.currentPortfolio);
-    console.log(user.participation);
-    finalPnl(user.participation, user.currentPortfolio, {});
+    // formatActivityLog(user.activityLog, false, true);
+    // console.log(user.currentPortfolio);
+    // console.log(user.participation);
+    finalPnl(user.participation, user.currentPortfolio, user.pnl);
   })();
 }
 
