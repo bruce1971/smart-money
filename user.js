@@ -2,7 +2,7 @@ const axios = require('axios');
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`./addresses.js`);
 const { parseTx } = require(`./transaction`);
-const { accountUrl, blockUrl, formatActivityLog, secondsToBlocks, formatTimestamp, formatValue } = require(`./helper.js`);
+const { accountUrl, blockUrl, formatActivityLog, secondsToBlocks, formatTimestamp, finalPnl } = require(`./helper.js`);
 const { getUserPortfolio } = require(`./getUserPortfolio.js`);
 const { txsForSingleAddress } = require(`./transaction/getTransactions.js`);
 
@@ -128,38 +128,6 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
     participation
   }
 }
-
-function finalPnl(participation, currentPortfolio, pnl) {
-  let pnlObj = [];
-  participation.forEach(el => {
-    const name = el.tokenName;
-    const contractAddressPnl = pnl.filter(o => o.contractAddress.toLowerCase() === el.contractAddress.toLowerCase());
-    const buy = -contractAddressPnl.filter(o => o.type === 'buy').reduce((acc, o) => (acc + o.amount), 0);
-    const sell = -contractAddressPnl.filter(o => o.type === 'sell').reduce((acc, o) => (acc + o.amount), 0);
-    const current = currentPortfolio.find(o => o.address.toLowerCase() === el.contractAddress.toLowerCase()).totalEth;
-    const total = buy + sell + current;
-    pnlObj.push({ name, buy, sell, current, total })
-  });
-  pnlObj = pnlObj.sort((a, b) => b.total - a.total);
-  console.log('======================================');
-  console.log('O-V-E-R-A-L-L');
-  console.log('----');
-  console.log(`Invested --> ${formatValue(pnlObj.map(o => o.buy).reduce((acc, o) => (acc + o), 0), 0)} eth`);
-  console.log(`Taken out --> ${formatValue(pnlObj.map(o => o.sell).reduce((acc, o) => (acc + o), 0), 0)} eth`);
-  console.log(`Current holding --> ${formatValue(pnlObj.map(o => o.current).reduce((acc, o) => (acc + o), 0), 0)} eth`);
-  console.log(`TOTAL --> ${formatValue(pnlObj.map(o => o.total).reduce((acc, o) => (acc + o), 0), 0)} eth`);
-
-  pnlObj.forEach(el => {
-    console.log('======================================');
-    console.log(el.name);
-    console.log('----');
-    console.log(`Invested --> ${el.buy} eth`);
-    console.log(`Taken out --> ${el.sell} eth`);
-    console.log(`Current holding --> ${formatValue(el.current, 0)} eth`);
-    console.log(`TOTAL --> ${formatValue(el.total, 0)} eth`);
-  });
-}
-
 
 
 if (require.main === module) {

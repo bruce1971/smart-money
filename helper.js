@@ -13,7 +13,7 @@ module.exports = {
     formatLargeValue,
     shortAddr,
     formatActivityLog,
-    formatPnl,
+    finalPnl,
     secondsToBlocks,
     parseErc721
 }
@@ -131,40 +131,35 @@ function formatActivityLog(activityLog, showUser=false, showBlock=false) {
   });
 }
 
-function formatPnl(pnl) {
-  const shitInEth = 0.00000000097097; //pepe
-  const ethInUsd = 1850;
+function finalPnl(participation, currentPortfolio, pnl) {
+  let pnlObj = [];
+  participation.forEach(el => {
+    const name = el.tokenName;
+    const contractAddressPnl = pnl.filter(o => o.contractAddress.toLowerCase() === el.contractAddress.toLowerCase());
+    const buy = -contractAddressPnl.filter(o => o.type === 'buy').reduce((acc, o) => (acc + o.amount), 0);
+    const sell = contractAddressPnl.filter(o => o.type === 'sell').reduce((acc, o) => (acc + o.amount), 0);
+    const current = currentPortfolio.find(o => o.address.toLowerCase() === el.contractAddress.toLowerCase())?.totalEth || 0;
+    const total = buy + sell + current;
+    pnlObj.push({ name, buy, sell, current, total })
+  });
+  pnlObj = pnlObj.sort((a, b) => b.total - a.total);
+  console.log('======================================');
+  console.log('O-V-E-R-A-L-L');
+  console.log('----');
+  console.log(`Invested --> ${formatValue(pnlObj.map(o => o.buy).reduce((acc, o) => (acc + o), 0), 0)} eth`);
+  console.log(`Taken out --> ${formatValue(pnlObj.map(o => o.sell).reduce((acc, o) => (acc + o), 0), 0)} eth`);
+  console.log(`Current holding --> ${formatValue(pnlObj.map(o => o.current).reduce((acc, o) => (acc + o), 0), 0)} eth`);
+  console.log(`TOTAL --> ${formatValue(pnlObj.map(o => o.total).reduce((acc, o) => (acc + o), 0), 0)} eth`);
 
-  const pnlFormat = {... pnl};
-
-  const shitFinalInEth = pnl.shitFinal * shitInEth;
-  const pnlInEth = shitFinalInEth + pnl.wethFinal;
-  const pnlInUsd = pnlInEth * ethInUsd;
-
-  pnlFormat.wethFinal = formatValue(pnlFormat.wethFinal, 0);
-  pnlFormat.wethFinalInUsd = formatValue(pnlFormat.wethFinal * ethInUsd, 0);
-  pnlFormat.shitFinal = formatValue(pnlFormat.shitFinal, 0);
-  pnlFormat.shitFinalInUsd = formatValue(shitFinalInEth * ethInUsd, 0);
-
-  pnlFormat.pnlInEth = formatValue(pnlInEth, 0);
-  pnlFormat.pnlInUsd = formatValue(pnlInUsd, 0);
-
-  pnlFormat.wethOut = formatValue(pnlFormat.wethOut, 0);
-  pnlFormat.wethIn = formatValue(pnlFormat.wethIn, 0);
-  pnlFormat.shitOut = formatValue(pnlFormat.shitOut, 0);
-  pnlFormat.shitIn = formatValue(pnlFormat.shitIn, 0);
-
-  console.log('=================================')
-  console.log(`ETH invested --> ${pnlFormat.wethOut} eth`);
-  console.log(`ETH taken out --> ${pnlFormat.wethIn} eth`);
-  console.log(`Shitcoins bought --> ${pnlFormat.shitIn}`);
-  console.log(`Shitcoins sold --> ${pnlFormat.shitOut}`);
-  console.log('---');
-  console.log(`ETH PnL --> ${pnlFormat.wethFinal > 0 ? '+' : ''}${pnlFormat.wethFinal} eth ($${pnlFormat.wethFinalInUsd})`);
-  console.log(`Shitcoin PnL --> ${pnlFormat.shitFinal > 0 ? '+' : ''}${pnlFormat.shitFinal} ($${pnlFormat.shitFinalInUsd})`);
-  console.log('---');
-  console.log(`PnL --> ${pnlInUsd > 0 ? '+' : ''}$${pnlFormat.pnlInUsd}`);
-  console.log('=================================')
+  pnlObj.forEach(el => {
+    console.log('======================================');
+    console.log(el.name);
+    console.log('----');
+    console.log(`Invested --> ${formatValue(el.buy, 0)} eth`);
+    console.log(`Taken out --> ${formatValue(el.sell, 0)} eth`);
+    console.log(`Current holding --> ${formatValue(el.current, 0)} eth`);
+    console.log(`TOTAL --> ${formatValue(el.total, 0)} eth`);
+  });
 }
 
 function secondsToBlocks(seconds) {
