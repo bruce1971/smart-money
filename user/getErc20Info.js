@@ -14,7 +14,6 @@ async function getErc20Info(txArray){
   console.log(`Getting ${addressArray.length} ERC20 token infos..`);
   for (var i = 0; i < addressArray.length; i++) {
     console.log(i+1);
-    // https://www.dextools.io/app/en/ether/pair-explorer/0x72e4f9f808c49a2a61de9c5896298920dc4eeea9
     const url = `https://api.ethplorer.io/getTokenInfo/${addressArray[i]}?apiKey=EK-4ryVp-8miebE7-m1Wmm`;
     const tokenInfo = await axios.get(url).then(res => res.data);
     tokenInfoObj[addressArray[i]] = {
@@ -53,6 +52,7 @@ async function getErc20Info(txArray){
     const info = tokenPriceInfos.filter(o => o.baseToken.address.toLowerCase() === contractAddresses[i].toLowerCase());
     tokenInfoObj[contractAddresses[i]].priceEth = info[0] ? Number(info[0].priceNative) : 0;
     tokenInfoObj[contractAddresses[i]].priceUsd = info[0] ? Number(info[0].priceUsd) : 0;
+    tokenInfoObj[contractAddresses[i]].mcapUsd = tokenInfoObj[contractAddresses[i]].priceUsd * tokenInfoObj[contractAddresses[i]].totalSupply;
   }
 
   return tokenInfoObj;

@@ -1,7 +1,7 @@
 const basePath = process.cwd();
 const decoder = require(`./decoder.js`);
 const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue, shortAddr, parseErc721 } = require(`${basePath}/helper.js`);
-const ethInUsd = 1669;
+const ethInUsd = 1669; // TODO: make dynamic depending on eth price that day
 
 
 function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
@@ -28,7 +28,7 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
   }
 
   if (swapFrom.name === 'WETH') {
-    pnl.push({contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(sellAmount)})
+    pnl.push({ contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(sellAmount) })
     const unitPriceEth = formatValueRaw(sellAmount)/formatValueRaw(buyAmount, erc20.tokenDecimal);
     const mcap = unitPriceEth * ethInUsd * tokenInfo.totalSupply;
     return {
@@ -38,7 +38,7 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
   } else if (swapTo.name === 'WETH') {
     const unitPriceEth = formatValueRaw(buyAmount)/formatValueRaw(sellAmount, erc20.tokenDecimal);
     const mcap = unitPriceEth * ethInUsd * tokenInfo.totalSupply;
-    pnl.push({contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(buyAmount)})
+    pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(buyAmount) })
     return {
       type: 'sell',
       activity: `🪙🔴 Token SALE. ${formatLargeValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(buyAmount)} ${swapTo.name} ($${formatLargeValue(mcap)} Mcap)`
@@ -68,7 +68,8 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     finalObject.type = 'buy';
     const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value, erc20.tokenDecimal);
     const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress].totalSupply;
-    finalObject.activity = `🪙🟢 Token BUY. ${formatLargeValue(tx.value, 18)} ETH for ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} ($${formatLargeValue(mcap)} Mcap)`;
+    finalObject.activity = `🪙🟢 Token BUY. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(tx.value, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
+    pnl.push({ contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(tx.value) })
   } else if (tx.functionName === 'swapTokensForExactETH(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline)') {
     finalObject.type = 'sell';
     const decodedArray = decoder.decoder3(tx.input);
@@ -76,6 +77,7 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
     const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress].totalSupply;
     finalObject.activity = `🪙🔴 Token SALE. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
+    pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(ethReceived) })
   } else if (tx.functionName === 'swapExactTokensForETH(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
     finalObject.type = 'sell';
     const decodedArray = decoder.decoder3(tx.input);
@@ -83,6 +85,7 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
     const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress].totalSupply;
     finalObject.activity = `🪙🔴 Token SALE. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
+    pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(ethReceived) })
   } else if (tx.functionName.includes('transfer')) {
     finalObject.activity = `🪙➡️  Token TRANSFER. ${formatLargeValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${shortAddr(erc20.to)}`;
   } else {

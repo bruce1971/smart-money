@@ -69,7 +69,7 @@ function getParticipation(txArray) {
 
 async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 
-  secondsAgo = 3600 * 24 * 20;
+  // secondsAgo = 3600 * 24 * 25;
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
