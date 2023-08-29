@@ -38,9 +38,24 @@ function getParticipation(txArray) {
   txArray = txArray.sort((a,b) => Number(b.timeStamp) - Number(a.timeStamp));
   let participation = {};
   txArray.forEach(tx => {
-    if (tx.txs.normal && tx.txs.erc20) participation[tx.txs.erc20.contractAddress] = tx.txs.erc20;
-    else if (tx.txs.normal && tx.txs.erc721) participation[tx.txs.erc721.contractAddress] = tx.txs.erc721;
-    else if (tx.txs.normal && tx.txs.erc1155) participation[tx.txs.erc1155.contractAddress] = tx.txs.erc1155;
+    if (tx.txs.normal && tx.txs.erc20) {
+      const contractAddress = tx.txs.erc20.contractAddress
+      if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
+      else participation[contractAddress] = {...tx.txs.erc20, userAddresses: [tx.userWallet]};
+      participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
+    }
+    else if (tx.txs.normal && tx.txs.erc721) {
+      const contractAddress = tx.txs.erc721.contractAddress
+      if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
+      else participation[contractAddress] = {...tx.txs.erc721, userAddresses: [tx.userWallet]};
+      participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
+    }
+    else if (tx.txs.normal && tx.txs.erc1155) {
+      const contractAddress = tx.txs.erc1155.contractAddress
+      if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
+      else participation[contractAddress] = {...tx.txs.erc1155, userAddresses: [tx.userWallet]};
+      participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
+    }
   });
   participation = Object.values(participation);
   participation = participation.sort((a,b) => Number(b.timeStamp) - Number(a.timeStamp));
@@ -49,6 +64,7 @@ function getParticipation(txArray) {
     type: o.type,
     ago: formatTimestamp(o.timeStamp),
     contractAddress: o.contractAddress,
+    userAddresses: o.userAddresses,
     aTxHash: `https://etherscan.io/tx/${o.hash}`
   }))
   const displayFormatted = false;
@@ -69,7 +85,7 @@ function getParticipation(txArray) {
 
 async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 
-  // secondsAgo = 3600 * 24 * 25;
+  // secondsAgo = 3600 * 24 * 30;
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
@@ -95,7 +111,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   const pnl = [];
   const activityLog = getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
 
-  const currentPortfolio = await getUserPortfolio(userAddresses, tokenInfoObj);
+  const currentPortfolio = await getUserPortfolio(participation, tokenInfoObj);
 
   return {
     pnl,
@@ -109,7 +125,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
-    formatActivityLog(user.activityLog, false, true);
+    // formatActivityLog(user.activityLog, false, true);
     // console.log(user.currentPortfolio);
     // console.log(user.participation);
     finalPnl(user.participation, user.currentPortfolio, user.pnl);

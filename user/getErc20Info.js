@@ -38,7 +38,7 @@ async function getErc20Info(txArray){
     if (tokenPriceInfo?.length < 30) { // go all of them!
       tokenPriceInfos.push(...tokenPriceInfo)
     } else { // surely cut off some.. iterate over all
-      await new Promise(resolve => setTimeout(resolve, 5000));
+      await new Promise(resolve => setTimeout(resolve, 10000));
       for (let i = 0; i < contractAddresses10.length; i++) {
         const dexUrl2 = `https://api.dexscreener.com/latest/dex/tokens/${contractAddresses10[i]}`;
         console.log(i);
