@@ -135,12 +135,13 @@ function finalPnl(participation, currentPortfolio, pnl) {
   let pnlObj = [];
   participation.forEach(el => {
     const name = el.tokenName;
+    const address = el.contractAddress;
     const contractAddressPnl = pnl.filter(o => o.contractAddress.toLowerCase() === el.contractAddress.toLowerCase());
     const buy = -contractAddressPnl.filter(o => o.type === 'buy').reduce((acc, o) => (acc + o.amount), 0);
     const sell = contractAddressPnl.filter(o => o.type === 'sell').reduce((acc, o) => (acc + o.amount), 0);
     const current = currentPortfolio.find(o => o.address.toLowerCase() === el.contractAddress.toLowerCase())?.totalEth || 0;
     const total = buy + sell + current;
-    pnlObj.push({ name, buy, sell, current, total })
+    pnlObj.push({ name, address, buy, sell, current, total })
   });
   pnlObj = pnlObj.sort((a, b) => b.total - a.total);
   console.log('======================================');
@@ -154,6 +155,7 @@ function finalPnl(participation, currentPortfolio, pnl) {
   pnlObj.forEach(el => {
     console.log('======================================');
     console.log(el.name);
+    console.log(el.address);
     console.log('----');
     console.log(`Invested --> ${formatValue(el.buy, 0)} eth`);
     console.log(`Taken out --> ${formatValue(el.sell, 0)} eth`);

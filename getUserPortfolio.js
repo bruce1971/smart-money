@@ -7,7 +7,7 @@ const argv = require('minimist')(process.argv.slice(2));
 async function getUserPortfolio(userAddresses, tokenInfoObj) {
   const contractAddresses = Object.keys(tokenInfoObj);
 
-  const tokenPriceInfos = [];
+  let tokenPriceInfos = [];
   const contractAddressesReduceable = Object.keys(tokenInfoObj);
   while (contractAddressesReduceable.length > 0) {
     const contractAddresses10 = contractAddressesReduceable.splice(0, 8);
@@ -30,6 +30,7 @@ async function getUserPortfolio(userAddresses, tokenInfoObj) {
     }
   }
 
+  tokenPriceInfos = tokenPriceInfos.filter(o => o.quoteToken.symbol === 'WETH');
   const tokenPriceInfoObj = {}
   for (let i = 0; i < contractAddresses.length; i++) {
     const info = tokenPriceInfos.filter(o => o.baseToken.address.toLowerCase() === contractAddresses[i].toLowerCase());
