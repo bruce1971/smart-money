@@ -2,7 +2,7 @@ const axios = require('axios');
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`./addresses.js`);
 const { parseTx } = require(`./transaction`);
-const { accountUrl, blockUrl, formatActivityLog, formatPnl, secondsToBlocks, formatTimestamp } = require(`./helper.js`);
+const { accountUrl, blockUrl, formatActivityLog, formatPnl, secondsToBlocks, formatTimestamp, formatValue } = require(`./helper.js`);
 const { getUserPortfolio } = require(`./getUserPortfolio.js`);
 const { txsForSingleAddress } = require(`./transaction/getTransactions.js`);
 
@@ -29,7 +29,7 @@ async function getErc20InfoObj(txArray){
   });
   addressArray.push('0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'); // always get WETH
   addressArray = [...new Set(addressArray)];
-  console.log(`Getting ${addressArray.length} tokenInfos..`);
+  console.log(`Getting ${addressArray.length} ERC20 token infos..`);
   for (var i = 0; i < addressArray.length; i++) {
     console.log(i+1);
     // https://www.dextools.io/app/en/ether/pair-explorer/0x72e4f9f808c49a2a61de9c5896298920dc4eeea9
@@ -74,21 +74,25 @@ function getParticipation(txArray) {
     contractAddress: o.contractAddress,
     aTxHash: `https://etherscan.io/tx/${o.hash}`
   }))
-  const participationErc20 = participation.filter(o => o.type === 'erc20')
-  console.log('========================================= SHITCOIN ============================================');
-  participationErc20.forEach(o => console.log(o));
-  const participationErc721 = participation.filter(o => o.type === 'erc721')
-  console.log('============================================ NFT ==============================================');
-  participationErc721.forEach(o => console.log(o));
-  const participationErc1155 = participation.filter(o => o.type === 'erc1155')
-  console.log('========================================== NIFTY ==============================================');
-  participationErc1155.forEach(o => console.log(o));
+  const displayFormatted = false;
+  if (displayFormatted) {
+    const participationErc20 = participation.filter(o => o.type === 'erc20')
+    console.log('========================================= SHITCOIN ============================================');
+    participationErc20.forEach(o => console.log(o));
+    const participationErc721 = participation.filter(o => o.type === 'erc721')
+    console.log('============================================ NFT ==============================================');
+    participationErc721.forEach(o => console.log(o));
+    const participationErc1155 = participation.filter(o => o.type === 'erc1155')
+    console.log('========================================== NIFTY ==============================================');
+    participationErc1155.forEach(o => console.log(o));
+  }
+  return participation;
 }
 
 
 async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 
-  // secondsAgo = 3600 * 24 * 20;
+  secondsAgo = 3600 * 24 * 20;
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
@@ -104,7 +108,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
     txArray = txArray.concat(txArray1);
   };
 
-  // getParticipation(txArray);
+  const participation = getParticipation(txArray);
 
   const tokenInfoObj = await getErc20InfoObj(txArray);
 
@@ -115,21 +119,41 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
   let activityLog = getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
   // activityLog = activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
 
-  const current = await getUserPortfolio(userAddresses, tokenInfoObj);
-  console.log(current);
+  const currentPortfolio = await getUserPortfolio(userAddresses, tokenInfoObj);
 
   pnl.wethFinal = pnl.wethIn - pnl.wethOut;
   pnl.shitFinal = pnl.shitIn - pnl.shitOut;
-  const output = { pnl, activityLog };
-  return output;
+
+  return {
+    pnl,
+    activityLog,
+    currentPortfolio,
+    participation
+  }
 }
+
+function finalPnl(participation, currentPortfolio, pastTxs) {
+  participation.forEach(el => {
+    console.log('======================================');
+    console.log(el.tokenName);
+    console.log('----');
+    console.log(`Invested --> 0.23 eth`);
+    console.log(`Taken out --> 0.23 eth`);
+    const currentToken = currentPortfolio.find(o => o.address.toLowerCase() === el.contractAddress)
+    console.log(`Current holding --> ${formatValue(currentToken.totalEth, 0)} eth`);
+  });
+}
+
 
 
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
-    // formatActivityLog(user.activityLog, false, true);
-    // formatPnl(user.pnl);
+    formatActivityLog(user.activityLog, false, true);
+    formatPnl(user.pnl);
+    console.log(user.currentPortfolio);
+    console.log(user.participation);
+    finalPnl(user.participation, user.currentPortfolio, {});
   })();
 }
 
