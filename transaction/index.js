@@ -8,37 +8,39 @@ const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'.toLowerCase();
 function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
   let buyAmount = 0;
   let sellAmount = 0;
-  let swapFrom, swapTo;
+  let swapFrom, swapTo, addressFrom, addressTo;
   const tokenInfo = tokenInfoObj[erc20.contractAddress];
 
   if (array.length === 2 && tokenInfoObj[array[0].path[1].toLowerCase()]?.name === 'WETH' && tokenInfoObj[array[1].path[0].toLowerCase()]?.name === 'WETH') {
     sellAmount += Number(array[0].amountIn);
     buyAmount += Number(array[1].amountOut);
-    swapFrom = tokenInfo || { name: shortAddr(array[0].path[0]) };
-    swapTo = tokenInfo || { name: shortAddr(array[1].path.at(-1)) };
+    addressFrom = array[0].path[0].toLowerCase();
+    addressTo = array[1].path.at(-1).toLowerCase();
+    swapFrom = tokenInfo || { name: shortAddr(addressFrom), address: addressFrom };
+    swapTo = tokenInfo || { name: shortAddr(addressTo), address: addressTo };
   }
   else {
     array.forEach(el => {
       buyAmount += Number(el.amountOut);
       sellAmount += Number(el.amountIn);
     });
-    let outAddress = array[0].path[0].toLowerCase();
-    let inAddress = array[0].path.at(-1).toLowerCase();
-    swapFrom = tokenInfoObj[outAddress] || { name: shortAddr(outAddress) };
-    swapTo = tokenInfoObj[inAddress]  || { name: shortAddr(inAddress) };
+    addressFrom = array[0].path[0].toLowerCase();
+    addressTo = array[0].path.at(-1).toLowerCase();
+    swapFrom = tokenInfoObj[addressFrom] || { name: shortAddr(addressFrom), address: addressFrom };
+    swapTo = tokenInfoObj[addressTo]  || { name: shortAddr(addressTo), address: addressTo };
   }
 
-  if (swapFrom.address.toLowerCase() === WETH_ADDRESS) {
+  if (swapFrom.address === WETH_ADDRESS) {
     pnl.push({ contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(sellAmount) })
     const unitPriceEth = formatValueRaw(sellAmount)/formatValueRaw(buyAmount, erc20.tokenDecimal);
-    const mcap = unitPriceEth * ethInUsd * tokenInfo.totalSupply;
+    const mcap = unitPriceEth * ethInUsd * tokenInfo?.totalSupply;
     return {
       type: 'buy',
       activity: `🪙🟢 Token BUY. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name} ($${formatLargeValue(mcap)} Mcap)`
     }
-  } else if (swapTo.address.toLowerCase() === WETH_ADDRESS) {
+  } else if (swapTo.address === WETH_ADDRESS) {
     const unitPriceEth = formatValueRaw(buyAmount)/formatValueRaw(sellAmount, erc20.tokenDecimal);
-    const mcap = unitPriceEth * ethInUsd * tokenInfo.totalSupply;
+    const mcap = unitPriceEth * ethInUsd * tokenInfo?.totalSupply;
     pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(buyAmount) })
     return {
       type: 'sell',
@@ -68,7 +70,7 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
   } else if (tx.functionName === 'swapExactETHForTokens(uint256 amountOutMin, address[] path, address to, uint256 deadline)' || tx.functionName === 'swapETHForExactTokens(uint256 amountOut, address[] path, address to, uint256 deadline)') {
     finalObject.type = 'buy';
     const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value, erc20.tokenDecimal);
-    const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress].totalSupply;
+    const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress]?.totalSupply;
     finalObject.activity = `🪙🟢 Token BUY. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(tx.value, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
     pnl.push({ contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(tx.value) })
   } else if (tx.functionName === 'swapTokensForExactETH(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline)') {
@@ -76,7 +78,7 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     const decodedArray = decoder.decoder3(tx.input);
     const ethReceived = decodedArray[0].amountIn;
     const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
-    const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress].totalSupply;
+    const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress]?.totalSupply;
     finalObject.activity = `🪙🔴 Token SALE. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
     pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(ethReceived) })
   } else if (tx.functionName === 'swapExactTokensForETH(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
@@ -84,7 +86,7 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     const decodedArray = decoder.decoder3(tx.input);
     const ethReceived = decodedArray[0].amountOut;
     const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
-    const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress].totalSupply;
+    const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress]?.totalSupply;
     finalObject.activity = `🪙🔴 Token SALE. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
     pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(ethReceived) })
   } else if (tx.functionName.includes('transfer')) {

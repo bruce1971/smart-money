@@ -144,13 +144,14 @@ function finalPnl(participation, currentPortfolio, pnl) {
     pnlObj.push({ name, address, buy, sell, current, total })
   });
   pnlObj = pnlObj.sort((a, b) => b.total - a.total);
-  console.log('======================================');
+  console.log('🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢');
   console.log('O-V-E-R-A-L-L');
   console.log('----');
   console.log(`Invested --> ${formatValue(pnlObj.map(o => o.buy).reduce((acc, o) => (acc + o), 0), 0)} eth`);
   console.log(`Taken out --> ${formatValue(pnlObj.map(o => o.sell).reduce((acc, o) => (acc + o), 0), 0)} eth`);
   console.log(`Current holding --> ${formatValue(pnlObj.map(o => o.current).reduce((acc, o) => (acc + o), 0), 0)} eth`);
   console.log(`TOTAL --> ${formatValue(pnlObj.map(o => o.total).reduce((acc, o) => (acc + o), 0), 0)} eth`);
+  console.log('🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢');
 
   pnlObj.forEach(el => {
     console.log('======================================');
