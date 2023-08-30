@@ -12,10 +12,11 @@ async function getErc20Info(txArray){
   addressArray.push(WETH_ADDRESS); // always get WETH
   addressArray = [...new Set(addressArray)];
 
-  console.log(`Getting ${addressArray.length} ERC20 token infos..`);
+  const pauseSeconds = 6;
+  console.log(`Getting ${addressArray.length} ERC20 token infos.. (${Math.ceil(addressArray.length*pauseSeconds/60)} min wait..)`);
   for (var i = 0; i < addressArray.length; i++) {
     console.log(i+1);
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise(resolve => setTimeout(resolve, pauseSeconds * 1000));
     const address = addressArray[i];
     const url = `https://api.geckoterminal.com/api/v2/networks/eth/tokens/${address}?include=top_pools`;
     const tokenInfo = await axios.get(url).then(res => res.data).catch(e => null);
