@@ -12,7 +12,7 @@ async function getErc20Info(txArray){
   addressArray.push(WETH_ADDRESS); // always get WETH
   addressArray = [...new Set(addressArray)];
 
-  const pauseSeconds = 6;
+  const pauseSeconds = 3;
   console.log(`Getting ${addressArray.length} ERC20 token infos.. (${Math.ceil(addressArray.length*pauseSeconds/60)} min wait..)`);
   for (var i = 0; i < addressArray.length; i++) {
     console.log(i+1);
@@ -28,9 +28,9 @@ async function getErc20Info(txArray){
     const name = info.name;
     const decimals = info.decimals;
     const totalSupply = Math.ceil( Number(info.total_supply) / (10 ** decimals) );
-    const priceInfo = tokenInfo.included[0].attributes;
-    const priceUsd = Number(priceInfo.base_token_price_usd);
-    const priceEth = Number(priceInfo.base_token_price_native_currency);
+    const priceInfo = tokenInfo.included[0]?.attributes;
+    const priceUsd = priceInfo ? Number(priceInfo.base_token_price_usd) : 0;
+    const priceEth = priceInfo ? Number(priceInfo.base_token_price_native_currency) : 0;
     tokenInfoObj[addressArray[i]] = {
       name,
       address,
