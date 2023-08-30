@@ -7,7 +7,7 @@ const { getUserPortfolio } = require(`./user/getUserPortfolio.js`);
 const { getErc20Info } = require(`./user/getErc20Info.js`);
 const { txsForSingleAddress } = require(`./transaction/getTransactions.js`);
 
-const inputUserAddresses = addresses.inputU[argv.u];
+const inputUserAddresses = argv.u ? addresses.inputU[argv.u] || ['0' + argv.u] : undefined;
 const inputContractAddress = argv.a ? addresses.inputA[argv.a] || { address: '0' + argv.a } : undefined;
 
 
@@ -85,15 +85,15 @@ function getParticipation(txArray) {
 
 async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 
-  // secondsAgo = 3600 * 24 * 100;
+  // secondsAgo = 3600 * 24 * 30;
 
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  // startblock = 11873602
-  // endblock = 11873602
+  // startblock = 17872252
+  // endblock = 17872252
 
   let txArray = [];
   for (const userAddress of userAddresses) {

@@ -11,13 +11,13 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
   let swapFrom, swapTo, addressFrom, addressTo;
   const tokenInfo = tokenInfoObj[erc20.contractAddress];
 
-  if (array.length === 2 && tokenInfoObj[array[0].path[1].toLowerCase()]?.name === 'WETH' && tokenInfoObj[array[1].path[0].toLowerCase()]?.name === 'WETH') {
+  if (array.length === 2 && tokenInfoObj[array[0].path[1].toLowerCase()]?.address === WETH_ADDRESS && tokenInfoObj[array[1].path[0].toLowerCase()]?.address === WETH_ADDRESS) {
     sellAmount += Number(array[0].amountIn);
     buyAmount += Number(array[1].amountOut);
     addressFrom = array[0].path[0].toLowerCase();
     addressTo = array[1].path.at(-1).toLowerCase();
-    swapFrom = tokenInfo || { name: shortAddr(addressFrom), address: addressFrom };
-    swapTo = tokenInfo || { name: shortAddr(addressTo), address: addressTo };
+    swapFrom = tokenInfoObj[addressFrom] || { name: shortAddr(addressFrom), address: addressFrom };
+    swapTo = tokenInfoObj[addressTo] || { name: shortAddr(addressTo), address: addressTo };
   }
   else {
     array.forEach(el => {
@@ -27,7 +27,7 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
     addressFrom = array[0].path[0].toLowerCase();
     addressTo = array[0].path.at(-1).toLowerCase();
     swapFrom = tokenInfoObj[addressFrom] || { name: shortAddr(addressFrom), address: addressFrom };
-    swapTo = tokenInfoObj[addressTo]  || { name: shortAddr(addressTo), address: addressTo };
+    swapTo = tokenInfoObj[addressTo] || { name: shortAddr(addressTo), address: addressTo };
   }
 
   if (swapFrom.address === WETH_ADDRESS) {
