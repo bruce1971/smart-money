@@ -29,8 +29,12 @@ async function getErc20Info(txArray){
     const decimals = info.decimals;
     const totalSupply = Math.ceil( Number(info.total_supply) / (10 ** decimals) );
     const priceInfo = tokenInfo.included[0]?.attributes;
-    const priceUsd = priceInfo ? Number(priceInfo.base_token_price_usd) : 0;
-    const priceEth = priceInfo ? Number(priceInfo.base_token_price_native_currency) : 0;
+    let priceUsd = 0;
+    let priceEth = 0;
+    if (priceInfo && Number(priceInfo.volume_usd.h24) > 0) {
+      priceUsd = Number(priceInfo.base_token_price_usd);
+      priceEth = Number(priceInfo.base_token_price_native_currency);
+    }
     tokenInfoObj[addressArray[i]] = {
       name,
       address,
