@@ -1,6 +1,49 @@
 const axios = require('axios');
+const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'.toLowerCase();
+
 
 async function getErc20Info(txArray){
+  const tokenInfoObj = {};
+
+  let addressArray = [];
+  txArray.forEach(tx => {
+    if (tx.txs.normal && tx.txs.erc20) addressArray.push(tx.txs.erc20.contractAddress);
+  });
+  addressArray.push(WETH_ADDRESS); // always get WETH
+  addressArray = [...new Set(addressArray)];
+
+  console.log(`Getting ${addressArray.length} ERC20 token infos..`);
+  for (var i = 0; i < addressArray.length; i++) {
+    console.log(i+1);
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    const address = addressArray[i];
+    const url = `https://api.geckoterminal.com/api/v2/networks/eth/tokens/${address}?include=top_pools`;
+    const tokenInfo = await axios.get(url).then(res => res.data).catch(e => null);
+    if (!tokenInfo) {
+      tokenInfoObj[addressArray[i]] = null;
+      continue;
+    }
+    const info = tokenInfo.data.attributes;
+    const name = info.name;
+    const decimals = info.decimals;
+    const totalSupply = Math.ceil( Number(info.total_supply) / (10 ** decimals) );
+    const priceInfo = tokenInfo.included[0].attributes;
+    const priceUsd = Number(priceInfo.base_token_price_usd);
+    const priceEth = Number(priceInfo.base_token_price_native_currency);
+    tokenInfoObj[addressArray[i]] = {
+      name,
+      address,
+      totalSupply,
+      decimals,
+      priceEth,
+      priceUsd
+    }
+  }
+  return tokenInfoObj;
+}
+
+
+async function getErc20InfoX(txArray){
   const tokenInfoObj = {};
 
   let addressArray = [];
@@ -54,10 +97,10 @@ async function getErc20Info(txArray){
     tokenInfoObj[contractAddresses[i]].priceUsd = info[0] ? Number(info[0].priceUsd) : 0;
     tokenInfoObj[contractAddresses[i]].mcapUsd = tokenInfoObj[contractAddresses[i]].priceUsd * tokenInfoObj[contractAddresses[i]].totalSupply;
   }
-
   return tokenInfoObj;
 }
 
+
 module.exports = {
-    getErc20Info
+  getErc20Info
 }

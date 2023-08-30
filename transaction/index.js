@@ -2,6 +2,7 @@ const basePath = process.cwd();
 const decoder = require(`./decoder.js`);
 const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue, shortAddr, parseErc721 } = require(`${basePath}/helper.js`);
 const ethInUsd = 1669; // TODO: make dynamic depending on eth price that day
+const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'.toLowerCase();
 
 
 function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
@@ -27,7 +28,7 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
     swapTo = tokenInfoObj[inAddress]  || { name: shortAddr(inAddress) };
   }
 
-  if (swapFrom.name === 'WETH') {
+  if (swapFrom.address.toLowerCase() === WETH_ADDRESS) {
     pnl.push({ contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(sellAmount) })
     const unitPriceEth = formatValueRaw(sellAmount)/formatValueRaw(buyAmount, erc20.tokenDecimal);
     const mcap = unitPriceEth * ethInUsd * tokenInfo.totalSupply;
@@ -35,7 +36,7 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
       type: 'buy',
       activity: `🪙🟢 Token BUY. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(sellAmount)} ${swapFrom.name} ($${formatLargeValue(mcap)} Mcap)`
     }
-  } else if (swapTo.name === 'WETH') {
+  } else if (swapTo.address.toLowerCase() === WETH_ADDRESS) {
     const unitPriceEth = formatValueRaw(buyAmount)/formatValueRaw(sellAmount, erc20.tokenDecimal);
     const mcap = unitPriceEth * ethInUsd * tokenInfo.totalSupply;
     pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(buyAmount) })
@@ -124,9 +125,9 @@ function parseTx(fullTx, userAddresses, pnl, tokenInfoObj) {
       finalObject.activity = `💦 Request to Register ENS Domain`;
     } else if (tx.to.toLowerCase() === '0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5'.toLowerCase() && tx.functionName.includes('registerWithConfig')) {
       finalObject.activity = `💦 Register ENS Domain`;
-    } else if (tx.functionName === 'deposit()' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
+    } else if (tx.functionName === 'deposit()' && tx.to.toLowerCase() == WETH_ADDRESS) {
       finalObject.activity = `↪️  Wrap ${value} ETH to WETH`; //amount in decoded tx.input
-    } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'.toLowerCase()) {
+    } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == WETH_ADDRESS) {
       finalObject.activity = `↩️  Unwrap WETH to ETH`; //amount in decoded tx.input
     } else if (tx.functionName === 'withdraw(uint256 amount)' && tx.to.toLowerCase() == '0x0000000000a39bb272e79075ade125fd351887ac'.toLowerCase()) {
       finalObject.activity = `Withdraw from Blur`;

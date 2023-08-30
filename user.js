@@ -125,7 +125,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress);
-    // formatActivityLog(user.activityLog, false, true);
+    formatActivityLog(user.activityLog, false, true);
     // console.log(user.currentPortfolio);
     // console.log(user.participation);
     finalPnl(user.participation, user.currentPortfolio, user.pnl);
@@ -134,7 +134,7 @@ if (require.main === module) {
 
 
 module.exports = {
-    getUserData,
-    txsForSingleAddress,
-    getActivityLog
+  getUserData,
+  txsForSingleAddress,
+  getActivityLog
 }
