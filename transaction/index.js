@@ -148,7 +148,7 @@ function parseTx(fullTx, userAddresses, pnl, tokenInfoObj) {
   } else {
     finalObject.activity = '❌ NO NORMAL TXS...';
     if (txsKeys.includes('erc20')) {
-      finalObject.activity = `⬅️ 🪙 RECEIVE ${formatValue(txs.erc20.value, txs.erc20.tokenDecimal)} ${txs.erc20.tokenName} from ${shortAddr(txs.erc20.from)}`;
+      finalObject.activity = `⬅️ 🪙 RECEIVE ${formatLargeValue(txs.erc20.value, txs.erc20.tokenDecimal)} ${txs.erc20.tokenName} from ${shortAddr(txs.erc20.from)}`;
     } else if (txsKeys.includes('erc721')) {
       finalObject.activity = '💎';
     } else if (txsKeys.includes('erc1155')) {

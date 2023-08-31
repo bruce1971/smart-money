@@ -9,6 +9,7 @@ const { txsForSingleAddress } = require(`./transaction/getTransactions.js`);
 
 const inputUserAddresses = argv.u ? addresses.inputU[argv.u] || ['0' + argv.u] : undefined;
 const inputContractAddress = argv.a ? addresses.inputA[argv.a] || { address: '0' + argv.a } : undefined;
+const inputDaysAgo = argv.d ? Number(argv.d) : undefined;
 
 
 function filterContractAddress(array, contractAddress) {
@@ -83,17 +84,16 @@ function getParticipation(txArray) {
 }
 
 
-async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
+async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 
-  // secondsAgo = 3600 * 24 * 30;
-
+  const secondsAgo = 3600 * 24 * daysAgo;
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
   const blocksAgo = secondsAgo ? secondsToBlocks(secondsAgo)+1 : null;
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  // startblock = 17418492
-  // endblock = 17418540
+  // startblock = 18020912
+  // endblock = 18020912
 
   let txArray = [];
   for (const userAddress of userAddresses) {
@@ -124,7 +124,7 @@ async function getUserData(userAddresses, contractAddress, secondsAgo=null) {
 
 if (require.main === module) {
   (async () => {
-    const user = await getUserData(inputUserAddresses, inputContractAddress);
+    const user = await getUserData(inputUserAddresses, inputContractAddress, inputDaysAgo);
     formatActivityLog(user.activityLog, false, true);
     // console.log(user.currentPortfolio);
     // console.log(user.participation);
