@@ -6,7 +6,7 @@ const inputA = {
   'mog': { address: '0xaaeE1A9723aaDB7afA2810263653A34bA2C21C7a', type: 'erc20', startblock: 17732026, endblock: 17755548 },
   'cage': { address: '0xfcaF0e4498E78d65526a507360F755178b804Ba8', type: 'erc20', startblock: 17849393, endblock: 17885111 },
   'nihao': { address: '0xC3681A720605bD6F8fe9A2FaBff6A7CDEcDc605D', type: 'erc20', startblock: 17360350, endblock: 17380487 },
-  'pepe-fake': { address: '0xbe042e9d09cb588331ff911c2b46fd833a3e5bd6', type: 'erc20', startblock: 17987995, endblock: 18009131 },
+  'pepe2': { address: '0xbe042e9d09cb588331ff911c2b46fd833a3e5bd6', type: 'erc20', startblock: 17987995, endblock: 18009131 },
   'x': { address: '0xa62894d5196bc44e4c3978400ad07e7b30352372', type: 'erc20' },
   'unibot': { address: '0xf819d9Cb1c2A819Fd991781A822dE3ca8607c3C9', type: 'erc20' },
   'none': { address: '0x903ff0ba636E32De1767A4B5eEb55c155763D8B7', type: 'erc20' },

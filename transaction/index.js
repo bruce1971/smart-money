@@ -59,7 +59,7 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
   } else {
     return {
       type: 'swap',
-      activity: `🪙🟠 Swap ${formatLargeValue(sellAmount, 18)} ${swapFrom.name} to ${formatValue(buyAmount, swapTo.decimals)} ${swapTo.name}`
+      activity: `🪙🟠 Swap ${formatLargeValue(sellAmount, 18)} ${swapFrom.name} to ${formatLargeValue(buyAmount, swapTo.decimals || 18)} ${swapTo.name}`
     }
   }
 }
