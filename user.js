@@ -92,8 +92,8 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  // startblock = 18020912
-  // endblock = 18020912
+  // startblock = 17987365
+  // endblock = 17987365
 
   let txArray = [];
   for (const userAddress of userAddresses) {
