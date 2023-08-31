@@ -85,6 +85,7 @@ function getParticipation(txArray) {
 
 
 async function getUserData(userAddresses, contractAddress, daysAgo=null) {
+  console.time('USER');
 
   const secondsAgo = 3600 * 24 * daysAgo;
   let currentBlock = secondsAgo ? await axios.get(blockUrl(Math.floor(Date.now()/1000))).then(res => res.data.result) : null;
@@ -101,7 +102,6 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
     txArray = txArray.concat(txArray1);
   };
 
-  const participation = getParticipation(txArray);
 
   const tokenInfoObj = await getErc20Info(txArray);
 
@@ -111,8 +111,11 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
   const pnl = [];
   const activityLog = getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
 
-  const currentPortfolio = await getUserPortfolio(participation, tokenInfoObj);
+  let participation, currentPortfolio;
+  participation = getParticipation(txArray);
+  currentPortfolio = await getUserPortfolio(participation, tokenInfoObj);
 
+  console.timeEnd('USER');
   return {
     pnl,
     activityLog,

@@ -7,8 +7,8 @@ import { getUserData } from './user.js';
 import addresses from './addresses.js';
 
 
-async function getMessages(userAddresses, secondsAgo=3600) {
-  const userData = await getUserData(userAddresses, null, secondsAgo);
+async function getMessages(userAddresses, daysAgo=1/24) {
+  const userData = await getUserData(userAddresses, null, daysAgo);
   const activityLog = userData.activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
   return activityLog;
 }
@@ -46,12 +46,10 @@ async function sendAll(userArray) {
 
 
 export const handler = async (event) => {
-  console.log('INIT LAMBDA...');
+  console.time('TELEGRAM')
   const sentMessages = await sendAll(['scribbs', 'osf', 'artchick', 'grow', 'left', 'judge', 'me']);
-  const response = {
-    statusCode: 200,
-    body: JSON.stringify(sentMessages.map(m => m.text)),
-  };
+  const response = { statusCode: 200, body: JSON.stringify(sentMessages.map(m => m.text)) };
+  console.timeEnd('TELEGRAM')
   return response;
 };
 

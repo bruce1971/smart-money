@@ -12,7 +12,7 @@ async function getErc20Info(txArray){
   addressArray.push(WETH_ADDRESS); // always get WETH
   addressArray = [...new Set(addressArray)];
 
-  const pauseSeconds = 3;
+  const pauseSeconds = 0;
   console.log(`Getting ${addressArray.length} ERC20 token infos.. (${Math.ceil(addressArray.length*pauseSeconds/60)} min wait..)`);
   for (var i = 0; i < addressArray.length; i++) {
     console.log(i+1);
