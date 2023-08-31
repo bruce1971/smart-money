@@ -19,8 +19,9 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
     swapFrom = tokenInfoObj[addressFrom] || { name: shortAddr(addressFrom), address: addressFrom };
     swapTo = tokenInfoObj[addressTo] || { name: shortAddr(addressTo), address: addressTo };
   }
-  else if (array.length === 2 && array.filter(el => el.path[0] === el.path.at(-1)).length > 0) {
-    //https://etherscan.io/tx/0xe670568798afe21d9b7f09fd5a27f341705a40474638d25f98dddd7e7e74bd94
+  else if (array.length === 2 && array[0].path.at(-1).toLowerCase() === array[1].path[0].toLowerCase()) {
+    // node user.js -u=x3e9D24b9a83d4Cb144D01594F437a9b94CCC8d60 -a=xd4074c1e48e11615fd1cfe8cbe691f5ab944aaa6
+    // node user.js -u=xd295ccf0ccd19b41dfb9b78e02eace3d7ec85be7 -a=xda7c0810ce6f8329786160bb3d1734cf6661ca6e
     sellAmount += Number(array[0].amountIn);
     buyAmount += Number(array[1].amountOut);
     addressFrom = array[0].path[0].toLowerCase();
