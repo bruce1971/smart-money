@@ -61,7 +61,7 @@ filteredWallets = filteredWallets.sort((a,b) => b.tokens.length - a.tokens.lengt
 // NO 0x3e9d24b9a83d4cb144d01594f437a9b94ccc8d60 -> pepe,turbo,bitcoin,mog
 // NO 0x91d5482f54f2dfddf21caf8f5528f689397ae223 -> pepe,mog,hams,nihao
 // NO 0x4a2c786651229175407d3a2d405d1998bcf40614 -> pepe,mog,nihao
-// 0x0be167856e9b54e0088f04c2f611f59871d89e39 -> pepe,mog,nihao
+// NO 0x0be167856e9b54e0088f04c2f611f59871d89e39 -> pepe,mog,nihao
 // 0xc77d249809ae5a118eef66227d1a01a3d62c82d4 -> pepe,hams,nihao
 // 0xd295ccf0ccd19b41dfb9b78e02eace3d7ec85be7 -> pepe,bitcoin,nihao
 // 0xfd22e70cb42a0fa315c82e0aa95a6dc19f8b4934 -> pepe,bitcoin,mog

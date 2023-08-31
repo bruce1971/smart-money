@@ -32,8 +32,13 @@ async function getErc20Info(txArray){
     let priceUsd = 0;
     let priceEth = 0;
     if (priceInfo && Number(priceInfo.volume_usd.h24) > 0) {
-      priceUsd = Number(priceInfo.base_token_price_usd);
-      priceEth = Number(priceInfo.base_token_price_native_currency);
+      if (Number(priceInfo.base_token_price_native_currency) === 1 && addressArray[i].toLowerCase() !== WETH_ADDRESS) { // if base is not WETH but other pair is WETH
+        priceUsd = Number(priceInfo.quote_token_price_usd);
+        priceEth = Number(priceInfo.quote_token_price_native_currency);
+      } else {
+        priceUsd = Number(priceInfo.base_token_price_usd);
+        priceEth = Number(priceInfo.base_token_price_native_currency);
+      }
     }
     tokenInfoObj[addressArray[i]] = {
       name,
