@@ -44,11 +44,18 @@ Object.keys(allWalletsObj).forEach(wallet => {
 filteredWallets = filteredWallets.sort((a,b) => b.tokens.length - a.tokens.length);
 (async () => {
   const finalWallets = [];
-  console.log(`scanning ${filteredWallets.length} wallets...`);
+  console.log(`Scanning ${filteredWallets.length} wallets...`);
   for (var i = 0; i < filteredWallets.length; i++) {
-    console.log(i);
+    console.log(i+1);
     const normalTransactions = await axios.get(accountUrl('txlist', filteredWallets[i].address)).then(res => res.data.result);
     if (50 < normalTransactions.length && normalTransactions.length < 10000) finalWallets.push(filteredWallets[i]);
   }
   finalWallets.forEach(wallet => console.log(`${wallet.address} -> ${wallet.tokens}`));
 })();
+
+
+// 0x0a24c7547dd14be2f502d354afd224b226d177e4 -> pepe,bitcoin,mog,cage
+// 0x9224cf7956b8787f1e015349ba2937cef29215d8 -> pepe,turbo,bitcoin,mog
+// 0x3e9d24b9a83d4cb144d01594f437a9b94ccc8d60 -> pepe,turbo,bitcoin,mog
+// 0xc305000000ff00002b001b6300dda3f0ba56b1bd -> pepe,turbo,mog,nihao
+// 0x91d5482f54f2dfddf21caf8f5528f689397ae223 -> pepe,mog,hams,nihao
