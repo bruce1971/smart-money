@@ -1,7 +1,7 @@
 const axios = require('axios');
 const wallets = require(`./data.js`);
 const { accountUrl } = require(`../helper.js`);
-const EARLY_FREQUENCY = 3;
+const EARLY_FREQUENCY = 4;
 
 const allKeys = Object.keys(wallets);
 let allWallets = [];
