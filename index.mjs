@@ -20,8 +20,9 @@ async function sendTelegram(messages) {
   const targetUserId = TARGET_USER_ID;
   const sentMessages = [];
   if (messages.length === 0) {
-    const sentMessage = await bot.sendMessage(targetUserId, 'No new txs...');
-    sentMessages.push(sentMessage);
+    console.log('No new txs..');
+    // const sentMessage = await bot.sendMessage(targetUserId, 'No new txs...');
+    // sentMessages.push(sentMessage);
   } else {
     for (let i = 0; i < messages.length; i++) {
       const message = `${messages[i].user} \n\n${messages[i].activity} \n\n${messages[i].tx}`;
