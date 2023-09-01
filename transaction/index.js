@@ -164,3 +164,7 @@ module.exports = {
     parseTx: parseTx,
     parseDecodedArray: parseDecodedArray
 }
+
+
+// FIXME:
+// node user.js -u=artchick -a=xb69753c06bb5c366be51e73bfc0cc2e3dc07e371

@@ -1454,5 +1454,5445 @@
     "decimals": 18,
     "priceEth": 0,
     "priceUsd": 0
+  },
+  "0x600000000a36f3cd48407e35eb7c5c910dc1f7a8": {
+    "name": "Goo",
+    "address": "0x600000000a36f3cd48407e35eb7c5c910dc1f7a8",
+    "totalSupply": 6385538,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x1e4ede388cbc9f4b5c79681b7f94d36a11abebc9": {
+    "name": "X2Y2Token",
+    "address": "0x1e4ede388cbc9f4b5c79681b7f94d36a11abebc9",
+    "totalSupply": 980955977,
+    "decimals": 18,
+    "priceEth": 0.0000085252546997387,
+    "priceUsd": 0.0139570344833799
+  },
+  "0xade6fdaba1643e4d1eef68da7170f234470938c6": {
+    "name": "Harambe",
+    "address": "0xade6fdaba1643e4d1eef68da7170f234470938c6",
+    "totalSupply": 100000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x3845badade8e6dff049820680d1f14bd3903a5d0": {
+    "name": "SAND",
+    "address": "0x3845badade8e6dff049820680d1f14bd3903a5d0",
+    "totalSupply": 3000000000,
+    "decimals": 18,
+    "priceEth": 0.00018709252921713,
+    "priceUsd": 0.305183957124137
+  },
+  "0xa6dd98031551c23bb4a2fbe2c4d524e8f737c6f7": {
+    "name": "Tokenfy",
+    "address": "0xa6dd98031551c23bb4a2fbe2c4d524e8f737c6f7",
+    "totalSupply": 992217418,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x43ab765ee05075d78ad8aa79dcb1978ca3079258": {
+    "name": "POW",
+    "address": "0x43ab765ee05075d78ad8aa79dcb1978ca3079258",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0.0000064546636772127,
+    "priceUsd": 0.0104019554377346
+  },
+  "0x44709a920fccf795fbc57baa433cc3dd53c44dbe": {
+    "name": "DappRadar",
+    "address": "0x44709a920fccf795fbc57baa433cc3dd53c44dbe",
+    "totalSupply": 10000000000,
+    "decimals": 18,
+    "priceEth": 0.00000351831909741465,
+    "priceUsd": 0.00575618036411384
+  },
+  "0x6bba316c48b49bd1eac44573c5c871ff02958469": {
+    "name": "Gas DAO",
+    "address": "0x6bba316c48b49bd1eac44573c5c871ff02958469",
+    "totalSupply": 1000000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x7f0693074f8064cfbcf9fa6e5a3fa0e4f58ccccf": {
+    "name": "we love gm",
+    "address": "0x7f0693074f8064cfbcf9fa6e5a3fa0e4f58ccccf",
+    "totalSupply": 69000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xcae72a7a0fd9046cf6b165ca54c9e3a3872109e0": {
+    "name": "AnRKey X",
+    "address": "0xcae72a7a0fd9046cf6b165ca54c9e3a3872109e0",
+    "totalSupply": 200000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x3b484b82567a09e2588a13d54d032153f0c0aee0": {
+    "name": "SOS",
+    "address": "0x3b484b82567a09e2588a13d54d032153f0c0aee0",
+    "totalSupply": 100000000000000,
+    "decimals": 18,
+    "priceEth": 2.39255498717463e-11,
+    "priceUsd": 3.86759045393281e-8
+  },
+  "0xbc7250c8c3eca1dfc1728620af835fca489bfdf3": {
+    "name": "GM",
+    "address": "0xbc7250c8c3eca1dfc1728620af835fca489bfdf3",
+    "totalSupply": 1000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x33a8a046565bfd2d2e8a1e5d77d41dfd09e9fb03": {
+    "name": null,
+    "address": "0x33a8a046565bfd2d2e8a1e5d77d41dfd09e9fb03",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x767fe9edc9e0df98e07454847909b5e959d7ca0e": {
+    "name": "Illuvium",
+    "address": "0x767fe9edc9e0df98e07454847909b5e959d7ca0e",
+    "totalSupply": 7782101,
+    "decimals": 18,
+    "priceEth": 0.0258579443169372,
+    "priceUsd": 41.8300148383202
+  },
+  "0x41a322b28d0ff354040e2cbc676f0320d8c8850d": {
+    "name": null,
+    "address": "0x41a322b28d0ff354040e2cbc676f0320d8c8850d",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x43934fa333fc382c10791a12e61ca4c7a371a582": {
+    "name": null,
+    "address": "0x43934fa333fc382c10791a12e61ca4c7a371a582",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xf411903cbc70a74d22900a5de66a2dda66507255": {
+    "name": "VERA",
+    "address": "0xf411903cbc70a74d22900a5de66a2dda66507255",
+    "totalSupply": 110068961638,
+    "decimals": 18,
+    "priceEth": 0.00000254626597413224,
+    "priceUsd": 0.00407330003324712
+  },
+  "0xaea46a60368a7bd060eec7df8cba43b7ef41ad85": {
+    "name": "Fetch",
+    "address": "0xaea46a60368a7bd060eec7df8cba43b7ef41ad85",
+    "totalSupply": 1152997575,
+    "decimals": 18,
+    "priceEth": 0.000140519349177258,
+    "priceUsd": 0.226394629474981
+  },
+  "0x2baac9330cf9ac479d819195794d79ad0c7616e3": {
+    "name": "AdBank",
+    "address": "0x2baac9330cf9ac479d819195794d79ad0c7616e3",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x43a96962254855f16b925556f9e97be436a43448": {
+    "name": "HORD Token",
+    "address": "0x43a96962254855f16b925556f9e97be436a43448",
+    "totalSupply": 320000000,
+    "decimals": 18,
+    "priceEth": 0.00000604504571876253,
+    "priceUsd": 0.0102027565305171
+  },
+  "0xd8912c10681d8b21fd3742244f44658dba12264e": {
+    "name": "Pluton",
+    "address": "0xd8912c10681d8b21fd3742244f44658dba12264e",
+    "totalSupply": 20000000,
+    "decimals": 18,
+    "priceEth": 0.0040884300179967,
+    "priceUsd": 6.56142770376609
+  },
+  "0x2e1e15c44ffe4df6a0cb7371cd00d5028e571d14": {
+    "name": "Mettalex",
+    "address": "0x2e1e15c44ffe4df6a0cb7371cd00d5028e571d14",
+    "totalSupply": 40000000,
+    "decimals": 18,
+    "priceEth": 0.000181438082165933,
+    "priceUsd": 0.291838551182516
+  },
+  "0x7ef7adae450e33b4187fe224cab1c45d37f7c411": {
+    "name": "Atomix",
+    "address": "0x7ef7adae450e33b4187fe224cab1c45d37f7c411",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x3a856d4effa670c54585a5d523e96513e148e95d": {
+    "name": "Trias Token",
+    "address": "0x3a856d4effa670c54585a5d523e96513e148e95d",
+    "totalSupply": 10000000,
+    "decimals": 18,
+    "priceEth": 0.00143743344307453,
+    "priceUsd": 18.5042500975456
+  },
+  "0x4243a8413a77eb559c6f8eaffa63f46019056d08": {
+    "name": null,
+    "address": "0x4243a8413a77eb559c6f8eaffa63f46019056d08",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x6226e00bcac68b0fe55583b90a1d727c14fab77f": {
+    "name": "MultiVAC",
+    "address": "0x6226e00bcac68b0fe55583b90a1d727c14fab77f",
+    "totalSupply": 10000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x79986af15539de2db9a5086382daeda917a9cf0c": {
+    "name": null,
+    "address": "0x79986af15539de2db9a5086382daeda917a9cf0c",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x3506424f91fd33084466f402d5d97f05f8e3b4af": {
+    "name": "chiliZ",
+    "address": "0x3506424f91fd33084466f402d5d97f05f8e3b4af",
+    "totalSupply": 8888888888,
+    "decimals": 18,
+    "priceEth": 0.0000354894259051629,
+    "priceUsd": 0.0598170965142604
+  },
+  "0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c": {
+    "name": "Enjin Coin",
+    "address": "0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0.000140628453739571,
+    "priceUsd": 0.225799655496468
+  },
+  "0xbe74a95d159e8e323b8c1a70f825efc85fed27c4": {
+    "name": "SharesGram",
+    "address": "0xbe74a95d159e8e323b8c1a70f825efc85fed27c4",
+    "totalSupply": 10000000,
+    "decimals": 18,
+    "priceEth": 0.000112772536325825,
+    "priceUsd": 0.181914221205611
+  },
+  "0x03667c1aa9855f19a2a085c3279e695f6f61d46c": {
+    "name": "Mask NO-KYC Card",
+    "address": "0x03667c1aa9855f19a2a085c3279e695f6f61d46c",
+    "totalSupply": 10000000,
+    "decimals": 9,
+    "priceEth": 3.16232722145649e-7,
+    "priceUsd": 0.000533711705574618
+  },
+  "0xac81bf5b9e905815392f39404b8b7adf498c759b": {
+    "name": "GearFinance",
+    "address": "0xac81bf5b9e905815392f39404b8b7adf498c759b",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x8ed97a637a790be1feff5e888d43629dc05408f6": {
+    "name": "Non-Playable Coin",
+    "address": "0x8ed97a637a790be1feff5e888d43629dc05408f6",
+    "totalSupply": 8050126520,
+    "decimals": 18,
+    "priceEth": 1.71964429261074e-7,
+    "priceUsd": 0.000277157481369642
+  },
+  "0xa3bb2caed698d1eb8f054ffab45d96060433908a": {
+    "name": "Game Hub",
+    "address": "0xa3bb2caed698d1eb8f054ffab45d96060433908a",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x24046ea77c6c5d5c2f8597e9001f4581a1e5c18b": {
+    "name": "Incel Coin",
+    "address": "0x24046ea77c6c5d5c2f8597e9001f4581a1e5c18b",
+    "totalSupply": 10000000,
+    "decimals": 18,
+    "priceEth": 0.00000206082999589682,
+    "priceUsd": 0.00341221786199321
+  },
+  "0x91368eef9ab8bdc727e4506897656abb87282003": {
+    "name": "Network Spirituality",
+    "address": "0x91368eef9ab8bdc727e4506897656abb87282003",
+    "totalSupply": 444444444444444,
+    "decimals": 9,
+    "priceEth": 1.20620117845111e-13,
+    "priceUsd": 1.96939792089109e-10
+  },
+  "0x99cf786dad3c68019f9919d153a3f1f949a18171": {
+    "name": "Uni01cinoSamabOrettoPyrraH",
+    "address": "0x99cf786dad3c68019f9919d153a3f1f949a18171",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x34df29dd880e9fe2cec0f85f7658b75606fb2870": {
+    "name": "[invalid]",
+    "address": "0x34df29dd880e9fe2cec0f85f7658b75606fb2870",
+    "totalSupply": 10000000000,
+    "decimals": 9,
+    "priceEth": 1.64865983036028e-9,
+    "priceUsd": 0.00000269973657437062
+  },
+  "0xfa4baa6951b6ee382e9ff9af2d523278b99ca6d0": {
+    "name": "House",
+    "address": "0xfa4baa6951b6ee382e9ff9af2d523278b99ca6d0",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0.00231964673938329,
+    "priceUsd": 3.73893775353493
+  },
+  "0x9b538e056a22cd46ecfc5b7433d17fb92d891b98": {
+    "name": "🐶🐱🐰🦊🐻🐼🐨🐯🦁🐮🐷🐽🐸🐵🐔🐧🐦🐤🦅🦉🦇🐺🐗🐴🦄🐝🐛🪱🦋🐌🐞🐜🪰🪲🕷🦂🐢🐍🦎🦖🦕🐙🦑🦐🦞🦀🐡🐠🐟🐬🐳🐋🐊🐅🐆🦓🦍🦧🦣🐘🦛🦏🐪🐫🦒🦘🦬🐃🐂🐄🐎🐖🐏🐑🦙🐐🦌🐕🐩🦮🐕‍🦺🐈🐈‍⬛🐓🦤🦚🦜🦢🦩🕊🐇🦝🦨🦡🦫🦦🦥🐁🐀🐿🦔🐾🐉🐲",
+    "address": "0x9b538e056a22cd46ecfc5b7433d17fb92d891b98",
+    "totalSupply": 10000000000,
+    "decimals": 9,
+    "priceEth": 6.97418911180164e-10,
+    "priceUsd": 0.00000116919729518475
+  },
+  "0xf3c74652ab0a1cab5669e34abfa160ed53c91ca7": {
+    "name": "HarryPotterObamaKnuckles10Inu ",
+    "address": "0xf3c74652ab0a1cab5669e34abfa160ed53c91ca7",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6611813306576bf02f2e64d764840844fa488e87": {
+    "name": "SamFTXjailTamperingEvidenceInu",
+    "address": "0x6611813306576bf02f2e64d764840844fa488e87",
+    "totalSupply": 10000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xa3c31927a092bd54eb9a0b5dfe01d9db5028bd4f": {
+    "name": "Espresso",
+    "address": "0xa3c31927a092bd54eb9a0b5dfe01d9db5028bd4f",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 9.10195583318099e-7,
+    "priceUsd": 0.00146335656247404
+  },
+  "0x3d806324b6df5af3c1a81acba14a8a62fe6d643f": {
+    "name": "BarbieCrashBandicootRFK888Inu",
+    "address": "0x3d806324b6df5af3c1a81acba14a8a62fe6d643f",
+    "totalSupply": 888888888888888,
+    "decimals": 18,
+    "priceEth": 3.23202277021681e-13,
+    "priceUsd": 5.24127799458532e-10
+  },
+  "0xb354b5da5ea39dadb1cea8140bf242eb24b1821a": {
+    "name": "Quantum Wealth Network",
+    "address": "0xb354b5da5ea39dadb1cea8140bf242eb24b1821a",
+    "totalSupply": 49673,
+    "decimals": 9,
+    "priceEth": 0.00396700586120347,
+    "priceUsd": 6.54615540186536
+  },
+  "0x18aadcbcc31a72b18b8a26c3087545976663c2b4": {
+    "name": "SentienX",
+    "address": "0x18aadcbcc31a72b18b8a26c3087545976663c2b4",
+    "totalSupply": 69420000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf819d9cb1c2a819fd991781a822de3ca8607c3c9": {
+    "name": "Unibot",
+    "address": "0xf819d9cb1c2a819fd991781a822de3ca8607c3c9",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0.0704145401420989,
+    "priceUsd": 113.92818925043
+  },
+  "0x8c130499d33097d4d000d3332e1672f75b431543": {
+    "name": "Hoppy",
+    "address": "0x8c130499d33097d4d000d3332e1672f75b431543",
+    "totalSupply": 420690000000000,
+    "decimals": 8,
+    "priceEth": 1.64865137859488e-13,
+    "priceUsd": 2.64588308163587e-10
+  },
+  "0xa62894d5196bc44e4c3978400ad07e7b30352372": {
+    "name": "X",
+    "address": "0xa62894d5196bc44e4c3978400ad07e7b30352372",
+    "totalSupply": 980310162061,
+    "decimals": 9,
+    "priceEth": 2.5792708471859e-9,
+    "priceUsd": 0.00000417824119309376
+  },
+  "0x4f311c430540db1d64e635eb55f969f1660b2016": {
+    "name": "Pepechain Token",
+    "address": "0x4f311c430540db1d64e635eb55f969f1660b2016",
+    "totalSupply": 420690000000001,
+    "decimals": 9,
+    "priceEth": 1.95744824778598e-13,
+    "priceUsd": 3.22979617989875e-10
+  },
+  "0x50dc71531ecd374d30e5ba221509b84b3c3f74b3": {
+    "name": "Bridge Bot",
+    "address": "0x50dc71531ecd374d30e5ba221509b84b3c3f74b3",
+    "totalSupply": 1000000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xed354cae598148846aa9694254c854fc7051163c": {
+    "name": "Shido",
+    "address": "0xed354cae598148846aa9694254c854fc7051163c",
+    "totalSupply": 100000000000,
+    "decimals": 18,
+    "priceEth": 5.45279555777215e-8,
+    "priceUsd": 0.0000884442181427456
+  },
+  "0xcae3faa4b6cf660aef18474074949ba0948bc025": {
+    "name": "Generational Wealth",
+    "address": "0xcae3faa4b6cf660aef18474074949ba0948bc025",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 3.40343357069482e-13,
+    "priceUsd": 5.60156271320297e-10
+  },
+  "0xb90b2a35c65dbc466b04240097ca756ad2005295": {
+    "name": "BOBO",
+    "address": "0xb90b2a35c65dbc466b04240097ca756ad2005295",
+    "totalSupply": 69000000000000,
+    "decimals": 18,
+    "priceEth": 2.0701577751133e-11,
+    "priceUsd": 3.32518598501792e-8
+  },
+  "0x285db79fa7e0e89e822786f48a7c98c6c1dc1c7d": {
+    "name": "Magic Internet Cash",
+    "address": "0x285db79fa7e0e89e822786f48a7c98c6c1dc1c7d",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 2.91622573379752e-7,
+    "priceUsd": 0.000482337330984278
+  },
+  "0x1c5c3a84b59f4813c1804eb8644d51cc0dbf8989": {
+    "name": "ZachXBT",
+    "address": "0x1c5c3a84b59f4813c1804eb8644d51cc0dbf8989",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xba386a4ca26b85fd057ab1ef86e3dc7bdeb5ce70": {
+    "name": "Jesus Coin",
+    "address": "0xba386a4ca26b85fd057ab1ef86e3dc7bdeb5ce70",
+    "totalSupply": 777777777777777,
+    "decimals": 18,
+    "priceEth": 8.97656961937769e-12,
+    "priceUsd": 1.43963437206622e-8
+  },
+  "0xbc8e35221904f61b4200ca44a08e4dac387ac83a": {
+    "name": "Fair BERC20",
+    "address": "0xbc8e35221904f61b4200ca44a08e4dac387ac83a",
+    "totalSupply": 21000000,
+    "decimals": 18,
+    "priceEth": 0.0000011868233427807,
+    "priceUsd": 0.00195797411087292
+  },
+  "0x6d3d490964205c8bc8ded39e48e88e8fde45b41f": {
+    "name": "Gooch",
+    "address": "0x6d3d490964205c8bc8ded39e48e88e8fde45b41f",
+    "totalSupply": 6969696969,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x25127685dc35d4dc96c7feac7370749d004c5040": {
+    "name": "Unibot",
+    "address": "0x25127685dc35d4dc96c7feac7370749d004c5040",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x84412819ae69b10250d0d54d58f454018f1c8a42": {
+    "name": "Scarab",
+    "address": "0x84412819ae69b10250d0d54d58f454018f1c8a42",
+    "totalSupply": 250000000,
+    "decimals": 18,
+    "priceEth": 0.00000266559442703103,
+    "priceUsd": 0.00428305000745564
+  },
+  "0xa735a3af76cc30791c61c10d585833829d36cbe0": {
+    "name": "Image Generation AI | imgnAI.com",
+    "address": "0xa735a3af76cc30791c61c10d585833829d36cbe0",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0.000010355315999865,
+    "priceUsd": 0.0166756902290794
+  },
+  "0x955d5c14c8d4944da1ea7836bd44d54a8ec35ba1": {
+    "name": "REFUND",
+    "address": "0x955d5c14c8d4944da1ea7836bd44d54a8ec35ba1",
+    "totalSupply": 1000000000000,
+    "decimals": 18,
+    "priceEth": 2.61923970381078e-9,
+    "priceUsd": 0.00000420572728854448
+  },
+  "0x2dbb2dba24ffc66520bde755b8ec42f9471c0472": {
+    "name": "0xTsunami",
+    "address": "0x2dbb2dba24ffc66520bde755b8ec42f9471c0472",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 4.19003557850947e-8,
+    "priceUsd": 0.0000671686591190671
+  },
+  "0xf951e335afb289353dc249e82926178eac7ded78": {
+    "name": "swETH",
+    "address": "0xf951e335afb289353dc249e82926178eac7ded78",
+    "totalSupply": 45476,
+    "decimals": 18,
+    "priceEth": 1.02331017154578,
+    "priceUsd": 1649.38675710536
+  },
+  "0x36520f6336490088c2455279c59cefac66984b36": {
+    "name": "COPIUM",
+    "address": "0x36520f6336490088c2455279c59cefac66984b36",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 5.91446227527165e-7,
+    "priceUsd": 0.000542118347781704
+  },
+  "0xf5330b716d4bb994b72d95cd01163841f83f6fef": {
+    "name": "peepee",
+    "address": "0xf5330b716d4bb994b72d95cd01163841f83f6fef",
+    "totalSupply": 387606543264,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xc4c81bd79ebbacc68426ce94f7004dd0ad88426d": {
+    "name": "Aggressive Masturbation",
+    "address": "0xc4c81bd79ebbacc68426ce94f7004dd0ad88426d",
+    "totalSupply": 1000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x3d5d3dcd01469ef8c6bc9c45665835814635c725": {
+    "name": "Mr F was here",
+    "address": "0x3d5d3dcd01469ef8c6bc9c45665835814635c725",
+    "totalSupply": 9510378,
+    "decimals": 18,
+    "priceEth": 0.0000627233158745914,
+    "priceUsd": 0.10108383230713
+  },
+  "0x21a52547de010fdd884ae5e22502ecc4c958e385": {
+    "name": "Brisk",
+    "address": "0x21a52547de010fdd884ae5e22502ecc4c958e385",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xa798dd23165b2808db3086a37fcdb1bbeea859fd": {
+    "name": "Unga",
+    "address": "0xa798dd23165b2808db3086a37fcdb1bbeea859fd",
+    "totalSupply": 11111111111,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x12970e6868f88f6557b76120662c1b3e50a646bf": {
+    "name": "Milady",
+    "address": "0x12970e6868f88f6557b76120662c1b3e50a646bf",
+    "totalSupply": 888000888000888,
+    "decimals": 18,
+    "priceEth": 2.14711070234556e-11,
+    "priceUsd": 3.47627710682826e-8
+  },
+  "0xec6d73557937974077911a0b6fdc436b0ff70296": {
+    "name": "Skrimples",
+    "address": "0xec6d73557937974077911a0b6fdc436b0ff70296",
+    "totalSupply": 69000000000,
+    "decimals": 18,
+    "priceEth": 1.21231351590274e-9,
+    "priceUsd": 0.00000199745000972393
+  },
+  "0x049e9f5369358786a1ce6483d668d062cfe547ec": {
+    "name": "Checks Token",
+    "address": "0x049e9f5369358786a1ce6483d668d062cfe547ec",
+    "totalSupply": 420690000000,
+    "decimals": 18,
+    "priceEth": 8.68711014304826e-11,
+    "priceUsd": 1.40011450094575e-7
+  },
+  "0x1353575d76444a11730d2f286e6303990eb1e357": {
+    "name": "Kek",
+    "address": "0x1353575d76444a11730d2f286e6303990eb1e357",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 3.94814275469595e-14,
+    "priceUsd": 6.51618258902157e-11
+  },
+  "0x5026f006b85729a8b14553fae6af249ad16c9aab": {
+    "name": "Wojak Coin",
+    "address": "0x5026f006b85729a8b14553fae6af249ad16c9aab",
+    "totalSupply": 69420000000,
+    "decimals": 18,
+    "priceEth": 4.60346412059934e-8,
+    "priceUsd": 0.0000737849753198688
+  },
+  "0x6c22910c6f75f828b305e57c6a54855d8adeabf8": {
+    "name": "SATOSHIS VISION",
+    "address": "0x6c22910c6f75f828b305e57c6a54855d8adeabf8",
+    "totalSupply": 21000000,
+    "decimals": 9,
+    "priceEth": 0.00000100676840347582,
+    "priceUsd": 0.00166211892857272
+  },
+  "0x0fe0ed7f146cb12e4b9759aff4fa8d34571802ca": {
+    "name": "PoolParty",
+    "address": "0x0fe0ed7f146cb12e4b9759aff4fa8d34571802ca",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x8442e0e292186854bb6875b2a0fc1308b9ded793": {
+    "name": "Print The Pepe",
+    "address": "0x8442e0e292186854bb6875b2a0fc1308b9ded793",
+    "totalSupply": 69696969,
+    "decimals": 9,
+    "priceEth": 2.23882403367651e-7,
+    "priceUsd": 0.000366836267747783
+  },
+  "0x53250b5dfa8c911547afeaf18db025024c8e919a": {
+    "name": "Kermit",
+    "address": "0x53250b5dfa8c911547afeaf18db025024c8e919a",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x66c9502aba6e3887d14f4890bef4d66754343f7f": {
+    "name": "WEED",
+    "address": "0x66c9502aba6e3887d14f4890bef4d66754343f7f",
+    "totalSupply": 420000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xcfc5ab97783539151d57b795fe56da43407a2b33": {
+    "name": "Elmo",
+    "address": "0xcfc5ab97783539151d57b795fe56da43407a2b33",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x1a735f7ddbae8641d364ee873f01eb09a60bb2e7": {
+    "name": null,
+    "address": "0x1a735f7ddbae8641d364ee873f01eb09a60bb2e7",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x7b4328c127b85369d9f82ca0503b000d09cf9180": {
+    "name": "Dogechain Token",
+    "address": "0x7b4328c127b85369d9f82ca0503b000d09cf9180",
+    "totalSupply": 6550132172,
+    "decimals": 18,
+    "priceEth": 3.29119967460202e-7,
+    "priceUsd": 0.000589777949865153
+  },
+  "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0": {
+    "name": "Frax Share",
+    "address": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+    "totalSupply": 99681496,
+    "decimals": 18,
+    "priceEth": 0.003420813456617467,
+    "priceUsd": 5.57406656419318
+  },
+  "0x173e552bf97bbd50b455514ac52991ef639ba703": {
+    "name": "Shido Inu",
+    "address": "0x173e552bf97bbd50b455514ac52991ef639ba703",
+    "totalSupply": 100000000000,
+    "decimals": 9,
+    "priceEth": 1.85688396273065e-10,
+    "priceUsd": 3.02264876518959e-7
+  },
+  "0x77777feddddffc19ff86db637967013e6c6a116c": {
+    "name": "TornadoCash",
+    "address": "0x77777feddddffc19ff86db637967013e6c6a116c",
+    "totalSupply": 9999998,
+    "decimals": 18,
+    "priceEth": 0.00169844227404274,
+    "priceUsd": 2.7791423431569
+  },
+  "0x7a58c0be72be218b41c608b7fe7c5bb630736c71": {
+    "name": "ConstitutionDAO",
+    "address": "0x7a58c0be72be218b41c608b7fe7c5bb630736c71",
+    "totalSupply": 5067211002,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xdf0770df86a8034b3efef0a1bb3c889b8332ff56": {
+    "name": null,
+    "address": "0xdf0770df86a8034b3efef0a1bb3c889b8332ff56",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x686f2404e77ab0d9070a46cdfb0b7fecdd2318b0": {
+    "name": "Lords",
+    "address": "0x686f2404e77ab0d9070a46cdfb0b7fecdd2318b0",
+    "totalSupply": 97407585,
+    "decimals": 18,
+    "priceEth": 0.0000602613703226445,
+    "priceUsd": 0.0978024299371104
+  },
+  "0xe516d78d784c77d479977be58905b3f2b1111126": {
+    "name": "BitSpawn Token",
+    "address": "0xe516d78d784c77d479977be58905b3f2b1111126",
+    "totalSupply": 955549972,
+    "decimals": 18,
+    "priceEth": 2.25920671685363e-7,
+    "priceUsd": 0.000372955799678403
+  },
+  "0xb56a1f3310578f23120182fb2e58c087efe6e147": {
+    "name": "AllCoinsYieldCapital",
+    "address": "0xb56a1f3310578f23120182fb2e58c087efe6e147",
+    "totalSupply": 1000000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x9b6db7597a74602a5a806e33408e7e2dafa58193": {
+    "name": "SPICE",
+    "address": "0x9b6db7597a74602a5a806e33408e7e2dafa58193",
+    "totalSupply": 2481486587,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xd5cd84d6f044abe314ee7e414d37cae8773ef9d3": {
+    "name": "Harmony ONE",
+    "address": "0xd5cd84d6f044abe314ee7e414d37cae8773ef9d3",
+    "totalSupply": 12233343,
+    "decimals": 18,
+    "priceEth": 0.00000549791330567219,
+    "priceUsd": 0.00912710777782821
+  },
+  "0x48c276e8d03813224bb1e55f953adb6d02fd3e02": {
+    "name": "Kuma Inu",
+    "address": "0x48c276e8d03813224bb1e55f953adb6d02fd3e02",
+    "totalSupply": 1000000000000000,
+    "decimals": 18,
+    "priceEth": 3.34069791345542e-12,
+    "priceUsd": 5.37903601633462e-9
+  },
+  "0xf7413489c474ca4399eee604716c72879eea3615": {
+    "name": "APYSwap",
+    "address": "0xf7413489c474ca4399eee604716c72879eea3615",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x56fe125562f6eb0d5666f02255eba8439af5ed3b": {
+    "name": "PartyGhost",
+    "address": "0x56fe125562f6eb0d5666f02255eba8439af5ed3b",
+    "totalSupply": 139279,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x0f2d719407fdbeff09d87557abb7232601fd9f29": {
+    "name": "Synapse",
+    "address": "0x0f2d719407fdbeff09d87557abb7232601fd9f29",
+    "totalSupply": 173931658,
+    "decimals": 18,
+    "priceEth": 0.00025219449366313,
+    "priceUsd": 0.406261917480583
+  },
+  "0xba7970f10d9f0531941dced1dda7ef3016b24e5b": {
+    "name": "Based Gold",
+    "address": "0xba7970f10d9f0531941dced1dda7ef3016b24e5b",
+    "totalSupply": 88800000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xbace7e22f06554339911a03b8e0ae28203da9598": {
+    "name": null,
+    "address": "0xbace7e22f06554339911a03b8e0ae28203da9598",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xa2b4c0af19cc16a6cfacce81f192b024d625817d": {
+    "name": "Kishu Inu",
+    "address": "0xa2b4c0af19cc16a6cfacce81f192b024d625817d",
+    "totalSupply": 100000000000000000,
+    "decimals": 9,
+    "priceEth": 1.30550965377503e-13,
+    "priceUsd": 2.1322303802076e-10
+  },
+  "0x70401dfd142a16dc7031c56e862fc88cb9537ce0": {
+    "name": "Bird.Money",
+    "address": "0x70401dfd142a16dc7031c56e862fc88cb9537ce0",
+    "totalSupply": 140000,
+    "decimals": 18,
+    "priceEth": 0.00536844591306162,
+    "priceUsd": 8.77976991082509
+  },
+  "0xbbc2ae13b23d715c30720f079fcd9b4a74093505": {
+    "name": "@EthernityChain $ERN Token",
+    "address": "0xbbc2ae13b23d715c30720f079fcd9b4a74093505",
+    "totalSupply": 30000000,
+    "decimals": 18,
+    "priceEth": 0.000862476281966145,
+    "priceUsd": 1.38220339527458
+  },
+  "0x6d76f7d16ca40dd13e52df3e1615318f763c0241": {
+    "name": null,
+    "address": "0x6d76f7d16ca40dd13e52df3e1615318f763c0241",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x0e192d382a36de7011f795acc4391cd302003606": {
+    "name": "Futureswap Token",
+    "address": "0x0e192d382a36de7011f795acc4391cd302003606",
+    "totalSupply": 30767781,
+    "decimals": 18,
+    "priceEth": 0.0000126964274228886,
+    "priceUsd": 0.0208042699221297
+  },
+  "0x570febdf89c07f256c75686caca215289bb11cfc": {
+    "name": null,
+    "address": "0x570febdf89c07f256c75686caca215289bb11cfc",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f": {
+    "name": "Synthetix Network Token",
+    "address": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+    "totalSupply": 323181252,
+    "decimals": 18,
+    "priceEth": 0.00118550639088688,
+    "priceUsd": 1.91294429003537
+  },
+  "0x2367012ab9c3da91290f71590d5ce217721eefe4": {
+    "name": null,
+    "address": "0x2367012ab9c3da91290f71590d5ce217721eefe4",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xe3f9cf7d44488715361581dd8b3a15379953eb4c": {
+    "name": null,
+    "address": "0xe3f9cf7d44488715361581dd8b3a15379953eb4c",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x83e6f1e41cdd28eaceb20cb649155049fac3d5aa": {
+    "name": "PolkastarterToken",
+    "address": "0x83e6f1e41cdd28eaceb20cb649155049fac3d5aa",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0.000152694574242987,
+    "priceUsd": 0.246197227185216
+  },
+  "0xfe3e6a25e6b192a42a44ecddcd13796471735acf": {
+    "name": "Reef.finance",
+    "address": "0xfe3e6a25e6b192a42a44ecddcd13796471735acf",
+    "totalSupply": 8946352655,
+    "decimals": 18,
+    "priceEth": 8.36016465893604e-7,
+    "priceUsd": 0.00134726168100283
+  },
+  "0x38e4adb44ef08f22f5b5b76a8f0c2d0dcbe7dca1": {
+    "name": "Concentrated Voting Power",
+    "address": "0x38e4adb44ef08f22f5b5b76a8f0c2d0dcbe7dca1",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x1d37986f252d0e349522ea6c3b98cb935495e63e": {
+    "name": "ChartEx",
+    "address": "0x1d37986f252d0e349522ea6c3b98cb935495e63e",
+    "totalSupply": 250000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x648450d9c30b73e2229303026107a1f7eb639f6c": {
+    "name": null,
+    "address": "0x648450d9c30b73e2229303026107a1f7eb639f6c",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xff20817765cb7f73d4bde2e66e067e58d11095c2": {
+    "name": "Amp",
+    "address": "0xff20817765cb7f73d4bde2e66e067e58d11095c2",
+    "totalSupply": 99446043448,
+    "decimals": 18,
+    "priceEth": 0.00000119602046653426,
+    "priceUsd": 0.00198264145928888
+  },
+  "0x368b3a58b5f49392e5c9e4c998cb0bb966752e51": {
+    "name": "MIC",
+    "address": "0x368b3a58b5f49392e5c9e4c998cb0bb966752e51",
+    "totalSupply": 16895652,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xc9cb53b48a2f3a9e75982685644c1870f1405ccb": {
+    "name": null,
+    "address": "0xc9cb53b48a2f3a9e75982685644c1870f1405ccb",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x6f14165c6d529ea3bfe1814d0998449e9c8d157d": {
+    "name": null,
+    "address": "0x6f14165c6d529ea3bfe1814d0998449e9c8d157d",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xbd2f0cd039e0bfcf88901c98c0bfac5ab27566e3": {
+    "name": "Dynamic Set Dollar",
+    "address": "0xbd2f0cd039e0bfcf88901c98c0bfac5ab27566e3",
+    "totalSupply": 1900135971321,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6c5ba91642f10282b576d91922ae6448c9d52f4e": {
+    "name": "Phala",
+    "address": "0x6c5ba91642f10282b576d91922ae6448c9d52f4e",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0.0000533062348012394,
+    "priceUsd": 0.0855070848639791
+  },
+  "0xffa98a091331df4600f87c9164cd27e8a5cd2405": {
+    "name": null,
+    "address": "0xffa98a091331df4600f87c9164cd27e8a5cd2405",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x111111111117dc0aa78b770fa6a738034120c302": {
+    "name": "1INCH Token",
+    "address": "0x111111111117dc0aa78b770fa6a738034120c302",
+    "totalSupply": 1500000000,
+    "decimals": 18,
+    "priceEth": 0.000146531905259381,
+    "priceUsd": 0.238608173930625
+  },
+  "0x29305f0e37e65c4d5d36466826237a59b5baf2e3": {
+    "name": null,
+    "address": "0x29305f0e37e65c4d5d36466826237a59b5baf2e3",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x12d4444f96c644385d8ab355f6ddf801315b6254": {
+    "name": null,
+    "address": "0x12d4444f96c644385d8ab355f6ddf801315b6254",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x26607ac599266b21d13c7acf7942c7701a8b699c": {
+    "name": "Power Index Pool Token",
+    "address": "0x26607ac599266b21d13c7acf7942c7701a8b699c",
+    "totalSupply": 173262,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x42d6622dece394b54999fbd73d108123806f6a18": {
+    "name": "SPANK",
+    "address": "0x42d6622dece394b54999fbd73d108123806f6a18",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0.000004347442045139629,
+    "priceUsd": 0.00707644914511318
+  },
+  "0x1c478637deb86a26e14659211190104e70fc3091": {
+    "name": "PUB.finance",
+    "address": "0x1c478637deb86a26e14659211190104e70fc3091",
+    "totalSupply": 5309138,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x992320f5f17333ea71939ef54f40af6b5137cbb5": {
+    "name": null,
+    "address": "0x992320f5f17333ea71939ef54f40af6b5137cbb5",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xeb85b2e12320a123d447ca0da26b49e666b799db": {
+    "name": null,
+    "address": "0xeb85b2e12320a123d447ca0da26b49e666b799db",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x0d438f3b5175bebc262bf23753c1e53d03432bde": {
+    "name": "Wrapped NXM",
+    "address": "0x0d438f3b5175bebc262bf23753c1e53d03432bde",
+    "totalSupply": 2338608,
+    "decimals": 18,
+    "priceEth": 0.0180747207878199,
+    "priceUsd": 29.1339954354933
+  },
+  "0x1aa61c196e76805fcbe394ea00e4ffced24fc469": {
+    "name": "yieldfarming.insure",
+    "address": "0x1aa61c196e76805fcbe394ea00e4ffced24fc469",
+    "totalSupply": 89922,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x76ee94ba953a10977bf66286829b4e723c77733c": {
+    "name": "HarryPotterTrumpPACMAN8Inu",
+    "address": "0x76ee94ba953a10977bf66286829b4e723c77733c",
+    "totalSupply": 19800522000,
+    "decimals": 18,
+    "priceEth": 2.72584497762687e-10,
+    "priceUsd": 4.43141357340409e-7
+  },
+  "0x5a0fcd6247f37154b6ab433ab72dc2ac7b3ebb8b": {
+    "name": "DPRK Coin",
+    "address": "0x5a0fcd6247f37154b6ab433ab72dc2ac7b3ebb8b",
+    "totalSupply": 888888888888888800,
+    "decimals": 8,
+    "priceEth": 7.29233581585021e-17,
+    "priceUsd": 1.20208627322517e-13
+  },
+  "0x2f09757b222642c649f1f9d80798b0123fa18ba9": {
+    "name": "Reflex Staking Bot",
+    "address": "0x2f09757b222642c649f1f9d80798b0123fa18ba9",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0.0000161280469661502,
+    "priceUsd": 0.0259207422831401
+  },
+  "0xf2f80327097d312334fe4e665f60a83cb6ce71b3": {
+    "name": "Versus",
+    "address": "0xf2f80327097d312334fe4e665f60a83cb6ce71b3",
+    "totalSupply": 10000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xae7ab96520de3a18e5e111b5eaab095312d7fe84": {
+    "name": "Liquid staked Ether 2.0",
+    "address": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+    "totalSupply": 8395725,
+    "decimals": 18,
+    "priceEth": 0.999390233602057,
+    "priceUsd": 1622.04359658217
+  },
+  "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0": {
+    "name": "Wrapped liquid staked Ether 2.0",
+    "address": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+    "totalSupply": 2856582,
+    "decimals": 18,
+    "priceEth": 1.13749281233828,
+    "priceUsd": 1845.2955412044
+  },
+  "0x32296969ef14eb0c6d29669c550d4a0449130230": {
+    "name": null,
+    "address": "0x32296969ef14eb0c6d29669c550d4a0449130230",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x7c07f7abe10ce8e33dc6c5ad68fe033085256a84": {
+    "name": "Interest Compounding ETH Index",
+    "address": "0x7c07f7abe10ce8e33dc6c5ad68fe033085256a84",
+    "totalSupply": 9321,
+    "decimals": 18,
+    "priceEth": 1.07825622482248,
+    "priceUsd": 1758.42513299108
+  },
+  "0xc81b0d02393a956234e24564805a896f14ad1250": {
+    "name": "Beautiful Princess Disorder",
+    "address": "0xc81b0d02393a956234e24564805a896f14ad1250",
+    "totalSupply": 5550000000,
+    "decimals": 9,
+    "priceEth": 1.75223734541171e-8,
+    "priceUsd": 0.0000284913171946345
+  },
+  "0x888742ecd2334d26db6015c913f51809a9158bb6": {
+    "name": "BlackSwan AI",
+    "address": "0x888742ecd2334d26db6015c913f51809a9158bb6",
+    "totalSupply": 10000000,
+    "decimals": 6,
+    "priceEth": 0.0000311268602962414,
+    "priceUsd": 0.0510124782334992
+  },
+  "0x2e161d90e0b1f07b186e79d6dc836d4654aaf105": {
+    "name": "BitcoinBoredApeMiladyEthereumCryptopunkTetherXRPAzukiDogecoinPolygonPudgyPenguinsLitecoinShibDeGodsStellarAvalancheSolanaSprotoGremlinsPepeCoin",
+    "address": "0x2e161d90e0b1f07b186e79d6dc836d4654aaf105",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 7.61336503960502e-8,
+    "priceUsd": 0.000126440091288162
+  },
+  "0x807534b396919783b7e30383fe57d857bc084338": {
+    "name": "Test",
+    "address": "0x807534b396919783b7e30383fe57d857bc084338",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 1.3658023785415e-7,
+    "priceUsd": 0.000221531825620853
+  },
+  "0x6a55f2748c9195316f3555ba1ce2b86ef452290a": {
+    "name": "SmartBot",
+    "address": "0x6a55f2748c9195316f3555ba1ce2b86ef452290a",
+    "totalSupply": 10000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf70ce9ee486106882d3dc43ddbd84e0fa71ac2a5": {
+    "name": "Ducker",
+    "address": "0xf70ce9ee486106882d3dc43ddbd84e0fa71ac2a5",
+    "totalSupply": 69420911007,
+    "decimals": 18,
+    "priceEth": 3.20238636663967e-10,
+    "priceUsd": 5.48554193907685e-7
+  },
+  "0xdd1a646123855564af8e44812c2cdb1f485412de": {
+    "name": "RonWeasleyGenslerSpyro11Inu",
+    "address": "0xdd1a646123855564af8e44812c2cdb1f485412de",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 5.4713843866215e-8,
+    "priceUsd": 0.0000898445342353541
+  },
+  "0x9d7b68970d2be6dc93124477b4e2e1c9a6b180aa": {
+    "name": "Dede",
+    "address": "0x9d7b68970d2be6dc93124477b4e2e1c9a6b180aa",
+    "totalSupply": 69420000,
+    "decimals": 9,
+    "priceEth": 9.93626162500582e-7,
+    "priceUsd": 0.00157260364006595
+  },
+  "0xad1a5b8538a866ecd56ddd328b50ed57ced5d936": {
+    "name": "Good Gensler",
+    "address": "0xad1a5b8538a866ecd56ddd328b50ed57ced5d936",
+    "totalSupply": 420000000000000,
+    "decimals": 18,
+    "priceEth": 4.39218999537597e-13,
+    "priceUsd": 7.21627946266329e-10
+  },
+  "0xf7168c8abb0ff80116413a8d95396bbdc318a3ff": {
+    "name": "KEK",
+    "address": "0xf7168c8abb0ff80116413a8d95396bbdc318a3ff",
+    "totalSupply": 77777777777777,
+    "decimals": 7,
+    "priceEth": 1.03036632615558e-11,
+    "priceUsd": 1.64938403092224e-8
+  },
+  "0x7d8146cf21e8d7cbe46054e01588207b51198729": {
+    "name": "BOB",
+    "address": "0x7d8146cf21e8d7cbe46054e01588207b51198729",
+    "totalSupply": 690000000000,
+    "decimals": 18,
+    "priceEth": 3.77493614080937e-9,
+    "priceUsd": 0.0000061129125909274
+  },
+  "0xb69753c06bb5c366be51e73bfc0cc2e3dc07e371": {
+    "name": "POOH",
+    "address": "0xb69753c06bb5c366be51e73bfc0cc2e3dc07e371",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 1.05699480736468e-12,
+    "priceUsd": 1.71098903546887e-9
+  },
+  "0xd00abe39edd69171e53abff2e9dd2d3ec78285d5": {
+    "name": "Psyop2.0",
+    "address": "0xd00abe39edd69171e53abff2e9dd2d3ec78285d5",
+    "totalSupply": 69000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xa120199529228d39cffb62de9dfaddbd4ba9e337": {
+    "name": "VoldemortTrumpRobotnik69Pepe",
+    "address": "0xa120199529228d39cffb62de9dfaddbd4ba9e337",
+    "totalSupply": 684628121,
+    "decimals": 18,
+    "priceEth": 4.49593705478328e-8,
+    "priceUsd": 0.0000742523681971522
+  },
+  "0xafad17439ad75694a47d3e94397012ade8780e30": {
+    "name": "HarryPotterObamaSonic10Inu 2.0",
+    "address": "0xafad17439ad75694a47d3e94397012ade8780e30",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xfb66321d7c674995dfcc2cb67a30bc978dc862ad": {
+    "name": "Pepe 2.0",
+    "address": "0xfb66321d7c674995dfcc2cb67a30bc978dc862ad",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 5.70025309975336e-12,
+    "priceUsd": 9.1536988672527e-9
+  },
+  "0x59631ce4fefd82229e62246dd41ef9bf12211800": {
+    "name": "🐸🟪",
+    "address": "0x59631ce4fefd82229e62246dd41ef9bf12211800",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x3feb4fea5132695542f8ede5076ac43296d17c6d": {
+    "name": "Bitcoin 2.0",
+    "address": "0x3feb4fea5132695542f8ede5076ac43296d17c6d",
+    "totalSupply": 21000000,
+    "decimals": 8,
+    "priceEth": 0.0000331764325168675,
+    "priceUsd": 0.0538223145234427
+  },
+  "0xe34c966cfe15410efcf53654fe5a0202bff7e942": {
+    "name": "Purple Pepe",
+    "address": "0xe34c966cfe15410efcf53654fe5a0202bff7e942",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x0e92c90867bf82ebbe66ae0352a4c6d876fb5398": {
+    "name": "Pepe 3.0",
+    "address": "0x0e92c90867bf82ebbe66ae0352a4c6d876fb5398",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 4.6214246228802e-14,
+    "priceUsd": 7.53653884983938e-11
+  },
+  "0x88417754ff7062c10f4e3a4ab7e9f9d9cbda6023": {
+    "name": "Peepa",
+    "address": "0x88417754ff7062c10f4e3a4ab7e9f9d9cbda6023",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 3.54186652888236e-14,
+    "priceUsd": 5.48431162768897e-11
+  },
+  "0x03236edf4541e73a1ec8228697948e8895940067": {
+    "name": "FEELS GOOD MAN",
+    "address": "0x03236edf4541e73a1ec8228697948e8895940067",
+    "totalSupply": 50000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x5395df198fcbc9c13bec506004c9a8b6460a7712": {
+    "name": "BUBU",
+    "address": "0x5395df198fcbc9c13bec506004c9a8b6460a7712",
+    "totalSupply": 88888888,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb794ad95317f75c44090f64955954c3849315ffe": {
+    "name": "Ribbit",
+    "address": "0xb794ad95317f75c44090f64955954c3849315ffe",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 7.89308331315844e-13,
+    "priceUsd": 1.26972072582348e-9
+  },
+  "0xb939da54f9748440a1b279d42be1296942732288": {
+    "name": "Fonzy",
+    "address": "0xb939da54f9748440a1b279d42be1296942732288",
+    "totalSupply": 200000000000000,
+    "decimals": 18,
+    "priceEth": 1.33542593508429e-13,
+    "priceUsd": 2.1900293837418e-10
+  },
+  "0x830a8512db4f6fca51968593e2667156c2c483a8": {
+    "name": "WEN Token",
+    "address": "0x830a8512db4f6fca51968593e2667156c2c483a8",
+    "totalSupply": 420000000001,
+    "decimals": 18,
+    "priceEth": 2.49309006768228e-10,
+    "priceUsd": 4.12471604209361e-7
+  },
+  "0x13dbd5394c2c7e4bdb85b1838286faa66532a262": {
+    "name": "Sun Tzu",
+    "address": "0x13dbd5394c2c7e4bdb85b1838286faa66532a262",
+    "totalSupply": 544496000000000,
+    "decimals": 18,
+    "priceEth": 4.94758694123141e-14,
+    "priceUsd": 8.23865289331289e-11
+  },
+  "0x8526be2379e853d5cf02f9823bb9690e1a6ff9e2": {
+    "name": "HABIBI",
+    "address": "0x8526be2379e853d5cf02f9823bb9690e1a6ff9e2",
+    "totalSupply": 888000000000,
+    "decimals": 18,
+    "priceEth": 3.18754903195567e-11,
+    "priceUsd": 5.19334345176018e-8
+  },
+  "0xee526eb643a8cd392a853b533582183721efeb5d": {
+    "name": "BilboBagginsPutinCharmander9000Inu",
+    "address": "0xee526eb643a8cd392a853b533582183721efeb5d",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 2.81102398153983e-7,
+    "priceUsd": 0.00046323944755748
+  },
+  "0xd807f7e2818db8eda0d28b5be74866338eaedb86": {
+    "name": "jim",
+    "address": "0xd807f7e2818db8eda0d28b5be74866338eaedb86",
+    "totalSupply": 420000000001,
+    "decimals": 18,
+    "priceEth": 1.50381808868154e-8,
+    "priceUsd": 0.0000243301328170941
+  },
+  "0x3d2b66bc4f9d6388bd2d97b95b565be1686aefb3": {
+    "name": "Lambo",
+    "address": "0x3d2b66bc4f9d6388bd2d97b95b565be1686aefb3",
+    "totalSupply": 69000000000,
+    "decimals": 18,
+    "priceEth": 1.22576047334745e-9,
+    "priceUsd": 0.00000198040776127203
+  },
+  "0x5c2975269e74cb3a8514e5b800a1e66c694d4df8": {
+    "name": "CAROLINE",
+    "address": "0x5c2975269e74cb3a8514e5b800a1e66c694d4df8",
+    "totalSupply": 89000000000,
+    "decimals": 18,
+    "priceEth": 7.59005502206469e-10,
+    "priceUsd": 0.00000124746154863669
+  },
+  "0x9bf1d7d63dd7a4ce167cf4866388226eeefa702e": {
+    "name": "Ben",
+    "address": "0x9bf1d7d63dd7a4ce167cf4866388226eeefa702e",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 9.98062174974349e-12,
+    "priceUsd": 1.61477191713433e-8
+  },
+  "0x97ad482235a1694ee114ce0d6bdf7df7a03bca72": {
+    "name": "TUMB",
+    "address": "0x97ad482235a1694ee114ce0d6bdf7df7a03bca72",
+    "totalSupply": 420000000000,
+    "decimals": 9,
+    "priceEth": 1.18072475894885e-11,
+    "priceUsd": 1.93659262356607e-8
+  },
+  "0xf831938caf837cd505de196bbb408d81a06376ab": {
+    "name": "JEFF",
+    "address": "0xf831938caf837cd505de196bbb408d81a06376ab",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 4.5137039263736e-7,
+    "priceUsd": 0.000726826458956835
+  },
+  "0xd8e2d95c8614f28169757cd6445a71c291dec5bf": {
+    "name": "Grumpy Cat",
+    "address": "0xd8e2d95c8614f28169757cd6445a71c291dec5bf",
+    "totalSupply": 417744754640014,
+    "decimals": 18,
+    "priceEth": 5.05988615136715e-12,
+    "priceUsd": 8.11784844300224e-9
+  },
+  "0xf03d5fc6e08de6ad886fca34abf9a59ef633b78a": {
+    "name": "Capybara",
+    "address": "0xf03d5fc6e08de6ad886fca34abf9a59ef633b78a",
+    "totalSupply": 69000000000,
+    "decimals": 18,
+    "priceEth": 2.69925981358138e-9,
+    "priceUsd": 0.00000434086783233754
+  },
+  "0x2c95d751da37a5c1d9c5a7fd465c1d50f3d96160": {
+    "name": "WASSIE",
+    "address": "0x2c95d751da37a5c1d9c5a7fd465c1d50f3d96160",
+    "totalSupply": 690000000000,
+    "decimals": 18,
+    "priceEth": 1.63376359577058e-10,
+    "priceUsd": 2.62425571459308e-7
+  },
+  "0x04673ada788c1326723cf473e579433a2a3bad60": {
+    "name": "SOYBOYS",
+    "address": "0x04673ada788c1326723cf473e579433a2a3bad60",
+    "totalSupply": 100000000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x9d9c250311b65803c895cc77f878b8092019dedc": {
+    "name": null,
+    "address": "0x9d9c250311b65803c895cc77f878b8092019dedc",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xd2877702675e6ceb975b4a1dff9fb7baf4c91ea9": {
+    "name": "Wrapped LUNA Token",
+    "address": "0xd2877702675e6ceb975b4a1dff9fb7baf4c91ea9",
+    "totalSupply": 274660476865,
+    "decimals": 18,
+    "priceEth": 3.77247902876239e-8,
+    "priceUsd": 0.0000608212632322213
+  },
+  "0xa47c8bf37f92abed4a126bda807a7b7498661acd": {
+    "name": "Wrapped UST Token",
+    "address": "0xa47c8bf37f92abed4a126bda807a7b7498661acd",
+    "totalSupply": 295841804,
+    "decimals": 18,
+    "priceEth": 0.00000741816490332778,
+    "priceUsd": 0.0120496656997451
+  },
+  "0xdffa3a7f5b40789c7a437dbe7b31b47f9b08fe75": {
+    "name": "CryptoPunk #7171",
+    "address": "0xdffa3a7f5b40789c7a437dbe7b31b47f9b08fe75",
+    "totalSupply": 10000,
+    "decimals": 18,
+    "priceEth": 0.0154852810102738,
+    "priceUsd": 25.4781003657741
+  },
+  "0x514910771af9ca656af840dff83e8264ecf986ca": {
+    "name": "ChainLink Token",
+    "address": "0x514910771af9ca656af840dff83e8264ecf986ca",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0.0036538906387454,
+    "priceUsd": 5.92349873665224
+  },
+  "0x0f5d2fb29fb7d3cfee444a200298f468908cc942": {
+    "name": "Decentraland MANA",
+    "address": "0x0f5d2fb29fb7d3cfee444a200298f468908cc942",
+    "totalSupply": 2193179328,
+    "decimals": 18,
+    "priceEth": 0.000182366141865327,
+    "priceUsd": 0.29829705421808
+  },
+  "0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974": {
+    "name": null,
+    "address": "0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x11b1f53204d03e5529f09eb3091939e4fd8c9cf3": {
+    "name": null,
+    "address": "0x11b1f53204d03e5529f09eb3091939e4fd8c9cf3",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x570147337f1a2313fc35573f6a123ceb109eb901": {
+    "name": "0xFriend",
+    "address": "0x570147337f1a2313fc35573f6a123ceb109eb901",
+    "totalSupply": 10000000,
+    "decimals": 9,
+    "priceEth": 0.00000299640234125877,
+    "priceUsd": 0.0047623086076093
+  },
+  "0xebb82c932759b515b2efc1cfbb6bf2f6dbace404": {
+    "name": "shares.finance",
+    "address": "0xebb82c932759b515b2efc1cfbb6bf2f6dbace404",
+    "totalSupply": 210000,
+    "decimals": 18,
+    "priceEth": 0.00685714369145946,
+    "priceUsd": 10.8953062276896
+  },
+  "0xcb50350ab555ed5d56265e096288536e8cac41eb": {
+    "name": "0xCoco",
+    "address": "0xcb50350ab555ed5d56265e096288536e8cac41eb",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0.0000139215379753223,
+    "priceUsd": 0.0219508749515743
+  },
+  "0x9b44793a0177c84dd01ad81137db696531902871": {
+    "name": "PVP",
+    "address": "0x9b44793a0177c84dd01ad81137db696531902871",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 6.50284084227093e-7,
+    "priceUsd": 0.00105048803758856
+  },
+  "0xd55d259c9f1d37a2f64eca8f569c03d09756b56f": {
+    "name": "Network Spirituality",
+    "address": "0xd55d259c9f1d37a2f64eca8f569c03d09756b56f",
+    "totalSupply": 444444444444444,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x8ef32a03784c8fd63bbf027251b9620865bd54b6": {
+    "name": "Bullet Game Betting Token",
+    "address": "0x8ef32a03784c8fd63bbf027251b9620865bd54b6",
+    "totalSupply": 9954769,
+    "decimals": 8,
+    "priceEth": 0.00000954882388091637,
+    "priceUsd": 0.0154442313858419
+  },
+  "0x574cacc5b9a58446c83e93b3b143c04ea67bf151": {
+    "name": "Crops",
+    "address": "0x574cacc5b9a58446c83e93b3b143c04ea67bf151",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 4.70012720624332e-8,
+    "priceUsd": 0.0000772120470813934
+  },
+  "0x42777bd52c1b3cea453755d5d1d8e4c3bd44d4de": {
+    "name": "Justice Token - FMT",
+    "address": "0x42777bd52c1b3cea453755d5d1d8e4c3bd44d4de",
+    "totalSupply": 304071296,
+    "decimals": 18,
+    "priceEth": 5.674444344095003e-8,
+    "priceUsd": 0.0000933609837184695
+  },
+  "0xc0f9bd5fa5698b6505f643900ffa515ea5df54a9": {
+    "name": "Donut",
+    "address": "0xc0f9bd5fa5698b6505f643900ffa515ea5df54a9",
+    "totalSupply": 212951520,
+    "decimals": 18,
+    "priceEth": 0.0000157600961614658,
+    "priceUsd": 0.0254006451209211
+  },
+  "0xa3a1ed1d4f94e373a78027209683c9a4c5af2e04": {
+    "name": "ENIGMA",
+    "address": "0xa3a1ed1d4f94e373a78027209683c9a4c5af2e04",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0.00000115375461007427,
+    "priceUsd": 0.00190395217560179
+  },
+  "0xb9098d3669a78e9afe8b94a97290407400d9da31": {
+    "name": "Protectorate",
+    "address": "0xb9098d3669a78e9afe8b94a97290407400d9da31",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0.0000628319447100501,
+    "priceUsd": 0.103880822332196
+  },
+  "0xeead445555d7efa3c62ce8624f2cd1a6687a4611": {
+    "name": "ElonZuckFightClubMario10InuX",
+    "address": "0xeead445555d7efa3c62ce8624f2cd1a6687a4611",
+    "totalSupply": 1000000,
+    "decimals": 9,
+    "priceEth": 0.0000107605343209585,
+    "priceUsd": 0.0180517896078658
+  },
+  "0x6d56cddd23a693ed3851fa0a5d8c67a8739537c8": {
+    "name": "Hedgehog Racing",
+    "address": "0x6d56cddd23a693ed3851fa0a5d8c67a8739537c8",
+    "totalSupply": 10000000000,
+    "decimals": 9,
+    "priceEth": 2.16586463517192e-9,
+    "priceUsd": 0.00000354376232622125
+  },
+  "0x3c2ee17ccc05296ab31a727360b6837fcc058ac6": {
+    "name": "ImNotARobot",
+    "address": "0x3c2ee17ccc05296ab31a727360b6837fcc058ac6",
+    "totalSupply": 10000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x3a2348dbb9250a43226a27e21edb94882bb7de8d": {
+    "name": "The AI Dev Bot",
+    "address": "0x3a2348dbb9250a43226a27e21edb94882bb7de8d",
+    "totalSupply": 4000000,
+    "decimals": 8,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x56978e609f2cab06f77c5c8fd75166fcd8f09bd8": {
+    "name": "GenieBot",
+    "address": "0x56978e609f2cab06f77c5c8fd75166fcd8f09bd8",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0.00000359763746231667,
+    "priceUsd": 0.00579747652830704
+  },
+  "0x9abc68b33961268a3ea4116214d7039226de01e1": {
+    "name": "UltraSuperfuckingDementedgreendildoretardstrengthCoin",
+    "address": "0x9abc68b33961268a3ea4116214d7039226de01e1",
+    "totalSupply": 1000000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xa1532cd41a9456ab00bebb3c9e5cab33a5ec0847": {
+    "name": "THOGE",
+    "address": "0xa1532cd41a9456ab00bebb3c9e5cab33a5ec0847",
+    "totalSupply": 10000000,
+    "decimals": 8,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xbd1b10da53f82ba46b27ac498bcaab4d96591fbd": {
+    "name": "BuyBack Tools",
+    "address": "0xbd1b10da53f82ba46b27ac498bcaab4d96591fbd",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x50d1c8e131dca8b9226c0a0f78947557497374b3": {
+    "name": "Bridge Bot",
+    "address": "0x50d1c8e131dca8b9226c0a0f78947557497374b3",
+    "totalSupply": 1000000000000,
+    "decimals": 9,
+    "priceEth": 2.50739290734538e-11,
+    "priceUsd": 4.10229314791044e-8
+  },
+  "0x25c12717ad73716f04629fde9570269a2eee77c5": {
+    "name": "FrodoBagginsDesantisBatosai10Inu",
+    "address": "0x25c12717ad73716f04629fde9570269a2eee77c5",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb1c064c3f2908f741c9dea4afc5773238b53e6cc": {
+    "name": "WarioXrpDumbledoreYugioh69Inu",
+    "address": "0xb1c064c3f2908f741c9dea4afc5773238b53e6cc",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x36948a6809be82d3ba8de9f2be626101e2c9e473": {
+    "name": "BoltBot",
+    "address": "0x36948a6809be82d3ba8de9f2be626101e2c9e473",
+    "totalSupply": 1000000,
+    "decimals": 9,
+    "priceEth": 0.000372638598684522,
+    "priceUsd": 0.62327968117986
+  },
+  "0x5c72bb4774d70058b7761cc963782aa2826c7b81": {
+    "name": "DropBot",
+    "address": "0x5c72bb4774d70058b7761cc963782aa2826c7b81",
+    "totalSupply": 10000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6e8bc2b472c38ec98e92cf77191f5422251f720b": {
+    "name": "Opepen Sea",
+    "address": "0x6e8bc2b472c38ec98e92cf77191f5422251f720b",
+    "totalSupply": 1000000000,
+    "decimals": 8,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xe4fb4f9f3ab5a6b1cbdbbda5d856275d4b9d76eb": {
+    "name": "Owlracle",
+    "address": "0xe4fb4f9f3ab5a6b1cbdbbda5d856275d4b9d76eb",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x4ee4c9af844203b7335e2c8b081de89a49f074d4": {
+    "name": "Mindviscosity",
+    "address": "0x4ee4c9af844203b7335e2c8b081de89a49f074d4",
+    "totalSupply": 1000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xaee9ba9ce49fe810417a36408e34d9962b653e78": {
+    "name": "Snibbu",
+    "address": "0xaee9ba9ce49fe810417a36408e34d9962b653e78",
+    "totalSupply": 420690000,
+    "decimals": 9,
+    "priceEth": 1.61104972767217e-7,
+    "priceUsd": 0.000265862400025961
+  },
+  "0x2f573070e6090b3264fe707e2c9f201716f123c7": {
+    "name": "Mumu",
+    "address": "0x2f573070e6090b3264fe707e2c9f201716f123c7",
+    "totalSupply": 1000000000000000,
+    "decimals": 18,
+    "priceEth": 2.57328506980263e-13,
+    "priceUsd": 4.00616490212973e-10
+  },
+  "0x21cca3f6b403f3d591efcc6ad129c693e230272c": {
+    "name": "BITCOIN2.0",
+    "address": "0x21cca3f6b403f3d591efcc6ad129c693e230272c",
+    "totalSupply": 1000000000,
+    "decimals": 8,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xef8e456967122db4c3c160314bde8d2602ad6199": {
+    "name": "Wagmi Coin",
+    "address": "0xef8e456967122db4c3c160314bde8d2602ad6199",
+    "totalSupply": 420690000000001,
+    "decimals": 9,
+    "priceEth": 3.28235070766698e-13,
+    "priceUsd": 5.36886305896939e-10
+  },
+  "0x2890df158d76e584877a1d17a85fea3aeeb85aa6": {
+    "name": "Alien Milady Fumo",
+    "address": "0x2890df158d76e584877a1d17a85fea3aeeb85aa6",
+    "totalSupply": 293,
+    "decimals": 18,
+    "priceEth": 13.1663221717097,
+    "priceUsd": 20916.4293752227
+  },
+  "0x2c98dd11019803075a0f79104872ecf1c5c94da3": {
+    "name": "XPEPE",
+    "address": "0x2c98dd11019803075a0f79104872ecf1c5c94da3",
+    "totalSupply": 10000000000000000,
+    "decimals": 2,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xcf586d9f47e35fe6b37e53263a286c0a1df0aa38": {
+    "name": "Autism Pepe",
+    "address": "0xcf586d9f47e35fe6b37e53263a286c0a1df0aa38",
+    "totalSupply": 10000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xffb878c5e2d36ebfde4fe32f996495ba7f4cf70f": {
+    "name": "Spurdo",
+    "address": "0xffb878c5e2d36ebfde4fe32f996495ba7f4cf70f",
+    "totalSupply": 690000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x4b7509fede06949e0a349f3287b6519b7da0fbb9": {
+    "name": "Bobo 2.0",
+    "address": "0x4b7509fede06949e0a349f3287b6519b7da0fbb9",
+    "totalSupply": 420690000000001,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xe1de6d0b11f98de92920a1d2b7c6ea30be2ba0c5": {
+    "name": "SPHERE",
+    "address": "0xe1de6d0b11f98de92920a1d2b7c6ea30be2ba0c5",
+    "totalSupply": 5000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xfdd247c41143e2baf0058c387b23c3eaa0b15d14": {
+    "name": "Pe2.0pe",
+    "address": "0xfdd247c41143e2baf0058c387b23c3eaa0b15d14",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xfc93e5844a2015ceef26bf6cae6689ff031509f4": {
+    "name": "Cipher Protocol",
+    "address": "0xfc93e5844a2015ceef26bf6cae6689ff031509f4",
+    "totalSupply": 10000000,
+    "decimals": 18,
+    "priceEth": 0.00000251259461954586,
+    "priceUsd": 0.00414573655208469
+  },
+  "0x96055320d081fffef13191db6a1ba7f02f4de4be": {
+    "name": "Justice Token - DUDAS",
+    "address": "0x96055320d081fffef13191db6a1ba7f02f4de4be",
+    "totalSupply": 778390084,
+    "decimals": 18,
+    "priceEth": 1.1508511152017166e-7,
+    "priceUsd": 0.000189341578991029
+  },
+  "0x27a2dc5e44ae3e2c911283c6fec843d58630b312": {
+    "name": "Rumble",
+    "address": "0x27a2dc5e44ae3e2c911283c6fec843d58630b312",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x49a8795cba29615ce85453a79b9a0b77fe257617": {
+    "name": "Communist China Pepe",
+    "address": "0x49a8795cba29615ce85453a79b9a0b77fe257617",
+    "totalSupply": 888888888888,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x12a020bd26983a5387a3d4c19685b10ad5523694": {
+    "name": "RINGS",
+    "address": "0x12a020bd26983a5387a3d4c19685b10ad5523694",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xe63aaf6e15c3be082e5dcabf535984fdbf7e2e1f": {
+    "name": "ClippyAI",
+    "address": "0xe63aaf6e15c3be082e5dcabf535984fdbf7e2e1f",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xda7c0810ce6f8329786160bb3d1734cf6661ca6e": {
+    "name": "JayPeggers",
+    "address": "0xda7c0810ce6f8329786160bb3d1734cf6661ca6e",
+    "totalSupply": 439268,
+    "decimals": 18,
+    "priceEth": 0.002030853779212785,
+    "priceUsd": 3.29432306439557
+  },
+  "0xe8c922c07096dce4320646d4a5c4c47c2512eb1a": {
+    "name": "CT GPT",
+    "address": "0xe8c922c07096dce4320646d4a5c4c47c2512eb1a",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 1.99750630834947e-7,
+    "priceUsd": 0.000322281535240618
+  },
+  "0x420690047f2df28e0cc6dd866333aea9a14b67fe": {
+    "name": "PepeMoon",
+    "address": "0x420690047f2df28e0cc6dd866333aea9a14b67fe",
+    "totalSupply": 402179640000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x1cc55ed1ae62c5d9e3ed1e0d6c837fe94a179f6e": {
+    "name": "Bateman Token",
+    "address": "0x1cc55ed1ae62c5d9e3ed1e0d6c837fe94a179f6e",
+    "totalSupply": 420420420420,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x02dbb21b38e90310d0ce9d6743ec10175773aca7": {
+    "name": "BOGDANOFF",
+    "address": "0x02dbb21b38e90310d0ce9d6743ec10175773aca7",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x430d8fe6a177f0e2c7270b51adfdeacac9140a51": {
+    "name": "Wojak",
+    "address": "0x430d8fe6a177f0e2c7270b51adfdeacac9140a51",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x9f30c37ef0767260a7d18aedd9c55933949efcd5": {
+    "name": "Archangel-12",
+    "address": "0x9f30c37ef0767260a7d18aedd9c55933949efcd5",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb0bb49752017b87408f1a572ac530fbda6f4a12d": {
+    "name": "PawTools",
+    "address": "0xb0bb49752017b87408f1a572ac530fbda6f4a12d",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x195d98ebb69df0dce2eee2a790550ed84cca25ce": {
+    "name": "PawZaar",
+    "address": "0x195d98ebb69df0dce2eee2a790550ed84cca25ce",
+    "totalSupply": 10000,
+    "decimals": 18,
+    "priceEth": 0.00301711961543056,
+    "priceUsd": 4.93844287377331
+  },
+  "0xac3c4b6c75cf8a756bcef53aba9b1c0fdf5feb44": {
+    "name": "Shelterium",
+    "address": "0xac3c4b6c75cf8a756bcef53aba9b1c0fdf5feb44",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xa789b5b2d4dc60c6334dd3d165fd9c5455404c4b": {
+    "name": "WAIFU AI",
+    "address": "0xa789b5b2d4dc60c6334dd3d165fd9c5455404c4b",
+    "totalSupply": 1000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf36c5f04127f7470834ed6f98bddc1be62aba48d": {
+    "name": "CryptoAI",
+    "address": "0xf36c5f04127f7470834ed6f98bddc1be62aba48d",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0.00000358190081115496,
+    "priceUsd": 0.00588012879815148
+  },
+  "0x2284c0100fc9146e7fa5ef9dceb1a822fbd6a403": {
+    "name": "VitalikBigDickInu",
+    "address": "0x2284c0100fc9146e7fa5ef9dceb1a822fbd6a403",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf3b9569f82b18aef890de263b84189bd33ebe452": {
+    "name": "A Hunters Dream",
+    "address": "0xf3b9569f82b18aef890de263b84189bd33ebe452",
+    "totalSupply": 666666666666666,
+    "decimals": 18,
+    "priceEth": 4.19189553266833e-11,
+    "priceUsd": 6.75512923894674e-8
+  },
+  "0xd3c4163e18aaebe43b4fc8b1a53dc3241fb3d017": {
+    "name": "Chirp",
+    "address": "0xd3c4163e18aaebe43b4fc8b1a53dc3241fb3d017",
+    "totalSupply": 1000000000000,
+    "decimals": 18,
+    "priceEth": 2.18782412979204e-11,
+    "priceUsd": 3.57861748462293e-8
+  },
+  "0xeff3f1b9400d6d0f1e8805bdde592f61535f5ecd": {
+    "name": "Squawk",
+    "address": "0xeff3f1b9400d6d0f1e8805bdde592f61535f5ecd",
+    "totalSupply": 10000000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xeeaa40b28a2d1b0b08f6f97bb1dd4b75316c6107": {
+    "name": "GOVI",
+    "address": "0xeeaa40b28a2d1b0b08f6f97bb1dd4b75316c6107",
+    "totalSupply": 32000000,
+    "decimals": 18,
+    "priceEth": 0.0000915596649433527,
+    "priceUsd": 0.151253539359823
+  },
+  "0x227c7df69d3ed1ae7574a1a7685fded90292eb48": {
+    "name": "Milady Maker",
+    "address": "0x227c7df69d3ed1ae7574a1a7685fded90292eb48",
+    "totalSupply": 391,
+    "decimals": 18,
+    "priceEth": 3.78841527000941,
+    "priceUsd": 6133.9935439017
+  },
+  "0x5d1c5dee420004767d3e2fb7aa7c75aa92c33117": {
+    "name": null,
+    "address": "0x5d1c5dee420004767d3e2fb7aa7c75aa92c33117",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x949d48eca67b17269629c7194f4b727d4ef9e5d6": {
+    "name": "Merit Circle",
+    "address": "0x949d48eca67b17269629c7194f4b727d4ef9e5d6",
+    "totalSupply": 632384088,
+    "decimals": 18,
+    "priceEth": 0.000182726391734397,
+    "priceUsd": 0.295804410114032
+  },
+  "0x3db6ba6ab6f95efed1a6e794cad492faaabf294d": {
+    "name": "LTO Network Token",
+    "address": "0x3db6ba6ab6f95efed1a6e794cad492faaabf294d",
+    "totalSupply": 26518124,
+    "decimals": 8,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x5dc02ea99285e17656b8350722694c35154db1e8": {
+    "name": "BOND",
+    "address": "0x5dc02ea99285e17656b8350722694c35154db1e8",
+    "totalSupply": 1000000000,
+    "decimals": 8,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xc86817249634ac209bc73fca1712bbd75e37407d": {
+    "name": "1-UP",
+    "address": "0xc86817249634ac209bc73fca1712bbd75e37407d",
+    "totalSupply": 61321550,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6468e79a80c0eab0f9a2b574c8d5bc374af59414": {
+    "name": "E-RADIX",
+    "address": "0x6468e79a80c0eab0f9a2b574c8d5bc374af59414",
+    "totalSupply": 1904958666,
+    "decimals": 18,
+    "priceEth": 0.0000331079920472776,
+    "priceUsd": 0.0529920242970723
+  },
+  "0x066798d9ef0833ccc719076dab77199ecbd178b0": {
+    "name": "SakeToken",
+    "address": "0x066798d9ef0833ccc719076dab77199ecbd178b0",
+    "totalSupply": 136278606,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x4ca0654f4fc1025cf1a17b7459c20ac0479522ad": {
+    "name": "Rigel Finance",
+    "address": "0x4ca0654f4fc1025cf1a17b7459c20ac0479522ad",
+    "totalSupply": 15177,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x0001a500a6b18995b03f44bb040a5ffc28e45cb0": {
+    "name": "Autonolas",
+    "address": "0x0001a500a6b18995b03f44bb040a5ffc28e45cb0",
+    "totalSupply": 531273124,
+    "decimals": 18,
+    "priceEth": 0.000509932459576644,
+    "priceUsd": 0.825998242278349
+  },
+  "0xf257a2783f6633a149b5966e32432b5bb3462c96": {
+    "name": "RagingElonMarsCoin",
+    "address": "0xf257a2783f6633a149b5966e32432b5bb3462c96",
+    "totalSupply": 642000000000,
+    "decimals": 8,
+    "priceEth": 3.62384236360724e-11,
+    "priceUsd": 4.72393206656498e-8
+  },
+  "0xdbecdd726f6ad8e24afc78fe3cc8eb7b73c2d94d": {
+    "name": "ChainTools",
+    "address": "0xdbecdd726f6ad8e24afc78fe3cc8eb7b73c2d94d",
+    "totalSupply": 11000000,
+    "decimals": 18,
+    "priceEth": 0.0000756757266218653,
+    "priceUsd": 0.122419370910726
+  },
+  "0x09d1d767edf8fa23a64c51fa559e0688e526812f": {
+    "name": null,
+    "address": "0x09d1d767edf8fa23a64c51fa559e0688e526812f",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x6cca981e8e1e318a696feb455d298fc65227ed8d": {
+    "name": "Teleapp",
+    "address": "0x6cca981e8e1e318a696feb455d298fc65227ed8d",
+    "totalSupply": 10000000,
+    "decimals": 18,
+    "priceEth": 0.00000400700238957451,
+    "priceUsd": 0.0064597491192726
+  },
+  "0xb5b1b659da79a2507c27aad509f15b4874edc0cc": {
+    "name": "DUST Protocol",
+    "address": "0xb5b1b659da79a2507c27aad509f15b4874edc0cc",
+    "totalSupply": 7097308,
+    "decimals": 9,
+    "priceEth": 0.000541150028048067,
+    "priceUsd": 0.875766849975662
+  },
+  "0x423f4e6138e475d85cf7ea071ac92097ed631eea": {
+    "name": "Pond Coin",
+    "address": "0x423f4e6138e475d85cf7ea071ac92097ed631eea",
+    "totalSupply": 33317810572583,
+    "decimals": 18,
+    "priceEth": 1.31759401043014e-9,
+    "priceUsd": 0.00000213108797579683
+  },
+  "0x2577944fd4b556a99cc5aa0f072e4b944aa088df": {
+    "name": " HarryPotterObamaKnuckles9Inu",
+    "address": "0x2577944fd4b556a99cc5aa0f072e4b944aa088df",
+    "totalSupply": 100000000,
+    "decimals": 8,
+    "priceEth": 4.25382589809485e-8,
+    "priceUsd": 0.0000682743295855338
+  },
+  "0x3d5fa1cf7d356474f72c8cb24f7a6117b40f8c40": {
+    "name": "Saintbot",
+    "address": "0x3d5fa1cf7d356474f72c8cb24f7a6117b40f8c40",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0.00230649336709188,
+    "priceUsd": 3.73811535478204
+  },
+  "0x79c7f5060acc6b51f34df4b1f84b5a5a8ab98b7b": {
+    "name": "Powerbull",
+    "address": "0x79c7f5060acc6b51f34df4b1f84b5a5a8ab98b7b",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 5.62627077484389e-8,
+    "priceUsd": 0.0000914217475500919
+  },
+  "0x163f8c2467924be0ae7b5347228cabf260318753": {
+    "name": "Worldcoin",
+    "address": "0x163f8c2467924be0ae7b5347228cabf260318753",
+    "totalSupply": 10000000000,
+    "decimals": 18,
+    "priceEth": 0.000684907785716177,
+    "priceUsd": 1.11325926120596
+  },
+  "0xedf0e32adc7caa7b5d0c99717f8fc25c1e0386a4": {
+    "name": "Xinu",
+    "address": "0xedf0e32adc7caa7b5d0c99717f8fc25c1e0386a4",
+    "totalSupply": 1000000000,
+    "decimals": 8,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x4e58ea38f4915850fbe1577cd818a09ba673c8ee": {
+    "name": "OMNIABOT",
+    "address": "0x4e58ea38f4915850fbe1577cd818a09ba673c8ee",
+    "totalSupply": 999999999999,
+    "decimals": 18,
+    "priceEth": 2.69582630439406e-11,
+    "priceUsd": 4.57659247190887e-8
+  },
+  "0x08897b79fc8bbdb216d3a335dc95d54eb9677a6a": {
+    "name": "Nyan Race",
+    "address": "0x08897b79fc8bbdb216d3a335dc95d54eb9677a6a",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x547e5f11dfc7eac75e51a3f982ec3220b6045e90": {
+    "name": "Dune (Sahara Desert Coinflip)",
+    "address": "0x547e5f11dfc7eac75e51a3f982ec3220b6045e90",
+    "totalSupply": 69000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xef273ee2bf1840a382e24dcb871f0fcc03588bb8": {
+    "name": "Duck Race",
+    "address": "0xef273ee2bf1840a382e24dcb871f0fcc03588bb8",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xd83a03510994beaa37799ce9b30467ea4a0325de": {
+    "name": "Turtle Race",
+    "address": "0xd83a03510994beaa37799ce9b30467ea4a0325de",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x8365019a4baedcfc00d1a06a7b41b4add26bb359": {
+    "name": "LatestLock",
+    "address": "0x8365019a4baedcfc00d1a06a7b41b4add26bb359",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb2fd1e0478dbf61772996bcce8a2f1151eeeda37": {
+    "name": "Wrapped Pepe",
+    "address": "0xb2fd1e0478dbf61772996bcce8a2f1151eeeda37",
+    "totalSupply": 420690000,
+    "decimals": 18,
+    "priceEth": 1.1090247181441e-7,
+    "priceUsd": 0.00018044882668235
+  },
+  "0x9839675308f4a83e45f4b0c89b8fa264d68b7812": {
+    "name": "Ciphercore",
+    "address": "0x9839675308f4a83e45f4b0c89b8fa264d68b7812",
+    "totalSupply": 10000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x34ba042827996821cffeb06477d48a2ff9474483": {
+    "name": "SHIB2.0",
+    "address": "0x34ba042827996821cffeb06477d48a2ff9474483",
+    "totalSupply": 1000000000,
+    "decimals": 8,
+    "priceEth": 3.37355751174689e-8,
+    "priceUsd": 0.0000539494750939982
+  },
+  "0x5c254dfb4967cd66b09e84fcd04e2d77694c7bce": {
+    "name": "Milady 2.0",
+    "address": "0x5c254dfb4967cd66b09e84fcd04e2d77694c7bce",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x8734cc1b67138ef994561a4e2cf2d5e50c588e75": {
+    "name": "BOB 2.0",
+    "address": "0x8734cc1b67138ef994561a4e2cf2d5e50c588e75",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 2.53329509314078e-8,
+    "priceUsd": 0.0000415370960615917
+  },
+  "0x09c1ead57d24886bd3ec5fd4d0311681e04b3b24": {
+    "name": "Uniswap V2",
+    "address": "0x09c1ead57d24886bd3ec5fd4d0311681e04b3b24",
+    "totalSupply": 96978062,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x1cb89c45ee05ef93de2f060761fec84cb67396a0": {
+    "name": "REVOLT",
+    "address": "0x1cb89c45ee05ef93de2f060761fec84cb67396a0",
+    "totalSupply": 10000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xdc054ec9ba00c0908ce346d05fef72c91c26717a": {
+    "name": "YUAN 元",
+    "address": "0xdc054ec9ba00c0908ce346d05fef72c91c26717a",
+    "totalSupply": 1000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xd6d4e5984258ed479595051709b730747c254ff1": {
+    "name": "Jiong",
+    "address": "0xd6d4e5984258ed479595051709b730747c254ff1",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6f2f7484cd6b5e807fdb6c7f2df90b38e25b1567": {
+    "name": "Grift",
+    "address": "0x6f2f7484cd6b5e807fdb6c7f2df90b38e25b1567",
+    "totalSupply": 420690000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb5bacca994ebce5f961930914a10110103b2260b": {
+    "name": "DAN",
+    "address": "0xb5bacca994ebce5f961930914a10110103b2260b",
+    "totalSupply": 100000000000,
+    "decimals": 18,
+    "priceEth": 7.21023386280416e-10,
+    "priceUsd": 0.00000115722782336958
+  },
+  "0x3b987a36a7f44dc4657daf9ce032ba315473067e": {
+    "name": "Waifu",
+    "address": "0x3b987a36a7f44dc4657daf9ce032ba315473067e",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x20bece5a8dbf0d5dadb09a3f849a3a7b7a45b6b8": {
+    "name": "Super Mario",
+    "address": "0x20bece5a8dbf0d5dadb09a3f849a3a7b7a45b6b8",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x27702a26126e0b3702af63ee09ac4d1a084ef628": {
+    "name": "aleph.im v2",
+    "address": "0x27702a26126e0b3702af63ee09ac4d1a084ef628",
+    "totalSupply": 500000000,
+    "decimals": 18,
+    "priceEth": 0.0000459862564992451,
+    "priceUsd": 0.0740748440554777
+  },
+  "0xe1ec350ea16d1ddaff57f31387b2d9708eb7ce28": {
+    "name": "Pepechain",
+    "address": "0xe1ec350ea16d1ddaff57f31387b2d9708eb7ce28",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 8.31573523793982e-8,
+    "priceUsd": 0.000135218895208824
+  },
+  "0x19cb732deb3ab773d15b1056906f2d80b98beee0": {
+    "name": "Suck My Dick Coin",
+    "address": "0x19cb732deb3ab773d15b1056906f2d80b98beee0",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf45b4de75c55fe85a7432012a0b99d4769a028b3": {
+    "name": "PSYOP",
+    "address": "0xf45b4de75c55fe85a7432012a0b99d4769a028b3",
+    "totalSupply": 333333333333333,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb1ae8b450d7a79069834936d573b184c1447b7b2": {
+    "name": "Goner",
+    "address": "0xb1ae8b450d7a79069834936d573b184c1447b7b2",
+    "totalSupply": 69420000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x2c6693389078b6f8b0691e3cb97a85e5e3cfcc04": {
+    "name": "IQ",
+    "address": "0x2c6693389078b6f8b0691e3cb97a85e5e3cfcc04",
+    "totalSupply": 3047344873981,
+    "decimals": 18,
+    "priceEth": 9.92843083172765e-12,
+    "priceUsd": 1.55867095598877e-8
+  },
+  "0x1ce270557c1f68cfb577b856766310bf8b47fd9c": {
+    "name": "MongCoin",
+    "address": "0x1ce270557c1f68cfb577b856766310bf8b47fd9c",
+    "totalSupply": 690000000000000,
+    "decimals": 18,
+    "priceEth": 5.25302137366636e-12,
+    "priceUsd": 8.51288886424935e-9
+  },
+  "0x7c543b484e289d952143a10daf09ab777b8a6f60": {
+    "name": "Wojakchain",
+    "address": "0x7c543b484e289d952143a10daf09ab777b8a6f60",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x51447724e3129acf4220d302a95ef8fbbe7dcd31": {
+    "name": "Mario",
+    "address": "0x51447724e3129acf4220d302a95ef8fbbe7dcd31",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xdc83ea597838a6a49988dbf8485e9efa9544c2d2": {
+    "name": "Chinese Yuan",
+    "address": "0xdc83ea597838a6a49988dbf8485e9efa9544c2d2",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x7cb683151a83c2b10a30cbb003cda9996228a2ba": {
+    "name": "IYKYK",
+    "address": "0x7cb683151a83c2b10a30cbb003cda9996228a2ba",
+    "totalSupply": 420420420420420,
+    "decimals": 18,
+    "priceEth": 1.47476036590924e-13,
+    "priceUsd": 2.42667342415726e-10
+  },
+  "0x3bcddd52ee9f21323a2a1dd162b2175e471a02e0": {
+    "name": "Pelosi ",
+    "address": "0x3bcddd52ee9f21323a2a1dd162b2175e471a02e0",
+    "totalSupply": 690000000069,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x3d9a4d8ab4f5bd1d5d08ae3a95e8ed8bb4d7e3b9": {
+    "name": "STONKSDAO",
+    "address": "0x3d9a4d8ab4f5bd1d5d08ae3a95e8ed8bb4d7e3b9",
+    "totalSupply": 420420420420420,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xad8d0de33c43eefe104a279cdb6ae250c12e6214": {
+    "name": "Naruto",
+    "address": "0xad8d0de33c43eefe104a279cdb6ae250c12e6214",
+    "totalSupply": 110000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6b89b97169a797d94f057f4a0b01e2ca303155e4": {
+    "name": "Chad Coin",
+    "address": "0x6b89b97169a797d94f057f4a0b01e2ca303155e4",
+    "totalSupply": 235000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xed1678ca14aed564ff321e5f4e57b906bda113a8": {
+    "name": "POG",
+    "address": "0xed1678ca14aed564ff321e5f4e57b906bda113a8",
+    "totalSupply": 4206900000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x2db8d36bcce06458e90259b49324f9db92c5d72d": {
+    "name": "Chad Coin",
+    "address": "0x2db8d36bcce06458e90259b49324f9db92c5d72d",
+    "totalSupply": 69420000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x34b6f33a5d88fca1b8f78a510bc81673611a68f0": {
+    "name": null,
+    "address": "0x34b6f33a5d88fca1b8f78a510bc81673611a68f0",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x23878914efe38d27c4d67ab83ed1b93a74d4086a": {
+    "name": null,
+    "address": "0x23878914efe38d27c4d67ab83ed1b93a74d4086a",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8": {
+    "name": "Aave Ethereum WETH",
+    "address": "0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8",
+    "totalSupply": 328211,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x093ff0c26858f0805579cf5a18201e9acf960e92": {
+    "name": "SHE IS AI",
+    "address": "0x093ff0c26858f0805579cf5a18201e9acf960e92",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xedafa6c38ee44810367a77d38d9b99fdafee8513": {
+    "name": null,
+    "address": "0xedafa6c38ee44810367a77d38d9b99fdafee8513",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x2047ab3072b52561596ce5e0131bdbb7c848538d": {
+    "name": "bored token",
+    "address": "0x2047ab3072b52561596ce5e0131bdbb7c848538d",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xc5a9bc46a7dbe1c6de493e84a18f02e70e2c5a32": {
+    "name": "WORLD CUP INU",
+    "address": "0xc5a9bc46a7dbe1c6de493e84a18f02e70e2c5a32",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x41f7b8b9b897276b7aae926a9016935280b44e97": {
+    "name": "USD Coin (Wormhole)",
+    "address": "0x41f7b8b9b897276b7aae926a9016935280b44e97",
+    "totalSupply": 389133,
+    "decimals": 6,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x243cacb4d5ff6814ad668c3e225246efa886ad5a": {
+    "name": "Shina Inu",
+    "address": "0x243cacb4d5ff6814ad668c3e225246efa886ad5a",
+    "totalSupply": 20000000000000,
+    "decimals": 18,
+    "priceEth": 4.42025659087467e-10,
+    "priceUsd": 7.18875182155558e-7
+  },
+  "0x0913ddae242839f8995c0375493f9a1a3bddc977": {
+    "name": "Marshall Rogan Inu",
+    "address": "0x0913ddae242839f8995c0375493f9a1a3bddc977",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x9813037ee2218799597d83d4a5b6f3b6778218d9": {
+    "name": "BONE SHIBASWAP",
+    "address": "0x9813037ee2218799597d83d4a5b6f3b6778218d9",
+    "totalSupply": 230003023,
+    "decimals": 18,
+    "priceEth": 0.000716417441888996,
+    "priceUsd": 1.16170874894131
+  },
+  "0x853d955acef822db058eb8505911ed77f175b99e": {
+    "name": "Frax",
+    "address": "0x853d955acef822db058eb8505911ed77f175b99e",
+    "totalSupply": 806723781,
+    "decimals": 18,
+    "priceEth": 0.0006183356758818447,
+    "priceUsd": 0.999403692719313
+  },
+  "0xff709449528b6fb6b88f557f7d93dece33bca78d": {
+    "name": "ApeUSD",
+    "address": "0xff709449528b6fb6b88f557f7d93dece33bca78d",
+    "totalSupply": 15000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x1977870a4c18a728c19dd4eb6542451df06e0a4b": {
+    "name": null,
+    "address": "0x1977870a4c18a728c19dd4eb6542451df06e0a4b",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x4332f8a38f14bd3d8d1553af27d7c7ac6c27278d": {
+    "name": "Ape Finance",
+    "address": "0x4332f8a38f14bd3d8d1553af27d7c7ac6c27278d",
+    "totalSupply": 8250000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xd5d86fc8d5c0ea1ac1ac5dfab6e529c9967a45e9": {
+    "name": "NFT Worlds",
+    "address": "0xd5d86fc8d5c0ea1ac1ac5dfab6e529c9967a45e9",
+    "totalSupply": 782440665,
+    "decimals": 18,
+    "priceEth": 0.0000207421713105319,
+    "priceUsd": 0.0341218776035091
+  },
+  "0x46e98ffe40e408ba6412beb670507e083c8b95ff": {
+    "name": "PRIMATE",
+    "address": "0x46e98ffe40e408ba6412beb670507e083c8b95ff",
+    "totalSupply": 2060000000,
+    "decimals": 18,
+    "priceEth": 0.00000195538614036599,
+    "priceUsd": 0.00323096341418193
+  },
+  "0xdef1ca1fb7fbcdc777520aa7f396b4e015f497ab": {
+    "name": "CoW Protocol Token",
+    "address": "0xdef1ca1fb7fbcdc777520aa7f396b4e015f497ab",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0.0613531961835178,
+    "priceUsd": 101.038178622518
+  },
+  "0x06325440d014e39736583c165c2963ba99faf14e": {
+    "name": "Curve.fi ETH/stETH",
+    "address": "0x06325440d014e39736583c165c2963ba99faf14e",
+    "totalSupply": 188479,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb7dbd33c422c094620fa78577f55af0fc277a005": {
+    "name": null,
+    "address": "0xb7dbd33c422c094620fa78577f55af0fc277a005",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x9184dccea62c6079fbe07fd15d8940c96b82ed01": {
+    "name": "TROUT",
+    "address": "0x9184dccea62c6079fbe07fd15d8940c96b82ed01",
+    "totalSupply": 899900771486526,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x01597e397605bf280674bf292623460b4204c375": {
+    "name": "Bent Token",
+    "address": "0x01597e397605bf280674bf292623460b4204c375",
+    "totalSupply": 50837175,
+    "decimals": 18,
+    "priceEth": 0.0000099850676161408,
+    "priceUsd": 0.0163721805475925
+  },
+  "0x2602278ee1882889b946eb11dc0e810075650983": {
+    "name": "Vader",
+    "address": "0x2602278ee1882889b946eb11dc0e810075650983",
+    "totalSupply": 24999962663,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x030ba81f1c18d280636f32af80b9aad02cf0854e": {
+    "name": "Aave interest bearing WETH",
+    "address": "0x030ba81f1c18d280636f32af80b9aad02cf0854e",
+    "totalSupply": 431010,
+    "decimals": 18,
+    "priceEth": 0.998041456682034,
+    "priceUsd": 1644.90936851865
+  },
+  "0xef3a930e1ffffacd2fc13434ac81bd278b0ecc8d": {
+    "name": "StaFi",
+    "address": "0xef3a930e1ffffacd2fc13434ac81bd278b0ecc8d",
+    "totalSupply": 37080408,
+    "decimals": 18,
+    "priceEth": 0.000145621393148453,
+    "priceUsd": 0.235090610790627
+  },
+  "0xfeef77d3f69374f66429c91d732a244f074bdf74": {
+    "name": "Convex FXS",
+    "address": "0xfeef77d3f69374f66429c91d732a244f074bdf74",
+    "totalSupply": 7196932,
+    "decimals": 18,
+    "priceEth": 0.003437745572393,
+    "priceUsd": 5.55806403401637
+  },
+  "0x9010a15184da16e3a7c5b4aa50094dfe3bb36989": {
+    "name": "EtherWrapped",
+    "address": "0x9010a15184da16e3a7c5b4aa50094dfe3bb36989",
+    "totalSupply": 12341231238927442000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x0d4014a035b47c1a184b41ce3bc298f64baa6a01": {
+    "name": "SALMON",
+    "address": "0x0d4014a035b47c1a184b41ce3bc298f64baa6a01",
+    "totalSupply": 232946281,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x39cfc8de49a226b25951199cc464153f27268c39": {
+    "name": "MONGOOSE",
+    "address": "0x39cfc8de49a226b25951199cc464153f27268c39",
+    "totalSupply": 10000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf422b6f41a14fb74b21cb95a8d82971a3b527117": {
+    "name": "SALMON",
+    "address": "0xf422b6f41a14fb74b21cb95a8d82971a3b527117",
+    "totalSupply": 67638974,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x99d8a9c45b2eca8864373a26d1459e3dff1e17f3": {
+    "name": "Magic Internet Money",
+    "address": "0x99d8a9c45b2eca8864373a26d1459e3dff1e17f3",
+    "totalSupply": 171603591,
+    "decimals": 18,
+    "priceEth": 0.0006009930762405301,
+    "priceUsd": 0.998081722939428
+  },
+  "0x2604e9f68259e609e8744fb67cc410d50fc9aa0f": {
+    "name": "FISH Tank",
+    "address": "0x2604e9f68259e609e8744fb67cc410d50fc9aa0f",
+    "totalSupply": 6850554,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xfe4a7f5c61f0010876e7d6a7fdef0a9647a8b323": {
+    "name": null,
+    "address": "0xfe4a7f5c61f0010876e7d6a7fdef0a9647a8b323",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x9ff68f61ca5eb0c6606dc517a9d44001e564bb66": {
+    "name": null,
+    "address": "0x9ff68f61ca5eb0c6606dc517a9d44001e564bb66",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x66d28cb58487a7609877550e1a34691810a6b9fc": {
+    "name": "Koinos",
+    "address": "0x66d28cb58487a7609877550e1a34691810a6b9fc",
+    "totalSupply": 99740531,
+    "decimals": 8,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x5cd2fac9702d68dde5a94b1af95962bcfb80fc7d": {
+    "name": "RadioactiveWaste",
+    "address": "0x5cd2fac9702d68dde5a94b1af95962bcfb80fc7d",
+    "totalSupply": 1194045,
+    "decimals": 18,
+    "priceEth": 0.0000192452255379161,
+    "priceUsd": 0.0305207750642571
+  },
+  "0x9d49bfc921f36448234b0efa67b5f91b3c691515": {
+    "name": null,
+    "address": "0x9d49bfc921f36448234b0efa67b5f91b3c691515",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x98f817765f69c802a7b188a3165a3267ad2d1123": {
+    "name": "Olympus Inu",
+    "address": "0x98f817765f69c802a7b188a3165a3267ad2d1123",
+    "totalSupply": 1000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x21ad647b8f4fe333212e735bfc1f36b4941e6ad2": {
+    "name": "Squid",
+    "address": "0x21ad647b8f4fe333212e735bfc1f36b4941e6ad2",
+    "totalSupply": 266,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x04f2694c8fcee23e8fd0dfea1d4f5bb8c352111f": {
+    "name": "Staked Olympus",
+    "address": "0x04f2694c8fcee23e8fd0dfea1d4f5bb8c352111f",
+    "totalSupply": 51371242,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf63b34710400cad3e044cffdcab00a0f32e33ecf": {
+    "name": null,
+    "address": "0xf63b34710400cad3e044cffdcab00a0f32e33ecf",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x707f9118e33a9b8998bea41dd0d46f38bb963fc8": {
+    "name": null,
+    "address": "0x707f9118e33a9b8998bea41dd0d46f38bb963fc8",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x5f98805a4e8be255a32880fdec7f6728c6568ba0": {
+    "name": "LUSD Stablecoin",
+    "address": "0x5f98805a4e8be255a32880fdec7f6728c6568ba0",
+    "totalSupply": 290985350,
+    "decimals": 18,
+    "priceEth": 0.0006050752961187667,
+    "priceUsd": 0.976060430156988
+  },
+  "0xfdf12d1f85b5082877a6e070524f50f6c84faa6b": {
+    "name": null,
+    "address": "0xfdf12d1f85b5082877a6e070524f50f6c84faa6b",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x0ec9f76202a7061eb9b3a7d6b59d36215a7e37da": {
+    "name": "BlackPool Token",
+    "address": "0x0ec9f76202a7061eb9b3a7d6b59d36215a7e37da",
+    "totalSupply": 54334321,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x46c5098f73fa656e82d7e9afbf3c00b32b7b1ee2": {
+    "name": null,
+    "address": "0x46c5098f73fa656e82d7e9afbf3c00b32b7b1ee2",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xd06527d5e56a3495252a528c4987003b712860ee": {
+    "name": null,
+    "address": "0xd06527d5e56a3495252a528c4987003b712860ee",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x6399c842dd2be3de30bf99bc7d1bbf6fa3650e70": {
+    "name": "Premia",
+    "address": "0x6399c842dd2be3de30bf99bc7d1bbf6fa3650e70",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0.000254148520989811,
+    "priceUsd": 0.418878733126967
+  },
+  "0x16f9d564df80376c61ac914205d3fdff7057d610": {
+    "name": null,
+    "address": "0x16f9d564df80376c61ac914205d3fdff7057d610",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x749b964f3dd571b177fc6e415a07f62b05047da4": {
+    "name": "Bad Trip",
+    "address": "0x749b964f3dd571b177fc6e415a07f62b05047da4",
+    "totalSupply": 300,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x619beb58998ed2278e08620f97007e1116d5d25b": {
+    "name": null,
+    "address": "0x619beb58998ed2278e08620f97007e1116d5d25b",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x808507121b80c02388fad14726482e061b8da827": {
+    "name": "Pendle",
+    "address": "0x808507121b80c02388fad14726482e061b8da827",
+    "totalSupply": 258446029,
+    "decimals": 18,
+    "priceEth": 0.000405364356084436,
+    "priceUsd": 0.638904502654739
+  },
+  "0x49d30ac2b4d953c85a8717af9c5397415c444f14": {
+    "name": "Peg 024",
+    "address": "0x49d30ac2b4d953c85a8717af9c5397415c444f14",
+    "totalSupply": 199,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x2af1df3ab0ab157e1e2ad8f88a7d04fbea0c7dc6": {
+    "name": "Bankless BED Index",
+    "address": "0x2af1df3ab0ab157e1e2ad8f88a7d04fbea0c7dc6",
+    "totalSupply": 17292,
+    "decimals": 18,
+    "priceEth": 0.0328480685302874,
+    "priceUsd": 53.9039979448709
+  },
+  "0xb8d1cdcefe47834971067bb0b8249f45433b4157": {
+    "name": null,
+    "address": "0xb8d1cdcefe47834971067bb0b8249f45433b4157",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x505f5a4ff10985fe9f93f2ae3501da5fe665f08a": {
+    "name": "StaFi",
+    "address": "0x505f5a4ff10985fe9f93f2ae3501da5fe665f08a",
+    "totalSupply": 1117,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xe078c0f46c866fd192bf43920453c8d11282f572": {
+    "name": "WrapFi",
+    "address": "0xe078c0f46c866fd192bf43920453c8d11282f572",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xd542f9f8bdda6f10f26f1a883d4d76b048ef50c6": {
+    "name": null,
+    "address": "0xd542f9f8bdda6f10f26f1a883d4d76b048ef50c6",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xbcca60bb61934080951369a648fb03df4f96263c": {
+    "name": "Aave interest bearing USDC",
+    "address": "0xbcca60bb61934080951369a648fb03df4f96263c",
+    "totalSupply": 403577572,
+    "decimals": 6,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xed279fdd11ca84beef15af5d39bb4d4bee23f0ca": {
+    "name": "Curve.fi Factory USD Metapool: Liquity",
+    "address": "0xed279fdd11ca84beef15af5d39bb4d4bee23f0ca",
+    "totalSupply": 21978063,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xba8c8b50ecd5b580f464f7611b8549ffee4d8da2": {
+    "name": null,
+    "address": "0xba8c8b50ecd5b580f464f7611b8549ffee4d8da2",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xa2b3d083aa1eaa8453bfb477f062a208ed85cbbf": {
+    "name": null,
+    "address": "0xa2b3d083aa1eaa8453bfb477f062a208ed85cbbf",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x67f8fcb9d3c463da05de1392efdbb2a87f8599ea": {
+    "name": null,
+    "address": "0x67f8fcb9d3c463da05de1392efdbb2a87f8599ea",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x893b30574bf183d69413717f30b17062ec9dfd8b": {
+    "name": null,
+    "address": "0x893b30574bf183d69413717f30b17062ec9dfd8b",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xcdb5b940e95c8632decdc806b90dd3fc44e699fe": {
+    "name": null,
+    "address": "0xcdb5b940e95c8632decdc806b90dd3fc44e699fe",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x8315bcbc2c5c1ef09b71731ab3827b0808a2d6bd": {
+    "name": null,
+    "address": "0x8315bcbc2c5c1ef09b71731ab3827b0808a2d6bd",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xc770eefad204b5180df6a14ee197d99d808ee52d": {
+    "name": "FOX",
+    "address": "0xc770eefad204b5180df6a14ee197d99d808ee52d",
+    "totalSupply": 1000001337,
+    "decimals": 18,
+    "priceEth": 0.000017061569480466,
+    "priceUsd": 0.0276569878360964
+  },
+  "0x3155ba85d5f96b2d030a4966af206230e46849cb": {
+    "name": "THORChain ETH.RUNE",
+    "address": "0x3155ba85d5f96b2d030a4966af206230e46849cb",
+    "totalSupply": 3459458,
+    "decimals": 18,
+    "priceEth": 0.000134879331036599,
+    "priceUsd": 0.220226265205338
+  },
+  "0x2d94aa3e47d9d5024503ca8491fce9a2fb4da198": {
+    "name": "Bankless Token",
+    "address": "0x2d94aa3e47d9d5024503ca8491fce9a2fb4da198",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0.00000212402875483237,
+    "priceUsd": 0.00357011489347791
+  },
+  "0xefb47fcfcad4f96c83d4ca676842fb03ef20a477": {
+    "name": null,
+    "address": "0xefb47fcfcad4f96c83d4ca676842fb03ef20a477",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xf7a0383750fef5abace57cc4c9ff98e3790202b3": {
+    "name": "tBone Staked Bone ShibaSwap",
+    "address": "0xf7a0383750fef5abace57cc4c9ff98e3790202b3",
+    "totalSupply": 18046925,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce": {
+    "name": "SHIBA INU",
+    "address": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce",
+    "totalSupply": 999984523325604,
+    "decimals": 18,
+    "priceEth": 4.83429239477618e-9,
+    "priceUsd": 0.00000787072030618092
+  },
+  "0xdada00a9c23390112d08a1377cc59f7d03d9df55": {
+    "name": "Degen$ Farm Dung",
+    "address": "0xdada00a9c23390112d08a1377cc59f7d03d9df55",
+    "totalSupply": 2.5872251436172926e+21,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xbaba0d970e735c7e48bba07c1164c4e0449ae9b8": {
+    "name": "Degen$ Farm Bags",
+    "address": "0xbaba0d970e735c7e48bba07c1164c4e0449ae9b8",
+    "totalSupply": 4500,
+    "decimals": 0,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x24d3dd4a62e29770cf98810b09f89d3a90279e7a": {
+    "name": null,
+    "address": "0x24d3dd4a62e29770cf98810b09f89d3a90279e7a",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x090185f2135308bad17527004364ebcc2d37e5f6": {
+    "name": "Spell Token",
+    "address": "0x090185f2135308bad17527004364ebcc2d37e5f6",
+    "totalSupply": 364585967424,
+    "decimals": 18,
+    "priceEth": 2.34968152930523e-7,
+    "priceUsd": 0.000382592099460953
+  },
+  "0xc0844fdf1bcbde59a3af0859455d964d350a2cb6": {
+    "name": "ROYAL",
+    "address": "0xc0844fdf1bcbde59a3af0859455d964d350a2cb6",
+    "totalSupply": 203506,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x8fcb1783bf4b71a51f702af0c266729c4592204a": {
+    "name": "OT Aave interest bearing USDC 29DEC2022",
+    "address": "0x8fcb1783bf4b71a51f702af0c266729c4592204a",
+    "totalSupply": 47577,
+    "decimals": 6,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x0d8a21f2ea15269b7470c347083ee1f85e6a723b": {
+    "name": null,
+    "address": "0x0d8a21f2ea15269b7470c347083ee1f85e6a723b",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x41d5d79431a913c4ae7d69a668ecdfe5ff9dfb68": {
+    "name": "Inverse DAO",
+    "address": "0x41d5d79431a913c4ae7d69a668ecdfe5ff9dfb68",
+    "totalSupply": 365001,
+    "decimals": 18,
+    "priceEth": 0.0180602862755895,
+    "priceUsd": 29.1600060399242
+  },
+  "0xbc6da0fe9ad5f3b0d58160288917aa56653660e9": {
+    "name": "Alchemix USD",
+    "address": "0xbc6da0fe9ad5f3b0d58160288917aa56653660e9",
+    "totalSupply": 168938366,
+    "decimals": 18,
+    "priceEth": 0.0006032601339370107,
+    "priceUsd": 0.969829163828895
+  },
+  "0xb5de0c3753b6e1b4dba616db82767f17513e6d4e": {
+    "name": null,
+    "address": "0xb5de0c3753b6e1b4dba616db82767f17513e6d4e",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x21ae9e080a53ab98cc1266ed1c8cc27ffd3256d5": {
+    "name": "UMA TVL Option [30 Jun 2021]",
+    "address": "0x21ae9e080a53ab98cc1266ed1c8cc27ffd3256d5",
+    "totalSupply": 90361,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6a68de599e8e0b1856e322ce5bd11c5c3c79712b": {
+    "name": "I Bet You",
+    "address": "0x6a68de599e8e0b1856e322ce5bd11c5c3c79712b",
+    "totalSupply": 150000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xba100000625a3754423978a60c9317c58a424e3d": {
+    "name": "Balancer",
+    "address": "0xba100000625a3754423978a60c9317c58a424e3d",
+    "totalSupply": 58789682,
+    "decimals": 18,
+    "priceEth": 0.00206110339568297,
+    "priceUsd": 3.39288686341011
+  },
+  "0xbdbf245c690d54b67c6e610a28486a2c6de08be6": {
+    "name": "Sunder Goverance Token",
+    "address": "0xbdbf245c690d54b67c6e610a28486a2c6de08be6",
+    "totalSupply": 110000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b": {
+    "name": "Convex Token",
+    "address": "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b",
+    "totalSupply": 98812926,
+    "decimals": 18,
+    "priceEth": 0.00165498133468706,
+    "priceUsd": 2.68731008647699
+  },
+  "0x62b9c7356a2dc64a1969e19c23e4f579f9810aa7": {
+    "name": "Convex CRV",
+    "address": "0x62b9c7356a2dc64a1969e19c23e4f579f9810aa7",
+    "totalSupply": 312195608,
+    "decimals": 18,
+    "priceEth": 0.00026788117617712,
+    "priceUsd": 0.43057920863251
+  },
+  "0x865377367054516e17014ccded1e7d814edc9ce4": {
+    "name": "Dola USD Stablecoin",
+    "address": "0x865377367054516e17014ccded1e7d814edc9ce4",
+    "totalSupply": 60267139,
+    "decimals": 18,
+    "priceEth": 0.000585851149152986,
+    "priceUsd": 0.959965371756637
+  },
+  "0x65b35d6eb7006e0e607bc54eb2dfd459923476fe": {
+    "name": null,
+    "address": "0x65b35d6eb7006e0e607bc54eb2dfd459923476fe",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xcee60cfa923170e4f8204ae08b4fa6a3f5656f3a": {
+    "name": null,
+    "address": "0xcee60cfa923170e4f8204ae08b4fa6a3f5656f3a",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x8cb924583681cbfe487a62140a994a49f833c244": {
+    "name": "Swapp Token",
+    "address": "0x8cb924583681cbfe487a62140a994a49f833c244",
+    "totalSupply": 535013012,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xfdd7399e22918ba7234f5568cc2ef922489f7ba6": {
+    "name": "Mask Token",
+    "address": "0xfdd7399e22918ba7234f5568cc2ef922489f7ba6",
+    "totalSupply": 71450000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x5a6a4d54456819380173272a5e8e9b9904bdf41b": {
+    "name": null,
+    "address": "0x5a6a4d54456819380173272a5e8e9b9904bdf41b",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x0391d2021f89dc339f60fff84546ea23e337750f": {
+    "name": "BarnBridge Governance Token",
+    "address": "0x0391d2021f89dc339f60fff84546ea23e337750f",
+    "totalSupply": 10000000,
+    "decimals": 18,
+    "priceEth": 0.00132615155798573,
+    "priceUsd": 2.11938203455447
+  },
+  "0x660daf6643191cf0ed045b861d820f283ca078fc": {
+    "name": null,
+    "address": "0x660daf6643191cf0ed045b861d820f283ca078fc",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x9547429c0e2c3a8b88c6833b58fce962734c0e8c": {
+    "name": null,
+    "address": "0x9547429c0e2c3a8b88c6833b58fce962734c0e8c",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xde30da39c46104798bb5aa3fe8b9e0e1f348163f": {
+    "name": "Gitcoin",
+    "address": "0xde30da39c46104798bb5aa3fe8b9e0e1f348163f",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0.000545589514390292,
+    "priceUsd": 0.874610754645955
+  },
+  "0xb5a0931b1b7f21c2f557fd4fddccb504e71ae32d": {
+    "name": null,
+    "address": "0xb5a0931b1b7f21c2f557fd4fddccb504e71ae32d",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xe9f84de264e91529af07fa2c746e934397810334": {
+    "name": "Sake",
+    "address": "0xe9f84de264e91529af07fa2c746e934397810334",
+    "totalSupply": 888,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x389999216860ab8e0175387a0c90e5c52522c945": {
+    "name": "FEGtoken",
+    "address": "0x389999216860ab8e0175387a0c90e5c52522c945",
+    "totalSupply": 100000000000000000,
+    "decimals": 9,
+    "priceEth": 7.01871729145528e-14,
+    "priceUsd": 1.15843614102887e-10
+  },
+  "0xa6f548df93de924d73be7d25dc02554c6bd66db5": {
+    "name": null,
+    "address": "0xa6f548df93de924d73be7d25dc02554c6bd66db5",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xc40af1e4fecfa05ce6bab79dcd8b373d2e436c4e": {
+    "name": "Hokkaidu Inu",
+    "address": "0xc40af1e4fecfa05ce6bab79dcd8b373d2e436c4e",
+    "totalSupply": 100000000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x86eb604fc4fb3f8a6154f4ae25e43c4881dd51af": {
+    "name": "Papillon",
+    "address": "0x86eb604fc4fb3f8a6154f4ae25e43c4881dd51af",
+    "totalSupply": 100000000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xc4d586ef7be9ebe80bd5ee4fbd228fe2db5f2c4e": {
+    "name": "Papa Shiba",
+    "address": "0xc4d586ef7be9ebe80bd5ee4fbd228fe2db5f2c4e",
+    "totalSupply": 1000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x697b4acaa24430f254224eb794d2a85ba1fa1fb8": {
+    "name": null,
+    "address": "0x697b4acaa24430f254224eb794d2a85ba1fa1fb8",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x5e74c9036fb86bd7ecdcb084a0673efc32ea31cb": {
+    "name": "Synth sETH",
+    "address": "0x5e74c9036fb86bd7ecdcb084a0673efc32ea31cb",
+    "totalSupply": 15532,
+    "decimals": 18,
+    "priceEth": 0.99914515475514,
+    "priceUsd": 1639.07415864767
+  },
+  "0x4f9155dec0f7c479877afdff89585499d4e7ed06": {
+    "name": null,
+    "address": "0x4f9155dec0f7c479877afdff89585499d4e7ed06",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xa8b3b1392b17f64d5a50b4b4bd3800324d07800b": {
+    "name": "Stacker.vc VCFund1 Token",
+    "address": "0xa8b3b1392b17f64d5a50b4b4bd3800324d07800b",
+    "totalSupply": 245112,
+    "decimals": 8,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xe0955f26515d22e347b17669993fcefcc73c3a0a": {
+    "name": "Stacker Ventures Token",
+    "address": "0xe0955f26515d22e347b17669993fcefcc73c3a0a",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xbbbbbbb5aa847a2003fbc6b5c16df0bd1e725f61": {
+    "name": "B.Protocol",
+    "address": "0xbbbbbbb5aa847a2003fbc6b5c16df0bd1e725f61",
+    "totalSupply": 4722738,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x05ad6d7db640f4382184e2d82dd76b4581f8f8f4": {
+    "name": null,
+    "address": "0x05ad6d7db640f4382184e2d82dd76b4581f8f8f4",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x43b4fdfd4ff969587185cdb6f0bd875c5fc83f8c": {
+    "name": null,
+    "address": "0x43b4fdfd4ff969587185cdb6f0bd875c5fc83f8c",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xf9a4e1e117818fc98f9808f3df4d7b72c0df4160": {
+    "name": null,
+    "address": "0xf9a4e1e117818fc98f9808f3df4d7b72c0df4160",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xbd1848e1491d4308ad18287a745dd4db2a4bd55b": {
+    "name": "MOchi MArket",
+    "address": "0xbd1848e1491d4308ad18287a745dd4db2a4bd55b",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0.0000014388340765685,
+    "priceUsd": 0.00236208313133669
+  },
+  "0x7b35ce522cb72e4077baeb96cb923a5529764a00": {
+    "name": "Impermax",
+    "address": "0x7b35ce522cb72e4077baeb96cb923a5529764a00",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x77fba179c79de5b7653f68b5039af940ada60ce0": {
+    "name": "Ampleforth Governance",
+    "address": "0x77fba179c79de5b7653f68b5039af940ada60ce0",
+    "totalSupply": 15297898,
+    "decimals": 18,
+    "priceEth": 0.00155763568516246,
+    "priceUsd": 2.48484984661797
+  },
+  "0xa16c84206a6b69c01833101133cc78a47602349d": {
+    "name": null,
+    "address": "0xa16c84206a6b69c01833101133cc78a47602349d",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x40a12179260997c55619de3290c5b9918588e791": {
+    "name": null,
+    "address": "0x40a12179260997c55619de3290c5b9918588e791",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xf233368008c2b4776573481a601999b81b880078": {
+    "name": null,
+    "address": "0xf233368008c2b4776573481a601999b81b880078",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xdf5707ceb7d8c79377652e82ab7250809ae882f8": {
+    "name": null,
+    "address": "0xdf5707ceb7d8c79377652e82ab7250809ae882f8",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xbda357b40712c5bc1d670b8566f5edc9b2d5d70a": {
+    "name": null,
+    "address": "0xbda357b40712c5bc1d670b8566f5edc9b2d5d70a",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xca5d29b3e74d59ebcdf09111495d86f319886a40": {
+    "name": "WheyToken",
+    "address": "0xca5d29b3e74d59ebcdf09111495d86f319886a40",
+    "totalSupply": 105878541,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xd8fc9be765b715d8b0d55c18e515927716ed27d1": {
+    "name": null,
+    "address": "0xd8fc9be765b715d8b0d55c18e515927716ed27d1",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x23a1e8b38bd71692c45d39b96774dcf489286b87": {
+    "name": "Punk Body Index",
+    "address": "0x23a1e8b38bd71692c45d39b96774dcf489286b87",
+    "totalSupply": 198,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6c3c78838c761c6ac7be9f59fe808ea2a6e4379d": {
+    "name": null,
+    "address": "0x6c3c78838c761c6ac7be9f59fe808ea2a6e4379d",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x88887690064d7a85de671eeece8f8af6b4b23610": {
+    "name": null,
+    "address": "0x88887690064d7a85de671eeece8f8af6b4b23610",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xe4922afab0bbadd8ab2a88e0c79d884ad337fca6": {
+    "name": null,
+    "address": "0xe4922afab0bbadd8ab2a88e0c79d884ad337fca6",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x86cc39e9f575667b56871274f2f0a3cc43b9eb88": {
+    "name": "Opensea Traders",
+    "address": "0x86cc39e9f575667b56871274f2f0a3cc43b9eb88",
+    "totalSupply": 29618,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6807d7f7df53b7739f6438eabd40ab8c262c0aa8": {
+    "name": "FORCE",
+    "address": "0x6807d7f7df53b7739f6438eabd40ab8c262c0aa8",
+    "totalSupply": 99032072,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x778a13d3eeb110a4f7bb6529f99c000119a08e92": {
+    "name": null,
+    "address": "0x778a13d3eeb110a4f7bb6529f99c000119a08e92",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xe7f445b93eb9cdabfe76541cc43ff8de930a58e6": {
+    "name": null,
+    "address": "0xe7f445b93eb9cdabfe76541cc43ff8de930a58e6",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x9070c706919e40c33875600a2ab2d4058518e400": {
+    "name": null,
+    "address": "0x9070c706919e40c33875600a2ab2d4058518e400",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xf938424f7210f31df2aee3011291b658f872e91e": {
+    "name": "VISOR",
+    "address": "0xf938424f7210f31df2aee3011291b658f872e91e",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xd46ba6d942050d489dbd938a2c909a5d5039a161": {
+    "name": "Ampleforth",
+    "address": "0xd46ba6d942050d489dbd938a2c909a5d5039a161",
+    "totalSupply": 24938405,
+    "decimals": 9,
+    "priceEth": 0.0006251633491501,
+    "priceUsd": 1.00738473334506
+  },
+  "0xc2db4c131adaf01c15a1db654c040c8578929d55": {
+    "name": "Wasabi USD",
+    "address": "0xc2db4c131adaf01c15a1db654c040c8578929d55",
+    "totalSupply": 22018,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x896e145568624a498c5a909187363ae947631503": {
+    "name": "Wasabi",
+    "address": "0x896e145568624a498c5a909187363ae947631503",
+    "totalSupply": 5459054,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x9f6664205988c3bf4b12b851c075102714869535": {
+    "name": null,
+    "address": "0x9f6664205988c3bf4b12b851c075102714869535",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x6149c26cd2f7b5ccdb32029af817123f6e37df5b": {
+    "name": "Launchpool token",
+    "address": "0x6149c26cd2f7b5ccdb32029af817123f6e37df5b",
+    "totalSupply": 10000000,
+    "decimals": 18,
+    "priceEth": 0.0000692157581019457,
+    "priceUsd": 0.113995570554998
+  },
+  "0x4b9e5fe882b2fbb3e098c9a25a8ce66135ed2be4": {
+    "name": "Gaia",
+    "address": "0x4b9e5fe882b2fbb3e098c9a25a8ce66135ed2be4",
+    "totalSupply": 273852598955,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c": {
+    "name": "Bancor Network Token",
+    "address": "0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c",
+    "totalSupply": 144751296,
+    "decimals": 18,
+    "priceEth": 0.000256137871509899,
+    "priceUsd": 0.428950087180629
+  },
+  "0x05462671c05adc39a6521fa60d5e9443e9e9d2b9": {
+    "name": "USDf",
+    "address": "0x05462671c05adc39a6521fa60d5e9443e9e9d2b9",
+    "totalSupply": 994779,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf5fbedf02f4a7ea6087dab50dcc52de358795e4b": {
+    "name": null,
+    "address": "0xf5fbedf02f4a7ea6087dab50dcc52de358795e4b",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xc3d03e4f041fd4cd388c549ee2a29a9e5075882f": {
+    "name": null,
+    "address": "0xc3d03e4f041fd4cd388c549ee2a29a9e5075882f",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xc6961b88fd9b9c7e6a345821250a67e8e9cab73c": {
+    "name": null,
+    "address": "0xc6961b88fd9b9c7e6a345821250a67e8e9cab73c",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x48fb253446873234f2febbf9bdeaa72d9d387f94": {
+    "name": "Bancor Governance Token",
+    "address": "0x48fb253446873234f2febbf9bdeaa72d9d387f94",
+    "totalSupply": 22074525,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf9f3aec20b51c04625748007bb244191ce18b44c": {
+    "name": "BGANPUNK",
+    "address": "0xf9f3aec20b51c04625748007bb244191ce18b44c",
+    "totalSupply": 14,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xe0e05c43c097b0982db6c9d626c4eb9e95c3b9ce": {
+    "name": "Unslashed Finance Governance Token",
+    "address": "0xe0e05c43c097b0982db6c9d626c4eb9e95c3b9ce",
+    "totalSupply": 86000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x380291a9a8593b39f123cf39cc1cc47463330b1f": {
+    "name": "Elite Swap",
+    "address": "0x380291a9a8593b39f123cf39cc1cc47463330b1f",
+    "totalSupply": 9999999999,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x69ad42a8726f161bd4c76305dfa8f4ecc120115c": {
+    "name": "Avastar Replicant Token",
+    "address": "0x69ad42a8726f161bd4c76305dfa8f4ecc120115c",
+    "totalSupply": 16155,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x24a6a37576377f63f194caa5f518a60f45b42921": {
+    "name": "Float Bank",
+    "address": "0x24a6a37576377f63f194caa5f518a60f45b42921",
+    "totalSupply": 297248,
+    "decimals": 18,
+    "priceEth": 0.000411345205901202,
+    "priceUsd": 0.679893208610113
+  },
+  "0x56b4f8c39e07d4d5d91692acf9d0f6d4d3493763": {
+    "name": "Trism",
+    "address": "0x56b4f8c39e07d4d5d91692acf9d0f6d4d3493763",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x397ff1542f962076d0bfe58ea045ffa2d347aca0": {
+    "name": "SushiSwap LP Token",
+    "address": "0x397ff1542f962076d0bfe58ea045ffa2d347aca0",
+    "totalSupply": 1,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf961a1fa7c781ecd23689fe1d0b7f3b6cbb2f972": {
+    "name": "Wrapped Moon Cats",
+    "address": "0xf961a1fa7c781ecd23689fe1d0b7f3b6cbb2f972",
+    "totalSupply": 6500,
+    "decimals": 18,
+    "priceEth": 0.00222930115855135,
+    "priceUsd": 3.70448534846088
+  },
+  "0x0cec1a9154ff802e7934fc916ed7ca50bde6844e": {
+    "name": "PoolTogether",
+    "address": "0x0cec1a9154ff802e7934fc916ed7ca50bde6844e",
+    "totalSupply": 10000000,
+    "decimals": 18,
+    "priceEth": 0.000365371450291531,
+    "priceUsd": 0.572769620268309
+  },
+  "0x4c6ec08cf3fc987c6c4beb03184d335a2dfc4042": {
+    "name": "Paint",
+    "address": "0x4c6ec08cf3fc987c6c4beb03184d335a2dfc4042",
+    "totalSupply": 22017148274,
+    "decimals": 18,
+    "priceEth": 1.14757952544673e-7,
+    "priceUsd": 0.000191408458378041
+  },
+  "0xf3dcbc6d72a4e1892f7917b7c43b74131df8480e": {
+    "name": "BDPToken",
+    "address": "0xf3dcbc6d72a4e1892f7917b7c43b74131df8480e",
+    "totalSupply": 64923253,
+    "decimals": 18,
+    "priceEth": 0.0000387581365951446,
+    "priceUsd": 0.0639717173811315
+  },
+  "0xecfbe9b182f6477a93065c1c11271232147838e5": {
+    "name": null,
+    "address": "0xecfbe9b182f6477a93065c1c11271232147838e5",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x2aeccb42482cc64e087b6d2e5da39f5a7a7001f8": {
+    "name": "Ruler Protocol",
+    "address": "0x2aeccb42482cc64e087b6d2e5da39f5a7a7001f8",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x334cbb5858417aee161b53ee0d5349ccf54514cf": {
+    "name": null,
+    "address": "0x334cbb5858417aee161b53ee0d5349ccf54514cf",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x08ff7e2be3c23ab3938b6d275193d6a49ccef73e": {
+    "name": null,
+    "address": "0x08ff7e2be3c23ab3938b6d275193d6a49ccef73e",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xebd9d99a3982d547c5bb4db7e3b1f9f14b67eb83": {
+    "name": "Everest ID",
+    "address": "0xebd9d99a3982d547c5bb4db7e3b1f9f14b67eb83",
+    "totalSupply": 800000000,
+    "decimals": 18,
+    "priceEth": 0.00000812793719407764,
+    "priceUsd": 0.0130596219985044
+  },
+  "0x0fe629d1e84e171f8ff0c1ded2cc2221caa48a3f": {
+    "name": "Mask",
+    "address": "0x0fe629d1e84e171f8ff0c1ded2cc2221caa48a3f",
+    "totalSupply": 171,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x2eb4861d1a049f3ad7284204e788446bcc543b9f": {
+    "name": "Portal IOU",
+    "address": "0x2eb4861d1a049f3ad7284204e788446bcc543b9f",
+    "totalSupply": 7816976,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xad4f86a25bbc20ffb751f2fac312a0b4d8f88c64": {
+    "name": "OptionRoom Token",
+    "address": "0xad4f86a25bbc20ffb751f2fac312a0b4d8f88c64",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xfca59cd816ab1ead66534d82bc21e7515ce441cf": {
+    "name": "Rarible",
+    "address": "0xfca59cd816ab1ead66534d82bc21e7515ce441cf",
+    "totalSupply": 25000000,
+    "decimals": 18,
+    "priceEth": 0.000580165411716505,
+    "priceUsd": 0.917367048841112
+  },
+  "0xed40834a13129509a89be39a9be9c0e96a0ddd71": {
+    "name": "Warp Token",
+    "address": "0xed40834a13129509a89be39a9be9c0e96a0ddd71",
+    "totalSupply": 150000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x4688a8b1f292fdab17e9a90c8bc379dc1dbd8713": {
+    "name": "Cover Protocol Governance Token",
+    "address": "0x4688a8b1f292fdab17e9a90c8bc379dc1dbd8713",
+    "totalSupply": 82000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xfd38565ef22299d491055f0c508f62dd9a669f0f": {
+    "name": null,
+    "address": "0xfd38565ef22299d491055f0c508f62dd9a669f0f",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x94f66e5f7c92a3ed661e976f72a82555af6a72d8": {
+    "name": null,
+    "address": "0x94f66e5f7c92a3ed661e976f72a82555af6a72d8",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x01a11a5a999e57e1b177aa2ff7fea957605ada2b": {
+    "name": null,
+    "address": "0x01a11a5a999e57e1b177aa2ff7fea957605ada2b",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x9eb6be354d88fd88795a04de899a57a77c545590": {
+    "name": "GameStop.Finance",
+    "address": "0x9eb6be354d88fd88795a04de899a57a77c545590",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xfa5047c9c78b8877af97bdcb85db743fd7313d4a": {
+    "name": "ROOK",
+    "address": "0xfa5047c9c78b8877af97bdcb85db743fd7313d4a",
+    "totalSupply": 1268246,
+    "decimals": 18,
+    "priceEth": 0.00020979786885084,
+    "priceUsd": 0.343796553043567
+  },
+  "0xac826952bc30504359a099c3a486d44e97415c77": {
+    "name": null,
+    "address": "0xac826952bc30504359a099c3a486d44e97415c77",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x79256db1bdb6259315a1a3d7dd237f69cadfd8fc": {
+    "name": "Typhoon",
+    "address": "0x79256db1bdb6259315a1a3d7dd237f69cadfd8fc",
+    "totalSupply": 28156,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x73968b9a57c6e53d41345fd57a6e6ae27d6cdb2f": {
+    "name": "Stake DAO Token",
+    "address": "0x73968b9a57c6e53d41345fd57a6e6ae27d6cdb2f",
+    "totalSupply": 62271149,
+    "decimals": 18,
+    "priceEth": 0.000174404545717446,
+    "priceUsd": 0.284903582076502
+  },
+  "0x5905adf94914223a3d51220f97285d79cf673f5e": {
+    "name": "Elastic Euro",
+    "address": "0x5905adf94914223a3d51220f97285d79cf673f5e",
+    "totalSupply": 7978783,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x5a785937dcf451f949056cdfbaefb1662e417095": {
+    "name": null,
+    "address": "0x5a785937dcf451f949056cdfbaefb1662e417095",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x36f3fd68e7325a35eb768f1aedaae9ea0689d723": {
+    "name": "Empty Set Dollar",
+    "address": "0x36f3fd68e7325a35eb768f1aedaae9ea0689d723",
+    "totalSupply": 118085697,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb4efd85c19999d84251304bda99e90b92300bd93": {
+    "name": "Rocket Pool",
+    "address": "0xb4efd85c19999d84251304bda99e90b92300bd93",
+    "totalSupply": 18000000,
+    "decimals": 18,
+    "priceEth": 0.0135024585445571,
+    "priceUsd": 22.0673100128964
+  },
+  "0xb34ab2f65c6e4f764ffe740ab83f982021faed6d": {
+    "name": "BSG",
+    "address": "0xb34ab2f65c6e4f764ffe740ab83f982021faed6d",
+    "totalSupply": 128,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb987d48ed8f2c468d52d6405624eadba5e76d723": {
+    "name": "Stabilize Token",
+    "address": "0xb987d48ed8f2c468d52d6405624eadba5e76d723",
+    "totalSupply": 878880,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xfea2468c55e80ab9487f6e6189c79ce31e1f9ea7": {
+    "name": null,
+    "address": "0xfea2468c55e80ab9487f6e6189c79ce31e1f9ea7",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x98987a4fd2ca9eb06c06b82199fd69ba8e0bbebb": {
+    "name": "REFLECT.CASH SHARE",
+    "address": "0x98987a4fd2ca9eb06c06b82199fd69ba8e0bbebb",
+    "totalSupply": 1000001,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x2d6086cd3c110840baad421e174727ee0ee51692": {
+    "name": "REFLECT.CASH",
+    "address": "0x2d6086cd3c110840baad421e174727ee0ee51692",
+    "totalSupply": 824311,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x73d9e335669462cbdd6aa3adafe9efee86a37fe9": {
+    "name": "Daiquilibrium",
+    "address": "0x73d9e335669462cbdd6aa3adafe9efee86a37fe9",
+    "totalSupply": 1900011374072,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x26b4b107dce673c00d59d71152136327cf6dfebf": {
+    "name": null,
+    "address": "0x26b4b107dce673c00d59d71152136327cf6dfebf",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xfe18be6b3bd88a2d2a7f928d00292e7a9963cfc6": {
+    "name": "Synth sBTC",
+    "address": "0xfe18be6b3bd88a2d2a7f928d00292e7a9963cfc6",
+    "totalSupply": 474,
+    "decimals": 18,
+    "priceEth": 16.3566570291634,
+    "priceUsd": 26648.671029256
+  },
+  "0xd6014ea05bde904448b743833ddf07c3c7837481": {
+    "name": null,
+    "address": "0xd6014ea05bde904448b743833ddf07c3c7837481",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x5f0e628b693018f639d10e4a4f59bd4d8b2b6b44": {
+    "name": "Whiteheart Token",
+    "address": "0x5f0e628b693018f639d10e4a4f59bd4d8b2b6b44",
+    "totalSupply": 8888,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x597072f9d8af624702c8fc4aa7fc919a04dafbde": {
+    "name": "PENNY PROTOCOL",
+    "address": "0x597072f9d8af624702c8fc4aa7fc919a04dafbde",
+    "totalSupply": 28001745,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x891bf9b993b945ba041aedd2e606039c9e40ee38": {
+    "name": null,
+    "address": "0x891bf9b993b945ba041aedd2e606039c9e40ee38",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xb78b3320493a4efaa1028130c5ba26f0b6085ef8": {
+    "name": "Dracula Token",
+    "address": "0xb78b3320493a4efaa1028130c5ba26f0b6085ef8",
+    "totalSupply": 14759828,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb4e57904eaa6550e9726cbcb6bfde9693f44720c": {
+    "name": null,
+    "address": "0xb4e57904eaa6550e9726cbcb6bfde9693f44720c",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x8d4507e16efcd02f4434b2498cfface9a05c9955": {
+    "name": null,
+    "address": "0x8d4507e16efcd02f4434b2498cfface9a05c9955",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x97c4adc5d28a86f9470c70dd91dc6cc2f20d2d4d": {
+    "name": null,
+    "address": "0x97c4adc5d28a86f9470c70dd91dc6cc2f20d2d4d",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xf0e3543744afced8042131582f2a19b6aeb82794": {
+    "name": "VTD",
+    "address": "0xf0e3543744afced8042131582f2a19b6aeb82794",
+    "totalSupply": 19645735,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xfa9c3dc54baa9eefbe9453b1f3b3b93ad2af0a77": {
+    "name": "Dynamic Supply Token",
+    "address": "0xfa9c3dc54baa9eefbe9453b1f3b3b93ad2af0a77",
+    "totalSupply": 10000027444,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x875650dd46b60c592d5a69a6719e4e4187a3ca81": {
+    "name": "XUSD Share",
+    "address": "0x875650dd46b60c592d5a69a6719e4e4187a3ca81",
+    "totalSupply": 312625,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x1c9ba9144505aaba12f4b126fda9807150b88f80": {
+    "name": "XUSD Stablecoin",
+    "address": "0x1c9ba9144505aaba12f4b126fda9807150b88f80",
+    "totalSupply": 8112,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x143d8a74cadf8a3927b2926be0154739f4953422": {
+    "name": null,
+    "address": "0x143d8a74cadf8a3927b2926be0154739f4953422",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xc9d7312a439539b5cd6b7fdacf76821100605b5d": {
+    "name": null,
+    "address": "0xc9d7312a439539b5cd6b7fdacf76821100605b5d",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x7acf264ce0dd6d8ce830e44a092522b83cea0570": {
+    "name": null,
+    "address": "0x7acf264ce0dd6d8ce830e44a092522b83cea0570",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x74f5f570f94bc774323cc5059ad1d0d9c9d1661c": {
+    "name": null,
+    "address": "0x74f5f570f94bc774323cc5059ad1d0d9c9d1661c",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x3449fc1cd036255ba1eb19d65ff4ba2b8903a69a": {
+    "name": "BAC",
+    "address": "0x3449fc1cd036255ba1eb19d65ff4ba2b8903a69a",
+    "totalSupply": 54575250,
+    "decimals": 18,
+    "priceEth": 0.000001708405580518199,
+    "priceUsd": 0.00277120087606636
+  },
+  "0x591f7038eaac383530d084ce7524f2afcc0f6ea3": {
+    "name": "DCC",
+    "address": "0x591f7038eaac383530d084ce7524f2afcc0f6ea3",
+    "totalSupply": 25346770,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x55696efc7c9779d868ac34ac6b4a4c5fed61ac12": {
+    "name": "Dynamic Supply Tracker",
+    "address": "0x55696efc7c9779d868ac34ac6b4a4c5fed61ac12",
+    "totalSupply": 250001,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x5d8d9f5b96f4438195be9b99eee6118ed4304286": {
+    "name": "Cover Protocol",
+    "address": "0x5d8d9f5b96f4438195be9b99eee6118ed4304286",
+    "totalSupply": 40796131214802570000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x119090af6be58a47c352a5b1c57935454c4dfe1e": {
+    "name": "ReBitcoin",
+    "address": "0x119090af6be58a47c352a5b1c57935454c4dfe1e",
+    "totalSupply": 14,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xea900eb2ef3d059e8c4ba2df138053122e89c73f": {
+    "name": null,
+    "address": "0xea900eb2ef3d059e8c4ba2df138053122e89c73f",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x65e88ae326d3cace5c90419b59a7b8c768f60731": {
+    "name": null,
+    "address": "0x65e88ae326d3cace5c90419b59a7b8c768f60731",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x985d215cbd0411ae82d1acb23ca944a20e72d1b2": {
+    "name": null,
+    "address": "0x985d215cbd0411ae82d1acb23ca944a20e72d1b2",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xd3dd721b74d72f29677a94c4b318f16a7f7426bc": {
+    "name": "DCS",
+    "address": "0xd3dd721b74d72f29677a94c4b318f16a7f7426bc",
+    "totalSupply": 1600001,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xdf6efd9fde2d30a0e750519bedd2698f264c669e": {
+    "name": null,
+    "address": "0xdf6efd9fde2d30a0e750519bedd2698f264c669e",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x60fd9721617c199098c7f6a39b33657f827f7530": {
+    "name": null,
+    "address": "0x60fd9721617c199098c7f6a39b33657f827f7530",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x9d1233cc46795e94029fda81aaadc1455d510f15": {
+    "name": "Zero Collateral Dai",
+    "address": "0x9d1233cc46795e94029fda81aaadc1455d510f15",
+    "totalSupply": 3794499798046,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x323e054a6dd8762011d60993f51e23e2096b221f": {
+    "name": null,
+    "address": "0x323e054a6dd8762011d60993f51e23e2096b221f",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x49849c98ae39fff122806c06791fa73784fb3675": {
+    "name": null,
+    "address": "0x49849c98ae39fff122806c06791fa73784fb3675",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xaf5a1decfa95baf63e0084a35c62592b774a2a87": {
+    "name": null,
+    "address": "0xaf5a1decfa95baf63e0084a35c62592b774a2a87",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x34d0df862d12cb05e97ebf5b38725284966d0ad6": {
+    "name": null,
+    "address": "0x34d0df862d12cb05e97ebf5b38725284966d0ad6",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x3246ac4f28148c75e18152ba4d80c93606555ad0": {
+    "name": "Zero Set Dollar",
+    "address": "0x3246ac4f28148c75e18152ba4d80c93606555ad0",
+    "totalSupply": 263490,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x2e9a5f63e4d20cb865c87072a888a5ea72584b73": {
+    "name": null,
+    "address": "0x2e9a5f63e4d20cb865c87072a888a5ea72584b73",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xa09d1afae21bda81c06fd6de9bbd7c7ed7b6dfb1": {
+    "name": null,
+    "address": "0xa09d1afae21bda81c06fd6de9bbd7c7ed7b6dfb1",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x812b40c2ca7fabbac756475593fc8b1c313434fa": {
+    "name": null,
+    "address": "0x812b40c2ca7fabbac756475593fc8b1c313434fa",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x5bb29c33c4a3c29f56f8aca40b4db91d8a5fe2c5": {
+    "name": "ONS",
+    "address": "0x5bb29c33c4a3c29f56f8aca40b4db91d8a5fe2c5",
+    "totalSupply": 121683,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xd90e69f67203ebe02c917b5128629e77b4cd92dc": {
+    "name": "ONC",
+    "address": "0xd90e69f67203ebe02c917b5128629e77b4cd92dc",
+    "totalSupply": 1531948,
+    "decimals": 18,
+    "priceEth": 0.0000383999840803193,
+    "priceUsd": 0.0652720361519291
+  },
+  "0x3ba3c8fb0142a6f2bf3e2990a08957866203f961": {
+    "name": null,
+    "address": "0x3ba3c8fb0142a6f2bf3e2990a08957866203f961",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xfd0a40bc83c5fae4203dec7e5929b446b07d1c76": {
+    "name": null,
+    "address": "0xfd0a40bc83c5fae4203dec7e5929b446b07d1c76",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xb11773ea2c7b9586d9efa1438ce95aba22595a7e": {
+    "name": null,
+    "address": "0xb11773ea2c7b9586d9efa1438ce95aba22595a7e",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xe4ae84448db5cfe1daf1e6fb172b469c161cb85f": {
+    "name": "Utopia Open Platform",
+    "address": "0xe4ae84448db5cfe1daf1e6fb172b469c161cb85f",
+    "totalSupply": 99998701,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x8c2e6a4af15c94cf4a86cd3c067159f08571d780": {
+    "name": null,
+    "address": "0x8c2e6a4af15c94cf4a86cd3c067159f08571d780",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x52fd77b74584af390320ee2bc0de8996a27d06b8": {
+    "name": null,
+    "address": "0x52fd77b74584af390320ee2bc0de8996a27d06b8",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xa478c2975ab1ea89e8196811f51a7b7ade33eb11": {
+    "name": "Uniswap V2",
+    "address": "0xa478c2975ab1ea89e8196811f51a7b7ade33eb11",
+    "totalSupply": 96312,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x41d079ce7282d49bf4888c71b5d9e4a02c371f9b": {
+    "name": null,
+    "address": "0x41d079ce7282d49bf4888c71b5d9e4a02c371f9b",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x16de59092dae5ccf4a1e6439d611fd0653f0bd01": {
+    "name": "iearn DAI",
+    "address": "0x16de59092dae5ccf4a1e6439d611fd0653f0bd01",
+    "totalSupply": 393276,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf6cd24ae1d25be15cead23494bda6c6bc1a21f88": {
+    "name": null,
+    "address": "0xf6cd24ae1d25be15cead23494bda6c6bc1a21f88",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x790bae3e77fd5861a0594c99e75cc50ed7bc53b2": {
+    "name": null,
+    "address": "0x790bae3e77fd5861a0594c99e75cc50ed7bc53b2",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x6a1544d5569d6b5e0c576444a4375b585688c4c4": {
+    "name": null,
+    "address": "0x6a1544d5569d6b5e0c576444a4375b585688c4c4",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xcf07606fb097612f8e2bea9fb244de75208c8aa3": {
+    "name": null,
+    "address": "0xcf07606fb097612f8e2bea9fb244de75208c8aa3",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xe88f8313e61a97cec1871ee37fbbe2a8bf3ed1e4": {
+    "name": "Sora Validator Token",
+    "address": "0xe88f8313e61a97cec1871ee37fbbe2a8bf3ed1e4",
+    "totalSupply": 15846889,
+    "decimals": 18,
+    "priceEth": 0.000050789719290976,
+    "priceUsd": 0.0807298776801441
+  },
+  "0xdd9354112cd8e0b4b5e8823cb0701b2ea19c19e4": {
+    "name": null,
+    "address": "0xdd9354112cd8e0b4b5e8823cb0701b2ea19c19e4",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xe7c9c188138f7d70945d420d75f8ca7d8ab9c700": {
+    "name": null,
+    "address": "0xe7c9c188138f7d70945d420d75f8ca7d8ab9c700",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xdd82e4227baec1fc40a72ef9895f38f2c1df4f42": {
+    "name": null,
+    "address": "0xdd82e4227baec1fc40a72ef9895f38f2c1df4f42",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x7079bb3222e8ec25056d62eaf494420bbc965f7e": {
+    "name": null,
+    "address": "0x7079bb3222e8ec25056d62eaf494420bbc965f7e",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x156a8bb47ae1c8f62739617e7f66ce112c91767f": {
+    "name": null,
+    "address": "0x156a8bb47ae1c8f62739617e7f66ce112c91767f",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x906af612f8706b384c7351268ffcd9d947a4d92c": {
+    "name": "BETSY",
+    "address": "0x906af612f8706b384c7351268ffcd9d947a4d92c",
+    "totalSupply": 9846000,
+    "decimals": 8,
+    "priceEth": 0.00000986632789106278,
+    "priceUsd": 0.0161026087236577
+  },
+  "0x78a799a9ef0e07d3e72e2e93d62dd42b52602eb9": {
+    "name": "Sonora",
+    "address": "0x78a799a9ef0e07d3e72e2e93d62dd42b52602eb9",
+    "totalSupply": 100000000,
+    "decimals": 18,
+    "priceEth": 4.10603467750402e-8,
+    "priceUsd": 0.0000652306982255424
+  },
+  "0x4600430d900c2d8a372bf48d7b42897db5f462d1": {
+    "name": "CharlesMansonAlexJonesBeetlejuice1776Pitbull(karen)",
+    "address": "0x4600430d900c2d8a372bf48d7b42897db5f462d1",
+    "totalSupply": 177642069,
+    "decimals": 18,
+    "priceEth": 9.85150575268665e-7,
+    "priceUsd": 0.00160242283401701
+  },
+  "0x1494951b4656075e473843161c4ff0201a235cec": {
+    "name": "sooooooooooooooooooooooooooooooooooooooooooooooo",
+    "address": "0x1494951b4656075e473843161c4ff0201a235cec",
+    "totalSupply": 5000000000000,
+    "decimals": 9,
+    "priceEth": 2.04444845391509e-12,
+    "priceUsd": 3.37938286382197e-9
+  },
+  "0x6184f3a9cd6504aef6f86284498932d428374b8b": {
+    "name": "Obesity",
+    "address": "0x6184f3a9cd6504aef6f86284498932d428374b8b",
+    "totalSupply": 1000000000,
+    "decimals": 8,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf4dbb4a1c983094a34cc2ce74efc8a864e16ddf4": {
+    "name": "Super Big Faggot",
+    "address": "0xf4dbb4a1c983094a34cc2ce74efc8a864e16ddf4",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xacecd75895f1fab237ba9c76a68a961b77680572": {
+    "name": "Seethe",
+    "address": "0xacecd75895f1fab237ba9c76a68a961b77680572",
+    "totalSupply": 420690000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xcd8f2f0722166074f21f5d93ba0b1d1b87844a7b": {
+    "name": "Cope",
+    "address": "0xcd8f2f0722166074f21f5d93ba0b1d1b87844a7b",
+    "totalSupply": 420690000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x2e42a86459c0ab5a94f1a759f4f689a4e6559529": {
+    "name": "SUPER GAPE COIN",
+    "address": "0x2e42a86459c0ab5a94f1a759f4f689a4e6559529",
+    "totalSupply": 69696969696,
+    "decimals": 18,
+    "priceEth": 1.43417314665768e-9,
+    "priceUsd": 0.00000234026731594068
+  },
+  "0x278721bda99deca1adcd8f9a9386942933930066": {
+    "name": "COCKFIGHTS",
+    "address": "0x278721bda99deca1adcd8f9a9386942933930066",
+    "totalSupply": 10000000,
+    "decimals": 18,
+    "priceEth": 0.0000147431596918559,
+    "priceUsd": 0.0239304824796906
+  },
+  "0xbaea5e07080f00d54965a6121d6fb69a6c648c1f": {
+    "name": "yippee",
+    "address": "0xbaea5e07080f00d54965a6121d6fb69a6c648c1f",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x1a8042afa49bff816e446accd8f76de27541c3b7": {
+    "name": "Gangster Pepe",
+    "address": "0x1a8042afa49bff816e446accd8f76de27541c3b7",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x5a3e6a77ba2f983ec0d371ea3b475f8bc0811ad5": {
+    "name": "0x0.ai: AI Smart Contract Auditor",
+    "address": "0x5a3e6a77ba2f983ec0d371ea3b475f8bc0811ad5",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0.0000250863965971586,
+    "priceUsd": 0.0406625610039006
+  },
+  "0x1609d8aa20295feb8831ae0931bae14acf7a9c91": {
+    "name": "We The Pepe",
+    "address": "0x1609d8aa20295feb8831ae0931bae14acf7a9c91",
+    "totalSupply": 420689899999995,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xcd39cdfd853e0c13fd040f40d67be70463207866": {
+    "name": "Turbo Pepe",
+    "address": "0xcd39cdfd853e0c13fd040f40d67be70463207866",
+    "totalSupply": 420689899999995,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x86715a143ede88b42f3e0d606b405ecfe9e64323": {
+    "name": "PalpatineDeSantisShadow80085MiladyInu",
+    "address": "0x86715a143ede88b42f3e0d606b405ecfe9e64323",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x2bb1c247e0d6aef1dad3a591d2a8143ffa5af781": {
+    "name": "Bricked Up",
+    "address": "0x2bb1c247e0d6aef1dad3a591d2a8143ffa5af781",
+    "totalSupply": 420690000000001,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xd5ada93badcdc15a7d68f8a40d063480e07848cc": {
+    "name": "Guaiqiao Baobaocoin",
+    "address": "0xd5ada93badcdc15a7d68f8a40d063480e07848cc",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xec1766aac9de1d8e3f70f69f698a163a717d910c": {
+    "name": "DO NOT BUY",
+    "address": "0xec1766aac9de1d8e3f70f69f698a163a717d910c",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6f4f9c37916981da54e9103f20096000442a66ec": {
+    "name": "LeTs gEt rEtArDeD",
+    "address": "0x6f4f9c37916981da54e9103f20096000442a66ec",
+    "totalSupply": 420069000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xe770493b2663004b356d3374ec23ea52f6c82ca6": {
+    "name": "Bored Miladys",
+    "address": "0xe770493b2663004b356d3374ec23ea52f6c82ca6",
+    "totalSupply": 498,
+    "decimals": 18,
+    "priceEth": 0.110804964001175,
+    "priceUsd": 179.094947201416
+  },
+  "0x9872fcc6cc3ccf7aad36b081b6d5bb0b468b8478": {
+    "name": "Goku Coin",
+    "address": "0x9872fcc6cc3ccf7aad36b081b6d5bb0b468b8478",
+    "totalSupply": 420069000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xc961da88bb5e8ee2ba7dfd4c62a875ef80f7202f": {
+    "name": "HARAM",
+    "address": "0xc961da88bb5e8ee2ba7dfd4c62a875ef80f7202f",
+    "totalSupply": 786000000000072,
+    "decimals": 9,
+    "priceEth": 7.86362768794538e-14,
+    "priceUsd": 1.37131170308991e-10
+  },
+  "0x07be107573a50a741231ff17e93db323fd89ddfb": {
+    "name": "Autism",
+    "address": "0x07be107573a50a741231ff17e93db323fd89ddfb",
+    "totalSupply": 42069000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf5b6ea325c6417179a15d798be88ebe9def57fa9": {
+    "name": "GORLOCK",
+    "address": "0xf5b6ea325c6417179a15d798be88ebe9def57fa9",
+    "totalSupply": 100000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x70867288a47045e156c5fe2370c33a8900ebea59": {
+    "name": "Sluts",
+    "address": "0x70867288a47045e156c5fe2370c33a8900ebea59",
+    "totalSupply": 10000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x2a6ed57167a9c94eb3f2fc6393801a7f25dbe66c": {
+    "name": "Aladdin",
+    "address": "0x2a6ed57167a9c94eb3f2fc6393801a7f25dbe66c",
+    "totalSupply": 100010001,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xad497ee6a70accc3cbb5eb874e60d87593b86f2f": {
+    "name": "SCOOBY",
+    "address": "0xad497ee6a70accc3cbb5eb874e60d87593b86f2f",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 5.90962814442105e-14,
+    "priceUsd": 9.5427398391736e-11
+  },
+  "0xcde1824c673fd6fd8a38c0dcde5eae2bdd590c78": {
+    "name": "Peposhi Kekamoto",
+    "address": "0xcde1824c673fd6fd8a38c0dcde5eae2bdd590c78",
+    "totalSupply": 1000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x3a73a80c4aa1373b8c9d721a57c2949b661d2cd1": {
+    "name": "Pepe",
+    "address": "0x3a73a80c4aa1373b8c9d721a57c2949b661d2cd1",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x4c08820b0383280914fdc3bf72b7f71673cddc59": {
+    "name": "ZK-Inu",
+    "address": "0x4c08820b0383280914fdc3bf72b7f71673cddc59",
+    "totalSupply": 904647345,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x0cba60ca5ef4d42f92a5070a8fedd13be93e2861": {
+    "name": "The Protocol",
+    "address": "0x0cba60ca5ef4d42f92a5070a8fedd13be93e2861",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x64df3aab3b21cc275bb76c4a581cf8b726478ee0": {
+    "name": "Cramer Coin",
+    "address": "0x64df3aab3b21cc275bb76c4a581cf8b726478ee0",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 3.56361860159966e-7,
+    "priceUsd": 0.00058228073954033
+  },
+  "0x9e32b13ce7f2e80a01932b42553652e053d6ed8e": {
+    "name": "Metis Token",
+    "address": "0x9e32b13ce7f2e80a01932b42553652e053d6ed8e",
+    "totalSupply": 5410001,
+    "decimals": 18,
+    "priceEth": 0.0070920823509496,
+    "priceUsd": 11.3875998210158
+  },
+  "0x9e2b8453e0a01154cdbf76f0014bd54f47bde3b3": {
+    "name": "Balboa Inu",
+    "address": "0x9e2b8453e0a01154cdbf76f0014bd54f47bde3b3",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x98b69ebb4ce228145463d7c08aa71fbb6791fe86": {
+    "name": "Rocket Token",
+    "address": "0x98b69ebb4ce228145463d7c08aa71fbb6791fe86",
+    "totalSupply": 54080840415,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xbaac2b4491727d78d2b78815144570b9f2fe8899": {
+    "name": "The Doge NFT",
+    "address": "0xbaac2b4491727d78d2b78815144570b9f2fe8899",
+    "totalSupply": 16969696969,
+    "decimals": 18,
+    "priceEth": 3.6517665698298e-7,
+    "priceUsd": 0.00058984227890097
+  },
+  "0xf36750f9eb97e2b5a8dfd883176075d915a5d3dc": {
+    "name": "Chinu",
+    "address": "0xf36750f9eb97e2b5a8dfd883176075d915a5d3dc",
+    "totalSupply": 1000000000,
+    "decimals": 4,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xa1817b6d8d890f3943b61648992730373b71f156": {
+    "name": "Mongoose",
+    "address": "0xa1817b6d8d890f3943b61648992730373b71f156",
+    "totalSupply": 6.9e+22,
+    "decimals": 9,
+    "priceEth": 6.97906562103305e-21,
+    "priceUsd": 1.1276649889283e-17
+  },
+  "0x5e85796613a56960bbbfa95a2327a08d06d80d7d": {
+    "name": "Dogenobi",
+    "address": "0x5e85796613a56960bbbfa95a2327a08d06d80d7d",
+    "totalSupply": 6.9e+22,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x78b3e0c2534c6bf97e443889936ee41db3178fa0": {
+    "name": "Commander Inu",
+    "address": "0x78b3e0c2534c6bf97e443889936ee41db3178fa0",
+    "totalSupply": 1000000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x2f54c972cd4f3d8e556259535300037bfd9bedbf": {
+    "name": "Chinu",
+    "address": "0x2f54c972cd4f3d8e556259535300037bfd9bedbf",
+    "totalSupply": 1000000000,
+    "decimals": 4,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6adb2e268de2aa1abf6578e4a8119b960e02928f": {
+    "name": "ShibaDoge",
+    "address": "0x6adb2e268de2aa1abf6578e4a8119b960e02928f",
+    "totalSupply": 4.2e+23,
+    "decimals": 9,
+    "priceEth": 2.01723209990038e-20,
+    "priceUsd": 3.2710637722689e-17
+  },
+  "0x7e794ed35788b698ae60cefc98ee48015c4876da": {
+    "name": "Shintama",
+    "address": "0x7e794ed35788b698ae60cefc98ee48015c4876da",
+    "totalSupply": 6.9e+22,
+    "decimals": 9,
+    "priceEth": 8.52755213627807e-21,
+    "priceUsd": 1.4049733251658e-17
+  },
+  "0xbc276f51184ec085cd1437601ecb4bbc3d981896": {
+    "name": "SHIBTAMA",
+    "address": "0xbc276f51184ec085cd1437601ecb4bbc3d981896",
+    "totalSupply": 1000000000000,
+    "decimals": 18,
+    "priceEth": 1.038472468688e-11,
+    "priceUsd": 1.74854524324503e-8
+  },
+  "0xcf0c122c6b73ff809c693db761e7baebe62b6a2e": {
+    "name": "FLOKI",
+    "address": "0xcf0c122c6b73ff809c693db761e7baebe62b6a2e",
+    "totalSupply": 10000000000000,
+    "decimals": 9,
+    "priceEth": 1.04394557979254e-8,
+    "priceUsd": 0.0000168194852385164
+  },
+  "0xdf3f28189516647f8cd2414b6add5ac948f3fc41": {
+    "name": "XAEA-Xii Token",
+    "address": "0xdf3f28189516647f8cd2414b6add5ac948f3fc41",
+    "totalSupply": 100000000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8": {
+    "name": "MuskGold",
+    "address": "0x6069c9223e8a5da1ec49ac5525d4bb757af72cd8",
+    "totalSupply": 690420000,
+    "decimals": 18,
+    "priceEth": 0.00000225589116735711,
+    "priceUsd": 0.00372124622757216
+  },
+  "0x43f11c02439e2736800433b4594994bd43cd066d": {
+    "name": "FLOKI",
+    "address": "0x43f11c02439e2736800433b4594994bd43cd066d",
+    "totalSupply": 10000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x85122a589fc2a92cbe6c6606e2b6661fedfa67ee": {
+    "name": "SHIBNAKI",
+    "address": "0x85122a589fc2a92cbe6c6606e2b6661fedfa67ee",
+    "totalSupply": 1000000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xc0e45ec362c8689c016c3327421637844ad7fb64": {
+    "name": "BULL Inu",
+    "address": "0xc0e45ec362c8689c016c3327421637844ad7fb64",
+    "totalSupply": 1000000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x92c174ca4b31409fa954b77ca71bd3992da9d83f": {
+    "name": "Elf Inu",
+    "address": "0x92c174ca4b31409fa954b77ca71bd3992da9d83f",
+    "totalSupply": 1000000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf42965f82f9e3171d1205c5e3058caf324a09432": {
+    "name": "Alien Inu",
+    "address": "0xf42965f82f9e3171d1205c5e3058caf324a09432",
+    "totalSupply": 51000000000000010000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x30dbd764e6fca235e67803a2d124a02b85a7411e": {
+    "name": "Fuck Elizabeth Warren",
+    "address": "0x30dbd764e6fca235e67803a2d124a02b85a7411e",
+    "totalSupply": 1000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x2881080650b782a48b03a1f5bd30df117b6a5bd5": {
+    "name": "Senator Karen Coin",
+    "address": "0x2881080650b782a48b03a1f5bd30df117b6a5bd5",
+    "totalSupply": 6942069420,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xbfc5c333b096c6a171baa43bb2dfb321e05967da": {
+    "name": "mini Mongoose",
+    "address": "0xbfc5c333b096c6a171baa43bb2dfb321e05967da",
+    "totalSupply": 6.9e+22,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x06ef980d0423c096da3d3884c071372f2206306d": {
+    "name": "AKIRA",
+    "address": "0x06ef980d0423c096da3d3884c071372f2206306d",
+    "totalSupply": 10000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x4abac7a6acf3ce84f1c2fa07d91e72cdd6081cd3": {
+    "name": "Akamaru Inu",
+    "address": "0x4abac7a6acf3ce84f1c2fa07d91e72cdd6081cd3",
+    "totalSupply": 1000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xdfdb7f72c1f195c5951a234e8db9806eb0635346": {
+    "name": "Feisty Doge NFT",
+    "address": "0xdfdb7f72c1f195c5951a234e8db9806eb0635346",
+    "totalSupply": 100013673041,
+    "decimals": 18,
+    "priceEth": 1.14684094919287e-8,
+    "priceUsd": 0.0000188287957508646
+  },
+  "0x4da08a1bff50be96bded5c7019227164b49c2bfc": {
+    "name": "Mononoke Inu",
+    "address": "0x4da08a1bff50be96bded5c7019227164b49c2bfc",
+    "totalSupply": 1000000000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x4b2c54b80b77580dc02a0f6734d3bad733f50900": {
+    "name": "Kiba Inu",
+    "address": "0x4b2c54b80b77580dc02a0f6734d3bad733f50900",
+    "totalSupply": 1000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x9e5bd9d9fad182ff0a93ba8085b664bcab00fa68": {
+    "name": "Dinger Token",
+    "address": "0x9e5bd9d9fad182ff0a93ba8085b664bcab00fa68",
+    "totalSupply": 1000000000000,
+    "decimals": 9,
+    "priceEth": 2.50619306692144e-10,
+    "priceUsd": 4.12267968750104e-7
+  },
+  "0x20f6a313cb250062331fe70b9567e3ee5f01888b": {
+    "name": "WGMI",
+    "address": "0x20f6a313cb250062331fe70b9567e3ee5f01888b",
+    "totalSupply": 1000000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x4adfb23d482afb610871e92b8793828b2105028d": {
+    "name": "I Love You",
+    "address": "0x4adfb23d482afb610871e92b8793828b2105028d",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xc656b2279b0fdf761e832133b06ce607fbbcbceb": {
+    "name": "Asuna Inu",
+    "address": "0xc656b2279b0fdf761e832133b06ce607fbbcbceb",
+    "totalSupply": 1000000000000000000,
+    "decimals": 9,
+    "priceEth": 2.43706839964717e-17,
+    "priceUsd": 3.97826810590763e-14
+  },
+  "0xac8e13ecc30da7ff04b842f21a62a1fb0f10ebd5": {
+    "name": "BabyDoge Coin",
+    "address": "0xac8e13ecc30da7ff04b842f21a62a1fb0f10ebd5",
+    "totalSupply": 1000000000000000,
+    "decimals": 9,
+    "priceEth": 2.36144180364699e-12,
+    "priceUsd": 3.88691460057439e-9
+  },
+  "0x78f334cffbc3b6a10494ec9e5c8cd7892cf309d0": {
+    "name": "Phloki Inu",
+    "address": "0x78f334cffbc3b6a10494ec9e5c8cd7892cf309d0",
+    "totalSupply": 10000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x99342b1a141aa3a02e04afb496562037fdf8e655": {
+    "name": "Psyduck Inu",
+    "address": "0x99342b1a141aa3a02e04afb496562037fdf8e655",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb0302d59237e6104c3f0d145996302f044797ca5": {
+    "name": "GoonRich",
+    "address": "0xb0302d59237e6104c3f0d145996302f044797ca5",
+    "totalSupply": 100000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x1fd7e8c718c153fa97a5525c227a098007dcfdda": {
+    "name": "Kirby Inu",
+    "address": "0x1fd7e8c718c153fa97a5525c227a098007dcfdda",
+    "totalSupply": 100000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xd21730353086b0d6c34656ca74f4e4295dc9b8e0": {
+    "name": null,
+    "address": "0xd21730353086b0d6c34656ca74f4e4295dc9b8e0",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x2de72ada48bdf7bac276256d3f016fe058490c34": {
+    "name": null,
+    "address": "0x2de72ada48bdf7bac276256d3f016fe058490c34",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xeb1c1d0c174fd03fc26aca563a26c605dd735709": {
+    "name": "Pepe Inu",
+    "address": "0xeb1c1d0c174fd03fc26aca563a26c605dd735709",
+    "totalSupply": 100000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x0b1cdb971f8a12b8e77139847e02f684010a11fe": {
+    "name": "Bookie",
+    "address": "0x0b1cdb971f8a12b8e77139847e02f684010a11fe",
+    "totalSupply": 1000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xcf8335727b776d190f9d15a54e6b9b9348439eee": {
+    "name": "Whackd",
+    "address": "0xcf8335727b776d190f9d15a54e6b9b9348439eee",
+    "totalSupply": 624796155,
+    "decimals": 18,
+    "priceEth": 8.56526448183329e-7,
+    "priceUsd": 0.0014078177537178
+  },
+  "0x7fe7bde68203a0aa16886029c4312bb22a0b33f5": {
+    "name": null,
+    "address": "0x7fe7bde68203a0aa16886029c4312bb22a0b33f5",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xe65ff9442ffdc9aaec4ef52bd0c664779a51e5d9": {
+    "name": "Internal Retard Services",
+    "address": "0xe65ff9442ffdc9aaec4ef52bd0c664779a51e5d9",
+    "totalSupply": 1000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x7f9026a365700175030bc1541fd92e6278dc1655": {
+    "name": null,
+    "address": "0x7f9026a365700175030bc1541fd92e6278dc1655",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xf184cdf2f96e21f4907b069ab85fb23f4b65ce7b": {
+    "name": "PussyCredit | t.me/PussyCredit",
+    "address": "0xf184cdf2f96e21f4907b069ab85fb23f4b65ce7b",
+    "totalSupply": 1000000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x4691937a7508860f876c9c0a2a617e7d9e945d4b": {
+    "name": "Wootrade Network",
+    "address": "0x4691937a7508860f876c9c0a2a617e7d9e945d4b",
+    "totalSupply": 3000000000,
+    "decimals": 18,
+    "priceEth": 0.000101943495002666,
+    "priceUsd": 0.16529046677185
+  },
+  "0x9c061df134d11412151e9c200ce3f9f6f295094a": {
+    "name": "Suck Elons Cock",
+    "address": "0x9c061df134d11412151e9c200ce3f9f6f295094a",
+    "totalSupply": 100000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x106552c11272420aad5d7e94f8acab9095a6c952": {
+    "name": "Keanu Inu",
+    "address": "0x106552c11272420aad5d7e94f8acab9095a6c952",
+    "totalSupply": 100000000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb893a8049f250b57efa8c62d51527a22404d7c9a": {
+    "name": "American Shiba",
+    "address": "0xb893a8049f250b57efa8c62d51527a22404d7c9a",
+    "totalSupply": 100000000000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x30f271c9e86d2b7d00a6376cd96a1cfbd5f0b9b3": {
+    "name": "Decentr",
+    "address": "0x30f271c9e86d2b7d00a6376cd96a1cfbd5f0b9b3",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x50de6856358cc35f3a9a57eaaa34bd4cb707d2cd": {
+    "name": "RAZOR",
+    "address": "0x50de6856358cc35f3a9a57eaaa34bd4cb707d2cd",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0.00000550487370399982,
+    "priceUsd": 0.00906251957284852
+  },
+  "0x16b1eb8b8e9058800bf0ba3684f805a6711a1d2c": {
+    "name": "reflector.finance",
+    "address": "0x16b1eb8b8e9058800bf0ba3684f805a6711a1d2c",
+    "totalSupply": 12000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x3301ee63fb29f863f2333bd4466acb46cd8323e6": {
+    "name": "Akita Inu",
+    "address": "0x3301ee63fb29f863f2333bd4466acb46cd8323e6",
+    "totalSupply": 100000000000000,
+    "decimals": 18,
+    "priceEth": 5.25503585804111e-11,
+    "priceUsd": 8.4903879331336e-8
+  },
+  "0xa1afffe3f4d611d252010e3eaf6f4d77088b0cd7": {
+    "name": "reflect.finance",
+    "address": "0xa1afffe3f4d611d252010e3eaf6f4d77088b0cd7",
+    "totalSupply": 10000000,
+    "decimals": 9,
+    "priceEth": 0.00000281432891320003,
+    "priceUsd": 0.00462422873000286
+  },
+  "0x0ae39895b0e7bd8a73d5dbe0142a17d3d7d711e5": {
+    "name": null,
+    "address": "0x0ae39895b0e7bd8a73d5dbe0142a17d3d7d711e5",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x12a06769c5a8881aafb4ea0f6d8b7ad79eaebc35": {
+    "name": "Uniswap LP [WETH/ROOT]",
+    "address": "0x12a06769c5a8881aafb4ea0f6d8b7ad79eaebc35",
+    "totalSupply": 1561,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xa6d84dce85c457d28a971f858967002bfde74c1c": {
+    "name": null,
+    "address": "0xa6d84dce85c457d28a971f858967002bfde74c1c",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xb753428af26e81097e7fd17f40c88aaa3e04902c": {
+    "name": "Spice",
+    "address": "0xb753428af26e81097e7fd17f40c88aaa3e04902c",
+    "totalSupply": 92123,
+    "decimals": 18,
+    "priceEth": 0.0146329178112777,
+    "priceUsd": 23.4134023935154
+  },
+  "0xe0bdaafd0aab238c55d68ad54e616305d4a21772": {
+    "name": "refract",
+    "address": "0xe0bdaafd0aab238c55d68ad54e616305d4a21772",
+    "totalSupply": 872,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x885e127aba09bf8fae058a2895c221b37697c9be": {
+    "name": "AceD",
+    "address": "0x885e127aba09bf8fae058a2895c221b37697c9be",
+    "totalSupply": 150000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x21130f34829b4c343142047a28ce96ec07814b15": {
+    "name": "reaper.finance",
+    "address": "0x21130f34829b4c343142047a28ce96ec07814b15",
+    "totalSupply": 88994,
+    "decimals": 8,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xc32cc5b70bee4bd54aa62b9aefb91346d18821c4": {
+    "name": "IterationSyndicate",
+    "address": "0xc32cc5b70bee4bd54aa62b9aefb91346d18821c4",
+    "totalSupply": 100000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x5218e472cfcfe0b64a064f055b43b4cdc9efd3a6": {
+    "name": "UnFederalReserveToken",
+    "address": "0x5218e472cfcfe0b64a064f055b43b4cdc9efd3a6",
+    "totalSupply": 454278600,
+    "decimals": 18,
+    "priceEth": 5.70574752173382e-7,
+    "priceUsd": 11043.987809747
+  },
+  "0xb05af453011d7ad68a92b0065ffd9d1277ed2741": {
+    "name": "Team",
+    "address": "0xb05af453011d7ad68a92b0065ffd9d1277ed2741",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x79ba92dda26fce15e1e9af47d5cfdfd2a093e000": {
+    "name": "SERGS",
+    "address": "0x79ba92dda26fce15e1e9af47d5cfdfd2a093e000",
+    "totalSupply": 961953,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xcb5f72d37685c3d5ad0bb5f982443bc8fcdf570e": {
+    "name": "RootKit",
+    "address": "0xcb5f72d37685c3d5ad0bb5f982443bc8fcdf570e",
+    "totalSupply": 9854,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x0d9227f9c4ab3972f994fccc6eeba3213c0305c4": {
+    "name": "Sergey Save Link",
+    "address": "0x0d9227f9c4ab3972f994fccc6eeba3213c0305c4",
+    "totalSupply": 1100,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x12d102f06da35cc0111eb58017fd2cd28537d0e1": {
+    "name": "Vox.Finance",
+    "address": "0x12d102f06da35cc0111eb58017fd2cd28537d0e1",
+    "totalSupply": 241664,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x1df2099f6abbf0b05c12a61835137d84f10daa96": {
+    "name": "RootKit [Wrapped ETH]",
+    "address": "0x1df2099f6abbf0b05c12a61835137d84f10daa96",
+    "totalSupply": 65217,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xbabc2015dab61008f5e248dd3511fd46a4103418": {
+    "name": null,
+    "address": "0xbabc2015dab61008f5e248dd3511fd46a4103418",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xbfbb9b401114e367f7e174cdf4fbb8fcc0585fcc": {
+    "name": "Uniswap LP [KETH/ROOT]",
+    "address": "0xbfbb9b401114e367f7e174cdf4fbb8fcc0585fcc",
+    "totalSupply": 8174,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x19f69119c93e7f89beb6c5d4bcf39ecbc98ec8e7": {
+    "name": "ONLY2",
+    "address": "0x19f69119c93e7f89beb6c5d4bcf39ecbc98ec8e7",
+    "totalSupply": 897841865,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6bff2fe249601ed0db3a87424a2e923118bb0312": {
+    "name": "FYOOZ",
+    "address": "0x6bff2fe249601ed0db3a87424a2e923118bb0312",
+    "totalSupply": 50000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x0bd760e782fcb2a30985cad83a610da3d66d0c1f": {
+    "name": null,
+    "address": "0x0bd760e782fcb2a30985cad83a610da3d66d0c1f",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x17b0471c90d7ddb2bee4bd00d9ba6a8747ea804a": {
+    "name": "ultraburn.org",
+    "address": "0x17b0471c90d7ddb2bee4bd00d9ba6a8747ea804a",
+    "totalSupply": 15000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xeea9ae787f3a620072d13b2cdc8cabffb9c0ab96": {
+    "name": "YearnSecure",
+    "address": "0xeea9ae787f3a620072d13b2cdc8cabffb9c0ab96",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x468ab3b1f63a1c14b361bc367c3cc92277588da1": {
+    "name": "YELD",
+    "address": "0x468ab3b1f63a1c14b361bc367c3cc92277588da1",
+    "totalSupply": 60000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x38d9ceb19ee051de470534b43a17cb1ce86cea2e": {
+    "name": null,
+    "address": "0x38d9ceb19ee051de470534b43a17cb1ce86cea2e",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xf12ec0d3dab64ddefbdc96474bde25af3fe1b327": {
+    "name": "Stacy",
+    "address": "0xf12ec0d3dab64ddefbdc96474bde25af3fe1b327",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 3.70944167780514e-8,
+    "priceUsd": 0.0000609097567588148
+  },
+  "0xaa9d866666c2a3748d6b23ff69e63e52f08d9ab4": {
+    "name": "Fundamenta",
+    "address": "0xaa9d866666c2a3748d6b23ff69e63e52f08d9ab4",
+    "totalSupply": 26766888,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf38cc736f3e7ebe95b4921a341828f4a38615fee": {
+    "name": null,
+    "address": "0xf38cc736f3e7ebe95b4921a341828f4a38615fee",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x4312597a06bff60e8a778437ddfba8dce587a293": {
+    "name": "Auxesia",
+    "address": "0x4312597a06bff60e8a778437ddfba8dce587a293",
+    "totalSupply": 300,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xd04785c4d8195e4a54d9dec3a9043872875ae9e2": {
+    "name": "RottenToken",
+    "address": "0xd04785c4d8195e4a54d9dec3a9043872875ae9e2",
+    "totalSupply": 319253755,
+    "decimals": 18,
+    "priceEth": 1.69481194039646e-7,
+    "priceUsd": 0.000272491678296016
+  },
+  "0x3642a41e430cd75663cd4e951b45514ab43e590a": {
+    "name": null,
+    "address": "0x3642a41e430cd75663cd4e951b45514ab43e590a",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x163c754ef4d9c03fc7fa9cf6dd43bfc760e6ce89": {
+    "name": "MaggotToken",
+    "address": "0x163c754ef4d9c03fc7fa9cf6dd43bfc760e6ce89",
+    "totalSupply": 67357094,
+    "decimals": 18,
+    "priceEth": 9.58737300326271e-8,
+    "priceUsd": 0.000132657696168092
+  },
+  "0x708e5416baefe6aa2d58e41a80c10bd4eb2ea138": {
+    "name": "SilentSwap.org",
+    "address": "0x708e5416baefe6aa2d58e41a80c10bd4eb2ea138",
+    "totalSupply": 9220,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xa26c06a5a1a0b2d80eb720888f2d8b16260b63b3": {
+    "name": null,
+    "address": "0xa26c06a5a1a0b2d80eb720888f2d8b16260b63b3",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x287856d10418e01ef1e93df9962b04d9a3a521c9": {
+    "name": null,
+    "address": "0x287856d10418e01ef1e93df9962b04d9a3a521c9",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x3fc004ed2551dfcb129cb6c106d225110fcdd0b4": {
+    "name": "Pandora DAO",
+    "address": "0x3fc004ed2551dfcb129cb6c106d225110fcdd0b4",
+    "totalSupply": 100,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x941cfa20243894f630cd9eb3efe529878983f23f": {
+    "name": null,
+    "address": "0x941cfa20243894f630cd9eb3efe529878983f23f",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xd4cf15b79f4b17db82b4ebea3fc8051fab25aa75": {
+    "name": null,
+    "address": "0xd4cf15b79f4b17db82b4ebea3fc8051fab25aa75",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x6d7ba65ae6a64ba5070524e68e12daab7f719fd6": {
+    "name": null,
+    "address": "0x6d7ba65ae6a64ba5070524e68e12daab7f719fd6",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xed7849143bbce94d039b78be4d19c24a411bf48e": {
+    "name": null,
+    "address": "0xed7849143bbce94d039b78be4d19c24a411bf48e",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xc970f24946d0a99ef53907e951ebfcf3e4fb4e00": {
+    "name": null,
+    "address": "0xc970f24946d0a99ef53907e951ebfcf3e4fb4e00",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xc3f1cc7a647a121adb7aade62e8b8b941739d618": {
+    "name": null,
+    "address": "0xc3f1cc7a647a121adb7aade62e8b8b941739d618",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x8916650e4d20968de05c93266efcf6d081ca923e": {
+    "name": null,
+    "address": "0x8916650e4d20968de05c93266efcf6d081ca923e",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xa866f0198208eb07c83081d5136be7f775c2399e": {
+    "name": "Kore",
+    "address": "0xa866f0198208eb07c83081d5136be7f775c2399e",
+    "totalSupply": 999990001,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
   }
 }
