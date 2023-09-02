@@ -16,9 +16,10 @@ async function getErc20Info(txArray){
 
   console.log(`Getting ${addressArray.length} ERC20 token infos..`);
   for (var i = 0; i < addressArray.length; i++) {
-    console.log(i+1);
+
     const address = addressArray[i].toLowerCase();
     if (!tokenInfoObj[address]) {
+      console.log(i+1, '- new');
       const pauseSeconds = 2;
       await new Promise(resolve => setTimeout(resolve, pauseSeconds * 1000));
       const url = `https://api.geckoterminal.com/api/v2/networks/eth/tokens/${address}?include=top_pools`;
@@ -59,6 +60,7 @@ async function getErc20Info(txArray){
         priceUsd
       }
     }
+    else console.log(i+1);
   }
 
   await fs.writeFile(path, JSON.stringify(tokenInfoObj, null, 2), 'utf8');

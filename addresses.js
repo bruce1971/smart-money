@@ -26,6 +26,7 @@ const inputU = {
     ,'0x5f45c7ea2e094fea813a8a8813620ffcc4a19d0f'
   ],
   'judge': ['0xfd22e70cb42a0fa315c82e0aa95a6dc19f8b4934'],
+  'billi': ['0x240e204b8eb025533128b54ed55c141d64db987d'],
   'dimi': ['0x4a2c786651229175407d3a2d405d1998bcf40614'],
 }
 

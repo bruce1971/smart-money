@@ -64,11 +64,11 @@ filteredWallets = filteredWallets.sort((a,b) => b.tokens.length - a.tokens.lengt
 // NO 0x0be167856e9b54e0088f04c2f611f59871d89e39 -> pepe,mog,nihao
 // NO 0xc77d249809ae5a118eef66227d1a01a3d62c82d4 -> pepe,hams,nihao
 // NO 0xd295ccf0ccd19b41dfb9b78e02eace3d7ec85be7 -> pepe,bitcoin,nihao
-// 0xfd22e70cb42a0fa315c82e0aa95a6dc19f8b4934 -> pepe,bitcoin,mog
-// 0x70399b85054dd1d94f2264afc8704a3ee308abaf -> pepe,turbo,nihao
+// YE 0xfd22e70cb42a0fa315c82e0aa95a6dc19f8b4934 -> pepe,bitcoin,mog
+// YE 0x70399b85054dd1d94f2264afc8704a3ee308abaf -> pepe,turbo,nihao
 // 0xe3f161f96495d27c58c982d806553631940e2b25 -> pepe,mog,hams
-// 0x44ae4efa8463ada0dbba34fd969b973c92cab5ca -> pepe,turbo,mog
-// 0x240e204b8eb025533128b54ed55c141d64db987d -> pepe,mog,nihao
+// NO 0x44ae4efa8463ada0dbba34fd969b973c92cab5ca -> pepe,turbo,mog
+// YE 0x240e204b8eb025533128b54ed55c141d64db987d -> pepe,mog,nihao
 // 0xab21da17a6ed156b3642234ce27e412ac08a7627 -> pepe,bitcoin,mog
 // 0x353c1f0bc78fbbc245b3c93ef77b1dcc5b77d2a0 -> pepe,mog,nihao
 // 0xede9fb802ee8d5df4f901c998d4322f6218d4b1c -> pepe,mog,nihao
