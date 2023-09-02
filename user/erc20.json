@@ -6894,5 +6894,21 @@
     "decimals": 18,
     "priceEth": 0,
     "priceUsd": 0
+  },
+  "0xf3f09fbdc764e01774f355f763c3acfdfe8a548d": {
+    "name": null,
+    "address": "0xf3f09fbdc764e01774f355f763c3acfdfe8a548d",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0xb5ea574dd8f2b735424dfc8c4e16760fc44a931b": {
+    "name": "HarryPotterObamaSatoshi1Meme",
+    "address": "0xb5ea574dd8f2b735424dfc8c4e16760fc44a931b",
+    "totalSupply": 1000000000,
+    "decimals": 8,
+    "priceEth": 4.48599125772305e-7,
+    "priceUsd": 0.000732125580109097
   }
 }

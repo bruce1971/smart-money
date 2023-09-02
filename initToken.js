@@ -7,10 +7,10 @@ const { getErc20Info } = require(`./user/getErc20Info.js`);
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`${basePath}/addresses.js`);
 
-const inputTokenAddress = addresses.inputA[argv.a].address;
-const inputTokenStartblock = addresses.inputA[argv.a].startblock;
-const inputTokenEndblock = addresses.inputA[argv.a].endblock;
-const INITIAL_HOURS = 5;
+const inputTokenAddress = argv.a ? addresses.inputA[argv.a] || ['0' + argv.a] : undefined;
+const inputTokenStartblock = addresses.inputA[argv.a]?.startblock;
+const inputTokenEndblock = addresses.inputA[argv.a]?.endblock;
+const INITIAL_HOURS = 2;
 
 async function main(tokenAddress) {
 
@@ -28,14 +28,15 @@ async function main(tokenAddress) {
   console.log('startblock', startblock);
   console.log('endblock', endblock);
 
-  erc20ContractTransactions = erc20ContractTransactions.filter(o => Number(o.blockNumber) < endblock);
+  // erc20ContractTransactions = erc20ContractTransactions.filter(o => Number(o.blockNumber) < endblock);
+  erc20ContractTransactions = erc20ContractTransactions.slice(0, 50);
 
   const userTransactions = {};
   console.log('erc20ContractTransactions.length',erc20ContractTransactions.length);
   console.log('blocks scanning: ', endblock - startblock);
   for (var i = 0; i < erc20ContractTransactions.length; i++) {
     const userAddress = erc20ContractTransactions[i].to;
-    console.log('Blocks remaining: ', endblock - Number(erc20ContractTransactions[i].blockNumber));
+    console.log(`${i+1}/${erc20ContractTransactions.length}`);
     if (!userTransactions[userAddress]) {
       userTransactions[userAddress] = await axios.get(accountUrl('txlist', userAddress, tokenAddress, startblock, endblock, sort)).then(res => {
         const txs = res.data.result;
@@ -52,7 +53,7 @@ async function main(tokenAddress) {
   const txArray = groupTransactions(transactions, erc20ContractTransactions);
 
   const pnl = { address: tokenAddress, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
-  const tokenInfoObj = await getErc20InfoObj(txArray);
+  const tokenInfoObj = await getErc20Info(txArray);
   let activityLog = await getActivityLog(txArray, tokenAddress, pnl, tokenInfoObj);
   // activityLog = activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
   formatActivityLog(activityLog, true, true);
