@@ -8,6 +8,7 @@ const inputA = {
   'nihao': { address: '0xC3681A720605bD6F8fe9A2FaBff6A7CDEcDc605D', type: 'erc20', startblock: 17360350, endblock: 17380487 },
   'pepe2': { address: '0xbe042e9d09cb588331ff911c2b46fd833a3e5bd6', type: 'erc20', startblock: 17987995, endblock: 18009131 },
   'x': { address: '0xa62894d5196bc44e4c3978400ad07e7b30352372', type: 'erc20' },
+  'mong': { address: '0x1ce270557c1f68cfb577b856766310bf8b47fd9c', type: 'erc20' },
   'unibot': { address: '0xf819d9Cb1c2A819Fd991781A822dE3ca8607c3C9', type: 'erc20' },
   'none': { address: '0x903ff0ba636E32De1767A4B5eEb55c155763D8B7', type: 'erc20' },
   'prime': { address: '0xb23d80f5FefcDDaa212212F028021B41DEd428CF', type: 'erc20' },
