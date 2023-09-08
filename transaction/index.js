@@ -7,6 +7,7 @@ const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'.toLowerCase();
 
 
 async function logFetch(erc20) {
+  console.log(erc20.hash);
   const url = `
     https://api.etherscan.io/api
      ?module=logs
@@ -32,7 +33,7 @@ async function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
   let swapFrom, swapTo, addressFrom, addressTo;
   const tokenInfo = tokenInfoObj[erc20.contractAddress];
 
-  if (array.length === 2 && tokenInfoObj[array[0].path[1].toLowerCase()]?.address === WETH_ADDRESS && tokenInfoObj[array[1].path[0].toLowerCase()]?.address === WETH_ADDRESS) {
+  if (array.length === 2 && tokenInfoObj[y[0].path[1].toLowerCase()]?.address === WETH_ADDRESS && tokenInfoObj[array[1].path[0].toLowerCase()]?.address === WETH_ADDRESS) {
     sellAmount += Number(array[0].amountIn);
     buyAmount += Number(array[1].amountOut);
     addressFrom = array[0].path[0].toLowerCase();
@@ -77,16 +78,19 @@ async function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
       type: 'sell',
       activity: `🪙🔴 Token SALE. ${formatLargeValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(buyAmount)} ${swapTo.name} ($${formatLargeValue(mcap)} Mcap)`
     }
-  } else if (array[0].path.length > 2) {
+  } else if (array[0].path.length > 2 && array[0].path.map(x => x.toLowerCase()).includes(WETH_ADDRESS)) {
     const swappedEth = await logFetch(erc20);
+    pnl.push({ contractAddress: addressFrom, type: 'sell', amount: formatValueRaw(swappedEth) });
+    pnl.push({ contractAddress: addressTo, type: 'buy', amount: formatValueRaw(swappedEth) });
     return {
       type: 'swap',
-      activity: `
-      🪙🔴 Token SALE. ${formatLargeValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(swappedEth)} ETH ($${formatLargeValue(0)} Mcap)
-      🪙🟢 Token BUY. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(swappedEth)} ETH ($${formatLargeValue(0)} Mcap)`
+      activity: `🪙🔴 Token SALE. ${formatLargeValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(swappedEth)} ETH ($${formatLargeValue(0)} Mcap) \n🪙🟢 Token BUY. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(swappedEth)} ETH ($${formatLargeValue(0)} Mcap)`
     }
   } else {
-    return {}
+    return {
+      type: 'swap',
+      activity: `🪙🟠 Swap ${formatLargeValue(sellAmount, 18)} ${swapFrom.name} to ${formatLargeValue(buyAmount, swapTo.decimals || 18)} ${swapTo.name}`
+    }
   }
 }
 
@@ -105,7 +109,6 @@ async function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     finalObject.activity = parsed.activity;
   } else if (tx.functionName === 'swapTokensForExactTokens(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline)') {
     const decodedArray = decoder.decoder3b(tx.input);
-    console.log(decodedArray);
     const parsed = await parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
     finalObject.type = parsed.type;
     finalObject.activity = parsed.activity;
@@ -133,6 +136,10 @@ async function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(ethReceived) })
   } else if (tx.functionName.includes('transfer')) {
     finalObject.activity = `🪙➡️  Token TRANSFER. ${formatLargeValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${shortAddr(erc20.to)}`;
+  } else if (tx.functionName.includes('addLiquidity')) {
+    finalObject.activity = `🪙💧 Add token LIQUIDITY.`;
+  } else if (tx.functionName.includes('removeLiquidity')) {
+    finalObject.activity = `🪙💧❌ Remove token LIQUIDITY.`;
   } else {
     finalObject.activity = '🪙 OTHER ERC20...';
   }

@@ -93,10 +93,8 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  // startblock = 10645179
-  // endblock = 10645179
-  startblock = 10650357
-  endblock = 10650357
+  // startblock = 11309708
+  // endblock = 11309708
 
   let txArray = [];
   for (const userAddress of userAddresses) {
@@ -129,11 +127,11 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress, inputDaysAgo);
-    // if (inputContractAddress) formatActivityLog(user.activityLog, false, true);
-    formatActivityLog(user.activityLog, false, true);
+    if (inputContractAddress) formatActivityLog(user.activityLog, false, true);
+    // formatActivityLog(user.activityLog, false, true);
     // console.log(user.currentPortfolio);
     // console.log(user.participation);
-    // finalPnl(user.participation, user.currentPortfolio, user.pnl);
+    finalPnl(user.participation, user.currentPortfolio, user.pnl);
   })();
 }
 
