@@ -33,7 +33,7 @@ async function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
   let swapFrom, swapTo, addressFrom, addressTo;
   const tokenInfo = tokenInfoObj[erc20.contractAddress];
 
-  if (array.length === 2 && tokenInfoObj[y[0].path[1].toLowerCase()]?.address === WETH_ADDRESS && tokenInfoObj[array[1].path[0].toLowerCase()]?.address === WETH_ADDRESS) {
+  if (array.length === 2 && tokenInfoObj[array[0].path[1].toLowerCase()]?.address === WETH_ADDRESS && tokenInfoObj[array[1].path[0].toLowerCase()]?.address === WETH_ADDRESS) {
     sellAmount += Number(array[0].amountIn);
     buyAmount += Number(array[1].amountOut);
     addressFrom = array[0].path[0].toLowerCase();
