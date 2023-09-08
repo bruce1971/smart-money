@@ -23,13 +23,13 @@ function filterContractAddress(array, contractAddress) {
 }
 
 
-function getActivityLog(txArray, userAddresses, pnl, tokenInfoObj) {
+async function getActivityLog(txArray, userAddresses, pnl, tokenInfoObj) {
   let activityLogArray = [];
   if (txArray.length > 0) {
-    txArray.forEach(async tx => {
-      const activityLog = await parseTx(tx, userAddresses, pnl, tokenInfoObj);
+    for (let i = 0; i < txArray.length; i++) {
+      const activityLog = await parseTx(txArray[i], userAddresses, pnl, tokenInfoObj);
       if (activityLog) activityLogArray.push(activityLog);
-    })
+    }
   } else console.log('No txs..');
   return activityLogArray;
 }
@@ -94,7 +94,9 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
   // startblock = 10645179
-  // endblock = 10650357
+  // endblock = 10645179
+  startblock = 10650357
+  endblock = 10650357
 
   let txArray = [];
   for (const userAddress of userAddresses) {
@@ -108,7 +110,7 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   const pnl = [];
-  const activityLog = getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
+  const activityLog = await getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
 
   let participation, currentPortfolio;
   participation = getParticipation(txArray);
@@ -127,11 +129,11 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress, inputDaysAgo);
-    if (inputContractAddress) formatActivityLog(user.activityLog, false, true);
-    // formatActivityLog(user.activityLog, false, true);
+    // if (inputContractAddress) formatActivityLog(user.activityLog, false, true);
+    formatActivityLog(user.activityLog, false, true);
     // console.log(user.currentPortfolio);
     // console.log(user.participation);
-    finalPnl(user.participation, user.currentPortfolio, user.pnl);
+    // finalPnl(user.participation, user.currentPortfolio, user.pnl);
   })();
 }
 

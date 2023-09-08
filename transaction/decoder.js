@@ -11,6 +11,7 @@ module.exports = {
     decoder1,
     decoder2,
     decoder3,
+    decoder3b,
     logDecoder
 }
 
@@ -111,6 +112,18 @@ function decoder3(transactionInput) {
   finalArray.push({
       amountIn: decoded[0].toString(),
       amountOut: decoded[1].toString(),
+      path: decoded[2]
+  })
+  return finalArray;
+}
+
+function decoder3b(transactionInput) {
+  const parsedTx = universalInteface3.parseTransaction({data: transactionInput});
+  const decoded = parsedTx.args;
+  let finalArray = [];
+  finalArray.push({
+      amountOut: decoded[0].toString(),
+      amountIn: decoded[1].toString(),
       path: decoded[2]
   })
   return finalArray;

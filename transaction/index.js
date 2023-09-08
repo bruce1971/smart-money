@@ -77,15 +77,16 @@ async function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
       type: 'sell',
       activity: `🪙🔴 Token SALE. ${formatLargeValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(buyAmount)} ${swapTo.name} ($${formatLargeValue(mcap)} Mcap)`
     }
-  } else {
+  } else if (array[0].path.length > 2) {
     const swappedEth = await logFetch(erc20);
-    // activity: `🪙🟠 Swap ${formatLargeValue(sellAmount, 18)} ${swapFrom.name} to ${formatLargeValue(buyAmount, swapTo.decimals || 18)} ${swapTo.name}, ${formatLargeValue(swappedEth, 18)} eth
     return {
       type: 'swap',
       activity: `
       🪙🔴 Token SALE. ${formatLargeValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(swappedEth)} ETH ($${formatLargeValue(0)} Mcap)
       🪙🟢 Token BUY. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(swappedEth)} ETH ($${formatLargeValue(0)} Mcap)`
     }
+  } else {
+    return {}
   }
 }
 
@@ -97,8 +98,14 @@ async function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     const parsed = await parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
     finalObject.type = parsed.type;
     finalObject.activity = parsed.activity;
-  } else if (tx.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)' || tx.functionName === 'swapTokensForExactTokens(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline)') {
+  } else if (tx.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
     const decodedArray = decoder.decoder2(tx.input);
+    const parsed = await parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
+    finalObject.type = parsed.type;
+    finalObject.activity = parsed.activity;
+  } else if (tx.functionName === 'swapTokensForExactTokens(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline)') {
+    const decodedArray = decoder.decoder3b(tx.input);
+    console.log(decodedArray);
     const parsed = await parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
     finalObject.type = parsed.type;
     finalObject.activity = parsed.activity;
