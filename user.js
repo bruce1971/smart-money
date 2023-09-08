@@ -26,8 +26,8 @@ function filterContractAddress(array, contractAddress) {
 function getActivityLog(txArray, userAddresses, pnl, tokenInfoObj) {
   let activityLogArray = [];
   if (txArray.length > 0) {
-    txArray.forEach(tx => {
-      const activityLog = parseTx(tx, userAddresses, pnl, tokenInfoObj);
+    txArray.forEach(async tx => {
+      const activityLog = await parseTx(tx, userAddresses, pnl, tokenInfoObj);
       if (activityLog) activityLogArray.push(activityLog);
     })
   } else console.log('No txs..');
@@ -93,15 +93,14 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  // startblock = 17617223
-  // endblock = 17617223
+  // startblock = 10645179
+  // endblock = 10650357
 
   let txArray = [];
   for (const userAddress of userAddresses) {
     const txArray1 = await txsForSingleAddress(userAddress, contractAddress, startblock, endblock);
     txArray = txArray.concat(txArray1);
   };
-
 
   const tokenInfoObj = await getErc20Info(txArray);
 
@@ -129,7 +128,7 @@ if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress, inputDaysAgo);
     if (inputContractAddress) formatActivityLog(user.activityLog, false, true);
-    formatActivityLog(user.activityLog, false, true);
+    // formatActivityLog(user.activityLog, false, true);
     // console.log(user.currentPortfolio);
     // console.log(user.participation);
     finalPnl(user.participation, user.currentPortfolio, user.pnl);

@@ -5,12 +5,13 @@ let universalInteface = new Interface(abi.abi1);
 let universalInteface2 = new Interface(abi.abi2);
 let universalInteface3 = new Interface(abi.abi3);
 
-//https://api.etherscan.io/api?module=contract&action=getabi&address=0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413
+//https://api.etherscan.io/api?module=contract&action=getabi&address=0x7a250d5630b4cf539739df2c5dacb4c659f2488d
 
 module.exports = {
     decoder1,
     decoder2,
-    decoder3
+    decoder3,
+    logDecoder
 }
 
 function decoder1(transactionInput) {
@@ -113,4 +114,10 @@ function decoder3(transactionInput) {
       path: decoded[2]
   })
   return finalArray;
+}
+
+function logDecoder(log){
+  const abiCoder = new AbiCoder();
+  const decoded = abiCoder.decode([ "uint256" ], log.data);
+  return decoded[0]
 }

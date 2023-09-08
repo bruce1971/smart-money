@@ -1,3 +1,4 @@
+const axios = require('axios');
 const basePath = process.cwd();
 const decoder = require(`./decoder.js`);
 const { formatValue, formatValueRaw, formatTimestamp, formatLargeValue, shortAddr, parseErc721 } = require(`${basePath}/helper.js`);
@@ -5,7 +6,27 @@ const ethInUsd = 1669; // TODO: make dynamic depending on eth price that day
 const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'.toLowerCase();
 
 
-function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
+async function logFetch(erc20) {
+  const url = `
+    https://api.etherscan.io/api
+     ?module=logs
+     &action=getLogs
+     &fromBlock=${erc20.blockNumber}
+     &toBlock=${erc20.blockNumber}
+     &address=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2
+     &topic0=0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+     &page=1
+     &offset=1000
+     &apikey=I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG
+  `.replace(/\s/g, '');
+  const logs = await axios.get(url).then(res => res.data);
+  const log = logs.result.find(l => l.transactionHash === erc20.hash);
+  const decodedEth = decoder.logDecoder(log);
+  return decodedEth;
+}
+
+
+async function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
   let buyAmount = 0;
   let sellAmount = 0;
   let swapFrom, swapTo, addressFrom, addressTo;
@@ -57,24 +78,28 @@ function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
       activity: `🪙🔴 Token SALE. ${formatLargeValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(buyAmount)} ${swapTo.name} ($${formatLargeValue(mcap)} Mcap)`
     }
   } else {
+    const swappedEth = await logFetch(erc20);
+    // activity: `🪙🟠 Swap ${formatLargeValue(sellAmount, 18)} ${swapFrom.name} to ${formatLargeValue(buyAmount, swapTo.decimals || 18)} ${swapTo.name}, ${formatLargeValue(swappedEth, 18)} eth
     return {
       type: 'swap',
-      activity: `🪙🟠 Swap ${formatLargeValue(sellAmount, 18)} ${swapFrom.name} to ${formatLargeValue(buyAmount, swapTo.decimals || 18)} ${swapTo.name}`
+      activity: `
+      🪙🔴 Token SALE. ${formatLargeValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(swappedEth)} ETH ($${formatLargeValue(0)} Mcap)
+      🪙🟢 Token BUY. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(swappedEth)} ETH ($${formatLargeValue(0)} Mcap)`
     }
   }
 }
 
 
-function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
+async function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
   const erc20 = txs.erc20;
   if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
     const decodedArray = decoder.decoder1(tx.input);
-    const parsed = parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
+    const parsed = await parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
     finalObject.type = parsed.type;
     finalObject.activity = parsed.activity;
-  } else if (tx.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
+  } else if (tx.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)' || tx.functionName === 'swapTokensForExactTokens(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline)') {
     const decodedArray = decoder.decoder2(tx.input);
-    const parsed = parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj)
+    const parsed = await parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
     finalObject.type = parsed.type;
     finalObject.activity = parsed.activity;
   } else if (tx.functionName === 'swapExactETHForTokens(uint256 amountOutMin, address[] path, address to, uint256 deadline)' || tx.functionName === 'swapETHForExactTokens(uint256 amountOut, address[] path, address to, uint256 deadline)') {
@@ -107,7 +132,7 @@ function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
 }
 
 
-function parseTx(fullTx, userAddresses, pnl, tokenInfoObj) {
+async function parseTx(fullTx, userAddresses, pnl, tokenInfoObj) {
   const finalObject = {
     ago: formatTimestamp(fullTx.timeStamp),
     block: fullTx.block,
@@ -124,7 +149,7 @@ function parseTx(fullTx, userAddresses, pnl, tokenInfoObj) {
     if (txsKeys.includes('erc721')) {
       parseErc721(txs, txs.normal, finalObject);
     } else if (txsKeys.includes('erc20')) {
-      parseErc20(txs, txs.normal, finalObject, pnl, tokenInfoObj);
+      await parseErc20(txs, txs.normal, finalObject, pnl, tokenInfoObj);
     } else if (tx.from.toLowerCase() === userAddresses[0] && tx.functionName === '' && tx.input === '0x') {
       finalObject.activity = `💸➡️  SEND ${value}eth to ${shortAddr(tx.to)}`;
     } else if (tx.to.toLowerCase() === userAddresses[0] && tx.functionName === '') {

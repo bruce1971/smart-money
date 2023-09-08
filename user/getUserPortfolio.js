@@ -7,7 +7,7 @@ const argv = require('minimist')(process.argv.slice(2));
 async function getUserPortfolio(participation, tokenInfoObj ) {
   let current = {};
   participation = participation.filter(o => o.type === 'erc20');
-  console.log(`Getting ${participation.length} porftolio token infos...`);
+  console.log(`Getting ${participation.length} portfolio token infos...`);
   for (var i = 0; i < participation.length; i++) {
     console.log(i+1);
     const { contractAddress, userAddresses } = participation[i];

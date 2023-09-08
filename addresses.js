@@ -16,7 +16,9 @@ const inputA = {
 
 const inputU = {
   'me': ['0xCc65d148ac68Fda14C29bCC5aE7622D8BcD622e3'],
-  'scribbs':  ['0x70399b85054dd1d94f2264afc8704a3ee308abaf', '0x5654967dc2c3f207b68bbd8003bc27a0a4106b56',
+  'scribbs':  [
+    // '0x70399b85054dd1d94f2264afc8704a3ee308abaf', 
+    '0x5654967dc2c3f207b68bbd8003bc27a0a4106b56',
      // '0xa1e2fbd0f94465cc253792aa4b19629438d70836', '0x59d4fd60a25054bbd6cca11cf43946a3e033194b'
   ],
   'grow': ['0x1CE2304369d957fc1F0Dd32C983F445E449F4C7A'],
