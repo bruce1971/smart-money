@@ -102,6 +102,7 @@ async function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
 
 
 async function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
+  console.log(txs);
   const erc20 = txs.erc20;
   if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
     const decodedArray = decoder.decoder1(tx.input);
@@ -140,6 +141,12 @@ async function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress]?.totalSupply;
     finalObject.activity = `🪙🔴 Token SALE. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
     pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(ethReceived) })
+  } else if (tx.functionName === 'swap(address executor,tuple desc,bytes permit,bytes data)' && formatValueRaw(tx.value) > 0) {
+    // NOTE: scribbs bitcoin block-17894662
+    const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value, erc20.tokenDecimal);
+    const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress]?.totalSupply;
+    finalObject.activity = `🪙🟢 Token BUY. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(tx.value, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
+    pnl.push({ contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(tx.value) })
   } else if (tx.functionName.includes('transfer')) {
     finalObject.activity = `🪙➡️  Token TRANSFER. ${formatLargeValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${shortAddr(erc20.to)}`;
   } else if (tx.functionName.includes('addLiquidity')) {
