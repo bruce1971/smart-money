@@ -21,7 +21,7 @@ async function parseTx(fullTx, userAddresses, pnl, tokenInfoObj) {
     const tx = txs.normal;
     value = formatValue(tx.value);
     if (txsKeys.includes('erc721')) {
-      parseErc721(txs, txs.normal, finalObject);
+      parseErc721(txs, txs.normal, finalObject, pnl, tokenInfoObj);
     } else if (txsKeys.includes('erc20')) {
       await parseErc20(txs, txs.normal, finalObject, pnl, tokenInfoObj);
     } else if (tx.from.toLowerCase() === userAddresses[0] && tx.functionName === '' && tx.input === '0x') {
