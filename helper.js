@@ -141,16 +141,18 @@ function finalPnl(participation, currentPortfolio, pnl) {
     const sell = contractAddressPnl.filter(o => o.type === 'sell').reduce((acc, o) => (acc + o.amount), 0);
     const current = currentPortfolio.find(o => o.address.toLowerCase() === el.contractAddress.toLowerCase())?.totalEth || 0;
     const total = buy + sell + current;
-    pnlObj.push({ name, address, buy, sell, current, total })
+    const roi = buy === 0 ? 0 : total / (-buy);
+    pnlObj.push({ name, address, buy, sell, current, total, roi })
   });
   pnlObj = pnlObj.sort((a, b) => b.total - a.total);
+  // pnlObj = pnlObj.sort((a, b) => b.roi - a.roi);
   console.log('🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢');
   console.log('O-V-E-R-A-L-L');
   console.log('----');
   console.log(`Invested --> ${formatValue(pnlObj.map(o => o.buy).reduce((acc, o) => (acc + o), 0), 0)} eth`);
   console.log(`Taken out --> ${formatValue(pnlObj.map(o => o.sell).reduce((acc, o) => (acc + o), 0), 0)} eth`);
   console.log(`Current holding --> ${formatValue(pnlObj.map(o => o.current).reduce((acc, o) => (acc + o), 0), 0)} eth`);
-  console.log(`TOTAL --> ${formatValue(pnlObj.map(o => o.total).reduce((acc, o) => (acc + o), 0), 0)} eth`);
+  console.log(`PROFIT --> ${formatValue(pnlObj.map(o => o.total).reduce((acc, o) => (acc + o), 0), 0)} eth`);
   console.log('🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢');
 
   pnlObj.forEach(el => {
@@ -161,7 +163,8 @@ function finalPnl(participation, currentPortfolio, pnl) {
     console.log(`Invested --> ${formatValue(el.buy, 0)} eth`);
     console.log(`Taken out --> ${formatValue(el.sell, 0)} eth`);
     console.log(`Current holding --> ${formatValue(el.current, 0)} eth`);
-    console.log(`TOTAL --> ${formatValue(el.total, 0)} eth`);
+    console.log(`PROFIT --> ${formatValue(el.total, 0)} eth`);
+    // console.log(`ROI --> ${round(el.roi, 2)} X`);
   });
 }
 

@@ -7,6 +7,7 @@ const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'.toLowerCase();
 
 
 async function logFetch(erc20) {
+  console.log(`log fetch ${erc20.hash}...`);
   const url = `
     https://api.etherscan.io/api
      ?module=logs
