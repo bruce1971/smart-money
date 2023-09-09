@@ -53,7 +53,7 @@ async function refreshErc20(){
       priceEth,
       priceUsd
     }
-    if (i % 100 === 0 && i > 0) {
+    if (i % 10 === 0 && i > 0) {
       console.log('temp saving...!');
       await fs.writeFile(path, JSON.stringify(tokenInfoObj, null, 2), 'utf8');
     }
