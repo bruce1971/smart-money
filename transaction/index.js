@@ -64,6 +64,9 @@ async function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
     swapTo = tokenInfoObj[addressTo] || { name: shortAddr(addressTo), address: addressTo };
   }
 
+  if (buyAmount > 10**50) buyAmount = 0;
+  if (sellAmount > 10**50) sellAmount = 0;
+
   if (swapFrom.address === WETH_ADDRESS) {
     pnl.push({ contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(sellAmount) })
     const unitPriceEth = formatValueRaw(sellAmount)/formatValueRaw(buyAmount, erc20.tokenDecimal);
@@ -102,7 +105,6 @@ async function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
 
 
 async function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
-  console.log(txs);
   const erc20 = txs.erc20;
   if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
     const decodedArray = decoder.decoder1(tx.input);

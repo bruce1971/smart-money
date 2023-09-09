@@ -144,8 +144,8 @@ function finalPnl(participation, currentPortfolio, pnl) {
     const roi = buy === 0 ? 0 : total / (-buy);
     pnlObj.push({ name, address, buy, sell, current, total, roi })
   });
-  // pnlObj = pnlObj.sort((a, b) => b.total - a.total);
-  pnlObj = pnlObj.sort((a, b) => b.roi - a.roi);
+  pnlObj = pnlObj.sort((a, b) => b.total - a.total);
+  // pnlObj = pnlObj.sort((a, b) => b.roi - a.roi);
   console.log('🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢');
   console.log('O-V-E-R-A-L-L');
   console.log('----');

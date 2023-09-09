@@ -17,14 +17,18 @@ const inputA = {
 const inputU = {
   'me': ['0xCc65d148ac68Fda14C29bCC5aE7622D8BcD622e3'],
   'scribbs':  [
-    '0x70399b85054dd1d94f2264afc8704a3ee308abaf', 
-    '0x5654967dc2c3f207b68bbd8003bc27a0a4106b56',
-     // '0xa1e2fbd0f94465cc253792aa4b19629438d70836', '0x59d4fd60a25054bbd6cca11cf43946a3e033194b'
+    '0x70399b85054dd1d94f2264afc8704a3ee308abaf', // pepe wallet
+    '0x5654967dc2c3f207b68bbd8003bc27a0a4106b56', // checks wallet & punk trading
+    // '0x5b1c25d61edce8decfc0b03a2c7f0d7917a8032f', // temp punk wallet
+    // '0xa1e2fbd0f94465cc253792aa4b19629438d70836', // beanie punk wallet
+    // '0x59d4fd60a25054bbd6cca11cf43946a3e033194b', // vr punk purchaser & chickenwing
+    // '0x00d0ad2956829f95543d33ab8b5438c066b76413', // vr punk holder
   ],
   'grow': ['0x1CE2304369d957fc1F0Dd32C983F445E449F4C7A'],
   'artchick': ['0x0b8F4C4E7626A91460dac057eB43e0de59d5b44F'],
   'osf': ['0x3cb8482495c9188d1e36373134c059f98d7be4ed', '0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1'],
   'xman': ['0xc1244286edacb4097715386992aed36752483dcb'],
+  'seb': ['0x3d280fde2ddb59323c891cf30995e1862510342f'],
   'left': [ '0x9224cf7956b8787f1e015349ba2937cef29215d8'
     ,'0x5f45c7ea2e094fea813a8a8813620ffcc4a19d0f'
   ],
