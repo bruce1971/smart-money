@@ -7,7 +7,6 @@ const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'.toLowerCase();
 
 
 async function logFetch(erc20) {
-  console.log(erc20.hash);
   const url = `
     https://api.etherscan.io/api
      ?module=logs
@@ -21,8 +20,10 @@ async function logFetch(erc20) {
      &apikey=I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG
   `.replace(/\s/g, '');
   const logs = await axios.get(url).then(res => res.data);
-  const log = logs.result.find(l => l.transactionHash === erc20.hash);
-  const decodedEth = decoder.logDecoder(log);
+  const filteredLog = logs.result.filter(l => l.transactionHash === erc20.hash);
+  const datas = [...new Set(filteredLog.map(l => l.data))];
+  let decodedEth = 0;
+  datas.forEach(data => decodedEth += Number(decoder.logDecoder(data)));
   return decodedEth;
 }
 
@@ -80,16 +81,20 @@ async function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
     }
   } else if (array[0].path.length > 2 && array[0].path.map(x => x.toLowerCase()).includes(WETH_ADDRESS)) {
     const swappedEth = await logFetch(erc20);
+    const unitPriceEthSale = formatValueRaw(swappedEth)/formatValueRaw(sellAmount, swapFrom.decimals);
+    const mcapSale = unitPriceEthSale * ethInUsd * swapFrom?.totalSupply;
+    const unitPriceEthBuy = formatValueRaw(swappedEth)/formatValueRaw(buyAmount, swapTo.decimals);
+    const mcapBuy = unitPriceEthBuy * ethInUsd * swapTo?.totalSupply;
     pnl.push({ contractAddress: addressFrom, type: 'sell', amount: formatValueRaw(swappedEth) });
     pnl.push({ contractAddress: addressTo, type: 'buy', amount: formatValueRaw(swappedEth) });
     return {
       type: 'swap',
-      activity: `🪙🔴 Token SALE. ${formatLargeValue(sellAmount, erc20.tokenDecimal)} ${swapFrom.name} for ${formatValue(swappedEth)} ETH ($${formatLargeValue(0)} Mcap) \n🪙🟢 Token BUY. ${formatLargeValue(buyAmount, erc20.tokenDecimal)} ${swapTo.name} for ${formatValue(swappedEth)} ETH ($${formatLargeValue(0)} Mcap)`
+      activity: `🪙🔴 Token SALE. ${formatLargeValue(sellAmount, swapFrom.decimals)} ${swapFrom.name} for ${formatValue(swappedEth)} ETH ($${formatLargeValue(mcapSale)} Mcap) \n🪙🟢 Token BUY. ${formatLargeValue(buyAmount, swapTo.decimals)} ${swapTo.name} for ${formatValue(swappedEth)} ETH ($${formatLargeValue(mcapBuy)} Mcap)`
     }
   } else {
     return {
       type: 'swap',
-      activity: `🪙🟠 Swap ${formatLargeValue(sellAmount, 18)} ${swapFrom.name} to ${formatLargeValue(buyAmount, swapTo.decimals || 18)} ${swapTo.name}`
+      activity: `🪙🟠 Swap ${formatLargeValue(sellAmount, swapFrom.decimals)} ${swapFrom.name} to ${formatLargeValue(buyAmount, swapTo.decimals)} ${swapTo.name}`
     }
   }
 }

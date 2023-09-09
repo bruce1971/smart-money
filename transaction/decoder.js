@@ -129,8 +129,8 @@ function decoder3b(transactionInput) {
   return finalArray;
 }
 
-function logDecoder(log){
+function logDecoder(data){
   const abiCoder = new AbiCoder();
-  const decoded = abiCoder.decode([ "uint256" ], log.data);
-  return decoded[0]
+  const decoded = abiCoder.decode([ "uint256" ], data);
+  return decoded[0];
 }
