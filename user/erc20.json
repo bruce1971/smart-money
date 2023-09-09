@@ -4,72 +4,72 @@
     "address": "0xdb82a0aa012726163c61c95f8269c961aef061c9",
     "totalSupply": 10000000000,
     "decimals": 9,
-    "priceEth": 6.21969413723209e-9,
-    "priceUsd": 0.0000102525061245013
+    "priceEth": 1.7406595666522e-9,
+    "priceUsd": 0.00000274819165678987
   },
   "0x99e186e8671db8b10d45b7a1c430952a9fbe0d40": {
     "name": "Shop Bot",
     "address": "0x99e186e8671db8b10d45b7a1c430952a9fbe0d40",
     "totalSupply": 100000000,
     "decimals": 18,
-    "priceEth": 0.00000739675152696127,
-    "priceUsd": 0.0122324083628988
+    "priceEth": 0.00000251612298230245,
+    "priceUsd": 0.00408698473067486
   },
   "0xe0f63a424a4439cbe457d80e4f4b51ad25b2c56c": {
     "name": "SPX6900",
     "address": "0xe0f63a424a4439cbe457d80e4f4b51ad25b2c56c",
     "totalSupply": 1000000000,
     "decimals": 8,
-    "priceEth": 0.00000136502124587311,
-    "priceUsd": 0.00221913138366861
+    "priceEth": 0.00000191811499094887,
+    "priceUsd": 0.0031411441558239
   },
   "0xb777eb033557490abb7fb8f3948000826423ea07": {
     "name": "CHAD",
     "address": "0xb777eb033557490abb7fb8f3948000826423ea07",
-    "totalSupply": 1000000000,
+    "totalSupply": 999383678,
     "decimals": 18,
-    "priceEth": 8.07747221723862e-7,
-    "priceUsd": 0.00132891775608236
+    "priceEth": 1.91051608254725e-7,
+    "priceUsd": 0.000311591964016084
   },
   "0xfcaf0e4498e78d65526a507360f755178b804ba8": {
     "name": "NicCageWaluigiElmo42069Inu",
     "address": "0xfcaf0e4498e78d65526a507360f755178b804ba8",
     "totalSupply": 1000000000,
     "decimals": 18,
-    "priceEth": 0.00000102602335486353,
-    "priceUsd": 0.00169300697353697
+    "priceEth": 5.64902714868438e-7,
+    "priceUsd": 0.000925324116852834
   },
   "0xd0e94bf2466979b81d738c34058d4a6559c4d8be": {
     "name": "Aardvark",
     "address": "0xd0e94bf2466979b81d738c34058d4a6559c4d8be",
     "totalSupply": 1212091913,
     "decimals": 18,
-    "priceEth": 0.00000158925624799164,
-    "priceUsd": 0.00261015481418486
+    "priceEth": 6.43988366538279e-7,
+    "priceUsd": 0.00105385904355053
   },
   "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2": {
-    "name": "ETH",
+    "name": "Wrapped Ether",
     "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "totalSupply": 3265766,
+    "totalSupply": 3105155,
     "decimals": 18,
     "priceEth": 1,
-    "priceUsd": 1645.504287256
+    "priceUsd": 1633.4573577329
   },
   "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": {
     "name": "USD Coin",
     "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-    "totalSupply": 24191195564,
+    "totalSupply": 24046279198,
     "decimals": 6,
-    "priceEth": 0.00060720880072888,
-    "priceUsd": 1.00106644013344
+    "priceEth": 0.000611587716012619,
+    "priceUsd": 0.999001398641107
   },
   "0x72e4f9f808c49a2a61de9c5896298920dc4eeea9": {
     "name": "HarryPotterObamaSonic10Inu",
     "address": "0x72e4f9f808c49a2a61de9c5896298920dc4eeea9",
     "totalSupply": 1000000000,
     "decimals": 8,
-    "priceEth": 0.0000487855335666791,
-    "priceUsd": 0.0806033274468744
+    "priceEth": 0.0000362884084198143,
+    "priceUsd": 0.0595015646137734
   },
   "0x6982508145454ce325ddbe47a25d4ec3d2311933": {
     "name": "Pepe",
