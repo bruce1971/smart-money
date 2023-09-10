@@ -109,7 +109,6 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 
   const erc20InfoObj = await getErc20Info(txArray);
   const erc721InfoObj = await getErc721Info(participation);
-  console.log('erc721InfoObj', erc721InfoObj);
 
   txArray = filterContractAddress(txArray, contractAddress?.address);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
@@ -117,7 +116,7 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
   const pnl = [];
   const activityLog = await getActivityLog(txArray, userAddresses, pnl, erc20InfoObj);
 
-  const currentPortfolio = await getUserPortfolio(participation, erc20InfoObj);
+  const currentPortfolio = await getUserPortfolio(participation, erc20InfoObj, erc721InfoObj);
   console.log('currentPortfolio', currentPortfolio);
 
   console.timeEnd('USER');
@@ -137,7 +136,7 @@ if (require.main === module) {
     // // formatActivityLog(user.activityLog, false, true);
     // // console.log(user.currentPortfolio);
     // // console.log(user.participation);
-    // finalPnl(user.participation, user.currentPortfolio, user.pnl);
+    finalPnl(user.participation, user.currentPortfolio, user.pnl);
   })();
 }
 
