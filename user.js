@@ -94,8 +94,8 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  // startblock = 16743130
-  // endblock = 16743130
+  // startblock = 13610913
+  // endblock = 13610913
 
   let txArray = [];
   for (const userAddress of userAddresses) {
@@ -104,8 +104,8 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
   };
 
   let participation = getParticipation(txArray);
-  const filterType = 'erc721';
-  participation = participation.filter(o => o.type === filterType);
+  // const filterType = 'erc721';
+  // participation = participation.filter(o => o.type === filterType);
 
   const erc20InfoObj = await getErc20Info(txArray);
   const erc721InfoObj = await getErc721Info(participation);
@@ -117,7 +117,6 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
   const activityLog = await getActivityLog(txArray, userAddresses, pnl, erc20InfoObj);
 
   const currentPortfolio = await getUserPortfolio(participation, erc20InfoObj, erc721InfoObj);
-  console.log('currentPortfolio', currentPortfolio);
 
   console.timeEnd('USER');
   return {
@@ -132,10 +131,7 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress, inputDaysAgo);
-    // if (inputContractAddress) formatActivityLog(user.activityLog, false, true);
-    // // formatActivityLog(user.activityLog, false, true);
-    // // console.log(user.currentPortfolio);
-    // // console.log(user.participation);
+    // formatActivityLog(user.activityLog, false, true);
     finalPnl(user.participation, user.currentPortfolio, user.pnl);
   })();
 }

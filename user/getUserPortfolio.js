@@ -50,7 +50,12 @@ async function getUserPortfolio(participation, erc20InfoObj, erc721InfoObj) {
     console.log(i+1);
     const { contractAddress, userAddresses } = participationErc721[i];
     for (let j = 0; j < userAddresses.length; j++) {
-      if (!erc721InfoObj[contractAddress]) continue;
+      if (!erc721InfoObj[contractAddress]) {
+        console.log('NO.........................', participationErc721[i].tokenName);
+        continue;
+      } else {
+        console.log('yes...', participationErc721[i].tokenName);
+      }
       const url = `
         https://api.etherscan.io/api
         ?module=account

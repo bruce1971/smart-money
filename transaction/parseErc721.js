@@ -6,9 +6,6 @@ function parseErc721(txs, tx, finalObject, pnl, erc20InfoObj) {
   if (tx.functionName === '') {
     pnl.push({ contractAddress: erc721tx.contractAddress, type: 'buy', amount: formatValueRaw(value) });
     finalObject.activity = `💎🟢 NFT buy! Bought ${erc721tx.tokenName} ${erc721tx.tokenID} for ${value} eth`;
-  } else if (tx.functionName.includes('matchBidWithTakerAsk')) {
-    pnl.push({ contractAddress: erc721tx.contractAddress, type: 'sell', amount: formatValueRaw(txs.erc20.value) });
-    finalObject.activity = `💎🔴 NFT sale! Sold ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(txs.erc20.value)} weth on LooksRare`;
   } else if (tx.functionName === 'fulfillOrder(tuple order, bytes32 fulfillerConduitKey)') {
     if (erc721tx.to === finalObject.userWallet) {
       pnl.push({ contractAddress: erc721tx.contractAddress, type: 'buy', amount: formatValueRaw(tx.value) });
@@ -26,6 +23,14 @@ function parseErc721(txs, tx, finalObject, pnl, erc20InfoObj) {
       finalObject.activity = `💎🔴 NFT sale! Sold ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(tx.value)} eth on Opensea`;
     }
   } else if (tx.functionName === 'buyAndFree22457070633(uint256 amount)') {
+    if (erc721tx.to === finalObject.userWallet) {
+      pnl.push({ contractAddress: erc721tx.contractAddress, type: 'buy', amount: formatValueRaw(tx.value) });
+      finalObject.activity = `💎🟢 NFT buy! Bought ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(tx.value)} eth on Opensea`;
+    } else if (erc721tx.from === finalObject.userWallet) {
+      pnl.push({ contractAddress: erc721tx.contractAddress, type: 'sell', amount: formatValueRaw(tx.value) });
+      finalObject.activity = `💎🔴 NFT sale! Sold ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(tx.value)} eth on Opensea`;
+    }
+  } else if (tx.functionName === 'atomicMatch_(address[14] addrs, uint256[18] uints, uint8[8] feeMethodsSidesKindsHowToCalls, bytes calldataBuy, bytes calldataSell, bytes replacementPatternBuy, bytes replacementPatternSell, bytes staticExtradataBuy, bytes staticExtradataSell, uint8[2] vs, bytes32[5] rssMetadata)') {
     if (erc721tx.to === finalObject.userWallet) {
       pnl.push({ contractAddress: erc721tx.contractAddress, type: 'buy', amount: formatValueRaw(tx.value) });
       finalObject.activity = `💎🟢 NFT buy! Bought ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(tx.value)} eth on Opensea`;

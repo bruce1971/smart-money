@@ -11134,5 +11134,133 @@
     "decimals": 18,
     "priceEth": 0,
     "priceUsd": 0
+  },
+  "0xc5102fe9359fd9a28f877a67e36b0f050d81a3cc": {
+    "name": "Hop",
+    "address": "0xc5102fe9359fd9a28f877a67e36b0f050d81a3cc",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0.0000351927157740752,
+    "priceUsd": 0.0571056636581689
+  },
+  "0x5bddc640ba96c4df3dad3a6d64012469a778cc9c": {
+    "name": "CUCK",
+    "address": "0x5bddc640ba96c4df3dad3a6d64012469a778cc9c",
+    "totalSupply": 69420000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x269616d549d7e8eaa82dfb17028d0b212d11232a": {
+    "name": "CryptoPunks",
+    "address": "0x269616d549d7e8eaa82dfb17028d0b212d11232a",
+    "totalSupply": 125,
+    "decimals": 18,
+    "priceEth": 45.3402077542195,
+    "priceUsd": 73764.4876907761
+  },
+  "0x0463a06fbc8bf28b3f120cd1bfc59483f099d332": {
+    "name": null,
+    "address": "0x0463a06fbc8bf28b3f120cd1bfc59483f099d332",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x08765c76c758da951dc73d3a8863b34752dd76fb": {
+    "name": null,
+    "address": "0x08765c76c758da951dc73d3a8863b34752dd76fb",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x5a35a6686db167b05e2eb74e1ede9fb5d9cdb3e0": {
+    "name": "Cigarette Token",
+    "address": "0x5a35a6686db167b05e2eb74e1ede9fb5d9cdb3e0",
+    "totalSupply": 1186405388,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x26ea1f595f6567b7050fbba24f6a66e19db4d560": {
+    "name": "APE Punk",
+    "address": "0x26ea1f595f6567b7050fbba24f6a66e19db4d560",
+    "totalSupply": 9896,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xeb4c2781e4eba804ce9a9803c67d0893436bb27d": {
+    "name": "renBTC",
+    "address": "0xeb4c2781e4eba804ce9a9803c67d0893436bb27d",
+    "totalSupply": 305,
+    "decimals": 8,
+    "priceEth": 16.3516227272663,
+    "priceUsd": 26573.3452929924
+  },
+  "0xca77cc3591da356dc5418b1f06fdabdd40a0e0ea": {
+    "name": null,
+    "address": "0xca77cc3591da356dc5418b1f06fdabdd40a0e0ea",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x41545f8b9472d758bb669ed8eaeeecd7a9c4ec29": {
+    "name": "Forta",
+    "address": "0x41545f8b9472d758bb669ed8eaeeecd7a9c4ec29",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0.0000644690493261358,
+    "priceUsd": 0.107013013145911
+  },
+  "0x1e8bbde11dfef31532c78260502ae0a629f58e39": {
+    "name": null,
+    "address": "0x1e8bbde11dfef31532c78260502ae0a629f58e39",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x69bbe2fa02b4d90a944ff328663667dc32786385": {
+    "name": "Punk-Basic",
+    "address": "0x69bbe2fa02b4d90a944ff328663667dc32786385",
+    "totalSupply": 2,
+    "decimals": 18,
+    "priceEth": 74.3261903076568,
+    "priceUsd": 98386.1140217998
+  },
+  "0x27ffed7e5926fb2795fc85aaab558243f280a8a2": {
+    "name": "Punk-Female",
+    "address": "0x27ffed7e5926fb2795fc85aaab558243f280a8a2",
+    "totalSupply": 2,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x49706a576bb823cde3180c930f9947d59e2ded4d": {
+    "name": "Punk-Attr-4",
+    "address": "0x49706a576bb823cde3180c930f9947d59e2ded4d",
+    "totalSupply": 1,
+    "decimals": 18,
+    "priceEth": 53.8645401790773,
+    "priceUsd": 90912.132733317
+  },
+  "0xab9c92a9337a1494c6d545e48187fa37144403c8": {
+    "name": "Punk-Attr-5",
+    "address": "0xab9c92a9337a1494c6d545e48187fa37144403c8",
+    "totalSupply": 1,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf18ade29a225faa555e475ee01f9eb66eb4a3a74": {
+    "name": "Punk-Zombie",
+    "address": "0xf18ade29a225faa555e475ee01f9eb66eb4a3a74",
+    "totalSupply": 1,
+    "decimals": 18,
+    "priceEth": 406.932871215005,
+    "priceUsd": 673552.815778365
   }
 }
