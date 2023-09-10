@@ -28,19 +28,19 @@ async function logFetch(erc20) {
 }
 
 
-async function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
+async function parseDecodedArray(array, erc20, pnl, erc20InfoObj) {
   let buyAmount = 0;
   let sellAmount = 0;
   let swapFrom, swapTo, addressFrom, addressTo;
-  const tokenInfo = tokenInfoObj[erc20.contractAddress];
+  const tokenInfo = erc20InfoObj[erc20.contractAddress];
 
-  if (array.length === 2 && tokenInfoObj[array[0].path[1].toLowerCase()]?.address === WETH_ADDRESS && tokenInfoObj[array[1].path[0].toLowerCase()]?.address === WETH_ADDRESS) {
+  if (array.length === 2 && erc20InfoObj[array[0].path[1].toLowerCase()]?.address === WETH_ADDRESS && erc20InfoObj[array[1].path[0].toLowerCase()]?.address === WETH_ADDRESS) {
     sellAmount += Number(array[0].amountIn);
     buyAmount += Number(array[1].amountOut);
     addressFrom = array[0].path[0].toLowerCase();
     addressTo = array[1].path.at(-1).toLowerCase();
-    swapFrom = tokenInfoObj[addressFrom] || { name: shortAddr(addressFrom), address: addressFrom };
-    swapTo = tokenInfoObj[addressTo] || { name: shortAddr(addressTo), address: addressTo };
+    swapFrom = erc20InfoObj[addressFrom] || { name: shortAddr(addressFrom), address: addressFrom };
+    swapTo = erc20InfoObj[addressTo] || { name: shortAddr(addressTo), address: addressTo };
   }
   else if (array.length === 2 && array[0].path.at(-1).toLowerCase() === array[1].path[0].toLowerCase()) {
     // node user.js -u=x3e9D24b9a83d4Cb144D01594F437a9b94CCC8d60 -a=xd4074c1e48e11615fd1cfe8cbe691f5ab944aaa6
@@ -49,8 +49,8 @@ async function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
     buyAmount += Number(array[1].amountOut);
     addressFrom = array[0].path[0].toLowerCase();
     addressTo = array[1].path.at(-1).toLowerCase();
-    swapFrom = tokenInfoObj[addressFrom] || { name: shortAddr(addressFrom), address: addressFrom };
-    swapTo = tokenInfoObj[addressTo] || { name: shortAddr(addressTo), address: addressTo };
+    swapFrom = erc20InfoObj[addressFrom] || { name: shortAddr(addressFrom), address: addressFrom };
+    swapTo = erc20InfoObj[addressTo] || { name: shortAddr(addressTo), address: addressTo };
   }
   else {
     array.forEach(el => {
@@ -59,8 +59,8 @@ async function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
     });
     addressFrom = array[0].path[0].toLowerCase();
     addressTo = array[0].path.at(-1).toLowerCase();
-    swapFrom = tokenInfoObj[addressFrom] || { name: shortAddr(addressFrom), address: addressFrom };
-    swapTo = tokenInfoObj[addressTo] || { name: shortAddr(addressTo), address: addressTo };
+    swapFrom = erc20InfoObj[addressFrom] || { name: shortAddr(addressFrom), address: addressFrom };
+    swapTo = erc20InfoObj[addressTo] || { name: shortAddr(addressTo), address: addressTo };
   }
 
   if (buyAmount > 10**50) buyAmount = 0;
@@ -103,27 +103,27 @@ async function parseDecodedArray(array, erc20, pnl, tokenInfoObj) {
 }
 
 
-async function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
+async function parseErc20(txs, tx, finalObject, pnl, erc20InfoObj) {
   const erc20 = txs.erc20;
   if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
     const decodedArray = decoder.decoder1(tx.input);
-    const parsed = await parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
+    const parsed = await parseDecodedArray(decodedArray, erc20, pnl, erc20InfoObj);
     finalObject.type = parsed.type;
     finalObject.activity = parsed.activity;
   } else if (tx.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
     const decodedArray = decoder.decoder2(tx.input);
-    const parsed = await parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
+    const parsed = await parseDecodedArray(decodedArray, erc20, pnl, erc20InfoObj);
     finalObject.type = parsed.type;
     finalObject.activity = parsed.activity;
   } else if (tx.functionName === 'swapTokensForExactTokens(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline)') {
     const decodedArray = decoder.decoder3b(tx.input);
-    const parsed = await parseDecodedArray(decodedArray, erc20, pnl, tokenInfoObj);
+    const parsed = await parseDecodedArray(decodedArray, erc20, pnl, erc20InfoObj);
     finalObject.type = parsed.type;
     finalObject.activity = parsed.activity;
   } else if (tx.functionName === 'swapExactETHForTokens(uint256 amountOutMin, address[] path, address to, uint256 deadline)' || tx.functionName === 'swapETHForExactTokens(uint256 amountOut, address[] path, address to, uint256 deadline)') {
     finalObject.type = 'buy';
     const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value, erc20.tokenDecimal);
-    const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress]?.totalSupply;
+    const mcap = unitPriceEth * ethInUsd * erc20InfoObj[erc20.contractAddress]?.totalSupply;
     finalObject.activity = `🪙🟢 Token BUY. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(tx.value, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
     pnl.push({ contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(tx.value) })
   } else if (tx.functionName === 'swapTokensForExactETH(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline)') {
@@ -131,7 +131,7 @@ async function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     const decodedArray = decoder.decoder3(tx.input);
     const ethReceived = decodedArray[0].amountIn;
     const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
-    const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress]?.totalSupply;
+    const mcap = unitPriceEth * ethInUsd * erc20InfoObj[erc20.contractAddress]?.totalSupply;
     finalObject.activity = `🪙🔴 Token SALE. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
     pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(ethReceived) })
   } else if (tx.functionName === 'swapExactTokensForETH(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
@@ -139,13 +139,13 @@ async function parseErc20(txs, tx, finalObject, pnl, tokenInfoObj) {
     const decodedArray = decoder.decoder3(tx.input);
     const ethReceived = decodedArray[0].amountOut;
     const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
-    const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress]?.totalSupply;
+    const mcap = unitPriceEth * ethInUsd * erc20InfoObj[erc20.contractAddress]?.totalSupply;
     finalObject.activity = `🪙🔴 Token SALE. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
     pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(ethReceived) })
   } else if (tx.functionName === 'swap(address executor,tuple desc,bytes permit,bytes data)' && formatValueRaw(tx.value) > 0) {
     // NOTE: scribbs bitcoin block-17894662
     const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value, erc20.tokenDecimal);
-    const mcap = unitPriceEth * ethInUsd * tokenInfoObj[erc20.contractAddress]?.totalSupply;
+    const mcap = unitPriceEth * ethInUsd * erc20InfoObj[erc20.contractAddress]?.totalSupply;
     finalObject.activity = `🪙🟢 Token BUY. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(tx.value, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
     pnl.push({ contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(tx.value) })
   } else if (tx.functionName.includes('transfer')) {

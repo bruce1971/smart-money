@@ -24,11 +24,11 @@ function filterContractAddress(array, contractAddress) {
 }
 
 
-async function getActivityLog(txArray, userAddresses, pnl, tokenInfoObj) {
+async function getActivityLog(txArray, userAddresses, pnl, erc20InfoObj) {
   let activityLogArray = [];
   if (txArray.length > 0) {
     for (let i = 0; i < txArray.length; i++) {
-      const activityLog = await parseTx(txArray[i], userAddresses, pnl, tokenInfoObj);
+      const activityLog = await parseTx(txArray[i], userAddresses, pnl, erc20InfoObj);
       if (activityLog) activityLogArray.push(activityLog);
     }
   } else console.log('No txs..');
@@ -107,16 +107,17 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
   const filterType = 'erc721';
   participation = participation.filter(o => o.type === filterType);
 
-  const tokenInfoObj = await getErc20Info(txArray);
+  const erc20InfoObj = await getErc20Info(txArray);
   const erc721InfoObj = await getErc721Info(participation);
+  console.log('erc721InfoObj', erc721InfoObj);
 
   txArray = filterContractAddress(txArray, contractAddress?.address);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
 
   const pnl = [];
-  const activityLog = await getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
+  const activityLog = await getActivityLog(txArray, userAddresses, pnl, erc20InfoObj);
 
-  const currentPortfolio = await getUserPortfolio(participation, tokenInfoObj);
+  const currentPortfolio = await getUserPortfolio(participation, erc20InfoObj);
   console.log('currentPortfolio', currentPortfolio);
 
   console.timeEnd('USER');

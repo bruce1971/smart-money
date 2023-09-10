@@ -12,20 +12,20 @@ async function getErc20Info(txArray){
   addressArray.push(WETH_ADDRESS); // always get WETH
   addressArray = [...new Set(addressArray)];
 
-  const tokenInfoObj = JSON.parse(await fs.readFile(path));
+  const erc20InfoObj = JSON.parse(await fs.readFile(path));
 
   console.log(`Getting ${addressArray.length} ERC20 token infos..`);
   for (var i = 0; i < addressArray.length; i++) {
 
     const address = addressArray[i].toLowerCase();
-    if (!tokenInfoObj[address]) {
+    if (!erc20InfoObj[address]) {
       console.log(i+1, '- new');
       const pauseSeconds = 2;
       await new Promise(resolve => setTimeout(resolve, pauseSeconds * 1000));
       const url = `https://api.geckoterminal.com/api/v2/networks/eth/tokens/${address}?include=top_pools`;
       const tokenInfo = await axios.get(url).then(res => res.data).catch(e => null);
       if (!tokenInfo) {
-        tokenInfoObj[address] = {
+        erc20InfoObj[address] = {
           name: null,
           address: address,
           totalSupply: null,
@@ -51,7 +51,7 @@ async function getErc20Info(txArray){
           priceEth = Number(priceInfo.base_token_price_native_currency);
         }
       }
-      tokenInfoObj[address] = {
+      erc20InfoObj[address] = {
         name,
         address,
         totalSupply,
@@ -63,8 +63,8 @@ async function getErc20Info(txArray){
     else console.log(i+1);
   }
 
-  await fs.writeFile(path, JSON.stringify(tokenInfoObj, null, 2), 'utf8');
-  return tokenInfoObj;
+  await fs.writeFile(path, JSON.stringify(erc20InfoObj, null, 2), 'utf8');
+  return erc20InfoObj;
 }
 
 

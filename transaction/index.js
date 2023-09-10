@@ -6,7 +6,7 @@ const { parseErc721 } = require(`./parseErc721.js`);
 const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'.toLowerCase();
 
 
-async function parseTx(fullTx, userAddresses, pnl, tokenInfoObj) {
+async function parseTx(fullTx, userAddresses, pnl, erc20InfoObj) {
   const finalObject = {
     ago: formatTimestamp(fullTx.timeStamp),
     block: fullTx.block,
@@ -21,9 +21,9 @@ async function parseTx(fullTx, userAddresses, pnl, tokenInfoObj) {
     const tx = txs.normal;
     value = formatValue(tx.value);
     if (txsKeys.includes('erc721')) {
-      parseErc721(txs, txs.normal, finalObject, pnl, tokenInfoObj);
+      parseErc721(txs, txs.normal, finalObject, pnl, erc20InfoObj);
     } else if (txsKeys.includes('erc20')) {
-      await parseErc20(txs, txs.normal, finalObject, pnl, tokenInfoObj);
+      await parseErc20(txs, txs.normal, finalObject, pnl, erc20InfoObj);
     } else if (tx.from.toLowerCase() === userAddresses[0] && tx.functionName === '' && tx.input === '0x') {
       finalObject.activity = `💸➡️  SEND ${value}eth to ${shortAddr(tx.to)}`;
     } else if (tx.to.toLowerCase() === userAddresses[0] && tx.functionName === '') {

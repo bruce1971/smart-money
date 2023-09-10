@@ -53,8 +53,8 @@ async function main(tokenAddress) {
   const txArray = groupTransactions(transactions, erc20ContractTransactions);
 
   const pnl = { address: tokenAddress, wethOut: 0, wethIn: 0, shitOut: 0, shitIn: 0 };
-  const tokenInfoObj = await getErc20Info(txArray);
-  let activityLog = await getActivityLog(txArray, tokenAddress, pnl, tokenInfoObj);
+  const erc20InfoObj = await getErc20Info(txArray);
+  let activityLog = await getActivityLog(txArray, tokenAddress, pnl, erc20InfoObj);
   // activityLog = activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
   formatActivityLog(activityLog, true, true);
 }
