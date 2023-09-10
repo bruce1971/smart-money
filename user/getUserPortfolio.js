@@ -6,12 +6,12 @@ const argv = require('minimist')(process.argv.slice(2));
 
 async function getUserPortfolio(participation, tokenInfoObj ) {
   let current = {};
-  participation = participation.filter(o => o.type === 'erc20');
-  console.log(`Getting ${participation.length} portfolio token infos...`);
-  for (var i = 0; i < participation.length; i++) {
+  const participationErc20 = participation.filter(o => o.type === 'erc20');
+  console.log(`Getting ${participationErc20.length} portfolio Erc20 infos...`);
+  for (let i = 0; i < participationErc20.length; i++) {
     console.log(i+1);
-    const { contractAddress, userAddresses } = participation[i];
-    for (var j = 0; j < userAddresses.length; j++) {
+    const { contractAddress, userAddresses } = participationErc20[i];
+    for (let j = 0; j < userAddresses.length; j++) {
       if (!tokenInfoObj[contractAddress]) continue;
       const url = `
         https://api.etherscan.io/api
@@ -42,6 +42,9 @@ async function getUserPortfolio(participation, tokenInfoObj ) {
       }
     }
   }
+
+  const participationErc721 = participation.filter(o => o.type === 'erc721');
+  console.log(participationErc721);
   current = Object.values(current).sort((a, b) => b.totalUsd - a.totalUsd);
   return current;
 }

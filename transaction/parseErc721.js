@@ -1,6 +1,7 @@
 const { formatValue, formatValueRaw, shortAddr } = require(`../helper.js`);
 
 function parseErc721(txs, tx, finalObject, pnl, tokenInfoObj) {
+  // console.log(txs);
   const erc721tx = txs.erc721;
   if (tx.functionName === '') {
     pnl.push({ contractAddress: erc721tx.contractAddress, type: 'buy', amount: formatValueRaw(value) });
@@ -47,6 +48,7 @@ function parseErc721(txs, tx, finalObject, pnl, tokenInfoObj) {
     } else if (erc721tx.from === finalObject.userWallet) {
       pnl.push({ contractAddress: erc721tx.contractAddress, type: 'sell', amount: formatValueRaw(tx.value) });
       finalObject.activity = `💎🔴 NFT sale! Sold ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(tx.value)} eth on Blur`;
+      // FIXME: node user.js -u=scribbs -a=x6339e5e072086621540d0362c4e3cea0d643e114
     }
   } else if (tx.functionName === '0x9a2b8115()') {
     if (erc721tx.to === finalObject.userWallet) {

@@ -5,6 +5,7 @@ const { parseTx } = require(`./transaction`);
 const { accountUrl, blockUrl, formatActivityLog, secondsToBlocks, formatTimestamp, finalPnl } = require(`./helper.js`);
 const { getUserPortfolio } = require(`./user/getUserPortfolio.js`);
 const { getErc20Info } = require(`./user/getErc20Info.js`);
+const { getErc721Info } = require(`./user/getErc721Info.js`);
 const { txsForSingleAddress } = require(`./transaction/getTransactions.js`);
 
 const inputUserAddresses = argv.u ? addresses.inputU[argv.u] || ['0' + argv.u] : undefined;
@@ -93,8 +94,8 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  // startblock = 17617223
-  // endblock = 17617223
+  // startblock = 16743130
+  // endblock = 16743130
 
   let txArray = [];
   for (const userAddress of userAddresses) {
@@ -102,7 +103,12 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
     txArray = txArray.concat(txArray1);
   };
 
+  let participation = getParticipation(txArray);
+  const filterType = 'erc721';
+  participation = participation.filter(o => o.type === filterType);
+
   const tokenInfoObj = await getErc20Info(txArray);
+  const erc721InfoObj = await getErc721Info(participation);
 
   txArray = filterContractAddress(txArray, contractAddress?.address);
   txArray = txArray.sort((b, a) => Number(b.timeStamp) - Number(a.timeStamp));
@@ -110,9 +116,8 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
   const pnl = [];
   const activityLog = await getActivityLog(txArray, userAddresses, pnl, tokenInfoObj);
 
-  let participation, currentPortfolio;
-  participation = getParticipation(txArray);
-  currentPortfolio = await getUserPortfolio(participation, tokenInfoObj);
+  const currentPortfolio = await getUserPortfolio(participation, tokenInfoObj);
+  console.log('currentPortfolio', currentPortfolio);
 
   console.timeEnd('USER');
   return {
@@ -127,11 +132,11 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress, inputDaysAgo);
-    if (inputContractAddress) formatActivityLog(user.activityLog, false, true);
-    // formatActivityLog(user.activityLog, false, true);
-    // console.log(user.currentPortfolio);
-    // console.log(user.participation);
-    finalPnl(user.participation, user.currentPortfolio, user.pnl);
+    // if (inputContractAddress) formatActivityLog(user.activityLog, false, true);
+    // // formatActivityLog(user.activityLog, false, true);
+    // // console.log(user.currentPortfolio);
+    // // console.log(user.participation);
+    // finalPnl(user.participation, user.currentPortfolio, user.pnl);
   })();
 }
 
