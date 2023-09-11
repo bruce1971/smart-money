@@ -3,7 +3,7 @@ const addresses = require(`../addresses.js`);
 const etherscanApiKey = "I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG";
 const argv = require('minimist')(process.argv.slice(2));
 const fs = require('fs/promises');
-const path = `./user/portfolio.json`;
+const path = `./data/portfolio.json`;
 
 
 async function getUserPortfolio(participation, erc20InfoObj, erc721InfoObj, userAddresses) {

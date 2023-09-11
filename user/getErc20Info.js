@@ -1,7 +1,7 @@
 const axios = require('axios');
 const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'.toLowerCase();
 const fs = require('fs/promises');
-const path = `./user/erc20.json`;
+const path = `./data/erc20.json`;
 
 
 async function getErc20Info(txArray){

@@ -1,5 +1,5 @@
 const fs = require('fs/promises');
-const path = `./user/erc721.json`;
+const path = `./data/erc721.json`;
 
 
 async function getErc721Info() {
