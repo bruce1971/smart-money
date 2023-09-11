@@ -2,7 +2,7 @@ const axios = require('axios');
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`./addresses.js`);
 const { parseTx } = require(`./transaction`);
-const { accountUrl, blockUrl, formatActivityLog, secondsToBlocks, formatTimestamp, finalPnl } = require(`./helper.js`);
+const { accountUrl, blockUrl, formatActivityLog, secondsToBlocks, formatTimestamp, aggrPnl, formatPnl } = require(`./helper.js`);
 const { getUserPortfolio } = require(`./user/getUserPortfolio.js`);
 const { getErc20Info } = require(`./user/getErc20Info.js`);
 const { getErc721Info } = require(`./user/getErc721Info.js`);
@@ -118,9 +118,11 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 
   const currentPortfolio = await getUserPortfolio(participation, erc20InfoObj, erc721InfoObj);
 
+  const aPnl = aggrPnl(participation, currentPortfolio, pnl);
+
   console.timeEnd('USER');
   return {
-    pnl,
+    aPnl,
     activityLog,
     currentPortfolio,
     participation
@@ -132,7 +134,7 @@ if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress, inputDaysAgo);
     // formatActivityLog(user.activityLog, false, true);
-    finalPnl(user.participation, user.currentPortfolio, user.pnl);
+    formatPnl(user.aPnl);
   })();
 }
 

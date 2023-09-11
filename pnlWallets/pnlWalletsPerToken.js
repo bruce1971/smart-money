@@ -38,11 +38,11 @@ async function getTokenWallets(tokenAddress) {
 
 function formatPnlRanking(allPnl) {
   const formattedPnl = allPnl.map(o => ({
-    address: o.address[0],
-    profit: round(o.wethFinal, 2)
+    address: o.userAddresses[0],
+    profit: round(o.profit, 2),
+    roi: round(o.roi, 2),
   }));
   console.table(formattedPnl);
-  console.log(JSON.stringify(formattedPnl));
 }
 
 
@@ -58,16 +58,15 @@ async function getEtherscanData(tokenAddress) {
   allWallets = filterOutWallets(allWallets);
 
   let allPnl = [];
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 20; i++) {
     console.log('----------');
     console.log(i);
     const userAddresses = [allWallets[i]];
-    console.log(allWallets[i]);
-    const userData = await getUserData(userAddresses, tokenAddress);
-    allPnl.push(userData.pnl);
+    const user = await getUserData(userAddresses, tokenAddress);
+    if (user.aPnl[0]) allPnl.push(user.aPnl[0]);
   }
 
-  allPnl = allPnl.sort((a, b) => b.wethFinal - a.wethFinal);
+  allPnl = allPnl.sort((a, b) => b.profit - a.profit);
   formatPnlRanking(allPnl);
 
   console.timeEnd('TIME');

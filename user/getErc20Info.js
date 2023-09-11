@@ -60,7 +60,6 @@ async function getErc20Info(txArray){
         priceUsd
       }
     }
-    else console.log(i+1);
   }
 
   await fs.writeFile(path, JSON.stringify(erc20InfoObj, null, 2), 'utf8');
