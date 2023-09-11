@@ -133,7 +133,7 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 if (require.main === module) {
   (async () => {
     const user = await getUserData(inputUserAddresses, inputContractAddress, inputDaysAgo);
-    // formatActivityLog(user.activityLog, false, true);
+    formatActivityLog(user.activityLog, false, true);
     formatPnl(user.aPnl);
   })();
 }

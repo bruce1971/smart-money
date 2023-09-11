@@ -1,7 +1,6 @@
 const { formatValue, formatValueRaw, shortAddr } = require(`../helper.js`);
 
 function parseErc721(txs, tx, finalObject, pnl, erc20InfoObj) {
-  // console.log(txs);
   const erc721tx = txs.erc721;
   if (tx.functionName === '') {
     pnl.push({ contractAddress: erc721tx.contractAddress, type: 'buy', amount: formatValueRaw(value) });
@@ -79,6 +78,16 @@ function parseErc721(txs, tx, finalObject, pnl, erc20InfoObj) {
       pnl.push({ contractAddress: erc721tx.contractAddress, type: 'sell', amount: formatValueRaw(tx.value) });
       finalObject.activity = `💎🔴 NFT sale! Sold ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(tx.value)} eth on Blur`;
     }
+  } else if (tx.functionName === 'takeBidSingle(tuple inputs,bytes oracleSignature)') {
+    if (erc721tx.to === finalObject.userWallet) {
+      pnl.push({ contractAddress: erc721tx.contractAddress, type: 'buy', amount: formatValueRaw(tx.value) });
+      finalObject.activity = `💎🟢 NFT buy! Bought ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(tx.value)} eth on Blur`;
+    } else if (erc721tx.from === finalObject.userWallet) {
+      pnl.push({ contractAddress: erc721tx.contractAddress, type: 'sell', amount: formatValueRaw(tx.value) });
+      finalObject.activity = `💎🔴 NFT sale! Sold ${erc721tx.tokenName} ${erc721tx.tokenID} for ${formatValue(tx.value)} eth on Blur`;
+    }
+  } else if (tx.functionName === 'transferFrom(address _from, address _to, uint256 _value)') {
+    finalObject.activity = `💎➡️  NFT transfer. Transferred ${erc721tx.tokenName} ${erc721tx.tokenID} to ${shortAddr(erc721tx.to)}`;
   } else if (tx.functionName.includes('safeTransferFrom')) {
     finalObject.activity = `💎➡️  NFT transfer. Transferred ${erc721tx.tokenName} ${erc721tx.tokenID} to ${shortAddr(erc721tx.to)}`;
   } else {

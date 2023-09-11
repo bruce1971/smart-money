@@ -1,11 +1,10 @@
-const fs = require("fs");
 const {Interface, AbiCoder} = require("ethers");
 let abi = require(`./abis.js`);
 let universalInteface = new Interface(abi.abi1);
 let universalInteface2 = new Interface(abi.abi2);
 let universalInteface3 = new Interface(abi.abi3);
 
-//https://api.etherscan.io/api?module=contract&action=getabi&address=0x7a250d5630b4cf539739df2c5dacb4c659f2488d
+//https://api.etherscan.io/api?module=contract&action=getabi&address=0x000000000000ad05ccc4f10045630fb830b95127
 
 module.exports = {
     decoder1,

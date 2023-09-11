@@ -28,7 +28,10 @@ const inputU = {
   'artchick': ['0x0b8F4C4E7626A91460dac057eB43e0de59d5b44F'],
   'osf': ['0x3cb8482495c9188d1e36373134c059f98d7be4ed', '0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1'],
   'xman': ['0xc1244286edacb4097715386992aed36752483dcb'],
-  'seb': ['0x3d280fde2ddb59323c891cf30995e1862510342f'],
+  'seb': [
+    '0x3d280fde2ddb59323c891cf30995e1862510342f', //punk wallet
+    // '0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272' //hot
+  ],
   'left': [
     '0x9224cf7956b8787f1e015349ba2937cef29215d8',
     '0x5f45c7ea2e094fea813a8a8813620ffcc4a19d0f'
