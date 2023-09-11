@@ -94,8 +94,8 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  // startblock = 13610913
-  // endblock = 13610913
+  // startblock = 16621727
+  // endblock = 16621727
 
   let txArray = [];
   for (const userAddress of userAddresses) {
@@ -116,7 +116,7 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
   const pnl = [];
   const activityLog = await getActivityLog(txArray, userAddresses, pnl, erc20InfoObj);
 
-  const currentPortfolio = await getUserPortfolio(participation, erc20InfoObj, erc721InfoObj);
+  const currentPortfolio = await getUserPortfolio(participation, erc20InfoObj, erc721InfoObj, userAddresses);
 
   const aPnl = aggrPnl(participation, currentPortfolio, pnl);
 

@@ -20,7 +20,10 @@ async function decoderScript(userAddress, contractAddress, block) {
 
 (async () => {
   const userAddress = '0x3d280fde2ddb59323c891cf30995e1862510342f';
-  const contractAddress = '0x8a90cab2b38dba80c64b7734e58ee1db38b8992e';
-  const block = 16621727;
+  const contractAddress = '0x39da41747a83aee658334415666f3ef92dd0d541';
+  const block = 18013826;
+  // const userAddress = '0x3d280fde2ddb59323c891cf30995e1862510342f';
+  // const contractAddress = '0x8a90cab2b38dba80c64b7734e58ee1db38b8992e';
+  // const block = 16621727;
   await decoderScript(userAddress, contractAddress, block);
 })();
