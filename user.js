@@ -87,7 +87,7 @@ function getParticipation(txArray) {
 }
 
 
-async function getUserData(userAddresses, contractAddress, daysAgo=null) {
+async function getUser(userAddresses, contractAddress, daysAgo=null, quick=false) {
   console.time('USER');
 
   const secondsAgo = 3600 * 24 * daysAgo;
@@ -101,7 +101,7 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 
   let txArray = [];
   for (const userAddress of userAddresses) {
-    const txArray1 = await txsForSingleAddress(userAddress, contractAddress, startblock, endblock);
+    const txArray1 = await txsForSingleAddress(userAddress, contractAddress, startblock, endblock, quick);
     txArray = txArray.concat(txArray1);
   };
 
@@ -132,7 +132,7 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 
 if (require.main === module) {
   (async () => {
-    const user = await getUserData(inputUserAddresses, inputContractAddress, inputDaysAgo);
+    const user = await getUser(inputUserAddresses, inputContractAddress, inputDaysAgo, false);
     formatActivityLog(user.activityLog, false, true);
     formatPnl(user.aPnl);
   })();
@@ -140,7 +140,7 @@ if (require.main === module) {
 
 
 module.exports = {
-  getUserData,
+  getUser,
   txsForSingleAddress,
   getActivityLog
 }

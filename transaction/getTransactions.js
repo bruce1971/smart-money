@@ -11,7 +11,7 @@ async function txsForSingleAddress(address, contractAddress, startblock, endbloc
       txs.forEach(tx => tx.type = 'erc20')
       return txs;
     }) : [];
-  if (contractAddress?.type === 'erc20' && quick) {
+  if (quick && contractAddress?.type === 'erc20' ) {
     const blockNumbers = erc20Transactions.map(o => Number(o.blockNumber));
     startblock = Math.min(...blockNumbers);
     endblock = Math.max(...blockNumbers);

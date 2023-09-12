@@ -3,7 +3,7 @@ const { contractUrl, round } = require(`../helper.js`);
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`../addresses.js`);
 const inputTokenAddress = addresses.inputA[argv.a];
-const { getUserData } = require(`../user.js`);
+const { getUser } = require(`../user.js`);
 
 
 async function getTokenWallets(tokenAddress) {
@@ -62,7 +62,7 @@ async function getEtherscanData(tokenAddress) {
     console.log('----------');
     console.log(i);
     const userAddresses = [allWallets[i]];
-    const user = await getUserData(userAddresses, tokenAddress);
+    const user = await getUser(userAddresses, tokenAddress, null, true);
     if (user.aPnl[0]) allPnl.push(user.aPnl[0]);
   }
 

@@ -162,10 +162,11 @@ function formatPnl(pnlObj) {
   // console.log('🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢🔴🟢');
   console.table({
     'Name': 'O-V-E-R-A-L-L',
-    'Profit-N-Loss (eth)': round(pnlObj.map(o => o.profit).reduce((acc, o) => (acc + o), 0), 0),
-    'Invested (eth)': round(pnlObj.map(o => o.buy).reduce((acc, o) => (acc + o), 0), 0),
-    'Taken Out (eth)': round(pnlObj.map(o => o.sell).reduce((acc, o) => (acc + o), 0), 0),
-    'Current (eth)': round(pnlObj.map(o => o.current).reduce((acc, o) => (acc + o), 0), 0),
+    'Profit-N-Loss (eth)': round(pnlObj.map(o => o.profit).reduce((acc, o) => (acc + o), 0), 2),
+    '------': '-------------',
+    'Invested (eth)': round(pnlObj.map(o => o.buy).reduce((acc, o) => (acc + o), 0), 2),
+    'Taken Out (eth)': round(pnlObj.map(o => o.sell).reduce((acc, o) => (acc + o), 0), 2),
+    'Current (eth)': round(pnlObj.map(o => o.current).reduce((acc, o) => (acc + o), 0), 2),
   });
 
   const pnlBreakdown = [];
@@ -181,12 +182,12 @@ function formatPnl(pnlObj) {
     // console.log(`ROI --> ${round(el.roi, 2)} X`);
     pnlBreakdown.push({
       'Name': el.tokenName.slice(0, 30),
-      'Address': el.contractAddress,
       'Profit-N-Loss (eth)': round(el.profit, 2),
       'ROI (x)': round(el.roi, 2),
-      'Invested (eth)': round(el.buy, 0),
-      'Taken Out (eth)': round(el.sell, 0),
-      'Current (eth)': round(el.current, 0),
+      'Invested (eth)': round(el.buy, 2),
+      'Taken Out (eth)': round(el.sell, 2),
+      'Current (eth)': round(el.current, 2),
+      'Address': el.contractAddress,
     })
   });
   console.table(pnlBreakdown);

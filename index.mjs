@@ -3,12 +3,12 @@ const YOUR_API_TOKEN = '6087762788:AAGBTKeAyFBcZraRvQVacTVlOxqk2fPpQSQ';
 
 import TelegramBot from 'node-telegram-bot-api';
 const basePath = process.cwd();
-import { getUserData } from './user.js';
+import { getUser } from './user.js';
 import addresses from './addresses.js';
 
 
 async function getMessages(userAddresses, daysAgo=1/24) {
-  const userData = await getUserData(userAddresses, null, daysAgo);
+  const userData = await getUser(userAddresses, null, daysAgo);
   const activityLog = userData.activityLog.filter(a => ['buy', 'sell', 'swap'].includes(a.type));
   return activityLog;
 }
