@@ -96,8 +96,8 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  startblock = 17710514
-  endblock = startblock
+  // startblock = 17710514
+  // endblock = startblock
 
   let txArray = [];
   for (const userAddress of userAddresses) {
@@ -106,8 +106,7 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
   };
 
   let participation = getParticipation(txArray);
-  // const filterType = 'erc721';
-  // participation = participation.filter(o => o.type === filterType);
+  // participation = participation.filter(o => o.type === 'erc721');
 
   const erc20InfoObj = await getErc20Info(txArray);
   const erc721InfoObj = await getErc721Info(participation);
