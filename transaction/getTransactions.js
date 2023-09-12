@@ -37,7 +37,7 @@ async function txsForSingleAddress(address, contractAddress, startblock, endbloc
     return txs;
   });
   // smart contract interaction
-  const internalTransactions = false
+  const internalTransactions = true
     ? await axios.get(accountUrl('txlistinternal', address, contractAddress?.address, startblock, endblock)).then(res => {
       const txs = res.data.result;
       txs.forEach(tx => tx.type = 'internal')
@@ -66,7 +66,8 @@ function groupTransactions(txPool, hashTxPool) {
     txs.forEach(tx => txsObject[tx.type] = tx);
     const timeStamp = Number(txs[0].timeStamp);
     const block = Number(txs[0].blockNumber);
-    const userWallet = txs.find(o => o.type === 'normal')?.from;
+    let userWallet = txs.find(o => o.type === 'normal')?.from;
+    if (!userWallet) userWallet = txs.find(o => o.type === 'internal')?.to;
     txArray.push({
       hash: hash,
       timeStamp: timeStamp,

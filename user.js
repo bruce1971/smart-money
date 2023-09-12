@@ -40,23 +40,25 @@ function getParticipation(txArray) {
   txArray = txArray.sort((a,b) => Number(b.timeStamp) - Number(a.timeStamp));
   let participation = {};
   txArray.forEach(tx => {
-    if (tx.txs.normal && tx.txs.erc20) {
-      const contractAddress = tx.txs.erc20.contractAddress
-      if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
-      else participation[contractAddress] = {...tx.txs.erc20, userAddresses: [tx.userWallet]};
-      participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
-    }
-    else if (tx.txs.normal && tx.txs.erc721) {
-      const contractAddress = tx.txs.erc721.contractAddress
-      if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
-      else participation[contractAddress] = {...tx.txs.erc721, userAddresses: [tx.userWallet]};
-      participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
-    }
-    else if (tx.txs.normal && tx.txs.erc1155) {
-      const contractAddress = tx.txs.erc1155.contractAddress
-      if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
-      else participation[contractAddress] = {...tx.txs.erc1155, userAddresses: [tx.userWallet]};
-      participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
+    if (tx.userWallet) {
+      if (tx.txs.erc20) {
+        const contractAddress = tx.txs.erc20.contractAddress
+        if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
+        else participation[contractAddress] = {...tx.txs.erc20, userAddresses: [tx.userWallet]};
+        participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
+      }
+      else if (tx.txs.erc721) {
+        const contractAddress = tx.txs.erc721.contractAddress
+        if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
+        else participation[contractAddress] = {...tx.txs.erc721, userAddresses: [tx.userWallet]};
+        participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
+      }
+      else if (tx.txs.erc1155) {
+        const contractAddress = tx.txs.erc1155.contractAddress
+        if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
+        else participation[contractAddress] = {...tx.txs.erc1155, userAddresses: [tx.userWallet]};
+        participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
+      }
     }
   });
   participation = Object.values(participation);
@@ -94,8 +96,8 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  // startblock = 16621727
-  // endblock = 16621727
+  // startblock = 18008996
+  // endblock = 18008996
 
   let txArray = [];
   for (const userAddress of userAddresses) {
@@ -117,7 +119,6 @@ async function getUserData(userAddresses, contractAddress, daysAgo=null) {
   const activityLog = await getActivityLog(txArray, userAddresses, pnl, erc20InfoObj);
 
   const currentPortfolio = await getUserPortfolio(participation, erc20InfoObj, erc721InfoObj, userAddresses);
-
   const aPnl = aggrPnl(participation, currentPortfolio, pnl);
 
   console.timeEnd('USER');

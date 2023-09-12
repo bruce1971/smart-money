@@ -103,7 +103,8 @@ async function parseDecodedArray(array, erc20, pnl, erc20InfoObj) {
 }
 
 
-async function parseErc20(txs, tx, finalObject, pnl, erc20InfoObj) {
+async function parseErc20(txs, finalObject, pnl, erc20InfoObj) {
+  const tx = txs.normal;
   const erc20 = txs.erc20;
   if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
     const decodedArray = decoder.decoder1(tx.input);
