@@ -21,23 +21,23 @@ async function parseTx(fullTx, userAddresses, pnl, erc20InfoObj) {
     parseErc721(txs, finalObject, pnl, erc20InfoObj);
   } else if (txsKeys.includes('erc20')) {
     await parseErc20(txs, finalObject, pnl, erc20InfoObj);
-  } else if (txs.normal.from.toLowerCase() === userAddresses[0] && txs.normal.functionName === '' && txs.normal.input === '0x') {
-    finalObject.activity = `💸➡️  SEND ${formatValue(txs.normal?.value) || 0}eth to ${shortAddr(txs.normal.to)}`;
-  } else if (txs.normal.to.toLowerCase() === userAddresses[0] && txs.normal.functionName === '') {
-    finalObject.activity = `⬅️ 💸 RECEIVE ${formatValue(txs.normal?.value) || 0}eth from ${shortAddr(txs.normal.from)}`;
-  } else if (txs.normal.functionName.includes('setApprovalForAll')) {
+  } else if (txs.normal?.from.toLowerCase() === userAddresses[0] && txs.normal?.functionName === '' && txs.normal?.input === '0x') {
+    finalObject.activity = `💸➡️  SEND ${formatValue(txs.normal?.value) || 0}eth to ${shortAddr(txs.normal?.to)}`;
+  } else if (txs.normal?.to.toLowerCase() === userAddresses[0] && txs.normal?.functionName === '') {
+    finalObject.activity = `⬅️ 💸 RECEIVE ${formatValue(txs.normal?.value) || 0}eth from ${shortAddr(txs.normal?.from)}`;
+  } else if (txs.normal?.functionName.includes('setApprovalForAll')) {
     finalObject.activity = `👍👍 Set Approval for All...`
-  } else if (txs.normal.functionName.includes('approve')) {
+  } else if (txs.normal?.functionName.includes('approve')) {
     finalObject.activity = `👍 Approve spend...`;
-  } else if (txs.normal.to.toLowerCase() === '0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5'.toLowerCase() && txs.normal.functionName.includes('commit')) {
+  } else if (txs.normal?.to.toLowerCase() === '0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5'.toLowerCase() && txs.normal?.functionName.includes('commit')) {
     finalObject.activity = `💦 Request to Register ENS Domain`;
-  } else if (txs.normal.to.toLowerCase() === '0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5'.toLowerCase() && txs.normal.functionName.includes('registerWithConfig')) {
+  } else if (txs.normal?.to.toLowerCase() === '0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5'.toLowerCase() && txs.normal?.functionName.includes('registerWithConfig')) {
     finalObject.activity = `💦 Register ENS Domain`;
-  } else if (txs.normal.functionName === 'deposit()' && txs.normal.to.toLowerCase() == WETH_ADDRESS) {
+  } else if (txs.normal?.functionName === 'deposit()' && txs.normal?.to.toLowerCase() == WETH_ADDRESS) {
     finalObject.activity = `↪️  Wrap ${formatValue(txs.normal?.value) || 0} ETH to WETH`; //amount in decoded tx.input
-  } else if (txs.normal.functionName === 'withdraw(uint256 amount)' && txs.normal.to.toLowerCase() == WETH_ADDRESS) {
+  } else if (txs.normal?.functionName === 'withdraw(uint256 amount)' && txs.normal?.to.toLowerCase() == WETH_ADDRESS) {
     finalObject.activity = `↩️  Unwrap WETH to ETH`; //amount in decoded tx.input
-  } else if (txs.normal.functionName === 'withdraw(uint256 amount)' && txs.normal.to.toLowerCase() == '0x0000000000a39bb272e79075ade125fd351887ac'.toLowerCase()) {
+  } else if (txs.normal?.functionName === 'withdraw(uint256 amount)' && txs.normal?.to.toLowerCase() == '0x0000000000a39bb272e79075ade125fd351887ac'.toLowerCase()) {
     finalObject.activity = `Withdraw from Blur`;
   } else {
     finalObject.activity = 'OTHER NORMAL..';

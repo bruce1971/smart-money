@@ -104,59 +104,62 @@ async function parseDecodedArray(array, erc20, pnl, erc20InfoObj) {
 
 
 async function parseErc20(txs, finalObject, pnl, erc20InfoObj) {
-  const tx = txs.normal;
   const erc20 = txs.erc20;
-  if (tx.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
-    const decodedArray = decoder.decoder1(tx.input);
-    const parsed = await parseDecodedArray(decodedArray, erc20, pnl, erc20InfoObj);
-    finalObject.type = parsed.type;
-    finalObject.activity = parsed.activity;
-  } else if (tx.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
-    const decodedArray = decoder.decoder2(tx.input);
-    const parsed = await parseDecodedArray(decodedArray, erc20, pnl, erc20InfoObj);
-    finalObject.type = parsed.type;
-    finalObject.activity = parsed.activity;
-  } else if (tx.functionName === 'swapTokensForExactTokens(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline)') {
-    const decodedArray = decoder.decoder3b(tx.input);
-    const parsed = await parseDecodedArray(decodedArray, erc20, pnl, erc20InfoObj);
-    finalObject.type = parsed.type;
-    finalObject.activity = parsed.activity;
-  } else if (tx.functionName === 'swapExactETHForTokens(uint256 amountOutMin, address[] path, address to, uint256 deadline)' || tx.functionName === 'swapETHForExactTokens(uint256 amountOut, address[] path, address to, uint256 deadline)') {
-    finalObject.type = 'buy';
-    const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value, erc20.tokenDecimal);
-    const mcap = unitPriceEth * ethInUsd * erc20InfoObj[erc20.contractAddress]?.totalSupply;
-    finalObject.activity = `🪙🟢 Token BUY. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(tx.value, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
-    pnl.push({ contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(tx.value) })
-  } else if (tx.functionName === 'swapTokensForExactETH(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline)') {
-    finalObject.type = 'sell';
-    const decodedArray = decoder.decoder3(tx.input);
-    const ethReceived = decodedArray[0].amountIn;
-    const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
-    const mcap = unitPriceEth * ethInUsd * erc20InfoObj[erc20.contractAddress]?.totalSupply;
-    finalObject.activity = `🪙🔴 Token SALE. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
-    pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(ethReceived) })
-  } else if (tx.functionName === 'swapExactTokensForETH(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
-    finalObject.type = 'sell';
-    const decodedArray = decoder.decoder3(tx.input);
-    const ethReceived = decodedArray[0].amountOut;
-    const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
-    const mcap = unitPriceEth * ethInUsd * erc20InfoObj[erc20.contractAddress]?.totalSupply;
-    finalObject.activity = `🪙🔴 Token SALE. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
-    pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(ethReceived) })
-  } else if (tx.functionName === 'swap(address executor,tuple desc,bytes permit,bytes data)' && formatValueRaw(tx.value) > 0) {
-    // NOTE: scribbs bitcoin block-17894662
-    const unitPriceEth = formatValueRaw(tx.value)/formatValueRaw(erc20.value, erc20.tokenDecimal);
-    const mcap = unitPriceEth * ethInUsd * erc20InfoObj[erc20.contractAddress]?.totalSupply;
-    finalObject.activity = `🪙🟢 Token BUY. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(tx.value, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
-    pnl.push({ contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(tx.value) })
-  } else if (tx.functionName.includes('transfer')) {
-    finalObject.activity = `🪙➡️  Token TRANSFER. ${formatLargeValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${shortAddr(erc20.to)}`;
-  } else if (tx.functionName.includes('addLiquidity')) {
-    finalObject.activity = `🪙💧 Add token LIQUIDITY.`;
-  } else if (tx.functionName.includes('removeLiquidity')) {
-    finalObject.activity = `🪙💧❌ Remove token LIQUIDITY.`;
+  if (txs.normal) {
+    if (txs.normal.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
+      const decodedArray = decoder.decoder1(txs.normal.input);
+      const parsed = await parseDecodedArray(decodedArray, erc20, pnl, erc20InfoObj);
+      finalObject.type = parsed.type;
+      finalObject.activity = parsed.activity;
+    } else if (txs.normal.functionName === 'swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
+      const decodedArray = decoder.decoder2(txs.normal.input);
+      const parsed = await parseDecodedArray(decodedArray, erc20, pnl, erc20InfoObj);
+      finalObject.type = parsed.type;
+      finalObject.activity = parsed.activity;
+    } else if (txs.normal.functionName === 'swapTokensForExactTokens(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline)') {
+      const decodedArray = decoder.decoder3b(txs.normal.input);
+      const parsed = await parseDecodedArray(decodedArray, erc20, pnl, erc20InfoObj);
+      finalObject.type = parsed.type;
+      finalObject.activity = parsed.activity;
+    } else if (txs.normal.functionName === 'swapExactETHForTokens(uint256 amountOutMin, address[] path, address to, uint256 deadline)' || txs.normal.functionName === 'swapETHForExactTokens(uint256 amountOut, address[] path, address to, uint256 deadline)') {
+      finalObject.type = 'buy';
+      const unitPriceEth = formatValueRaw(txs.normal.value)/formatValueRaw(erc20.value, erc20.tokenDecimal);
+      const mcap = unitPriceEth * ethInUsd * erc20InfoObj[erc20.contractAddress]?.totalSupply;
+      finalObject.activity = `🪙🟢 Token BUY. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(txs.normal.value, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
+      pnl.push({ contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(txs.normal.value) })
+    } else if (txs.normal.functionName === 'swapTokensForExactETH(uint256 amountOut, uint256 amountInMax, address[] path, address to, uint256 deadline)') {
+      finalObject.type = 'sell';
+      const decodedArray = decoder.decoder3(txs.normal.input);
+      const ethReceived = decodedArray[0].amountIn;
+      const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
+      const mcap = unitPriceEth * ethInUsd * erc20InfoObj[erc20.contractAddress]?.totalSupply;
+      finalObject.activity = `🪙🔴 Token SALE. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
+      pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(ethReceived) })
+    } else if (txs.normal.functionName === 'swapExactTokensForETH(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline)') {
+      finalObject.type = 'sell';
+      const decodedArray = decoder.decoder3(txs.normal.input);
+      const ethReceived = decodedArray[0].amountOut;
+      const unitPriceEth = formatValueRaw(ethReceived)/formatValueRaw(erc20.value, erc20.tokenDecimal);
+      const mcap = unitPriceEth * ethInUsd * erc20InfoObj[erc20.contractAddress]?.totalSupply;
+      finalObject.activity = `🪙🔴 Token SALE. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(ethReceived, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
+      pnl.push({ contractAddress: erc20.contractAddress, type: 'sell', amount: formatValueRaw(ethReceived) })
+    } else if (txs.normal.functionName === 'swap(address executor,tuple desc,bytes permit,bytes data)' && formatValueRaw(txs.normal.value) > 0) {
+      // NOTE: scribbs bitcoin block-17894662
+      const unitPriceEth = formatValueRaw(txs.normal.value)/formatValueRaw(erc20.value, erc20.tokenDecimal);
+      const mcap = unitPriceEth * ethInUsd * erc20InfoObj[erc20.contractAddress]?.totalSupply;
+      finalObject.activity = `🪙🟢 Token BUY. ${formatValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} for ${formatLargeValue(txs.normal.value, 18)} ETH ($${formatLargeValue(mcap)} Mcap)`;
+      pnl.push({ contractAddress: erc20.contractAddress, type: 'buy', amount: formatValueRaw(txs.normal.value) })
+    } else if (txs.normal.functionName.includes('transfer')) {
+      finalObject.activity = `🪙➡️  Token TRANSFER. ${formatLargeValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} to ${shortAddr(erc20.to)}`;
+    } else if (txs.normal.functionName.includes('addLiquidity')) {
+      finalObject.activity = `🪙💧 Add token LIQUIDITY.`;
+    } else if (txs.normal.functionName.includes('removeLiquidity')) {
+      finalObject.activity = `🪙💧❌ Remove token LIQUIDITY.`;
+    } else {
+      finalObject.activity = '🪙 OTHER ERC20...';
+    }
   } else {
-    finalObject.activity = '🪙 OTHER ERC20...';
+    finalObject.activity = '🪙 OTHER NO NORMAL ERC20...';
   }
 }
 
