@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { contractUrl, round } = require(`../helper.js`);
+const { contractUrl, roundSpec } = require(`../helper.js`);
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`../addresses.js`);
 const inputTokenAddress = addresses.inputA[argv.a];
@@ -39,8 +39,11 @@ async function getTokenWallets(tokenAddress) {
 function formatPnlRanking(allPnl) {
   const formattedPnl = allPnl.map(o => ({
     'Wallet': o.userAddresses[0],
-    'Profit (eth)': round(o.profit, 0),
-    'ROI (x)': round(o.roi, 0),
+    'Profit (eth)': roundSpec(o.profit),
+    'ROI (x)': roundSpec(o.roi),
+    'Put In (eth)': roundSpec(-o.buy),
+    'Taken Out (eth)': roundSpec(o.sell),
+    'Holding (eth)': roundSpec(o.current),
   }));
   console.table(formattedPnl);
 }
@@ -58,19 +61,23 @@ async function getEtherscanData(tokenAddress) {
   allWallets = filterOutWallets(allWallets);
 
   let allPnl = [];
-  for (var i = 0; i < 500; i++) {
+  for (var i = 0; i < 100; i++) {
     console.log('----------');
     console.log(i);
     const userAddresses = [allWallets[i]];
     const user = await getUser(userAddresses, tokenAddress, null, true);
     if (user.aPnl[0]) allPnl.push(user.aPnl[0]);
-    if (i % 50 === 0) {
+    if (i % 10 === 0) {
       allPnl = allPnl.sort((a, b) => b.profit - a.profit);
+      formatPnlRanking(allPnl);
+      allPnl = allPnl.sort((a, b) => b.roi - a.roi);
       formatPnlRanking(allPnl);
     }
   }
 
   allPnl = allPnl.sort((a, b) => b.profit - a.profit);
+  formatPnlRanking(allPnl);
+  allPnl = allPnl.sort((a, b) => b.roi - a.roi);
   formatPnlRanking(allPnl);
 
   console.timeEnd('TIME');

@@ -7,6 +7,7 @@ module.exports = {
     abiUrl,
     blockUrl,
     round,
+    roundSpec,
     formatValue,
     formatValueRaw,
     formatTimestamp,
@@ -65,6 +66,14 @@ function blockUrl(timestamp) {
     &apikey=${etherscanApiKey}
   `.replace(/\s/g, '')
 }
+
+
+function roundSpec(n) {
+  if (n > 10) return round(n, 0);
+  else if (n > 1) return round(n, 1);
+  else return round(n, 2);
+}
+
 
 function round(value, decimals) {
   return Math.round(value * 10**decimals) / 10**decimals;
