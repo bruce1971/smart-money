@@ -2,7 +2,7 @@ const axios = require('axios');
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`./addresses.js`);
 const { parseTx } = require(`./transaction`);
-const { accountUrl, blockUrl, formatActivityLog, secondsToBlocks, formatTimestamp, aggrPnl, formatPnl } = require(`./helper.js`);
+const { accountUrl, blockUrl, formatActivityLog, secondsToBlocks, formatTimestamp, aggrPnl, formatPnl, getParticipation } = require(`./helper.js`);
 const { getUserPortfolio } = require(`./user/getUserPortfolio.js`);
 const { getErc20Info } = require(`./user/getErc20Info.js`);
 const { getErc721Info } = require(`./user/getErc721Info.js`);
@@ -33,57 +33,6 @@ async function getActivityLog(txArray, userAddresses, pnl, erc20InfoObj) {
     }
   } else console.log('No txs..');
   return activityLogArray;
-}
-
-
-function getParticipation(txArray) {
-  txArray = txArray.sort((a,b) => Number(b.timeStamp) - Number(a.timeStamp));
-  let participation = {};
-  txArray.forEach(tx => {
-    if (tx.userWallet) {
-      if (tx.txs.erc20) {
-        const contractAddress = tx.txs.erc20.contractAddress
-        if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
-        else participation[contractAddress] = {...tx.txs.erc20, userAddresses: [tx.userWallet]};
-        participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
-      }
-      else if (tx.txs.erc721) {
-        const contractAddress = tx.txs.erc721.contractAddress
-        if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
-        else participation[contractAddress] = {...tx.txs.erc721, userAddresses: [tx.userWallet]};
-        participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
-      }
-      else if (tx.txs.erc1155) {
-        const contractAddress = tx.txs.erc1155.contractAddress
-        if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
-        else participation[contractAddress] = {...tx.txs.erc1155, userAddresses: [tx.userWallet]};
-        participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
-      }
-    }
-  });
-  participation = Object.values(participation);
-  participation = participation.sort((a,b) => Number(b.timeStamp) - Number(a.timeStamp));
-  participation = participation.map(o => ({
-    tokenName: o.tokenName,
-    type: o.type,
-    ago: formatTimestamp(o.timeStamp),
-    contractAddress: o.contractAddress,
-    userAddresses: o.userAddresses,
-    aTxHash: `https://etherscan.io/tx/${o.hash}`
-  }))
-  const displayFormatted = false;
-  if (displayFormatted) {
-    const participationErc20 = participation.filter(o => o.type === 'erc20')
-    console.log('========================================= SHITCOIN ============================================');
-    participationErc20.forEach(o => console.log(o));
-    const participationErc721 = participation.filter(o => o.type === 'erc721')
-    console.log('============================================ NFT ==============================================');
-    participationErc721.forEach(o => console.log(o));
-    const participationErc1155 = participation.filter(o => o.type === 'erc1155')
-    console.log('========================================== NIFTY ==============================================');
-    participationErc1155.forEach(o => console.log(o));
-  }
-  return participation;
 }
 
 

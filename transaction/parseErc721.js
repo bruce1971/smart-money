@@ -1,7 +1,6 @@
 const { formatValue, formatValueRaw, shortAddr } = require(`../helper.js`);
 
 function parseErc721(txs, finalObject, pnl, erc20InfoObj) {
-  // console.log(txs);
   const erc721tx = txs.erc721;
   if (txs.normal) {
     const tx = txs.normal;

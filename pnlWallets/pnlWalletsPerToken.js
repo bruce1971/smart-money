@@ -2,11 +2,16 @@ const axios = require('axios');
 const { contractUrl, roundSpec } = require(`../helper.js`);
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`../addresses.js`);
-const inputTokenAddress = addresses.inputA[argv.a];
 const { getUser } = require(`../user.js`);
+const fs = require('fs/promises');
+const path = `./data/pnl.json`;
+
+const inputTokenAddress = addresses.inputA[argv.a];
+const inputIsImmediate = argv.i === 'true';
 
 
 async function getTokenWallets(tokenAddress) {
+  console.log(`Fetching wallets...`);
   let i = 0;
   let txLength = 1;
   let startblock = 0;
@@ -54,34 +59,56 @@ function filterOutWallets(allWallets) {
 }
 
 
-async function getEtherscanData(tokenAddress) {
+async function savePnl(allPnl, contractPnls, tokenAddress) {
+  allPnl = allPnl.sort((a, b) => b.profit - a.profit);
+  formatPnlRanking(allPnl);
+  contractPnls[tokenAddress.address] = allPnl;
+  await fs.writeFile(path, JSON.stringify(contractPnls, null, 2), 'utf8');
+}
+
+
+async function getEtherscanData(tokenAddress, isImmediate=true) {
+  console.log(isImmediate);
   console.time('TIME');
+  const contractPnls = JSON.parse(await fs.readFile(path));
 
   let allWallets = await getTokenWallets(tokenAddress.address);
   allWallets = filterOutWallets(allWallets);
 
   let allPnl = [];
-  for (var i = 0; i < 2000; i++) {
-    console.log('----------');
-    console.log(i);
-    const userAddresses = [allWallets[i]];
-    const user = await getUser(userAddresses, tokenAddress, null, true);
-    if (user.aPnl[0]) allPnl.push(user.aPnl[0]);
-    if (i % 50 === 0) {
-      allPnl = allPnl.sort((a, b) => b.profit - a.profit);
-      formatPnlRanking(allPnl);
-      allPnl = allPnl.sort((a, b) => b.roi - a.roi);
-      formatPnlRanking(allPnl);
+  const onlyNew = true;
+  if (contractPnls[tokenAddress.address] && isImmediate) allPnl = contractPnls[tokenAddress.address];
+  else if (contractPnls[tokenAddress.address] && onlyNew) {
+    allPnl = contractPnls[tokenAddress.address];
+    const existingWallets = allPnl.map(o => o.userAddresses[0]);
+    for (var i = 0; i < 2000; i++) {
+      console.log('----------');
+      console.log(i);
+      const selectedWallet = allWallets[i];
+      if (!existingWallets.includes(selectedWallet)) {
+        const user = await getUser([selectedWallet], tokenAddress, null, true);
+        // FIXME: will scan every time users with no aPNL...
+        if (user.aPnl[0]) allPnl.push(user.aPnl[0]);
+      }
+      if (i % 50 === 0) savePnl(allPnl, contractPnls, tokenAddress);
+    }
+  }
+  else {
+    for (var i = 0; i < 2000; i++) {
+      console.log('----------');
+      console.log(i);
+      const userAddresses = [allWallets[i]];
+      const user = await getUser(userAddresses, tokenAddress, null, true);
+      if (user.aPnl[0]) allPnl.push(user.aPnl[0]);
+      if (i % 10 === 0) savePnl(allPnl, contractPnls, tokenAddress);
     }
   }
 
-  allPnl = allPnl.sort((a, b) => b.profit - a.profit);
-  formatPnlRanking(allPnl);
+  savePnl(allPnl, contractPnls, tokenAddress);
   allPnl = allPnl.sort((a, b) => b.roi - a.roi);
   formatPnlRanking(allPnl);
-
   console.timeEnd('TIME');
 }
 
 
-if (require.main === module) getEtherscanData(inputTokenAddress);
+if (require.main === module) getEtherscanData(inputTokenAddress, inputIsImmediate);

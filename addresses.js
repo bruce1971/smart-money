@@ -56,6 +56,9 @@ const inputU = {
   'dimi': ['0x4a2c786651229175407d3a2d405d1998bcf40614'],
 }
 
+Object.keys(inputA).forEach(key => inputA[key].address = inputA[key].address.toLowerCase());
+Object.keys(inputU).forEach(key => inputU[key] = inputU[key].map(a => a.toLowerCase()));
+
 module.exports = {
   inputU,
   inputA

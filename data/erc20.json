@@ -11262,5 +11262,269 @@
     "decimals": 18,
     "priceEth": 406.932871215005,
     "priceUsd": 673552.815778365
+  },
+  "0x5796ebbf5c7ac123fbe8b11b5d13d50d32ea3fc5": {
+    "name": "Sonora Maker",
+    "address": "0x5796ebbf5c7ac123fbe8b11b5d13d50d32ea3fc5",
+    "totalSupply": 20,
+    "decimals": 18,
+    "priceEth": 0.236136520250527,
+    "priceUsd": 476.235046338253
+  },
+  "0x5f68f6e8da909e3d1ed3c1d28553563bade5bb4a": {
+    "name": "Audinals",
+    "address": "0x5f68f6e8da909e3d1ed3c1d28553563bade5bb4a",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 3.8482923600821e-7,
+    "priceUsd": 0.000612508195792522
+  },
+  "0xd3fa0d15c25d878e3aae0a108da58f43478ae822": {
+    "name": "Remilia Index",
+    "address": "0xd3fa0d15c25d878e3aae0a108da58f43478ae822",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x1396d6f2e9056954dfc2775204bb3e2eb8ab8a5b": {
+    "name": "CICADA",
+    "address": "0x1396d6f2e9056954dfc2775204bb3e2eb8ab8a5b",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6eb01a9f11aea2cf69b7301515362a0cbb7331f5": {
+    "name": "MagiBot",
+    "address": "0x6eb01a9f11aea2cf69b7301515362a0cbb7331f5",
+    "totalSupply": 9000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x2a52368e42a081bb46453ffc4d562a2014438d98": {
+    "name": "Audinals",
+    "address": "0x2a52368e42a081bb46453ffc4d562a2014438d98",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x1142866f451d9d5281c5c8349a332bd338e552a1": {
+    "name": "SuperMarioPorsche911inu",
+    "address": "0x1142866f451d9d5281c5c8349a332bd338e552a1",
+    "totalSupply": 777777777777777,
+    "decimals": 18,
+    "priceEth": 1.75977768550046e-13,
+    "priceUsd": 2.76638609862317e-10
+  },
+  "0xe7490219637b012c7fcf131c9ee5521338c471ea": {
+    "name": "MiladyTupacShakurBiggieSmallsAK47inu",
+    "address": "0xe7490219637b012c7fcf131c9ee5521338c471ea",
+    "totalSupply": 4206900000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x6644e67d62beae7cf287a1b02c92b48bdb82f072": {
+    "name": "BigMacWrapNuggetFriesColaHappyMeal",
+    "address": "0x6644e67d62beae7cf287a1b02c92b48bdb82f072",
+    "totalSupply": 690,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x65100efccbb0ab367e07a6d6bd6e107ffcbb9798": {
+    "name": "HarryPotterObamaThanos5Inu",
+    "address": "0x65100efccbb0ab367e07a6d6bd6e107ffcbb9798",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xff9b4539fe3cd5fbddc07d1d1bb12cce5b649acf": {
+    "name": "Prize",
+    "address": "0xff9b4539fe3cd5fbddc07d1d1bb12cce5b649acf",
+    "totalSupply": 10000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x0e233dceca91dad876c7b9381713fa4531d371d7": {
+    "name": "DarkOrigin",
+    "address": "0x0e233dceca91dad876c7b9381713fa4531d371d7",
+    "totalSupply": 10000000000,
+    "decimals": 9,
+    "priceEth": 7.19392142331439e-10,
+    "priceUsd": 0.00000107981846337181
+  },
+  "0x274e6946c928e7d3f960f3e8c7b6d6f6a2a391ca": {
+    "name": "HarryPepe",
+    "address": "0x274e6946c928e7d3f960f3e8c7b6d6f6a2a391ca",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x9e64ea4e67371de7ea8039c6f992f3029836cf4d": {
+    "name": "GUNBET",
+    "address": "0x9e64ea4e67371de7ea8039c6f992f3029836cf4d",
+    "totalSupply": 10000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xbd7e92cf6f857be8541fca6abfb72aef8e16c307": {
+    "name": "Prodigy Bot",
+    "address": "0xbd7e92cf6f857be8541fca6abfb72aef8e16c307",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0.000814859306943189,
+    "priceUsd": 1.29841079549926
+  },
+  "0x92464c77a8f74db2c41c176482ff529fe4d4ddb0": {
+    "name": null,
+    "address": "0x92464c77a8f74db2c41c176482ff529fe4d4ddb0",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x31574f2c4ca12c44e5715115b098fc90abdb1022": {
+    "name": "zkBot",
+    "address": "0x31574f2c4ca12c44e5715115b098fc90abdb1022",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xca4b70beccabce29efa5bc5c86311e5d38461842": {
+    "name": "Sybulls",
+    "address": "0xca4b70beccabce29efa5bc5c86311e5d38461842",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0.000265488869229909,
+    "priceUsd": 0.420407068132245
+  },
+  "0x6a8a637331801981a0fb29aacc3afa732b072d55": {
+    "name": "FlatEarthFakeMoonLandingMKUltra1984",
+    "address": "0x6a8a637331801981a0fb29aacc3afa732b072d55",
+    "totalSupply": 19841984,
+    "decimals": 18,
+    "priceEth": 0.00000123690930192954,
+    "priceUsd": 0.00197073981585161
+  },
+  "0x93314ee69bf8f943504654f9a8eced0071526439": {
+    "name": null,
+    "address": "0x93314ee69bf8f943504654f9a8eced0071526439",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x384fd1519e63d077567e17a461f4c7f78de0cc1c": {
+    "name": "Gembot",
+    "address": "0x384fd1519e63d077567e17a461f4c7f78de0cc1c",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xdfb7373d268467bf5d1ade0da774b669b81c9840": {
+    "name": "BritneySpearsBaldCaillou69Inu",
+    "address": "0xdfb7373d268467bf5d1ade0da774b669b81c9840",
+    "totalSupply": 1000000000,
+    "decimals": 8,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xdff10045a232e237b1b1f99db786e5cd8f618b6d": {
+    "name": "KanyeWestMySpaceKimKGYATTXTwitterInu3000",
+    "address": "0xdff10045a232e237b1b1f99db786e5cd8f618b6d",
+    "totalSupply": 25000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb89f3a4ab8226fa0ab74eab3d7724941135baa54": {
+    "name": null,
+    "address": "0xb89f3a4ab8226fa0ab74eab3d7724941135baa54",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
+  },
+  "0x0be92cc55c2f483d64c8e3ac56235a919f0922eb": {
+    "name": "XCOM",
+    "address": "0x0be92cc55c2f483d64c8e3ac56235a919f0922eb",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x023881d35713088d0278388703cfe55ea5b24873": {
+    "name": "0XPEPE",
+    "address": "0x023881d35713088d0278388703cfe55ea5b24873",
+    "totalSupply": 420690000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xf57b012109582f40444379bd57dae737dd0d607f": {
+    "name": "MeBot",
+    "address": "0xf57b012109582f40444379bd57dae737dd0d607f",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 9.06596778450674e-9,
+    "priceUsd": 0.0000144037339013682
+  },
+  "0x13190f3479066dc6ab5b516e2229ce88cdbb0fdb": {
+    "name": "X-Coin",
+    "address": "0x13190f3479066dc6ab5b516e2229ce88cdbb0fdb",
+    "totalSupply": 10000000000,
+    "decimals": 18,
+    "priceEth": 3.88083404282602e-9,
+    "priceUsd": 0.00000618660034194749
+  },
+  "0xa73b95a1ac12f9232a21b63faa4df04f3eb3ea09": {
+    "name": "SnipeBot",
+    "address": "0xa73b95a1ac12f9232a21b63faa4df04f3eb3ea09",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb8747b1a92c0db35bef62737bd3e91cf7cedf8ee": {
+    "name": "RedactedBettingOnRedactedUrbanActivities",
+    "address": "0xb8747b1a92c0db35bef62737bd3e91cf7cedf8ee",
+    "totalSupply": 1000000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xb4cf2331eccdc33992064050185bbc80d5c4e110": {
+    "name": "4FudCZCharizardSaitamaGokuInu $BNB",
+    "address": "0xb4cf2331eccdc33992064050185bbc80d5c4e110",
+    "totalSupply": 100000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0xa25fd49d85caea105f284c6b15c939a37757b78c": {
+    "name": "Assdoodoo",
+    "address": "0xa25fd49d85caea105f284c6b15c939a37757b78c",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0,
+    "priceUsd": 0
+  },
+  "0x99db8e70a6218882f3112ed59a4723493285fe9e": {
+    "name": "GoldenPepe",
+    "address": "0x99db8e70a6218882f3112ed59a4723493285fe9e",
+    "totalSupply": 690420690000691,
+    "decimals": 5,
+    "priceEth": 0,
+    "priceUsd": 0
   }
 }
