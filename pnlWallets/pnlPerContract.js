@@ -6,27 +6,31 @@ const { getUser } = require(`../user.js`);
 const fs = require('fs/promises');
 const path = `./data/pnl.json`;
 
-const inputTokenAddress = addresses.inputA[argv.a];
+const inputTokenAddress = argv.a ? addresses.inputA[argv.a] || { address: '0' + argv.a } : undefined;
 const inputIsImmediate = argv.i === 'true';
 
 
-async function getWallets(tokenAddress) {
+async function getWallets(tokenAddress, isImmediate=true) {
   console.log(`Fetching wallets...`);
   let i = 0;
-  let txLength = 1;
+  let txLength = 10000;
   let startblock = 0;
   const allTransactions = [];
-  while(i < 1) {
+  let maxLoops = 8;
+  if (isImmediate) maxLoops = 1;
+
+  while(txLength >= 10000 && i < maxLoops) {
     let transactions = await axios.get(contractUrl(startblock, tokenAddress)).then(res => res.data.result);
     txLength = transactions.length;
     const firstTx = transactions[0];
-    console.log('first',firstTx.blockNumber);
+    console.log('first', firstTx.blockNumber);
     const lastTx = transactions[transactions.length - 1];
-    console.log('last',lastTx.blockNumber);
+    console.log('last', lastTx.blockNumber);
     startblock = lastTx.blockNumber;
     i += 1;
     transactions = transactions.filter(tx => tx.hash !== lastTx.hash);
     allTransactions.push(...transactions);
+    console.log(txLength);
     console.log('--------------');
   }
 
@@ -43,6 +47,7 @@ async function getWallets(tokenAddress) {
 
 
 function formatPnlRanking(contractPnl) {
+  contractPnl = contractPnl.slice(0, 50);
   const formattedPnl = contractPnl.map(o => ({
     'Wallet': o.userAddresses[0],
     'Profit (eth)': roundSpec(o.profit),
@@ -67,7 +72,8 @@ async function getEtherscanData(tokenAddress, isImmediate=true) {
   console.time('TIME');
   const allPnl = JSON.parse(await fs.readFile(path));
 
-  let allWallets = await getWallets(tokenAddress.address);
+  let allWallets = await getWallets(tokenAddress.address, isImmediate);
+  // console.log('scribbs?', allWallets.includes('0x70399b85054dd1d94f2264afc8704a3ee308abaf'));
 
   let contractPnl = [];
   const saveEvery = 20;
@@ -84,7 +90,7 @@ async function getEtherscanData(tokenAddress, isImmediate=true) {
           // FIXME: will scan every time users with no aPNL...
           if (user.aPnl[0]) contractPnl.push(user.aPnl[0]);
         }
-        if (i % saveEvery === 0) savePnl(contractPnl, allPnl, tokenAddress);
+        if (i % saveEvery === 0 && i > 0) savePnl(contractPnl, allPnl, tokenAddress);
       }
     }
   }
@@ -95,7 +101,7 @@ async function getEtherscanData(tokenAddress, isImmediate=true) {
       const userAddresses = [allWallets[i]];
       const user = await getUser(userAddresses, tokenAddress, null, true);
       if (user.aPnl[0]) contractPnl.push(user.aPnl[0]);
-      if (i % saveEvery === 0) savePnl(contractPnl, allPnl, tokenAddress);
+      if (i % saveEvery === 0 && i > 0) savePnl(contractPnl, allPnl, tokenAddress);
     }
   }
 

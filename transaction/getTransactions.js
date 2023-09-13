@@ -70,6 +70,7 @@ function groupTransactions(txPool, hashTxPool) {
     const block = Number(txs[0].blockNumber);
     let userWallet = txs.find(o => o.type === 'normal')?.from;
     if (!userWallet) userWallet = txs.find(o => o.type === 'internal')?.to;
+    // if (!userWallet) userWallet = txs.find(o => o.type === 'erc20')?.to;
     txArray.push({
       hash: hash,
       timeStamp: timeStamp,

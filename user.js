@@ -50,8 +50,8 @@ async function getUser(userAddresses, contractAddress, daysAgo=null, quick=false
 
   let txArray = [];
   for (const userAddress of userAddresses) {
-    const txArray1 = await txsForSingleAddress(userAddress, contractAddress, startblock, endblock, quick);
-    txArray = txArray.concat(txArray1);
+    const txArrayTemp = await txsForSingleAddress(userAddress, contractAddress, startblock, endblock, quick);
+    txArray = txArray.concat(txArrayTemp);
   };
 
   let participation = getParticipation(txArray);
@@ -82,7 +82,7 @@ async function getUser(userAddresses, contractAddress, daysAgo=null, quick=false
 if (require.main === module) {
   (async () => {
     const user = await getUser(inputUserAddresses, inputContractAddress, inputDaysAgo, false);
-    formatActivityLog(user.activityLog, false, true);
+    // formatActivityLog(user.activityLog, false, true);
     formatPnl(user.aPnl);
   })();
 }

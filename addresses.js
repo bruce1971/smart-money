@@ -12,6 +12,7 @@ const inputA = {
   'unibot': { address: '0xf819d9Cb1c2A819Fd991781A822dE3ca8607c3C9', type: 'erc20' },
   'none': { address: '0x903ff0ba636E32De1767A4B5eEb55c155763D8B7', type: 'erc20' },
   'prime': { address: '0xb23d80f5FefcDDaa212212F028021B41DEd428CF', type: 'erc20' },
+  'rlb': { address: '0x046EeE2cc3188071C02BfC1745A6b17c656e3f3d', type: 'erc20' },
 }
 
 const inputU = {
