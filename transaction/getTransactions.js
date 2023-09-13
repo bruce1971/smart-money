@@ -2,8 +2,9 @@ const axios = require('axios');
 const { accountUrl } = require(`../helper.js`);
 
 
-async function txsForSingleAddress(address, contractAddress, startblock, endblock, sort='desc', quick=false) {
+async function txsForSingleAddress(address, contractAddress, startblock, endblock, quick=false) {
   console.log(`Getting txs for ${address}...`);
+  const sort = 'desc';
   // shitcoin
   const erc20Transactions = ['erc20', undefined].includes(contractAddress?.type)
     ? await axios.get(accountUrl('tokentx', address, contractAddress?.address, startblock, endblock, sort)).then(res => {
