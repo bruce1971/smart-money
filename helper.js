@@ -172,13 +172,13 @@ function formatPnl(pnlObj) {
   pnlObj.forEach(el => {
     pnlBreakdown.push({
       'Name': el.tokenName.slice(0, 30),
+      'Contract Address': el.contractAddress,
       'Type': el.type,
       'Profit-N-Loss (eth)': round(el.profit, 2),
       'ROI (x)': round(el.roi, 2),
       'Put In (eth)': round(-el.buy, 2),
       'Taken Out (eth)': round(el.sell, 2),
       'Current (eth)': round(el.current, 2),
-      'Address': el.contractAddress,
     })
   });
   console.table(pnlBreakdown);

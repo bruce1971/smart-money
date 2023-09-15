@@ -16,10 +16,10 @@ node index.mjs
 zip -r deployment_package.zip .
 
 ### pnl of wallets for given token
-node pnlWallets/pnlPerContract.js -a=pepe -i=true 
+node pnl/pnlPerContract.js -a=pepe -i=true 
 
 ### wallets that have pnl for multiple tokens
-node pnlWallets/multipleTimesPnlWallets.js
+node pnl/multipleTimesPnlWallets.js
 
 ### for given daterange, find wallets that were active with a token
 node earlyWallets/earlyWalletsPerToken.js -a=pepe

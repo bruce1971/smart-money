@@ -11526,5 +11526,37 @@
     "decimals": 5,
     "priceEth": 0,
     "priceUsd": 0
+  },
+  "0xff836a5821e69066c87e268bc51b849fab94240c": {
+    "name": "Real Smurf Cat",
+    "address": "0xff836a5821e69066c87e268bc51b849fab94240c",
+    "totalSupply": 100000000000,
+    "decimals": 18,
+    "priceEth": 4.89412579780152e-8,
+    "priceUsd": 0.0000787078494168142
+  },
+  "0x017e9db34fc69af0dc7c7b4b33511226971cddc7": {
+    "name": "On-Chain Dynamics",
+    "address": "0x017e9db34fc69af0dc7c7b4b33511226971cddc7",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 0.00000592572497193434,
+    "priceUsd": 0.00959846001259074
+  },
+  "0x2c1a44241b19c944244f4b10b83402b829843e64": {
+    "name": "FriendTG",
+    "address": "0x2c1a44241b19c944244f4b10b83402b829843e64",
+    "totalSupply": 1000000000,
+    "decimals": 9,
+    "priceEth": 1.88217007908576e-9,
+    "priceUsd": 0.00000304797817614473
+  },
+  "0x6bb8535f8635e22f103126d3e3467e5ccbac9f29": {
+    "name": "Flute",
+    "address": "0x6bb8535f8635e22f103126d3e3467e5ccbac9f29",
+    "totalSupply": 10000000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
   }
 }

@@ -82,7 +82,7 @@ async function getUser(userAddresses, contractAddress, daysAgo=null, quick=false
 if (require.main === module) {
   (async () => {
     const user = await getUser(inputUserAddresses, inputContractAddress, inputDaysAgo, false);
-    // formatActivityLog(user.activityLog, false, true);
+    formatActivityLog(user.activityLog, false, true);
     formatPnl(user.aPnl);
   })();
 }

@@ -13,6 +13,7 @@ const inputA = {
   'none': { address: '0x903ff0ba636E32De1767A4B5eEb55c155763D8B7', type: 'erc20' },
   'prime': { address: '0xb23d80f5FefcDDaa212212F028021B41DEd428CF', type: 'erc20' },
   'rlb': { address: '0x046EeE2cc3188071C02BfC1745A6b17c656e3f3d', type: 'erc20' },
+  'smurf': { address: '0xff836a5821e69066c87e268bc51b849fab94240c', type: 'erc20' },
 }
 
 const inputU = {
