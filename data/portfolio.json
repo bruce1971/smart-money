@@ -3,9 +3,9 @@
     {
       "name": "Opepen Edition",
       "address": "0x6339e5e072086621540d0362c4e3cea0d643e114",
-      "totalCoin": 67,
-      "totalEth": 29.473300000000002,
-      "totalUsd": 48228.76008
+      "totalCoin": 73,
+      "totalEth": 32.112700000000004,
+      "totalUsd": 52547.75352
     },
     {
       "name": "Forgotten Runes Wizards Cult",
@@ -141,6 +141,13 @@
       "totalUsd": 16.2436
     },
     {
+      "name": "ETH",
+      "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
       "name": "Botto",
       "address": "0x9dfad1b7102d46b1b197b90095b5c4e9f5845bba",
       "totalCoin": 0,
@@ -158,13 +165,6 @@
       "name": null,
       "address": "0x0000000000a39bb272e79075ade125fd351887ac",
       "totalCoin": 568306616449,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "ETH",
-      "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-      "totalCoin": 0,
       "totalEth": 0,
       "totalUsd": 0
     },
@@ -199,7 +199,7 @@
     {
       "name": null,
       "address": "0xc5c9fb6223a989208df27dcee33fc59ff5c26fff",
-      "totalCoin": 75870441134371,
+      "totalCoin": 76178788658374,
       "totalEth": 0,
       "totalUsd": 0
     },
@@ -505,6 +505,27 @@
       "totalUsd": 0
     },
     {
+      "name": "Doodles",
+      "address": "0x8a90cab2b38dba80c64b7734e58ee1db38b8992e",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
+      "name": "Renga",
+      "address": "0x394e3d3044fc89fcdd966d3cb35ac0b32b0cda91",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
+      "name": "Cool Cats",
+      "address": "0x1a92f7381b9f03921564a437210bb9396471050c",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
       "name": "Bored Ape Yacht Club",
       "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
       "totalCoin": 0,
@@ -519,6 +540,13 @@
       "totalUsd": 0
     },
     {
+      "name": "Azuki",
+      "address": "0xed5af388653567af2f388e6224dc7c4b3241c544",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
       "name": "Azuki Elemental Beans",
       "address": "0x3af2a97414d1101e2107a70e7f33955da1346305",
       "totalCoin": 0,
@@ -526,8 +554,22 @@
       "totalUsd": 0
     },
     {
+      "name": "HV-MTL (Heavy Metal)",
+      "address": "0x4b15a9c28034dc83db40cd810001427d3bd7163d",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
       "name": "Otherside Vessels",
       "address": "0x5b1085136a811e55b2bb2ca1ea456ba82126a376",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
+      "name": "Otherdeed for Otherside",
+      "address": "0x34d85c9cdeb23fa97cb08333b511ac86e1c4e258",
       "totalCoin": 0,
       "totalEth": 0,
       "totalUsd": 0
@@ -554,6 +596,27 @@
       "totalUsd": 0
     },
     {
+      "name": "Dooplicator",
+      "address": "0x466cfcd0525189b573e794f554b8a751279213ac",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
+      "name": "DeadFellaz",
+      "address": "0x2acab3dea77832c09420663b0e1cb386031ba17b",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
+      "name": "Swampverse",
+      "address": "0x95784f7b5c8849b0104eaf5d13d6341d8cc40750",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
       "name": "The N Project",
       "address": "0x05a46f1e545526fb803ff974c790acea34d1f2d6",
       "totalCoin": 0,
@@ -568,29 +631,8 @@
       "totalUsd": 0
     },
     {
-      "name": "DeadFellaz",
-      "address": "0x2acab3dea77832c09420663b0e1cb386031ba17b",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Doodles",
-      "address": "0x8a90cab2b38dba80c64b7734e58ee1db38b8992e",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
       "name": "Nightmare Imp's Treat Boxes",
       "address": "0x59775fd5f266c216d7566eb216153ab8863c9c84",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Renga",
-      "address": "0x394e3d3044fc89fcdd966d3cb35ac0b32b0cda91",
       "totalCoin": 0,
       "totalEth": 0,
       "totalUsd": 0
@@ -624,29 +666,8 @@
       "totalUsd": 0
     },
     {
-      "name": "Dooplicator",
-      "address": "0x466cfcd0525189b573e794f554b8a751279213ac",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Azuki",
-      "address": "0xed5af388653567af2f388e6224dc7c4b3241c544",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Cool Cats",
-      "address": "0x1a92f7381b9f03921564a437210bb9396471050c",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Otherdeed for Otherside",
-      "address": "0x34d85c9cdeb23fa97cb08333b511ac86e1c4e258",
+      "name": "BEANZ Official",
+      "address": "0x306b1ea3ecdf94ab739f1910bbda052ed4a9f949",
       "totalCoin": 0,
       "totalEth": 0,
       "totalUsd": 0
@@ -666,6 +687,34 @@
       "totalUsd": 0
     },
     {
+      "name": "Timeless Characters",
+      "address": "0x704bf12276f5c4bc9349d0e119027ead839b081b",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
+      "name": "Mfers",
+      "address": "0x79fcdef22feed20eddacbb2587640e45491b757f",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
+      "name": "Pudgy Penguins",
+      "address": "0xbd3531da5cf5857e7cfaa92426877b022e612cf8",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
+      "name": "Mekaverse",
+      "address": "0x9a534628b4062e123ce7ee2222ec20b86e16ca8f",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
       "name": "Dotdotdots",
       "address": "0xce25e60a89f200b1fa40f6c313047ffe386992c3",
       "totalCoin": 0,
@@ -680,22 +729,15 @@
       "totalUsd": 0
     },
     {
+      "name": "The Humanoids",
+      "address": "0x3a5051566b2241285be871f650c445a88a970edd",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
       "name": "Party Degens",
       "address": "0x4be3223f8708ca6b30d1e8b8926cf281ec83e770",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Mfers",
-      "address": "0x79fcdef22feed20eddacbb2587640e45491b757f",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Swampverse",
-      "address": "0x95784f7b5c8849b0104eaf5d13d6341d8cc40750",
       "totalCoin": 0,
       "totalEth": 0,
       "totalUsd": 0
@@ -708,22 +750,8 @@
       "totalUsd": 0
     },
     {
-      "name": "Timeless Characters",
-      "address": "0x704bf12276f5c4bc9349d0e119027ead839b081b",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
       "name": "Cryptoon Goonz",
       "address": "0x0322f6f11a94cfb1b5b6e95e059d8deb2bf17d6a",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Pudgy Penguins",
-      "address": "0xbd3531da5cf5857e7cfaa92426877b022e612cf8",
       "totalCoin": 0,
       "totalEth": 0,
       "totalUsd": 0
@@ -736,13 +764,6 @@
       "totalUsd": 0
     },
     {
-      "name": "Mekaverse",
-      "address": "0x9a534628b4062e123ce7ee2222ec20b86e16ca8f",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
       "name": "CryptoDickbutts",
       "address": "0x42069abfe407c60cf4ae4112bedead391dba1cdb",
       "totalCoin": 0,
@@ -750,8 +771,8 @@
       "totalUsd": 0
     },
     {
-      "name": "The Humanoids",
-      "address": "0x3a5051566b2241285be871f650c445a88a970edd",
+      "name": "Mooncats",
+      "address": "0xc3f733ca98e0dad0386979eb96fb1722a1a05e69",
       "totalCoin": 0,
       "totalEth": 0,
       "totalUsd": 0
@@ -759,13 +780,6 @@
     {
       "name": "The Blitnauts",
       "address": "0x448f3219cf2a23b0527a7a0158e7264b87f635db",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Mooncats",
-      "address": "0xc3f733ca98e0dad0386979eb96fb1722a1a05e69",
       "totalCoin": 0,
       "totalEth": 0,
       "totalUsd": 0
@@ -831,25 +845,18 @@
   ],
   "0x70399b85054dd1d94f2264afc8704a3ee308abaf": [
     {
-      "name": "Pepe",
-      "address": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
-      "totalCoin": 117788773234.62354,
-      "totalEth": 56.49878996004946,
-      "totalUsd": 92844.13489055591
-    },
-    {
       "name": "HarryPotterObamaSonic10Inu",
       "address": "0x72e4f9f808c49a2a61de9c5896298920dc4eeea9",
-      "totalCoin": 1448177.55282383,
-      "totalEth": 52.65011135854287,
-      "totalUsd": 86304.86349491483
+      "totalCoin": 248177.55282383,
+      "totalEth": 9.022771943527594,
+      "totalUsd": 14790.265031520112
     },
     {
-      "name": "None Trading",
-      "address": "0x903ff0ba636e32de1767a4b5eeb55c155763d8b7",
-      "totalCoin": 4716.453270197333,
-      "totalEth": 11.39332925386028,
-      "totalUsd": 18709.943379870718
+      "name": "Real Smurf Cat",
+      "address": "0xff836a5821e69066c87e268bc51b849fab94240c",
+      "totalCoin": 117554510.51829503,
+      "totalEth": 5.753265625755178,
+      "totalUsd": 9252.462712141267
     },
     {
       "name": "Rollbit Coin",
@@ -857,6 +864,13 @@
       "totalCoin": 59321.38169364387,
       "totalEth": 5.553142498842607,
       "totalUsd": 9069.778492163614
+    },
+    {
+      "name": "None Trading",
+      "address": "0x903ff0ba636e32de1767a4b5eeb55c155763d8b7",
+      "totalCoin": 2251.3279675675494,
+      "totalEth": 5.4384342054231745,
+      "totalUsd": 8930.909814981778
     },
     {
       "name": "ETH",
@@ -868,9 +882,9 @@
     {
       "name": "Cigarette Token",
       "address": "0xcb56b52316041a62b6b5d0583dce4a8ae7a3c629",
-      "totalCoin": 3087308.6111111115,
-      "totalEth": 0.460815319447402,
-      "totalUsd": 755.2909913877074
+      "totalCoin": 2987308.6111111115,
+      "totalEth": 0.44588920166996493,
+      "totalUsd": 730.8266087642975
     },
     {
       "name": "Maschine",
@@ -880,18 +894,11 @@
       "totalUsd": 628.62732
     },
     {
-      "name": "Prime",
-      "address": "0xb23d80f5fefcddaa212212f028021b41ded428cf",
-      "totalCoin": 99.5533,
-      "totalEth": 0.2510296313277041,
-      "totalUsd": 404.16715685477294
-    },
-    {
-      "name": "CryptoPhunks",
-      "address": "0xb39185e33e8c28e0bb3dbbce24da5dea6379ae91",
-      "totalCoin": 0.75,
-      "totalEth": 0.18396501097614976,
-      "totalUsd": 303.89469585070276
+      "name": "Friendly.Tech",
+      "address": "0xa01d29e5b4cc615157d207aeaaaf0a414804a3d2",
+      "totalCoin": 99089.628104,
+      "totalEth": 0.28310554990750786,
+      "totalUsd": 461.33613424350006
     },
     {
       "name": "Cope",
@@ -901,25 +908,11 @@
       "totalUsd": 303.54333274530677
     },
     {
-      "name": "OPEN EDITION BY Kevin Abosch",
-      "address": "0xd04ff5e94340a2e1d913c3728a12b210c5d5bb2d",
-      "totalCoin": 4,
-      "totalEth": 0.0956,
-      "totalUsd": 155.288816
-    },
-    {
-      "name": "Generativemasks",
-      "address": "0x80416304142fa37929f8a4eee83ee7d2dac12d7c",
-      "totalCoin": 3,
-      "totalEth": 0.061020000000000005,
-      "totalUsd": 111.96234
-    },
-    {
-      "name": "Gemesis",
-      "address": "0xbe9371326f91345777b04394448c23e2bfeaa826",
-      "totalCoin": 2,
-      "totalEth": 0.0248,
-      "totalUsd": 40.58158
+      "name": "$hart 🟤",
+      "address": "0x345fe747b54f42561d809767edd78281f99671a3",
+      "totalCoin": 239969460.30718583,
+      "totalEth": 0.04721924103132793,
+      "totalUsd": 79.19548542221128
     },
     {
       "name": "Matic Token",
@@ -936,25 +929,25 @@
       "totalUsd": 35.59617401353407
     },
     {
+      "name": "Gemesis",
+      "address": "0xbe9371326f91345777b04394448c23e2bfeaa826",
+      "totalCoin": 1,
+      "totalEth": 0.0124,
+      "totalUsd": 20.29079
+    },
+    {
+      "name": "Real Strawberry Elephant",
+      "address": "0x09ad81ad47137d30a5aac0b89e3341eeaa0d6bda",
+      "totalCoin": 178550073.87082586,
+      "totalEth": 0.005649517488393203,
+      "totalUsd": 9.177118700611945
+    },
+    {
       "name": "CircuitsOfValue",
       "address": "0x3d658390460295fb963f54dc0899cfb1c30776df",
       "totalCoin": 400,
       "totalEth": 0.001899417979000088,
       "totalUsd": 3.069455523999148
-    },
-    {
-      "name": "PickleToken",
-      "address": "0x429881672b9ae42b8eba0e26cd9c73711b891ca5",
-      "totalCoin": 1.0277031029974386,
-      "totalEth": 0.0005896350869715585,
-      "totalUsd": 0.9601019043245181
-    },
-    {
-      "name": "Biaocoin",
-      "address": "0x00282fd551d03dc033256c4bf119532e8c735d8a",
-      "totalCoin": 0.01,
-      "totalEth": 1.01627631964346e-12,
-      "totalUsd": 1.6623097778873e-9
     },
     {
       "name": "Billy Token",
@@ -971,23 +964,16 @@
       "totalUsd": 2.16215590031875e-28
     },
     {
+      "name": "Pepe",
+      "address": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "totalCoin": 0,
+      "totalEth": 0,
+      "totalUsd": 0
+    },
+    {
       "name": "USD Coin",
       "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
       "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Fingerprints",
-      "address": "0x4dd28568d05f09b02220b09c2cb307bfd837cb95",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x0000000000a39bb272e79075ade125fd351887ac",
-      "totalCoin": 1891891891891,
       "totalEth": 0,
       "totalUsd": 0
     },
@@ -999,44 +985,9 @@
       "totalUsd": 0
     },
     {
-      "name": "Mog Coin",
-      "address": "0xaaee1a9723aadb7afa2810263653a34ba2c21c7a",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "TOCO INU",
-      "address": "0x3a6a5f2efc0fa28969e6973971e8562614809d3b",
-      "totalCoin": 112088120.33114232,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Duplicate",
-      "address": "0x4ecfc56672c7630b84dac9c1f7407579715de155",
-      "totalCoin": 161829.7001665449,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Marble Bet",
-      "address": "0x8ea9bedb8bb7e99643844ec79543f4faa78453e4",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Hamsters",
-      "address": "0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "YESYESYES",
-      "address": "0x99ae91ea5bc4725b4d04aedf410a0802a374f9a2",
-      "totalCoin": 784299835151.9204,
+      "name": null,
+      "address": "0x0000000000a39bb272e79075ade125fd351887ac",
+      "totalCoin": 1000000000000,
       "totalEth": 0,
       "totalUsd": 0
     },
@@ -1062,15 +1013,8 @@
       "totalUsd": 0
     },
     {
-      "name": "Jin Chan 金蟾",
-      "address": "0x8c6874b61d3f212177b088a919ad8d251075cb66",
-      "totalCoin": 4285.92846847,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "LooksRare Token",
-      "address": "0xf4d2888d29d722226fafa5d9b24f9164c092421e",
+      "name": "Biaocoin",
+      "address": "0x00282fd551d03dc033256c4bf119532e8c735d8a",
       "totalCoin": 0,
       "totalEth": 0,
       "totalUsd": 0
@@ -1097,120 +1041,8 @@
       "totalUsd": 0
     },
     {
-      "name": "Blur",
-      "address": "0x5283d291dbcf85356a21ba090e6db59121208b44",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Lido DAO Token",
-      "address": "0x5a98fcbea516cf06857215779fd812ca3bef1b32",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "OpenAI",
-      "address": "0x6a6aa13393b7d1100c00a57c76c39e8b6c835041",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Dai Stablecoin",
-      "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Tether USD",
-      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Uniswap",
-      "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Amatsu-Mikaboshi",
-      "address": "0xae86f48c0b00f2a3eaef4ba4c23d17368f0f63f4",
-      "totalCoin": 1886767498.3390174,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Immutable X",
-      "address": "0xf57e7e7c23978c3caec3c3548e3d615c346e79ff",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xd0d26bac031c6e9afa912f1fd833672d0846f11c",
-      "totalCoin": 1e+21,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Stablecoin",
-      "address": "0x466a756e9a7401b5e2444a3fcb3c2c12fbea0a54",
-      "totalCoin": 162.84614352366972,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "ApeCoin",
-      "address": "0x4d224452801aced8b2f0aebe155379bb5d594381",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
       "name": "StargateToken",
       "address": "0xaf5191b0de278c7286d6c7cc6ab6bb8a73ba2cd6",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "JPEGd Governance Token",
-      "address": "0xe80c0cd204d654cebe8dd64a4857cab6be8345a3",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Betswap.gg",
-      "address": "0x69570f3e84f51ea70b7b68055c8d667e77735a25",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Staked Aave",
-      "address": "0x4da27a545c0c5b758a6ba100e3a049001de870f5",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Ethereum Name Service",
-      "address": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
       "totalCoin": 0,
       "totalEth": 0,
       "totalUsd": 0
@@ -1223,918 +1055,8 @@
       "totalUsd": 0
     },
     {
-      "name": "Fantom Token",
-      "address": "0x4e15361fd6b4bb609fa63c81a2be19d873717870",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "fees.wtf",
-      "address": "0xa68dd8cb83097765263adad881af6eed479c4a33",
-      "totalCoin": 950,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Botto",
-      "address": "0x9dfad1b7102d46b1b197b90095b5c4e9f5845bba",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x2a46f2ffd99e19a89476e2f62270e0a35bbf0756",
-      "totalCoin": 2,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "SuperRare",
-      "address": "0xba5bde662c17e2adff1075610382b9b691296350",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Alchemix",
-      "address": "0xdbdb4d16eda451d0503b854cf79d55697f90c8df",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "UNIC",
-      "address": "0x94e0bab2f6ab1f19f4750e42d7349f2740513ad5",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x314d7db4ba98d28b2356725b257ba4b0d675f165",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Graph Token",
-      "address": "0xc944e90c64b2c07662a292be6244bdf05cda44a7",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Compound Ether",
-      "address": "0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Serum",
-      "address": "0x476c5e26a75bd202a9683ffd34359c0cc15be0ff",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "SushiToken",
-      "address": "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "ETH 2x Flexible Leverage Index",
-      "address": "0xaa6e8127831c9de45ae56bb1b0d4d4da6e5665bd",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xa62fb0c2fb3c7b27797dc04e1fea06c0a2db919a",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "CryptoPunks",
-      "address": "0x8d2bffcbb19ff14a698c424fbcdcfd17aab9b905",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "UnicSwap LP Token",
-      "address": "0xc809af9e3490bcb2b3ba2bf15e002f0a6a1f6835",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Olympus",
-      "address": "0x383518188c0c6d7730d91b2c03a03c837814a899",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x31932e6e45012476ba3a3a4953cba62aee77fbbe",
-      "totalCoin": 2,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "BasketDAO Gov",
-      "address": "0x44564d0bd94343f72e3c8a0d22308b7fa71db0bb",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x34d25a4749867ef8b62a0cd1e2d7b4f7af167e01",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xc3f279090a47e80990fe3a9c30d24cb117ef91a8",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xf9fb4ad91812b704ba883b11d2b576e890a6730a",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Wrapped BTC",
-      "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Sharder",
-      "address": "0xbbff862d906e348e9946bfb2132ecb157da3d4b4",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "B.20",
-      "address": "0xc4de189abf94c57f396bd4c52ab13b954febefd8",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "SharedStake Governance Token",
-      "address": "0x84810bcf08744d5862b8181f12d17bfd57d3b078",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x3d07f6e1627da96b8836190de64c1aed70e3fc55",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Pepedex",
-      "address": "0xf1f508c7c9f0d1b15a76fba564eef2d956220cf7",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Pepemon",
-      "address": "0x4d2ee5dae46c86da2ff521f7657dad98834f97b8",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Badger",
-      "address": "0x3472a5a71965499acd81997a54bba8d852c6e53d",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Digg",
-      "address": "0x798d1be841a82a273720ce31c822c61a67a601c3",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xcd7989894bc033581532d2cd88da5db0a4b12859",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x235c9e24d3fb2fafd58a2e49d454fdcd2dbf7ff1",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xe86204c4eddd2f70ee00ead6805f917671f56c52",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xc17078fdd324cc473f8175dc5290fae5f2e84714",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "88mph.app",
-      "address": "0x8888801af4d980682e47f1a9036e589479e835c5",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "NFTX",
-      "address": "0x87d73e916d7057945c9bcd8cdd94e42a6f47f776",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "AlphaToken",
-      "address": "0xa1faa113cbe53436df28ff0aee54275c13b40975",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Octo.fi",
-      "address": "0x7240ac91f01233baaf8b064248e80feaa5912ba3",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Armor",
-      "address": "0x1337def16f9b486faed0293eb623dc8395dfe46a",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xcd83cada168c389fb5221e2cc961e6a56163176a",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Badger Sett Badger",
-      "address": "0x19d97d8fa813ee2f51ad4b4e04ea08baf4dffc28",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Badger Sett Digg",
-      "address": "0x7e7e112a68d8d2e221e11047a72ffc1065c38e1a",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Oraichain Token",
-      "address": "0x4c11249814f11b9346808179cf06e71ac328c1b5",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "NameChangeToken",
-      "address": "0x8a9c4dfe8b9d8962b31e4e16f8321c44d48e246e",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Zoracles",
-      "address": "0xd8e3fb3b08eba982f2754988d70d57edc0055ae6",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "BaoToken",
-      "address": "0x374cb8c27130e2c9e04f44303f3c8351b9de61c1",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "XVIX",
-      "address": "0x4bae380b5d762d543d426331b8437926443ae9ec",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "KOTH",
-      "address": "0x471a843ff7a631ab6d2540c619b6163119484081",
-      "totalCoin": 2000,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xd7cfbcadaaf6475321cfcf3884f15a93400be658",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Uniswap V2",
-      "address": "0xbb2b8038a1640196fbe3e38816f3e67cba72d940",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "SpiderDAO Token",
-      "address": "0xbcd4b7de6fde81025f74426d43165a5b0d790fdd",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Keep3rV1",
-      "address": "0x1ceb5cb57c4d4e2b2433641b95dd330a33185a44",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "SynLev",
-      "address": "0x1695936d6a953df699c38ca21c2140d497c08bd9",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "yearn Wrapped Ether",
-      "address": "0xe1237aa7f535b0cc33fd973d66cbf830354d16c7",
-      "totalCoin": 0.049449916271341945,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "zLOT",
-      "address": "0xa8e7ad77c60ee6f30bac54e2e7c0617bd7b5a03e",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "hypedash.farm",
-      "address": "0x082de14a8ff75d3b72b8267e2dcb6326cc43a5f2",
-      "totalCoin": 1116.5946198932713,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "COL",
-      "address": "0xc76fb75950536d98fa62ea968e1d6b45ffea2a55",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xe075f96a73e44921c1b16d95151c9f0b2eebe023",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x2d03b4e599e15d0b6c5748481a4a085f6554373c",
-      "totalCoin": 1e+21,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Hegic",
-      "address": "0x584bc13c7d411c00c01a62e8019472de68768430",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Lamden Tau",
-      "address": "0xc27a2f05fa577a83ba0fdb4c38443c0718356501",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x2187d816186f33d7dffb26435ff537141ba9ba91",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "HypePlasma",
-      "address": "0xf6c3393ad30224d938c16cbdac27792cbcbfcf62",
-      "totalCoin": 76.54286696639201,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x619aaa52a10f196e521f823aed4cdea30d45d366",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Aavegotchi GHST Token",
-      "address": "0x3f382dbd960e3a9bbceae22651e88158d2791550",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "dolphins.wtf",
-      "address": "0x757b2350cd60d5e46e1fc3314f980f20d85cfb9f",
-      "totalCoin": 0.63592104,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xdf27a38946a1ace50601ef4e10f07a9cc90d7231",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "zHEGIC",
-      "address": "0x837010619aeb2ae24141605afc8f66577f6fb2e7",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Eminence",
-      "address": "0x5ade7ae8660293f2ebfcefaba91d141d72d221e8",
-      "totalCoin": 2.9519014774616332,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xddde72a5431a2e73d871431ba79d9f45915f3728",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "HodlTree",
-      "address": "0xdea67845a51e24461d5fed8084e69b426af3d5db",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Curve DAO Token",
-      "address": "0xd533a949740bb3306d119cc777fa900ba034cd52",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Boa",
-      "address": "0xf9c36c7ad7fa0f0862589c919830268d1a2581a1",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Swapfolio",
-      "address": "0xba21ef4c9f433ede00badefcc2754b8e74bd538a",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Tokens of Babel, Price is God",
-      "address": "0x7777770f8a6632ff043c8833310e245eba9209e6",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Tendies Token",
-      "address": "0x1453dbb8a29551ade11d89825ca812e05317eaeb",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Antiample",
-      "address": "0xf911a7ec46a2c6fa49193212fe4a2a9b95851c27",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x6ddc12ef2940137f89af63f05196a4c9d4883ee4",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xa054ba2c35382c0520c66d9c32f00de8bd7330e8",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "yearn.finance",
-      "address": "0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xbe77b53a165d3109ae9500ebaa9328b577960abf",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x48598b64d88ab649e49e82f9e328eeee5011a8ff",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Curve.fi yDAI/yUSDC/yUSDT/yTUSD",
-      "address": "0xdf5e0e81dff6faf3a7e52ba697820c5e32d806a8",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "yearn Curve.fi yDAI/yUSDC/yUSDT/yTUSD",
-      "address": "0x5dbcf33d8c2e976c6b560249878e6f1491bca25c",
-      "totalCoin": 0.000122771697967548,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "yearn Tether USD",
-      "address": "0x2f08119c6f07c006695e079aafc638b8789faf18",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "EthLend Token",
-      "address": "0x80fb784b7ed66730e8b1dbd9820afd29931aab03",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "#halfrekt",
-      "address": "0x404a03728afd06fb934e4b6f0eaf67796912733a",
-      "totalCoin": 2448.4283451599513,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x34d0448a79f853d6e1f7ac117368c87bb7beea6b",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xaea4d6809375bb973c8036d53db9e90970942738",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x5ecf87ff558f73d097eddfee35abde626c7aeab7",
-      "totalCoin": 197912664844019600,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "ABYSS",
-      "address": "0x0e8d6b471e332f140e7d9dbb99e5e3822f728da6",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "JIAOZI.farm",
-      "address": "0x94939d55000b31b7808904a80aa7bab05ef59ed6",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Yield Farming Known as Ash",
-      "address": "0x4086692d53262b2be0b13909d804f0491ff6ec3e",
-      "totalCoin": 0.4987759192993603,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xab3f9bf1d81ddb224a2014e98b238638824bcf20",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x710336caf238dbd5826d29ef64db23154a9ba191",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "SpringRollToken",
-      "address": "0xae0dc81e68bfc2430f30a97ca62343d56aa0be02",
-      "totalCoin": 72962.8129125987,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xeb8afdfe7a3c24faee58e6d3670f992c82ab2efd",
-      "totalCoin": 21215256001505178000,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Uniswap V2",
-      "address": "0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "chads.vc",
-      "address": "0x69692d3345010a207b759a7d1af6fc7f38b35c5e",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x8927616110cf23c4e87dc98614eb9fbaae95216c",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "MoonToken",
-      "address": "0x68a3637ba6e75c0f66b61a42639c4e9fcd3d4824",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x8ddce708ee4dc71fdde5606e08dee02fb378be6a",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Uniswap V2",
-      "address": "0x2fdbadf3c4d5a8666bc06645b8358ab803996e28",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "SushiSwap LP Token",
-      "address": "0x088ee5007c98a9677165d78dd2109ae4a3d04d0c",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x5e63360e891bd60c69445970256c260b0a6a54c6",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "SushiBar",
-      "address": "0x8798249c2e607446efb7ad49ec89dd1865ff4272",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "FARM_USDT",
-      "address": "0xc7ee21406bb581e741fbb8b21f213188433d9f2f",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x28bc0c76a5f8f8461be181c0cbddf715bc1d96af",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Yield Farming Known as Ash",
-      "address": "0xa4c9b58d1ce7ea0d9b351185e0c333683ebde00b",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Synth sUSD",
-      "address": "0x57ab1ec28d129707052df4df418d58a2d46d5f51",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "APEcoin",
-      "address": "0x209c1808febf6c1ab7c65764bb61ad67d3923fcc",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "KIMCHI.finance",
-      "address": "0x1e18821e69b9faa8e6e75dffe54e7e25754beda0",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x1f4e87f70002867ab5df276d6a09a94e3eda4f9a",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0xf78599f068e5565cb41340981d6e0622bb80b9fa",
-      "totalCoin": 700000000000000100000,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x2e966cbf41530b288c5c933e8e4cd5ca3ae6bb6a",
-      "totalCoin": 1076454,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "GOD KIMCHI",
-      "address": "0x4b7dfae2567181e54776337c840e142acb42aa1f",
-      "totalCoin": 29023.533584501718,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "YFLink",
-      "address": "0x28cb7e841ee97947a86b06fa4090c8451f64c0be",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "YFFarmer",
-      "address": "0x13fff8bf4c81267a33a9235fc27f0199b53be2e3",
-      "totalCoin": 100.0015203445642,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "YFII.finance",
-      "address": "0xa1d0e215a23d7030842fc67ce582a6afa3ccab83",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Synthetic CBDAO",
-      "address": "0x25377ddb16c79c93b0cbf46809c8de8765f03fcd",
-      "totalCoin": 45.314621162911976,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Hands Of Steel",
-      "address": "0x6f022e991ea21d26f85f6716c088e2864101dfec",
-      "totalCoin": 17981,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": null,
-      "address": "0x7844c04b043b51dc45bdf59ee2de53e7686865ff",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "YFValue",
-      "address": "0x45f24baeef268bb6d63aee5129015d69702bcdfa",
-      "totalCoin": 22.586405834741495,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Winds of Yawanawa by Refik Anadol",
-      "address": "0x7a63d17f5a59bca04b6702f461b1f1a1c59b100b",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Sproto Gremlins",
-      "address": "0xeeca64ea9fcf99a22806cd99b3d29cf6e8d54925",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Meebits",
-      "address": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Opepen Edition",
-      "address": "0x6339e5e072086621540d0362c4e3cea0d643e114",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
       "name": "Milady Maker",
       "address": "0x5af0d9827e0c53e4799bb226655a1de152a425a5",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Quantum Key",
-      "address": "0x9705a7113363a383c8a96689e20286abe6612bb3",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Kanpai Pandas",
-      "address": "0xacf63e56fd08970b43401492a02f6f38b6635c91",
       "totalCoin": 0,
       "totalEth": 0,
       "totalUsd": 0
@@ -2156,27 +1078,6 @@
     {
       "name": "SupDucks",
       "address": "0x3fe1a4c1481c8351e91b64d5c398b159de07cbc5",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Hashmasks",
-      "address": "0xc2c747e0f7004f9e8817db2ca4997657a7746928",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "Treeverse Plots",
-      "address": "0x1b829b926a14634d36625e60165c0770c09d02b2",
-      "totalCoin": 0,
-      "totalEth": 0,
-      "totalUsd": 0
-    },
-    {
-      "name": "The Vogu Collective",
-      "address": "0x18c7766a10df15df8c971f6e8c1d2bba7c7a410b",
       "totalCoin": 0,
       "totalEth": 0,
       "totalUsd": 0

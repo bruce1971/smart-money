@@ -16,7 +16,7 @@ async function getWallets(tokenAddress, isImmediate=true) {
   let txLength = 10000;
   let startblock = 0;
   const allTransactions = [];
-  let maxLoops = 8;
+  let maxLoops = 1;
   if (isImmediate) maxLoops = 1;
 
   while(txLength >= 10000 && i < maxLoops) {

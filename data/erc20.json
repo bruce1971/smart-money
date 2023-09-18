@@ -11558,5 +11558,29 @@
     "decimals": 9,
     "priceEth": 0,
     "priceUsd": 0
+  },
+  "0xa01d29e5b4cc615157d207aeaaaf0a414804a3d2": {
+    "name": "Friendly.Tech",
+    "address": "0xa01d29e5b4cc615157d207aeaaaf0a414804a3d2",
+    "totalSupply": 10000000,
+    "decimals": 6,
+    "priceEth": 0.00000285706541970642,
+    "priceUsd": 0.00465574594506806
+  },
+  "0x345fe747b54f42561d809767edd78281f99671a3": {
+    "name": "$hart 🟤",
+    "address": "0x345fe747b54f42561d809767edd78281f99671a3",
+    "totalSupply": 100000000000,
+    "decimals": 9,
+    "priceEth": 1.96771876599974e-10,
+    "priceUsd": 3.30023184287004e-7
+  },
+  "0x09ad81ad47137d30a5aac0b89e3341eeaa0d6bda": {
+    "name": "Real Strawberry Elephant",
+    "address": "0x09ad81ad47137d30a5aac0b89e3341eeaa0d6bda",
+    "totalSupply": 100000000000,
+    "decimals": 18,
+    "priceEth": 3.16410817756391e-11,
+    "priceUsd": 5.13980112226178e-8
   }
 }

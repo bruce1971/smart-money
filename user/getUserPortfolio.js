@@ -9,7 +9,8 @@ const path = `./data/portfolio.json`;
 async function getUserPortfolio(participation, erc20InfoObj, erc721InfoObj, userAddresses) {
   let portfolios = JSON.parse(await fs.readFile(path));
   let current = {}
-  if (false) {
+  // if (false) {
+  if (Object.keys(portfolios).includes(userAddresses[0].toLowerCase())) {
     console.log(`Getting current portfolio from storage...`);
     current = portfolios[userAddresses[0].toLowerCase()];
   }
@@ -91,7 +92,7 @@ async function getUserPortfolio(participation, erc20InfoObj, erc721InfoObj, user
     }
 
     current = Object.values(current).sort((a, b) => b.totalUsd - a.totalUsd);
-    if (false) {
+    if (true) {
       userAddresses.forEach(address => portfolios[address.toLowerCase()] = current);
       await fs.writeFile(path, JSON.stringify(portfolios, null, 2), 'utf8');
     }
