@@ -3,6 +3,7 @@ const { contractUrl, roundSpec } = require(`../helper.js`);
 const argv = require('minimist')(process.argv.slice(2));
 const addresses = require(`../addresses.js`);
 const { getUser } = require(`../user.js`);
+const { refreshErc20 } = require(`../user/refreshErc20.js`);
 const fs = require('fs/promises');
 const path = `./data/pnl.json`;
 
@@ -78,9 +79,11 @@ function getTop100Wallets(contractPnl) {
 
 async function getEtherscanData(tokenAddress, isImmediate=true) {
   console.time('TIME');
+
+  // refreshing given contractAddress data
+  if (tokenAddress.type === 'erc20') await refreshErc20(tokenAddress.address);
+
   const allPnl = JSON.parse(await fs.readFile(path));
-
-
 
   let allWallets = await getWallets(tokenAddress.address, isImmediate);
   // console.log('scribbs?', allWallets.includes('0x70399b85054dd1d94f2264afc8704a3ee308abaf'));

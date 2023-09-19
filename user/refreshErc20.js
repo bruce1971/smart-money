@@ -4,10 +4,9 @@ const fs = require('fs/promises');
 const path = `./data/erc20.json`;
 
 
-async function refreshErc20(){
+async function refreshErc20(contractAddress=null) {
   const erc20InfoObj = JSON.parse(await fs.readFile(path));
-  const addressArray = Object.keys(erc20InfoObj);
-  console.log(addressArray.length);
+  const addressArray = contractAddress ? [contractAddress] : Object.keys(erc20InfoObj);
 
   console.log(`Getting ${addressArray.length} ERC20 token infos..`);
   for (var i = 0; i < addressArray.length; i++) {
@@ -65,6 +64,12 @@ async function refreshErc20(){
 }
 
 
-(async () => {
-  await refreshErc20();
-})();
+module.exports = {
+  refreshErc20
+}
+
+if (require.main === module) {
+  (async () => {
+    await refreshErc20();
+  })();
+}

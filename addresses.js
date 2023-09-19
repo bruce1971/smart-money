@@ -32,28 +32,24 @@ const inputU = {
   'seb': '0x3d280fde2ddb59323c891cf30995e1862510342f',
   'left': '0x9224cf7956b8787f1e015349ba2937cef29215d8',
   'left2': '0x5f45c7ea2e094fea813a8a8813620ffcc4a19d0f',
-  'flip': [
-    '0xD7af88D7749c777131ae81Fef2A5EB2e37e9F6dB',
-    '0x541eBCd017986eF62e3A7e2F24A1835EA7FEcf50',
-    '0x9B5E928f9E17aAD03c4a051e59d86Ae6E19d21d7',
-    '0x7af1e233be4ffe8537c755f1d789f9125a377510',
-    '0xada0169b63fb63b65c98ebd7c7fbceeb7d0670f7',
-    '0x876b6f87490fFD17c3aA60711D8158bf407F7961',
-    '0xDA9E10dA22D89267E5D8e94B7Cadd332172cE869',
-    '0x5A0E0176A4299068b6B9843eF60b5410Ac90077F',
-  ],
-  'otc': [
-    '0x0232d1083e970f0c78f56202b9a666b526fa379f',
-    '0x1919db36ca2fa2e15f9000fd9cdc2edcf863e685',
-    '0x6639C089AdFbA8bb9968dA643C6BE208a70d6daA'
-  ],
+  'flip': '0xD7af88D7749c777131ae81Fef2A5EB2e37e9F6dB',
+  'flip2': '0x541eBCd017986eF62e3A7e2F24A1835EA7FEcf50',
+  'flip3': '0x9B5E928f9E17aAD03c4a051e59d86Ae6E19d21d7',
+  'flip4': '0x7af1e233be4ffe8537c755f1d789f9125a377510',
+  'flip5': '0xada0169b63fb63b65c98ebd7c7fbceeb7d0670f7',
+  'flip6': '0x876b6f87490fFD17c3aA60711D8158bf407F7961',
+  'flip7': '0xDA9E10dA22D89267E5D8e94B7Cadd332172cE869',
+  'flip8': '0x5A0E0176A4299068b6B9843eF60b5410Ac90077F',
+  'otc': '0x0232d1083e970f0c78f56202b9a666b526fa379f',
+  'otc2': '0x1919db36ca2fa2e15f9000fd9cdc2edcf863e685',
+  'otc3': '0x6639C089AdFbA8bb9968dA643C6BE208a70d6daA',
   'judge': '0xfd22e70cb42a0fa315c82e0aa95a6dc19f8b4934',
   'billi': '0x240e204b8eb025533128b54ed55c141d64db987d',
   'dimi': '0x4a2c786651229175407d3a2d405d1998bcf40614',
 }
 
 Object.keys(inputA).forEach(key => inputA[key].address = inputA[key].address.toLowerCase());
-Object.keys(inputU).forEach(key => inputU[key] = inputU[key].map(a => a.toLowerCase()));
+Object.keys(inputU).forEach(key => inputU[key] = inputU[key].toLowerCase());
 
 module.exports = {
   inputU,

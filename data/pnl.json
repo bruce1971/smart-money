@@ -1,1 +1,277 @@
-{}
+{
+  "0x6982508145454ce325ddbe47a25d4ec3d2311933": [
+    {
+      "userAddresses": [
+        "0xcb77b30841e1deaffd88ba08b9654c667f80b80a"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": 0,
+      "sell": 0,
+      "current": 2497.7264797322287,
+      "profit": 2497.7264797322287,
+      "roi": 0
+    },
+    {
+      "userAddresses": [
+        "0xaf2358e98683265cbd3a48509123d390ddf54534"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.01,
+      "sell": 0,
+      "current": 1208.4238100791395,
+      "profit": 1208.4138100791395,
+      "roi": 120841.38100791395
+    },
+    {
+      "userAddresses": [
+        "0x5979ce78d9d25e3c6ca5422dd3a8abf3133ba7b8"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.02,
+      "sell": 143.42000000000002,
+      "current": 0,
+      "profit": 143.4,
+      "roi": 7170
+    },
+    {
+      "userAddresses": [
+        "0x3d1a2b9f848d8d98731c5ff0be062bb21b5a507a"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.02,
+      "sell": 4.99,
+      "current": 0,
+      "profit": 4.970000000000001,
+      "roi": 248.50000000000003
+    },
+    {
+      "userAddresses": [
+        "0x36c2b911fb9152f077ac26d4e67c7cbdf3b615a9"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.02,
+      "sell": 4.41,
+      "current": 0,
+      "profit": 4.390000000000001,
+      "roi": 219.50000000000003
+    },
+    {
+      "userAddresses": [
+        "0xfbfeaf0da0f2fde5c66df570133ae35f3eb58c9a"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.4,
+      "sell": 0,
+      "current": 1.78408181585043,
+      "profit": 1.38408181585043,
+      "roi": 3.460204539626075
+    },
+    {
+      "userAddresses": [
+        "0xf5c0cdb9e18a4af157fdd369540ec9f4912b5edf"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.02,
+      "sell": 1.07,
+      "current": 0,
+      "profit": 1.05,
+      "roi": 52.5
+    },
+    {
+      "userAddresses": [
+        "0x1298652974068e0d3a7bcdd6e29d6409101833ac"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.05,
+      "sell": 0.88,
+      "current": 0,
+      "profit": 0.83,
+      "roi": 16.599999999999998
+    },
+    {
+      "userAddresses": [
+        "0x8ccf59bc5daafc43ff67f9825f08bbfbabc5cef6"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.05,
+      "sell": 0.88,
+      "current": 0,
+      "profit": 0.83,
+      "roi": 16.599999999999998
+    },
+    {
+      "userAddresses": [
+        "0xe7a63eb84850f42b5e54a8a24a8cb4fdbf2be1f8"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.05,
+      "sell": 0.87,
+      "current": 0,
+      "profit": 0.82,
+      "roi": 16.4
+    },
+    {
+      "userAddresses": [
+        "0x8e5ca1872062bee63b8a46493f6de36d4870ff88"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.002913800271091981,
+      "profit": 0.002913800271091981,
+      "roi": 0
+    },
+    {
+      "userAddresses": [
+        "0x850d763e533d4367348f03fd775b5cdd7dac41dd"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.607427603499272e-10,
+      "profit": 4.607427603499272e-10,
+      "roi": 0
+    },
+    {
+      "userAddresses": [
+        "0x92fb5b4f8030103e0b11275c30965d1897ff23e5"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    {
+      "userAddresses": [
+        "0x6925fc4c77c5824ea899cfd4c5102d689d6859d6"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.02,
+      "sell": 0,
+      "current": 0.000360704501459942,
+      "profit": -0.019639295498540058,
+      "roi": -0.9819647749270028
+    },
+    {
+      "userAddresses": [
+        "0x836b50c2d4494c9963832e8a790d429350998198"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.02,
+      "sell": 0,
+      "current": 5.096407975400116e-14,
+      "profit": -0.019999999999949038,
+      "roi": -0.9999999999974518
+    },
+    {
+      "userAddresses": [
+        "0x08f120a352c16ab1d58bca16f845377e087e9e4c"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.02,
+      "sell": 0,
+      "current": 0,
+      "profit": -0.02,
+      "roi": -1
+    },
+    {
+      "userAddresses": [
+        "0xb1b15945842b4b68565caa2f10dad59b6d66e5c6"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.02,
+      "sell": 0,
+      "current": 0,
+      "profit": -0.02,
+      "roi": -1
+    },
+    {
+      "userAddresses": [
+        "0xb903e91bc67fa5c08ea151b17447a5b775eb7fe9"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.02,
+      "sell": 0,
+      "current": 0,
+      "profit": -0.02,
+      "roi": -1
+    },
+    {
+      "userAddresses": [
+        "0x08abf976fe94867f56f722f51a1573ed60d85031"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.03,
+      "sell": 0,
+      "current": 2.0516789459791196e-14,
+      "profit": -0.02999999999997948,
+      "roi": -0.9999999999993161
+    },
+    {
+      "userAddresses": [
+        "0x3191203c8a89d71a8f5a35140e2c7f2477396c92"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.04,
+      "sell": 0,
+      "current": 0,
+      "profit": -0.04,
+      "roi": -1
+    },
+    {
+      "userAddresses": [
+        "0x9adea960e2e41725fff6f0951c790bd6257dfb68"
+      ],
+      "type": "erc20",
+      "tokenName": "Pepe",
+      "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+      "buy": -0.5,
+      "sell": 0,
+      "current": 0,
+      "profit": -0.5,
+      "roi": -1
+    }
+  ]
+}
