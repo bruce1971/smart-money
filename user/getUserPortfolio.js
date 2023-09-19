@@ -92,7 +92,7 @@ async function getUserPortfolio(participation, erc20InfoObj, erc721InfoObj, user
     }
 
     current = Object.values(current).sort((a, b) => b.totalUsd - a.totalUsd);
-    if (true) {
+    if (false) {
       userAddresses.forEach(address => portfolios[address.toLowerCase()] = current);
       await fs.writeFile(path, JSON.stringify(portfolios, null, 2), 'utf8');
     }
