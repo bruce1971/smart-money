@@ -49,7 +49,7 @@ async function getWallets(tokenAddress, isImmediate=true) {
 function formatPnlRanking(contractPnl) {
   contractPnl = contractPnl.slice(0, 50);
   const formattedPnl = contractPnl.map(o => ({
-    'Wallet': o.userAddresses[0],
+    'Wallet': o.userAddress,
     'Profit (eth)': roundSpec(o.profit),
     'ROI (x)': roundSpec(o.roi),
     'Put In (eth)': roundSpec(-o.buy),
@@ -68,19 +68,37 @@ async function savePnl(contractPnl, allPnl, tokenAddress) {
 }
 
 
+function getTop100Wallets(contractPnl) {
+  const profitArray = contractPnl.map(o => o.profit).sort((b,a) => b-a > 0);
+  const profitLimit = profitArray.length >= 100 ? profitArray[99] : profitArray[profitArray-1];
+  const constractPnl100 = contractPnl.filter(o => o.profit >= profitLimit);
+  return constractPnl100;
+}
+
+
 async function getEtherscanData(tokenAddress, isImmediate=true) {
   console.time('TIME');
   const allPnl = JSON.parse(await fs.readFile(path));
 
+
+
   let allWallets = await getWallets(tokenAddress.address, isImmediate);
   // console.log('scribbs?', allWallets.includes('0x70399b85054dd1d94f2264afc8704a3ee308abaf'));
+
+  // CASE 1: refresh top 100
+  // CASE 2: refresh everything
+  // CASE 3: refresh only new ones
+  // CASE 3: display storage
+
 
   let contractPnl = [];
   const saveEvery = 20;
   if (allPnl[tokenAddress.address]) {
     contractPnl = allPnl[tokenAddress.address];
+    const top100Pnl = getTop100Wallets(contractPnl);
+    console.log(top100Pnl);
     if (!isImmediate) {
-      const alreadySavedWallets = [... new Set(contractPnl.map(o => o.userAddresses).flat(1))];
+      const alreadySavedWallets = [... new Set(contractPnl.map(o => o.userAddress).flat(1))];
       for (let i = 0; i < allWallets.length; i++) {
         console.log('----------');
         console.log(i);
@@ -98,8 +116,8 @@ async function getEtherscanData(tokenAddress, isImmediate=true) {
     for (let i = 0; i < allWallets.length; i++) {
       console.log('----------');
       console.log(i);
-      const userAddresses = [allWallets[i]];
-      const user = await getUser(userAddresses, tokenAddress, null, true);
+      const userAddress = allWallets[i];
+      const user = await getUser(userAddress, tokenAddress, null, true);
       if (user.aPnl[0]) contractPnl.push(user.aPnl[0]);
       if (i % saveEvery === 0 && i > 0) savePnl(contractPnl, allPnl, tokenAddress);
     }

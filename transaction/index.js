@@ -6,7 +6,7 @@ const { parseErc721 } = require(`./parseErc721.js`);
 const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'.toLowerCase();
 
 
-async function parseTx(fullTx, userAddresses, pnl, erc20InfoObj) {
+async function parseTx(fullTx, userAddress, pnl, erc20InfoObj) {
   const finalObject = {
     ago: formatTimestamp(fullTx.timeStamp),
     block: fullTx.block,
@@ -21,9 +21,9 @@ async function parseTx(fullTx, userAddresses, pnl, erc20InfoObj) {
     parseErc721(txs, finalObject, pnl, erc20InfoObj);
   } else if (txsKeys.includes('erc20')) {
     await parseErc20(txs, finalObject, pnl, erc20InfoObj);
-  } else if (txs.normal?.from.toLowerCase() === userAddresses[0] && txs.normal?.functionName === '' && txs.normal?.input === '0x') {
+  } else if (txs.normal?.from.toLowerCase() === userAddress && txs.normal?.functionName === '' && txs.normal?.input === '0x') {
     finalObject.activity = `💸➡️  SEND ${formatValue(txs.normal?.value) || 0}eth to ${shortAddr(txs.normal?.to)}`;
-  } else if (txs.normal?.to.toLowerCase() === userAddresses[0] && txs.normal?.functionName === '') {
+  } else if (txs.normal?.to.toLowerCase() === userAddress && txs.normal?.functionName === '') {
     finalObject.activity = `⬅️ 💸 RECEIVE ${formatValue(txs.normal?.value) || 0}eth from ${shortAddr(txs.normal?.from)}`;
   } else if (txs.normal?.functionName.includes('setApprovalForAll')) {
     finalObject.activity = `👍👍 Set Approval for All...`

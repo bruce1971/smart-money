@@ -17,27 +17,21 @@ const inputA = {
 }
 
 const inputU = {
-  'me': ['0xCc65d148ac68Fda14C29bCC5aE7622D8BcD622e3'],
-  'scribbs':  [
-    '0x70399b85054dd1d94f2264afc8704a3ee308abaf', // pepe wallet
-    '0x5654967dc2c3f207b68bbd8003bc27a0a4106b56', // checks wallet & punk trading
-    // '0x5b1c25d61edce8decfc0b03a2c7f0d7917a8032f', // temp punk wallet
-    // '0xa1e2fbd0f94465cc253792aa4b19629438d70836', // beanie punk wallet
-    // '0x59d4fd60a25054bbd6cca11cf43946a3e033194b', // vr punk purchaser & chickenwing
-    // '0x00d0ad2956829f95543d33ab8b5438c066b76413', // vr punk holder
-  ],
-  'grow': ['0x1CE2304369d957fc1F0Dd32C983F445E449F4C7A'],
-  'artchick': ['0x0b8F4C4E7626A91460dac057eB43e0de59d5b44F'],
-  'osf': ['0x3cb8482495c9188d1e36373134c059f98d7be4ed', '0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1'],
-  'xman': ['0xc1244286edacb4097715386992aed36752483dcb'],
-  'seb': [
-    '0x3d280fde2ddb59323c891cf30995e1862510342f', //punk wallet
-    // '0xA1C9CEeD5Ff78f700dC4930514621843b5fAc272' //hot
-  ],
-  'left': [
-    '0x9224cf7956b8787f1e015349ba2937cef29215d8',
-    '0x5f45c7ea2e094fea813a8a8813620ffcc4a19d0f'
-  ],
+  'me': '0xCc65d148ac68Fda14C29bCC5aE7622D8BcD622e3',
+  'scribbs': '0x70399b85054dd1d94f2264afc8704a3ee308abaf', // pepe wallet
+  'scribbs2': '0x5654967dc2c3f207b68bbd8003bc27a0a4106b56', // checks wallet & punk trading
+  'scribbs3': '0x5b1c25d61edce8decfc0b03a2c7f0d7917a8032f', // temp punk wallet
+  'scribbs4': '0xa1e2fbd0f94465cc253792aa4b19629438d70836', // beanie punk wallet
+  'scribbs5': '0x59d4fd60a25054bbd6cca11cf43946a3e033194b', // vr punk purchaser & chickenwing
+  'scribbs6': '0x00d0ad2956829f95543d33ab8b5438c066b76413', // vr punk holder
+  'grow': '0x1CE2304369d957fc1F0Dd32C983F445E449F4C7A',
+  'artchick': '0x0b8F4C4E7626A91460dac057eB43e0de59d5b44F',
+  'osf': '0x3cb8482495c9188d1e36373134c059f98d7be4ed',
+  'osf2': '0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1',
+  'xman': '0xc1244286edacb4097715386992aed36752483dcb',
+  'seb': '0x3d280fde2ddb59323c891cf30995e1862510342f',
+  'left': '0x9224cf7956b8787f1e015349ba2937cef29215d8',
+  'left2': '0x5f45c7ea2e094fea813a8a8813620ffcc4a19d0f',
   'flip': [
     '0xD7af88D7749c777131ae81Fef2A5EB2e37e9F6dB',
     '0x541eBCd017986eF62e3A7e2F24A1835EA7FEcf50',
@@ -53,9 +47,9 @@ const inputU = {
     '0x1919db36ca2fa2e15f9000fd9cdc2edcf863e685',
     '0x6639C089AdFbA8bb9968dA643C6BE208a70d6daA'
   ],
-  'judge': ['0xfd22e70cb42a0fa315c82e0aa95a6dc19f8b4934'],
-  'billi': ['0x240e204b8eb025533128b54ed55c141d64db987d'],
-  'dimi': ['0x4a2c786651229175407d3a2d405d1998bcf40614'],
+  'judge': '0xfd22e70cb42a0fa315c82e0aa95a6dc19f8b4934',
+  'billi': '0x240e204b8eb025533128b54ed55c141d64db987d',
+  'dimi': '0x4a2c786651229175407d3a2d405d1998bcf40614',
 }
 
 Object.keys(inputA).forEach(key => inputA[key].address = inputA[key].address.toLowerCase());
