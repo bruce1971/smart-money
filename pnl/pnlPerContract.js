@@ -17,7 +17,7 @@ async function getWallets(tokenAddress, isImmediate=true) {
   let txLength = 10000;
   let startblock = 0;
   const allTransactions = [];
-  let maxLoops = 5;
+  let maxLoops = 1;
   if (isImmediate) maxLoops = 1;
 
   while(txLength >= 10000 && i < maxLoops) {
@@ -99,7 +99,6 @@ async function getEtherscanData(tokenAddress, isImmediate=true) {
   if (allPnl[tokenAddress.address]) {
     contractPnl = allPnl[tokenAddress.address];
     const top100Pnl = getTop100Wallets(contractPnl);
-    console.log(top100Pnl);
     if (!isImmediate) {
       const alreadySavedWallets = [... new Set(contractPnl.map(o => o.userAddress).flat(1))];
       for (let i = 0; i < allWallets.length; i++) {

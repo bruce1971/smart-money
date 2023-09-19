@@ -9,8 +9,8 @@ const path = `./data/portfolio.json`;
 async function getUserPortfolio(participation, erc20InfoObj, erc721InfoObj, userAddress) {
   let portfolios = JSON.parse(await fs.readFile(path));
   let current = {}
-  // if (false) {
-  if (Object.keys(portfolios).includes(userAddress.toLowerCase())) {
+  if (false) {
+  // if (Object.keys(portfolios).includes(userAddress.toLowerCase())) {
     console.log(`Getting current portfolio from storage...`);
     current = portfolios[userAddress.toLowerCase()];
   }

@@ -142,7 +142,7 @@ function formatActivityLog(activityLog, showUser=false, showBlock=false) {
 function aggrPnl(participation, currentPortfolio, pnl) {
   let pnlObj = [];
   participation.forEach(el => {
-    const userAddresses = participation[0].userAddresses;
+    const userAddress = participation[0].userAddress;
     const type = el.type;
     const tokenName = el.tokenName;
     const contractAddress = el.contractAddress;
@@ -152,7 +152,7 @@ function aggrPnl(participation, currentPortfolio, pnl) {
     const current = currentPortfolio.find(o => o.address.toLowerCase() === el.contractAddress.toLowerCase())?.totalEth || 0;
     const profit = buy + sell + current;
     const roi = buy === 0 ? 0 : profit / (-buy);
-    pnlObj.push({ userAddresses, type, tokenName, contractAddress, buy, sell, current, profit, roi })
+    pnlObj.push({ userAddress, type, tokenName, contractAddress, buy, sell, current, profit, roi })
   });
   pnlObj = pnlObj.sort((a, b) => b.profit - a.profit);
   return pnlObj;
@@ -196,21 +196,18 @@ function getParticipation(txArray) {
     if (tx.userWallet) {
       if (tx.txs.erc20) {
         const contractAddress = tx.txs.erc20.contractAddress
-        if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
-        else participation[contractAddress] = {...tx.txs.erc20, userAddresses: [tx.userWallet]};
-        participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
+        if (participation[contractAddress]) participation[contractAddress].userAddress = tx.userWallet;
+        else participation[contractAddress] = {...tx.txs.erc20, userAddress: tx.userWallet};
       }
       else if (tx.txs.erc721) {
         const contractAddress = tx.txs.erc721.contractAddress
-        if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
-        else participation[contractAddress] = {...tx.txs.erc721, userAddresses: [tx.userWallet]};
-        participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
+        if (participation[contractAddress]) participation[contractAddress].userAddress = tx.userWallet;
+        else participation[contractAddress] = {...tx.txs.erc721, userAddress: tx.userWallet};
       }
       else if (tx.txs.erc1155) {
         const contractAddress = tx.txs.erc1155.contractAddress
-        if (participation[contractAddress]) participation[contractAddress].userAddresses.push(tx.userWallet);
-        else participation[contractAddress] = {...tx.txs.erc1155, userAddresses: [tx.userWallet]};
-        participation[contractAddress].userAddresses = [...new Set(participation[contractAddress].userAddresses)]
+        if (participation[contractAddress]) participation[contractAddress].userAddress = tx.userWallet;
+        else participation[contractAddress] = {...tx.txs.erc1155, userAddress: tx.userWallet};
       }
     }
   });
@@ -221,7 +218,7 @@ function getParticipation(txArray) {
     type: o.type,
     ago: formatTimestamp(o.timeStamp),
     contractAddress: o.contractAddress,
-    userAddresses: o.userAddresses,
+    userAddress: o.userAddress,
     aTxHash: `https://etherscan.io/tx/${o.hash}`
   }))
   const displayFormatted = false;
