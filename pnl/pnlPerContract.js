@@ -65,6 +65,7 @@ function formatPnlRanking(contractPnl) {
 async function savePnl(contractPnl, allPnl, contractAddress) {
   allPnl[contractAddress] = contractPnl;
   await fs.writeFile(path, JSON.stringify(allPnl, null, 2), 'utf8');
+  formatPnlRanking(contractPnl);
 }
 
 

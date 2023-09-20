@@ -189,26 +189,24 @@ function secondsToBlocks(seconds) {
   return Math.ceil(seconds/12.08);
 }
 
-function getParticipation(txArray) {
+function getParticipation(txArray, userAddress) {
   txArray = txArray.sort((a,b) => Number(b.timeStamp) - Number(a.timeStamp));
   let participation = {};
   txArray.forEach(tx => {
-    if (tx.userWallet) {
-      if (tx.txs.erc20) {
-        const contractAddress = tx.txs.erc20.contractAddress
-        if (participation[contractAddress]) participation[contractAddress].userAddress = tx.userWallet;
-        else participation[contractAddress] = {...tx.txs.erc20, userAddress: tx.userWallet};
-      }
-      else if (tx.txs.erc721) {
-        const contractAddress = tx.txs.erc721.contractAddress
-        if (participation[contractAddress]) participation[contractAddress].userAddress = tx.userWallet;
-        else participation[contractAddress] = {...tx.txs.erc721, userAddress: tx.userWallet};
-      }
-      else if (tx.txs.erc1155) {
-        const contractAddress = tx.txs.erc1155.contractAddress
-        if (participation[contractAddress]) participation[contractAddress].userAddress = tx.userWallet;
-        else participation[contractAddress] = {...tx.txs.erc1155, userAddress: tx.userWallet};
-      }
+    if (tx.txs.erc20) {
+      const contractAddress = tx.txs.erc20.contractAddress
+      if (participation[contractAddress]) participation[contractAddress].userAddress = userAddress;
+      else participation[contractAddress] = {...tx.txs.erc20, userAddress: userAddress};
+    }
+    else if (tx.txs.erc721) {
+      const contractAddress = tx.txs.erc721.contractAddress
+      if (participation[contractAddress]) participation[contractAddress].userAddress = userAddress;
+      else participation[contractAddress] = {...tx.txs.erc721, userAddress: userAddress};
+    }
+    else if (tx.txs.erc1155) {
+      const contractAddress = tx.txs.erc1155.contractAddress
+      if (participation[contractAddress]) participation[contractAddress].userAddress = userAddress;
+      else participation[contractAddress] = {...tx.txs.erc1155, userAddress: userAddress};
     }
   });
   participation = Object.values(participation);
@@ -221,17 +219,5 @@ function getParticipation(txArray) {
     userAddress: o.userAddress,
     aTxHash: `https://etherscan.io/tx/${o.hash}`
   }))
-  const displayFormatted = false;
-  if (displayFormatted) {
-    const participationErc20 = participation.filter(o => o.type === 'erc20')
-    console.log('========================================= SHITCOIN ============================================');
-    participationErc20.forEach(o => console.log(o));
-    const participationErc721 = participation.filter(o => o.type === 'erc721')
-    console.log('============================================ NFT ==============================================');
-    participationErc721.forEach(o => console.log(o));
-    const participationErc1155 = participation.filter(o => o.type === 'erc1155')
-    console.log('========================================== NIFTY ==============================================');
-    participationErc1155.forEach(o => console.log(o));
-  }
   return participation;
 }
