@@ -7,9 +7,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.02,
       "sell": 0,
-      "current": 27.972937671399368,
-      "profit": 27.95293767139937,
-      "roi": 1397.6468835699684
+      "current": 28.34028875780892,
+      "profit": 28.32028875780892,
+      "roi": 1416.014437890446
     },
     "0xebf375cc47fa63f90d9f395cb789beb23cc896fe": {
       "userAddress": "0xebf375cc47fa63f90d9f395cb789beb23cc896fe",
@@ -18,9 +18,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.04,
       "sell": 0,
-      "current": 53.194512862820545,
-      "profit": 53.154512862820546,
-      "roi": 1328.8628215705137
+      "current": 53.89308311385155,
+      "profit": 53.853083113851554,
+      "roi": 1346.3270778462888
     },
     "0x373fff342f15a3b0bbca144638b2d53f99ebd172": {
       "userAddress": "0x373fff342f15a3b0bbca144638b2d53f99ebd172",
@@ -29,9 +29,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.30000000000000004,
       "sell": 1.9700000000000002,
-      "current": 48.391541120480404,
-      "profit": 50.061541120480406,
-      "roi": 166.87180373493467
+      "current": 49.0270369490725,
+      "profit": 50.697036949072505,
+      "roi": 168.990123163575
     },
     "0xc6fc258f1068638666fcaca7162e4e80b21423b2": {
       "userAddress": "0xc6fc258f1068638666fcaca7162e4e80b21423b2",
@@ -40,9 +40,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.04,
       "sell": 0,
-      "current": 54.796299154584254,
-      "profit": 54.756299154584255,
-      "roi": 1368.9074788646064
+      "current": 55.515904662669335,
+      "profit": 55.475904662669336,
+      "roi": 1386.8976165667334
     },
     "0x2a6942b652f5172b7f028573474ab90e600d99d4": {
       "userAddress": "0x2a6942b652f5172b7f028573474ab90e600d99d4",
@@ -51,8 +51,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 3.1924245966391414e-9,
-      "profit": 3.1924245966391414e-9,
+      "current": 3.2343487112113137e-9,
+      "profit": 3.2343487112113137e-9,
       "roi": 0
     },
     "0x93fd9b24c8c482b7ca5e628095bb8df46c49cd7c": {
@@ -62,8 +62,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 9.357714264172898,
-      "profit": 9.357714264172898,
+      "current": 9.480603270026895,
+      "profit": 9.480603270026895,
       "roi": 0
     },
     "0x2c6f997d89dbd9d6085b8a77e1ee7ee7f24d5ff1": {
@@ -84,9 +84,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.09,
       "sell": 0,
-      "current": 43.108947437760634,
-      "profit": 43.01894743776063,
-      "roi": 477.98830486400703
+      "current": 43.675070269093624,
+      "profit": 43.58507026909362,
+      "roi": 484.2785585454847
     },
     "0x56ed73a460cedbeff1e5435bfb81cb1da8369af5": {
       "userAddress": "0x56ed73a460cedbeff1e5435bfb81cb1da8369af5",
@@ -95,8 +95,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 2.7043125031334322e-9,
-      "profit": 2.7043125031334322e-9,
+      "current": 2.739826547017094e-9,
+      "profit": 2.739826547017094e-9,
       "roi": 0
     },
     "0x76c9f62b2b94b83fae8e84ddbe50ea3406b00289": {
@@ -106,8 +106,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.8199921611290224e-8,
-      "profit": 1.8199921611290224e-8,
+      "current": 1.8438929793234302e-8,
+      "profit": 1.8438929793234302e-8,
       "roi": 0
     },
     "0x69f8968b98a6b66dfc0363466347a1e386d39b14": {
@@ -117,8 +117,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.9237395215948427,
-      "profit": 1.9237395215948427,
+      "current": 1.9490027889544739,
+      "profit": 1.9490027889544739,
       "roi": 0
     },
     "0x8e4628a76639d6067c53b7ae527832e4244f2e12": {
@@ -128,8 +128,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.784905064785183,
-      "profit": 1.784905064785183,
+      "current": 1.8083451060990114,
+      "profit": 1.8083451060990114,
       "roi": 0
     },
     "0x3761bdddb5e4fa55aac3d4abd40ce80df52bbbf9": {
@@ -139,8 +139,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 7.037141155941733e-9,
-      "profit": 7.037141155941733e-9,
+      "current": 7.1295555272609e-9,
+      "profit": 7.1295555272609e-9,
       "roi": 0
     },
     "0x0d0a50c0162e8e6fbd579201555512de47927612": {
@@ -161,9 +161,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.04,
       "sell": 0,
-      "current": 41.086833084001505,
-      "profit": 41.046833084001506,
-      "roi": 1026.1708271000375
+      "current": 41.62640075286197,
+      "profit": 41.58640075286197,
+      "roi": 1039.660018821549
     },
     "0x8740515def48f6ba2d2cb7e4a3093cc8bb5ed20a": {
       "userAddress": "0x8740515def48f6ba2d2cb7e4a3093cc8bb5ed20a",
@@ -183,9 +183,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.05,
       "sell": 0,
-      "current": 66.8697036570564,
-      "profit": 66.81970365705641,
-      "roi": 1336.394073141128
+      "current": 67.74786163155547,
+      "profit": 67.69786163155547,
+      "roi": 1353.9572326311093
     },
     "0xc4d4cfd6de896c76d0fa5fd5626165e65a43b5e5": {
       "userAddress": "0xc4d4cfd6de896c76d0fa5fd5626165e65a43b5e5",
@@ -194,8 +194,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 15.726859908658803,
-      "profit": 15.726859908658803,
+      "current": 15.933390918777329,
+      "profit": 15.933390918777329,
       "roi": 0
     },
     "0x8f40f03ba56916cb7d6b945b83148c865a87c89b": {
@@ -205,8 +205,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 15.549541312567538,
-      "profit": 15.549541312567538,
+      "current": 15.753743708520476,
+      "profit": 15.753743708520476,
       "roi": 0
     },
     "0x54b9abc57e4a69f6e20a6049be930ec444a9005b": {
@@ -216,8 +216,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 31.10206631657272,
-      "profit": 31.10206631657272,
+      "current": 31.510510291431206,
+      "profit": 31.510510291431206,
       "roi": 0
     },
     "0x9330a7e103dffe0780abfb0ce6191cee4455a1d0": {
@@ -227,8 +227,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 15.203788128080028,
-      "profit": 15.203788128080028,
+      "current": 15.40344996381569,
+      "profit": 15.40344996381569,
       "roi": 0
     },
     "0xce507c4f17703c33a273e0a92c15e946c112ecde": {
@@ -238,8 +238,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 30.57183145670893,
-      "profit": 30.57183145670893,
+      "current": 30.973312188946593,
+      "profit": 30.973312188946593,
       "roi": 0
     },
     "0xeea00fefcc863122aa7347dfc1d128a61b06c1d6": {
@@ -260,9 +260,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.03,
       "sell": 0,
-      "current": 8.92055363204232,
-      "profit": 8.890553632042321,
-      "roi": 296.35178773474405
+      "current": 9.037701680867237,
+      "profit": 9.007701680867237,
+      "roi": 300.2567226955746
     },
     "0x301bd3c350816803215b7068bf86eae37428394e": {
       "userAddress": "0x301bd3c350816803215b7068bf86eae37428394e",
@@ -271,9 +271,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.03,
       "sell": 0,
-      "current": 30.98725245164505,
-      "profit": 30.957252451645047,
-      "roi": 1031.908415054835
+      "current": 31.394188647860062,
+      "profit": 31.36418864786006,
+      "roi": 1045.4729549286687
     },
     "0xed605355e97e898d3520a384035ceb2572fd370e": {
       "userAddress": "0xed605355e97e898d3520a384035ceb2572fd370e",
@@ -293,9 +293,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.02,
       "sell": 0,
-      "current": 2.062248910285464e-16,
-      "profit": -0.019999999999999796,
-      "roi": -0.9999999999999898
+      "current": 2.0893311347747016e-16,
+      "profit": -0.019999999999999792,
+      "roi": -0.9999999999999896
     },
     "0x514aeb9a416686c632fce79d49e4040bd178b69a": {
       "userAddress": "0x514aeb9a416686c632fce79d49e4040bd178b69a",
@@ -304,9 +304,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.05,
       "sell": 0,
-      "current": 39.159022366251236,
-      "profit": 39.10902236625124,
-      "roi": 782.1804473250247
+      "current": 39.67327330328051,
+      "profit": 39.62327330328051,
+      "roi": 792.4654660656103
     },
     "0x230be9c0f06ab2ff3097a229aced0d2cb1287922": {
       "userAddress": "0x230be9c0f06ab2ff3097a229aced0d2cb1287922",
@@ -315,9 +315,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.03,
       "sell": 0,
-      "current": 15.664965946095288,
-      "profit": 15.634965946095289,
-      "roi": 521.1655315365097
+      "current": 15.870684141533532,
+      "profit": 15.840684141533533,
+      "roi": 528.0228047177844
     },
     "0x472dacdc38fdbe71d4d8f83600bffd210db10183": {
       "userAddress": "0x472dacdc38fdbe71d4d8f83600bffd210db10183",
@@ -326,8 +326,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 8.491033888739725,
-      "profit": 8.491033888739725,
+      "current": 8.602541323547262,
+      "profit": 8.602541323547262,
       "roi": 0
     },
     "0xf61b21d4312fd01c63318322bb9217f75fde32ae": {
@@ -337,8 +337,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 21.604651467670188,
-      "profit": 21.604651467670188,
+      "current": 21.888371836312878,
+      "profit": 21.888371836312878,
       "roi": 0
     },
     "0xb8a82dc0839962ebd46f17f5e82fc79a722bbf55": {
@@ -348,8 +348,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 11.259700356811043,
-      "profit": 11.259700356811043,
+      "current": 11.407566955854364,
+      "profit": 11.407566955854364,
       "roi": 0
     },
     "0x12aa2de850991311ae8a3ad9ae7d0a1f51c99c80": {
@@ -359,8 +359,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 2.5051627718176758e-8,
-      "profit": 2.5051627718176758e-8,
+      "current": 2.53806150689765e-8,
+      "profit": 2.53806150689765e-8,
       "roi": 0
     },
     "0xe6bf9c0c928567317bb5c00260f430e46bbb8e04": {
@@ -381,8 +381,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 3.12,
-      "current": 1.935661644819216,
-      "profit": 5.055661644819216,
+      "current": 1.9610814779629002,
+      "profit": 5.0810814779629005,
       "roi": 0
     },
     "0x455b4d3dd7e648a3f1a2b0e433e20f45fcc8fdf1": {
@@ -392,8 +392,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.12258654627663,
-      "profit": 1.12258654627663,
+      "current": 1.137328772931827,
+      "profit": 1.137328772931827,
       "roi": 0
     },
     "0xbd5caa3d0d0e18c84622b620471019d803478869": {
@@ -414,8 +414,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 3.721088032821286,
-      "profit": 3.721088032821286,
+      "current": 3.769954753490389,
+      "profit": 3.769954753490389,
       "roi": 0
     },
     "0xafd495a64971fd1fe26b20d7c5e55fd47912c068": {
@@ -425,9 +425,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.03,
       "sell": 0,
-      "current": 3.905328009434679,
-      "profit": 3.8753280094346794,
-      "roi": 129.17760031448933
+      "current": 3.9566142384287226,
+      "profit": 3.926614238428723,
+      "roi": 130.88714128095742
     },
     "0x2b28b67126fc897e2d4497f5db316ae183a40311": {
       "userAddress": "0x2b28b67126fc897e2d4497f5db316ae183a40311",
@@ -436,8 +436,1834 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.7671451118334713,
-      "profit": 1.7671451118334713,
+      "current": 1.7903519227984523,
+      "profit": 1.7903519227984523,
+      "roi": 0
+    },
+    "0xa304131ecb56cc6ea33cca0ca90d5559c74c2e9f": {
+      "userAddress": "0xa304131ecb56cc6ea33cca0ca90d5559c74c2e9f",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0xf57deff074911d060d151fdfb8fc1fc93baf59e2": {
+      "userAddress": "0xf57deff074911d060d151fdfb8fc1fc93baf59e2",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.988828235286555e-8,
+      "profit": 2.988828235286555e-8,
+      "roi": 0
+    },
+    "0x2bd41e1b1989fddb67de17173c826e1fb88dfc01": {
+      "userAddress": "0x2bd41e1b1989fddb67de17173c826e1fb88dfc01",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.04,
+      "sell": 0,
+      "current": 8.152326876528296e-9,
+      "profit": -0.039999991847673125,
+      "roi": -0.9999997961918281
+    },
+    "0xf9074901d17d12e99235aded3247831b08b77f0f": {
+      "userAddress": "0xf9074901d17d12e99235aded3247831b08b77f0f",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.560352258826864,
+      "profit": 4.560352258826864,
+      "roi": 0
+    },
+    "0x0c2778c6dc798d880c0abf4824d0b7e2c196e876": {
+      "userAddress": "0x0c2778c6dc798d880c0abf4824d0b7e2c196e876",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.3646543039135912,
+      "profit": 0.3646543039135912,
+      "roi": 0
+    },
+    "0xf547f24a3a81bdf23a21a352daae39f9bd0b36a6": {
+      "userAddress": "0xf547f24a3a81bdf23a21a352daae39f9bd0b36a6",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.02,
+      "sell": 0,
+      "current": 0.7351895697812598,
+      "profit": 0.7151895697812598,
+      "roi": 35.75947848906299
+    },
+    "0x2e9336af9f31bdfb3fa8592cfb5a745238e294e6": {
+      "userAddress": "0x2e9336af9f31bdfb3fa8592cfb5a745238e294e6",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.02,
+      "sell": 0,
+      "current": 12.625251705273033,
+      "profit": 12.605251705273034,
+      "roi": 630.2625852636517
+    },
+    "0xd9b64bef7a142afa65a093773b038ea094ffaac6": {
+      "userAddress": "0xd9b64bef7a142afa65a093773b038ea094ffaac6",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.6347184353068638e-8,
+      "profit": 2.6347184353068638e-8,
+      "roi": 0
+    },
+    "0x5b982497d67b7b12e447820702b525e49862985a": {
+      "userAddress": "0x5b982497d67b7b12e447820702b525e49862985a",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 1.2130711337518349e-8,
+      "profit": 1.2130711337518349e-8,
+      "roi": 0
+    },
+    "0x73fa3813a0bfe36f1d4040f69a4037041c7b43a0": {
+      "userAddress": "0x73fa3813a0bfe36f1d4040f69a4037041c7b43a0",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 1.867308730958781e-8,
+      "profit": 1.867308730958781e-8,
+      "roi": 0
+    },
+    "0xbe73a224751c1f70adc04389fdc8ed2689c103f0": {
+      "userAddress": "0xbe73a224751c1f70adc04389fdc8ed2689c103f0",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 15.10536765095256,
+      "profit": 15.10536765095256,
+      "roi": 0
+    },
+    "0x52e369d8b000d8a0e63a74868c3186c24a5adbac": {
+      "userAddress": "0x52e369d8b000d8a0e63a74868c3186c24a5adbac",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x62911043d20d6095a4a4af0bc1d12f575e621f50": {
+      "userAddress": "0x62911043d20d6095a4a4af0bc1d12f575e621f50",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0xe5f3239f5df08551c34a819cc52e7c3875680f9b": {
+      "userAddress": "0xe5f3239f5df08551c34a819cc52e7c3875680f9b",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x18256649ba902cf87cdc7bdd1f449f4764750945": {
+      "userAddress": "0x18256649ba902cf87cdc7bdd1f449f4764750945",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x17d6bcc939eabfdfab2042a5fdb910d05e97c455": {
+      "userAddress": "0x17d6bcc939eabfdfab2042a5fdb910d05e97c455",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.845345865481409,
+      "profit": 4.845345865481409,
+      "roi": 0
+    },
+    "0xa25c8dabd2bd33e86491f380af1c6da34b126a87": {
+      "userAddress": "0xa25c8dabd2bd33e86491f380af1c6da34b126a87",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 1.3105405301526118e-8,
+      "profit": 1.3105405301526118e-8,
+      "roi": 0
+    },
+    "0x453aed2b57e32abc49b733bf70173f7e3739bd37": {
+      "userAddress": "0x453aed2b57e32abc49b733bf70173f7e3739bd37",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 1.0681293490623543e-8,
+      "profit": 1.0681293490623543e-8,
+      "roi": 0
+    },
+    "0x8ea3c6ba084822bc5592e4edbfbe85e43ca56a54": {
+      "userAddress": "0x8ea3c6ba084822bc5592e4edbfbe85e43ca56a54",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0xc8d9fe90c5d70a1a26a3d6ef97a18e946e9973e7": {
+      "userAddress": "0xc8d9fe90c5d70a1a26a3d6ef97a18e946e9973e7",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x41b7801d6f295d0d2d30e286d4f06ffad2d51f96": {
+      "userAddress": "0x41b7801d6f295d0d2d30e286d4f06ffad2d51f96",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.08,
+      "sell": 0,
+      "current": 40.53350289130456,
+      "profit": 40.45350289130456,
+      "roi": 505.668786141307
+    },
+    "0x51c25230335472236853676290062c8c7a0825b6": {
+      "userAddress": "0x51c25230335472236853676290062c8c7a0825b6",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.6200000000000002,
+      "sell": 0,
+      "current": 40.29016989781833,
+      "profit": 39.67016989781833,
+      "roi": 63.98414499648116
+    },
+    "0x5356b54b51a3c947dc0e89ed49ff408682e05828": {
+      "userAddress": "0x5356b54b51a3c947dc0e89ed49ff408682e05828",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.4999605640291993e-8,
+      "profit": 2.4999605640291993e-8,
+      "roi": 0
+    },
+    "0xf01e8d0e35a5c4152d438860bc071bfb051f6fc7": {
+      "userAddress": "0xf01e8d0e35a5c4152d438860bc071bfb051f6fc7",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 15.601173211216373,
+      "profit": 15.601173211216373,
+      "roi": 0
+    },
+    "0xeed1eab6d1b8bf2614d9a37d598550c6dad44de6": {
+      "userAddress": "0xeed1eab6d1b8bf2614d9a37d598550c6dad44de6",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0xcc61a0b90e2f385ccb9b5e43f42c2a0905b3efc8": {
+      "userAddress": "0xcc61a0b90e2f385ccb9b5e43f42c2a0905b3efc8",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x83cf00bc0cabb4e49a45ba4d720d97fefec8fc0e": {
+      "userAddress": "0x83cf00bc0cabb4e49a45ba4d720d97fefec8fc0e",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.23,
+      "sell": 0,
+      "current": 68.32683830391433,
+      "profit": 68.09683830391432,
+      "roi": 296.07321001701877
+    },
+    "0xf541d7d1868aee9b08f9ee9bd835bb5e50cffcc5": {
+      "userAddress": "0xf541d7d1868aee9b08f9ee9bd835bb5e50cffcc5",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.645403946102008e-8,
+      "profit": 4.645403946102008e-8,
+      "roi": 0
+    },
+    "0xdce44180d5bed4420e30d630b5d0532d936d0c05": {
+      "userAddress": "0xdce44180d5bed4420e30d630b5d0532d936d0c05",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.12000000000000001,
+      "sell": 18.39,
+      "current": 2.7681451199127096,
+      "profit": 21.03814511991271,
+      "roi": 175.31787599927256
+    },
+    "0x83a69d9e4988d7bfafa9325294d172ff16a39534": {
+      "userAddress": "0x83a69d9e4988d7bfafa9325294d172ff16a39534",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.03,
+      "sell": 0,
+      "current": 28.372802927159807,
+      "profit": 28.342802927159806,
+      "roi": 944.7600975719936
+    },
+    "0x6e77efcad4db1e016b8105e4e14c353097c4d25c": {
+      "userAddress": "0x6e77efcad4db1e016b8105e4e14c353097c4d25c",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x1d76bae9afebd67f2560ee9dd85a2022b2bda914": {
+      "userAddress": "0x1d76bae9afebd67f2560ee9dd85a2022b2bda914",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.05512090229107867,
+      "profit": 0.05512090229107867,
+      "roi": 0
+    },
+    "0xaf3477b0c9640bd5c2517288277aac3f202deb0f": {
+      "userAddress": "0xaf3477b0c9640bd5c2517288277aac3f202deb0f",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 65.86336307538534,
+      "profit": 65.86336307538534,
+      "roi": 0
+    },
+    "0x4bdb391766a96ab370b9230784f30e3b2a32021f": {
+      "userAddress": "0x0d0a50c0162e8e6fbd579201555512de47927612",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0xeea6a8a60001ec5f8d2a1aaee0289981b28330bc": {
+      "userAddress": "0xeea6a8a60001ec5f8d2a1aaee0289981b28330bc",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.01,
+      "sell": 0,
+      "current": 3.8602713920810526e-8,
+      "profit": -0.009999961397286079,
+      "roi": -0.9999961397286079
+    },
+    "0xa1c3faeb63b172a15def9b59c50ff592c7e3a227": {
+      "userAddress": "0xa1c3faeb63b172a15def9b59c50ff592c7e3a227",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.27,
+      "sell": 0,
+      "current": 67.12975259619355,
+      "profit": 66.85975259619356,
+      "roi": 247.62871331923537
+    },
+    "0x2295fb871baca739ab2e5bfbe61156da01242e83": {
+      "userAddress": "0x2295fb871baca739ab2e5bfbe61156da01242e83",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.7359074567408082e-8,
+      "profit": 2.7359074567408082e-8,
+      "roi": 0
+    },
+    "0xf6fbde7db5d61b46eb4ccd8f17d920c75f1d89f3": {
+      "userAddress": "0xf6fbde7db5d61b46eb4ccd8f17d920c75f1d89f3",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.09,
+      "sell": 0,
+      "current": 2.3489154458949403e-8,
+      "profit": -0.08999997651084554,
+      "roi": -0.999999739009395
+    },
+    "0xf37c723b6c5f05f197ac98b2e259f77c9db67628": {
+      "userAddress": "0xf37c723b6c5f05f197ac98b2e259f77c9db67628",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 1.7908031942354932e-15,
+      "profit": 1.7908031942354932e-15,
+      "roi": 0
+    },
+    "0x25054f27c9972b341aee6c0d373a652566075431": {
+      "userAddress": "0x25054f27c9972b341aee6c0d373a652566075431",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -1.21,
+      "sell": 0,
+      "current": 53.2639001542061,
+      "profit": 52.0539001542061,
+      "roi": 43.01975219355876
+    },
+    "0x6b75d8af000000e20b7a7ddf000ba900b4009a80": {
+      "userAddress": "0xae2fc483527b8ef99eb5d9b44875f005ba1fae13",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 1.9124116966970226,
+      "profit": 1.9124116966970226,
+      "roi": 0
+    },
+    "0x0247818f2c0e8c035469fc9d718f4775bd60a8b2": {
+      "userAddress": "0x0247818f2c0e8c035469fc9d718f4775bd60a8b2",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.24562501516551408,
+      "profit": 0.24562501516551408,
+      "roi": 0
+    },
+    "0xecad061b2ba4756ebabdbd2082326f5ecf74e074": {
+      "userAddress": "0xecad061b2ba4756ebabdbd2082326f5ecf74e074",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 1.990440499692764e-9,
+      "profit": 1.990440499692764e-9,
+      "roi": 0
+    },
+    "0xa46b08e0c5f841305fdcc02578c94bccee5951b1": {
+      "userAddress": "0xa46b08e0c5f841305fdcc02578c94bccee5951b1",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 3.6770277711804376,
+      "profit": 3.6770277711804376,
+      "roi": 0
+    },
+    "0x4d686e47f19f06106802cba5d1c1a9150d8bcf9d": {
+      "userAddress": "0x4d686e47f19f06106802cba5d1c1a9150d8bcf9d",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.13999999999999999,
+      "sell": 16.25,
+      "current": 49.0270369490725,
+      "profit": 65.1370369490725,
+      "roi": 465.2645496362322
+    },
+    "0xf0e14fb452657c9e1cbb7cf33d939b41780e6df3": {
+      "userAddress": "0xf0e14fb452657c9e1cbb7cf33d939b41780e6df3",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.8499999999999999,
+      "sell": 0,
+      "current": 48.325367853923396,
+      "profit": 47.475367853923395,
+      "roi": 55.853373945792235
+    },
+    "0x8bb30d73867da853c206138885fe55dcffee6b87": {
+      "userAddress": "0x8bb30d73867da853c206138885fe55dcffee6b87",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.27,
+      "sell": 0,
+      "current": 49.05016958297567,
+      "profit": 48.78016958297567,
+      "roi": 180.66729475176172
+    },
+    "0x981988cf0e64b62d84a451cc3fa2f40364333b50": {
+      "userAddress": "0x981988cf0e64b62d84a451cc3fa2f40364333b50",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.05,
+      "sell": 33.60000000000001,
+      "current": 21.018512532963722,
+      "profit": 54.56851253296374,
+      "roi": 1091.3702506592747
+    },
+    "0x43e79060df28fed5216327f85e2c4685dec19caa": {
+      "userAddress": "0x43e79060df28fed5216327f85e2c4685dec19caa",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.7699999999999999,
+      "sell": 0,
+      "current": 49.02703694932058,
+      "profit": 48.25703694932058,
+      "roi": 62.6714765575592
+    },
+    "0xa9a0bb18c0e2cbd8959d131178e735672654fdb7": {
+      "userAddress": "0xa9a0bb18c0e2cbd8959d131178e735672654fdb7",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x78e5e29c8cbb59e730a04594f1b814338dc91376": {
+      "userAddress": "0x78e5e29c8cbb59e730a04594f1b814338dc91376",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x19926ed44b266bdfad27749af23cb45f31a228ac": {
+      "userAddress": "0x19926ed44b266bdfad27749af23cb45f31a228ac",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x73e73e3074fde317d27e84d9ec46908304c498fc": {
+      "userAddress": "0x73e73e3074fde317d27e84d9ec46908304c498fc",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.8499999999999999,
+      "sell": 2.11,
+      "current": 36.28000734231365,
+      "profit": 37.54000734231365,
+      "roi": 44.16471452036901
+    },
+    "0x73b4d14160db626b58385b320cdc6eb9733b12cf": {
+      "userAddress": "0x73b4d14160db626b58385b320cdc6eb9733b12cf",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 6.829572592757279e-9,
+      "profit": 6.829572592757279e-9,
+      "roi": 0
+    },
+    "0x1ba21866f7d2dbd50589e5123429ff176a1bf0b1": {
+      "userAddress": "0x1ba21866f7d2dbd50589e5123429ff176a1bf0b1",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.393148416672453e-8,
+      "profit": 4.393148416672453e-8,
+      "roi": 0
+    },
+    "0xc3e6baba15a1ed430722a222a082f2f5a025376a": {
+      "userAddress": "0xc3e6baba15a1ed430722a222a082f2f5a025376a",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.23000000000000004,
+      "sell": 0,
+      "current": 24.59335456481263,
+      "profit": 24.363354564812628,
+      "roi": 105.92762854266358
+    },
+    "0x8b2403ab39f47d795112afacf710c5c38172c61d": {
+      "userAddress": "0x8b2403ab39f47d795112afacf710c5c38172c61d",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.1399406073026539,
+      "profit": 0.1399406073026539,
+      "roi": 0
+    },
+    "0x00fc00900000002c00be4ef8f49c000211000c43": {
+      "userAddress": "0x202bb2fab1e35d940fde99b214ba49dafbcef62a",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.0000028527166375027135,
+      "profit": 0.0000028527166375027135,
+      "roi": 0
+    },
+    "0x78f66d1f6f40807a88daa0ba2892ef3a7d28c927": {
+      "userAddress": "0x78f66d1f6f40807a88daa0ba2892ef3a7d28c927",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.8229091852690176,
+      "profit": 2.8229091852690176,
+      "roi": 0
+    },
+    "0xca63dbe93d89084518567a2b8e074f81e80c6905": {
+      "userAddress": "0xca63dbe93d89084518567a2b8e074f81e80c6905",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0xa49ca2af9e081e16f2ea5ccfad7e91f82853518e": {
+      "userAddress": "0xa49ca2af9e081e16f2ea5ccfad7e91f82853518e",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.72215940247802e-8,
+      "profit": 4.72215940247802e-8,
+      "roi": 0
+    },
+    "0x9f49eb2d0d0c3065357b2deb39c18aca1b4cc2b9": {
+      "userAddress": "0x9f49eb2d0d0c3065357b2deb39c18aca1b4cc2b9",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 5.5628740911947256e-9,
+      "profit": 5.5628740911947256e-9,
+      "roi": 0
+    },
+    "0x34f13f7167dca55d104e24c9eddf6ae1adfcc17d": {
+      "userAddress": "0x34f13f7167dca55d104e24c9eddf6ae1adfcc17d",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 5.9377037682865824e-8,
+      "profit": 5.9377037682865824e-8,
+      "roi": 0
+    },
+    "0x05141a4988db35735425e90f4c337f146e22721e": {
+      "userAddress": "0x05141a4988db35735425e90f4c337f146e22721e",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.12,
+      "sell": 3.3500000000000005,
+      "current": 0,
+      "profit": 3.2300000000000004,
+      "roi": 26.91666666666667
+    },
+    "0x37a0e4ab3cd522de914720e61bea2f7d7deeb07c": {
+      "userAddress": "0x37a0e4ab3cd522de914720e61bea2f7d7deeb07c",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.258054992402454e-8,
+      "profit": 4.258054992402454e-8,
+      "roi": 0
+    },
+    "0xd6b816b680de0702aa86167c21744e74254beeac": {
+      "userAddress": "0xd6b816b680de0702aa86167c21744e74254beeac",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.9027036949072504e-26,
+      "profit": 4.9027036949072504e-26,
+      "roi": 0
+    },
+    "0xd19f088b8f380147eea94ce24580ad0b7e136d8b": {
+      "userAddress": "0xd19f088b8f380147eea94ce24580ad0b7e136d8b",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 7.819812393377088,
+      "profit": 7.819812393377088,
+      "roi": 0
+    },
+    "0xc6ab5d8e28fa5970f1843444b1caffbc121dc834": {
+      "userAddress": "0xc6ab5d8e28fa5970f1843444b1caffbc121dc834",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.9546649434948927e-8,
+      "profit": 2.9546649434948927e-8,
+      "roi": 0
+    },
+    "0x2ab2aaa3a5209b20d2a1ac6d19f8efd870c2b2ed": {
+      "userAddress": "0x2ab2aaa3a5209b20d2a1ac6d19f8efd870c2b2ed",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.247658745830187,
+      "profit": 0.247658745830187,
+      "roi": 0
+    },
+    "0x31272c0a51c6f624edf4cfd9affc546c38ad2914": {
+      "userAddress": "0x31272c0a51c6f624edf4cfd9affc546c38ad2914",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.1,
+      "sell": 2.8,
+      "current": 0.6237865717997693,
+      "profit": 3.323786571799769,
+      "roi": 33.237865717997686
+    },
+    "0x00c4126ea7f8c1e7c1ab5f183b3d113026560084": {
+      "userAddress": "0x00c4126ea7f8c1e7c1ab5f183b3d113026560084",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.49159925676523764,
+      "profit": 0.49159925676523764,
+      "roi": 0
+    },
+    "0x286355fd153c0008a9f1569c8539625d281bb125": {
+      "userAddress": "0x286355fd153c0008a9f1569c8539625d281bb125",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.1,
+      "sell": 5.73,
+      "current": 0,
+      "profit": 5.630000000000001,
+      "roi": 56.300000000000004
+    },
+    "0xd0b4ee02e9ba15b9dac916d2ccabad50f836b24d": {
+      "userAddress": "0xd0b4ee02e9ba15b9dac916d2ccabad50f836b24d",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 3.3528286554674596,
+      "profit": 3.3528286554674596,
+      "roi": 0
+    },
+    "0xe93d420455faa3cc5f5a0d00c36fd409c66c371f": {
+      "userAddress": "0xe93d420455faa3cc5f5a0d00c36fd409c66c371f",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.3531437590458195e-8,
+      "profit": 2.3531437590458195e-8,
+      "roi": 0
+    },
+    "0x56537ebca454a5639fe82adc57681864acc14ecc": {
+      "userAddress": "0x56537ebca454a5639fe82adc57681864acc14ecc",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -3.21,
+      "sell": 4.91,
+      "current": 0.8084366519339298,
+      "profit": 2.50843665193393,
+      "roi": 0.7814444398548068
+    },
+    "0x961b0c88265bf2bf63dcc4bda3883bd4599637a1": {
+      "userAddress": "0x961b0c88265bf2bf63dcc4bda3883bd4599637a1",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0xd1ff13429539fd2d35b6999db4c6da8ee2837ac1": {
+      "userAddress": "0xd1ff13429539fd2d35b6999db4c6da8ee2837ac1",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.103186638394443,
+      "profit": 2.103186638394443,
+      "roi": 0
+    },
+    "0xf213737c44defc1cecae58c3e01314f922de410a": {
+      "userAddress": "0xf213737c44defc1cecae58c3e01314f922de410a",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 8.65431419213515,
+      "profit": 8.65431419213515,
+      "roi": 0
+    },
+    "0xf987f4f2ce867b1664aec4410dfc79bdaf80b229": {
+      "userAddress": "0xf987f4f2ce867b1664aec4410dfc79bdaf80b229",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.15,
+      "sell": 0,
+      "current": 8.251110589824842,
+      "profit": 8.101110589824842,
+      "roi": 54.007403932165616
+    },
+    "0x726770c536bdf2f7b81b30f507d616fc271e91f0": {
+      "userAddress": "0x726770c536bdf2f7b81b30f507d616fc271e91f0",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.12,
+      "sell": 6.4,
+      "current": 0,
+      "profit": 6.28,
+      "roi": 52.333333333333336
+    },
+    "0x5aaaef91f93be4de932b8e7324abbf9f26daa706": {
+      "userAddress": "0x5aaaef91f93be4de932b8e7324abbf9f26daa706",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -4.1499999999999995,
+      "sell": 0,
+      "current": 81.67250977815043,
+      "profit": 77.52250977815042,
+      "roi": 18.680122838108538
+    },
+    "0xbcb82d4a429f7d14fa55af2accc5cc030615937e": {
+      "userAddress": "0xbcb82d4a429f7d14fa55af2accc5cc030615937e",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x1ff059690ffcedc02ec131c46412f816721dfe1d": {
+      "userAddress": "0x1ff059690ffcedc02ec131c46412f816721dfe1d",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.36,
+      "sell": 0,
+      "current": 15.906051752253736,
+      "profit": 15.546051752253737,
+      "roi": 43.183477089593715
+    },
+    "0xfd53f897272a1ebaf3e1c0c8fab3c7a234ce040a": {
+      "userAddress": "0xfd53f897272a1ebaf3e1c0c8fab3c7a234ce040a",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.8875298007534503e-26,
+      "profit": 4.8875298007534503e-26,
+      "roi": 0
+    },
+    "0xa5d900cda47d9e76cad5343a9466f436cb3323ef": {
+      "userAddress": "0xa5d900cda47d9e76cad5343a9466f436cb3323ef",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.349279348824243,
+      "profit": 2.349279348824243,
+      "roi": 0
+    },
+    "0xfee1d3523b597f132c54401d8035a4af28082ffa": {
+      "userAddress": "0xfee1d3523b597f132c54401d8035a4af28082ffa",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x6c00f95186d771441a96bfcc3ee5b83dd93c0a1a": {
+      "userAddress": "0x6c00f95186d771441a96bfcc3ee5b83dd93c0a1a",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.23651766876757083,
+      "profit": 0.23651766876757083,
+      "roi": 0
+    },
+    "0xdf645c99c4b01333b01d6a1d4d45b5de22fb0a61": {
+      "userAddress": "0xdf645c99c4b01333b01d6a1d4d45b5de22fb0a61",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.052762516316464,
+      "profit": 2.052762516316464,
+      "roi": 0
+    },
+    "0xaee10065cf5e6ef2450252280e781c64db1ffc3b": {
+      "userAddress": "0xaee10065cf5e6ef2450252280e781c64db1ffc3b",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x8941f31e27c5f4e575dfde9361f91060b1b3b71a": {
+      "userAddress": "0x8941f31e27c5f4e575dfde9361f91060b1b3b71a",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x29f33c22dfa42a3bd76a905e4af70604c4d6f6f5": {
+      "userAddress": "0x29f33c22dfa42a3bd76a905e4af70604c4d6f6f5",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 10.024336891083513,
+      "profit": 10.024336891083513,
+      "roi": 0
+    },
+    "0x10e7ac3aaa52324faaa582c32243f2e2b569ebc9": {
+      "userAddress": "0x10e7ac3aaa52324faaa582c32243f2e2b569ebc9",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 8.575756668719161e-10,
+      "profit": 8.575756668719161e-10,
+      "roi": 0
+    },
+    "0xd31a9a5dd1742f5f646a85e489b7ade1099d7cdc": {
+      "userAddress": "0xd31a9a5dd1742f5f646a85e489b7ade1099d7cdc",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.2,
+      "sell": 1.61,
+      "current": 1.728561130420256,
+      "profit": 3.138561130420256,
+      "roi": 15.69280565210128
+    },
+    "0x22330aec3060c6cfbc5c26c6e3bf9737241e7db2": {
+      "userAddress": "0x22330aec3060c6cfbc5c26c6e3bf9737241e7db2",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.2528416806934284e-8,
+      "profit": 2.2528416806934284e-8,
+      "roi": 0
+    },
+    "0x56d9bf0b87f9dda6941e298926c3ffa458c95428": {
+      "userAddress": "0x56d9bf0b87f9dda6941e298926c3ffa458c95428",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x43134dd29523c86c1ac6d0ccb920278b2b89eac0": {
+      "userAddress": "0x43134dd29523c86c1ac6d0ccb920278b2b89eac0",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.614669550848407,
+      "profit": 0.614669550848407,
+      "roi": 0
+    },
+    "0x0fc3d112ae07ef60ae5c8354848e4ccf86cbba89": {
+      "userAddress": "0x0fc3d112ae07ef60ae5c8354848e4ccf86cbba89",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.2,
+      "sell": 4.1,
+      "current": 0,
+      "profit": 3.8999999999999995,
+      "roi": 19.499999999999996
+    },
+    "0xf385c43fa66f4933fb130d4845580a9f977f44c0": {
+      "userAddress": "0xf385c43fa66f4933fb130d4845580a9f977f44c0",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x07e07deda2262a3ceeec17964364041898ffbb97": {
+      "userAddress": "0x07e07deda2262a3ceeec17964364041898ffbb97",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.3,
+      "sell": 4.6,
+      "current": 2.503467367164566,
+      "profit": 6.803467367164566,
+      "roi": 22.67822455721522
+    },
+    "0xdcb02b6cf7715b55d1026eabd643f28b347fad58": {
+      "userAddress": "0xdcb02b6cf7715b55d1026eabd643f28b347fad58",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 13.830000000000002,
+      "current": 14.160907450384569,
+      "profit": 27.99090745038457,
+      "roi": 0
+    },
+    "0x6a9b3e3d95ca45e39cdda9345de9c1e667a645f1": {
+      "userAddress": "0x6a9b3e3d95ca45e39cdda9345de9c1e667a645f1",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 12.903078673989107,
+      "profit": 12.903078673989107,
+      "roi": 0
+    },
+    "0xdd72527cd9265013952ad33825b35ab66e93bf3b": {
+      "userAddress": "0xdd72527cd9265013952ad33825b35ab66e93bf3b",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.3,
+      "sell": 0,
+      "current": 6.211248760176373,
+      "profit": 5.911248760176373,
+      "roi": 19.704162533921245
+    },
+    "0x9d898899d5136763d26cef393451b0296e28359f": {
+      "userAddress": "0x9d898899d5136763d26cef393451b0296e28359f",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.9504988187946754e-17,
+      "profit": 4.9504988187946754e-17,
+      "roi": 0
+    },
+    "0x32d94d3e3750f02c6502663927513bed09fee77a": {
+      "userAddress": "0x32d94d3e3750f02c6502663927513bed09fee77a",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 3.8961580571292866e-8,
+      "profit": 3.8961580571292866e-8,
+      "roi": 0
+    },
+    "0xdb3353296c714e533d263e128bc1207d3ecc456a": {
+      "userAddress": "0xdb3353296c714e533d263e128bc1207d3ecc456a",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0xe8a67336db14637c5340a8cae223289e64e0accb": {
+      "userAddress": "0xe8a67336db14637c5340a8cae223289e64e0accb",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 20.685996487045934,
+      "profit": 20.685996487045934,
+      "roi": 0
+    },
+    "0xee4cb26454989212327c6e6e253a346abc4df8c1": {
+      "userAddress": "0xee4cb26454989212327c6e6e253a346abc4df8c1",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.688891736882836,
+      "profit": 4.688891736882836,
+      "roi": 0
+    },
+    "0x75ea0a829d534fbbdf67e82762e22cc2bed7391d": {
+      "userAddress": "0x75ea0a829d534fbbdf67e82762e22cc2bed7391d",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.9254176749375235e-8,
+      "profit": 2.9254176749375235e-8,
+      "roi": 0
+    },
+    "0xac299d3a1be707d05a880e03edf04fec86b73f0a": {
+      "userAddress": "0xac299d3a1be707d05a880e03edf04fec86b73f0a",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 1.6532622798922143,
+      "profit": 1.6532622798922143,
+      "roi": 0
+    },
+    "0xa53a7e1e00b0bbfdd58a21449e2fe606f58b9fae": {
+      "userAddress": "0xa53a7e1e00b0bbfdd58a21449e2fe606f58b9fae",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 1.7871621875348571,
+      "profit": 1.7871621875348571,
+      "roi": 0
+    },
+    "0xbe3a6a85e9c05f07176237b7d38c4f8fd21febbd": {
+      "userAddress": "0xbe3a6a85e9c05f07176237b7d38c4f8fd21febbd",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x17a409e86b4d0a617af7de2f6c9f6ff007a318bf": {
+      "userAddress": "0x17a409e86b4d0a617af7de2f6c9f6ff007a318bf",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x3265a87200542d7fc68408723e3296dfc577c7f3": {
+      "userAddress": "0x3265a87200542d7fc68408723e3296dfc577c7f3",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x892ea40dd71425b6228461aee4ec7f7865889994": {
+      "userAddress": "0x892ea40dd71425b6228461aee4ec7f7865889994",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0xae41532036c036cfbc3f2b95f7ee2d6f7835870b": {
+      "userAddress": "0xae41532036c036cfbc3f2b95f7ee2d6f7835870b",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.34571742195165994,
+      "profit": 0.34571742195165994,
+      "roi": 0
+    },
+    "0x8c8e23fa04557d9e0b579ea5fe45051e934f147d": {
+      "userAddress": "0x8c8e23fa04557d9e0b579ea5fe45051e934f147d",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.7976468335931637,
+      "profit": 0.7976468335931637,
+      "roi": 0
+    },
+    "0x35f1d33c308059966d57fe4c59bfb8ee96605f0e": {
+      "userAddress": "0x35f1d33c308059966d57fe4c59bfb8ee96605f0e",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 3,
+      "current": 1.2169343828976298,
+      "profit": 4.21693438289763,
+      "roi": 0
+    },
+    "0xe087753ba02cc4788115387bdc3a2d83acc48707": {
+      "userAddress": "0xe087753ba02cc4788115387bdc3a2d83acc48707",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 6.276147911709696,
+      "profit": 6.276147911709696,
+      "roi": 0
+    },
+    "0x71097600635b9762611771efe25c98d50b974404": {
+      "userAddress": "0x71097600635b9762611771efe25c98d50b974404",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 1.5194944035688216e-19,
+      "profit": 1.5194944035688216e-19,
+      "roi": 0
+    },
+    "0x239c6f9029f9683949f51669656976517fd6f30d": {
+      "userAddress": "0x239c6f9029f9683949f51669656976517fd6f30d",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.1754022954582894e-17,
+      "profit": 4.1754022954582894e-17,
+      "roi": 0
+    },
+    "0xa9b0920d0756952dddce95fde5df6766b6edd06d": {
+      "userAddress": "0xa9b0920d0756952dddce95fde5df6766b6edd06d",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.31,
+      "sell": 0.43,
+      "current": 0.7139249750707011,
+      "profit": 0.8339249750707011,
+      "roi": 2.690080564744197
+    },
+    "0x1e480ac9f07e757a8b08ce96f8ced1ac03037332": {
+      "userAddress": "0x1e480ac9f07e757a8b08ce96f8ced1ac03037332",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 1.640107788735259e-18,
+      "profit": 1.640107788735259e-18,
+      "roi": 0
+    },
+    "0xc5ab6da44692f1bb7076be587d8cac44beb01818": {
+      "userAddress": "0xc5ab6da44692f1bb7076be587d8cac44beb01818",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 5.910852428141427,
+      "profit": 5.910852428141427,
+      "roi": 0
+    },
+    "0x13af02a483b5889a414f485d3fba0fe0cdd62c1b": {
+      "userAddress": "0x13af02a483b5889a414f485d3fba0fe0cdd62c1b",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.481708459118311e-8,
+      "profit": 4.481708459118311e-8,
+      "roi": 0
+    },
+    "0xb14ad411a491c8372bc94663d9e0b6b9c6696109": {
+      "userAddress": "0xb14ad411a491c8372bc94663d9e0b6b9c6696109",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.47578116443345814,
+      "profit": 0.47578116443345814,
+      "roi": 0
+    },
+    "0xa4c594611d132c4b584b95db6ad162723ec772b7": {
+      "userAddress": "0xa4c594611d132c4b584b95db6ad162723ec772b7",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.04,
+      "sell": 0.29,
+      "current": 0,
+      "profit": 0.24999999999999997,
+      "roi": 6.249999999999999
+    },
+    "0x70399b85054dd1d94f2264afc8704a3ee308abaf": {
+      "userAddress": "0x70399b85054dd1d94f2264afc8704a3ee308abaf",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -4,
+      "sell": 0,
+      "current": 29.203671998384817,
+      "profit": 25.203671998384817,
+      "roi": 6.300917999596204
+    },
+    "0xb4ae4311299c87cec3f714f6b1a7f5af3c84fde3": {
+      "userAddress": "0xb4ae4311299c87cec3f714f6b1a7f5af3c84fde3",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.1894526545325163,
+      "profit": 0.1894526545325163,
+      "roi": 0
+    },
+    "0x3bb0a33aa7c8db101e57dd7b4e35d36afc931a24": {
+      "userAddress": "0x3bb0a33aa7c8db101e57dd7b4e35d36afc931a24",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x9c948957a80c98ec8db05151475e56233b5aaf95": {
+      "userAddress": "0x9c948957a80c98ec8db05151475e56233b5aaf95",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.9094208242912365,
+      "profit": 2.9094208242912365,
+      "roi": 0
+    },
+    "0x7149946eb95033fc2faa9294a4bbcf5db4f55ab7": {
+      "userAddress": "0x7149946eb95033fc2faa9294a4bbcf5db4f55ab7",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.8799999999999999,
+      "sell": 7.29,
+      "current": 0,
+      "profit": 6.41,
+      "roi": 7.28409090909091
+    },
+    "0x502c4b31e10c7fd8056caa431e396efb691433df": {
+      "userAddress": "0x502c4b31e10c7fd8056caa431e396efb691433df",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 3.5088481054388436e-8,
+      "profit": 3.5088481054388436e-8,
+      "roi": 0
+    },
+    "0xc05bc25eaa52a23476e113b9a139a66e7473b364": {
+      "userAddress": "0xc05bc25eaa52a23476e113b9a139a66e7473b364",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.2,
+      "sell": 2.44,
+      "current": 0,
+      "profit": 2.2399999999999998,
+      "roi": 11.199999999999998
+    },
+    "0x8493fffdeb34c170e722740d3375bb73ee47ccc0": {
+      "userAddress": "0x8493fffdeb34c170e722740d3375bb73ee47ccc0",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x966f88b6f2df06f8f90c20cedf77d13eff9f29e1": {
+      "userAddress": "0x966f88b6f2df06f8f90c20cedf77d13eff9f29e1",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.6701069496907192,
+      "profit": 0.6701069496907192,
+      "roi": 0
+    },
+    "0xd4949787c3fbec98f6513dd76d569ad859604dbb": {
+      "userAddress": "0xd4949787c3fbec98f6513dd76d569ad859604dbb",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.9318102079312333,
+      "profit": 0.9318102079312333,
+      "roi": 0
+    },
+    "0x0d8a07b52be59c8df6877a886d4c804de9154b2c": {
+      "userAddress": "0x0d8a07b52be59c8df6877a886d4c804de9154b2c",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x7a2e58555e552ae733b29d2112fe7fbf3db55c34": {
+      "userAddress": "0x7a2e58555e552ae733b29d2112fe7fbf3db55c34",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x4703dd94d8136d241ffc0c247036742f81bff368": {
+      "userAddress": "0x4703dd94d8136d241ffc0c247036742f81bff368",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.2320301345512292,
+      "profit": 2.2320301345512292,
+      "roi": 0
+    },
+    "0x7716712b899e00260ca8a7054ea15174d00304e1": {
+      "userAddress": "0x7716712b899e00260ca8a7054ea15174d00304e1",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.1308721485275429,
+      "profit": 0.1308721485275429,
+      "roi": 0
+    },
+    "0xca1e74a623ba3e609134e7686dc1cdcd03fbe87d": {
+      "userAddress": "0xca1e74a623ba3e609134e7686dc1cdcd03fbe87d",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 2.7238540955020762,
+      "profit": 2.7238540955020762,
+      "roi": 0
+    },
+    "0x54cd47c2f0fb09c468e15344fd68c54272d57246": {
+      "userAddress": "0x54cd47c2f0fb09c468e15344fd68c54272d57246",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -4,
+      "sell": 6.02,
+      "current": 2.4439189906250895,
+      "profit": 4.463918990625089,
+      "roi": 1.1159797476562723
+    },
+    "0x90c87fa51fce475287aaad708332e419d74221ee": {
+      "userAddress": "0x90c87fa51fce475287aaad708332e419d74221ee",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.12623166298530797,
+      "profit": 0.12623166298530797,
+      "roi": 0
+    },
+    "0x1e8ebaa6d9bf90ca2800f97c95afedd6a64c91e2": {
+      "userAddress": "0x1e8ebaa6d9bf90ca2800f97c95afedd6a64c91e2",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.15000000000000002,
+      "sell": 0.29000000000000004,
+      "current": 0,
+      "profit": 0.14,
+      "roi": 0.9333333333333332
+    },
+    "0x92b589c4c1fce38791e12b53de13ae26b36bb8b9": {
+      "userAddress": "0x92b589c4c1fce38791e12b53de13ae26b36bb8b9",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0xcb5bc9cfd7c4f254cfe2609fad1b0fcd2da5fc11": {
+      "userAddress": "0xcb5bc9cfd7c4f254cfe2609fad1b0fcd2da5fc11",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.1,
+      "sell": 0,
+      "current": 0.9875806980981892,
+      "profit": 0.8875806980981892,
+      "roi": 8.875806980981892
+    },
+    "0xe7fb0c4cd91fbe5fb962b54de63e360095032a9c": {
+      "userAddress": "0xe7fb0c4cd91fbe5fb962b54de63e360095032a9c",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 1.9,
+      "current": 0,
+      "profit": 1.9,
+      "roi": 0
+    },
+    "0x11c6f129939322716e3d4c91944f4b1c57507454": {
+      "userAddress": "0x11c6f129939322716e3d4c91944f4b1c57507454",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.20720506719584605,
+      "profit": 0.20720506719584605,
+      "roi": 0
+    },
+    "0x1e6c02d4f25dff92b8355abbac1b9522e0a7e8e9": {
+      "userAddress": "0x1e6c02d4f25dff92b8355abbac1b9522e0a7e8e9",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x0d6139492b6a66bff4f5226f862515ea5a7adbd2": {
+      "userAddress": "0x0d6139492b6a66bff4f5226f862515ea5a7adbd2",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 3.9765890699329153e-8,
+      "profit": 3.9765890699329153e-8,
+      "roi": 0
+    },
+    "0xdd04779ac57ad84fc9046b9c10624f5b310d3f24": {
+      "userAddress": "0xdd04779ac57ad84fc9046b9c10624f5b310d3f24",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.2366021703973801,
+      "profit": 0.2366021703973801,
+      "roi": 0
+    },
+    "0x12a584dbd41d53f84673e4266481d6afbb8fac46": {
+      "userAddress": "0x12a584dbd41d53f84673e4266481d6afbb8fac46",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.05031423889804619,
+      "profit": 0.05031423889804619,
+      "roi": 0
+    },
+    "0x7f09db64ee081c53ffdc11a50d5f6cd1b167c860": {
+      "userAddress": "0x7f09db64ee081c53ffdc11a50d5f6cd1b167c860",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.40460698390132543,
+      "profit": 0.40460698390132543,
+      "roi": 0
+    },
+    "0x69e836b8fa1895dfe2acb976821f0a652afec05e": {
+      "userAddress": "0x69e836b8fa1895dfe2acb976821f0a652afec05e",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.02,
+      "sell": 0.13,
+      "current": 0,
+      "profit": 0.11,
+      "roi": 5.5
+    },
+    "0x120cffaa8aa8c937af356ae7b35acc2a8f12789d": {
+      "userAddress": "0x120cffaa8aa8c937af356ae7b35acc2a8f12789d",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x4a3d63382d17361dba7628743220285f9c169ce4": {
+      "userAddress": "0x4a3d63382d17361dba7628743220285f9c169ce4",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
+      "roi": 0
+    },
+    "0x4e1fe15aa198b67a1123f5d976d31c5bf11284c5": {
+      "userAddress": "0x4e1fe15aa198b67a1123f5d976d31c5bf11284c5",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.22107477017613247,
+      "profit": 0.22107477017613247,
+      "roi": 0
+    },
+    "0x499759282caf3dce9d21cf8be9377bf1fa340cc8": {
+      "userAddress": "0x499759282caf3dce9d21cf8be9377bf1fa340cc8",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 1.019849148792639e-8,
+      "profit": 1.019849148792639e-8,
+      "roi": 0
+    },
+    "0xa534b8a2b6204ebba31d9a3a915fefc46f21508e": {
+      "userAddress": "0xa534b8a2b6204ebba31d9a3a915fefc46f21508e",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.2,
+      "sell": 0.6000000000000001,
+      "current": 0.8936761251699158,
+      "profit": 1.2936761251699158,
+      "roi": 6.468380625849579
+    },
+    "0xa295efd1a64f22bdbf4d8436fb063a5b9f7352d5": {
+      "userAddress": "0xa295efd1a64f22bdbf4d8436fb063a5b9f7352d5",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -2,
+      "sell": 4.91,
+      "current": 0,
+      "profit": 2.91,
+      "roi": 1.455
+    },
+    "0x40d926ecf7c1d502b3d1afdbb78e4207d5fa5eeb": {
+      "userAddress": "0x40d926ecf7c1d502b3d1afdbb78e4207d5fa5eeb",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 4.622536068979847,
+      "profit": 4.622536068979847,
+      "roi": 0
+    },
+    "0x5b215722de6f530b07bc7dc65735aad8aeeade62": {
+      "userAddress": "0x5b215722de6f530b07bc7dc65735aad8aeeade62",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.5,
+      "sell": 2,
+      "current": 1.3829041705396,
+      "profit": 2.8829041705396,
+      "roi": 5.7658083410792
+    },
+    "0x30608202f4847c9cad1613ee5e6d03397970c7aa": {
+      "userAddress": "0x30608202f4847c9cad1613ee5e6d03397970c7aa",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": -0.07,
+      "sell": 0.29000000000000004,
+      "current": 0.1466258940226035,
+      "profit": 0.36662589402260354,
+      "roi": 5.2375127717514784
+    },
+    "0x30615450f0de4188f9635dd3cf1f5648edf638b8": {
+      "userAddress": "0x30615450f0de4188f9635dd3cf1f5648edf638b8",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 39.19704576244571,
+      "profit": 39.19704576244571,
+      "roi": 0
+    },
+    "0x1ebaf667e12f35c422b6c00b860639949041c276": {
+      "userAddress": "0x1ebaf667e12f35c422b6c00b860639949041c276",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0.8563688974674916,
+      "profit": 0.8563688974674916,
+      "roi": 0
+    },
+    "0x27fa08caae5c750e6f5fddf038fc1e189159ae18": {
+      "userAddress": "0x27fa08caae5c750e6f5fddf038fc1e189159ae18",
+      "type": "erc20",
+      "tokenName": "AstroPepeX",
+      "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+      "buy": 0,
+      "sell": 0,
+      "current": 0,
+      "profit": 0,
       "roi": 0
     }
   }

@@ -64,16 +64,17 @@ function formatPnlRanking(contractPnl) {
 
 async function savePnl(contractPnl, allPnl, contractAddress) {
   allPnl[contractAddress] = contractPnl;
-  console.log('allPnl', allPnl);
-  // await fs.writeFile(path, JSON.stringify(allPnl, null, 2), 'utf8');
+  await fs.writeFile(path, JSON.stringify(allPnl, null, 2), 'utf8');
 }
 
 
-function getTop100Wallets(contractPnl) {
-  const profitArray = contractPnl.map(o => o.profit).sort((b,a) => b-a > 0);
-  const profitLimit = profitArray.length >= 100 ? profitArray[99] : profitArray[profitArray-1];
-  const constractPnl100 = contractPnl.filter(o => o.profit >= profitLimit);
-  return constractPnl100;
+function getTopAddresses(contractPnl) {
+  const n = 100;
+  const profitArray = Object.values(contractPnl).map(o => o.profit).sort((b, a) => b > a);
+  const profitLimit = profitArray.length >= n ? profitArray[n-1] : profitArray[profitArray.length-1];
+  const constractTopPnl = Object.values(contractPnl).filter(o => o.profit >= profitLimit);
+  const constractTopPnlAddresses = constractTopPnl.map(o => o.userAddress)
+  return constractTopPnlAddresses;
 }
 
 
@@ -86,9 +87,6 @@ async function pnlLoop(addressArray, contractObject, contractPnl, allPnl) {
     if (i % saveEvery === 0 && i > 0) savePnl(contractPnl, allPnl, contractObject.address);
   }
 }
-
-
-
 
 
 
@@ -112,19 +110,18 @@ async function getPnl(contractObject, toggle=1) {
     console.log('case 1');
     console.log('just display...');
   }
-  // CASE 2: refresh top 100
+  // CASE 2: refresh top addresses only
   else if (toggle === 2) {
-    console
-    .log('case 2');
-    const top100Pnl = getTop100Wallets(contractPnl);
-    await pnlLoop(top100Pnl, contractObject, contractPnl, allPnl);
+    console.log('case 2');
+    const topPnl = getTopAddresses(contractPnl);
+    await pnlLoop(topPnl, contractObject, contractPnl, allPnl);
   }
   // CASE 3: refresh only new ones
   else if (toggle === 3) {
     console.log('case 3');
-    const alreadySavedWallets = [... new Set(contractPnl.map(o => o.userAddress).flat(1))];
-    const notSavedWallets = allWallets.filter(w => !alreadySavedWallets.includes(w));
-    await pnlLoop(notSavedWallets, contractObject, contractPnl, allPnl);
+    const alreadySavedAddresses = Object.keys(contractPnl);
+    const notSavedAddresses = allWallets.filter(a => !alreadySavedAddresses.includes(a));
+    await pnlLoop(notSavedAddresses, contractObject, contractPnl, allPnl);
   }
   // CASE 4: refresh everything
   else if (toggle === 4) {
