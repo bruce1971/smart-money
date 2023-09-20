@@ -7,9 +7,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.02,
       "sell": 0,
-      "current": 17.156365961618665,
-      "profit": 17.136365961618665,
-      "roi": 856.8182980809332
+      "current": 16.52983914929924,
+      "profit": 16.50983914929924,
+      "roi": 825.491957464962
     },
     "0xebf375cc47fa63f90d9f395cb789beb23cc896fe": {
       "userAddress": "0xebf375cc47fa63f90d9f395cb789beb23cc896fe",
@@ -18,9 +18,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.04,
       "sell": 0,
-      "current": 32.625265910404686,
-      "profit": 32.58526591040469,
-      "roi": 814.6316477601172
+      "current": 31.433836216164764,
+      "profit": 31.393836216164765,
+      "roi": 784.8459054041191
     },
     "0x373fff342f15a3b0bbca144638b2d53f99ebd172": {
       "userAddress": "0x373fff342f15a3b0bbca144638b2d53f99ebd172",
@@ -29,9 +29,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.30000000000000004,
       "sell": 1.9700000000000002,
-      "current": 29.6795066239515,
-      "profit": 31.349506623951502,
-      "roi": 104.49835541317165
+      "current": 28.595651994252098,
+      "profit": 30.2656519942521,
+      "roi": 100.88550664750699
     },
     "0xc6fc258f1068638666fcaca7162e4e80b21423b2": {
       "userAddress": "0xc6fc258f1068638666fcaca7162e4e80b21423b2",
@@ -40,9 +40,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.04,
       "sell": 0,
-      "current": 33.60767369812516,
-      "profit": 33.56767369812516,
-      "roi": 839.1918424531291
+      "current": 32.38036782701799,
+      "profit": 32.34036782701799,
+      "roi": 808.5091956754497
     },
     "0x2a6942b652f5172b7f028573474ab90e600d99d4": {
       "userAddress": "0x2a6942b652f5172b7f028573474ab90e600d99d4",
@@ -62,8 +62,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 5.739274593406622,
-      "profit": 5.739274593406622,
+      "current": 5.5296842043884995,
+      "profit": 5.5296842043884995,
       "roi": 0
     },
     "0x2c6f997d89dbd9d6085b8a77e1ee7ee7f24d5ff1": {
@@ -84,9 +84,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.09,
       "sell": 0,
-      "current": 26.439585543373003,
-      "profit": 26.349585543373003,
-      "roi": 292.7731727041445
+      "current": 25.47404836104693,
+      "profit": 25.38404836104693,
+      "roi": 282.0449817894103
     },
     "0x56ed73a460cedbeff1e5435bfb81cb1da8369af5": {
       "userAddress": "0x56ed73a460cedbeff1e5435bfb81cb1da8369af5",
@@ -117,8 +117,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.1798681867101615,
-      "profit": 1.1798681867101615,
+      "current": 1.1367810285304887,
+      "profit": 1.1367810285304887,
       "roi": 0
     },
     "0x8e4628a76639d6067c53b7ae527832e4244f2e12": {
@@ -161,9 +161,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.04,
       "sell": 0,
-      "current": 25.19938209113408,
-      "profit": 25.15938209113408,
-      "roi": 628.984552278352
+      "current": 24.279135427633328,
+      "profit": 24.23913542763333,
+      "roi": 605.9783856908332
     },
     "0x8740515def48f6ba2d2cb7e4a3093cc8bb5ed20a": {
       "userAddress": "0x8740515def48f6ba2d2cb7e4a3093cc8bb5ed20a",
@@ -183,9 +183,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.05,
       "sell": 0,
-      "current": 41.01253580021501,
-      "profit": 40.962535800215015,
-      "roi": 819.2507160043002
+      "current": 39.51481458247405,
+      "profit": 39.464814582474055,
+      "roi": 789.2962916494811
     },
     "0xc4d4cfd6de896c76d0fa5fd5626165e65a43b5e5": {
       "userAddress": "0xc4d4cfd6de896c76d0fa5fd5626165e65a43b5e5",
@@ -194,8 +194,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 9.645599871905102,
-      "profit": 9.645599871905102,
+      "current": 9.29335587371965,
+      "profit": 9.29335587371965,
       "roi": 0
     },
     "0x8f40f03ba56916cb7d6b945b83148c865a87c89b": {
@@ -205,8 +205,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 9.536846806278655,
-      "profit": 9.536846806278655,
+      "current": 9.188574319990847,
+      "profit": 9.188574319990847,
       "roi": 0
     },
     "0x54b9abc57e4a69f6e20a6049be930ec444a9005b": {
@@ -216,8 +216,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 19.07552357059826,
-      "profit": 19.07552357059826,
+      "current": 18.37891177047999,
+      "profit": 18.37891177047999,
       "roi": 0
     },
     "0x9330a7e103dffe0780abfb0ce6191cee4455a1d0": {
@@ -227,8 +227,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 9.324789415841334,
-      "profit": 9.324789415841334,
+      "current": 8.98426097285248,
+      "profit": 8.98426097285248,
       "roi": 0
     },
     "0xce507c4f17703c33a273e0a92c15e946c112ecde": {
@@ -238,8 +238,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 18.750319853766914,
-      "profit": 18.750319853766914,
+      "current": 18.065584044666586,
+      "profit": 18.065584044666586,
       "roi": 0
     },
     "0xeea00fefcc863122aa7347dfc1d128a61b06c1d6": {
@@ -260,9 +260,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.03,
       "sell": 0,
-      "current": 5.471155174668806,
-      "profit": 5.441155174668806,
-      "roi": 181.37183915562687
+      "current": 5.271356136867984,
+      "profit": 5.241356136867984,
+      "roi": 174.7118712289328
     },
     "0x301bd3c350816803215b7068bf86eae37428394e": {
       "userAddress": "0x301bd3c350816803215b7068bf86eae37428394e",
@@ -271,9 +271,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.03,
       "sell": 0,
-      "current": 19.00510591524485,
-      "profit": 18.97510591524485,
-      "roi": 632.5035305081617
+      "current": 18.311065670736802,
+      "profit": 18.2810656707368,
+      "roi": 609.3688556912267
     },
     "0xed605355e97e898d3520a384035ceb2572fd370e": {
       "userAddress": "0xed605355e97e898d3520a384035ceb2572fd370e",
@@ -304,9 +304,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.05,
       "sell": 0,
-      "current": 24.017016957840603,
-      "profit": 23.967016957840602,
-      "roi": 479.34033915681204
+      "current": 23.13994863756342,
+      "profit": 23.08994863756342,
+      "roi": 461.79897275126837
     },
     "0x230be9c0f06ab2ff3097a229aced0d2cb1287922": {
       "userAddress": "0x230be9c0f06ab2ff3097a229aced0d2cb1287922",
@@ -315,9 +315,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.03,
       "sell": 0,
-      "current": 9.607639058313469,
-      "profit": 9.57763905831347,
-      "roi": 319.25463527711565
+      "current": 9.256781336661508,
+      "profit": 9.226781336661508,
+      "roi": 307.55937788871694
     },
     "0x472dacdc38fdbe71d4d8f83600bffd210db10183": {
       "userAddress": "0x472dacdc38fdbe71d4d8f83600bffd210db10183",
@@ -337,8 +337,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 9.707803392855093,
-      "profit": 9.707803392855093,
+      "current": 5.1374399689979935e-8,
+      "profit": 5.1374399689979935e-8,
       "roi": 0
     },
     "0xb8a82dc0839962ebd46f17f5e82fc79a722bbf55": {
@@ -348,8 +348,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 6.905800964091406,
-      "profit": 6.905800964091406,
+      "current": 5.36478628838392,
+      "profit": 5.36478628838392,
       "roi": 0
     },
     "0x12aa2de850991311ae8a3ad9ae7d0a1f51c99c80": {
@@ -381,8 +381,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 3.12,
-      "current": 1.18718026495806,
-      "profit": 4.30718026495806,
+      "current": 1.1438260797700839,
+      "profit": 4.263826079770084,
       "roi": 0
     },
     "0x455b4d3dd7e648a3f1a2b0e433e20f45fcc8fdf1": {
@@ -414,8 +414,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 2.2822182216405023,
-      "profit": 2.2822182216405023,
+      "current": 2.1988747612235024,
+      "profit": 2.1988747612235024,
       "roi": 0
     },
     "0xafd495a64971fd1fe26b20d7c5e55fd47912c068": {
@@ -425,9 +425,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.03,
       "sell": 0,
-      "current": 2.3952163093161936,
-      "profit": 2.3652163093161938,
-      "roi": 78.84054364387313
+      "current": 2.307746314653653,
+      "profit": 2.2777463146536534,
+      "roi": 75.92487715512178
     },
     "0x2b28b67126fc897e2d4497f5db316ae183a40311": {
       "userAddress": "0x2b28b67126fc897e2d4497f5db316ae183a40311",
@@ -480,8 +480,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 2.7607013088308743,
-      "profit": 2.7607013088308743,
+      "current": 2.6598843062874824,
+      "profit": 2.6598843062874824,
       "roi": 0
     },
     "0x0c2778c6dc798d880c0abf4824d0b7e2c196e876": {
@@ -513,9 +513,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.02,
       "sell": 0,
-      "current": 7.642951010988943,
-      "profit": 7.622951010988944,
-      "roi": 381.14755054944715
+      "current": 7.363840985920636,
+      "profit": 7.343840985920637,
+      "roi": 367.1920492960318
     },
     "0xd9b64bef7a142afa65a093773b038ea094ffaac6": {
       "userAddress": "0xd9b64bef7a142afa65a093773b038ea094ffaac6",
@@ -557,8 +557,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 9.144339269765936,
-      "profit": 9.144339269765936,
+      "current": 8.810400617124065,
+      "profit": 8.810400617124065,
       "roi": 0
     },
     "0x52e369d8b000d8a0e63a74868c3186c24a5adbac": {
@@ -612,8 +612,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 2.9332279423550203,
-      "profit": 2.9332279423550203,
+      "current": 2.8261105052100404,
+      "profit": 2.8261105052100404,
       "roi": 0
     },
     "0xa25c8dabd2bd33e86491f380af1c6da34b126a87": {
@@ -667,9 +667,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.08,
       "sell": 0,
-      "current": 24.53777430612579,
-      "profit": 24.457774306125792,
-      "roi": 305.7221788265724
+      "current": 23.641688646037665,
+      "profit": 23.561688646037666,
+      "roi": 294.5211080754708
     },
     "0x51c25230335472236853676290062c8c7a0825b6": {
       "userAddress": "0x51c25230335472236853676290062c8c7a0825b6",
@@ -678,9 +678,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.6200000000000002,
       "sell": 0,
-      "current": 24.390467765869186,
-      "profit": 23.770467765869185,
-      "roi": 38.33946413849867
+      "current": 23.499761537375562,
+      "profit": 22.87976153737556,
+      "roi": 36.90284118931541
     },
     "0x5356b54b51a3c947dc0e89ed49ff408682e05828": {
       "userAddress": "0x5356b54b51a3c947dc0e89ed49ff408682e05828",
@@ -700,8 +700,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 9.444485175489906,
-      "profit": 9.444485175489906,
+      "current": 9.099585608516604,
+      "profit": 9.099585608516604,
       "roi": 0
     },
     "0xeed1eab6d1b8bf2614d9a37d598550c6dad44de6": {
@@ -733,9 +733,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.23,
       "sell": 0,
-      "current": 41.36303101778727,
-      "profit": 41.133031017787275,
-      "roi": 178.83926529472728
+      "current": 39.85251019831888,
+      "profit": 39.622510198318885,
+      "roi": 172.27178347095168
     },
     "0xf541d7d1868aee9b08f9ee9bd835bb5e50cffcc5": {
       "userAddress": "0xf541d7d1868aee9b08f9ee9bd835bb5e50cffcc5",
@@ -755,9 +755,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.12000000000000001,
       "sell": 18.39,
-      "current": 1.67575253441994,
-      "profit": 19.94575253441994,
-      "roi": 166.21460445349948
+      "current": 1.6145563640902143,
+      "profit": 19.884556364090216,
+      "roi": 165.70463636741846
     },
     "0x83a69d9e4988d7bfafa9325294d172ff16a39534": {
       "userAddress": "0x83a69d9e4988d7bfafa9325294d172ff16a39534",
@@ -766,9 +766,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.03,
       "sell": 0,
-      "current": 17.176049070463776,
-      "profit": 17.146049070463775,
-      "roi": 571.5349690154592
+      "current": 16.54880345816836,
+      "profit": 16.51880345816836,
+      "roi": 550.6267819389453
     },
     "0x6e77efcad4db1e016b8105e4e14c353097c4d25c": {
       "userAddress": "0x6e77efcad4db1e016b8105e4e14c353097c4d25c",
@@ -799,8 +799,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 36.90376589070163,
-      "profit": 36.90376589070163,
+      "current": 35.556091280716664,
+      "profit": 35.556091280716664,
       "roi": 0
     },
     "0x4bdb391766a96ab370b9230784f30e3b2a32021f": {
@@ -832,9 +832,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.27,
       "sell": 0,
-      "current": 5.453293866075139,
-      "profit": 5.1832938660751395,
-      "roi": 19.197384689167183
+      "current": 5.254147098618869,
+      "profit": 4.98414709861887,
+      "roi": 18.459804068958775
     },
     "0x2295fb871baca739ab2e5bfbe61156da01242e83": {
       "userAddress": "0x2295fb871baca739ab2e5bfbe61156da01242e83",
@@ -876,9 +876,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -1.21,
       "sell": 0,
-      "current": 32.24437730320877,
-      "profit": 31.03437730320877,
-      "roi": 25.648245705131217
+      "current": 31.066857135348105,
+      "profit": 29.856857135348104,
+      "roi": 24.675088541610005
     },
     "0x6b75d8af000000e20b7a7ddf000ba900b4009a80": {
       "userAddress": "0xae2fc483527b8ef99eb5d9b44875f005ba1fae13",
@@ -931,9 +931,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.13999999999999999,
       "sell": 16.25,
-      "current": 29.6795066239515,
-      "profit": 45.789506623951496,
-      "roi": 327.06790445679644
+      "current": 28.595651994252098,
+      "profit": 44.705651994252094,
+      "roi": 319.3260856732293
     },
     "0xf0e14fb452657c9e1cbb7cf33d939b41780e6df3": {
       "userAddress": "0xf0e14fb452657c9e1cbb7cf33d939b41780e6df3",
@@ -942,9 +942,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.8499999999999999,
       "sell": 0,
-      "current": 29.254737071205895,
-      "profit": 28.404737071205894,
-      "roi": 33.41733773083047
+      "current": 28.186394439469662,
+      "profit": 27.33639443946966,
+      "roi": 32.1604640464349
     },
     "0x8bb30d73867da853c206138885fe55dcffee6b87": {
       "userAddress": "0x8bb30d73867da853c206138885fe55dcffee6b87",
@@ -964,9 +964,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.05,
       "sell": 33.95000000000001,
-      "current": 24.627127854885007,
-      "profit": 58.52712785488502,
-      "roi": 1170.5425570977004
+      "current": 23.727779126487498,
+      "profit": 57.62777912648751,
+      "roi": 1152.5555825297502
     },
     "0x43e79060df28fed5216327f85e2c4685dec19caa": {
       "userAddress": "0x43e79060df28fed5216327f85e2c4685dec19caa",
@@ -975,9 +975,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.7699999999999999,
       "sell": 0,
-      "current": 29.67950662410168,
-      "profit": 28.90950662410168,
-      "roi": 37.54481379753466
+      "current": 28.595651994396796,
+      "profit": 27.825651994396797,
+      "roi": 36.13721038233351
     },
     "0xa9a0bb18c0e2cbd8959d131178e735672654fdb7": {
       "userAddress": "0xa9a0bb18c0e2cbd8959d131178e735672654fdb7",
@@ -1019,9 +1019,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.8499999999999999,
       "sell": 2.11,
-      "current": 21.96283490172411,
-      "profit": 23.222834901724113,
-      "roi": 27.32098223732249
+      "current": 21.160782475746554,
+      "profit": 22.420782475746556,
+      "roi": 26.37739114793713
     },
     "0x73b4d14160db626b58385b320cdc6eb9733b12cf": {
       "userAddress": "0x73b4d14160db626b58385b320cdc6eb9733b12cf",
@@ -1085,8 +1085,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.7089050670150756,
-      "profit": 1.7089050670150756,
+      "current": 1.6464982119393137,
+      "profit": 1.6464982119393137,
       "roi": 0
     },
     "0xca63dbe93d89084518567a2b8e074f81e80c6905": {
@@ -1173,8 +1173,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 4.733881306520279,
-      "profit": 4.733881306520279,
+      "current": 4.561006493083223,
+      "profit": 4.561006493083223,
       "roi": 0
     },
     "0xc6ab5d8e28fa5970f1843444b1caffbc121dc834": {
@@ -1206,9 +1206,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.1,
       "sell": 2.8,
-      "current": 0.37762179486585296,
-      "profit": 3.077621794865853,
-      "roi": 30.776217948658527
+      "current": 0.3638315679653001,
+      "profit": 3.0638315679652997,
+      "roi": 30.638315679652994
     },
     "0x00c4126ea7f8c1e7c1ab5f183b3d113026560084": {
       "userAddress": "0x00c4126ea7f8c1e7c1ab5f183b3d113026560084",
@@ -1239,8 +1239,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 2.0297025168436864,
-      "profit": 2.0297025168436864,
+      "current": 1.9555805815410887,
+      "profit": 1.9555805815410887,
       "roi": 0
     },
     "0xe93d420455faa3cc5f5a0d00c36fd409c66c371f": {
@@ -1261,9 +1261,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -3.21,
       "sell": 4.91,
-      "current": 0.4894034487754652,
-      "profit": 2.189403448775465,
-      "roi": 0.6820571491512353
+      "current": 0.4715311101120565,
+      "profit": 2.1715311101120567,
+      "roi": 0.6764894424025099
     },
     "0x961b0c88265bf2bf63dcc4bda3883bd4599637a1": {
       "userAddress": "0x961b0c88265bf2bf63dcc4bda3883bd4599637a1",
@@ -1283,8 +1283,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.2771593076734062,
-      "profit": 1.2771593076734062,
+      "current": 1.2305192119998345,
+      "profit": 1.2305192119998345,
       "roi": 0
     },
     "0xf213737c44defc1cecae58c3e01314f922de410a": {
@@ -1294,8 +1294,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 5.255329089791665,
-      "profit": 5.255329089791665,
+      "current": 3.6127820955927294,
+      "profit": 3.6127820955927294,
       "roi": 0
     },
     "0xf987f4f2ce867b1664aec4410dfc79bdaf80b229": {
@@ -1305,9 +1305,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.15,
       "sell": 0,
-      "current": 5.010483851533985,
-      "profit": 4.860483851533985,
-      "roi": 32.403225676893236
+      "current": 4.8275078948131736,
+      "profit": 4.677507894813173,
+      "roi": 31.183385965421156
     },
     "0x726770c536bdf2f7b81b30f507d616fc271e91f0": {
       "userAddress": "0x726770c536bdf2f7b81b30f507d616fc271e91f0",
@@ -1327,9 +1327,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -4.1499999999999995,
       "sell": 0,
-      "current": 49.595601331815544,
-      "profit": 45.445601331815546,
-      "roi": 10.950747308871216
+      "current": 47.784438403896985,
+      "profit": 43.634438403896986,
+      "roi": 10.514322506963131
     },
     "0xbcb82d4a429f7d14fa55af2accc5cc030615937e": {
       "userAddress": "0xbcb82d4a429f7d14fa55af2accc5cc030615937e",
@@ -1349,9 +1349,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.36,
       "sell": 0,
-      "current": 8.789749221450688,
-      "profit": 8.429749221450688,
-      "roi": 23.415970059585245
+      "current": 8.468759708104873,
+      "profit": 8.108759708104873,
+      "roi": 22.52433252251354
     },
     "0xfd53f897272a1ebaf3e1c0c8fab3c7a234ce040a": {
       "userAddress": "0xfd53f897272a1ebaf3e1c0c8fab3c7a234ce040a",
@@ -1371,8 +1371,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.4265990149910261,
-      "profit": 1.4265990149910261,
+      "current": 1.3745015874052584,
+      "profit": 1.3745015874052584,
       "roi": 0
     },
     "0xfee1d3523b597f132c54401d8035a4af28082ffa": {
@@ -1404,8 +1404,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 14.94363158515959,
-      "profit": 14.94363158515959,
+      "current": 14.39791077910594,
+      "profit": 14.39791077910594,
       "roi": 0
     },
     "0xaee10065cf5e6ef2450252280e781c64db1ffc3b": {
@@ -1437,8 +1437,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 6.087274866616055,
-      "profit": 6.087274866616055,
+      "current": 5.864975987796074,
+      "profit": 5.864975987796074,
       "roi": 0
     },
     "0x10e7ac3aaa52324faaa582c32243f2e2b569ebc9": {
@@ -1459,9 +1459,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.2,
       "sell": 1.9500000000000002,
-      "current": 0.7794163922604425,
-      "profit": 2.5294163922604427,
-      "roi": 12.647081961302213
+      "current": 0.7509531810649656,
+      "profit": 2.5009531810649657,
+      "roi": 12.504765905324827
     },
     "0x22330aec3060c6cfbc5c26c6e3bf9737241e7db2": {
       "userAddress": "0x22330aec3060c6cfbc5c26c6e3bf9737241e7db2",
@@ -1525,9 +1525,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.3,
       "sell": 4.6,
-      "current": 1.5202296320557063,
-      "profit": 5.820229632055706,
-      "roi": 19.400765440185687
+      "current": 1.4647129435275996,
+      "profit": 5.764712943527599,
+      "roi": 19.215709811758664
     },
     "0xdcb02b6cf7715b55d1026eabd643f28b347fad58": {
       "userAddress": "0xdcb02b6cf7715b55d1026eabd643f28b347fad58",
@@ -1536,8 +1536,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 13.830000000000002,
-      "current": 8.599205807605761,
-      "profit": 22.42920580760576,
+      "current": 8.28517467681904,
+      "profit": 22.11517467681904,
       "roi": 0
     },
     "0x6a9b3e3d95ca45e39cdda9345de9c1e667a645f1": {
@@ -1547,8 +1547,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 7.8353897487231965,
-      "profit": 7.8353897487231965,
+      "current": 7.549252126482554,
+      "profit": 7.549252126482554,
       "roi": 0
     },
     "0xdd72527cd9265013952ad33825b35ab66e93bf3b": {
@@ -1558,9 +1558,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.3,
       "sell": 0,
-      "current": 3.771778510531982,
-      "profit": 3.471778510531982,
-      "roi": 11.572595035106607
+      "current": 3.6340383636812343,
+      "profit": 3.3340383636812345,
+      "roi": 11.113461212270781
     },
     "0x9d898899d5136763d26cef393451b0296e28359f": {
       "userAddress": "0x9d898899d5136763d26cef393451b0296e28359f",
@@ -1602,8 +1602,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 12.561563709865712,
-      "profit": 12.561563709865712,
+      "current": 12.102832735806505,
+      "profit": 12.102832735806505,
       "roi": 0
     },
     "0xee4cb26454989212327c6e6e253a346abc4df8c1": {
@@ -1723,8 +1723,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 3,
-      "current": 0.7389829535680104,
-      "profit": 3.7389829535680104,
+      "current": 0.7119963157629448,
+      "profit": 3.7119963157629448,
       "roi": 0
     },
     "0xe087753ba02cc4788115387bdc3a2d83acc48707": {
@@ -1734,8 +1734,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 3.811188496278261,
-      "profit": 3.811188496278261,
+      "current": 3.672009151126521,
+      "profit": 3.672009151126521,
       "roi": 0
     },
     "0x71097600635b9762611771efe25c98d50b974404": {
@@ -1789,8 +1789,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 3.589362949095047,
-      "profit": 3.589362949095047,
+      "current": 3.4582843668483787,
+      "profit": 3.4582843668483787,
       "roi": 0
     },
     "0x13af02a483b5889a414f485d3fba0fe0cdd62c1b": {
@@ -1833,9 +1833,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -4,
       "sell": 0,
-      "current": 17.733919011320463,
-      "profit": 13.733919011320463,
-      "roi": 3.4334797528301157
+      "current": 17.086300758541878,
+      "profit": 13.086300758541878,
+      "roi": 3.2715751896354694
     },
     "0xb4ae4311299c87cec3f714f6b1a7f5af3c84fde3": {
       "userAddress": "0xb4ae4311299c87cec3f714f6b1a7f5af3c84fde3",
@@ -1866,8 +1866,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.7667447186327674,
-      "profit": 1.7667447186327674,
+      "current": 1.7022256392879052,
+      "profit": 1.7022256392879052,
       "roi": 0
     },
     "0x7149946eb95033fc2faa9294a4bbcf5db4f55ab7": {
@@ -1965,8 +1965,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.355399473023373,
-      "profit": 1.355399473023373,
+      "current": 1.3059021544681184,
+      "profit": 1.3059021544681184,
       "roi": 0
     },
     "0x7716712b899e00260ca8a7054ea15174d00304e1": {
@@ -1998,9 +1998,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -4,
       "sell": 6.02,
-      "current": 1.484068902443858,
-      "profit": 3.5040689024438576,
-      "roi": 0.8760172256109644
+      "current": 1.4298727538660847,
+      "profit": 3.4498727538660843,
+      "roi": 0.8624681884665211
     },
     "0x90c87fa51fce475287aaad708332e419d74221ee": {
       "userAddress": "0x90c87fa51fce475287aaad708332e419d74221ee",
@@ -2218,9 +2218,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.5,
       "sell": 2,
-      "current": 0.8397680456801099,
-      "profit": 2.3397680456801098,
-      "roi": 4.6795360913602195
+      "current": 0.8091008753758204,
+      "profit": 2.3091008753758206,
+      "roi": 4.618201750751641
     },
     "0x30608202f4847c9cad1613ee5e6d03397970c7aa": {
       "userAddress": "0x30608202f4847c9cad1613ee5e6d03397970c7aa",
@@ -2240,8 +2240,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 23.802391530512992,
-      "profit": 23.802391530512992,
+      "current": 22.933161034698585,
+      "profit": 22.933161034698585,
       "roi": 0
     },
     "0x1ebaf667e12f35c422b6c00b860639949041c276": {
@@ -2273,8 +2273,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.154573723544767,
-      "profit": 1.154573723544767,
+      "current": 1.1124102842582329,
+      "profit": 1.1124102842582329,
       "roi": 0
     },
     "0x77dee8daa7fb80d19ec464aba89d4241f42dd743": {
@@ -2339,8 +2339,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.8050996041336214,
-      "profit": 1.8050996041336214,
+      "current": 1.739179857292887,
+      "profit": 1.739179857292887,
       "roi": 0
     },
     "0xb571f700d6b4866fd9a2199e72c07fd6b17a8587": {
@@ -2416,9 +2416,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -1,
       "sell": 0,
-      "current": 3.2512322940781395,
-      "profit": 2.2512322940781395,
-      "roi": 2.2512322940781395
+      "current": 3.1325017767951793,
+      "profit": 2.1325017767951793,
+      "roi": 2.1325017767951793
     },
     "0x5773381b7d56a21b4b70660afe1bbaa3c9443032": {
       "userAddress": "0x5773381b7d56a21b4b70660afe1bbaa3c9443032",
@@ -2449,8 +2449,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 3.1611744379923956,
-      "profit": 3.1611744379923956,
+      "current": 7.134145314520606e-9,
+      "profit": 7.134145314520606e-9,
       "roi": 0
     },
     "0xf70d9a2516da5a22bc103cd8d32ec221d726e500": {
@@ -2504,7 +2504,7 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -0.4,
       "sell": 1.71,
-      "current": 2.96795066239515e-26,
+      "current": 2.85956519942521e-26,
       "profit": 1.31,
       "roi": 3.275
     },
@@ -2911,8 +2911,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 7.925022217978778,
-      "profit": 7.925022217978778,
+      "current": 7.635611341637084,
+      "profit": 7.635611341637084,
       "roi": 0
     },
     "0xcf327c46e73c83f6d888de7171f6710a54daa312": {
@@ -2933,8 +2933,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.2593637469622472,
-      "profit": 1.2593637469622472,
+      "current": 1.2133735206112781,
+      "profit": 1.2133735206112781,
       "roi": 0
     },
     "0x5ec0a748e94894c181e1f7d21e189db2f046a879": {
@@ -2944,8 +2944,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.9317395228680032,
-      "profit": 1.9317395228680032,
+      "current": 1.8611950609346586,
+      "profit": 1.8611950609346586,
       "roi": 0
     },
     "0x268dec53b71a2e688638419e9a0fc6204cd716ef": {
@@ -2977,8 +2977,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.9003201372452057,
-      "profit": 1.9003201372452057,
+      "current": 1.8309230679218884,
+      "profit": 1.8309230679218884,
       "roi": 0
     },
     "0x2ea9a81ef9f2e1615b1d27526a745d72d592ce15": {
@@ -2988,8 +2988,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.512055631215595,
-      "profit": 1.512055631215595,
+      "current": 1.456837445919566,
+      "profit": 1.456837445919566,
       "roi": 0
     },
     "0x6841441330304398cff668f11b060c4f580ae33c": {
@@ -3109,8 +3109,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.2734240699350101,
-      "profit": 1.2734240699350101,
+      "current": 1.2269203799897102,
+      "profit": 1.2269203799897102,
       "roi": 0
     },
     "0x7a2c1790969badd22d8fd9817acdaa9ac6064148": {
@@ -3120,8 +3120,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.3696530725670988,
-      "profit": 1.3696530725670988,
+      "current": 1.3196352322238276,
+      "profit": 1.3196352322238276,
       "roi": 0
     },
     "0x790d2b13e08278c190c2c31e7102154d7b36aece": {
@@ -3153,7 +3153,7 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 2.08,
-      "current": 2.96795066239515e-26,
+      "current": 2.85956519942521e-26,
       "profit": 2.08,
       "roi": 0
     },
@@ -3208,9 +3208,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -2,
       "sell": 0,
-      "current": 5.353884739488465,
-      "profit": 3.353884739488465,
-      "roi": 1.6769423697442325
+      "current": 5.158368256169007,
+      "profit": 3.158368256169007,
+      "roi": 1.5791841280845036
     },
     "0xc2a72441d64831d5ba4c114c8c9cfa3b2f728d60": {
       "userAddress": "0xc2a72441d64831d5ba4c114c8c9cfa3b2f728d60",
@@ -3230,8 +3230,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 2.544760035896427,
-      "profit": 2.544760035896427,
+      "current": 2.451828910681747,
+      "profit": 2.451828910681747,
       "roi": 0
     },
     "0xe9b9fa81d0ab12dcfc4c407b485c6ec86e0e5f3e": {
@@ -3439,9 +3439,9 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": -3.5,
       "sell": 0,
-      "current": 6.945620561137682,
-      "profit": 3.445620561137682,
-      "roi": 0.9844630174679091
+      "current": 6.691976081911425,
+      "profit": 3.1919760819114247,
+      "roi": 0.911993166260407
     },
     "0x7af42ebd9b54ca8c0ca66e26ce2d0b45d5dcb356": {
       "userAddress": "0x7af42ebd9b54ca8c0ca66e26ce2d0b45d5dcb356",
@@ -3494,8 +3494,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 4.082553070387858,
-      "profit": 4.082553070387858,
+      "current": 0,
+      "profit": 0,
       "roi": 0
     },
     "0x80677afe54d1d1177683449c2910db6bd805eabb": {
@@ -4231,8 +4231,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.450016063700766,
-      "profit": 1.450016063700766,
+      "current": 1.3970634778072968,
+      "profit": 1.3970634778072968,
       "roi": 0
     },
     "0x019df15da0d0b6fb35f5b54c17a63d3842e12be3": {
@@ -4625,11 +4625,11 @@
       "type": "erc20",
       "tokenName": "AstroPepeX",
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
-      "buy": -2.5,
-      "sell": 3.5599999999999996,
-      "current": 0.47321515611117915,
-      "profit": 1.5332151561111789,
-      "roi": 0.6132860624444716
+      "buy": -4,
+      "sell": 3.9199999999999995,
+      "current": 1.6299521636723697,
+      "profit": 1.5499521636723692,
+      "roi": 0.3874880409180923
     },
     "0x4014f7bbe3cbdd43e698775493e7b2bc8c58a909": {
       "userAddress": "0x4014f7bbe3cbdd43e698775493e7b2bc8c58a909",
@@ -4748,8 +4748,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 1.5768106840907892,
-      "profit": 1.5768106840907892,
+      "current": 1.5192277336137052,
+      "profit": 1.5192277336137052,
       "roi": 0
     },
     "0x3cddae6eb21d727af7e248676403a472907d4a1a": {
@@ -5012,8 +5012,8 @@
       "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
       "buy": 0,
       "sell": 0,
-      "current": 2.3793402150735807,
-      "profit": 2.3793402150735807,
+      "current": 2.292449993466719,
+      "profit": 2.292449993466719,
       "roi": 0
     },
     "0x26d7b4fe67f4601643304b5023b3caf3a72e8504": {
