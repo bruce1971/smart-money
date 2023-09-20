@@ -6,22 +6,22 @@ const { getUser } = require(`../user.js`);
 const { refreshErc20 } = require(`../user/refreshErc20.js`);
 const fs = require('fs/promises');
 const path = `./data/pnl.json`;
+const saveEvery = 20;
 
 const inputTokenAddress = argv.a ? addresses.inputA[argv.a] || { address: '0' + argv.a } : undefined;
-const inputIsImmediate = argv.i === 'true';
+const inputToggle = argv.t ? Number(argv.t) : 1;
 
 
-async function getWallets(tokenAddress, isImmediate=true) {
+async function getWallets(contractAddress) {
   console.log(`Fetching wallets...`);
   let i = 0;
   let txLength = 10000;
   let startblock = 0;
   const allTransactions = [];
   let maxLoops = 1;
-  if (isImmediate) maxLoops = 1;
 
   while(txLength >= 10000 && i < maxLoops) {
-    let transactions = await axios.get(contractUrl(startblock, tokenAddress)).then(res => res.data.result);
+    let transactions = await axios.get(contractUrl(startblock, contractAddress)).then(res => res.data.result);
     txLength = transactions.length;
     const firstTx = transactions[0];
     console.log('first', firstTx.blockNumber);
@@ -48,9 +48,10 @@ async function getWallets(tokenAddress, isImmediate=true) {
 
 
 function formatPnlRanking(contractPnl) {
-  contractPnl = contractPnl.slice(0, 50);
-  const formattedPnl = contractPnl.map(o => ({
-    'Wallet': o.userAddress,
+  let contractPnlValues = Object.values(contractPnl);
+  contractPnlValues = contractPnlValues.sort((a,b) => b.profit - a.profit).slice(0, 50);
+  const formattedPnl = contractPnlValues.map(o => ({
+    'Wallet': o.userAddress.slice(0,8),
     'Profit (eth)': roundSpec(o.profit),
     'ROI (x)': roundSpec(o.roi),
     'Put In (eth)': roundSpec(-o.buy),
@@ -61,11 +62,10 @@ function formatPnlRanking(contractPnl) {
 }
 
 
-async function savePnl(contractPnl, allPnl, tokenAddress) {
-  contractPnl = contractPnl.sort((a, b) => b.profit - a.profit);
-  formatPnlRanking(contractPnl);
-  allPnl[tokenAddress.address] = contractPnl;
-  await fs.writeFile(path, JSON.stringify(allPnl, null, 2), 'utf8');
+async function savePnl(contractPnl, allPnl, contractAddress) {
+  allPnl[contractAddress] = contractPnl;
+  console.log('allPnl', allPnl);
+  // await fs.writeFile(path, JSON.stringify(allPnl, null, 2), 'utf8');
 }
 
 
@@ -77,59 +77,65 @@ function getTop100Wallets(contractPnl) {
 }
 
 
-async function getEtherscanData(tokenAddress, isImmediate=true) {
+async function pnlLoop(addressArray, contractObject, contractPnl, allPnl) {
+  for (let i = 0; i < addressArray.length; i++) {
+    console.log('----------');
+    console.log(i);
+    const user = await getUser(addressArray[i], contractObject, null, true);
+    if (user.aPnl[0]) contractPnl[addressArray[i]] = user.aPnl[0];
+    if (i % saveEvery === 0 && i > 0) savePnl(contractPnl, allPnl, contractObject.address);
+  }
+}
+
+
+
+
+
+
+
+async function getPnl(contractObject, toggle=1) {
   console.time('TIME');
 
   // refreshing given contractAddress data
-  if (tokenAddress.type === 'erc20') await refreshErc20(tokenAddress.address);
+  if (contractObject.type === 'erc20') await refreshErc20(contractObject.address);
 
+  // get stored pnls
   const allPnl = JSON.parse(await fs.readFile(path));
+  let contractPnl = allPnl[contractObject.address] ? allPnl[contractObject.address] : {};
 
-  let allWallets = await getWallets(tokenAddress.address, isImmediate);
+  // get wallets that participated in token/nft
+  let allWallets = await getWallets(contractObject.address);
   // console.log('scribbs?', allWallets.includes('0x70399b85054dd1d94f2264afc8704a3ee308abaf'));
 
-  // CASE 1: refresh top 100
-  // CASE 2: refresh everything
-  // CASE 3: refresh only new ones
-  // CASE 3: display storage
-
-
-  let contractPnl = [];
-  const saveEvery = 20;
-  if (allPnl[tokenAddress.address]) {
-    contractPnl = allPnl[tokenAddress.address];
+  // CASE 1: display storage
+  if (toggle === 1) {
+    console.log('case 1');
+    console.log('just display...');
+  }
+  // CASE 2: refresh top 100
+  else if (toggle === 2) {
+    console
+    .log('case 2');
     const top100Pnl = getTop100Wallets(contractPnl);
-    if (!isImmediate) {
-      const alreadySavedWallets = [... new Set(contractPnl.map(o => o.userAddress).flat(1))];
-      for (let i = 0; i < allWallets.length; i++) {
-        console.log('----------');
-        console.log(i);
-        const selectedWallet = allWallets[i];
-        if (!alreadySavedWallets.includes(selectedWallet)) {
-          const user = await getUser([selectedWallet], tokenAddress, null, true);
-          // FIXME: will scan every time users with no aPNL...
-          if (user.aPnl[0]) contractPnl.push(user.aPnl[0]);
-        }
-        if (i % saveEvery === 0 && i > 0) savePnl(contractPnl, allPnl, tokenAddress);
-      }
-    }
+    await pnlLoop(top100Pnl, contractObject, contractPnl, allPnl);
   }
-  else {
-    for (let i = 0; i < allWallets.length; i++) {
-      console.log('----------');
-      console.log(i);
-      const userAddress = allWallets[i];
-      const user = await getUser(userAddress, tokenAddress, null, true);
-      if (user.aPnl[0]) contractPnl.push(user.aPnl[0]);
-      if (i % saveEvery === 0 && i > 0) savePnl(contractPnl, allPnl, tokenAddress);
-    }
+  // CASE 3: refresh only new ones
+  else if (toggle === 3) {
+    console.log('case 3');
+    const alreadySavedWallets = [... new Set(contractPnl.map(o => o.userAddress).flat(1))];
+    const notSavedWallets = allWallets.filter(w => !alreadySavedWallets.includes(w));
+    await pnlLoop(notSavedWallets, contractObject, contractPnl, allPnl);
+  }
+  // CASE 4: refresh everything
+  else if (toggle === 4) {
+    console.log('case 4');
+    await pnlLoop(allWallets, contractObject, contractPnl, allPnl);
   }
 
-  savePnl(contractPnl, allPnl, tokenAddress);
-  contractPnl = contractPnl.sort((a, b) => b.roi - a.roi);
+  savePnl(contractPnl, allPnl, contractObject.address);
   formatPnlRanking(contractPnl);
   console.timeEnd('TIME');
 }
 
 
-if (require.main === module) getEtherscanData(inputTokenAddress, inputIsImmediate);
+if (require.main === module) getPnl(inputTokenAddress, inputToggle);

@@ -76,8 +76,8 @@
     "address": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
     "totalSupply": 420689899999995,
     "decimals": 18,
-    "priceEth": 3.89215860078894e-10,
-    "priceUsd": 6.39164896175545e-7
+    "priceEth": 3.8741706655422e-10,
+    "priceUsd": 6.37283104494524e-7
   },
   "0x046eee2cc3188071c02bfc1745a6b17c656e3f3d": {
     "name": "Rollbit Coin",
@@ -11532,8 +11532,8 @@
     "address": "0xff836a5821e69066c87e268bc51b849fab94240c",
     "totalSupply": 100000000000,
     "decimals": 18,
-    "priceEth": 4.89412579780152e-8,
-    "priceUsd": 0.0000787078494168142
+    "priceEth": 3.1297224337453e-8,
+    "priceUsd": 0.0000514821524658832
   },
   "0x017e9db34fc69af0dc7c7b4b33511226971cddc7": {
     "name": "On-Chain Dynamics",
@@ -11582,5 +11582,13 @@
     "decimals": 18,
     "priceEth": 3.16410817756391e-11,
     "priceUsd": 5.13980112226178e-8
+  },
+  "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4": {
+    "name": "AstroPepeX",
+    "address": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+    "totalSupply": 65000000000,
+    "decimals": 18,
+    "priceEth": 4.90798250780094e-8,
+    "priceUsd": 0.0000800911755789337
   }
 }

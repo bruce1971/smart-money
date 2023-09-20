@@ -14,6 +14,7 @@ const inputA = {
   'prime': { address: '0xb23d80f5FefcDDaa212212F028021B41DEd428CF', type: 'erc20' },
   'rlb': { address: '0x046EeE2cc3188071C02BfC1745A6b17c656e3f3d', type: 'erc20' },
   'smurf': { address: '0xff836a5821e69066c87e268bc51b849fab94240c', type: 'erc20' },
+  'astro': { address: '0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4', type: 'erc20' },
 }
 
 const inputU = {
