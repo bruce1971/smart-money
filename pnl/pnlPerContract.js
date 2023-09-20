@@ -70,10 +70,10 @@ async function savePnl(contractPnl, allPnl, contractAddress) {
 
 function getTopAddresses(contractPnl) {
   const n = 100;
-  const profitArray = Object.values(contractPnl).map(o => o.profit).sort((b, a) => b > a);
+  const profitArray = Object.values(contractPnl).map(o => o.profit).sort((b, a) => a-b);
   const profitLimit = profitArray.length >= n ? profitArray[n-1] : profitArray[profitArray.length-1];
   const constractTopPnl = Object.values(contractPnl).filter(o => o.profit >= profitLimit);
-  const constractTopPnlAddresses = constractTopPnl.map(o => o.userAddress)
+  const constractTopPnlAddresses = constractTopPnl.map(o => o.userAddress);
   return constractTopPnlAddresses;
 }
 
@@ -113,8 +113,8 @@ async function getPnl(contractObject, toggle=1) {
   // CASE 2: refresh top addresses only
   else if (toggle === 2) {
     console.log('case 2');
-    const topPnl = getTopAddresses(contractPnl);
-    await pnlLoop(topPnl, contractObject, contractPnl, allPnl);
+    const topPnlAddresses = getTopAddresses(contractPnl);
+    await pnlLoop(topPnlAddresses, contractObject, contractPnl, allPnl);
   }
   // CASE 3: refresh only new ones
   else if (toggle === 3) {
