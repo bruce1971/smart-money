@@ -22,6 +22,7 @@ async function getBestPnl() {
   });
   Object.keys(bestPnl).forEach(userAddress => {
     if (bestPnl[userAddress].length > 1) {
+      console.log('================================================');
       console.log(userAddress);
       console.log(bestPnl[userAddress]);
     }

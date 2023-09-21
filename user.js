@@ -45,13 +45,13 @@ async function getUser(userAddress, contractAddress, daysAgo=null, quick=false) 
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  startblock = 17204465
-  endblock = startblock
+  // startblock = 17204465
+  // endblock = startblock
 
   let txArray = await txsForSingleAddress(userAddress, contractAddress, startblock, endblock, quick);
 
   let participation = getParticipation(txArray, userAddress);
-  // participation = participation.filter(o => o.type === 'erc721');
+  participation = participation.filter(o => o.type === 'erc20');
 
   const erc20InfoObj = await getErc20Info(txArray);
   const erc721InfoObj = await getErc721Info(participation);

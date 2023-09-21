@@ -15,7 +15,7 @@ async function getErc20Info(txArray){
   const erc20InfoObj = JSON.parse(await fs.readFile(path));
 
   console.log(`Getting ${addressArray.length} ERC20 token infos..`);
-  for (var i = 0; i < addressArray.length; i++) {
+  for (let i = 0; i < addressArray.length; i++) {
 
     const address = addressArray[i].toLowerCase();
     if (!erc20InfoObj[address]) {
@@ -60,6 +60,7 @@ async function getErc20Info(txArray){
         priceUsd
       }
     }
+    if (i % 10 === 0 && i > 0) await fs.writeFile(path, JSON.stringify(erc20InfoObj, null, 2), 'utf8');
   }
 
   await fs.writeFile(path, JSON.stringify(erc20InfoObj, null, 2), 'utf8');

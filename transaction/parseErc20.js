@@ -29,7 +29,6 @@ async function logFetch(erc20) {
 
 
 async function parseDecodedArray(array, erc20, pnl, erc20InfoObj) {
-  console.log(array);
   let buyAmount = 0;
   let sellAmount = 0;
   let swapFrom, swapTo, addressFrom, addressTo;
@@ -114,7 +113,6 @@ async function parseDecodedArray(array, erc20, pnl, erc20InfoObj) {
 
 
 async function parseErc20(txs, finalObject, pnl, erc20InfoObj) {
-  console.log(txs);
   const erc20 = txs.erc20;
   if (txs.normal) {
     if (txs.normal.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)' || txs.normal.functionName === 'execute(bytes payload, bytes[] signatures)') {
