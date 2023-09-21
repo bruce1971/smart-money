@@ -76,8 +76,8 @@
     "address": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
     "totalSupply": 420689899999995,
     "decimals": 18,
-    "priceEth": 3.8741706655422e-10,
-    "priceUsd": 6.37283104494524e-7
+    "priceEth": 3.88060264038435e-10,
+    "priceUsd": 6.24668791252482e-7
   },
   "0x046eee2cc3188071c02bfc1745a6b17c656e3f3d": {
     "name": "Rollbit Coin",
@@ -11532,8 +11532,8 @@
     "address": "0xff836a5821e69066c87e268bc51b849fab94240c",
     "totalSupply": 100000000000,
     "decimals": 18,
-    "priceEth": 3.1297224337453e-8,
-    "priceUsd": 0.0000514821524658832
+    "priceEth": 1.44196872323092e-8,
+    "priceUsd": 0.0000232337220964437
   },
   "0x017e9db34fc69af0dc7c7b4b33511226971cddc7": {
     "name": "On-Chain Dynamics",
@@ -11588,7 +11588,15 @@
     "address": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
     "totalSupply": 65000000000,
     "decimals": 18,
-    "priceEth": 2.85293482401946e-8,
-    "priceUsd": 0.0000461990970373658
+    "priceEth": 3.2600936597159e-8,
+    "priceUsd": 0.0000525444799051667
+  },
+  "0xa9fbcc25435ad713a9468d8c89dd7baae8914e3a": {
+    "name": "Prophet",
+    "address": "0xa9fbcc25435ad713a9468d8c89dd7baae8914e3a",
+    "totalSupply": 1000000,
+    "decimals": 18,
+    "priceEth": 0.00239361492242574,
+    "priceUsd": 3.88404368116702
   }
 }

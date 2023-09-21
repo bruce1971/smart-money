@@ -51,7 +51,7 @@ function formatPnlRanking(contractPnl) {
   let contractPnlValues = Object.values(contractPnl);
   contractPnlValues = contractPnlValues.sort((a,b) => b.profit - a.profit).slice(0, 50);
   const formattedPnl = contractPnlValues.map(o => ({
-    'Wallet': o.userAddress.slice(0,8),
+    'Wallet': o.userAddress,//.slice(0,8),
     'Profit (eth)': roundSpec(o.profit),
     'ROI (x)': roundSpec(o.roi),
     'Put In (eth)': roundSpec(-o.buy),
@@ -65,7 +65,6 @@ function formatPnlRanking(contractPnl) {
 async function savePnl(contractPnl, allPnl, contractAddress) {
   allPnl[contractAddress] = contractPnl;
   await fs.writeFile(path, JSON.stringify(allPnl, null, 2), 'utf8');
-  formatPnlRanking(contractPnl);
 }
 
 
@@ -108,8 +107,7 @@ async function getPnl(contractObject, toggle=1) {
 
   // CASE 1: display storage
   if (toggle === 1) {
-    console.log('case 1');
-    console.log('just display...');
+    console.log(`case 1 - just displayed top from ${Object.keys(contractPnl).length} addresses scanned...`);
   }
   // CASE 2: refresh top addresses only
   else if (toggle === 2) {

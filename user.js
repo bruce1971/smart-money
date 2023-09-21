@@ -45,8 +45,8 @@ async function getUser(userAddress, contractAddress, daysAgo=null, quick=false) 
 
   let endblock = currentBlock ? currentBlock : 99999999;
   let startblock = currentBlock ? endblock - blocksAgo : 0;
-  // startblock = 16848085
-  // endblock = startblock
+  startblock = 17204465
+  endblock = startblock
 
   let txArray = await txsForSingleAddress(userAddress, contractAddress, startblock, endblock, quick);
 

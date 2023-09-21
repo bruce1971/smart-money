@@ -29,6 +29,7 @@ async function logFetch(erc20) {
 
 
 async function parseDecodedArray(array, erc20, pnl, erc20InfoObj) {
+  console.log(array);
   let buyAmount = 0;
   let sellAmount = 0;
   let swapFrom, swapTo, addressFrom, addressTo;
@@ -45,6 +46,15 @@ async function parseDecodedArray(array, erc20, pnl, erc20InfoObj) {
   else if (array.length === 2 && array[0].path.at(-1).toLowerCase() === array[1].path[0].toLowerCase()) {
     // node user.js -u=x3e9D24b9a83d4Cb144D01594F437a9b94CCC8d60 -a=xd4074c1e48e11615fd1cfe8cbe691f5ab944aaa6
     // node user.js -u=xd295ccf0ccd19b41dfb9b78e02eace3d7ec85be7 -a=xda7c0810ce6f8329786160bb3d1734cf6661ca6e
+    sellAmount += Number(array[0].amountIn);
+    buyAmount += Number(array[1].amountOut);
+    addressFrom = array[0].path[0].toLowerCase();
+    addressTo = array[1].path.at(-1).toLowerCase();
+    swapFrom = erc20InfoObj[addressFrom] || { name: shortAddr(addressFrom), address: addressFrom };
+    swapTo = erc20InfoObj[addressTo] || { name: shortAddr(addressTo), address: addressTo };
+  }
+  else if (array.length > 2 && array[0].path.at(-1).toLowerCase() === array[1].path[0].toLowerCase()) {
+    // node user.js -u=xec471594d2e8496eac699d44bafc6f014033f4d6 -a=pepe
     sellAmount += Number(array[0].amountIn);
     buyAmount += Number(array[1].amountOut);
     addressFrom = array[0].path[0].toLowerCase();
@@ -104,9 +114,10 @@ async function parseDecodedArray(array, erc20, pnl, erc20InfoObj) {
 
 
 async function parseErc20(txs, finalObject, pnl, erc20InfoObj) {
+  console.log(txs);
   const erc20 = txs.erc20;
   if (txs.normal) {
-    if (txs.normal.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)') {
+    if (txs.normal.functionName === 'execute(bytes commands,bytes[] inputs,uint256 deadline)' || txs.normal.functionName === 'execute(bytes payload, bytes[] signatures)') {
       const decodedArray = decoder.decoder1(txs.normal.input);
       const parsed = await parseDecodedArray(decodedArray, erc20, pnl, erc20InfoObj);
       finalObject.type = parsed.type;
