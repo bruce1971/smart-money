@@ -48,7 +48,7 @@ async function sendAll(userArray) {
 
 export const handler = async (event) => {
   console.time('TELEGRAM')
-  const sentMessages = await sendAll(['scribbs', 'left', 'osf', 'artchick', 'grow', 'judge', 'me']);
+  const sentMessages = await sendAll(['scribbs', 'leftcurve', 'osf', 'artchick', 'grow', 'judge', 'me']);
   const response = { statusCode: 200, body: JSON.stringify(sentMessages.map(m => m.text)) };
   console.timeEnd('TELEGRAM')
   return response;

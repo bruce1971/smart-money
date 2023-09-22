@@ -15,6 +15,8 @@ const inputA = {
   'rlb': { address: '0x046EeE2cc3188071C02BfC1745A6b17c656e3f3d', type: 'erc20' },
   'smurf': { address: '0xff836a5821e69066c87e268bc51b849fab94240c', type: 'erc20' },
   'astro': { address: '0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4', type: 'erc20' },
+  'gold': { address: '0x089453742936dd35134383aee9d78bEe63A69b01', type: 'erc20' },
+  'pepeking': { address: '0x51A59a02BA906194285E81eb1F98FFA28E7CF4C9', type: 'erc20' },
 }
 
 const inputU = {
@@ -31,8 +33,8 @@ const inputU = {
   'osf2': '0xdcae87821fa6caea05dbc2811126f4bc7ff73bd1',
   'xman': '0xc1244286edacb4097715386992aed36752483dcb',
   'seb': '0x3d280fde2ddb59323c891cf30995e1862510342f',
-  'left': '0x9224cf7956b8787f1e015349ba2937cef29215d8',
-  'left2': '0x5f45c7ea2e094fea813a8a8813620ffcc4a19d0f',
+  'leftcurve': '0x9224cf7956b8787f1e015349ba2937cef29215d8',
+  'leftcurve2': '0x5f45c7ea2e094fea813a8a8813620ffcc4a19d0f',
   'flip': '0xD7af88D7749c777131ae81Fef2A5EB2e37e9F6dB',
   'flip2': '0x541eBCd017986eF62e3A7e2F24A1835EA7FEcf50',
   'flip3': '0x9B5E928f9E17aAD03c4a051e59d86Ae6E19d21d7',

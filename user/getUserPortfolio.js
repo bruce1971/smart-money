@@ -16,7 +16,7 @@ async function getUserPortfolio(participation, erc20InfoObj, erc721InfoObj, user
   }
   else {
     const participationErc20 = participation.filter(o => o.type === 'erc20');
-    console.log(`Getting ${participationErc20.length} portfolio Erc20 infos...`);
+    if (participationErc20.length > 0) console.log(`Getting ${participationErc20.length} portfolio Erc20 infos...`);
     for (let i = 0; i < participationErc20.length; i++) {
       console.log(i+1);
       const { contractAddress } = participationErc20[i];
@@ -52,7 +52,7 @@ async function getUserPortfolio(participation, erc20InfoObj, erc721InfoObj, user
     }
 
     const participationErc721 = participation.filter(o => o.type === 'erc721');
-    console.log(`Getting ${participationErc721.length} portfolio Erc721 infos...`);
+    if (participationErc721.length > 0) console.log(`Getting ${participationErc721.length} portfolio Erc721 infos...`);
     for (let i = 0; i < participationErc721.length; i++) {
       console.log(i+1);
       const { contractAddress } = participationErc721[i];

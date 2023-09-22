@@ -168,7 +168,11 @@ async function parseErc20(txs, finalObject, pnl, erc20InfoObj) {
       finalObject.activity = '🪙 OTHER ERC20...';
     }
   } else {
-    finalObject.activity = '🪙 OTHER NO NORMAL ERC20...';
+    if (true) {
+      finalObject.activity = `🪙➡️  Token RECEIVE. ${formatLargeValue(erc20.value, erc20.tokenDecimal)} ${erc20.tokenName} from ${shortAddr(erc20.from)}`;
+    } else {
+      finalObject.activity = '🪙 OTHER NO NORMAL ERC20...';
+    }
   }
 }
 

@@ -49,14 +49,15 @@ async function getWallets(contractAddress) {
 
 function formatPnlRanking(contractPnl) {
   let contractPnlValues = Object.values(contractPnl);
-  contractPnlValues = contractPnlValues.sort((a,b) => b.profit - a.profit).slice(0, 50);
+  // contractPnlValues = contractPnlValues.sort((a,b) => b.profit - a.profit).slice(0, 50);
+  contractPnlValues = contractPnlValues.sort((a,b) => b.roi - a.roi).slice(0, 50);
   const formattedPnl = contractPnlValues.map(o => ({
-    'Wallet': o.userAddress,//.slice(0,8),
-    'Profit (eth)': roundSpec(o.profit),
+    'Wallet': o.userAddress,// o.userAddress.slice(0,8),
+    'Profit (Ξ)': roundSpec(o.profit),
     'ROI (x)': roundSpec(o.roi),
-    'Put In (eth)': roundSpec(-o.buy),
-    'Taken Out (eth)': roundSpec(o.sell),
-    'Holding (eth)': roundSpec(o.current),
+    'Put In (Ξ)': o.buy === 0 ? 0 : roundSpec(-o.buy),
+    'Took Out (Ξ)': roundSpec(o.sell),
+    'Holding (Ξ)': roundSpec(o.current),
   }));
   console.table(formattedPnl);
 }
