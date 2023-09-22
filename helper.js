@@ -34,12 +34,12 @@ function accountUrl(type, address, contractAddress, startblock=0, endblock=99999
   `.replace(/\s/g, '')
 }
 
-function contractUrl(startblock, tokenAddress) {
+function contractUrl(contractAddress, startblock=0) {
   return `
     https://api.etherscan.io/api
      ?module=account
      &action=tokentx
-     &contractaddress=${tokenAddress}
+     &contractaddress=${contractAddress}
      &startblock=${startblock}
      &endblock=99999999
      &sort=asc
@@ -129,13 +129,15 @@ function shortAddr(address) {
   return address.substring(0,8);
 }
 
-function formatActivityLog(activityLog, showUser=false, showBlock=false) {
+function formatActivityLog(activityLog, showUser=false, showBlock=false, displayAll=true) {
   activityLog.forEach(a => {
-    console.log('---------');
-    console.log(`${a.ago} ${showBlock && a.block ? `block:${a.block}` : ''}`); // TODO: add exact date
-    if (showUser && a.userWallet) console.log(`user:${a.userWallet}`);
-    console.log(a.activity);
-    console.log(a.tx);
+    if (displayAll || a.activity.includes('BUY') || a.activity.includes('SALE')) {
+      console.log('---------');
+      console.log(`${a.ago} ${showBlock && a.block ? `block:${a.block}` : ''}`); // TODO: add exact date
+      if (showUser && a.userWallet) console.log(`user:${a.userWallet}`);
+      console.log(a.activity);
+      console.log(a.tx);
+    }
   });
 }
 

@@ -1,4 +1,4 @@
-const axios = require('axios');
+  const axios = require('axios');
 const basePath = process.cwd();
 const { accountUrl } = require(`../helper.js`);
 const argv = require('minimist')(process.argv.slice(2));
