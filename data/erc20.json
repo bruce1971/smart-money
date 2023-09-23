@@ -14038,5 +14038,21 @@
     "decimals": 9,
     "priceEth": 0.00000435010737391852,
     "priceUsd": 0.00695551569052698
+  },
+  "0x4ef6a620c55dbc650ed9cd1f901fd2eef68a63d1": {
+    "name": "Pepe Prophecy",
+    "address": "0x4ef6a620c55dbc650ed9cd1f901fd2eef68a63d1",
+    "totalSupply": 1000000000,
+    "decimals": 18,
+    "priceEth": 7.32104081773098e-7,
+    "priceUsd": 0.000917718053519709
+  },
+  "0x234ee45691132cc2a2b56941604c8b1bebe475e9": {
+    "name": null,
+    "address": "0x234ee45691132cc2a2b56941604c8b1bebe475e9",
+    "totalSupply": null,
+    "decimals": null,
+    "priceEth": null,
+    "priceUsd": null
   }
 }

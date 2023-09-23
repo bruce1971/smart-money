@@ -17,7 +17,8 @@ const inputA = {
   'astro': { address: '0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4', type: 'erc20' },
   'gold': { address: '0x089453742936dd35134383aee9d78bEe63A69b01', type: 'erc20' },
   'pepeking': { address: '0x51A59a02BA906194285E81eb1F98FFA28E7CF4C9', type: 'erc20' },
-  'pepeprof': { address: '0x4Ef6A620c55dBc650ed9CD1F901Fd2eeF68A63d1', type: 'erc20' },
+  'kek': { address: '0x4Ef6A620c55dBc650ed9CD1F901Fd2eeF68A63d1', type: 'erc20' },
+  'apx': { address: '0x234ee45691132cc2a2b56941604c8b1bebe475e9', type: 'erc20' },
 }
 
 const inputU = {

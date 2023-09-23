@@ -10,7 +10,7 @@ const inputTokenAddress = addresses.inputA[argv.a].address;
 async function main(contractAddress) {
   let transactions = await axios.get(contractUrl(contractAddress)).then(res => res.data.result);
   const firstTx = transactions[0];
-  const lastBlock = Number(firstTx.blockNumber) + secondsToBlocks(60 * 30);
+  const lastBlock = Number(firstTx.blockNumber) + secondsToBlocks(60 * 60 * 12);
   transactions = transactions.filter(tx => Number(tx.blockNumber) < lastBlock)
   const wallets = [... new Set(transactions.map(tx => tx.to))];
   let activityArray = [];

@@ -10,5 +10,7 @@ if (require.main === module) {
   (async () => {
     const block = await web3.eth.getBlockNumber().then(res => res);
     console.log(block);
+    const block2 = await web3.eth.getTransaction("0xd4c04a78c8ed96db777d04c6edce5add3c3d548c80c6c1e49824be5e48d3a91e")
+    console.log(block2);
   })();
 }

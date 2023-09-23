@@ -51,7 +51,7 @@ async function getUser(userAddress, contractAddress, daysAgo=null, quick=false) 
   let txArray = await txsForSingleAddress(userAddress, contractAddress, startblock, endblock, quick);
 
   let participation = getParticipation(txArray, userAddress);
-  participation = participation.filter(o => o.type === 'erc20');
+  // participation = participation.filter(o => o.type === 'erc20');
 
   const erc20InfoObj = await getErc20Info(txArray);
   const erc721InfoObj = await getErc721Info(participation);
