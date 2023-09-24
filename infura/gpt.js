@@ -42,35 +42,68 @@ async function getTokenCreationTransactions(fromBlock, toBlock) {
 }
 
 
+// Function to fetch token creation transactions
+async function getTradingLaunch(fromBlock, toBlock) {
+  try {
+    const responseCreatePair = await axios.get(`https://api.etherscan.io/api`, {
+      params: {
+        module: 'logs',
+        action: 'getLogs',
+        fromBlock: fromBlock,
+        toBlock: toBlock,
+        topic0: '0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9',
+        apiKey: etherscanApiKey,
+      },
+    });
+    const responseDeposit = await axios.get(`https://api.etherscan.io/api`, {
+      params: {
+        module: 'logs',
+        action: 'getLogs',
+        fromBlock: fromBlock,
+        toBlock: toBlock,
+        topic0: '0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c',
+        apiKey: etherscanApiKey,
+      },
+    });
+    const depositTransactionHashes = responseDeposit.data.result.map(o => o.transactionHash);
+    const addLiquidityTransactions = responseCreatePair.data.result.filter(o => depositTransactionHashes.includes(o.transactionHash));
+    return addLiquidityTransactions;
+  } catch (error) {
+    console.error('Error fetching token creation transactions:', error);
+  }
+}
+
+
+async function intervalExecute(fromBlock, toBlock) {
+  // const creationTransactions = await getTokenCreationTransactions(fromBlock, toBlock);
+  const tradingLaunchTransactions = await getTradingLaunch(fromBlock, toBlock);
+}
+
+
 // Main function to monitor new token launches
 async function monitorTokenLaunches() {
   const currentBlock = await getLatestBlockNumber();
   console.log('Current block number:', currentBlock);
+  const creationTransactions = await intervalExecute(
+    currentBlock - 50,
+    currentBlock + 50
+  );
 
-  let lastProcessedBlock = currentBlock;
-
-  setInterval(async () => {
-    const newBlock = await getLatestBlockNumber();
-
-    if (newBlock > lastProcessedBlock) {
-      const creationTransactions = await getTokenCreationTransactions(
-        lastProcessedBlock + 1,
-        newBlock
-      );
-
-      if (creationTransactions.length > 0) {
-        console.log('New token(s) launched!');
-        console.log('Creation transactions:', creationTransactions);
-      }
-
-      lastProcessedBlock = newBlock;
-    }
-  }, 10000); // Check for new blocks every 60 seconds
+  // let lastProcessedBlock = currentBlock;
+  // setInterval(async () => {
+  //   const newBlock = await getLatestBlockNumber();
+  //   if (newBlock > lastProcessedBlock) {
+  //     const creationTransactions = await intervalExecute(
+  //       lastProcessedBlock + 1,
+  //       newBlock
+  //     );
+  //     lastProcessedBlock = newBlock;
+  //   }
+  // }, 10000); // Check for new blocks every 60 seconds
 }
 
 
 // Start monitoring new token launches
-// monitorTokenLaunches();
+monitorTokenLaunches();
 // const n = 18172865;
-const n = 18205661;
-getTokenCreationTransactions(n-1, n+100);
+// intervalExecute(n-50, n+50);

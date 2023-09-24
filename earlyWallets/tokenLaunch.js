@@ -10,7 +10,7 @@ const inputTokenAddress = addresses.inputA[argv.a].address;
 async function main(contractAddress) {
   let transactions = await axios.get(contractUrl(contractAddress)).then(res => res.data.result);
   const firstTx = transactions[0];
-  const lastBlock = Number(firstTx.blockNumber) + secondsToBlocks(60 * 60 * 12);
+  const lastBlock = Number(firstTx.blockNumber) + secondsToBlocks(60 * 3);
   transactions = transactions.filter(tx => Number(tx.blockNumber) < lastBlock)
   const wallets = [... new Set(transactions.map(tx => tx.to))];
   let activityArray = [];
@@ -23,7 +23,8 @@ async function main(contractAddress) {
   activityArray = activityArray.flat(1);
   activityArray = activityArray.filter(a => a.block <= lastBlock);
   activityArray = activityArray.sort((a,b) => a.block - b.block);
-  formatActivityLog(activityArray, true, true, false);
+  const displayAll = true;
+  formatActivityLog(activityArray, true, true, displayAll);
 }
 
 if (require.main === module) main(inputTokenAddress);
