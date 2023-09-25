@@ -12,6 +12,7 @@ async function main(contractAddress) {
   const firstTx = transactions[0];
   const lastBlock = Number(firstTx.blockNumber) + secondsToBlocks(60 * 3);
   transactions = transactions.filter(tx => Number(tx.blockNumber) < lastBlock)
+  console.log('transactions', transactions);
   const wallets = [... new Set(transactions.map(tx => tx.to))];
   let activityArray = [];
   console.log('wallets.length', wallets.length);

@@ -13,36 +13,6 @@ async function getLatestBlockNumber() {
 
 
 // Function to fetch token creation transactions
-async function getTokenCreationTransactions(fromBlock, toBlock) {
-  try {
-    const response = await axios.get(`https://api.etherscan.io/api`, {
-      params: {
-        module: 'logs',
-        action: 'getLogs',
-        fromBlock: fromBlock,
-        toBlock: toBlock,
-        topic0: '0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0', // ERC-20 contract creation topic
-        apiKey: etherscanApiKey,
-      },
-    });
-    const filteredResult = response.data.result.filter(o => o.topics[1] === '0x0000000000000000000000000000000000000000000000000000000000000000');
-
-    const formattedResult = filteredResult.map(o => ({
-      contractAddress: o.address,
-      ownerAddress: o.topics[2].replace('000000000000000000000000',''),
-      transactionHash: o.transactionHash
-    }));
-
-    console.log('response.data.result', formattedResult);
-
-    return formattedResult;
-  } catch (error) {
-    console.error('Error fetching token creation transactions:', error);
-  }
-}
-
-
-// Function to fetch token creation transactions
 async function getTradingLaunch(fromBlock, toBlock) {
   try {
     const responseCreatePair = await axios.get(`https://api.etherscan.io/api`, {
@@ -67,7 +37,14 @@ async function getTradingLaunch(fromBlock, toBlock) {
     });
     const depositTransactionHashes = responseDeposit.data.result.map(o => o.transactionHash);
     const addLiquidityTransactions = responseCreatePair.data.result.filter(o => depositTransactionHashes.includes(o.transactionHash));
-    return addLiquidityTransactions;
+    const formattedResult = addLiquidityTransactions.map(o => ({
+      ownerAddress: o.data,
+      contractAddress: o.topics.filter(el => el.toLowerCase() != '0x000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2')[1].replace('000000000000000000000000',''),
+      transactionHash: o.transactionHash,
+      blockNumber: o.blockNumber,
+      timeStamp: o.timeStamp,
+    }));
+    return formattedResult;
   } catch (error) {
     console.error('Error fetching token creation transactions:', error);
   }
@@ -77,6 +54,7 @@ async function getTradingLaunch(fromBlock, toBlock) {
 async function intervalExecute(fromBlock, toBlock) {
   // const creationTransactions = await getTokenCreationTransactions(fromBlock, toBlock);
   const tradingLaunchTransactions = await getTradingLaunch(fromBlock, toBlock);
+  console.log(tradingLaunchTransactions);
 }
 
 
@@ -85,7 +63,7 @@ async function monitorTokenLaunches() {
   const currentBlock = await getLatestBlockNumber();
   console.log('Current block number:', currentBlock);
   const creationTransactions = await intervalExecute(
-    currentBlock - 50,
+    currentBlock - 50000,
     currentBlock + 50
   );
 
