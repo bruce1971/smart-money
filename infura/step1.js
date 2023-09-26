@@ -1,4 +1,4 @@
-db1const axios = require('axios');
+const axios = require('axios');
 const { Web3 }  = require('web3');
 const ethereumNodeUrl = 'https://mainnet.infura.io/v3/482599a22821425bae631e1031e90e7e';
 const etherscanApiKey = 'I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG';
@@ -40,7 +40,8 @@ async function getTradingLaunch(fromBlock, toBlock) {
     const depositTransactionHashes = responseDeposit.data.result.map(o => o.transactionHash);
     const addLiquidityTransactions = responseCreatePair.data.result.filter(o => depositTransactionHashes.includes(o.transactionHash));
     const formattedResult = addLiquidityTransactions.map(o => ({
-      contractAddress: o.topics.filter(el => el.toLowerCase() != '0x000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2')[1].replace('000000000000000000000000',''),
+      contractAddress: o.topics.filter(el => el.toLowerCase() != '0x000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2')[1].replace('000000000000000000000000','').toLowerCase(),
+      pairAddress: o.data.replace('000000000000000000000000','').replace('000000000000000000000000000000000000000000000000000000000003e73a','').toLowerCase(),
       transactionHash: o.transactionHash,
       blockNumber: Number(o.blockNumber),
       timeStamp: Number(o.timeStamp),
