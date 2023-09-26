@@ -41,7 +41,7 @@ async function getTradingLaunch(fromBlock, toBlock) {
     const addLiquidityTransactions = responseCreatePair.data.result.filter(o => depositTransactionHashes.includes(o.transactionHash));
     const formattedResult = addLiquidityTransactions.map(o => ({
       contractAddress: o.topics.filter(el => el.toLowerCase() != '0x000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2')[1].replace('000000000000000000000000','').toLowerCase(),
-      pairAddress: o.data.replace('000000000000000000000000','').replace('000000000000000000000000000000000000000000000000000000000003e73a','').toLowerCase(),
+      pairAddress: o.data.replace('000000000000000000000000',''). slice(0, 42).toLowerCase(),
       transactionHash: o.transactionHash,
       blockNumber: Number(o.blockNumber),
       timeStamp: Number(o.timeStamp),
