@@ -52,13 +52,27 @@ async function getTradingLaunch(fromBlock, toBlock) {
   }
 }
 
+async function gecko(contractAddress){
+  const url = `https://api.geckoterminal.com/api/v2/networks/eth/tokens/${contractAddress}?include=top_pools`;
+  const info = await axios.get(url).then(res => res.data).catch(e => null);
+  return info.data.attributes;
+}
+
+
 
 async function intervalExecute(fromBlock, toBlock) {
+  console.log(`intervalExecute: ${fromBlock} - ${toBlock}`);
   const transactions = await getTradingLaunch(fromBlock, toBlock);
   const ca = JSON.parse(await fs.readFile(path));
-  transactions.forEach(tx => ca[tx.contractAddress] = tx);
+  for (let i = 0; i < transactions.length; i++) {
+    const tokenInfo = await gecko(transactions[i].contractAddress);
+    transactions[i].name = tokenInfo.name;
+    transactions[i].decimals = tokenInfo.decimals;
+    transactions[i].totalSupply = Math.ceil( Number(tokenInfo.total_supply) / (10 ** tokenInfo.decimals) );
+    ca[transactions[i].contractAddress] = transactions[i];
+    console.log(transactions[i]);
+  }
   await fs.writeFile(path, JSON.stringify(ca, null, 2), 'utf8');
-  console.log(transactions);
   return transactions;
 }
 
@@ -67,25 +81,24 @@ async function intervalExecute(fromBlock, toBlock) {
 async function monitorTokenLaunches() {
   const currentBlock = await getLatestBlockNumber();
   console.log('Current block number:', currentBlock);
-  for (let i = 10; i >= 0; i--) {
-    const transactions = await intervalExecute(currentBlock-(i+1)*10, 1+currentBlock-i*10);
-  }
+  // for (let i = 10; i >= 0; i--) {
+  //   const transactions = await intervalExecute(currentBlock-(i+1)*10, 1+currentBlock-i*10);
+  // }
 
-  // let lastProcessedBlock = currentBlock;
-  // setInterval(async () => {
-  //   const newBlock = await getLatestBlockNumber();
-  //   if (newBlock > lastProcessedBlock) {
-  //     const creationTransactions = await intervalExecute(
-  //       lastProcessedBlock + 1,
-  //       newBlock
-  //     );
-  //     lastProcessedBlock = newBlock;
-  //   }
-  // }, 10000); // Check for new blocks every 60 seconds
+  let lastProcessedBlock = currentBlock;
+  setInterval(async () => {
+    const newBlock = await getLatestBlockNumber();
+    if (newBlock > lastProcessedBlock) {
+      const creationTransactions = await intervalExecute(
+        lastProcessedBlock + 1,
+        newBlock
+      );
+      lastProcessedBlock = newBlock;
+    }
+  }, 30000); // Check for new blocks every 60 seconds
 }
 
 
-// Start monitoring new token launches
 monitorTokenLaunches();
 // const n = 18172865;
 // intervalExecute(n-50, n+50);

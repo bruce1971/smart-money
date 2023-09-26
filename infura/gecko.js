@@ -6,6 +6,7 @@ async function gecko(){
   const url = `https://api.geckoterminal.com/api/v2/networks/eth/tokens/${contractAddress}?include=top_pools`;
   const info = await axios.get(url).then(res => res.data).catch(e => null);
   console.log(info);
+  console.log(JSON.stringify(info));
 }
 
 
