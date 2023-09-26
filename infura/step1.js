@@ -1,11 +1,11 @@
-const axios = require('axios');
+db1const axios = require('axios');
 const { Web3 }  = require('web3');
 const ethereumNodeUrl = 'https://mainnet.infura.io/v3/482599a22821425bae631e1031e90e7e';
 const etherscanApiKey = 'I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG';
 const web3 = new Web3(ethereumNodeUrl);
 const chainId = 1;
 const fs = require('fs/promises');
-const path = `./infura/data/ca.json`;
+const path = `./infura/data/db1.json`;
 
 
 // Function to fetch the latest block number
@@ -40,11 +40,10 @@ async function getTradingLaunch(fromBlock, toBlock) {
     const depositTransactionHashes = responseDeposit.data.result.map(o => o.transactionHash);
     const addLiquidityTransactions = responseCreatePair.data.result.filter(o => depositTransactionHashes.includes(o.transactionHash));
     const formattedResult = addLiquidityTransactions.map(o => ({
-      ownerAddress: o.data,
       contractAddress: o.topics.filter(el => el.toLowerCase() != '0x000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2')[1].replace('000000000000000000000000',''),
       transactionHash: o.transactionHash,
-      blockNumber: o.blockNumber,
-      timeStamp: o.timeStamp,
+      blockNumber: Number(o.blockNumber),
+      timeStamp: Number(o.timeStamp),
     }));
     return formattedResult;
   } catch (error) {
@@ -63,16 +62,16 @@ async function gecko(contractAddress){
 async function intervalExecute(fromBlock, toBlock) {
   console.log(`intervalExecute: ${fromBlock} - ${toBlock}`);
   const transactions = await getTradingLaunch(fromBlock, toBlock);
-  const ca = JSON.parse(await fs.readFile(path));
+  const db1 = JSON.parse(await fs.readFile(path));
   for (let i = 0; i < transactions.length; i++) {
     const tokenInfo = await gecko(transactions[i].contractAddress);
     transactions[i].name = tokenInfo.name;
     transactions[i].decimals = tokenInfo.decimals;
     transactions[i].totalSupply = Math.ceil( Number(tokenInfo.total_supply) / (10 ** tokenInfo.decimals) );
-    ca[transactions[i].contractAddress] = transactions[i];
-    console.log(transactions[i]);
+    db1[transactions[i].contractAddress] = transactions[i];
   }
-  await fs.writeFile(path, JSON.stringify(ca, null, 2), 'utf8');
+  await fs.writeFile(path, JSON.stringify(db1, null, 2), 'utf8');
+  console.log(transactions);
   return transactions;
 }
 
@@ -99,6 +98,6 @@ async function monitorTokenLaunches() {
 }
 
 
-monitorTokenLaunches();
-// const n = 18172865;
-// intervalExecute(n-50, n+50);
+// monitorTokenLaunches();
+const n = 18172865;
+intervalExecute(n-50, n+50);

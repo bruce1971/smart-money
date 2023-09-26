@@ -1,0 +1,20 @@
+{
+  "0xbe0b6875946975fdd8343516a0a132878e7b5c4b": {
+    "contractAddress": "0xbe0b6875946975fdd8343516a0a132878e7b5c4b",
+    "transactionHash": "0xd1f3bf811814cdfea2f43fd7ea931e95dfb67e882bb92739ac59ae8c709f0088",
+    "blockNumber": 18172826,
+    "timeStamp": 1695161171,
+    "name": "BatsNibblingBananas",
+    "decimals": 9,
+    "totalSupply": 19000000
+  },
+  "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4": {
+    "contractAddress": "0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4",
+    "transactionHash": "0xef9153b75ec78842781633b70a8b7ca5a907805e496c3234f174570ae0304b23",
+    "blockNumber": 18172866,
+    "timeStamp": 1695161651,
+    "name": "AstroPepeX",
+    "decimals": 18,
+    "totalSupply": 65000000000
+  }
+}

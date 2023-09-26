@@ -14054,5 +14054,13 @@
     "decimals": null,
     "priceEth": null,
     "priceUsd": null
+  },
+  "0xbe0b6875946975fdd8343516a0a132878e7b5c4b": {
+    "name": "BatsNibblingBananas",
+    "address": "0xbe0b6875946975fdd8343516a0a132878e7b5c4b",
+    "totalSupply": 19000000,
+    "decimals": 9,
+    "priceEth": 0,
+    "priceUsd": 0
   }
 }
