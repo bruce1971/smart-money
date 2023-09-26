@@ -3,14 +3,16 @@ const decoder = require(`./decoder.js`);
 const { formatValue, formatTimestamp, formatLargeValue, shortAddr } = require(`../helper.js`);
 const { parseErc20 } = require(`./parseErc20.js`);
 const { parseErc721 } = require(`./parseErc721.js`);
+const moment = require('moment');
 const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'.toLowerCase();
 
 
 async function parseTx(fullTx, userAddress, pnl, erc20InfoObj) {
   const finalObject = {
     ago: formatTimestamp(fullTx.timeStamp),
-    block: fullTx.block,
-    userWallet: fullTx.userWallet
+    blockNumber: fullTx.blockNumber,
+    dataTime: moment(fullTx.timeStamp * 1000).format("YYYY/MM/DD HH:mm:ss"),
+    userAddress: fullTx.userAddress
   };
   const txs = fullTx.txs;
   const txsKeys = Object.keys(txs);

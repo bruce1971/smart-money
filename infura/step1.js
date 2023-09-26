@@ -4,6 +4,8 @@ const ethereumNodeUrl = 'https://mainnet.infura.io/v3/482599a22821425bae631e1031
 const etherscanApiKey = 'I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG';
 const web3 = new Web3(ethereumNodeUrl);
 const chainId = 1;
+const fs = require('fs/promises');
+const path = `./infura/data/ca.json`;
 
 
 // Function to fetch the latest block number
@@ -52,9 +54,12 @@ async function getTradingLaunch(fromBlock, toBlock) {
 
 
 async function intervalExecute(fromBlock, toBlock) {
-  // const creationTransactions = await getTokenCreationTransactions(fromBlock, toBlock);
-  const tradingLaunchTransactions = await getTradingLaunch(fromBlock, toBlock);
-  console.log(tradingLaunchTransactions);
+  const transactions = await getTradingLaunch(fromBlock, toBlock);
+  const ca = JSON.parse(await fs.readFile(path));
+  transactions.forEach(tx => ca[tx.contractAddress] = tx);
+  await fs.writeFile(path, JSON.stringify(ca, null, 2), 'utf8');
+  console.log(transactions);
+  return transactions;
 }
 
 
@@ -62,10 +67,9 @@ async function intervalExecute(fromBlock, toBlock) {
 async function monitorTokenLaunches() {
   const currentBlock = await getLatestBlockNumber();
   console.log('Current block number:', currentBlock);
-  const creationTransactions = await intervalExecute(
-    currentBlock - 50000,
-    currentBlock + 50
-  );
+  for (let i = 10; i >= 0; i--) {
+    const transactions = await intervalExecute(currentBlock-(i+1)*10, 1+currentBlock-i*10);
+  }
 
   // let lastProcessedBlock = currentBlock;
   // setInterval(async () => {

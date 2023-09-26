@@ -1,38 +1,37 @@
 const axios = require('axios');
-const { Web3 }  = require('web3');
-const ethereumNodeUrl = 'https://mainnet.infura.io/v3/482599a22821425bae631e1031e90e7e';
+const moment = require('moment');
 const etherscanApiKey = 'I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG';
-const web3 = new Web3(ethereumNodeUrl);
-const chainId = 1;
-const {Interface, AbiCoder} = require("ethers");
-const { contractUrl, secondsToBlocks, formatActivityLog } = require(`../helper.js`);
 const { getUser } = require(`../user.js`);
+const { getErc20Info } = require(`../user/getErc20Info.js`);
+const { parseTx } = require(`../transaction`);
 
 
 function groupTransactions(txPool) {
   const txHashes = [...new Set(txPool.map(tx => tx.hash))];
-  const txArray = [];
+  let txArray = [];
   txHashes.forEach(hash => {
     const txs = txPool.filter(tx => tx.hash === hash);
     const txsObject = {};
     txs.forEach(tx => txsObject[tx.type] = tx);
     const timeStamp = Number(txs[0].timeStamp);
     const blockNumber = Number(txs[0].blockNumber);
-    let userWallet = txs.find(o => o.type === 'normal')?.from;
+    let userAddress = txs.find(o => o.type === 'normal')?.from;
     txArray.push({
       blockNumber: blockNumber,
       timeStamp: timeStamp,
+      dateTime: moment(timeStamp * 1000).format("YYYY/MM/DD HH:mm:ss"),
       hash: hash,
-      userWallet: userWallet,
+      userAddress: userAddress,
       txs: txsObject
     })
   });
+  txArray = txArray.sort((a, b) => a.blockNumber - b.blockNumber);
+  txArray = txArray.filter(o => Object.keys(o.txs).includes('erc20') && Object.keys(o.txs).includes('normal'))
   return txArray
 }
 
 
-
-async function yooo(contractAddress, fromBlock, toBlock) {
+async function getTransactions(contractAddress, fromBlock, toBlock) {
   let erc20Transactions = await axios.get(`
     https://api.etherscan.io/api
      ?module=account
@@ -53,7 +52,7 @@ async function yooo(contractAddress, fromBlock, toBlock) {
 
   let allNormalTransactions = [];
   for (let i = 0; i < userAddresses.length; i++) {
-    console.log(i);
+    console.log(`${i+1}/${userAddresses.length}`);
     let normalTransactions = await axios.get(`
       https://api.etherscan.io/api
        ?module=account
@@ -76,13 +75,19 @@ async function yooo(contractAddress, fromBlock, toBlock) {
   let txPool = [...allNormalTransactions, ...erc20Transactions ];
 
   const txArray = groupTransactions(txPool);
-  console.log(txArray);
 
+  const erc20InfoObj = await getErc20Info(txArray);
+  if (txArray.length > 0) {
+    for (let i = 0; i < txArray.length; i++) {
+      const activityLog = await parseTx(txArray[i], txArray[i].userAddress, [], erc20InfoObj);
+      console.log(activityLog);
+    }
+  }
 }
 
 
 async function intervalExecute(fromBlock, toBlock) {
-  const tradingLaunchTransactions = await yooo('0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4',fromBlock, toBlock);
+  const tradingLaunchTransactions = await getTransactions('0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4',fromBlock, toBlock);
 }
 
 
@@ -101,4 +106,4 @@ async function monitorTokenLaunches() {
 // Start monitoring new token launches
 // monitorTokenLaunches();
 const n = 18172866;
-intervalExecute(n, n+10);
+intervalExecute(n, n+50);
