@@ -19,7 +19,7 @@ const inputA = {
   'pepeking': { address: '0x51A59a02BA906194285E81eb1F98FFA28E7CF4C9', type: 'erc20' },
   'kekscam': { address: '0x4Ef6A620c55dBc650ed9CD1F901Fd2eeF68A63d1', type: 'erc20' },
   'apxscam': { address: '0x234ee45691132cc2a2b56941604c8b1bebe475e9', type: 'erc20' },
-  'cal': { address: '0xd3b4f5b4cf06498e4fbdd71c9da4f5befe01a0ed', type: 'erc20' },
+  'cal': { address: '0x20561172f791f915323241e885b4f7d5187c36e1', type: 'erc20' },
 }
 
 const inputU = {

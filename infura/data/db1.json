@@ -18,5 +18,75 @@
     "name": "AstroPepeX",
     "decimals": 18,
     "totalSupply": 65000000000
+  },
+  "0xede275c95766b41e0e57ad413fe9680e7317b8ac": {
+    "contractAddress": "0xede275c95766b41e0e57ad413fe9680e7317b8ac",
+    "pairAddress": "0xc3cc18bd60372066832915fcbc15e294b591826a",
+    "transactionHash": "0xd19508bbf0a356b8dca63ac540ce1dffcc3454d5f83330a4ec293d37a6580fb1",
+    "blockNumber": 18186839,
+    "timeStamp": 1695330635,
+    "name": "Pepe Queen",
+    "decimals": 9,
+    "totalSupply": 1000000000
+  },
+  "0x88a81c61d3767e74045f0a9223ad9a6cf9c34d39": {
+    "contractAddress": "0x88a81c61d3767e74045f0a9223ad9a6cf9c34d39",
+    "pairAddress": "0xb51504bd224fa263cbbfa1cda2ee4002b1ec5564",
+    "transactionHash": "0xf07383851334af642f108bd9fb6442b2d36750cc31ef0136ee5c657289d1293a",
+    "blockNumber": 18186852,
+    "timeStamp": 1695330791,
+    "name": "Bill Barreta",
+    "decimals": 9,
+    "totalSupply": 1000000000
+  },
+  "0xd89e274d7e78907aab66b3ccbf6e3cf1166aedf7": {
+    "contractAddress": "0xd89e274d7e78907aab66b3ccbf6e3cf1166aedf7",
+    "pairAddress": "0x766ae10b7da663d151b172af32d8d80d644fdc5c",
+    "transactionHash": "0xb601138276682c73bb4c0d36a3eca0c28aac5bc0e7fe2bf8f733618547e2b8e4",
+    "blockNumber": 18186887,
+    "timeStamp": 1695331211,
+    "name": "XRP Gold",
+    "decimals": 8,
+    "totalSupply": 100000000
+  },
+  "0xc95b59e71357280e44e61aa27e3a63ece3062d7f": {
+    "contractAddress": "0xc95b59e71357280e44e61aa27e3a63ece3062d7f",
+    "pairAddress": "0x981219edb23eff261442e08306fe11229bb3d9a2",
+    "transactionHash": "0x7348c7b633e53ca92211860d3ceeb7ba57e5d9b649aff4d4832be7e18f78e418",
+    "blockNumber": 18187215,
+    "timeStamp": 1695335183,
+    "name": "Muiclac",
+    "decimals": 18,
+    "totalSupply": 420690000
+  },
+  "0x9089287698527a74c6d07cebf497926c1ce8e06f": {
+    "contractAddress": "0x9089287698527a74c6d07cebf497926c1ce8e06f",
+    "pairAddress": "0xeac3dd054c34ebe4072dfff81bcf20d6f6fe340a",
+    "transactionHash": "0x7a29f089265c6f606833e0a413bbd52bc8d169bd59bc2b5ebc4dc76ca7699a25",
+    "blockNumber": 18187229,
+    "timeStamp": 1695335351,
+    "name": "The Muppets",
+    "decimals": 9,
+    "totalSupply": 10000000
+  },
+  "0x8bdfaa53f1717e716690a00e4b39b6f775981b2d": {
+    "contractAddress": "0x8bdfaa53f1717e716690a00e4b39b6f775981b2d",
+    "pairAddress": "0x8bf66df0d32d4f66f45b708d9152b47cfff7744b",
+    "transactionHash": "0xc976fbb34900ea7ae268242c89746e96b9b1f8b8e2520b80c221ec3a31733bd9",
+    "blockNumber": 18187232,
+    "timeStamp": 1695335387,
+    "name": "𝕭𝖎𝖑𝖑 𝕭𝖆𝖗𝖗𝖊𝖙𝔱𝖆",
+    "decimals": 8,
+    "totalSupply": 100000000
+  },
+  "0x5b560b2b9fb6e2d99baf73dcd99464d18d7b7db2": {
+    "contractAddress": "0x5b560b2b9fb6e2d99baf73dcd99464d18d7b7db2",
+    "pairAddress": "0x5cbe016f3cbdb740e5c7a4ee1aabd498b6e79844",
+    "transactionHash": "0x936e651943ec91805bd284bbe61d4fb13d83ef14c3177c065c30a881640e87b3",
+    "blockNumber": 18187235,
+    "timeStamp": 1695335423,
+    "name": "Dummy Token",
+    "decimals": 8,
+    "totalSupply": 1000000000
   }
 }
