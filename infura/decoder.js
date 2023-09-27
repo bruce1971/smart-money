@@ -5,7 +5,13 @@ const APIKEY = '482599a22821425bae631e1031e90e7e';
 var provider = `https://mainnet.infura.io/v3/${APIKEY}`;
 var web3Provider = new Web3.providers.HttpProvider(provider);
 var web3 = new Web3(web3Provider);
+const fs = require('fs/promises');
+const path_abi = `./infura/data/abi.json`;
 
+
+module.exports = {
+  decoder
+}
 
 
 function executeDecoder(parsedTx) {
@@ -87,22 +93,41 @@ function executeDecoder(parsedTx) {
 
 
 async function decoder(txHash) {
-  const tx = await web3.eth.getTransaction(txHash)
-  console.log(tx);
-  console.log('=======================================');
-  const input = tx.input;
-  const abiContractAddress = tx.to;
-  const abi = await axios.get(`https://api.etherscan.io/api?module=contract&action=getabi&address=${abiContractAddress}`).then(res => res.data.result);
-  const iface = new Interface(abi);
-  let parsedTx = iface.parseTransaction({data: input});
-  if (parsedTx.signature === 'execute(bytes,bytes[],uint256)') parsedTx = executeDecoder(parsedTx);
-  return parsedTx;
+  const tx = await web3.eth.getTransaction(txHash);
+  let abi;
+  let abis = JSON.parse(await fs.readFile(path_abi));
+  let abiContractAddress = tx.to;
+  console.log('abiContractAddress',abiContractAddress);
+
+  let validAbi = true;
+  if (Object.keys(abis).includes(abiContractAddress)) {
+    abi = abis[abiContractAddress];
+  }
+  else {
+    abi = await axios.get(`https://api.etherscan.io/api?module=contract&action=getabi&address=${abiContractAddress}`).then(res => res.data.result);
+    await new Promise(resolve => setTimeout(resolve, 5000));
+    if (abi.length > 300) { // i.e. valid, not error message
+      abis[abiContractAddress] = abi;
+      await fs.writeFile(path_abi, JSON.stringify(abis, null, 2), 'utf8');
+    } else {
+      validAbi = false;
+      console.log(abi);
+    }
+  }
+  let parsedTx;
+  console.log(validAbi);
+  if (validAbi) {
+    const iface = new Interface(abi);
+    let parsedTx = iface.parseTransaction({data: tx.input});
+    if (parsedTx?.signature === 'execute(bytes,bytes[],uint256)') parsedTx = executeDecoder(parsedTx);
+    return parsedTx;
+  }
 }
 
 
-
-
-(async () => {
-  const parsedTx = await decoder('0x25ee7fe17684762b64ded11b0e703db5b025f0581eb8db8a915db238426d67ff');
-  console.log(parsedTx);
-})();
+if (require.main === module) {
+  (async () => {
+    const parsedTx = await decoder('0x25ee7fe17684762b64ded11b0e703db5b025f0581eb8db8a915db238426d67ff', '0x7a250d5630b4cf539739df2c5dacb4c659f2488d');
+    console.log(parsedTx);
+  })();
+}

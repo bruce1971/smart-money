@@ -1,12 +1,9 @@
 const axios = require('axios');
 const moment = require('moment');
 const etherscanApiKey = 'I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG';
-const { getUser } = require(`../user.js`);
-const { getErc20Info } = require(`../user/getErc20Info.js`);
-const { parseTx } = require(`../transaction`);
-const { decoder2 } = require(`../transaction/decoder.js`);
+const { decoder } = require(`./decoder.js`);
 const fs = require('fs/promises');
-const path = `./infura/data/db1.json`;
+const path_db1 = `./infura/data/db1.json`;
 var { Web3 } = require("web3");
 const APIKEY = '482599a22821425bae631e1031e90e7e';
 var provider = `https://mainnet.infura.io/v3/${APIKEY}`;
@@ -54,20 +51,13 @@ async function getTransactions(contractObject, fromBlock, toBlock) {
   }
   let buys = 0;
   let sells = 0;
-  console.log(erc20Transactions[0].hash);
-  const tx = await web3.eth.getTransaction(erc20Transactions[0].hash)
-  // console.log(tx);
+
+  const txHash = erc20Transactions[0].hash;
+  const parsedTx = await decoder(txHash);
+  console.log(parsedTx);
   erc20Transactions.forEach(o => {
-    if (o.to === contractObject.pairAddress) {
-      sells += 1;
-      // console.log('SELL');
-    }
-    if (o.from === contractObject.pairAddress) {
-      buys += 1;
-      // console.log('BUY');
-    }
-    // console.log(o.hash);
-    // console.log('-------');
+    if (o.to === contractObject.pairAddress) sells += 1;
+    if (o.from === contractObject.pairAddress) buys += 1;
   });
   console.log('buys', buys);
   console.log('sells', sells);
@@ -78,7 +68,7 @@ async function intervalExecute(contractObject) {
   let startBlock = contractObject.blockNumber;
   const minIncr = 1;
   const blockIncr = 6 * minIncr;
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 40; i++) {
     console.log('==========================================================================');
     console.log(i+1);
     const transactions = await getTransactions(
@@ -91,11 +81,9 @@ async function intervalExecute(contractObject) {
 }
 
 
-
-// Start monitoring new token launches
 if (require.main === module) {
   (async () => {
-    const db1 = JSON.parse(await fs.readFile(path));
+    const db1 = JSON.parse(await fs.readFile(path_db1));
     const name = "AstroPepeX";
     // const name = "BatsNibblingBananas";
     const contractObject = Object.values(db1).find(o => o.name === name);
