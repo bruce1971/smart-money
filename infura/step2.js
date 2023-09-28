@@ -2,6 +2,7 @@ const axios = require('axios');
 const moment = require('moment');
 const etherscanApiKey = 'I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG';
 const { decoder } = require(`./decoder.js`);
+const { mcapCalculator } = require(`./helper.js`);
 const fs = require('fs/promises');
 const path_db1 = `./infura/data/db1.json`;
 var { Web3 } = require("web3");
@@ -34,8 +35,7 @@ async function getTransactions(contractObject, fromBlock, toBlock) {
       value: tx.value,
       tokenName: tx.tokenName,
       tokenSymbol: tx.tokenSymbol,
-      tokenDecimal: tx.tokenDecimal,
-      type: 'erc20'
+      tokenDecimal: tx.tokenDecimal
     }))
     return final;
   });
@@ -49,12 +49,25 @@ async function getTransactions(contractObject, fromBlock, toBlock) {
   if (userAddresses.includes('0x70399b85054dd1d94f2264afc8704a3ee308abaf')) {
     console.log('SCRIIIIIIIIIIIIIIIIIIBS');
   }
+
+
+
+
+  const mcapArray = [];
+  for (var i = 0; i < erc20Transactions.length; i++) {
+    const txHash = erc20Transactions[i].hash;
+    const parsedTx = await decoder(txHash);
+    if (parsedTx?.type === 'execute') {
+      mcapArray.push(mcapCalculator(parsedTx.txs[0].amountIn, parsedTx.txs[0].amountOut, contractObject.totalSupply, contractObject.decimals))
+    }
+    if (mcapArray.length === 3) break;
+  }
+  console.log(mcapArray.sort((a, b) => a - b));
+  const medianMcap = mcapArray.sort((a, b) => a - b)[1];
+  console.log('median mcap', medianMcap);
+
   let buys = 0;
   let sells = 0;
-
-  const txHash = erc20Transactions[0].hash;
-  const parsedTx = await decoder(txHash);
-  console.log(parsedTx);
   erc20Transactions.forEach(o => {
     if (o.to === contractObject.pairAddress) sells += 1;
     if (o.from === contractObject.pairAddress) buys += 1;
@@ -67,10 +80,13 @@ async function getTransactions(contractObject, fromBlock, toBlock) {
 async function intervalExecute(contractObject) {
   let startBlock = contractObject.blockNumber;
   const minIncr = 1;
-  const blockIncr = 6 * minIncr;
-  for (let i = 0; i < 40; i++) {
+  const nLoops = 30;
+  // const minIncr = 5;
+  // const nLoops = 12;
+  const blockIncr = 5 * minIncr;
+  for (let i = 0; i < 10; i++) {
     console.log('==========================================================================');
-    console.log(i+1);
+    console.log(`min ${minIncr*(i+1)}`);
     const transactions = await getTransactions(
       contractObject,
       startBlock,

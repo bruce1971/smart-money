@@ -88,7 +88,10 @@ function executeDecoder(parsedTx) {
               })
       }
     });
-    return finalArray;
+    return {
+      type: 'execute',
+      txs: finalArray
+    };
 }
 
 
@@ -97,30 +100,20 @@ async function decoder(txHash) {
   let abi;
   let abis = JSON.parse(await fs.readFile(path_abi));
   let abiContractAddress = tx.to;
-  console.log('abiContractAddress',abiContractAddress);
 
-  let validAbi = true;
   if (Object.keys(abis).includes(abiContractAddress)) {
     abi = abis[abiContractAddress];
   }
   else {
-    abi = await axios.get(`https://api.etherscan.io/api?module=contract&action=getabi&address=${abiContractAddress}`).then(res => res.data.result);
-    await new Promise(resolve => setTimeout(resolve, 5000));
-    if (abi.length > 300) { // i.e. valid, not error message
-      abis[abiContractAddress] = abi;
-      await fs.writeFile(path_abi, JSON.stringify(abis, null, 2), 'utf8');
-    } else {
-      validAbi = false;
-      console.log(abi);
-    }
+    return
   }
-  let parsedTx;
-  console.log(validAbi);
-  if (validAbi) {
-    const iface = new Interface(abi);
-    let parsedTx = iface.parseTransaction({data: tx.input});
-    if (parsedTx?.signature === 'execute(bytes,bytes[],uint256)') parsedTx = executeDecoder(parsedTx);
+  const iface = new Interface(abi);
+  let parsedTx = iface.parseTransaction({data: tx.input});
+  if (parsedTx?.signature === 'execute(bytes,bytes[],uint256)') {
+    parsedTx = executeDecoder(parsedTx);
     return parsedTx;
+  } else {
+    return parsedTx
   }
 }
 
