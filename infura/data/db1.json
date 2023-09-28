@@ -88,5 +88,35 @@
     "name": "Dummy Token",
     "decimals": 8,
     "totalSupply": 1000000000
+  },
+  "0xa6085c8ed26e45453fc8531e347237e0a20675b3": {
+    "contractAddress": "0xa6085c8ed26e45453fc8531e347237e0a20675b3",
+    "pairAddress": "0xff8ff30273ce53c0f3df5147f302f7a78582d8e9",
+    "transactionHash": "0x536e4a6604f6ac94202cd1c4888ccd50436af0a9642ec81550a383e683dd6045",
+    "blockNumber": 17046786,
+    "timeStamp": 1681492307,
+    "name": "Teh Point Network",
+    "decimals": 8,
+    "totalSupply": 100000000
+  },
+  "0x13817e7433e51273ff6e7b427e445b0edc014828": {
+    "contractAddress": "0x13817e7433e51273ff6e7b427e445b0edc014828",
+    "pairAddress": "0xde2fcae812b9edda8d658bbbaa60abb972b4d468",
+    "transactionHash": "0x3d8693f620c1cc957fbecf1d63f989c6b0a6b4738c6e93dbde41415291b5f9a6",
+    "blockNumber": 17046815,
+    "timeStamp": 1681492655,
+    "name": "ErcProtocol",
+    "decimals": 18,
+    "totalSupply": 1000000000
+  },
+  "0x6982508145454ce325ddbe47a25d4ec3d2311933": {
+    "contractAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+    "pairAddress": "0xa43fe16908251ee70ef74718545e4fe6c5ccec9f",
+    "transactionHash": "0x273894b35d8c30d32e1ffa22ee6aa320cc9f55f2adbba0583594ed47c031f6f6",
+    "blockNumber": 17046833,
+    "timeStamp": 1681492871,
+    "name": "Pepe",
+    "decimals": 18,
+    "totalSupply": 420689899999995
   }
 }
