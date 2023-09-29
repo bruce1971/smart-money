@@ -118,5 +118,65 @@
     "name": "Pepe",
     "decimals": 18,
     "totalSupply": 420689899999995
+  },
+  "0x6bcd3c39c069a504daf95eeefc498416060cdb46": {
+    "contractAddress": "0x6bcd3c39c069a504daf95eeefc498416060cdb46",
+    "pairAddress": "0x0fbde9eb0d00322f042b00a26b8464627ef24dd3",
+    "transactionHash": "0x89a59b91433c08b20341c1c5420406a58c06a3703c0e83bb5fd1f3f57495e956",
+    "blockNumber": 17361565,
+    "timeStamp": 1685325899,
+    "name": "Kung Fu",
+    "decimals": 9,
+    "totalSupply": 1000000
+  },
+  "0xaba147596cb4ad99fc76dc6f99ae6c503bca4752": {
+    "contractAddress": "0xaba147596cb4ad99fc76dc6f99ae6c503bca4752",
+    "pairAddress": "0x115517a0f983e7eeb733eb1560419107c100836f",
+    "transactionHash": "0x4b88c353a03c279816140d9337edbceccd0af1ea456693106e91e95f74e1bb59",
+    "blockNumber": 17361566,
+    "timeStamp": 1685325911,
+    "name": "Chun Li",
+    "decimals": 9,
+    "totalSupply": 69000000
+  },
+  "0x394f5307d879e649a73724af8175d76653d48560": {
+    "contractAddress": "0x394f5307d879e649a73724af8175d76653d48560",
+    "pairAddress": "0x5b37c65aae7bcb8435c0bdc8a90a9b29a9f8d27e",
+    "transactionHash": "0x4443d56a6e79b36faad66de792354fff1556b474a21126883139b815d19b3fb6",
+    "blockNumber": 17361581,
+    "timeStamp": 1685326091,
+    "name": "Kung Fu Panda",
+    "decimals": 18,
+    "totalSupply": 329756862711
+  },
+  "0x064fd6774f24c8b109f23f51946fb7bbece6b8ec": {
+    "contractAddress": "0x064fd6774f24c8b109f23f51946fb7bbece6b8ec",
+    "pairAddress": "0x5001ca4a8ce1e2129d7fb7d9738aa257f209d38e",
+    "transactionHash": "0x200482d48d23f976907b2e2642a5251c7d3f1e842fab5060dcde6cbf8da02550",
+    "blockNumber": 17361591,
+    "timeStamp": 1685326211,
+    "name": "Akita",
+    "decimals": 18,
+    "totalSupply": 800000000000
+  },
+  "0x6e1fd6db57eb6a7b0123b1fb89dbb3e419fa294f": {
+    "contractAddress": "0x6e1fd6db57eb6a7b0123b1fb89dbb3e419fa294f",
+    "pairAddress": "0x67591dfa5648f453a069f3936409e5ddf49e9c92",
+    "transactionHash": "0xd43c8545304d5238cbb455bf27804ffe4715af8b582014085f7ee49af5042f22",
+    "blockNumber": 17361591,
+    "timeStamp": 1685326211,
+    "name": "NoSellButton",
+    "decimals": 8,
+    "totalSupply": 100000000000
+  },
+  "0xbca52e9fab88759ae48ca43aaa7aae976bf6c22c": {
+    "contractAddress": "0xbca52e9fab88759ae48ca43aaa7aae976bf6c22c",
+    "pairAddress": "0x4d747757e4500e7486830a8553c1454d677d08fc",
+    "transactionHash": "0xf0c9ae6a286429c308965ce4d527ecf1c99f0507ecabf0bbd45b2d3950607b12",
+    "blockNumber": 17361604,
+    "timeStamp": 1685326367,
+    "name": "豚林",
+    "decimals": 9,
+    "totalSupply": 10000000000000
   }
 }

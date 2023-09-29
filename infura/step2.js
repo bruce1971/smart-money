@@ -84,22 +84,23 @@ async function getTxsData(contractObject, fromBlock, toBlock) {
 }
 
 
-async function intervalExecute(contractObject) {
+async function intervalExecute(contractObject, name) {
   const min5 = JSON.parse(await fs.readFile(path_min5));
   const caMin5 = [];
   let startBlock = contractObject.blockNumber;
-  const minIncr = 5, nLoops = 12 * 3 * 1;
-  // const minIncr = 1, nLoops = 30;
+  const nLoops = 60 * 24 * 7;
+  const minIncr = 1;
   const blockIncr = 5 * minIncr;
   for (let i = 0; i < nLoops; i++) {
     console.log('==========================================================================');
-    console.log(`min ${minIncr*(i+1)}`);
+    console.log(`min ${minIncr*(i+1)}/${minIncr*nLoops}`);
     let txData = await getTxsData(
       contractObject,
       startBlock,
       startBlock + blockIncr,
     );
     txData = {
+      min: minIncr*(i+1),
       startBlock: startBlock,
       endblock: startBlock + blockIncr,
       minIncr: minIncr,
@@ -112,7 +113,7 @@ async function intervalExecute(contractObject) {
   min5[contractObject.contractAddress] = caMin5;
   await fs.writeFile(path_min5, JSON.stringify(min5, null, 2), 'utf8');
   const csv = new ObjectsToCsv(caMin5);
-  await csv.toDisk(`./infura/data/my.csv`);
+  await csv.toDisk(`./infura/data/${name}-${minIncr*nLoops}.csv`);
 }
 
 
@@ -121,8 +122,7 @@ if (require.main === module) {
     const db1 = JSON.parse(await fs.readFile(path_db1));
     // const name = "Pepe";
     const name = "AstroPepeX";
-    // const name = "BatsNibblingBananas";
     const contractObject = Object.values(db1).find(o => o.name === name);
-    intervalExecute(contractObject);
+    intervalExecute(contractObject, name);
   })();
 }
