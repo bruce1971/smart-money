@@ -84,14 +84,29 @@ async function getTxsData(contractObject, fromBlock, toBlock) {
 }
 
 
+async function save(db2, contractObject, caDb2, name, minIncr, nLoops) {
+  db2[contractObject.contractAddress] = caDb2;
+  await fs.writeFile(path_db2, JSON.stringify(db2, null, 2), 'utf8');
+  const csv = new ObjectsToCsv(caDb2);
+  await csv.toDisk(`./infura/data/${name}-${minIncr*nLoops}.csv`);
+}
+
+
 async function intervalExecute(contractObject, name) {
   const db2 = JSON.parse(await fs.readFile(path_db2));
-  const caDb2 = [];
+  let caDb2, iStart;
+  if (db2[contractObject.contractAddress]) {
+    caDb2 = db2[contractObject.contractAddress];
+    iStart = caDb2.length;
+  } else {
+    caDb2 = [];
+    iStart = 0;
+  }
   let startBlock = contractObject.blockNumber;
   const nLoops = 60 * 24 * 7;
   const minIncr = 1;
   const blockIncr = 5 * minIncr;
-  for (let i = 0; i < nLoops; i++) {
+  for (let i = iStart; i < nLoops; i++) {
     console.log('==========================================================================');
     console.log(`min ${minIncr*(i+1)}/${minIncr*nLoops}`);
     let txData = await getTxsData(
@@ -109,18 +124,19 @@ async function intervalExecute(contractObject, name) {
     console.log(txData);
     caDb2.push(txData);
     startBlock = startBlock + blockIncr + 1;
+    if (i % 100 === 0) await save(db2, contractObject, caDb2, name, minIncr, nLoops);
   }
-  db2[contractObject.contractAddress] = caDb2;
-  await fs.writeFile(path_db2, JSON.stringify(db2, null, 2), 'utf8');
-  const csv = new ObjectsToCsv(caDb2);
-  await csv.toDisk(`./infura/data/${name}-${minIncr*nLoops}.csv`);
+
+  await save(db2, contractObject, caDb2, name, minIncr, nLoops);
 }
 
 
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    const name = "CUCK";
+    // const name = "Pepe";
+    // const name = "CUCK";
+    const name = "NiHao";
     const contractObject = Object.values(db1).find(o => o.name === name);
     intervalExecute(contractObject, name);
   })();
