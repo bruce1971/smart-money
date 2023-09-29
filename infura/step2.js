@@ -5,7 +5,7 @@ const { decoder } = require(`./decoder.js`);
 const { mcapCalculator } = require(`./helper.js`);
 const fs = require('fs/promises');
 const path_db1 = `./infura/data/db1.json`;
-const path_min5 = `./infura/data/min5.json`;
+const path_db2 = `./infura/data/db2.json`;
 var { Web3 } = require("web3");
 const APIKEY = '482599a22821425bae631e1031e90e7e';
 var provider = `https://mainnet.infura.io/v3/${APIKEY}`;
@@ -85,8 +85,8 @@ async function getTxsData(contractObject, fromBlock, toBlock) {
 
 
 async function intervalExecute(contractObject, name) {
-  const min5 = JSON.parse(await fs.readFile(path_min5));
-  const caMin5 = [];
+  const db2 = JSON.parse(await fs.readFile(path_db2));
+  const caDb2 = [];
   let startBlock = contractObject.blockNumber;
   const nLoops = 60 * 24 * 7;
   const minIncr = 1;
@@ -107,12 +107,12 @@ async function intervalExecute(contractObject, name) {
       ...txData
     }
     console.log(txData);
-    caMin5.push(txData);
+    caDb2.push(txData);
     startBlock = startBlock + blockIncr + 1;
   }
-  min5[contractObject.contractAddress] = caMin5;
-  await fs.writeFile(path_min5, JSON.stringify(min5, null, 2), 'utf8');
-  const csv = new ObjectsToCsv(caMin5);
+  db2[contractObject.contractAddress] = caDb2;
+  await fs.writeFile(path_db2, JSON.stringify(db2, null, 2), 'utf8');
+  const csv = new ObjectsToCsv(caDb2);
   await csv.toDisk(`./infura/data/${name}-${minIncr*nLoops}.csv`);
 }
 
@@ -120,8 +120,7 @@ async function intervalExecute(contractObject, name) {
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    const name = "Pepe";
-    // const name = "AstroPepeX";
+    const name = "CUCK";
     const contractObject = Object.values(db1).find(o => o.name === name);
     intervalExecute(contractObject, name);
   })();

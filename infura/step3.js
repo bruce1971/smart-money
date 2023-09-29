@@ -1,6 +1,6 @@
 const fs = require('fs/promises');
 const path_db1 = `./infura/data/db1.json`;
-const path_min5 = `./infura/data/min5.json`;
+const path_db2 = `./infura/data/db2.json`;
 
 
 function ratiosTest(data) {
@@ -18,26 +18,26 @@ function ratiosTest(data) {
     return false;
   }
 
-  // elimination 2 - ratios not roughly equal
+  // elimination 2 - not enough users
+  if (data[data.length - 1] < 50) {
+    console.log('elimination 2 - not enough users');
+    return false; //have minimum 50 new users
+  }
+
+  // elimination 3 - ratios not roughly equal
   const meanRatio = ratios.reduce((sum, ratio) => sum + ratio, 0) / ratios.length;
   const tolerance = 0.3; // You can adjust this threshold as needed
   for (const ratio of ratios) {
     if (Math.abs(ratio - meanRatio) > tolerance) {
-      console.log('elimination 2 - ratios not roughly equal');
+      console.log('elimination 3 - ratios not roughly equal');
       return false;
     }
   }
 
-  // elimination 3 - growth not steep enough
+  // elimination 4 - growth not steep enough
   if (meanRatio < 1.25) {
-    console.log('elimination 3 - growth not steep enough');
+    console.log('elimination 4 - growth not steep enough');
     return false;
-  }
-
-  // elimination 4 - not enough users
-  if (data[data.length - 1] < 50) {
-    console.log('elimination 4 - not enough users');
-    return false; //have minimum 50 new users
   }
 
   // SUCCESS!
@@ -51,40 +51,23 @@ function algo1(data) {
   for (let i = 0; i < data.length; i++) {
     data[i].newUserCountXmin = data.slice(i-nMin+1 < 0 ? 0 : i-nMin+1, i+1).reduce((acc, o) => acc + o.newUserCount, 0);
   }
+
   // find exp patterns
-  const expPoints = 6;
+  const expPoints = 5;
   for (let i = 0; i < data.length; i++) {
     let dataX = data.slice(i-expPoints+1 < 0 ? 0 : i-expPoints+1, i+1).map(o => o.newUserCountXmin);
     while (dataX.length < expPoints) dataX = [0].concat(dataX);
     console.log('------------');
+    console.log(i);
     console.log(dataX);
     console.log(ratiosTest(dataX))
   }
 }
 
-function algo2(data) {
-  const triggers = [];
-  let streak = 0;
-  for (var i = 0; i < data.length; i++) {
-    if (data[i].buys > data[i].sells) streak += 1;
-    else streak = 0;
-    if (streak === 20) triggers.push(data[i])
-  }
-  return triggers;
-}
-
-
 async function main(contractObject) {
-  const min5 = JSON.parse(await fs.readFile(path_min5));
-  const data = min5[contractObject.contractAddress];
-  const triggers = algo1(data);
-  // const cas = Object.keys(min5);
-  // cas.forEach(ca => {
-  //   const data = min5[ca];
-  //   const triggers = algo(data);
-  //   console.log(ca);
-  //   console.log(triggers);
-  // });
+  const db2 = JSON.parse(await fs.readFile(path_db2));
+  const data = db2[contractObject.contractAddress];
+  algo1(data);
 }
 
 

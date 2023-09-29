@@ -248,5 +248,45 @@
     "name": "PIGLIN",
     "decimals": 9,
     "totalSupply": 2560000000
+  },
+  "0xc3681a720605bd6f8fe9a2fabff6a7cdecdc605d": {
+    "contractAddress": "0xc3681a720605bd6f8fe9a2fabff6a7cdecdc605d",
+    "pairAddress": "0xc5ea9262becc6e626875b6afa40e2815c4d8253c",
+    "transactionHash": "0xed8da611898c60a8703a75f99ecd82d1700542ade4b045e9fd236b705e7ef4fc",
+    "blockNumber": 17361615,
+    "timeStamp": 1685326523,
+    "name": "NiHao",
+    "decimals": 18,
+    "totalSupply": 888000000000000
+  },
+  "0x35bf19519eb976085d3dadfeb0c2e1ba1b1e8669": {
+    "contractAddress": "0x35bf19519eb976085d3dadfeb0c2e1ba1b1e8669",
+    "pairAddress": "0xfe27311d938fe79f2ebadb3e2df326a7a141cce8",
+    "transactionHash": "0xd0b9de13a1e41f64f7461ab1ce22079db59a5c8cde301edf9aeb32da5c98111e",
+    "blockNumber": 17361615,
+    "timeStamp": 1685326523,
+    "name": "Jack Ma",
+    "decimals": 9,
+    "totalSupply": 1000000
+  },
+  "0x5bddc640ba96c4df3dad3a6d64012469a778cc9c": {
+    "contractAddress": "0x5bddc640ba96c4df3dad3a6d64012469a778cc9c",
+    "pairAddress": "0x6de2d305ca424d008141d8a683231f87925af713",
+    "transactionHash": "0x684891513ba125dac745a9e3833108d0bb28b3afe8b1200c5c6c079864be7f8e",
+    "blockNumber": 17080746,
+    "timeStamp": 1681908527,
+    "name": "CUCK",
+    "decimals": 18,
+    "totalSupply": 69420000000
+  },
+  "0xa826fc203560c31a4534082de2f86c9c13d5cd2a": {
+    "contractAddress": "0xa826fc203560c31a4534082de2f86c9c13d5cd2a",
+    "pairAddress": "0x8a1bc4d82581a90ca77768d083dda3e26acb5071",
+    "transactionHash": "0xf0f80e28c279f6fba8cf02ac05f00efaecd55c30dd8d72d8edbd82af5683aea5",
+    "blockNumber": 17080749,
+    "timeStamp": 1681908563,
+    "name": "StonedGPT",
+    "decimals": 9,
+    "totalSupply": 420000000
   }
 }

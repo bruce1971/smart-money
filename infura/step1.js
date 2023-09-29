@@ -38,7 +38,9 @@ async function getTradingLaunch(fromBlock, toBlock) {
       },
     });
     const depositTransactionHashes = responseDeposit.data.result.map(o => o.transactionHash);
+    if (depositTransactionHashes.length >= 1000) console.log('STOOOP - too big interval!!');
     const addLiquidityTransactions = responseCreatePair.data.result.filter(o => depositTransactionHashes.includes(o.transactionHash));
+    if (addLiquidityTransactions.length >= 1000) console.log('STOOOP - too big interval!!');
     const formattedResult = addLiquidityTransactions.map(o => ({
       contractAddress: o.topics.filter(el => el.toLowerCase() != '0x000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2')[1].replace('000000000000000000000000','').toLowerCase(),
       pairAddress: o.data.replace('000000000000000000000000',''). slice(0, 42).toLowerCase(),
@@ -100,5 +102,5 @@ async function monitorTokenLaunches() {
 
 
 // monitorTokenLaunches();
-const n = 	17844468;
-intervalExecute(n-50, n+50);
+const n = 17080746;
+intervalExecute(n-5, n+5);
