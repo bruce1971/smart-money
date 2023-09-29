@@ -178,5 +178,75 @@
     "name": "豚林",
     "decimals": 9,
     "totalSupply": 10000000000000
+  },
+  "0xc5e1c671246b9a0360152b8b2e81e29594788367": {
+    "contractAddress": "0xc5e1c671246b9a0360152b8b2e81e29594788367",
+    "pairAddress": "0xe328a56992dd2a3088bfb890b19cae99ec654aa8",
+    "transactionHash": "0x69e7113c3951f105dc6b8be34c347c85455abad2f2a8b2fa84d397787f7d2910",
+    "blockNumber": 17756180,
+    "timeStamp": 1690119719,
+    "name": "Nothing",
+    "decimals": 9,
+    "totalSupply": 1000000000
+  },
+  "0x75c5138bf65a7b668f6604781b3a68de84a216f8": {
+    "contractAddress": "0x75c5138bf65a7b668f6604781b3a68de84a216f8",
+    "pairAddress": "0xab30bd576443a6839ace0c1b8bbd071aa214ff61",
+    "transactionHash": "0xc1b593b3996241640e826a775fe2acabe4cfa68155fa6bbdcd44880b5f305be4",
+    "blockNumber": 17756181,
+    "timeStamp": 1690119731,
+    "name": "Triple X",
+    "decimals": 18,
+    "totalSupply": 420000000000000
+  },
+  "0x106634b42c1a6a959e3cd3f97c83f3f756828181": {
+    "contractAddress": "0x106634b42c1a6a959e3cd3f97c83f3f756828181",
+    "pairAddress": "0xa5a30f97e34d39cad1dcc40c1913749efbbc2827",
+    "transactionHash": "0x28b1050a381356f5f847fd557592897ebf06b16b20d0886a77d842929a466843",
+    "blockNumber": 17756198,
+    "timeStamp": 1690119935,
+    "name": "Silo Tami",
+    "decimals": 18,
+    "totalSupply": 100000000
+  },
+  "0x38c25fc9d28d928f84853f1da4e673656d027d20": {
+    "contractAddress": "0x38c25fc9d28d928f84853f1da4e673656d027d20",
+    "pairAddress": "0x3d2be9c60b84ec9ece9141567e3cb8ae9dfd66d3",
+    "transactionHash": "0xc623d956bbf77dacb4ad26524d1094b9b83e25fdf42ce290f01ed20cb0d2a79e",
+    "blockNumber": 17756234,
+    "timeStamp": 1690120367,
+    "name": "Friend Of Pepe",
+    "decimals": 18,
+    "totalSupply": 1000000000000000
+  },
+  "0x14a7acdd565528a197aace97a06870818450805d": {
+    "contractAddress": "0x14a7acdd565528a197aace97a06870818450805d",
+    "pairAddress": "0x9e9251fd53a0667ddd592d622323bb0d610ad4f8",
+    "transactionHash": "0xd2fd19a19536ecd412886b15bb5d5f124a2a2618feee3747d1a2292064dba1b6",
+    "blockNumber": 17844434,
+    "timeStamp": 1691186147,
+    "name": "TATEnotGUILTY",
+    "decimals": 8,
+    "totalSupply": 100000000
+  },
+  "0x9abb02c05256d10c40c7459558e50d81958a73c1": {
+    "contractAddress": "0x9abb02c05256d10c40c7459558e50d81958a73c1",
+    "pairAddress": "0x00fd58c958cc12c07d540e947c859cf142058656",
+    "transactionHash": "0xca3a9d66c2ad5bf5086cd4e7b4e34b6398a1cef8f24ecc334805c135bfa42409",
+    "blockNumber": 17844455,
+    "timeStamp": 1691186399,
+    "name": "MILADYARMY",
+    "decimals": 18,
+    "totalSupply": 100000000000
+  },
+  "0xe1e79f9a6fa282d9ebb866a240ff55496a0e5e68": {
+    "contractAddress": "0xe1e79f9a6fa282d9ebb866a240ff55496a0e5e68",
+    "pairAddress": "0x8ac8bd32fc570409e98a5b070267c48c1ec90b9a",
+    "transactionHash": "0xf253327aee0b564b31cb290e7b55e08b54771dcb063787951ce42fc977cc12ca",
+    "blockNumber": 17844457,
+    "timeStamp": 1691186423,
+    "name": "PIGLIN",
+    "decimals": 9,
+    "totalSupply": 2560000000
   }
 }

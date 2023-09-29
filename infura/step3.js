@@ -3,8 +3,6 @@ const path_db1 = `./infura/data/db1.json`;
 const path_min5 = `./infura/data/min5.json`;
 
 
-
-
 function ratiosTest(data) {
   // Calculate the ratios between consecutive numbers
   const ratios = [];
@@ -13,20 +11,36 @@ function ratiosTest(data) {
     const ratio = data[i] / data[i - 1];
     ratios.push(ratio);
   }
-  console.log(ratios);
 
-  if (ratios.some(el => el < 1)) return false; //only look at positive growth
-  if (data[data.length - 1] < 50) return false; //have minimum 50 new users
-
-  // Check if the ratios are approximately equal
-  const tolerance = 0.3; // You can adjust this threshold as needed
-  const meanRatio = ratios.reduce((sum, ratio) => sum + ratio, 0) / ratios.length;
-  console.log('mean', meanRatio);
-  if (meanRatio < 1.25) return false;
-  for (const ratio of ratios) {
-    if (Math.abs(ratio - meanRatio) > tolerance) return false;
+  // elimination 1 - not purely positive growth
+  if (ratios.some(el => el < 1)) {
+    console.log('elimination 1 - not purely positive growth');
+    return false;
   }
-  console.log('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++yAAAAA+++++++++++++++++++++++++++++++++++++++++++++');
+
+  // elimination 2 - ratios not roughly equal
+  const meanRatio = ratios.reduce((sum, ratio) => sum + ratio, 0) / ratios.length;
+  const tolerance = 0.3; // You can adjust this threshold as needed
+  for (const ratio of ratios) {
+    if (Math.abs(ratio - meanRatio) > tolerance) {
+      console.log('elimination 2 - ratios not roughly equal');
+      return false;
+    }
+  }
+
+  // elimination 3 - growth not steep enough
+  if (meanRatio < 1.25) {
+    console.log('elimination 3 - growth not steep enough');
+    return false;
+  }
+
+  // elimination 4 - not enough users
+  if (data[data.length - 1] < 50) {
+    console.log('elimination 4 - not enough users');
+    return false; //have minimum 50 new users
+  }
+
+  // SUCCESS!
   return true;
 }
 
@@ -77,8 +91,8 @@ async function main(contractObject) {
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    // const name = "Pepe";
-    const name = "AstroPepeX";
+    const name = "Pepe";
+    // const name = "AstroPepeX";
     const contractObject = Object.values(db1).find(o => o.name === name);
     main(contractObject);
   })();

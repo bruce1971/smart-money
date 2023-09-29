@@ -120,8 +120,8 @@ async function intervalExecute(contractObject, name) {
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    // const name = "Pepe";
-    const name = "AstroPepeX";
+    const name = "Pepe";
+    // const name = "AstroPepeX";
     const contractObject = Object.values(db1).find(o => o.name === name);
     intervalExecute(contractObject, name);
   })();
