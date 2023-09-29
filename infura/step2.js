@@ -12,6 +12,7 @@ var provider = `https://mainnet.infura.io/v3/${APIKEY}`;
 var web3Provider = new Web3.providers.HttpProvider(provider);
 var web3 = new Web3(web3Provider);
 const ObjectsToCsv = require('objects-to-csv');
+let allUserAddresses = [];
 
 
 async function getTxsData(contractObject, fromBlock, toBlock) {
@@ -46,6 +47,10 @@ async function getTxsData(contractObject, fromBlock, toBlock) {
   let userAddresses = [...toAddresses, ...fromAddresses];
   userAddresses = userAddresses.filter(a => a !== contractObject.pairAddress);
 
+  const prevAllUserCount = allUserAddresses.length;
+  allUserAddresses = [... new Set([...allUserAddresses, ...userAddresses])];
+  const newUserCount = allUserAddresses.length - prevAllUserCount;
+
   if (userAddresses.includes('0x70399b85054dd1d94f2264afc8704a3ee308abaf')) {
     console.log('SCRIIIIIIIIIIIIIIIIIIBS');
   }
@@ -71,6 +76,8 @@ async function getTxsData(contractObject, fromBlock, toBlock) {
   return {
     txCount: erc20Transactions.length,
     userCount: userAddresses.length,
+    userCountAcc: allUserAddresses.length,
+    newUserCount: newUserCount,
     buys: buys,
     sells: sells
   }
@@ -81,7 +88,7 @@ async function intervalExecute(contractObject) {
   const min5 = JSON.parse(await fs.readFile(path_min5));
   const caMin5 = [];
   let startBlock = contractObject.blockNumber;
-  const minIncr = 5, nLoops = 12 * 24 * 5;
+  const minIncr = 5, nLoops = 12 * 3 * 1;
   // const minIncr = 1, nLoops = 30;
   const blockIncr = 5 * minIncr;
   for (let i = 0; i < nLoops; i++) {
@@ -90,13 +97,13 @@ async function intervalExecute(contractObject) {
     let txData = await getTxsData(
       contractObject,
       startBlock,
-      startBlock + blockIncr
+      startBlock + blockIncr,
     );
     txData = {
       startBlock: startBlock,
       endblock: startBlock + blockIncr,
       minIncr: minIncr,
-      ...txData,
+      ...txData
     }
     console.log(txData);
     caMin5.push(txData);
