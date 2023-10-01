@@ -1,6 +1,6 @@
 const axios = require('axios');
 const etherscanApiKey = 'I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG';
-const { mcapCalculator, logDecoder } = require(`./helper.js`);
+const { mcapCalculator, logDecoder, round } = require(`./helper.js`);
 const fs = require('fs/promises');
 const path_db1 = `./infura/data/db1.json`;
 
@@ -10,23 +10,32 @@ module.exports = {
 }
 
 
-async function yoooo(contractObject, triggerBlock) {
-  let responseSwap = await axios.get(`
-    https://api.etherscan.io/api
-     ?module=logs
-     &action=getLogs
-     &address=${contractObject.pairAddress}
-     &fromBlock=${triggerBlock}
-     &toBlock=${triggerBlock}
-     &topic0=0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d822
-     &apikey=${etherscanApiKey}
-  `.replace(/\s/g, '')).then(res => res.data.result)
+async function getMcap(contractObject, triggerBlock) {
+  let swapsArray = [];
+  const maxNextBlocks = 10;
+  for (let i = 0; i < maxNextBlocks; i++) {
+    let responseSwap = await axios.get(`
+      https://api.etherscan.io/api
+      ?module=logs
+      &action=getLogs
+      &address=${contractObject.pairAddress}
+      &fromBlock=${triggerBlock+i}
+      &toBlock=${triggerBlock+i+1}
+      &topic0=0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d822
+      &apikey=${etherscanApiKey}
+      `.replace(/\s/g, '')).then(res => res.data.result);
+    swapsArray = swapsArray.concat(responseSwap);
+    if (swapsArray.length >= 3) break;
+  }
+  if (swapsArray.length === 0) return 1; //no trading in last N block, return mcap of $1 (near zero)
 
   const mcapArray = [];
-  responseSwap.forEach(el => {
+  swapsArray.forEach(el => {
     const decoded = logDecoder(el.data);
     const ethAmount = decoded[0] + decoded[2];
     const erc20Amount = decoded[1] + decoded[3];
+    // const ethAmount = decoded[1] + decoded[3];
+    // const erc20Amount = decoded[0] + decoded[2];
     mcapArray.push(mcapCalculator(ethAmount, erc20Amount, contractObject.totalSupply, contractObject.decimals))
   });
   const medianMcap = mcapArray.sort((a, b) => a - b)[Math.floor(mcapArray.length/2)];
@@ -38,12 +47,12 @@ async function backtest(contractObject, triggerBlock) {
   const nMin = 5;
   const t = 5 * nMin;
 
-  const pastMcap = await yoooo(contractObject, triggerBlock-t);
-  console.log('pastMcap:', pastMcap);
-  const presentMcap = await yoooo(contractObject, triggerBlock);
-  console.log('presentMcap:', presentMcap);
-  const futureMcap = await yoooo(contractObject, triggerBlock+t);
-  console.log('futureMcap:', futureMcap);
+  const pastMcap = await getMcap(contractObject, triggerBlock-t);
+  console.log(`mcap0: ${pastMcap}`);
+  const presentMcap = await getMcap(contractObject, triggerBlock);
+  console.log(`mcap1: ${presentMcap} (${round((presentMcap-pastMcap)/pastMcap, 2)})`);
+  const futureMcap = await getMcap(contractObject, triggerBlock+t);
+  console.log(`mcap2: ${futureMcap} (${round((futureMcap-presentMcap)/presentMcap, 2)})`);
 }
 
 
@@ -55,7 +64,7 @@ if (require.main === module) {
     // const name = "NiHao";
     const name = "AstroPepeX";
     // const name = "NicCageWaluigiElmo42069Inu";
-    const triggerBlock = 18173928;
+    const triggerBlock = 17061329;
     const contractObject = Object.values(db1).find(o => o.name === name);
     backtest(contractObject, triggerBlock);
   })();
