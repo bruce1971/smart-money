@@ -88,7 +88,7 @@ async function save(db2, contractObject, caDb2, name, minIncr, nLoops) {
   db2[contractObject.contractAddress] = caDb2;
   await fs.writeFile(path_db2, JSON.stringify(db2, null, 2), 'utf8');
   const csv = new ObjectsToCsv(caDb2);
-  await csv.toDisk(`./infura/data/${name}-${minIncr*nLoops}.csv`);
+  await csv.toDisk(`./infura/data/csv/${name}.csv`);
 }
 
 
@@ -103,7 +103,7 @@ async function intervalExecute(contractObject, name) {
     iStart = 0;
   }
   let startBlock = contractObject.blockNumber;
-  const nLoops = 60 * 24 * 7;
+  const nLoops = 60 * 24 * 7 * 3;
   const minIncr = 1;
   const blockIncr = 5 * minIncr;
   for (let i = iStart; i < nLoops; i++) {
@@ -136,7 +136,8 @@ if (require.main === module) {
     const db1 = JSON.parse(await fs.readFile(path_db1));
     // const name = "Pepe";
     // const name = "CUCK";
-    const name = "NiHao";
+    // const name = "NiHao";
+    const name = "NicCageWaluigiElmo42069Inu";
     const contractObject = Object.values(db1).find(o => o.name === name);
     intervalExecute(contractObject, name);
   })();

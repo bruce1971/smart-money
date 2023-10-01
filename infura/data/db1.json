@@ -288,5 +288,25 @@
     "name": "StonedGPT",
     "decimals": 9,
     "totalSupply": 420000000
+  },
+  "0xe9d269dfcbe0c378f88311c37f37adb44e7c340c": {
+    "contractAddress": "0xe9d269dfcbe0c378f88311c37f37adb44e7c340c",
+    "pairAddress": "0xaf4b9527ff19d12608e3119616a86ad1601b7673",
+    "transactionHash": "0xe7b2fab2afa21ef2b4fdb2911d9c9d7cc9f0c19d15ce2a87bf98e87bc1b1952f",
+    "blockNumber": 17844465,
+    "timeStamp": 1691186519,
+    "name": "DOGS ROCK",
+    "decimals": 9,
+    "totalSupply": 1000000000
+  },
+  "0xfcaf0e4498e78d65526a507360f755178b804ba8": {
+    "contractAddress": "0xfcaf0e4498e78d65526a507360f755178b804ba8",
+    "pairAddress": "0x1141203c9b8ed73eae3961e1a5cf2fd84deb3992",
+    "transactionHash": "0x7e8bb2047f236cc6f67c6d1111c7a2328ae3fd1a1ed2febc4710b6caac78ddbe",
+    "blockNumber": 17844468,
+    "timeStamp": 1691186555,
+    "name": "NicCageWaluigiElmo42069Inu",
+    "decimals": 18,
+    "totalSupply": 1000000000
   }
 }

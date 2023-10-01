@@ -36,7 +36,7 @@ function ratiosTest(data) {
 
   // elimination 4 - growth not steep enough
   if (meanRatio < 1.25) {
-    console.log('elimination 4 - growth not steep enough', meanRatio);
+    console.log('elimination 4 - growth not steep enough');
     return false;
   }
 
@@ -76,8 +76,7 @@ if (require.main === module) {
     const db1 = JSON.parse(await fs.readFile(path_db1));
     // const name = "Pepe";
     // const name = "CUCK";
-    const name = "NiHao";
-    // const name = "AstroPepeX";
+    const name = "AstroPepeX";
     const contractObject = Object.values(db1).find(o => o.name === name);
     main(contractObject);
   })();
