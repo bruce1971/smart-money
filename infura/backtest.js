@@ -29,13 +29,14 @@ async function getMcap(contractObject, triggerBlock) {
   }
   if (swapsArray.length === 0) return 1; //no trading in last N block, return mcap of $1 (near zero)
 
+  const decoded0 = logDecoder(swapsArray[0].data);
+  const ethIsAmount0 = mcapCalculator(decoded0[0] + decoded0[2], decoded0[1] + decoded0[3], contractObject.totalSupply, contractObject.decimals) < 10**12;
+
   const mcapArray = [];
   swapsArray.forEach(el => {
     const decoded = logDecoder(el.data);
-    const ethAmount = decoded[0] + decoded[2];
-    const erc20Amount = decoded[1] + decoded[3];
-    // const ethAmount = decoded[1] + decoded[3];
-    // const erc20Amount = decoded[0] + decoded[2];
+    const ethAmount = ethIsAmount0 ? decoded[0] + decoded[2] : decoded[1] + decoded[3];
+    const erc20Amount = ethIsAmount0 ? decoded[1] + decoded[3] : decoded[0] + decoded[2];
     mcapArray.push(mcapCalculator(ethAmount, erc20Amount, contractObject.totalSupply, contractObject.decimals))
   });
   const medianMcap = mcapArray.sort((a, b) => a - b)[Math.floor(mcapArray.length/2)];
@@ -64,7 +65,7 @@ if (require.main === module) {
     // const name = "NiHao";
     const name = "AstroPepeX";
     // const name = "NicCageWaluigiElmo42069Inu";
-    const triggerBlock = 17061329;
+    const triggerBlock = 18172902;
     const contractObject = Object.values(db1).find(o => o.name === name);
     backtest(contractObject, triggerBlock);
   })();
