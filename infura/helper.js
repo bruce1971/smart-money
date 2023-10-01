@@ -1,6 +1,9 @@
+const {AbiCoder} = require("ethers");
+
 module.exports = {
   mcapCalculator,
-  round
+  round,
+  logDecoder
 }
 
 function round(value, decimals) {
@@ -36,9 +39,15 @@ function formatValueRaw(value, decimals=18) {
   return value;
 }
 
-function mcapCalculator(ethAmount, coinAmount, coinTotalSupply, coinDecimals) {
+function mcapCalculator(ethAmount, erc20Amount, erc20TotalSupply, erc20Decimals) {
   const ethInUsd = 1600;
-  const unitPriceEth = formatValueRaw(ethAmount)/formatValueRaw(coinAmount, coinDecimals);
-  const mcap = unitPriceEth * ethInUsd * coinTotalSupply;
+  const unitPriceEth = formatValueRaw(ethAmount)/formatValueRaw(erc20Amount, erc20Decimals);
+  const mcap = unitPriceEth * ethInUsd * erc20TotalSupply;
   return round(mcap, 0);
+}
+
+function logDecoder(data){
+  const abiCoder = new AbiCoder();
+  const decoded = abiCoder.decode(['uint256','uint256','uint256','uint256'], data);
+  return decoded.map(Number);
 }

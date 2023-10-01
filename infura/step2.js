@@ -55,18 +55,6 @@ async function getTxsData(contractObject, fromBlock, toBlock) {
     console.log('SCRIIIIIIIIIIIIIIIIIIBS');
   }
 
-  // const mcapArray = [];
-  // for (var i = 0; i < erc20Transactions.length; i++) {
-  //   const txHash = erc20Transactions[i].hash;
-  //   const parsedTx = await decoder(txHash);
-  //   if (parsedTx?.type === 'execute') {
-  //     mcapArray.push(mcapCalculator(parsedTx.txs[0].amountIn, parsedTx.txs[0].amountOut, contractObject.totalSupply, contractObject.decimals))
-  //   }
-  //   if (mcapArray.length === 3) break;
-  // }
-  // const medianMcap = mcapArray.sort((a, b) => a - b)[1];
-  // console.log('median mcap', medianMcap);
-
   let buys = 0;
   let sells = 0;
   erc20Transactions.forEach(o => {
