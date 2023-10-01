@@ -59,7 +59,8 @@ function logLinearTest(data) {
   const hasMinNewUsers = data[data.length - 1] > 20;
   if (isGoodLinearFit && isGrowth && isSteepGrowth && hasMinNewUsers) {
     return {
-      logData: logData.map(el => round(el, 2)),
+      data: data,
+      // logData: logData.map(el => round(el, 2)),
       equation: reg.string,
       rSquared: reg.r2
     }
@@ -75,24 +76,26 @@ function algo1(data) {
   }
 
   // find exp patterns
+  const triggers = []
   const expPoints = 5;
   for (let i = 0; i < data.length; i++) {
     let dataX = data.slice(i-expPoints+1 < 0 ? 0 : i-expPoints+1, i+1).map(o => o.newUserCountXmin);
     while (dataX.length < expPoints) dataX = [0].concat(dataX);
-    const llt = logLinearTest(dataX)
-    if (llt) {
-      console.log('------------');
-      console.log(i);
-      console.log(dataX);
-      console.log(llt)
-    }
+    const logLinearTestResult = logLinearTest(dataX)
+    if (logLinearTestResult) triggers.push({ i, triggerBlock: data[i].endblock + 1, ...logLinearTestResult })
   }
+
+  return triggers;
 }
 
-async function main(contractObject) {
+
+async function main(contractObject, name) {
   const db2 = JSON.parse(await fs.readFile(path_db2));
   const data = db2[contractObject.contractAddress];
-  algo1(data);
+  const triggers = algo1(data);
+  console.log(triggers);
+  console.log(name);
+  console.log(triggers.length);
 }
 
 
@@ -101,9 +104,10 @@ if (require.main === module) {
     const db1 = JSON.parse(await fs.readFile(path_db1));
     // const name = "Pepe";
     // const name = "CUCK";
-    // const name = "AstroPepeX";
-    const name = "NiHao";
+    const name = "AstroPepeX";
+    // const name = "NiHao";
+    // const name = "NicCageWaluigiElmo42069Inu";
     const contractObject = Object.values(db1).find(o => o.name === name);
-    main(contractObject);
+    main(contractObject, name);
   })();
 }
