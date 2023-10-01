@@ -5,9 +5,9 @@ import math
 
 base_path = '/Users/peterschindler/Documents/smart-money/infura/data/csv/'
 
-name = 'NicCageWaluigiElmo42069Inu'
-name = 'Pepe'
-# name = 'NiHao'
+# name = 'NicCageWaluigiElmo42069Inu'
+# name = 'Pepe'
+name = 'NiHao'
 # name = 'AstroPepeX'
 # name = 'CUCK'
 
@@ -21,7 +21,8 @@ for i in range(0, len(df)):
     df['logNewUserCountN'][i] = math.log(df['newUserCountN'][i]) if df['newUserCountN'][i] > 0 else 0
 
 
-df = df[2000:4000]
+# df = df[2000:4000]
+# df = df[0:400]
 
 # print(df.head())
 

@@ -1,7 +1,8 @@
 const fs = require('fs/promises');
 const path_db1 = `./infura/data/db1.json`;
 const path_db2 = `./infura/data/db2.json`;
-
+const { round } = require(`./helper.js`);
+const regression = require('regression');
 
 function ratiosTest(data) {
   // Calculate the ratios between consecutive numbers
@@ -45,6 +46,27 @@ function ratiosTest(data) {
 }
 
 
+function logLinearTest(data) {
+  const logData = data.map(Math.log);
+
+  const reg = regression.linear(logData.map((_, i) => [i, logData[i]]));
+  const [slope, intercept] = reg.equation;
+  const rSquared = reg.r2;
+
+  const isGoodLinearFit = rSquared > 0.9;
+  const isGrowth = slope > 0;
+  const isSteepGrowth = slope > 0.1;
+  const hasMinNewUsers = data[data.length - 1] > 20;
+  if (isGoodLinearFit && isGrowth && isSteepGrowth && hasMinNewUsers) {
+    return {
+      logData: logData.map(el => round(el, 2)),
+      equation: reg.string,
+      rSquared: reg.r2
+    }
+  }
+}
+
+
 function algo1(data) {
   // add needed data
   const nMin = 5;
@@ -57,10 +79,13 @@ function algo1(data) {
   for (let i = 0; i < data.length; i++) {
     let dataX = data.slice(i-expPoints+1 < 0 ? 0 : i-expPoints+1, i+1).map(o => o.newUserCountXmin);
     while (dataX.length < expPoints) dataX = [0].concat(dataX);
-    console.log('------------');
-    console.log(i);
-    console.log(dataX);
-    console.log(ratiosTest(dataX))
+    const llt = logLinearTest(dataX)
+    if (llt) {
+      console.log('------------');
+      console.log(i);
+      console.log(dataX);
+      console.log(llt)
+    }
   }
 }
 
@@ -76,7 +101,8 @@ if (require.main === module) {
     const db1 = JSON.parse(await fs.readFile(path_db1));
     // const name = "Pepe";
     // const name = "CUCK";
-    const name = "AstroPepeX";
+    // const name = "AstroPepeX";
+    const name = "NiHao";
     const contractObject = Object.values(db1).find(o => o.name === name);
     main(contractObject);
   })();

@@ -1,6 +1,6 @@
-
 module.exports = {
-  mcapCalculator
+  mcapCalculator,
+  round
 }
 
 function round(value, decimals) {
