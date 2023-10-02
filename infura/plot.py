@@ -27,20 +27,28 @@ for i in range(0, len(df)):
 # print(df.head())
 
 
-plt.plot( df['min'],  df['newUserCount'])
-plt.xlabel('Minute')
+
+plt.plot( df['startBlock'],  df['newUserCount'])
+plt.xlabel('Block')
 plt.ylabel('New Users')
 plt.title(name)
 plt.show()
 
-plt.plot( df['min'],  df['newUserCountN'])
-plt.xlabel('Minute')
+plt.plot( df['startBlock'],  df['newUserCountN'])
+plt.xlabel('Block')
 plt.ylabel('New Users N')
 plt.title(name)
 plt.show()
 
-plt.plot( df['min'],  df['logNewUserCountN'])
-plt.xlabel('Minute')
+plt.plot( df['startBlock'],  df['logNewUserCountN'])
+plt.xlabel('Block')
 plt.ylabel('New Users N Log')
+plt.title(name)
+plt.show()
+
+
+plt.plot( df['startBlock'],  df['mcap'])
+plt.xlabel('Block')
+plt.ylabel('Mcap')
 plt.title(name)
 plt.show()
