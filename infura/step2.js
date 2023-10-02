@@ -5,6 +5,7 @@ const { mcapCalculator, logDecoder, round } = require(`./helper.js`);
 const path_db1 = `./infura/data/db1.json`;
 const path_db2 = `./infura/data/db2.json`;
 const ObjectsToCsv = require('objects-to-csv');
+const N_BLOCKS = 1000;
 
 
 async function getData(contractObject, startBlock, endBlock) {
@@ -97,7 +98,7 @@ async function getData2(contractObject, startBlock, endBlock) {
 }
 
 
-function aggrData(data, contractObject) {
+function aggregateData(data, data2, contractObject) {
   const finalData = [];
   let allUserAddresses = [];
   const aggrSize = 5; //blocks
@@ -123,6 +124,15 @@ function aggrData(data, contractObject) {
       if (o.from === contractObject.pairAddress) buys += 1;
     });
 
+    // filter on subset of data
+    const subData2 = data2.filter(o => currentBlock <= Number(o.blockNumber) && Number(o.blockNumber) <= currentBlock + aggrSize);
+    const mcapArray = [];
+    subData2.forEach(o => {
+      mcapArray.push(mcapCalculator(o.ethAmount, o.erc20Amount, contractObject.totalSupply, contractObject.decimals))
+    });
+    const medianMcap = mcapArray.sort((a, b) => a - b)[Math.floor(mcapArray.length/2)];
+    const ethVolume = round(subData2.reduce((acc, o) => acc + o.ethAmount, 0)/10**18, 0);
+
     // append to collector
     finalData.push({
       startBlock: currentBlock,
@@ -131,7 +141,10 @@ function aggrData(data, contractObject) {
       userCount: userAddresses.length,
       newUserCount: newUserCount,
       buys: buys,
-      sells: sells
+      sells: sells,
+      mcap: medianMcap,
+      swapCount: subData2.length,
+      ethVolume: ethVolume,
     });
 
     // while loop incr
@@ -153,17 +166,17 @@ async function saveData(finalData, contractObject, name) {
 async function main(contractObject, name) {
   // 1) Determine blockrange of interest
   const startBlock = contractObject.blockNumber;
-  const endBlock = startBlock + 10080; // next 10k blocks
+  const endBlock = startBlock + N_BLOCKS; // next N blocks
 
   // 2) Get data for blockrange of interest
+  const allData = await getData(contractObject, startBlock, endBlock);
   const allData2 = await getData2(contractObject, startBlock, endBlock);
-  // const allData = await getData(contractObject, startBlock, endBlock);
-  //
-  // // 3) Group & aggr in buckets of 5 blocks
-  // const finalData = aggrData(allData, contractObject);
-  //
-  // // 4) Save data
-  // await saveData(finalData, contractObject, name);
+
+  // 3) Group & aggr in buckets of 5 blocks
+  const aggrData = aggregateData(allData, allData2, contractObject);
+
+  // 4) Save data
+  await saveData(aggrData, contractObject, name);
 }
 
 
