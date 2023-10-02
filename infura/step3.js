@@ -83,7 +83,7 @@ function algo1(data) {
     let dataX = data.slice(i-expPoints+1 < 0 ? 0 : i-expPoints+1, i+1).map(o => o.newUserCountXmin);
     while (dataX.length < expPoints) dataX = [0].concat(dataX);
     const logLinearTestResult = logLinearTest(dataX)
-    if (logLinearTestResult) triggers.push({ i, triggerBlock: data[i].endblock + 1, ...logLinearTestResult })
+    if (logLinearTestResult) triggers.push({ i, triggerBlock: data[i].endBlock + 1, ...logLinearTestResult })
   }
 
   return triggers;
@@ -101,9 +101,9 @@ async function main(contractObject, name) {
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    const name = "Pepe";
+    // const name = "Pepe";
     // const name = "CUCK";
-    // const name = "AstroPepeX";
+    const name = "AstroPepeX";
     // const name = "NiHao";
     // const name = "NicCageWaluigiElmo42069Inu";
     const contractObject = Object.values(db1).find(o => o.name === name);

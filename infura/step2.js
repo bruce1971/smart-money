@@ -1,7 +1,7 @@
 const axios = require('axios');
 const etherscanApiKey = 'I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG';
-const fs = require('fs/promises');
 const { mcapCalculator, logDecoder, round } = require(`./helper.js`);
+const fs = require('fs/promises');
 const path_db1 = `./infura/data/db1.json`;
 const path_db2 = `./infura/data/db2.json`;
 const ObjectsToCsv = require('objects-to-csv');
