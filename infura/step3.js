@@ -3,6 +3,7 @@ const path_db1 = `./infura/data/db1.json`;
 const path_db2 = `./infura/data/db2.json`;
 const { round } = require(`./helper.js`);
 const { backtest } = require(`./backtest.js`);
+const { name } = require(`./config.js`);
 const regression = require('regression');
 
 function ratiosTest(data) {
@@ -101,11 +102,6 @@ async function main(contractObject, name) {
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    const name = "Pepe";
-    // const name = "CUCK";
-    // const name = "AstroPepeX";
-    // const name = "NiHao";
-    // const name = "NicCageWaluigiElmo42069Inu";
     const contractObject = Object.values(db1).find(o => o.name === name);
     const triggers = await main(contractObject, name);
     console.log(`${name} ${triggers.length} triggers`);

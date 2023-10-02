@@ -102,5 +102,5 @@ async function monitorTokenLaunches() {
 
 
 // monitorTokenLaunches();
-const n = 17844468;
+const n = 17662041;
 intervalExecute(n-5, n+5);

@@ -1,11 +1,12 @@
 const axios = require('axios');
 const etherscanApiKey = 'I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG';
 const { mcapCalculator, logDecoder, round } = require(`./helper.js`);
+const { name } = require(`./config.js`);
 const fs = require('fs/promises');
 const path_db1 = `./infura/data/db1.json`;
 const path_db2 = `./infura/data/db2.json`;
 const ObjectsToCsv = require('objects-to-csv');
-const N_BLOCKS = 50000;
+const N_BLOCKS = 5 * 60 * 24 * 20;
 let blockIncr1 = 4000;
 let blockIncr2 = 400;
 
@@ -208,11 +209,6 @@ async function main(contractObject, name) {
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    const name = "Pepe";
-    // const name = "CUCK";
-    // const name = "NiHao";
-    // const name = "NicCageWaluigiElmo42069Inu";
-    // const name = "AstroPepeX";
     const contractObject = Object.values(db1).find(o => o.name === name);
     console.time('Timer');
     await main(contractObject, name);

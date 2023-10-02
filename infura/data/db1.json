@@ -308,5 +308,15 @@
     "name": "NicCageWaluigiElmo42069Inu",
     "decimals": 18,
     "totalSupply": 1000000000
+  },
+  "0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410": {
+    "contractAddress": "0x48c87cdacb6bb6bf6e5cd85d8ee5c847084c7410",
+    "pairAddress": "0x479d7a7864e00668da1ee507fa1b925fb1b2ae19",
+    "transactionHash": "0x4e5de63b7d872fc9b291f0d2f599b85ef3bb889650b13283db62862e6c75f333",
+    "blockNumber": 17662041,
+    "timeStamp": 1688977199,
+    "name": "Hamsters",
+    "decimals": 18,
+    "totalSupply": 10000000
   }
 }

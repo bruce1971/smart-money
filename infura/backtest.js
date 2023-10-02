@@ -2,6 +2,7 @@ const fs = require('fs/promises');
 const path_db1 = `./infura/data/db1.json`;
 const path_db2 = `./infura/data/db2.json`;
 const { round, formatLargeValue } = require(`./helper.js`);
+const { name } = require(`./config.js`);
 
 
 module.exports = {
@@ -30,11 +31,6 @@ async function backtest(contractObject, triggerBlock) {
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    const name = "Pepe";
-    // const name = "CUCK";
-    // const name = "NiHao";
-    // const name = "AstroPepeX";
-    // const name = "NicCageWaluigiElmo42069Inu";
     const triggerBlock = 18172902;
     const contractObject = Object.values(db1).find(o => o.name === name);
     backtest(contractObject, triggerBlock);
