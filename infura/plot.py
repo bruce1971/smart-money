@@ -6,8 +6,8 @@ import math
 base_path = '/Users/peterschindler/Documents/smart-money/infura/data/csv/'
 
 # name = 'NicCageWaluigiElmo42069Inu'
-# name = 'Pepe'
-name = 'NiHao'
+name = 'Pepe'
+# name = 'NiHao'
 # name = 'AstroPepeX'
 # name = 'CUCK'
 

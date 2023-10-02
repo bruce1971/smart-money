@@ -5,9 +5,9 @@ const { mcapCalculator, logDecoder, round } = require(`./helper.js`);
 const path_db1 = `./infura/data/db1.json`;
 const path_db2 = `./infura/data/db2.json`;
 const ObjectsToCsv = require('objects-to-csv');
-const N_BLOCKS = 10000;
-const blockIncr1 = 2000;
-const blockIncr2 = 700;
+const N_BLOCKS = 50000;
+let blockIncr1 = 4000;
+let blockIncr2 = 400;
 
 
 async function getData1(contractObject, startBlock, endBlock) {
@@ -44,12 +44,17 @@ async function getData1(contractObject, startBlock, endBlock) {
     });
     console.log(`Tx count: ${erc20Transactions.length}`);
     if (erc20Transactions.length >= 10000) {
-      console.log('ERROR: Erc20Transactions == 10000. Fix now!');
-      process.exit(0);
+      blockIncr1 = Math.ceil(blockIncr1/2);
+      console.log(`DECREASING blockIncr1 to ${blockIncr1}`);
+    } else {
+      allData = allData.concat(erc20Transactions);
+      // while loop incr
+      currentBlock = currentBlock + blockIncr1 + 1;
+      if (erc20Transactions.length < 2000) {
+        blockIncr1 = Math.ceil(blockIncr1*2);
+        console.log(`INCREASING blockIncr1 to ${blockIncr1}`);
+      }
     }
-    allData = allData.concat(erc20Transactions);
-    // while loop incr
-    currentBlock = currentBlock + blockIncr1 + 1;
   }
   return allData;
 }
@@ -82,36 +87,41 @@ async function getData2(contractObject, startBlock, endBlock) {
       }))
       return final;
     });
-    console.log(responseSwap.length);
     console.log(`Tx count: ${responseSwap.length}`);
     if (responseSwap.length >= 1000) {
-      console.log('ERROR: ResponseSwap == 1000. Fix now!');
-      process.exit(0);
-    }
-    swapsArray = swapsArray.concat(responseSwap);
-
-    if (swapsArray.length > 0) {
-      const decoded0 = swapsArray[0].decoded;
-      const ethIsAmount0 = mcapCalculator(decoded0[0] + decoded0[2], decoded0[1] + decoded0[3], contractObject.totalSupply, contractObject.decimals) < 10**12;
-      swapsArray.forEach(o => {
-        o.ethAmount = ethIsAmount0 ? o.decoded[0] + o.decoded[2] : o.decoded[1] + o.decoded[3];
-        o.erc20Amount = ethIsAmount0 ? o.decoded[1] + o.decoded[3] : o.decoded[0] + o.decoded[2];
-      });
+      blockIncr2 = Math.ceil(blockIncr2/2);
+      console.log(`DECREASING blockIncr2 to ${blockIncr2}`);
     } else {
-      swapsArray.forEach(o => {
-        o.ethAmount = 0;
-        o.erc20Amount = 0;
-      });
-    }
+      // add eth & erc20 amounts
+      if (responseSwap.length > 0) {
+        const decoded0 = responseSwap[0].decoded;
+        const ethIsAmount0 = mcapCalculator(decoded0[0] + decoded0[2], decoded0[1] + decoded0[3], contractObject.totalSupply, contractObject.decimals) < 10**12;
+        responseSwap.forEach(o => {
+          o.ethAmount = ethIsAmount0 ? o.decoded[0] + o.decoded[2] : o.decoded[1] + o.decoded[3];
+          o.erc20Amount = ethIsAmount0 ? o.decoded[1] + o.decoded[3] : o.decoded[0] + o.decoded[2];
+        });
+      } else {
+        responseSwap.forEach(o => {
+          o.ethAmount = 0;
+          o.erc20Amount = 0;
+        });
+      }
+      swapsArray = swapsArray.concat(responseSwap);
+      // while loop incr
+      currentBlock = currentBlock + blockIncr2 + 1;
 
-    // while loop incr
-    currentBlock = currentBlock + blockIncr2 + 1;
+      if (responseSwap.length < 200) {
+        blockIncr2 = Math.ceil(blockIncr2*2);
+        console.log(`INCREASING blockIncr2 to ${blockIncr2}`);
+      }
+    }
   }
   return swapsArray;
 }
 
 
 function aggregateData(data1, data2, contractObject) {
+  console.log('Aggregating data...');
   const aggrData = [];
   let allUserAddresses = [];
   const aggrSize = 5; //blocks
@@ -168,6 +178,7 @@ function aggregateData(data1, data2, contractObject) {
 
 
 async function saveData(aggrData, contractObject, name) {
+  console.log('Saving data...');
   const db2 = JSON.parse(await fs.readFile(path_db2));
   db2[contractObject.contractAddress] = aggrData;
   await fs.writeFile(path_db2, JSON.stringify(db2, null, 2), 'utf8');
@@ -197,9 +208,9 @@ async function main(contractObject, name) {
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    // const name = "Pepe";
+    const name = "Pepe";
     // const name = "CUCK";
-    const name = "NiHao";
+    // const name = "NiHao";
     // const name = "NicCageWaluigiElmo42069Inu";
     // const name = "AstroPepeX";
     const contractObject = Object.values(db1).find(o => o.name === name);
