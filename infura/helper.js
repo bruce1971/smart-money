@@ -3,6 +3,7 @@ const {AbiCoder} = require("ethers");
 module.exports = {
   mcapCalculator,
   round,
+  formatLargeValue,
   logDecoder
 }
 

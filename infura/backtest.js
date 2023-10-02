@@ -1,7 +1,7 @@
 const fs = require('fs/promises');
 const path_db1 = `./infura/data/db1.json`;
 const path_db2 = `./infura/data/db2.json`;
-const { round } = require(`./helper.js`);
+const { round, formatLargeValue } = require(`./helper.js`);
 
 
 module.exports = {
@@ -17,23 +17,23 @@ async function backtest(contractObject, triggerBlock) {
   const t = 5 * nMin;
 
   const pastMcap = data.find(o => o.startBlock <= (triggerBlock-t) && (triggerBlock-t) <= o.endBlock)?.mcap || 1;
-  console.log(`mcap0: ${pastMcap}`);
+  console.log(`mcap0: $${formatLargeValue(pastMcap)}`);
 
   const presentMcap = data.find(o => o.startBlock <= triggerBlock && triggerBlock <= o.endBlock).mcap;
-  console.log(`mcap1: ${presentMcap} (${round((presentMcap-pastMcap)/pastMcap, 2)})`);
+  console.log(`mcap1: $${formatLargeValue(presentMcap)} (${round((presentMcap-pastMcap)/pastMcap, 2)})`);
 
   const futureMcap = data.find(o => o.startBlock <= (triggerBlock+t) && (triggerBlock+t) <= o.endBlock)?.mcap || 1;
-  console.log(`mcap2: ${futureMcap} (${round((futureMcap-presentMcap)/presentMcap, 2)})`);
+  console.log(`mcap2: $${formatLargeValue(futureMcap)} (${round((futureMcap-presentMcap)/presentMcap, 2)})`);
 }
 
 
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    // const name = "Pepe";
+    const name = "Pepe";
     // const name = "CUCK";
     // const name = "NiHao";
-    const name = "AstroPepeX";
+    // const name = "AstroPepeX";
     // const name = "NicCageWaluigiElmo42069Inu";
     const triggerBlock = 18172902;
     const contractObject = Object.values(db1).find(o => o.name === name);

@@ -101,9 +101,9 @@ async function main(contractObject, name) {
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    // const name = "Pepe";
+    const name = "Pepe";
     // const name = "CUCK";
-    const name = "AstroPepeX";
+    // const name = "AstroPepeX";
     // const name = "NiHao";
     // const name = "NicCageWaluigiElmo42069Inu";
     const contractObject = Object.values(db1).find(o => o.name === name);
