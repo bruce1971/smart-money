@@ -1,16 +1,8 @@
 const axios = require('axios');
-const moment = require('moment');
 const etherscanApiKey = 'I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG';
-const { decoder } = require(`./decoder.js`);
-const { mcapCalculator } = require(`./helper.js`);
 const fs = require('fs/promises');
 const path_db1 = `./infura/data/db1.json`;
 const path_db2 = `./infura/data/db2.json`;
-var { Web3 } = require("web3");
-const APIKEY = '482599a22821425bae631e1031e90e7e';
-var provider = `https://mainnet.infura.io/v3/${APIKEY}`;
-var web3Provider = new Web3.providers.HttpProvider(provider);
-var web3 = new Web3(web3Provider);
 const ObjectsToCsv = require('objects-to-csv');
 
 
@@ -101,7 +93,8 @@ function aggrData(data, contractObject) {
 }
 
 
-async function saveData(finalData, db2, contractObject, name) {
+async function saveData(finalData, contractObject, name) {
+  const db2 = JSON.parse(await fs.readFile(path_db2));
   db2[contractObject.contractAddress] = finalData;
   await fs.writeFile(path_db2, JSON.stringify(db2, null, 2), 'utf8');
   const csv = new ObjectsToCsv(finalData);
@@ -111,16 +104,7 @@ async function saveData(finalData, db2, contractObject, name) {
 
 async function intervalExecute(contractObject, name) {
   // 1) Determine blockrange of interest
-  const db2 = JSON.parse(await fs.readFile(path_db2));
-  let caDb2, startBlock;
-  // if (db2[contractObject.contractAddress]) { // DOESNT WORK BECAUSE OF ALLUSERADDRESSES RESET
-  if (false) {
-    caDb2 = db2[contractObject.contractAddress];
-    startBlock = caDb2[caDb2.length - 1].endblock + 1;
-  } else {
-    caDb2 = [];
-    startBlock = contractObject.blockNumber;
-  }
+  const startBlock = contractObject.blockNumber;
   const endBlock = startBlock + 10080; // next 10k blocks
 
   // 2) Get data for blockrange of interest
@@ -130,7 +114,7 @@ async function intervalExecute(contractObject, name) {
   const finalData = aggrData(allData, contractObject);
 
   // 4) Save data
-  await saveData(finalData, db2, contractObject, name);
+  await saveData(finalData, contractObject, name);
 }
 
 
