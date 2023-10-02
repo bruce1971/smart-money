@@ -23,7 +23,7 @@ async function getMcap(contractObject, triggerBlock) {
       &toBlock=${triggerBlock+i+1}
       &topic0=0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d822
       &apikey=${etherscanApiKey}
-      `.replace(/\s/g, '')).then(res => res.data.result);
+    `.replace(/\s/g, '')).then(res => res.data.result);
     swapsArray = swapsArray.concat(responseSwap);
     if (swapsArray.length >= 3) break;
   }
