@@ -7,48 +7,6 @@ const { erc20Name } = require(`./config.js`);
 const regression = require('regression');
 
 
-function ratiosTest(data) {
-  // Calculate the ratios between consecutive numbers
-  const ratios = [];
-  for (let i = 1; i < data.length; i++) {
-    if (data[i - 1] === 0) return false;
-    const ratio = data[i] / data[i - 1];
-    ratios.push(ratio);
-  }
-
-  // elimination 1 - not purely positive growth
-  if (ratios.some(el => el < 1)) {
-    console.log('elimination 1 - not purely positive growth');
-    return false;
-  }
-
-  // elimination 2 - not enough users
-  if (data[data.length - 1] < 50) {
-    console.log('elimination 2 - not enough users');
-    return false; //have minimum 50 new users
-  }
-
-  // elimination 3 - ratios not roughly equal
-  const meanRatio = ratios.reduce((sum, ratio) => sum + ratio, 0) / ratios.length;
-  const tolerance = 0.3; // You can adjust this threshold as needed
-  for (const ratio of ratios) {
-    if (Math.abs(ratio - meanRatio) > tolerance) {
-      console.log('elimination 3 - ratios not roughly equal');
-      return false;
-    }
-  }
-
-  // elimination 4 - growth not steep enough
-  if (meanRatio < 1.25) {
-    console.log('elimination 4 - growth not steep enough');
-    return false;
-  }
-
-  // SUCCESS!
-  return true;
-}
-
-
 function logLinearTest(data) {
   const logData = data.map(Math.log);
 
