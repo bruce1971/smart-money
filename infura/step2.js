@@ -96,7 +96,7 @@ async function getData2(contractObject, startBlock, endBlock) {
       if (responseSwap.length > 0) {
         const decoded0 = responseSwap[0].decoded;
         const sampleMcap = mcapCalculator(decoded0[0] + decoded0[2], decoded0[1] + decoded0[3], contractObject.totalSupply, contractObject.decimals);
-        const ethIsAmount0 = 0 < sampleMcap && sampleMcap < 10**12; // FIXME: needs something better...
+        const ethIsAmount0 = 10**2 < sampleMcap && sampleMcap < 10**12; // FIXME: needs something better...
         console.log('ethIsAmount0', ethIsAmount0);
         responseSwap.forEach(o => {
           o.ethAmount = ethIsAmount0 ? o.decoded[0] + o.decoded[2] : o.decoded[1] + o.decoded[3];
@@ -130,7 +130,8 @@ function aggregateData(data1, data2, contractObject) {
   let currentBlock = Number(data1[0].blockNumber);
   const endBlock = Number(data1[data1.length - 1].blockNumber);
   while (currentBlock < (endBlock - 1*aggrSize)) {
-    console.log(`Remaining blocks: ${endBlock - currentBlock}`);
+    if ((endBlock-currentBlock) % 10000 === 0) console.log(`Remaining blocks: ${endBlock - currentBlock}`);
+
     // filter on subset of data1
     const subData1 = data1.filter(o => currentBlock <= Number(o.blockNumber) && Number(o.blockNumber) <= currentBlock + aggrSize);
 
@@ -181,7 +182,7 @@ function aggregateData(data1, data2, contractObject) {
 
 
 async function saveData(aggrData, contractObject, erc20Name) {
-  console.log('Saving data...');
+  console.log(`Saving data... ${erc20Name}`);
   const db2 = JSON.parse(await fs.readFile(path_db2));
   db2[contractObject.contractAddress] = aggrData;
   await fs.writeFile(path_db2, JSON.stringify(db2, null, 2), 'utf8');

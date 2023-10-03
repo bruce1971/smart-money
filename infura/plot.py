@@ -11,7 +11,10 @@ base_path = '/Users/peterschindler/Documents/smart-money/infura/data/csv/'
 # name = 'AstroPepeX'
 # name = 'CUCK'
 # name = 'Hamsters'
-name = 'HarryPotterObamaSonic10Inu'
+# name = 'HarryPotterObamaSonic10Inu'
+# name = 'MongCoin'
+name = 'Real Smurf Cat'
+
 
 df = pd.read_csv(base_path + name +'.csv')
 

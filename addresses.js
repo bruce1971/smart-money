@@ -11,8 +11,6 @@ const inputA = {
   'mong': { address: '0x1ce270557c1f68cfb577b856766310bf8b47fd9c', type: 'erc20' },
   'unibot': { address: '0xf819d9Cb1c2A819Fd991781A822dE3ca8607c3C9', type: 'erc20' },
   'none': { address: '0x903ff0ba636E32De1767A4B5eEb55c155763D8B7', type: 'erc20' },
-  'prime': { address: '0xb23d80f5FefcDDaa212212F028021B41DEd428CF', type: 'erc20' },
-  'rlb': { address: '0x046EeE2cc3188071C02BfC1745A6b17c656e3f3d', type: 'erc20' },
   'smurf': { address: '0xff836a5821e69066c87e268bc51b849fab94240c', type: 'erc20' },
   'astro': { address: '0xed4e879087ebd0e8a77d66870012b5e0dffd0fa4', type: 'erc20' },
   'gold': { address: '0x089453742936dd35134383aee9d78bEe63A69b01', type: 'erc20' },

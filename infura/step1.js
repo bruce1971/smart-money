@@ -18,16 +18,6 @@ async function getLatestBlockNumber() {
 // Function to fetch token creation transactions
 async function getTradingLaunch(fromBlock, toBlock) {
   try {
-    const responseCreatePair = await axios.get(`https://api.etherscan.io/api`, {
-      params: {
-        module: 'logs',
-        action: 'getLogs',
-        fromBlock: fromBlock,
-        toBlock: toBlock,
-        topic0: '0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9',
-        apiKey: etherscanApiKey,
-      },
-    });
     const responseDeposit = await axios.get(`https://api.etherscan.io/api`, {
       params: {
         module: 'logs',
@@ -39,9 +29,47 @@ async function getTradingLaunch(fromBlock, toBlock) {
       },
     });
     const depositTransactionHashes = responseDeposit.data.result.map(o => o.transactionHash);
-    if (depositTransactionHashes.length >= 1000) console.log('STOOOP - too big interval!!');
+    if (depositTransactionHashes.length >= 1000) {
+      process.exit(1);
+      console.log('STOOOP - too big interval for Depost!!');
+    }
+
+    const responseCreatePair = await axios.get(`https://api.etherscan.io/api`, {
+      params: {
+        module: 'logs',
+        action: 'getLogs',
+        fromBlock: fromBlock,
+        toBlock: toBlock,
+        topic0: '0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9',
+        apiKey: etherscanApiKey,
+      },
+    });
+    const createPairTransactionHashes = responseCreatePair.data.result.map(o => o.transactionHash);
+    if (createPairTransactionHashes.length >= 1000) {
+      process.exit(1);
+      console.log('STOOOP - too big interval for Create Pair!!');
+    }
+
+    const responseMint = await axios.get(`https://api.etherscan.io/api`, {
+      params: {
+        module: 'logs',
+        action: 'getLogs',
+        fromBlock: fromBlock,
+        toBlock: toBlock,
+        topic0: '0x4c209b5fc8ad50758f13e2e1088ba56a560dff690a1c6fef26394f4c03821c4f',
+        apiKey: etherscanApiKey,
+      },
+    });
+    const mintTransactionHashes = responseMint.data.result.map(o => o.transactionHash);
+    if (mintTransactionHashes.length >= 1000) {
+      process.exit(1);
+      console.log('STOOOP - too big interval for Create Pair!!');
+    }
+
+
     const addLiquidityTransactions = responseCreatePair.data.result.filter(o => depositTransactionHashes.includes(o.transactionHash));
     if (addLiquidityTransactions.length >= 1000) console.log('STOOOP - too big interval!!');
+
     const formattedResult = addLiquidityTransactions.map(o => ({
       contractAddress: o.topics.filter(el => el.toLowerCase() != '0x000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2')[1].replace('000000000000000000000000','').toLowerCase(),
       pairAddress: o.data.replace('000000000000000000000000',''). slice(0, 42).toLowerCase(),

@@ -348,5 +348,45 @@
     "name": "PEPERFECT",
     "decimals": 6,
     "totalSupply": 666000000
+  },
+  "0x1ce270557c1f68cfb577b856766310bf8b47fd9c": {
+    "contractAddress": "0x1ce270557c1f68cfb577b856766310bf8b47fd9c",
+    "pairAddress": "0x7054b0f980a7eb5b3a6b3446f3c947d80162775c",
+    "transactionHash": "0xc3d61d2331652989b087fd2dd3196dcb68c941e0614b26bdbcc7f900c155c970",
+    "blockNumber": 17130879,
+    "timeStamp": 1682517875,
+    "name": "MongCoin",
+    "decimals": 18,
+    "totalSupply": 690000000000000
+  },
+  "0x1fededf92447f2766b0806af6e3317a0f7117149": {
+    "contractAddress": "0x1fededf92447f2766b0806af6e3317a0f7117149",
+    "pairAddress": "0xee907ad42f7dac9f8b5010217fa4c1701659c6d0",
+    "transactionHash": "0x52c5adeabcf9f74a6d5f33d8d25389af8799d41e5e9ce7788aad6c77a35d7ee0",
+    "blockNumber": 18130268,
+    "timeStamp": 1694643035,
+    "name": "Lingo",
+    "decimals": 18,
+    "totalSupply": 100000000
+  },
+  "0xff836a5821e69066c87e268bc51b849fab94240c": {
+    "contractAddress": "0xff836a5821e69066c87e268bc51b849fab94240c",
+    "pairAddress": "0x977c5fcf7a552d38adcde4f41025956855497c6d",
+    "transactionHash": "0x0feafbde8a7e44514ea401552973b21eb03d9d23db473da617fae8618acda33e",
+    "blockNumber": 18130273,
+    "timeStamp": 1694643095,
+    "name": "Real Smurf Cat",
+    "decimals": 18,
+    "totalSupply": 100000000000
+  },
+  "0x988cf1d902a976c92c408bbc37aeae13e81bacb0": {
+    "contractAddress": "0x988cf1d902a976c92c408bbc37aeae13e81bacb0",
+    "pairAddress": "0xe8fa35d8c2e45adb3b28602ec64dd463b07b5a89",
+    "transactionHash": "0x229e1b6508bd46c0582875ccd5ae789f0e6320b1fa433ff23b81c3c191308a08",
+    "blockNumber": 18130273,
+    "timeStamp": 1694643095,
+    "name": "Shiba Community",
+    "decimals": 9,
+    "totalSupply": 100000000
   }
 }
