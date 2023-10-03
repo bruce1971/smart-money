@@ -6,6 +6,7 @@ const { backtest } = require(`./backtest.js`);
 const { erc20Name } = require(`./config.js`);
 const regression = require('regression');
 
+
 function ratiosTest(data) {
   // Calculate the ratios between consecutive numbers
   const ratios = [];
@@ -57,7 +58,7 @@ function logLinearTest(data) {
 
   const isGoodLinearFit = rSquared > 0.9;
   const isGrowth = slope > 0;
-  const isSteepGrowth = slope > 0.1;
+  const isSteepGrowth = slope > 0.15;
   const hasMinNewUsers = data[data.length - 1] > 20;
   if (isGoodLinearFit && isGrowth && isSteepGrowth && hasMinNewUsers) {
     return {
@@ -104,9 +105,8 @@ if (require.main === module) {
     const db1 = JSON.parse(await fs.readFile(path_db1));
     const contractObject = Object.values(db1).find(o => o.name === erc20Name);
     const triggers = await main(contractObject, erc20Name);
-    console.log(`${erc20Name} ${triggers.length} triggers`);
 
-    let pnls = []
+    let pnls = [];
     for (let i = 0; i < triggers.length; i++) {
       console.log('=======================================');
       const trigger = triggers[i];
@@ -114,6 +114,9 @@ if (require.main === module) {
       const pnl = await backtest(contractObject, trigger.triggerBlock);
       pnls.push(pnl)
     }
+
+    console.log('+++++++++++++++++++++++++++++++++++++++');
+    console.log(`${erc20Name} Triggers ${triggers.length}`);
     console.log(`${erc20Name} PNL ${round(pnls.reduce((acc, el) => acc + el, 0), 2)}`);
   })();
 }

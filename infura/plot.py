@@ -27,7 +27,7 @@ for i in range(0, len(df)):
 
 
 # df = df[2000:4000]
-# df = df[0:400]
+df = df[0:20000]
 
 # print(df.head())
 
