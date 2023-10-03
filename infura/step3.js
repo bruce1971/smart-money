@@ -17,15 +17,24 @@ function logLinearTest(data) {
   const isGoodLinearFit = rSquared > 0.9;
   const isGrowth = slope > 0;
   const isSteepGrowth = slope > 0.15;
-  const hasMinNewUsers = data[data.length - 1] > 20;
-  if (isGoodLinearFit && isGrowth && isSteepGrowth && hasMinNewUsers) {
+  if (isGoodLinearFit && isGrowth && isSteepGrowth) {
     return {
       data: data,
-      // logData: logData.map(el => round(el, 2)),
       equation: reg.string,
       rSquared: reg.r2
     }
   }
+}
+
+
+function sizeTest(data) {
+  const lastData = data[data.length - 1];
+  const denom = lastData.newUserCountXmin > 0 ? lastData.newUserCountXmin : 0.0001;
+  return {
+    ratio: round(lastData.mcap/denom, 0),
+    mcap: lastData.mcap,
+    maxNewUsers: denom
+  };
 }
 
 
@@ -38,12 +47,27 @@ function algo1(data) {
 
   // find exp patterns
   const triggers = []
-  const expPoints = 5;
+  const seriesLength = 5;
   for (let i = 0; i < data.length; i++) {
-    let dataX = data.slice(i-expPoints+1 < 0 ? 0 : i-expPoints+1, i+1).map(o => o.newUserCountXmin);
-    while (dataX.length < expPoints) dataX = [0].concat(dataX);
-    const logLinearTestResult = logLinearTest(dataX)
-    if (logLinearTestResult) triggers.push({ i, triggerBlock: data[i].endBlock + 1, ...logLinearTestResult })
+    // take data subset
+    let dataSlice = data.slice(i-seriesLength+1 < 0 ? 0 : i-seriesLength+1, i+1);
+
+    // check size ratios
+    const sizeTestResult = sizeTest(dataSlice);
+    if (sizeTestResult.ratio > 50000 && sizeTestResult.maxNewUsers < 20) continue; // filter out too big & too little
+
+    // check log linear
+    let dataSliceNewUserCountXmin = dataSlice.map(o => o.newUserCountXmin);
+    while (dataSliceNewUserCountXmin.length < seriesLength) dataSliceNewUserCountXmin = [0].concat(dataSliceNewUserCountXmin);
+    const logLinearTestResult = logLinearTest(dataSliceNewUserCountXmin);
+    if (logLinearTestResult) {
+      triggers.push({
+        i,
+        triggerBlock: data[i].endBlock + 1,
+        sizeRatio: sizeTestResult.ratio,
+        ...logLinearTestResult
+      });
+    }
   }
 
   return triggers;
