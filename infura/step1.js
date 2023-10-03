@@ -6,6 +6,7 @@ const web3 = new Web3(ethereumNodeUrl);
 const chainId = 1;
 const fs = require('fs/promises');
 const path = `./infura/data/db1.json`;
+const { blockOfInterest } = require(`./config.js`);
 
 
 // Function to fetch the latest block number
@@ -102,5 +103,4 @@ async function monitorTokenLaunches() {
 
 
 // monitorTokenLaunches();
-const n = 17662041;
-intervalExecute(n-5, n+5);
+intervalExecute(blockOfInterest-5, blockOfInterest+5);

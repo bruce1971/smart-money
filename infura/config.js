@@ -1,12 +1,21 @@
-let name;
+let erc20Name, blockOfInterest, nBlocksScanned;
 
-// name = "Pepe";
-// name = "Hamsters";
-// name = "CUCK";
-name = "AstroPepeX";
-// name = "NiHao";
-// name = "NicCageWaluigiElmo42069Inu";
+blockOfInterest = 17228294;
+
+// erc20Name = "Pepe";
+// erc20Name = "Hamsters";
+erc20Name = "HarryPotterObamaSonic10Inu";
+// erc20Name = "CUCK";
+// erc20Name = "AstroPepeX";
+// erc20Name = "NiHao";
+// erc20Name = "NicCageWaluigiElmo42069Inu";
+
+
+nBlocksScanned = 5 * 60 * 24 * 40;
+
 
 module.exports = {
-  name
+  erc20Name,
+  blockOfInterest,
+  nBlocksScanned
 }

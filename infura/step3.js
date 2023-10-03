@@ -3,7 +3,7 @@ const path_db1 = `./infura/data/db1.json`;
 const path_db2 = `./infura/data/db2.json`;
 const { round } = require(`./helper.js`);
 const { backtest } = require(`./backtest.js`);
-const { name } = require(`./config.js`);
+const { erc20Name } = require(`./config.js`);
 const regression = require('regression');
 
 function ratiosTest(data) {
@@ -91,7 +91,7 @@ function algo1(data) {
 }
 
 
-async function main(contractObject, name) {
+async function main(contractObject, erc20Name) {
   const db2 = JSON.parse(await fs.readFile(path_db2));
   const data = db2[contractObject.contractAddress];
   const triggers = algo1(data);
@@ -102,15 +102,18 @@ async function main(contractObject, name) {
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    const contractObject = Object.values(db1).find(o => o.name === name);
-    const triggers = await main(contractObject, name);
-    console.log(`${name} ${triggers.length} triggers`);
+    const contractObject = Object.values(db1).find(o => o.name === erc20Name);
+    const triggers = await main(contractObject, erc20Name);
+    console.log(`${erc20Name} ${triggers.length} triggers`);
 
+    let pnls = []
     for (let i = 0; i < triggers.length; i++) {
       console.log('=======================================');
       const trigger = triggers[i];
       console.log(trigger);
-      await backtest(contractObject, trigger.triggerBlock)
+      const pnl = await backtest(contractObject, trigger.triggerBlock);
+      pnls.push(pnl)
     }
+    console.log(`${erc20Name} PNL ${round(pnls.reduce((acc, el) => acc + el, 0), 2)}`);
   })();
 }

@@ -42,7 +42,9 @@ function formatValueRaw(value, decimals=18) {
 
 function mcapCalculator(ethAmount, erc20Amount, erc20TotalSupply, erc20Decimals) {
   const ethInUsd = 1600;
-  const unitPriceEth = formatValueRaw(ethAmount)/formatValueRaw(erc20Amount, erc20Decimals);
+  const ethAmountScaled = ethAmount/10**18;
+  const erc20AmountScaled = erc20Amount/10**erc20Decimals;
+  const unitPriceEth = ethAmountScaled/erc20AmountScaled;
   const mcap = unitPriceEth * ethInUsd * erc20TotalSupply;
   return round(mcap, 0);
 }

@@ -318,5 +318,35 @@
     "name": "Hamsters",
     "decimals": 18,
     "totalSupply": 10000000
+  },
+  "0x72e4f9f808c49a2a61de9c5896298920dc4eeea9": {
+    "contractAddress": "0x72e4f9f808c49a2a61de9c5896298920dc4eeea9",
+    "pairAddress": "0x2cc846fff0b08fb3bffad71f53a60b4b6e6d6482",
+    "transactionHash": "0xe49a93e4daa601e8190d2019c5f3cad302b525b4eb8107d4051b8e22dcd4c318",
+    "blockNumber": 17228294,
+    "timeStamp": 1683700919,
+    "name": "HarryPotterObamaSonic10Inu",
+    "decimals": 8,
+    "totalSupply": 1000000000
+  },
+  "0x8978dc3606aa248330d509ea94f1aac53ee9aa9e": {
+    "contractAddress": "0x8978dc3606aa248330d509ea94f1aac53ee9aa9e",
+    "pairAddress": "0xa32218b38ba74f2c93ca1e168b8abaa7331a97be",
+    "transactionHash": "0x147056b5ee4d0f013dc276f862b050eb5f7e6f02fce07e35491d0efcafacbe17",
+    "blockNumber": 17228296,
+    "timeStamp": 1683700943,
+    "name": "X2BABY",
+    "decimals": 9,
+    "totalSupply": 1000000000
+  },
+  "0x542c9b4cc0aa303eecee9c1c9d440612b36f5abd": {
+    "contractAddress": "0x542c9b4cc0aa303eecee9c1c9d440612b36f5abd",
+    "pairAddress": "0x435e8cb26de303abf9a7530e73abd57ad803462b",
+    "transactionHash": "0xa8376224b012fe973c1057d0eae0827ea8c6dae88d2db0260053d4ba2e3c471a",
+    "blockNumber": 17228299,
+    "timeStamp": 1683700979,
+    "name": "PEPERFECT",
+    "decimals": 6,
+    "totalSupply": 666000000
   }
 }

@@ -24,7 +24,10 @@ async function backtest(contractObject, triggerBlock) {
   console.log(`mcap1: $${formatLargeValue(presentMcap)} (${round((presentMcap-pastMcap)/pastMcap, 2)})`);
 
   const futureMcap = data.find(o => o.startBlock <= (triggerBlock+t) && (triggerBlock+t) <= o.endBlock)?.mcap || 1;
-  console.log(`mcap2: $${formatLargeValue(futureMcap)} (${round((futureMcap-presentMcap)/presentMcap, 2)})`);
+  const pnl = round((futureMcap-presentMcap)/presentMcap, 2);
+  console.log(`mcap2: $${formatLargeValue(futureMcap)} (${pnl})`);
+
+  return pnl
 }
 
 

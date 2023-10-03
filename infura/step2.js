@@ -1,12 +1,11 @@
 const axios = require('axios');
 const etherscanApiKey = 'I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG';
 const { mcapCalculator, logDecoder, round } = require(`./helper.js`);
-const { name } = require(`./config.js`);
+const { erc20Name, nBlocksScanned } = require(`./config.js`);
 const fs = require('fs/promises');
 const path_db1 = `./infura/data/db1.json`;
 const path_db2 = `./infura/data/db2.json`;
 const ObjectsToCsv = require('objects-to-csv');
-const N_BLOCKS = 5 * 60 * 24 * 20;
 let blockIncr1 = 4000;
 let blockIncr2 = 400;
 
@@ -16,7 +15,7 @@ async function getData1(contractObject, startBlock, endBlock) {
   let currentBlock = startBlock;
   while (currentBlock < endBlock) {
     console.log('====');
-    console.log(`Blocks remaining: ${endBlock-currentBlock} (~${Math.ceil((endBlock-currentBlock)/blockIncr1)} loops)`);
+    console.log(`🔸 Blocks remaining: ${endBlock-currentBlock} (~${Math.ceil((endBlock-currentBlock)/blockIncr1)} loops)`);
     let erc20Transactions = await axios.get(`
       https://api.etherscan.io/api
        ?module=account
@@ -66,7 +65,7 @@ async function getData2(contractObject, startBlock, endBlock) {
   let currentBlock = startBlock;
   while (currentBlock < endBlock) {
     console.log('====');
-    console.log(`Blocks remaining: ${endBlock-currentBlock} (~${Math.ceil((endBlock-currentBlock)/blockIncr2)} loops)`);
+    console.log(`🔹 Blocks remaining: ${endBlock-currentBlock} (~${Math.ceil((endBlock-currentBlock)/blockIncr2)} loops)`);
     let responseSwap = await axios.get(`
       https://api.etherscan.io/api
       ?module=logs
@@ -96,7 +95,9 @@ async function getData2(contractObject, startBlock, endBlock) {
       // add eth & erc20 amounts
       if (responseSwap.length > 0) {
         const decoded0 = responseSwap[0].decoded;
-        const ethIsAmount0 = mcapCalculator(decoded0[0] + decoded0[2], decoded0[1] + decoded0[3], contractObject.totalSupply, contractObject.decimals) < 10**12;
+        const sampleMcap = mcapCalculator(decoded0[0] + decoded0[2], decoded0[1] + decoded0[3], contractObject.totalSupply, contractObject.decimals);
+        const ethIsAmount0 = 0 < sampleMcap && sampleMcap < 10**12; // FIXME: needs something better...
+        console.log('ethIsAmount0', ethIsAmount0);
         responseSwap.forEach(o => {
           o.ethAmount = ethIsAmount0 ? o.decoded[0] + o.decoded[2] : o.decoded[1] + o.decoded[3];
           o.erc20Amount = ethIsAmount0 ? o.decoded[1] + o.decoded[3] : o.decoded[0] + o.decoded[2];
@@ -129,6 +130,7 @@ function aggregateData(data1, data2, contractObject) {
   let currentBlock = Number(data1[0].blockNumber);
   const endBlock = Number(data1[data1.length - 1].blockNumber);
   while (currentBlock < (endBlock - 1*aggrSize)) {
+    console.log(`Remaining blocks: ${endBlock - currentBlock}`);
     // filter on subset of data1
     const subData1 = data1.filter(o => currentBlock <= Number(o.blockNumber) && Number(o.blockNumber) <= currentBlock + aggrSize);
 
@@ -178,21 +180,21 @@ function aggregateData(data1, data2, contractObject) {
 }
 
 
-async function saveData(aggrData, contractObject, name) {
+async function saveData(aggrData, contractObject, erc20Name) {
   console.log('Saving data...');
   const db2 = JSON.parse(await fs.readFile(path_db2));
   db2[contractObject.contractAddress] = aggrData;
   await fs.writeFile(path_db2, JSON.stringify(db2, null, 2), 'utf8');
   const csv = new ObjectsToCsv(aggrData);
-  await csv.toDisk(`./infura/data/csv/${name}.csv`);
+  await csv.toDisk(`./infura/data/csv/${erc20Name}.csv`);
 }
 
 
-async function main(contractObject, name) {
+async function main(contractObject, erc20Name) {
   // 1) Determine blockrange of interest
   let startBlock = contractObject.blockNumber;
-  const endBlock = startBlock + N_BLOCKS; // next N blocks
-  // startBlock = startBlock + N_BLOCKS/2;
+  const endBlock = startBlock + nBlocksScanned; // next N blocks
+  // startBlock = startBlock + nBlocksScanned/2;
 
   // 2) Get data for blockrange of interest
   const allData1 = await getData1(contractObject, startBlock, endBlock);
@@ -202,16 +204,16 @@ async function main(contractObject, name) {
   const aggrData = aggregateData(allData1, allData2, contractObject);
 
   // 4) Save data
-  await saveData(aggrData, contractObject, name);
+  await saveData(aggrData, contractObject, erc20Name);
 }
 
 
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    const contractObject = Object.values(db1).find(o => o.name === name);
+    const contractObject = Object.values(db1).find(o => o.name === erc20Name);
     console.time('Timer');
-    await main(contractObject, name);
+    await main(contractObject, erc20Name);
     console.timeEnd('Timer');
   })();
 }
