@@ -131,7 +131,7 @@ async function monitorTokenLaunches() {
       );
       lastProcessedBlock = newBlock;
     }
-  }, 30000); // Check for new blocks every 60 seconds
+  }, 1000 * 30); // Check for new blocks every X seconds
 }
 
 

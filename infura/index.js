@@ -5,8 +5,7 @@ let { main: step1 } = require(`./step1.js`);
 let { main: step2 } = require(`./step2.js`);
 let { main: step3 } = require(`./step3.js`);
 let { main: backtest } = require(`./backtest.js`);
-
-
+const { blockOfInterest } = require(`./config.js`);
 
 
 if (require.main === module) {
@@ -16,12 +15,13 @@ if (require.main === module) {
 
     // STEP 1 - get launch
     console.log('💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛');
+    await step1(blockOfInterest-5, blockOfInterest+5);
 
     // STEP 2 - get data
     console.log('💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙💙');
     const db1 = JSON.parse(await fs.readFile(path_db1));
     const contractObject = db1[contractAddress];
-    // await step2(contractObject, contractObject.name);
+    await step2(contractObject, contractObject.name);
 
     // STEP 3 - run algo & get triggers
     console.log('💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚');
