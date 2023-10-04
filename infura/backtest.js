@@ -44,11 +44,9 @@ if (require.main === module) {
       pnls.push(pnl);
     }
 
-
     console.log('+++++++++++++++++++++++++++++++++++++++');
     console.log(`${erc20Name}: ${triggers.length} Triggers`);
     console.log(`${erc20Name}: ${round(pnls.reduce((acc, el) => acc + el, 0)/triggers.length, 2)} Avg PNL`);
     console.log(`${erc20Name}: ${round(pnls.reduce((acc, el) => acc + el, 0), 2)} Total PNL`);
-
   })();
 }

@@ -21,8 +21,7 @@ function logLinearTest(data) {
   const isGoodLinearFit = rSquared > 0.9;
   const isGrowth = slope > 0;
   const isSteepGrowth = slope > 0.15;
-  // if (isGoodLinearFit && isGrowth && isSteepGrowth) {
-  if (true) {
+  if (isGoodLinearFit && isGrowth && isSteepGrowth) {
     return {
       data: data,
       equation: reg.string,
@@ -59,7 +58,7 @@ function algo1(data) {
 
     // check size ratios
     const sizeTestResult = sizeTest(dataSlice);
-    // if (sizeTestResult.ratio > 50000 || sizeTestResult.maxNewUsers < 20) continue; // filter out too big & too little
+    if (sizeTestResult.ratio > 50000 || sizeTestResult.maxNewUsers < 20) continue; // filter out too big & too little
 
     // check log linear
     let dataSliceNewUserCountXmin = dataSlice.map(o => o.newUserCountXmin);
