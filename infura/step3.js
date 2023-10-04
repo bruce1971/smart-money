@@ -2,9 +2,13 @@ const fs = require('fs/promises');
 const path_db1 = `./infura/data/db1.json`;
 const path_db2 = `./infura/data/db2.json`;
 const { round } = require(`./helper.js`);
-const { backtest } = require(`./backtest.js`);
 const { erc20Name } = require(`./config.js`);
 const regression = require('regression');
+
+
+module.exports = {
+  main
+}
 
 
 function logLinearTest(data) {
@@ -87,18 +91,7 @@ if (require.main === module) {
     const db1 = JSON.parse(await fs.readFile(path_db1));
     const contractObject = Object.values(db1).find(o => o.name === erc20Name);
     const triggers = await main(contractObject, erc20Name);
-
-    let pnls = [];
-    for (let i = 0; i < triggers.length; i++) {
-      console.log('=======================================');
-      const trigger = triggers[i];
-      console.log(trigger);
-      const pnl = await backtest(contractObject, trigger.triggerBlock);
-      pnls.push(pnl)
-    }
-
-    console.log('+++++++++++++++++++++++++++++++++++++++');
-    console.log(`${erc20Name} Triggers ${triggers.length}`);
-    console.log(`${erc20Name} PNL ${round(pnls.reduce((acc, el) => acc + el, 0), 2)}`);
+    console.log(triggers);
+    console.log(`${erc20Name}: ${triggers.length} triggers`);
   })();
 }

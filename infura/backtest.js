@@ -2,7 +2,8 @@ const fs = require('fs/promises');
 const path_db1 = `./infura/data/db1.json`;
 const path_db2 = `./infura/data/db2.json`;
 const { round, formatLargeValue } = require(`./helper.js`);
-const { name } = require(`./config.js`);
+const { main } = require(`./step3.js`);
+const { erc20Name } = require(`./config.js`);
 
 
 module.exports = {
@@ -27,15 +28,28 @@ async function backtest(contractObject, triggerBlock) {
   const pnl = round((futureMcap-presentMcap)/presentMcap, 2);
   console.log(`mcap2: $${formatLargeValue(futureMcap)} (${pnl})`);
 
-  return pnl
+  return pnl;
 }
 
 
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
-    const triggerBlock = 18172902;
-    const contractObject = Object.values(db1).find(o => o.name === name);
-    backtest(contractObject, triggerBlock);
+    const contractObject = Object.values(db1).find(o => o.name === erc20Name);
+    const triggers = await main(contractObject, erc20Name);
+
+    let pnls = [];
+    for (let i = 0; i < triggers.length; i++) {
+      console.log('=======================================');
+      const trigger = triggers[i];
+      console.log(trigger);
+      const pnl = await backtest(contractObject, trigger.triggerBlock);
+      pnls.push(pnl)
+    }
+
+    console.log('+++++++++++++++++++++++++++++++++++++++');
+    console.log(`${erc20Name} Triggers ${triggers.length}`);
+    console.log(`${erc20Name} PNL ${round(pnls.reduce((acc, el) => acc + el, 0), 2)}`);
+
   })();
 }
