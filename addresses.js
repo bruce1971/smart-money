@@ -18,6 +18,12 @@ const inputA = {
   'kekscam': { address: '0x4Ef6A620c55dBc650ed9CD1F901Fd2eeF68A63d1', type: 'erc20' },
   'apxscam': { address: '0x234ee45691132cc2a2b56941604c8b1bebe475e9', type: 'erc20' },
   'cal': { address: '0x20561172f791f915323241e885b4f7d5187c36e1', type: 'erc20' },
+  'xrp': { address: '0x07E0EDf8ce600FB51d44F51E3348D77D67F298ae', type: 'erc20' },
+  'spx': { address: '0xE0f63A424a4439cBE457D80E4f4b51aD25b2c56C', type: 'erc20' },
+  'foom': { address: '0xd0D56273290D339aaF1417D9bfa1bb8cFe8A0933', type: 'erc20' },
+  'fine': { address: '0xb54ce26f2e30f64c5b684b141311ce138ab5e00e', type: 'erc20' },
+  'hydra': { address: '0xcaa8947c22d58912a67e783cf8371c918af45d96', type: 'erc20' },
+  'ftx': { address: '0x3b6ea8d9c6dfaba0ffc63086b9eb669ddeb96ee2', type: 'erc20' },
 }
 
 const inputU = {

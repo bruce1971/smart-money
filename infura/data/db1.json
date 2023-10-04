@@ -408,5 +408,45 @@
     "name": "Calcium",
     "decimals": 18,
     "totalSupply": 420690000
+  },
+  "0x51a59a02ba906194285e81eb1f98ffa28e7cf4c9": {
+    "contractAddress": "0x51a59a02ba906194285e81eb1f98ffa28e7cf4c9",
+    "pairAddress": "0x3c5f0c9e503175e3138af564bbabba10217f8cee",
+    "transactionHash": "0xe038f47bc352ad05ad5a02a1e6f022765a8c11a280bd595c353368b0ca6b91a3",
+    "blockNumber": 18186166,
+    "timeStamp": 1695322487,
+    "name": "Pepe King Prawn",
+    "decimals": 9,
+    "totalSupply": 100000000
+  },
+  "0x089453742936dd35134383aee9d78bee63a69b01": {
+    "contractAddress": "0x089453742936dd35134383aee9d78bee63a69b01",
+    "pairAddress": "0xa970dadd75bf8e567e63aa2ddf63ffed0e5fb4fa",
+    "transactionHash": "0x94f950148d5696d2782b025af6d292d07be83e8311d896f5bf48b19fe05e7929",
+    "blockNumber": 18165913,
+    "timeStamp": 1695077495,
+    "name": "GOLD",
+    "decimals": 18,
+    "totalSupply": 21000000
+  },
+  "0x903ff0ba636e32de1767a4b5eeb55c155763d8b7": {
+    "contractAddress": "0x903ff0ba636e32de1767a4b5eeb55c155763d8b7",
+    "pairAddress": "0xe8a70a8969bfe897e656ad3ac1fc4950bd751566",
+    "transactionHash": "0xe6e04d6ba307aeaa6662dcdf75feae70cf25b11e5da161edcf51d3e3f0007c2c",
+    "blockNumber": 17815380,
+    "timeStamp": 1690835303,
+    "name": "None Trading",
+    "decimals": 18,
+    "totalSupply": 1000000
+  },
+  "0xf819d9cb1c2a819fd991781a822de3ca8607c3c9": {
+    "contractAddress": "0xf819d9cb1c2a819fd991781a822de3ca8607c3c9",
+    "pairAddress": "0x811559d11dc36d263c34959b980a4e1bea7cbbe7",
+    "transactionHash": "0x56c6235e0432321f0088d358731d65ddcf0217fc7d751b9bd4f9b0d4d4a5871a",
+    "blockNumber": 17280915,
+    "timeStamp": 1684345727,
+    "name": "Unibot",
+    "decimals": 18,
+    "totalSupply": 1000000
   }
 }

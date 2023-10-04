@@ -13,7 +13,7 @@ erc20Name = "MongCoin";
 erc20Name = "Real Smurf Cat";
 
 
-nBlocksScanned = 5 * 60 * 24 * 40;
+nBlocksScanned = 5 * 60 * 24 * 20;
 
 
 module.exports = {

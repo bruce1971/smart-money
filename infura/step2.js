@@ -135,7 +135,7 @@ function aggregateData(data1, data2, contractObject) {
   let currentBlock = Number(data1[0].blockNumber);
   const endBlock = Number(data1[data1.length - 1].blockNumber);
   while (currentBlock < (endBlock - 1*aggrSize)) {
-    if ((endBlock-currentBlock) % 10000 === 0) console.log(`Remaining blocks: ${endBlock - currentBlock}`);
+    if ((endBlock-currentBlock) % 10000 <= aggrSize) console.log(`Remaining blocks: ${endBlock - currentBlock}`);
 
     // filter on subset of data1
     const subData1 = data1.filter(o => currentBlock <= Number(o.blockNumber) && Number(o.blockNumber) <= currentBlock + aggrSize);
