@@ -10,6 +10,11 @@ let blockIncr1 = 4000;
 let blockIncr2 = 400;
 
 
+module.exports = {
+  main
+}
+
+
 async function getData1(contractObject, startBlock, endBlock) {
   let allData = [];
   let currentBlock = startBlock;

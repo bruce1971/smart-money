@@ -9,6 +9,11 @@ const path = `./infura/data/db1.json`;
 const { blockOfInterest } = require(`./config.js`);
 
 
+module.exports = {
+  main
+}
+
+
 // Function to fetch the latest block number
 async function getLatestBlockNumber() {
   return Number(await web3.eth.getBlockNumber());
@@ -83,6 +88,7 @@ async function getTradingLaunch(fromBlock, toBlock) {
   }
 }
 
+
 async function gecko(contractAddress){
   const url = `https://api.geckoterminal.com/api/v2/networks/eth/tokens/${contractAddress}?include=top_pools`;
   const info = await axios.get(url).then(res => res.data).catch(e => null);
@@ -90,9 +96,8 @@ async function gecko(contractAddress){
 }
 
 
-
-async function intervalExecute(fromBlock, toBlock) {
-  console.log(`intervalExecute: ${fromBlock} - ${toBlock}`);
+async function main(fromBlock, toBlock) {
+  console.log(`main: ${fromBlock} - ${toBlock}`);
   const transactions = await getTradingLaunch(fromBlock, toBlock);
   const db1 = JSON.parse(await fs.readFile(path));
   for (let i = 0; i < transactions.length; i++) {
@@ -113,14 +118,14 @@ async function monitorTokenLaunches() {
   const currentBlock = await getLatestBlockNumber();
   console.log('Current block number:', currentBlock);
   // for (let i = 10; i >= 0; i--) {
-  //   const transactions = await intervalExecute(currentBlock-(i+1)*10, 1+currentBlock-i*10);
+  //   const transactions = await main(currentBlock-(i+1)*10, 1+currentBlock-i*10);
   // }
 
   let lastProcessedBlock = currentBlock;
   setInterval(async () => {
     const newBlock = await getLatestBlockNumber();
     if (newBlock > lastProcessedBlock) {
-      const creationTransactions = await intervalExecute(
+      const creationTransactions = await main(
         lastProcessedBlock + 1,
         newBlock
       );
@@ -130,5 +135,9 @@ async function monitorTokenLaunches() {
 }
 
 
-// monitorTokenLaunches();
-intervalExecute(blockOfInterest-5, blockOfInterest+5);
+if (require.main === module) {
+  (async () => {
+    // monitorTokenLaunches();
+    main(blockOfInterest-5, blockOfInterest+5);
+  })();
+}
