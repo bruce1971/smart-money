@@ -388,5 +388,25 @@
     "name": "Shiba Community",
     "decimals": 9,
     "totalSupply": 100000000
+  },
+  "0xa62894d5196bc44e4c3978400ad07e7b30352372": {
+    "contractAddress": "0xa62894d5196bc44e4c3978400ad07e7b30352372",
+    "pairAddress": "0x8e83de18b38ddc22166fb5454003a573a53be4ae",
+    "transactionHash": "0xbcd5d35364fd55f88c1d8a8b3c39eddc6403fc72459d62e831ebbb04a5457765",
+    "blockNumber": 17756227,
+    "timeStamp": 1690120283,
+    "name": "X",
+    "decimals": 9,
+    "totalSupply": 980309811592
+  },
+  "0x20561172f791f915323241e885b4f7d5187c36e1": {
+    "contractAddress": "0x20561172f791f915323241e885b4f7d5187c36e1",
+    "pairAddress": "0xb76f3bf5f1d669f931064a2a84aa5499232b00e1",
+    "transactionHash": "0x09908c2ff5ed12bbb9abb4bec1d380c8d91f33d8174b2755e42ddf2452de4e01",
+    "blockNumber": 18187018,
+    "timeStamp": 1695332819,
+    "name": "Calcium",
+    "decimals": 18,
+    "totalSupply": 420690000
   }
 }

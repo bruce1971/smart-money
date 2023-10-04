@@ -78,7 +78,7 @@ function algo1(data) {
 }
 
 
-async function main(contractObject, erc20Name) {
+async function main(contractObject) {
   const db2 = JSON.parse(await fs.readFile(path_db2));
   const data = db2[contractObject.contractAddress];
   const triggers = algo1(data);
@@ -90,7 +90,7 @@ if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
     const contractObject = Object.values(db1).find(o => o.name === erc20Name);
-    const triggers = await main(contractObject, erc20Name);
+    const triggers = await main(contractObjectgs);
     console.log(triggers);
     console.log(`${erc20Name}: ${triggers.length} triggers`);
   })();

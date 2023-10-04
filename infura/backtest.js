@@ -44,10 +44,9 @@ function main(triggers, db2, contractObject) {
   }
 
   console.log('+++++++++++++++++++++++++++++++++++++++');
-  console.log(`${erc20Name}: ${triggers.length} Triggers`);
-  console.log(`${erc20Name}: ${round(pnls.reduce((acc, el) => acc + el, 0)/triggers.length, 2)} Avg PNL`);
-  console.log(`${erc20Name}: ${round(pnls.reduce((acc, el) => acc + el, 0), 2)} Total PNL`);
-
+  console.log(`${contractObject.name}: ${triggers.length} Triggers`);
+  console.log(`${contractObject.name}: ${round(pnls.reduce((acc, el) => acc + el, 0)/triggers.length, 2)} Avg PNL`);
+  console.log(`${contractObject.name}: ${round(pnls.reduce((acc, el) => acc + el, 0), 2)} Total PNL`);
 }
 
 
