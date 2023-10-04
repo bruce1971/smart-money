@@ -448,5 +448,25 @@
     "name": "Unibot",
     "decimals": 18,
     "totalSupply": 1000000
+  },
+  "0xbe042e9d09cb588331ff911c2b46fd833a3e5bd6": {
+    "contractAddress": "0xbe042e9d09cb588331ff911c2b46fd833a3e5bd6",
+    "pairAddress": "0x8616b44b734817a2c954016a57cf2c4d72d6f838",
+    "transactionHash": "0x2361ae0ce6558c1b976d90415bd0df4e5390f6c5a9211c5331923ce837bca500",
+    "blockNumber": 17988081,
+    "timeStamp": 1692922643,
+    "name": "Pepe",
+    "decimals": 18,
+    "totalSupply": 1000000000
+  },
+  "0x75c97384ca209f915381755c582ec0e2ce88c1ba": {
+    "contractAddress": "0x75c97384ca209f915381755c582ec0e2ce88c1ba",
+    "pairAddress": "0xb54ce26f2e30f64c5b684b141311ce138ab5e00e",
+    "transactionHash": "0xafacc0bb90be20d23bb328db3be78f7982abcfc78163ad7282a1c8ff0db84e4b",
+    "blockNumber": 18080608,
+    "timeStamp": 1694042051,
+    "name": "FINE",
+    "decimals": 18,
+    "totalSupply": 420690000000000
   }
 }

@@ -5,7 +5,7 @@ const etherscanApiKey = 'I2MBIPC3CU5D7WM882FXNFMCHX6FP77IYG';
 const web3 = new Web3(ethereumNodeUrl);
 const fs = require('fs/promises');
 const path = `./infura/data/db1.json`;
-const { blockOfInterest } = require(`./config.js`);
+const { contractAddressOfInterest } = require(`./config.js`);
 const MINT_TOPIC = '0x4c209b5fc8ad50758f13e2e1088ba56a560dff690a1c6fef26394f4c03821c4f'
 const DEPOSIT_TOPIC = '0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c'
 const PAIR_CREATED_TOPIC = '0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9'
@@ -90,6 +90,6 @@ async function main(contractAddress) {
 
 if (require.main === module) {
   (async () => {
-    main('0x20561172f791f915323241e885b4f7d5187c36e1');
+    main(contractAddressOfInterest);
   })();
 }
