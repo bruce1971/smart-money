@@ -6,27 +6,23 @@ const { main } = require(`./step3.js`);
 const { erc20Name } = require(`./config.js`);
 
 
-module.exports = {
-  backtest
-}
-
-
-async function backtest(contractObject, triggerBlock) {
-  const db2 = JSON.parse(await fs.readFile(path_db2));
-  const data = db2[contractObject.contractAddress];
-
+async function triggerTest(data, triggerBlock) {
   const nMin = 5;
   const t = 5 * nMin;
 
   const pastMcap = data.find(o => o.startBlock <= (triggerBlock-t) && (triggerBlock-t) <= o.endBlock)?.mcap || 1;
   console.log(`mcap0: $${formatLargeValue(pastMcap)}`);
 
-  const presentMcap = data.find(o => o.startBlock <= triggerBlock && triggerBlock <= o.endBlock).mcap;
+  const presentMcap = data.find(o => o.startBlock <= triggerBlock && triggerBlock <= o.endBlock)?.mcap || 1;
   console.log(`mcap1: $${formatLargeValue(presentMcap)} (${round((presentMcap-pastMcap)/pastMcap, 2)})`);
 
   const futureMcap = data.find(o => o.startBlock <= (triggerBlock+t) && (triggerBlock+t) <= o.endBlock)?.mcap || 1;
   const pnl = round((futureMcap-presentMcap)/presentMcap, 2);
   console.log(`mcap2: $${formatLargeValue(futureMcap)} (${pnl})`);
+
+  if([pastMcap, presentMcap, futureMcap].some(el => el === 1 || el > 10**15)) {
+    return 0
+  }
 
   return pnl;
 }
@@ -35,6 +31,7 @@ async function backtest(contractObject, triggerBlock) {
 if (require.main === module) {
   (async () => {
     const db1 = JSON.parse(await fs.readFile(path_db1));
+    const db2 = JSON.parse(await fs.readFile(path_db2));
     const contractObject = Object.values(db1).find(o => o.name === erc20Name);
     const triggers = await main(contractObject, erc20Name);
 
@@ -43,13 +40,15 @@ if (require.main === module) {
       console.log('=======================================');
       const trigger = triggers[i];
       console.log(trigger);
-      const pnl = await backtest(contractObject, trigger.triggerBlock);
-      pnls.push(pnl)
+      const pnl = await triggerTest(db2[contractObject.contractAddress], trigger.triggerBlock);
+      pnls.push(pnl);
     }
 
+
     console.log('+++++++++++++++++++++++++++++++++++++++');
-    console.log(`${erc20Name} Triggers ${triggers.length}`);
-    console.log(`${erc20Name} PNL ${round(pnls.reduce((acc, el) => acc + el, 0), 2)}`);
+    console.log(`${erc20Name}: ${triggers.length} Triggers`);
+    console.log(`${erc20Name}: ${round(pnls.reduce((acc, el) => acc + el, 0)/triggers.length, 2)} Avg PNL`);
+    console.log(`${erc20Name}: ${round(pnls.reduce((acc, el) => acc + el, 0), 2)} Total PNL`);
 
   })();
 }
